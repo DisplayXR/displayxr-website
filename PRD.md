@@ -449,9 +449,10 @@ Than to:
 - Section spacing: `96px` between major sections on homepage, `48px` on inner pages
 
 ### Logo
-- The DisplayXR logo is at `https://raw.githubusercontent.com/DisplayXR/.github/main/profile/DisplayXR-logo.png`
-- Download and place in `public/logos/displayxr-logo.png`
-- Use in the navbar and footer
+- The white DisplayXR logo is already in the repo at `public/logos/displayxr-logo.png`
+- This is the white "XR" icon — designed for dark backgrounds, matches the installer/service branding
+- Use in the navbar (left side) and footer
+- For favicon, convert to ICO or use a small PNG variant
 
 ## 14c. Component Architecture
 
