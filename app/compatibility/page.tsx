@@ -8,6 +8,7 @@ import {
   hardwareBackends,
   appClasses,
 } from "@/lib/data/compatibility";
+import { vendors, devices } from "@/lib/data/devices";
 
 export const metadata: Metadata = {
   title: "Compatibility",
@@ -22,6 +23,58 @@ export default function CompatibilityPage() {
       description="Current support status across platforms, graphics APIs, engines, and hardware backends."
     >
       <div className="space-y-16 max-w-4xl">
+        {/* Compatible Devices */}
+        <section>
+          <h2 className="text-xl font-semibold text-text-primary mb-2">
+            Compatible Devices
+          </h2>
+          <p className="text-sm text-text-secondary mb-6">
+            Devices with tracked glasses-free 3D displays supported by
+            DisplayXR, grouped by display technology vendor.
+          </p>
+          <div className="space-y-6">
+            {vendors.map((vendor) => {
+              const vendorDevices = devices.filter(
+                (d) => d.vendorId === vendor.id
+              );
+              if (vendorDevices.length === 0) return null;
+              return (
+                <div
+                  key={vendor.id}
+                  className="bg-surface border border-border rounded-lg overflow-hidden"
+                >
+                  <div className="px-6 py-4 border-b border-border">
+                    <h3 className="text-base font-semibold text-text-primary">
+                      {vendor.name}
+                    </h3>
+                    <p className="text-sm text-text-secondary">
+                      {vendor.description}
+                    </p>
+                  </div>
+                  <Table
+                    headers={["Device", "OEM", "Form Factor", "Status"]}
+                  >
+                    {vendorDevices.map((device) => (
+                      <TableRow key={device.name}>
+                        <TableCell className="font-medium text-text-primary">
+                          {device.name}
+                        </TableCell>
+                        <TableCell>{device.oem}</TableCell>
+                        <TableCell className="capitalize">
+                          {device.formFactor}
+                        </TableCell>
+                        <TableCell>
+                          <Badge status={device.status} />
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </Table>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
         {/* Runtime Compositors */}
         <section>
           <h2 className="text-xl font-semibold text-text-primary mb-2">
