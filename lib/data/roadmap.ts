@@ -18,7 +18,8 @@ export const roadmapSections: RoadmapSection[] = [
     items: [
       {
         title: "Foundation",
-        description: "Stripped to ~150 files, native compositors for every major API",
+        description:
+          "Stripped to ~150 files, native compositors for every major API",
       },
       {
         title: "Native compositors shipping",
@@ -30,6 +31,11 @@ export const roadmapSections: RoadmapSection[] = [
       },
       {
         title: "Unity plugin with CI and sample scene",
+      },
+      {
+        title: "Universal app model",
+        description:
+          "Any OpenXR handle app works standalone and in the shell with zero code changes",
       },
     ],
   },
@@ -59,12 +65,24 @@ export const roadmapSections: RoadmapSection[] = [
     label: "Next",
     items: [
       {
-        title: "Spatial shell",
-        description: "Multi-app 3D window management (M6)",
+        title: "Spatial desktop platform — Phase 1",
+        description:
+          "Platform-native multi-compositor, cross-app spatial compositing, shell scene graph, basic shell chrome",
       },
       {
-        title: "Multi-display compositing",
-        description: "Single machine",
+        title: "2D app support",
+        description:
+          "Non-OpenXR apps captured as spatial panels via OS window capture",
+      },
+      {
+        title: "3D screenshot",
+        description:
+          "Capture spatial content before display-specific processing",
+      },
+      {
+        title: "Spatial desktop platform — Phase 2",
+        description:
+          "Layout presets, persistence, app launcher, task switching, recording, input routing",
       },
       {
         title: "Expand demos and engine integrations",
@@ -79,16 +97,16 @@ export const roadmapSections: RoadmapSection[] = [
     label: "Later",
     items: [
       {
-        title: "Multi-display across networked machines",
+        title: "3D capture pipeline",
+        description: "Session capture, dataset mode, spatial replay",
       },
       {
-        title: "3D capture pipeline",
+        title: "Multi-display compositing",
+        description:
+          "Single machine first, then networked multi-display unified workspaces",
       },
       {
         title: "Broader ecosystem and standardization",
-      },
-      {
-        title: "Cross-runtime spatial interoperability",
       },
     ],
   },
