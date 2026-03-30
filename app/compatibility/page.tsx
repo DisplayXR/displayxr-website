@@ -57,7 +57,18 @@ export default function CompatibilityPage() {
                     {vendorDevices.map((device) => (
                       <TableRow key={device.name}>
                         <TableCell className="font-medium text-text-primary">
-                          {device.name}
+                          {device.url ? (
+                            <a
+                              href={device.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-accent hover:text-accent-hover underline underline-offset-2"
+                            >
+                              {device.name}
+                            </a>
+                          ) : (
+                            device.name
+                          )}
                         </TableCell>
                         <TableCell>{device.oem}</TableCell>
                         <TableCell className="capitalize">
