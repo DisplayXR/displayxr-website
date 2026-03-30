@@ -39,7 +39,7 @@ export default function RoadmapPage() {
   return (
     <PageLayout
       title="Roadmap"
-      description="Where DisplayXR is headed. This reflects actual milestones, not aspirational targets."
+      description="Development milestones and upcoming work for the DisplayXR runtime and ecosystem."
     >
       <div className="max-w-3xl">
         <div className="space-y-12">
@@ -77,8 +77,7 @@ export default function RoadmapPage() {
 
         <div className="mt-16 pt-8 border-t border-border">
           <p className="text-sm text-text-secondary">
-            This roadmap is high-level and public-safe. For detailed tracking,
-            see individual repo milestones on{" "}
+            For detailed tracking, see individual repo milestones on{" "}
             <a
               href="https://github.com/DisplayXR"
               target="_blank"

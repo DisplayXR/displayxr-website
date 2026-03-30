@@ -17,25 +17,29 @@ export const roadmapSections: RoadmapSection[] = [
     label: "Done",
     items: [
       {
-        title: "Foundation",
+        title: "Monado fork focused on spatial displays",
         description:
-          "Stripped to ~150 files, native compositors for every major API",
+          "Forked from the Monado OpenXR runtime, removed VR and headset-specific code, and refocused the codebase entirely on tracked glasses-free 3D displays",
       },
       {
-        title: "Native compositors shipping",
-        description: "D3D11, D3D12, Metal, OpenGL, Vulkan",
+        title: "Native compositors for every major graphics API",
+        description:
+          "Dedicated compositor implementations for D3D11, D3D12, Metal, OpenGL, and Vulkan — no cross-API translation layer required",
       },
       {
         title: "Custom OpenXR extensions",
-        description: "display_info, window bindings (Win32, Cocoa)",
-      },
-      {
-        title: "Unity plugin with CI and sample scene",
-      },
-      {
-        title: "Universal app model",
         description:
-          "Any OpenXR handle app works standalone and in the shell with zero code changes",
+          "Extensions for querying spatial display geometry and binding compositor output to application windows on both Windows and macOS",
+      },
+      {
+        title: "Unity plugin with sample scene",
+        description:
+          "UPM package for Unity with a working sample scene to get started quickly",
+      },
+      {
+        title: "Standard OpenXR app compatibility",
+        description:
+          "Apps built against the standard OpenXR API work with DisplayXR without modification",
       },
     ],
   },
@@ -44,19 +48,22 @@ export const roadmapSections: RoadmapSection[] = [
     label: "Now",
     items: [
       {
-        title: "Test coverage and conformance",
-        description: "M3",
+        title: "Runtime test coverage",
+        description:
+          "Expanding automated tests across compositors and session lifecycle",
       },
       {
         title: "Extension API stabilization",
-        description: "M4",
+        description:
+          "Finalizing extension interfaces so developers can build against stable APIs",
       },
       {
-        title: "Interface standardization",
-        description: "Display processor, display spatial model (M5)",
+        title: "Display processor interface",
+        description:
+          "Standardizing how vendor-specific display processing plugs into the runtime",
       },
       {
-        title: "Improve docs and developer onboarding",
+        title: "Docs and developer onboarding",
       },
     ],
   },
@@ -65,14 +72,19 @@ export const roadmapSections: RoadmapSection[] = [
     label: "Next",
     items: [
       {
-        title: "Spatial desktop platform — Phase 1",
+        title: "Multi-app compositing in the runtime",
         description:
-          "Platform-native multi-compositor, cross-app spatial compositing, shell scene graph, basic shell chrome",
+          "Open-source runtime support for compositing multiple applications into a single spatial scene on one display",
+      },
+      {
+        title: "Spatial desktop shell",
+        description:
+          "A closed-source 3D window manager built on top of the open runtime — manages window layout, focus, and app lifecycle",
       },
       {
         title: "2D app support",
         description:
-          "Non-OpenXR apps captured as spatial panels via OS window capture",
+          "Run standard desktop applications as flat panels in 3D space via OS window capture",
       },
       {
         title: "3D screenshot",
@@ -80,15 +92,10 @@ export const roadmapSections: RoadmapSection[] = [
           "Capture spatial content before display-specific processing",
       },
       {
-        title: "Spatial desktop platform — Phase 2",
-        description:
-          "Layout presets, persistence, app launcher, task switching, recording, input routing",
-      },
-      {
         title: "Expand demos and engine integrations",
       },
       {
-        title: "Unreal plugin maturity",
+        title: "Unreal Engine plugin",
       },
     ],
   },
@@ -98,12 +105,13 @@ export const roadmapSections: RoadmapSection[] = [
     items: [
       {
         title: "3D capture pipeline",
-        description: "Session capture, dataset mode, spatial replay",
+        description:
+          "Session recording, spatial replay, and dataset generation from live spatial content",
       },
       {
-        title: "Multi-display compositing",
+        title: "Multi-display workspaces",
         description:
-          "Single machine first, then networked multi-display unified workspaces",
+          "Extend the spatial desktop across multiple tracked displays, starting with a single machine",
       },
       {
         title: "Broader ecosystem and standardization",
