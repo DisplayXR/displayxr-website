@@ -7,10 +7,10 @@ export function Hero() {
     <section className="relative overflow-hidden">
       {/* Hero background image */}
       <Image
-        src="/diagrams/hero-bg.jpeg"
+        src="/diagrams/hero-v2-display.jpeg"
         alt=""
         fill
-        className="object-cover opacity-30"
+        className="object-cover opacity-50"
         priority
       />
 
@@ -26,12 +26,13 @@ export function Hero() {
       <div className="relative mx-auto max-w-[1200px] px-6 md:px-12 pt-28 pb-36 md:pt-36 md:pb-44">
         <div className="max-w-3xl">
           <h1 className="hero-animate text-4xl md:text-6xl lg:text-7xl font-display tracking-tight text-text-primary leading-[1.05] mb-6">
-            OpenXR for glasses-free 3D displays
+            OpenXR for Spatial Displays
           </h1>
           <p className="hero-animate hero-animate-delay-1 text-lg md:text-xl text-text-secondary leading-relaxed mb-10 max-w-2xl">
-            DisplayXR is an open runtime and extension stack for tracked spatial
-            displays. It helps developers build portable 3D display applications
-            across engines, graphics APIs, and vendor-specific hardware runtimes.
+            DisplayXR is an open runtime and extension stack for 3D displays,
+            including tracked stereo and multiview lightfield displays. Build
+            portable spatial display applications across engines, graphics APIs,
+            and vendor hardware runtimes.
           </p>
           <div className="hero-animate hero-animate-delay-2 flex flex-wrap gap-4">
             <Button href="/docs">Read the Docs</Button>
