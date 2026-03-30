@@ -27,7 +27,7 @@ export function Table({ headers, children }: TableProps) {
 
 export function TableRow({ children }: { children: React.ReactNode }) {
   return (
-    <tr className="hover:bg-surface/50 transition-colors">{children}</tr>
+    <tr className="table-row-interactive">{children}</tr>
   );
 }
 

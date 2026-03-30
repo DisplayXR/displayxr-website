@@ -7,10 +7,11 @@ interface CardProps {
 }
 
 export function Card({ title, icon, children, className = "", href }: CardProps) {
+  const interactive = !!href;
   const content = (
     <div
       className={`bg-surface border border-border rounded-lg p-6 ${
-        href ? "hover:border-accent/50 transition-colors duration-200" : ""
+        interactive ? "card-interactive cursor-pointer" : ""
       } ${className}`}
     >
       {(icon || title) && (

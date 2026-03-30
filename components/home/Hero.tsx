@@ -10,22 +10,30 @@ export function Hero() {
         src="/diagrams/hero-bg.jpeg"
         alt=""
         fill
-        className="object-cover opacity-40"
+        className="object-cover opacity-30"
         priority
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
 
-      <div className="relative mx-auto max-w-[1200px] px-6 md:px-12 pt-24 pb-32 md:pt-32 md:pb-40">
+      {/* Animated grid overlay */}
+      <div className="absolute inset-0 hero-grid" />
+
+      {/* Gradient orb glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-accent/8 rounded-full blur-[120px]" />
+
+      {/* Bottom gradient fade */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/40 to-background" />
+
+      <div className="relative mx-auto max-w-[1200px] px-6 md:px-12 pt-28 pb-36 md:pt-36 md:pb-44">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-text-primary leading-[1.1] mb-6">
+          <h1 className="hero-animate text-4xl md:text-6xl lg:text-7xl font-display tracking-tight text-text-primary leading-[1.05] mb-6">
             OpenXR for glasses-free 3D displays
           </h1>
-          <p className="text-lg md:text-xl text-text-secondary leading-relaxed mb-10 max-w-2xl">
+          <p className="hero-animate hero-animate-delay-1 text-lg md:text-xl text-text-secondary leading-relaxed mb-10 max-w-2xl">
             DisplayXR is an open runtime and extension stack for tracked spatial
             displays. It helps developers build portable 3D display applications
             across engines, graphics APIs, and vendor-specific hardware runtimes.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="hero-animate hero-animate-delay-2 flex flex-wrap gap-4">
             <Button href="/docs">Read the Docs</Button>
             <Button variant="secondary" href={GITHUB_ORG_URL}>
               Explore on GitHub

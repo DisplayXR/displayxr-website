@@ -10,47 +10,47 @@ export const metadata: Metadata = {
 
 function ArchDiagram() {
   return (
-    <div className="my-12 bg-surface border border-border rounded-lg p-8 overflow-x-auto">
+    <div className="my-12 bg-surface border border-border rounded-lg p-8 md:p-12 overflow-x-auto glow-accent-sm">
       <div className="flex flex-col items-center gap-0 font-mono text-sm min-w-[400px]">
         {/* App layer */}
-        <div className="bg-accent/10 border border-accent/30 rounded-lg px-8 py-3 text-accent font-semibold">
+        <div className="bg-accent/10 border border-accent/30 rounded-lg px-8 py-3.5 text-accent font-semibold shadow-[0_0_16px_rgba(59,130,246,0.1)]">
           App (any graphics API)
         </div>
-        <div className="w-px h-6 bg-border" />
+        <div className="w-px h-8 bg-gradient-to-b from-accent/30 to-border" />
 
         {/* OpenXR API */}
-        <div className="bg-surface border border-border rounded-lg px-8 py-3 text-text-primary font-semibold">
+        <div className="bg-surface border border-border rounded-lg px-8 py-3.5 text-text-primary font-semibold">
           OpenXR API Layer
         </div>
-        <div className="w-px h-6 bg-border" />
+        <div className="w-px h-8 bg-gradient-to-b from-border to-accent/30" />
 
         {/* DisplayXR Runtime */}
-        <div className="bg-accent/10 border border-accent/30 rounded-lg px-10 py-3 text-accent font-semibold">
+        <div className="bg-accent/15 border border-accent/40 rounded-lg px-10 py-3.5 text-accent font-semibold shadow-[0_0_24px_rgba(59,130,246,0.15)]">
           DisplayXR Runtime
         </div>
-        <div className="w-px h-6 bg-border" />
+        <div className="w-px h-8 bg-gradient-to-b from-accent/30 to-border" />
 
         {/* Native Compositors */}
-        <div className="flex gap-2 flex-wrap justify-center">
+        <div className="flex gap-2.5 flex-wrap justify-center">
           {["D3D11", "D3D12", "Vulkan", "Metal", "OpenGL"].map((api) => (
             <div
               key={api}
-              className="bg-surface border border-border rounded px-4 py-2 text-text-secondary text-xs font-medium"
+              className="bg-surface border border-border rounded-md px-4 py-2.5 text-text-secondary text-xs font-medium hover:border-accent/30 hover:text-accent transition-colors"
             >
               {api}
             </div>
           ))}
         </div>
-        <div className="w-px h-6 bg-border" />
+        <div className="w-px h-8 bg-gradient-to-b from-border to-warning/30" />
 
         {/* Display Processor */}
-        <div className="bg-warning/10 border border-warning/30 rounded-lg px-8 py-3 text-warning font-semibold text-xs">
+        <div className="bg-warning/10 border border-warning/30 rounded-lg px-8 py-3.5 text-warning font-semibold text-xs shadow-[0_0_16px_rgba(234,179,8,0.08)]">
           Display Processor (vendor-specific)
         </div>
-        <div className="w-px h-6 bg-border" />
+        <div className="w-px h-8 bg-gradient-to-b from-warning/30 to-success/30" />
 
         {/* 3D Display */}
-        <div className="bg-success/10 border border-success/30 rounded-lg px-8 py-3 text-success font-semibold">
+        <div className="bg-success/10 border border-success/30 rounded-lg px-8 py-3.5 text-success font-semibold shadow-[0_0_16px_rgba(34,197,94,0.1)]">
           3D Display
         </div>
       </div>

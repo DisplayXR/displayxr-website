@@ -13,6 +13,7 @@
   --color-warning: #eab308;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --font-display: var(--font-dm-serif-display), Georgia, serif;
 }
 
 body {
@@ -39,4 +40,152 @@ html {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-text-secondary);
+}
+
+/* Section divider gradient */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-border) 20%,
+    var(--color-accent) 50%,
+    var(--color-border) 80%,
+    transparent
+  );
+  opacity: 0.5;
+}
+
+/* Glow effects */
+.glow-accent {
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.15),
+    0 0 80px rgba(59, 130, 246, 0.05);
+}
+
+.glow-accent-sm {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+/* Animated grid background */
+@keyframes grid-fade {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.hero-grid {
+  background-image: linear-gradient(
+      rgba(59, 130, 246, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: grid-fade 8s ease-in-out infinite;
+}
+
+/* Shipping badge pulse */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.badge-pulse::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 6px;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.badge-pulse-green::before {
+  background-color: var(--color-success);
+}
+
+.badge-pulse-yellow::before {
+  background-color: var(--color-warning);
+}
+
+/* Card hover glow */
+.card-interactive {
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.card-interactive:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 24px rgba(59, 130, 246, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Table row highlight */
+.table-row-interactive {
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+.table-row-interactive:hover {
+  background-color: rgba(59, 130, 246, 0.04);
+}
+
+/* Hero entrance animations */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-animate {
+  animation: hero-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.hero-animate-delay-1 {
+  animation-delay: 0.15s;
+}
+
+.hero-animate-delay-2 {
+  animation-delay: 0.3s;
+}
+
+.hero-animate-delay-3 {
+  animation-delay: 0.45s;
+}
+
+/* Gradient border effect for CTA */
+.gradient-border {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.3),
+    rgba(59, 130, 246, 0.05) 40%,
+    rgba(59, 130, 246, 0.05) 60%,
+    rgba(59, 130, 246, 0.2)
+  );
+  z-index: -1;
+  border-radius: 16px;
 }

@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/Card";
+import { AnimateIn } from "@/components/ui/AnimateIn";
 import { GitHubIcon } from "@/components/ui/GitHubIcon";
 import { ecosystemRepos } from "@/lib/data/ecosystem";
 
@@ -20,16 +21,19 @@ export function EcosystemMap() {
 
   return (
     <section className="mx-auto max-w-[1200px] px-6 md:px-12 py-24">
-      <h2 className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
-        The Ecosystem
-      </h2>
-      <h3 className="text-3xl md:text-4xl font-semibold tracking-tight text-text-primary mb-12 max-w-2xl">
-        One project, many repos
-      </h3>
+      <div className="section-divider mb-24" />
+      <AnimateIn>
+        <h2 className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
+          The Ecosystem
+        </h2>
+        <h3 className="text-3xl md:text-4xl font-display tracking-tight text-text-primary mb-12 max-w-2xl">
+          One project, many repos
+        </h3>
+      </AnimateIn>
 
       <div className="space-y-10">
-        {grouped.map((group) => (
-          <div key={group.category}>
+        {grouped.map((group, gi) => (
+          <AnimateIn key={group.category} delay={gi * 100}>
             <h4 className="text-xs font-medium text-text-secondary uppercase tracking-wider mb-4">
               {group.label}
             </h4>
@@ -53,7 +57,7 @@ export function EcosystemMap() {
                 </Card>
               ))}
             </div>
-          </div>
+          </AnimateIn>
         ))}
       </div>
     </section>

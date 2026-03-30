@@ -16,6 +16,14 @@ const statusLabels: Record<Status, string> = {
   planned: "Planned",
 };
 
+const pulseClass: Record<Status, string> = {
+  shipping: "badge-pulse badge-pulse-green",
+  active: "badge-pulse badge-pulse-green",
+  early: "badge-pulse badge-pulse-yellow",
+  experimental: "badge-pulse badge-pulse-yellow",
+  planned: "",
+};
+
 interface BadgeProps {
   status: Status;
 }
@@ -23,7 +31,7 @@ interface BadgeProps {
 export function Badge({ status }: BadgeProps) {
   return (
     <span
-      className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border ${statusColors[status]}`}
+      className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border ${statusColors[status]} ${pulseClass[status]}`}
     >
       {statusLabels[status]}
     </span>

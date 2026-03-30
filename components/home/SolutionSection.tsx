@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/Card";
+import { AnimateIn } from "@/components/ui/AnimateIn";
 import {
   Cpu,
   FileCode2,
@@ -43,19 +44,24 @@ const features = [
 export function SolutionSection() {
   return (
     <section className="mx-auto max-w-[1200px] px-6 md:px-12 py-24">
-      <h2 className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
-        What DisplayXR Provides
-      </h2>
-      <h3 className="text-3xl md:text-4xl font-semibold tracking-tight text-text-primary mb-12 max-w-2xl">
-        A practical stack for tracked spatial displays
-      </h3>
+      <div className="section-divider mb-24" />
+      <AnimateIn>
+        <h2 className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
+          What DisplayXR Provides
+        </h2>
+        <h3 className="text-3xl md:text-4xl font-display tracking-tight text-text-primary mb-12 max-w-2xl">
+          A practical stack for tracked spatial displays
+        </h3>
+      </AnimateIn>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {features.map((feature) => (
-          <Card key={feature.title} title={feature.title} icon={feature.icon}>
-            <p className="text-sm text-text-secondary leading-relaxed">
-              {feature.description}
-            </p>
-          </Card>
+        {features.map((feature, i) => (
+          <AnimateIn key={feature.title} delay={i * 80}>
+            <Card title={feature.title} icon={feature.icon}>
+              <p className="text-sm text-text-secondary leading-relaxed">
+                {feature.description}
+              </p>
+            </Card>
+          </AnimateIn>
         ))}
       </div>
     </section>

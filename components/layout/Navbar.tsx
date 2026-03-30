@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { GitHubIcon } from "@/components/ui/GitHubIcon";
 import { NAV_ITEMS, GITHUB_ORG_URL } from "@/lib/constants";
@@ -11,19 +11,32 @@ import { NAV_ITEMS, GITHUB_ORG_URL } from "@/lib/constants";
 export function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
+    <nav
+      className={`sticky top-0 z-50 border-b transition-all duration-300 ${
+        scrolled
+          ? "border-border bg-background/90 backdrop-blur-lg shadow-[0_1px_12px_rgba(0,0,0,0.4)]"
+          : "border-transparent bg-background/60 backdrop-blur-md"
+      }`}
+    >
       <div className="mx-auto max-w-[1200px] px-6 md:px-12">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5">
+          <Link href="/" className="flex items-center gap-2.5 group">
             <Image
               src="/logos/displayxr-logo.png"
               alt="DisplayXR"
               width={32}
               height={32}
-              className="rounded"
+              className="rounded transition-transform duration-200 group-hover:scale-105"
             />
             <span className="text-lg font-semibold text-text-primary">
               DisplayXR
@@ -38,13 +51,16 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-3 py-2 rounded-md text-sm transition-colors ${
+                  className={`px-3 py-2 rounded-md text-sm transition-colors relative ${
                     isActive
                       ? "text-accent"
                       : "text-text-secondary hover:text-text-primary"
                   }`}
                 >
                   {item.label}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-3 right-3 h-px bg-accent" />
+                  )}
                 </Link>
               );
             })}
