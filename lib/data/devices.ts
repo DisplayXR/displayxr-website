@@ -71,6 +71,13 @@ export const devices: Device[] = [
     status: "shipping",
     vendorId: "leia",
   },
+  {
+    name: "Barco Eonis 3D",
+    oem: "Barco",
+    formFactor: "monitor",
+    status: "shipping",
+    vendorId: "leia",
+  },
 
   // Simulation
   {
