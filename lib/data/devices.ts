@@ -32,7 +32,7 @@ export const devices: Device[] = [
   {
     name: "Samsung Odyssey 3D",
     oem: "Samsung",
-    formFactor: "laptop",
+    formFactor: "monitor",
     status: "shipping",
     vendorId: "leia",
   },
