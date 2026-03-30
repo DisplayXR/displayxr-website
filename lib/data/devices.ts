@@ -19,7 +19,7 @@ export const vendors: DisplayVendor[] = [
   {
     id: "leia",
     name: "Leia Inc.",
-    description: "Glasses-free 3D display technology",
+    description: "Tracked stereo 3D display technology",
   },
   {
     id: "sim_display",
