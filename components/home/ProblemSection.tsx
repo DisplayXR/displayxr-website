@@ -16,7 +16,7 @@ export function ProblemSection() {
             <p>
               OpenXR standardized how applications talk to headsets and
               controllers. But a growing category of spatial displays — tracked
-              glasses-free 3D monitors, laptops, and related systems — has no
+              spatial display monitors, laptops, and related systems — has no
               equivalent.
             </p>
             <p>

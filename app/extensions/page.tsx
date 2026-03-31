@@ -60,7 +60,7 @@ export default function ExtensionsPage() {
           </h2>
           <p className="text-text-secondary leading-relaxed mb-4">
             Standard OpenXR was designed for headsets and controllers. Tracked
-            glasses-free 3D displays have different requirements: they need to
+            spatial displays have different requirements: they need to
             communicate display geometry, support window-hosted compositing, and
             provide spatial display models that don&apos;t map to existing OpenXR
             concepts.

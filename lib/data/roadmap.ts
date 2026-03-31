@@ -19,7 +19,7 @@ export const roadmapSections: RoadmapSection[] = [
       {
         title: "Monado fork focused on spatial displays",
         description:
-          "Forked from the Monado OpenXR runtime, removed VR and headset-specific code, and refocused the codebase entirely on tracked glasses-free 3D displays",
+          "Forked from the Monado OpenXR runtime, removed VR and headset-specific code, and refocused the codebase entirely on spatial displays",
       },
       {
         title: "Native compositors for every major graphics API",

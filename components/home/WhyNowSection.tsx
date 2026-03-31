@@ -16,7 +16,7 @@ export function WhyNowSection() {
             <p>
               Spatial computing is still largely framed around headsets. But
               spatial displays are becoming a real category — tracked
-              glasses-free 3D monitors, laptops, and related display systems are
+              spatial display monitors, laptops, and related display systems are
               shipping from multiple vendors.
             </p>
             <p>

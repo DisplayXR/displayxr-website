@@ -31,7 +31,7 @@ const demos = [
   {
     title: "Unity Sample Scene",
     description:
-      "A Unity sample scene demonstrating the DisplayXR Unity plugin (UPM). Shows how to set up a Unity project targeting glasses-free 3D displays.",
+      "A Unity sample scene demonstrating the DisplayXR Unity plugin (UPM). Shows how to set up a Unity project targeting spatial displays.",
     status: "active" as const,
     icon: <Monitor size={20} />,
     tags: ["Unity", "UPM"],

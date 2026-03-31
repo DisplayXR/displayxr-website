@@ -43,8 +43,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm text-text-secondary leading-relaxed">
-              An open runtime and extension stack for tracked glasses-free 3D
-              displays.
+              An open runtime and extension stack for spatial displays.
             </p>
           </div>
 

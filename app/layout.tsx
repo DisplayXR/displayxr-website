@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     template: "%s | DisplayXR",
   },
   description:
-    "An open runtime and extension stack for tracked glasses-free 3D displays. Build portable spatial display applications across engines, graphics APIs, and vendor hardware.",
+    "An open runtime and extension stack for spatial displays, including tracked stereo and multiview lightfield 3D displays. Build portable spatial display applications across engines, graphics APIs, and vendor hardware.",
   openGraph: {
     title: "DisplayXR",
     description:
-      "OpenXR for glasses-free 3D displays. An open runtime and extension stack for tracked spatial displays.",
+      "OpenXR for spatial displays. An open runtime and extension stack for tracked stereo and multiview 3D displays.",
     url: "https://displayxr.dev",
     siteName: "DisplayXR",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpeg",
         width: 1200,
         height: 630,
-        alt: "DisplayXR — OpenXR for glasses-free 3D displays",
+        alt: "DisplayXR — OpenXR for Spatial Displays",
       },
     ],
   },
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "DisplayXR",
     description:
-      "OpenXR for glasses-free 3D displays. An open runtime and extension stack for tracked spatial displays.",
+      "OpenXR for spatial displays. An open runtime and extension stack for tracked stereo and multiview 3D displays.",
     images: ["/og-image.jpeg"],
   },
 };

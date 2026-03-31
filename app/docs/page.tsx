@@ -37,7 +37,7 @@ const docSections = [
   {
     title: "App Developer Guide",
     description:
-      "Build OpenXR applications targeting glasses-free 3D displays. Covers all four application classes.",
+      "Build OpenXR applications targeting spatial displays. Covers all four application classes.",
     icon: <Code2 size={20} />,
     href: REPO_URLS.demos,
   },

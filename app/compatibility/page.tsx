@@ -29,7 +29,7 @@ export default function CompatibilityPage() {
             Compatible Devices
           </h2>
           <p className="text-sm text-text-secondary mb-6">
-            Devices with tracked glasses-free 3D displays supported by
+            Devices with spatial displays supported by
             DisplayXR, grouped by display technology vendor.
           </p>
           <div className="space-y-6">
