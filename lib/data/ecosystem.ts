@@ -1,9 +1,12 @@
+import type { Status } from "./compatibility";
+
 export interface EcosystemRepo {
   name: string;
   repo: string;
   description: string;
   url: string;
   category: "core" | "engines" | "tools" | "apps";
+  status?: Status;
 }
 
 export const ecosystemRepos: EcosystemRepo[] = [
@@ -27,9 +30,10 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-unity",
     repo: "DisplayXR/displayxr-unity",
     description:
-      "Unity engine plugin (UPM package) with sample scene and CI integration.",
+      "Unity engine plugin (UPM package) with sample scene.",
     url: "https://github.com/DisplayXR/displayxr-unity",
     category: "engines",
+    status: "early",
   },
   {
     name: "displayxr-unreal",
@@ -37,6 +41,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     description: "Unreal Engine plugin for DisplayXR integration.",
     url: "https://github.com/DisplayXR/displayxr-unreal",
     category: "engines",
+    status: "planned",
   },
   {
     name: "displayxr-demos",
@@ -61,5 +66,6 @@ export const ecosystemRepos: EcosystemRepo[] = [
       "Spatial shell / 3D window manager — binaries, documentation, and issue tracking.",
     url: "https://github.com/DisplayXR/displayxr-shell-releases",
     category: "apps",
+    status: "early",
   },
 ];

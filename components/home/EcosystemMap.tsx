@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/Card";
+import { Badge } from "@/components/ui/Badge";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { GitHubIcon } from "@/components/ui/GitHubIcon";
 import { ecosystemRepos } from "@/lib/data/ecosystem";
@@ -26,9 +27,13 @@ export function EcosystemMap() {
         <h2 className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
           The Ecosystem
         </h2>
-        <h3 className="text-3xl md:text-4xl font-display tracking-tight text-text-primary mb-12 max-w-2xl">
-          One project, many repos
+        <h3 className="text-3xl md:text-4xl font-display tracking-tight text-text-primary mb-4 max-w-2xl">
+          More than a runtime
         </h3>
+        <p className="text-text-secondary leading-relaxed mb-12 max-w-2xl">
+          DisplayXR is developing as a full ecosystem — runtime, extensions,
+          engine plugins, projection math, demos, and a spatial desktop shell.
+        </p>
       </AnimateIn>
 
       <div className="space-y-10">
@@ -41,10 +46,13 @@ export function EcosystemMap() {
               {group.repos.map((repo) => (
                 <Card key={repo.name} href={repo.url}>
                   <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <h5 className="text-sm font-semibold text-text-primary font-mono mb-1.5">
-                        {repo.name}
-                      </h5>
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+                        <h5 className="text-sm font-semibold text-text-primary font-mono">
+                          {repo.name}
+                        </h5>
+                        {repo.status && <Badge status={repo.status} />}
+                      </div>
                       <p className="text-sm text-text-secondary leading-relaxed">
                         {repo.description}
                       </p>
