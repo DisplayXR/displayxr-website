@@ -6,6 +6,7 @@ import {
   Layers,
   Gamepad2,
   MonitorSpeaker,
+  AppWindow,
 } from "lucide-react";
 
 const features = [
@@ -38,6 +39,12 @@ const features = [
     description:
       "A clean boundary where vendor-specific processing (weaving, interlacing, calibration) plugs in without touching app code.",
     icon: <MonitorSpeaker size={20} />,
+  },
+  {
+    title: "Spatial Desktop Shell",
+    description:
+      "A 3D window manager that places OpenXR apps and regular desktop windows in a shared spatial workspace with head-tracked parallax.",
+    icon: <AppWindow size={20} />,
   },
 ];
 

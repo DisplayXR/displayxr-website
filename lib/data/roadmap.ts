@@ -29,7 +29,7 @@ export const roadmapSections: RoadmapSection[] = [
       {
         title: "Custom OpenXR extensions",
         description:
-          "Extensions for querying spatial display geometry and binding compositor output to application windows on both Windows and macOS",
+          "Extensions for querying spatial display geometry, rendering modes, eye tracking, and binding compositor output to application windows on both Windows and macOS",
       },
       {
         title: "Unity plugin with sample scene",
@@ -41,6 +41,26 @@ export const roadmapSections: RoadmapSection[] = [
         description:
           "Apps built against the standard OpenXR API work with DisplayXR without modification",
       },
+      {
+        title: "Multi-app compositing",
+        description:
+          "Runtime support for compositing multiple applications into a single spatial scene — D3D11, D3D12, Vulkan, and OpenGL apps running simultaneously",
+      },
+      {
+        title: "Spatial desktop shell",
+        description:
+          "A 3D window manager built on the runtime — spatial windowing, window chrome, layout presets, Z-depth, rotation, persistence, and 8 layout modes including Theater, Carousel, and Expose",
+      },
+      {
+        title: "2D app support",
+        description:
+          "Standard desktop applications captured as flat panels in 3D space via Windows.Graphics.Capture, with auto-adoption of visible windows and head-tracked parallax",
+      },
+      {
+        title: "Focus-adaptive rendering",
+        description:
+          "Display automatically switches between 2D and 3D mode based on the focused app type — 2D apps get full-resolution flat rendering, 3D apps get stereo with interlacing",
+      },
     ],
   },
   {
@@ -48,22 +68,19 @@ export const roadmapSections: RoadmapSection[] = [
     label: "Now",
     items: [
       {
-        title: "Runtime test coverage",
+        title: "Shell input forwarding",
         description:
-          "Expanding automated tests across compositors and session lifecycle",
+          "Keyboard and mouse input forwarding to captured 2D windows, including modern WinUI/XAML apps",
       },
       {
-        title: "Extension API stabilization",
+        title: "Graceful exit and app lifecycle",
         description:
-          "Finalizing extension interfaces so developers can build against stable APIs",
+          "Restore captured windows to original desktop positions on shell exit, with seamless transition between standalone and shell modes",
       },
       {
-        title: "Display processor interface",
+        title: "App launcher and system tray",
         description:
-          "Standardizing how vendor-specific display processing plugs into the runtime",
-      },
-      {
-        title: "Docs and developer onboarding",
+          "Launch new apps from within the spatial environment, with registered apps config and system tray integration",
       },
     ],
   },
@@ -72,24 +89,14 @@ export const roadmapSections: RoadmapSection[] = [
     label: "Next",
     items: [
       {
-        title: "Multi-app compositing in the runtime",
-        description:
-          "Open-source runtime support for compositing multiple applications into a single spatial scene on one display",
-      },
-      {
-        title: "Spatial desktop shell",
-        description:
-          "A closed-source 3D window manager built on top of the open runtime — manages window layout, focus, and app lifecycle",
-      },
-      {
-        title: "2D app support",
-        description:
-          "Run standard desktop applications as flat panels in 3D space via OS window capture",
-      },
-      {
-        title: "3D screenshot",
+        title: "3D screenshot and capture",
         description:
           "Capture spatial content before display-specific processing",
+      },
+      {
+        title: "macOS spatial shell",
+        description:
+          "Port the multi-compositor and shell to macOS via Metal",
       },
       {
         title: "Expand demos and engine integrations",

@@ -63,9 +63,9 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-shell-releases",
     repo: "DisplayXR/displayxr-shell-releases",
     description:
-      "Spatial shell / 3D window manager — binaries, documentation, and issue tracking.",
+      "Spatial desktop shell — 3D window manager with multi-app compositing, 2D window capture, dynamic layouts, and focus-adaptive rendering.",
     url: "https://github.com/DisplayXR/displayxr-shell-releases",
     category: "apps",
-    status: "early",
+    status: "active",
   },
 ];

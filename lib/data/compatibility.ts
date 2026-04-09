@@ -41,13 +41,12 @@ export const enginePlugins: EnginePlugin[] = [
 ];
 
 export const hardwareBackends: HardwareBackend[] = [
-  { backend: "Leia SR SDK (LeiaSR displays)", status: "shipping", notes: "D3D11 weaver, eye tracking" },
+  { backend: "Leia SR SDK (LeiaSR displays)", status: "shipping", notes: "D3D11/D3D12/Vulkan weavers, eye tracking" },
   { backend: "sim_display (no hardware)", status: "shipping", notes: "Simulation mode for development" },
 ];
 
 export const appClasses: AppClass[] = [
   { className: "Handle", description: "App provides window (HWND/NSView)", status: "shipping" },
   { className: "Texture", description: "App provides offscreen textures", status: "shipping" },
-  { className: "Hosted", description: "Runtime hosts everything", status: "shipping" },
-  { className: "IPC", description: "Out-of-process via service", status: "shipping" },
+  { className: "Hosted", description: "Runtime hosts everything (standard OpenXR / WebXR)", status: "shipping" },
 ];
