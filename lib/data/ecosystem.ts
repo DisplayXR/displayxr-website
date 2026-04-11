@@ -30,10 +30,19 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-unity",
     repo: "DisplayXR/displayxr-unity",
     description:
-      "Unity engine plugin (UPM package) with sample scene.",
+      "Unity engine plugin (UPM package) with eye-tracked stereo rendering, sample scenes, and standalone editor preview.",
     url: "https://github.com/DisplayXR/displayxr-unity",
     category: "engines",
-    status: "early",
+    status: "active",
+  },
+  {
+    name: "displayxr-unity-test",
+    repo: "DisplayXR/displayxr-unity-test",
+    description:
+      "Ready-to-open Unity 6 test project for the DisplayXR plugin — clone, open, and hit Play.",
+    url: "https://github.com/DisplayXR/displayxr-unity-test",
+    category: "engines",
+    status: "active",
   },
   {
     name: "displayxr-unreal",
