@@ -121,6 +121,11 @@ export const roadmapSections: RoadmapSection[] = [
           "Extend the spatial desktop across multiple tracked displays, starting with a single machine",
       },
       {
+        title: "AI-native runtime control (MCP)",
+        description:
+          "Expose live spatial state and control to AI agents over the Model Context Protocol — let developers debug stereo issues conversationally and let users arrange windows and capture 3D clips by voice. Natural language is a better input modality than a mouse for 6-DOF positioning, and numerical ground truth is a better debugger than eyeballing disparity",
+      },
+      {
         title: "Broader ecosystem and standardization",
       },
     ],
