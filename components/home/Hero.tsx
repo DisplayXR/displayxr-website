@@ -1,17 +1,20 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { GITHUB_ORG_URL } from "@/lib/constants";
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      {/* Hero background image */}
-      <Image
-        src="/diagrams/hero-v2-display.jpeg"
-        alt=""
-        fill
-        className="object-cover opacity-50"
-        priority
+      {/* Hero background animation (ping-pong palindrome loop) */}
+      <video
+        className="absolute inset-0 h-full w-full object-cover opacity-50"
+        src="/videos/hero-loop.mp4"
+        poster="/videos/hero-loop-poster.jpg"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden
       />
 
       {/* Animated grid overlay */}
