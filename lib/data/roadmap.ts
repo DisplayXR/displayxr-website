@@ -61,6 +61,21 @@ export const roadmapSections: RoadmapSection[] = [
         description:
           "Display automatically switches between 2D and 3D mode based on the focused app type — 2D apps get full-resolution flat rendering, 3D apps get stereo with interlacing",
       },
+      {
+        title: "App launcher, graceful exit, and lifecycle",
+        description:
+          "Spatial app launcher with 3D icon tiles, system tray integration, registered apps config. Graceful exit restores captured windows to original desktop positions",
+      },
+      {
+        title: "3D screenshot and capture",
+        description:
+          "Capture stereo atlas frames via hotkey (Ctrl+Shift+C) or IPC — full-resolution SBS output before display-specific processing, with JSON sidecar metadata",
+      },
+      {
+        title: "AI-native runtime control (MCP)",
+        description:
+          "Live spatial state and control exposed to AI agents over the Model Context Protocol — introspect stereo projection, capture frames, arrange windows in 6-DOF, save/load workspaces, all via natural language",
+      },
     ],
   },
   {
@@ -73,14 +88,12 @@ export const roadmapSections: RoadmapSection[] = [
           "Keyboard and mouse input forwarding to captured 2D windows, including modern WinUI/XAML apps",
       },
       {
-        title: "Graceful exit and app lifecycle",
+        title: "macOS spatial shell",
         description:
-          "Restore captured windows to original desktop positions on shell exit, with seamless transition between standalone and shell modes",
+          "Port the multi-compositor and shell to macOS via Metal",
       },
       {
-        title: "App launcher and system tray",
-        description:
-          "Launch new apps from within the spatial environment, with registered apps config and system tray integration",
+        title: "Expand demos and engine integrations",
       },
     ],
   },
@@ -89,20 +102,17 @@ export const roadmapSections: RoadmapSection[] = [
     label: "Next",
     items: [
       {
-        title: "3D screenshot and capture",
+        title: "3D capture pipeline",
         description:
-          "Capture spatial content before display-specific processing",
-      },
-      {
-        title: "macOS spatial shell",
-        description:
-          "Port the multi-compositor and shell to macOS via Metal",
-      },
-      {
-        title: "Expand demos and engine integrations",
+          "Session recording, spatial replay, and dataset generation from live spatial content",
       },
       {
         title: "Unreal Engine plugin",
+      },
+      {
+        title: "Multi-display workspaces",
+        description:
+          "Extend the spatial desktop across multiple tracked displays, starting with a single machine",
       },
     ],
   },
@@ -110,21 +120,6 @@ export const roadmapSections: RoadmapSection[] = [
     phase: "later",
     label: "Later",
     items: [
-      {
-        title: "3D capture pipeline",
-        description:
-          "Session recording, spatial replay, and dataset generation from live spatial content",
-      },
-      {
-        title: "Multi-display workspaces",
-        description:
-          "Extend the spatial desktop across multiple tracked displays, starting with a single machine",
-      },
-      {
-        title: "AI-native runtime control (MCP)",
-        description:
-          "Expose live spatial state and control to AI agents over the Model Context Protocol — let developers debug stereo issues conversationally and let users arrange windows and capture 3D clips by voice. Natural language is a better input modality than a mouse for 6-DOF positioning, and numerical ground truth is a better debugger than eyeballing disparity",
-      },
       {
         title: "Broader ecosystem and standardization",
       },
