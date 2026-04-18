@@ -134,6 +134,92 @@ export default function ArchitecturePage() {
           </div>
         </section>
 
+        {/* Shipping Components */}
+        <section>
+          <h2 className="text-2xl font-semibold tracking-tight text-text-primary mb-4">
+            Shipping Components
+          </h2>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            A DisplayXR install delivers four cooperating pieces. Most
+            applications only interact with the first; the others come into play
+            when apps are sandboxed, when the shell is running, or when the web
+            is the target surface.
+          </p>
+          <div className="bg-surface border border-border rounded-lg p-6 space-y-3">
+            <div className="flex items-start gap-3">
+              <span className="text-accent font-mono text-sm shrink-0 w-28">Runtime</span>
+              <span className="text-text-secondary text-sm">
+                OpenXR API implementation. Loaded in-process by every OpenXR
+                application.
+              </span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-accent font-mono text-sm shrink-0 w-28">Service</span>
+              <span className="text-text-secondary text-sm">
+                IPC server and multi-compositor. Hosts the display for sandboxed
+                apps and multi-app shell sessions. Starts at login and sits in
+                the system tray.
+              </span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-accent font-mono text-sm shrink-0 w-28">Shell</span>
+              <span className="text-text-secondary text-sm">
+                Spatial window manager. Arranges 3D and 2D apps in a shared 3D
+                scene with window chrome, layout presets, and an app launcher.
+              </span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-accent font-mono text-sm shrink-0 w-28">WebXR&nbsp;Bridge</span>
+              <span className="text-text-secondary text-sm">
+                Metadata sideband for Chrome. Gives WebXR pages access to
+                display info, rendering modes, and eye poses that Chrome&apos;s
+                native WebXR path doesn&apos;t expose.
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* Two Compositor Paths */}
+        <section>
+          <h2 className="text-2xl font-semibold tracking-tight text-text-primary mb-4">
+            Two Compositor Paths
+          </h2>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            The runtime chooses at session creation whether to composite inside
+            the application process or delegate to the service. This decision is
+            transparent to the application — it just uses OpenXR as normal.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-surface border border-border rounded-lg p-6">
+              <h3 className="text-sm font-semibold text-accent mb-2">
+                In-process (native)
+              </h3>
+              <p className="text-sm text-text-secondary leading-relaxed">
+                The app, compositor, and display processor all live in one
+                process, on the app&apos;s own GPU device. Zero IPC overhead.
+                Used by most native applications running outside a sandbox.
+              </p>
+            </div>
+            <div className="bg-surface border border-border rounded-lg p-6">
+              <h3 className="text-sm font-semibold text-warning mb-2">
+                IPC (service)
+              </h3>
+              <p className="text-sm text-text-secondary leading-relaxed">
+                The app connects to the service over a named pipe. Swapchain
+                textures are shared cross-process via OS primitives. The service
+                composites all connected clients into a single output. Used by
+                sandboxed browsers (Chrome WebXR) and apps launched by the
+                shell.
+              </p>
+            </div>
+          </div>
+          <p className="text-text-secondary leading-relaxed mt-4">
+            The runtime picks IPC automatically when it detects a sandboxed
+            process (Chrome AppContainer, UWP) or a shell-managed session;
+            otherwise it composites in-process.
+          </p>
+        </section>
+
         {/* Per-Graphics-API Design */}
         <section>
           <h2 className="text-2xl font-semibold tracking-tight text-text-primary mb-4">
@@ -206,9 +292,21 @@ export default function ArchitecturePage() {
         </section>
 
         {/* Source link */}
-        <div className="pt-8 border-t border-border">
+        <div className="pt-8 border-t border-border space-y-2">
           <p className="text-sm text-text-secondary">
-            Explore the runtime source code on{" "}
+            For a deeper look at the in-process vs service compositor split, see{" "}
+            <a
+              href={`${REPO_URLS.runtime}/blob/main/docs/architecture/in-process-vs-service.md`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:text-accent-hover underline underline-offset-2"
+            >
+              in-process-vs-service.md
+            </a>
+            {" "}in the runtime repo.
+          </p>
+          <p className="text-sm text-text-secondary">
+            Explore the full runtime source code on{" "}
             <a
               href={REPO_URLS.runtime}
               target="_blank"
