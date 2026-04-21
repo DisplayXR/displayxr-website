@@ -37,6 +37,11 @@ export const roadmapSections: RoadmapSection[] = [
           "UPM package for Unity with a working sample scene to get started quickly",
       },
       {
+        title: "Unreal Engine plugin (beta)",
+        description:
+          "Initial release of the Unreal plugin for UE 5.3+ on Windows, macOS, and Android — eye-tracked Kooima stereo, camera- and display-centric rigs, Blueprint components, material expressions, and zero-copy atlas handoff",
+      },
+      {
         title: "Standard OpenXR app compatibility",
         description:
           "Apps built against the standard OpenXR API work with DisplayXR without modification",
@@ -76,6 +81,11 @@ export const roadmapSections: RoadmapSection[] = [
         description:
           "Live spatial state and control exposed to AI agents over the Model Context Protocol — introspect stereo projection, capture frames, arrange windows in 6-DOF, save/load workspaces, all via natural language",
       },
+      {
+        title: "WebXR Bridge",
+        description:
+          "Chrome extension plus local bridge giving browser WebXR apps the full DisplayXR surface — display info, rendering mode switching, tracked eye poses, HUD overlay, and input forwarding. Ships with a three.js reference sample and a standalone minimal starter; falls back gracefully to standard WebXR when the extension isn't installed",
+      },
     ],
   },
   {
@@ -105,9 +115,6 @@ export const roadmapSections: RoadmapSection[] = [
         title: "3D capture pipeline",
         description:
           "Session recording, spatial replay, and dataset generation from live spatial content",
-      },
-      {
-        title: "Unreal Engine plugin",
       },
       {
         title: "Multi-display workspaces",

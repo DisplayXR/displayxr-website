@@ -171,9 +171,13 @@ export default function ArchitecturePage() {
             <div className="flex items-start gap-3">
               <span className="text-accent font-mono text-sm shrink-0 w-28">WebXR&nbsp;Bridge</span>
               <span className="text-text-secondary text-sm">
-                Metadata sideband for Chrome. Gives WebXR pages access to
-                display info, rendering modes, and eye poses that Chrome&apos;s
-                native WebXR path doesn&apos;t expose.
+                Chrome extension plus a local bridge that gives WebXR pages the
+                full DisplayXR surface — display geometry, rendering mode
+                switching, tracked eye poses, HUD overlay, and input forwarding
+                — on top of Chrome&apos;s native WebXR session. Ships with a
+                three.js reference sample and a standalone minimal starter, and
+                falls back gracefully to standard WebXR when the extension
+                isn&apos;t installed.
               </span>
             </div>
           </div>

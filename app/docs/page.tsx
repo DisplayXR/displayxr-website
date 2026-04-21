@@ -44,7 +44,7 @@ const docSections = [
   {
     title: "Engine Integrations",
     description:
-      "Unity plugin setup (UPM), sample scenes, and Unreal Engine integration status.",
+      "Unity plugin setup (UPM), sample scenes, and Unreal plugin (beta) setup for UE 5.3+.",
     icon: <Gamepad2 size={20} />,
     href: REPO_URLS.unity,
   },

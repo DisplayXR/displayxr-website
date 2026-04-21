@@ -3,6 +3,7 @@ import type { Status } from "@/lib/data/compatibility";
 const statusColors: Record<Status, string> = {
   shipping: "bg-success/15 text-success border-success/30",
   active: "bg-success/15 text-success border-success/30",
+  beta: "bg-accent/15 text-accent border-accent/30",
   early: "bg-warning/15 text-warning border-warning/30",
   experimental: "bg-warning/15 text-warning border-warning/30",
   planned: "bg-text-secondary/15 text-text-secondary border-text-secondary/30",
@@ -11,6 +12,7 @@ const statusColors: Record<Status, string> = {
 const statusLabels: Record<Status, string> = {
   shipping: "Shipping",
   active: "Active",
+  beta: "Beta",
   early: "Early",
   experimental: "Experimental",
   planned: "Planned",
@@ -19,6 +21,7 @@ const statusLabels: Record<Status, string> = {
 const pulseClass: Record<Status, string> = {
   shipping: "badge-pulse badge-pulse-green",
   active: "badge-pulse badge-pulse-green",
+  beta: "badge-pulse badge-pulse-blue",
   early: "badge-pulse badge-pulse-yellow",
   experimental: "badge-pulse badge-pulse-yellow",
   planned: "",

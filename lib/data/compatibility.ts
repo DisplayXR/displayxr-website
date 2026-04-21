@@ -1,4 +1,4 @@
-export type Status = "shipping" | "active" | "early" | "experimental" | "planned";
+export type Status = "shipping" | "active" | "beta" | "early" | "experimental" | "planned";
 
 export interface RuntimeCompositor {
   platform: string;
@@ -37,7 +37,7 @@ export const runtimeCompositors: RuntimeCompositor[] = [
 
 export const enginePlugins: EnginePlugin[] = [
   { engine: "Unity", status: "active", notes: "UPM package, sample scene, CI" },
-  { engine: "Unreal", status: "early", notes: "Placeholder — not production-ready" },
+  { engine: "Unreal", status: "beta", notes: "UE 5.3+, Win/macOS/Android, Blueprint components, Kooima eye-tracked stereo" },
 ];
 
 export const hardwareBackends: HardwareBackend[] = [

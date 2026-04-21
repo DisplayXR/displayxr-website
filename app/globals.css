@@ -116,6 +116,10 @@ html {
   background-color: var(--color-warning);
 }
 
+.badge-pulse-blue::before {
+  background-color: var(--color-accent);
+}
+
 /* Card hover glow */
 .card-interactive {
   transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;

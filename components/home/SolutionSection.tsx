@@ -31,7 +31,7 @@ const features = [
   {
     title: "Engine Integrations",
     description:
-      "Unity plugin shipping with UPM support. Unreal integration in progress. Standard engine workflows, no custom forks.",
+      "Unity plugin shipping with UPM support. Unreal plugin in beta (UE 5.3+). Standard engine workflows, no custom forks.",
     icon: <Gamepad2 size={20} />,
   },
   {

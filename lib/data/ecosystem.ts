@@ -47,10 +47,11 @@ export const ecosystemRepos: EcosystemRepo[] = [
   {
     name: "displayxr-unreal",
     repo: "DisplayXR/displayxr-unreal",
-    description: "Unreal Engine plugin for DisplayXR integration.",
+    description:
+      "Unreal Engine plugin (UE 5.3+) with eye-tracked Kooima stereo, camera- and display-centric rigs, Blueprint components, material expression nodes, and zero-copy atlas handoff. Windows, macOS, Android.",
     url: "https://github.com/DisplayXR/displayxr-unreal",
     category: "engines",
-    status: "planned",
+    status: "beta",
   },
   {
     name: "displayxr-demos",
