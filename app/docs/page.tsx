@@ -39,7 +39,7 @@ const docSections = [
     description:
       "Build OpenXR applications targeting spatial displays. Covers all four application classes.",
     icon: <Code2 size={20} />,
-    href: REPO_URLS.demos,
+    href: `${REPO_URLS.runtime}/blob/main/docs/getting-started/app-classes.md`,
   },
   {
     title: "Engine Integrations",

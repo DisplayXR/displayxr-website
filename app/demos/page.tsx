@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { REPO_URLS } from "@/lib/constants";
 import { Monitor, Boxes, Sparkles, Eye } from "lucide-react";
+import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "Demos",
@@ -11,7 +12,16 @@ export const metadata: Metadata = {
     "Demo applications showcasing DisplayXR capabilities. No hardware required — try with simulation mode.",
 };
 
-const demos = [
+type Demo = {
+  title: string;
+  description: string;
+  status: "shipping" | "active";
+  icon: ReactNode;
+  tags: string[];
+  repo?: string;
+};
+
+const demos: Demo[] = [
   {
     title: "Cube Demo",
     description:
@@ -26,7 +36,8 @@ const demos = [
       "Real-time 3D gaussian splatting rendering through DisplayXR. Demonstrates the runtime's ability to handle advanced rendering techniques on spatial displays.",
     status: "shipping" as const,
     icon: <Sparkles size={20} />,
-    tags: ["D3D11", "Advanced"],
+    tags: ["macOS", "Windows", "Vulkan"],
+    repo: REPO_URLS.demoGaussiansplat,
   },
   {
     title: "Unity Sample Scene",
@@ -87,6 +98,16 @@ export default function DemosPage() {
                   </span>
                 ))}
               </div>
+              {demo.repo && (
+                <a
+                  href={demo.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block text-sm text-accent hover:text-accent-hover underline underline-offset-2"
+                >
+                  View repo →
+                </a>
+              )}
             </Card>
           ))}
         </div>
@@ -94,16 +115,20 @@ export default function DemosPage() {
         {/* Source link */}
         <div className="pt-8 border-t border-border">
           <p className="text-text-secondary">
-            All demo source code is available in the{" "}
+            Each demo lives in its own repo under the{" "}
+            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-xs font-mono">
+              displayxr-demo-&lt;name&gt;
+            </code>{" "}
+            convention. See the{" "}
             <a
-              href={REPO_URLS.demos}
+              href="https://github.com/DisplayXR"
               target="_blank"
               rel="noopener noreferrer"
               className="text-accent hover:text-accent-hover underline underline-offset-2"
             >
-              displayxr-demos
+              DisplayXR org page
             </a>{" "}
-            repository.
+            for the full list.
           </p>
         </div>
       </div>

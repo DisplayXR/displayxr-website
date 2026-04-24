@@ -14,7 +14,7 @@ const footerLinks = {
     { label: "Extensions", href: REPO_URLS.extensions },
     { label: "Unity Plugin", href: REPO_URLS.unity },
     { label: "Unreal Plugin", href: REPO_URLS.unreal },
-    { label: "Demos", href: REPO_URLS.demos },
+    { label: "Demos", href: "/demos" },
   ],
   Resources: [
     { label: "GitHub", href: GITHUB_ORG_URL },

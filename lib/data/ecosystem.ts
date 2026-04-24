@@ -54,12 +54,13 @@ export const ecosystemRepos: EcosystemRepo[] = [
     status: "beta",
   },
   {
-    name: "displayxr-demos",
-    repo: "DisplayXR/displayxr-demos",
+    name: "displayxr-demo-gaussiansplat",
+    repo: "DisplayXR/displayxr-demo-gaussiansplat",
     description:
-      "Demo applications showcasing DisplayXR capabilities and use cases.",
-    url: "https://github.com/DisplayXR/displayxr-demos",
+      "Real-time 3D Gaussian Splatting viewer (macOS + Windows). One repo per demo — see the org page for others.",
+    url: "https://github.com/DisplayXR/displayxr-demo-gaussiansplat",
     category: "apps",
+    status: "active",
   },
   {
     name: "kooima-projection",
