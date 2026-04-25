@@ -119,11 +119,21 @@ export default function DemosPage() {
         {/* Source link */}
         <div className="pt-8 border-t border-border">
           <p className="text-text-secondary">
-            Each demo lives in its own repo under the{" "}
+            Each card links to its source. Standalone demos go in their own
+            repo under the{" "}
             <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-xs font-mono">
               displayxr-demo-&lt;name&gt;
             </code>{" "}
-            convention. See the{" "}
+            convention (currently just Gaussian Splat); the Cube samples ship
+            with the runtime under{" "}
+            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-xs font-mono">
+              displayxr-runtime/test_apps
+            </code>
+            , and engine sample scenes live in their matching{" "}
+            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-xs font-mono">
+              *-test
+            </code>{" "}
+            companion repos. See the{" "}
             <a
               href="https://github.com/DisplayXR"
               target="_blank"
