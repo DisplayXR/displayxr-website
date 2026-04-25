@@ -3,8 +3,9 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { REPO_URLS } from "@/lib/constants";
-import { Monitor, Boxes, Sparkles, Eye } from "lucide-react";
+import { Monitor, Boxes, Sparkles, Gamepad2 } from "lucide-react";
 import type { ReactNode } from "react";
+import type { Status } from "@/lib/data/compatibility";
 
 export const metadata: Metadata = {
   title: "Demos",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 type Demo = {
   title: string;
   description: string;
-  status: "shipping" | "active";
+  status: Status;
   icon: ReactNode;
   tags: string[];
   repo?: string;
@@ -26,15 +27,16 @@ const demos: Demo[] = [
     title: "Cube Demo",
     description:
       "A minimal OpenXR application rendering a 3D cube through DisplayXR. Available for all supported graphics APIs. The simplest starting point for understanding the runtime.",
-    status: "shipping" as const,
+    status: "shipping",
     icon: <Boxes size={20} />,
     tags: ["All APIs", "Simulation", "Minimal"],
+    repo: `${REPO_URLS.runtime}/tree/main/test_apps`,
   },
   {
     title: "Gaussian Splatting Viewer",
     description:
       "Real-time 3D gaussian splatting rendering through DisplayXR. Demonstrates the runtime's ability to handle advanced rendering techniques on spatial displays.",
-    status: "shipping" as const,
+    status: "shipping",
     icon: <Sparkles size={20} />,
     tags: ["macOS", "Windows", "Vulkan"],
     repo: REPO_URLS.demoGaussiansplat,
@@ -42,18 +44,20 @@ const demos: Demo[] = [
   {
     title: "Unity Sample Scene",
     description:
-      "A Unity sample scene demonstrating the DisplayXR Unity plugin (UPM). Shows how to set up a Unity project targeting spatial displays.",
-    status: "active" as const,
+      "Ready-to-open Unity 6 project demonstrating the DisplayXR Unity plugin. Sample scene runs in simulation mode or on a connected 3D display.",
+    status: "active",
     icon: <Monitor size={20} />,
-    tags: ["Unity", "UPM"],
+    tags: ["Unity 6", "UPM"],
+    repo: REPO_URLS.unityTest,
   },
   {
-    title: "Eye Tracking Visualization",
+    title: "Unreal Sample Scene",
     description:
-      "Demonstrates real-time eye tracking integration with the Leia SR SDK backend. Visualizes tracked eye positions and head pose.",
-    status: "shipping" as const,
-    icon: <Eye size={20} />,
-    tags: ["LeiaSR", "Eye Tracking"],
+      "Ready-to-open Unreal Engine project demonstrating the DisplayXR Unreal plugin. Sample scene runs in simulation mode or on a connected 3D display.",
+    status: "beta",
+    icon: <Gamepad2 size={20} />,
+    tags: ["Unreal", "UE 5.7"],
+    repo: REPO_URLS.unrealTest,
   },
 ];
 
