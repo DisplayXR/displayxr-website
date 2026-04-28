@@ -74,7 +74,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-shell-releases",
     repo: "DisplayXR/displayxr-shell-releases",
     description:
-      "Spatial desktop shell — 3D window manager with multi-app compositing, 2D window capture, dynamic layouts, and focus-adaptive rendering.",
+      "Reference spatial workspace controller — built on XR_DISPLAYXR_spatial_workspace. 3D window manager with multi-app compositing, 2D window capture, dynamic layouts, and focus-adaptive rendering. One example of a privileged compositor client; build your own for verticals, kiosks, OEM-branded workspaces, or AI-agent drivers.",
     url: "https://github.com/DisplayXR/displayxr-shell-releases",
     category: "apps",
     status: "active",

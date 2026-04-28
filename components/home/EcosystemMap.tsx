@@ -32,7 +32,8 @@ export function EcosystemMap() {
         </h3>
         <p className="text-text-secondary leading-relaxed mb-12 max-w-2xl">
           DisplayXR is developing as a full ecosystem — runtime, extensions,
-          engine plugins, projection math, demos, and a spatial desktop shell.
+          engine plugins, projection math, demos, and reference workspace
+          controllers.
         </p>
       </AnimateIn>
 

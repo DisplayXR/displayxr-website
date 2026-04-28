@@ -41,9 +41,9 @@ const features = [
     icon: <MonitorSpeaker size={20} />,
   },
   {
-    title: "Spatial Desktop Shell",
+    title: "Workspace Extensions",
     description:
-      "A 3D window manager that places OpenXR apps and regular desktop windows in a shared spatial workspace with head-tracked parallax.",
+      "XR_DISPLAYXR_spatial_workspace + XR_DISPLAYXR_app_launcher — extensions that let any privileged client compose multi-app 3D layouts, drive window placement, and register launcher tiles. Build a vertical workspace, an OEM-branded shell, a kiosk, an AI-agent driver, or use the DisplayXR Shell as a reference.",
     icon: <AppWindow size={20} />,
   },
 ];
