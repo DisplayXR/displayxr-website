@@ -50,6 +50,20 @@ export const metadata: Metadata = {
       "OpenXR for spatial displays. An open runtime and extension stack for tracked stereo and multiview 3D displays.",
     images: ["/og-image.jpeg"],
   },
+  icons: {
+    icon: [
+      {
+        url: "/icon-light.png",
+        type: "image/png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/icon-dark.png",
+        type: "image/png",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
