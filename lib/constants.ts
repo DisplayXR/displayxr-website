@@ -18,5 +18,6 @@ export const REPO_URLS = {
   unrealTest: "https://github.com/DisplayXR/displayxr-unreal-test",
   demoGaussiansplat: "https://github.com/DisplayXR/displayxr-demo-gaussiansplat",
   projection: "https://github.com/DisplayXR/kooima-projection",
+  mcp: "https://github.com/DisplayXR/displayxr-mcp",
   shell: "https://github.com/DisplayXR/displayxr-shell-releases",
 } as const;

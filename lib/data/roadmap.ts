@@ -79,7 +79,7 @@ export const roadmapSections: RoadmapSection[] = [
       {
         title: "AI-native runtime control (MCP)",
         description:
-          "Live spatial state and control exposed to AI agents over the Model Context Protocol — introspect stereo projection, capture frames, arrange windows in 6-DOF, save/load workspaces, all via natural language",
+          "Live spatial state and control exposed to AI agents over the Model Context Protocol — introspect stereo projection, capture frames, arrange windows in 6-DOF, save/load workspaces, all via natural language. Framework extracted to displayxr-mcp (May 2026) so the runtime, the reference shell, and any third-party workspace controller can embed the same agent surface",
       },
       {
         title: "WebXR Bridge",
