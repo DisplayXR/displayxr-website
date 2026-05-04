@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# displayxr-website
 
-## Getting Started
+Source for the [displayxr.org](https://displayxr.org) project website — a Next.js 15 / React 19 / Tailwind 4 / MDX site that documents the DisplayXR open OpenXR runtime for 3D displays.
 
-First, run the development server:
+## Develop locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## Site structure
 
-To learn more about Next.js, take a look at the following resources:
+- `app/page.tsx` — homepage (Hero / Problem / Solution / Ecosystem / WhyNow / CTA sections under `components/home/`)
+- `app/architecture/` — runtime architecture, native compositors, workspace controllers
+- `app/extensions/` — `XR_EXT_*` extension specs (display info, window bindings, spatial workspace, app launcher)
+- `app/demos/` — demo apps and engine sample scenes
+- `app/compatibility/` — device and platform support matrix
+- `app/roadmap/` — release timeline (data in `lib/data/roadmap.ts`)
+- `app/docs/` — entry point to repo-based docs
+- `lib/data/` — typed content for ecosystem, roadmap, devices, compatibility
+- `lib/constants.ts` — repo URLs and nav
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Editing content
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Most content is plain TSX or typed data in `lib/data/`. No CMS — edit, commit, deploy.
 
-## Deploy on Vercel
+## Issues / contributions
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Issues and PRs welcome on [DisplayXR/displayxr-website](https://github.com/DisplayXR/displayxr-website).
