@@ -43,9 +43,9 @@ const audiences: Audience[] = [
   },
   {
     title: "Vertical integrators",
-    lead: "Building a focused single-purpose 3D experience (CAD, medical, automotive HMI, kiosk)?",
+    lead: "Building a focused single-purpose 3D experience (CAD, medical, automotive HMI, kiosk, AI agent)?",
     description:
-      "Run the bare runtime + your application for a kiosk-class deployment — the runtime gives you OpenXR session management, native compositing, and display calibration. Or write a vertical-specific workspace controller against XR_EXT_spatial_workspace + XR_EXT_app_launcher to compose multiple apps for your domain (medical imaging suite, CAD viewer + reference panels, automotive cockpit) with full UX control.",
+      "Run the bare runtime + your application for a kiosk-class deployment — the runtime gives you OpenXR session management, native compositing, and display calibration. Or write a vertical-specific workspace controller against XR_EXT_spatial_workspace + XR_EXT_app_launcher to compose multiple apps for your domain (medical imaging suite, CAD viewer + reference panels, automotive cockpit). Embed displayxr-mcp to expose the same surface to an AI agent.",
     icon: <Sparkles size={20} />,
     href: "/extensions",
     cta: "Workspace extension surface →",
