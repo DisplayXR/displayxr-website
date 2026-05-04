@@ -164,8 +164,10 @@ export default function ArchitecturePage() {
             <div className="flex items-start gap-3">
               <span className="text-accent font-mono text-sm shrink-0 w-28">Shell</span>
               <span className="text-text-secondary text-sm">
-                Spatial window manager. Arranges 3D and 2D apps in a shared 3D
-                scene with window chrome, layout presets, and an app launcher.
+                Reference workspace controller. Arranges 3D and 2D apps in a
+                shared 3D scene with window chrome, layout presets, and an app
+                launcher. Distributed separately from the runtime; entirely
+                optional. See <em>Workspace Controllers</em> below.
               </span>
             </div>
             <div className="flex items-start gap-3">
@@ -181,6 +183,75 @@ export default function ArchitecturePage() {
               </span>
             </div>
           </div>
+        </section>
+
+        {/* Workspace Controllers */}
+        <section>
+          <h2 className="text-2xl font-semibold tracking-tight text-text-primary mb-4">
+            Workspace Controllers
+          </h2>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            The runtime is useful on its own. A bare install gives you a
+            standards-compliant OpenXR + WebXR surface for a 3D display — full-screen
+            apps, simulation backend, native compositors, the WebXR bridge.
+            No spatial desktop, no windowing, no launcher.
+          </p>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            A <strong className="text-text-primary">workspace controller</strong>{" "}
+            is an optional process that adds spatial-desktop features on top:
+            multi-app composition, window chrome, layout presets, an app
+            launcher. The runtime exposes two extensions for this:{" "}
+            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">
+              XR_EXT_spatial_workspace
+            </code>{" "}
+            for window pose / hit-test / capture, and{" "}
+            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">
+              XR_EXT_app_launcher
+            </code>{" "}
+            for tile registration and lifecycle. Anything that speaks them is a
+            first-class controller.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+            <div className="bg-surface border border-border rounded-lg p-6">
+              <h3 className="text-sm font-semibold text-accent mb-2">
+                Reference: DisplayXR Shell
+              </h3>
+              <p className="text-sm text-text-secondary leading-relaxed">
+                Distributed separately as a polished, opinionated spatial desktop —
+                3D window manager, 2D capture, focus-adaptive 2D/3D mode, layout
+                presets, launcher, MCP control. Optional.
+              </p>
+            </div>
+            <div className="bg-surface border border-border rounded-lg p-6">
+              <h3 className="text-sm font-semibold text-warning mb-2">
+                Build your own
+              </h3>
+              <p className="text-sm text-text-secondary leading-relaxed">
+                OEM-branded workspace, vertical cockpit (CAD, medical, automotive
+                HMI), kiosk, or AI-agent driver. Implement the two extensions,
+                register your binary, and the runtime treats it the same as the
+                reference shell.
+              </p>
+            </div>
+          </div>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            Activation is gated by orchestrator-PID match: the runtime trusts
+            the binary it was configured to spawn, not a brand string. OEMs
+            point a single <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">service.json</code>{" "}
+            field at whichever controller the SKU should run.
+          </p>
+          <p className="text-sm text-text-secondary">
+            Spec details:{" "}
+            <a
+              href={`${REPO_URLS.runtime}/blob/main/docs/specs/workspace-controller-registration.md`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:text-accent-hover underline underline-offset-2"
+            >
+              workspace-controller-registration.md
+            </a>
+            .
+          </p>
         </section>
 
         {/* Two Compositor Paths */}
