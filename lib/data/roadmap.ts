@@ -86,6 +86,16 @@ export const roadmapSections: RoadmapSection[] = [
         description:
           "Chrome extension plus local bridge giving browser WebXR apps the full DisplayXR surface — display info, rendering mode switching, tracked eye poses, HUD overlay, and input forwarding. Ships with a three.js reference sample and a standalone minimal starter; falls back gracefully to standard WebXR when the extension isn't installed",
       },
+      {
+        title: "Workspace controller surface",
+        description:
+          "XR_EXT_spatial_workspace and XR_EXT_app_launcher headers shipped, controller registration via Windows registry contract, shell extracted to its own repo as the reference implementation. Any third-party (OEM, vertical, kiosk, AI-agent driver) can ship a workspace controller with the same first-class authority",
+      },
+      {
+        title: "Multi-compositor performance pass",
+        description:
+          "Cross-process D3D11 fence to move sync off the render thread, capture-thread as the sole workspace-render driver (3.2× per-cube fps), and vendor 3D-state poll caching (37→59 fps per cube to hit 60Hz P0)",
+      },
     ],
   },
   {
