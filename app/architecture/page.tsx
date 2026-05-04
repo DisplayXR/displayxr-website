@@ -254,6 +254,73 @@ export default function ArchitecturePage() {
           </p>
         </section>
 
+        {/* AI Control Surface */}
+        <section>
+          <h2 className="text-2xl font-semibold tracking-tight text-text-primary mb-4">
+            AI Control Surface
+          </h2>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            DisplayXR exposes live spatial state and control to AI agents
+            over the{" "}
+            <a
+              href="https://modelcontextprotocol.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:text-accent-hover underline underline-offset-2"
+            >
+              Model Context Protocol
+            </a>
+            . The framework is a separate, embeddable library at{" "}
+            <a
+              href={REPO_URLS.mcp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:text-accent-hover underline underline-offset-2"
+            >
+              displayxr-mcp
+            </a>{" "}
+            — JSON-RPC 2.0 over a unix-socket / Windows-named-pipe transport,
+            with a stdio bridge for any MCP client (Claude Code, voice CLI,
+            custom agent).
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+            <div className="bg-surface border border-border rounded-lg p-6">
+              <h3 className="text-sm font-semibold text-accent mb-2">
+                Runtime tools (Phase A)
+              </h3>
+              <p className="text-sm text-text-secondary leading-relaxed">
+                Per-PID server inside each app&apos;s runtime DLL.
+                Introspection:{" "}
+                <code className="bg-background text-accent px-1 py-0.5 rounded text-xs font-mono">list_sessions</code>,{" "}
+                <code className="bg-background text-accent px-1 py-0.5 rounded text-xs font-mono">get_display_info</code>,{" "}
+                <code className="bg-background text-accent px-1 py-0.5 rounded text-xs font-mono">get_kooima_params</code>,{" "}
+                <code className="bg-background text-accent px-1 py-0.5 rounded text-xs font-mono">capture_frame</code>,{" "}
+                <code className="bg-background text-accent px-1 py-0.5 rounded text-xs font-mono">tail_log</code>.
+              </p>
+            </div>
+            <div className="bg-surface border border-border rounded-lg p-6">
+              <h3 className="text-sm font-semibold text-warning mb-2">
+                Workspace tools (Phase B)
+              </h3>
+              <p className="text-sm text-text-secondary leading-relaxed">
+                Per-workspace-controller server. Window control:{" "}
+                <code className="bg-background text-accent px-1 py-0.5 rounded text-xs font-mono">list_windows</code>,{" "}
+                <code className="bg-background text-accent px-1 py-0.5 rounded text-xs font-mono">get/set_window_pose</code>,{" "}
+                <code className="bg-background text-accent px-1 py-0.5 rounded text-xs font-mono">set_focus</code>,{" "}
+                <code className="bg-background text-accent px-1 py-0.5 rounded text-xs font-mono">save/load_workspace</code>.
+                Lives in the controller, not the runtime — third-party
+                controllers ship their own.
+              </p>
+            </div>
+          </div>
+          <p className="text-text-secondary leading-relaxed">
+            The library has no runtime or shell coupling — any C project can
+            consume it via CMake <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">FetchContent</code>{" "}
+            and register its own tools. Every tool call is audit-logged and
+            gated by a per-client allowlist.
+          </p>
+        </section>
+
         {/* Two Compositor Paths */}
         <section>
           <h2 className="text-2xl font-semibold tracking-tight text-text-primary mb-4">
