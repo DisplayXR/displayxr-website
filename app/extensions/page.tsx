@@ -16,33 +16,60 @@ interface Extension {
   title: string;
   description: string;
   status: Status;
-  specPath: string;
+  group: "display" | "windowing" | "workspace";
 }
 
 const extensions: Extension[] = [
+  // Display capability
   {
-    name: "XR_DISPLAYXR_display_info",
+    name: "XR_EXT_display_info",
     title: "Display Info",
     description:
-      "Provides applications with spatial display geometry, resolution, and capabilities. Lets apps query display properties needed for correct off-axis projection and view configuration.",
+      "Provides applications with spatial display geometry, resolution, eye-tracking modes, and the data needed for correct off-axis (Kooima) projection and view configuration.",
     status: "shipping",
-    specPath: "extensions/XR_DISPLAYXR_display_info",
+    group: "display",
   },
+  // App-side window binding
   {
-    name: "XR_DISPLAYXR_win32_window_binding",
+    name: "XR_EXT_win32_window_binding",
     title: "Win32 Window Binding",
     description:
       "Allows applications to bind an existing Win32 HWND to the DisplayXR session. The runtime composites into the application's own window rather than creating a separate one.",
     status: "shipping",
-    specPath: "extensions/XR_DISPLAYXR_win32_window_binding",
+    group: "windowing",
   },
   {
-    name: "XR_DISPLAYXR_cocoa_window_binding",
+    name: "XR_EXT_cocoa_window_binding",
     title: "Cocoa Window Binding",
     description:
       "macOS equivalent of the Win32 window binding. Binds an NSView to the session for compositor output into the application's window.",
     status: "shipping",
-    specPath: "extensions/XR_DISPLAYXR_cocoa_window_binding",
+    group: "windowing",
+  },
+  {
+    name: "XR_EXT_macos_gl_binding",
+    title: "macOS GL Binding",
+    description:
+      "macOS-specific OpenGL context binding for the Cocoa window-binding path. Lets GL apps share a CAOpenGLLayer-backed surface with the runtime compositor.",
+    status: "shipping",
+    group: "windowing",
+  },
+  // Workspace controller surface (the swappable shell story)
+  {
+    name: "XR_EXT_spatial_workspace",
+    title: "Spatial Workspace",
+    description:
+      "Defines how a privileged workspace controller process drives multi-app composition, window pose, hit-test, and capture on the runtime. The contract that lets the DisplayXR Shell — or any OEM, vertical, kiosk, or AI-agent controller — replace the spatial-desktop layer without runtime modifications.",
+    status: "shipping",
+    group: "workspace",
+  },
+  {
+    name: "XR_EXT_app_launcher",
+    title: "App Launcher",
+    description:
+      "Companion to spatial_workspace: lets a workspace controller register launcher tiles, query installed apps, and drive launch/lifecycle events. Decouples the launcher UX from the runtime.",
+    status: "shipping",
+    group: "workspace",
   },
 ];
 
@@ -73,30 +100,63 @@ export default function ExtensionsPage() {
           </p>
         </section>
 
-        {/* Extension list */}
-        <section>
-          <h2 className="text-xl font-semibold text-text-primary mb-6">
-            Current Extensions
-          </h2>
-          <div className="space-y-4">
-            {extensions.map((ext) => (
-              <Card key={ext.name} href={`${REPO_URLS.extensions}/tree/main/${ext.specPath}`}>
-                <div className="flex items-start justify-between gap-4 mb-2">
-                  <code className="text-accent font-mono text-sm font-semibold">
-                    {ext.name}
-                  </code>
-                  <Badge status={ext.status} />
-                </div>
-                <h3 className="text-lg font-semibold text-text-primary mb-2">
-                  {ext.title}
-                </h3>
-                <p className="text-sm text-text-secondary leading-relaxed">
-                  {ext.description}
-                </p>
-              </Card>
-            ))}
-          </div>
-        </section>
+        {/* Extension list, grouped */}
+        {(
+          [
+            {
+              key: "display",
+              label: "Display capability",
+              blurb:
+                "What the runtime tells apps about the 3D display they're rendering on.",
+            },
+            {
+              key: "windowing",
+              label: "App window binding",
+              blurb:
+                "How an app hands its native window to the runtime so the compositor can output into it.",
+            },
+            {
+              key: "workspace",
+              label: "Workspace controller surface",
+              blurb:
+                "How a swappable workspace controller (the DisplayXR Shell, or any third-party / OEM / vertical equivalent) drives multi-app composition and the launcher on top of the runtime.",
+            },
+          ] as const
+        ).map((group) => {
+          const items = extensions.filter((e) => e.group === group.key);
+          if (items.length === 0) return null;
+          return (
+            <section key={group.key}>
+              <h2 className="text-xl font-semibold text-text-primary mb-2">
+                {group.label}
+              </h2>
+              <p className="text-sm text-text-secondary mb-6 leading-relaxed">
+                {group.blurb}
+              </p>
+              <div className="space-y-4">
+                {items.map((ext) => (
+                  <Card
+                    key={ext.name}
+                    href={`${REPO_URLS.extensions}/blob/main/include/openxr/${ext.name}.h`}
+                  >
+                    <div className="flex items-start justify-between gap-4 mb-2">
+                      <code className="text-accent font-mono text-sm font-semibold">
+                        {ext.name}
+                      </code>
+                      <Badge status={ext.status} />
+                    </div>
+                    <h3 className="text-lg font-semibold text-text-primary mb-2">
+                      {ext.title}
+                    </h3>
+                    <p className="text-sm text-text-secondary leading-relaxed">
+                      {ext.description}
+                    </p>
+                  </Card>
+                ))}
+              </div>
+            </section>
+          );
+        })}
 
         {/* Philosophy */}
         <section>
