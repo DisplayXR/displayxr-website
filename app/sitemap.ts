@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/architecture",
     "/extensions",
     "/demos",
+    "/download",
     "/compatibility",
     "/roadmap",
   ];
