@@ -74,7 +74,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-mcp",
     repo: "DisplayXR/displayxr-mcp",
     description:
-      "Tiny embeddable Model Context Protocol server framework. Lets the runtime, the reference shell, and any third-party workspace controller expose live spatial state and control to AI agents (Claude Code, voice CLIs, custom drivers). JSON-RPC 2.0 over stdio↔socket, no runtime/shell coupling.",
+      "Tiny embeddable Model Context Protocol server framework, plus the DisplayXR MCP Tools installer that end users download to opt in to AI-agent / voice control. The framework lets the runtime, the reference shell, and any third-party workspace controller expose live spatial state and control to AI agents (Claude Code, voice CLIs, custom drivers); the installer writes a registry capability flag the runtime and shell read at startup.",
     url: "https://github.com/DisplayXR/displayxr-mcp",
     category: "tools",
     status: "active",
