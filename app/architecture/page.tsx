@@ -313,11 +313,36 @@ export default function ArchitecturePage() {
               </p>
             </div>
           </div>
-          <p className="text-text-secondary leading-relaxed">
+          <p className="text-text-secondary leading-relaxed mb-4">
             The library has no runtime or shell coupling — any C project can
             consume it via CMake <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">FetchContent</code>{" "}
             and register its own tools. Every tool call is audit-logged and
             gated by a per-client allowlist.
+          </p>
+          <p className="text-text-secondary leading-relaxed">
+            End users opt in by installing{" "}
+            <strong className="text-text-primary">DisplayXR MCP Tools</strong>
+            {" "}({" "}
+            <a
+              href={`${REPO_URLS.mcp}/releases`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:text-accent-hover underline underline-offset-2"
+            >
+              releases
+            </a>
+            ) — an optional third installer alongside the runtime and the
+            shell. It writes{" "}
+            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">
+              HKLM\Software\DisplayXR\Capabilities\MCP\Enabled
+            </code>
+            , a registry capability flag that the runtime and the shell read
+            at startup to spawn their MCP server thread. The{" "}
+            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">
+              DISPLAYXR_MCP=1
+            </code>{" "}
+            environment variable still works as a process-local override
+            (CI / dev / quick-disable).
           </p>
         </section>
 
