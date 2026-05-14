@@ -38,7 +38,10 @@ export function Hero() {
             and vendor hardware runtimes.
           </p>
           <div className="hero-animate hero-animate-delay-2 flex flex-wrap gap-4">
-            <Button href="/docs">Read the Docs</Button>
+            <Button href="/getting-started">Get Started</Button>
+            <Button variant="secondary" href="/docs">
+              Read the Docs
+            </Button>
             <Button variant="secondary" href={GITHUB_ORG_URL}>
               Explore on GitHub
             </Button>

@@ -1,6 +1,7 @@
 export const GITHUB_ORG_URL = "https://github.com/DisplayXR";
 
 export const NAV_ITEMS = [
+  { label: "Get Started", href: "/getting-started" },
   { label: "Docs", href: "/docs" },
   { label: "Architecture", href: "/architecture" },
   { label: "Extensions", href: "/extensions" },

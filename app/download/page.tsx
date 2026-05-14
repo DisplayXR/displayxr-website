@@ -64,6 +64,26 @@ export default function DownloadPage() {
       description="DisplayXR ships as three small installers. Most users want the runtime; add the shell for a spatial desktop UX, and MCP Tools to give AI agents and voice control access to your spatial workspace."
     >
       <div className="space-y-12">
+        {/* Walkthrough pointer */}
+        <div className="bg-accent/10 border border-accent/30 rounded-lg p-6 flex items-start gap-4">
+          <div className="flex-1">
+            <h2 className="text-base font-semibold text-text-primary mb-1">
+              First time installing?
+            </h2>
+            <p className="text-sm text-text-secondary leading-relaxed">
+              The{" "}
+              <a
+                href="/getting-started"
+                className="text-accent hover:text-accent-hover underline underline-offset-2 font-medium"
+              >
+                Get Started
+              </a>{" "}
+              walkthrough covers install order, verification, and first
+              launch end-to-end. This page is the quick installer index.
+            </p>
+          </div>
+        </div>
+
         {/* Intro callout */}
         <div className="bg-accent/5 border border-accent/20 rounded-lg p-6">
           <h2 className="text-lg font-semibold text-text-primary mb-2">
