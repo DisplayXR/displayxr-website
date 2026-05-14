@@ -35,8 +35,8 @@ const installers: Installer[] = [
   {
     name: "DisplayXR Shell",
     pitch:
-      "Reference spatial workspace UX — 3D window manager with multi-app compositing and dynamic layouts. Bundled with the Runtime installer; also available standalone.",
-    platforms: ["Windows", "Bundled with Runtime"],
+      "Reference spatial workspace UX — 3D window manager with multi-app compositing and dynamic layouts. Separate installer; requires the Runtime.",
+    platforms: ["Windows installer"],
     requirement: "Optional",
     releasesUrl: `${REPO_URLS.shell}/releases`,
     icon: <LayoutGrid size={20} />,
@@ -70,12 +70,21 @@ export default function DownloadPage() {
             Windows today, macOS via source
           </h2>
           <p className="text-sm text-text-secondary leading-relaxed">
-            The Runtime ships a packaged Windows installer (
+            On Windows, install the Runtime first (
             <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-xs font-mono">
               DisplayXRSetup-*.exe
             </code>
-            ) that includes the Shell. macOS is currently a source build —
-            see{" "}
+            ), then add the Shell (
+            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-xs font-mono">
+              DisplayXRShellSetup-*.exe
+            </code>
+            ) and MCP Tools (
+            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-xs font-mono">
+              DisplayXRMCPSetup-*.exe
+            </code>
+            ) as needed — each is a separate, lightweight installer. The Shell
+            and MCP Tools both depend on the Runtime being installed first.
+            macOS is currently a source build — see{" "}
             <a
               href={REPO_URLS.runtime}
               target="_blank"
@@ -84,7 +93,7 @@ export default function DownloadPage() {
             >
               displayxr-runtime
             </a>
-            . MCP Tools is a separate Windows installer.
+            .
           </p>
         </div>
 
