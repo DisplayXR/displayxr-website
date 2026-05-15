@@ -2,13 +2,13 @@ import { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Card } from "@/components/ui/Card";
 import { REPO_URLS } from "@/lib/constants";
-import { Package, LayoutGrid, Bot } from "lucide-react";
+import { Package, LayoutGrid, Bot, Download } from "lucide-react";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "Download DisplayXR",
   description:
-    "Get the DisplayXR runtime, shell, and MCP tools — three small installers covering OpenXR, spatial desktop, and AI-agent control.",
+    "Direct installer downloads for the DisplayXR runtime, shell, and MCP tools.",
 };
 
 type Requirement = "Required" | "Optional";
@@ -16,7 +16,7 @@ type Requirement = "Required" | "Optional";
 type Installer = {
   name: string;
   pitch: string;
-  platforms: string[];
+  filename: string;
   requirement: Requirement;
   releasesUrl: string;
   icon: ReactNode;
@@ -26,94 +26,59 @@ const installers: Installer[] = [
   {
     name: "DisplayXR Runtime",
     pitch:
-      "OpenXR runtime and service for spatial 3D displays. The base layer every DisplayXR application talks to.",
-    platforms: ["Windows installer", "macOS (source build)"],
+      "OpenXR runtime + Windows service. Install this first; everything else depends on it.",
+    filename: "DisplayXRSetup-*.exe",
     requirement: "Required",
-    releasesUrl: `${REPO_URLS.runtime}/releases`,
+    releasesUrl: `${REPO_URLS.runtime}/releases/latest`,
     icon: <Package size={20} />,
   },
   {
     name: "DisplayXR Shell",
     pitch:
-      "Reference spatial workspace UX — 3D window manager with multi-app compositing and dynamic layouts. Separate installer; requires the Runtime.",
-    platforms: ["Windows installer"],
+      "Reference spatial-workspace UX — 3D window manager with multi-app compositing and dynamic layouts.",
+    filename: "DisplayXRShellSetup-*.exe",
     requirement: "Optional",
-    releasesUrl: `${REPO_URLS.shell}/releases`,
+    releasesUrl: `${REPO_URLS.shell}/releases/latest`,
     icon: <LayoutGrid size={20} />,
   },
   {
     name: "DisplayXR MCP Tools",
     pitch:
-      "AI-agent and voice control for the spatial workspace. Writes the Capabilities\\MCP registry flag the runtime and shell read at startup to spawn their MCP server thread.",
-    platforms: ["Windows installer"],
+      "AI-agent + voice control. Writes the Capabilities\\MCP registry flag the runtime and shell read at startup.",
+    filename: "DisplayXRMCPSetup-*.exe",
     requirement: "Optional",
-    releasesUrl: `${REPO_URLS.mcp}/releases`,
+    releasesUrl: `${REPO_URLS.mcp}/releases/latest`,
     icon: <Bot size={20} />,
   },
 ];
 
 const requirementChipClass: Record<Requirement, string> = {
   Required: "bg-success/15 text-success border-success/30",
-  Optional: "bg-text-secondary/15 text-text-secondary border-text-secondary/30",
+  Optional:
+    "bg-text-secondary/15 text-text-secondary border-text-secondary/30",
 };
 
 export default function DownloadPage() {
   return (
     <PageLayout
-      title="Get DisplayXR"
-      description="DisplayXR ships as three small installers. Most users want the runtime; add the shell for a spatial desktop UX, and MCP Tools to give AI agents and voice control access to your spatial workspace."
+      title="Download"
+      description="Three small Windows installers. Install in order — Runtime first, then Shell and MCP Tools as needed."
     >
-      <div className="space-y-12">
-        {/* Walkthrough pointer */}
-        <div className="bg-accent/10 border border-accent/30 rounded-lg p-6 flex items-start gap-4">
-          <div className="flex-1">
-            <h2 className="text-base font-semibold text-text-primary mb-1">
-              First time installing?
-            </h2>
-            <p className="text-sm text-text-secondary leading-relaxed">
-              The{" "}
-              <a
-                href="/getting-started"
-                className="text-accent hover:text-accent-hover underline underline-offset-2 font-medium"
-              >
-                Get Started
-              </a>{" "}
-              walkthrough covers install order, verification, and first
-              launch end-to-end. This page is the quick installer index.
-            </p>
-          </div>
-        </div>
-
-        {/* Intro callout */}
-        <div className="bg-accent/5 border border-accent/20 rounded-lg p-6">
-          <h2 className="text-lg font-semibold text-text-primary mb-2">
-            Windows today, macOS via source
-          </h2>
+      <div className="space-y-10">
+        {/* Pointer for first-timers */}
+        <div className="bg-accent/10 border border-accent/30 rounded-lg p-5">
           <p className="text-sm text-text-secondary leading-relaxed">
-            On Windows, install the Runtime first (
-            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-xs font-mono">
-              DisplayXRSetup-*.exe
-            </code>
-            ), then add the Shell (
-            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-xs font-mono">
-              DisplayXRShellSetup-*.exe
-            </code>
-            ) and MCP Tools (
-            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-xs font-mono">
-              DisplayXRMCPSetup-*.exe
-            </code>
-            ) as needed — each is a separate, lightweight installer. The Shell
-            and MCP Tools both depend on the Runtime being installed first.
-            macOS is currently a source build — see{" "}
+            <strong className="text-text-primary">First time installing?</strong>{" "}
+            The{" "}
             <a
-              href={REPO_URLS.runtime}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:text-accent-hover underline underline-offset-2"
+              href="/getting-started"
+              className="text-accent hover:text-accent-hover underline underline-offset-2 font-medium"
             >
-              displayxr-runtime
-            </a>
-            .
+              Get Started
+            </a>{" "}
+            walkthrough covers prerequisites, install order, verification,
+            and first launch. This page is the quick installer index for
+            returning users.
           </p>
         </div>
 
@@ -136,144 +101,35 @@ export default function DownloadPage() {
                 >
                   {installer.requirement}
                 </span>
-                {installer.platforms.map((platform) => (
-                  <span
-                    key={platform}
-                    className="text-xs text-text-secondary bg-background px-2 py-0.5 rounded border border-border"
-                  >
-                    {platform}
-                  </span>
-                ))}
+                <code className="text-xs text-text-secondary bg-background px-2 py-0.5 rounded border border-border font-mono">
+                  {installer.filename}
+                </code>
               </div>
               <a
                 href={installer.releasesUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block text-sm text-accent hover:text-accent-hover underline underline-offset-2"
+                className="inline-flex items-center gap-1.5 text-sm text-accent hover:text-accent-hover underline underline-offset-2 font-medium"
               >
-                Download →
+                <Download size={14} />
+                Latest release
               </a>
             </Card>
           ))}
         </div>
 
-        {/* Decision list */}
-        <section>
-          <h2 className="text-2xl font-semibold tracking-tight text-text-primary mb-4">
-            Which install do I need?
-          </h2>
-          <ul className="space-y-2 text-text-secondary leading-relaxed">
-            <li>
-              Just want OpenXR for 3D displays in your own app? →{" "}
-              <strong className="text-text-primary">Runtime</strong>.
-            </li>
-            <li>
-              Want a spatial desktop UX? →{" "}
-              <strong className="text-text-primary">Runtime + Shell</strong>.
-            </li>
-            <li>
-              Want AI-agent / voice control? →{" "}
-              <strong className="text-text-primary">
-                Runtime + Shell + MCP Tools
-              </strong>
-              .
-            </li>
-          </ul>
-        </section>
-
-        {/* Verification (collapsed) */}
-        <section>
-          <details className="bg-surface border border-border rounded-lg">
-            <summary className="cursor-pointer px-6 py-4 text-text-primary font-semibold select-none">
-              Verify your install
-            </summary>
-            <div className="px-6 pb-6 pt-2 text-sm text-text-secondary leading-relaxed space-y-3">
-              <p>After installing on Windows, you can confirm everything is wired up:</p>
-              <ul className="space-y-2 list-disc list-inside">
-                <li>
-                  Service{" "}
-                  <code className="bg-background text-accent px-1.5 py-0.5 rounded text-xs font-mono">
-                    DisplayXR Service
-                  </code>{" "}
-                  is running (check{" "}
-                  <code className="bg-background text-accent px-1.5 py-0.5 rounded text-xs font-mono">
-                    services.msc
-                  </code>
-                  ).
-                </li>
-                <li>
-                  Active OpenXR runtime registered at{" "}
-                  <code className="bg-background text-accent px-1.5 py-0.5 rounded text-xs font-mono">
-                    HKLM\Software\Khronos\OpenXR\1\ActiveRuntime
-                  </code>
-                  .
-                </li>
-                <li>
-                  If MCP Tools is installed:{" "}
-                  <code className="bg-background text-accent px-1.5 py-0.5 rounded text-xs font-mono">
-                    HKLM\Software\DisplayXR\Capabilities\MCP\Enabled = 1
-                  </code>
-                  . You can also override per-process with{" "}
-                  <code className="bg-background text-accent px-1.5 py-0.5 rounded text-xs font-mono">
-                    DISPLAYXR_MCP=1
-                  </code>
-                  .
-                </li>
-                <li>
-                  Shell launches from the Start menu as{" "}
-                  <strong className="text-text-primary">DisplayXR Shell</strong>
-                  .
-                </li>
-              </ul>
-            </div>
-          </details>
-        </section>
-
-        {/* Build from source */}
-        <div className="pt-8 border-t border-border">
-          <h2 className="text-xl font-semibold text-text-primary mb-3">
-            Build from source
-          </h2>
-          <p className="text-text-secondary leading-relaxed mb-4">
-            For developers, every component builds from source. Each repo has
-            its own build instructions:
-          </p>
-          <ul className="space-y-2 text-text-secondary">
-            <li>
-              <a
-                href={REPO_URLS.runtime}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-accent hover:text-accent-hover underline underline-offset-2"
-              >
-                displayxr-runtime
-              </a>{" "}
-              — runtime + service (Windows, macOS).
-            </li>
-            <li>
-              <a
-                href={REPO_URLS.shell}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-accent hover:text-accent-hover underline underline-offset-2"
-              >
-                displayxr-shell-releases
-              </a>{" "}
-              — reference spatial workspace controller.
-            </li>
-            <li>
-              <a
-                href={REPO_URLS.mcp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-accent hover:text-accent-hover underline underline-offset-2"
-              >
-                displayxr-mcp
-              </a>{" "}
-              — embeddable MCP server framework + the MCP Tools installer source.
-            </li>
-          </ul>
-        </div>
+        {/* macOS footnote */}
+        <p className="text-sm text-text-secondary leading-relaxed">
+          <strong className="text-text-primary">On macOS?</strong> No packaged
+          installer yet — see the{" "}
+          <a
+            href="/getting-started"
+            className="text-accent hover:text-accent-hover underline underline-offset-2"
+          >
+            macOS source-build walkthrough
+          </a>
+          .
+        </p>
       </div>
     </PageLayout>
   );
