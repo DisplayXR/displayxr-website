@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://displayxr.dev";
+  const baseUrl = "https://displayxr.org";
 
   const routes = [
     "",
