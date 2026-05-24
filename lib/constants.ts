@@ -5,6 +5,7 @@ export const NAV_ITEMS = [
   { label: "Docs", href: "/docs" },
   { label: "Architecture", href: "/architecture" },
   { label: "Extensions", href: "/extensions" },
+  { label: "Vendors", href: "/vendors" },
   { label: "Demos", href: "/demos" },
   { label: "Download", href: "/download" },
   { label: "Compatibility", href: "/compatibility" },
@@ -13,6 +14,8 @@ export const NAV_ITEMS = [
 
 export const REPO_URLS = {
   runtime: "https://github.com/DisplayXR/displayxr-runtime",
+  installer: "https://github.com/DisplayXR/displayxr-installer",
+  leiaPlugin: "https://github.com/DisplayXR/displayxr-leia-plugin",
   extensions: "https://github.com/DisplayXR/displayxr-extensions",
   unity: "https://github.com/DisplayXR/displayxr-unity",
   unityTest: "https://github.com/DisplayXR/displayxr-unity-test",

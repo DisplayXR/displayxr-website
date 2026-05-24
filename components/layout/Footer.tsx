@@ -6,6 +6,7 @@ const footerLinks = {
     { label: "Docs", href: "/docs" },
     { label: "Architecture", href: "/architecture" },
     { label: "Extensions", href: "/extensions" },
+    { label: "Vendors", href: "/vendors" },
     { label: "Compatibility", href: "/compatibility" },
     { label: "Roadmap", href: "/roadmap" },
   ],
@@ -76,8 +77,8 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-border text-sm text-text-secondary">
-          &copy; {new Date().getFullYear()} DisplayXR. Open source under MIT
-          license.
+          &copy; {new Date().getFullYear()} DisplayXR. Open source under the
+          Boost Software License 1.0.
         </div>
       </div>
     </footer>

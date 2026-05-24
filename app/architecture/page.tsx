@@ -100,8 +100,8 @@ export default function ArchitecturePage() {
             <div className="flex items-start gap-3">
               <span className="text-accent font-mono text-sm shrink-0">D3D11</span>
               <span className="text-text-secondary text-sm">
-                Full compositor with LeiaSR weaver integration and window
-                binding support.
+                Full compositor with window binding. On Leia hardware the
+                weaver runs in the Leia SR plug-in, not the compositor.
               </span>
             </div>
             <div className="flex items-start gap-3">
@@ -185,6 +185,101 @@ export default function ArchitecturePage() {
           </div>
         </section>
 
+        {/* Component Distribution */}
+        <section>
+          <h2 className="text-2xl font-semibold tracking-tight text-text-primary mb-4">
+            How the Pieces Ship
+          </h2>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            DisplayXR is deliberately split across repositories so each piece
+            evolves on its own cadence and the runtime stays vendor-neutral —
+            the runtime binary carries no vendor SDK and no shell code. You can
+            install everything at once with the{" "}
+            <a
+              href={REPO_URLS.installer}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:text-accent-hover underline underline-offset-2"
+            >
+              meta-installer
+            </a>
+            , or add components individually.
+          </p>
+          <div className="bg-surface border border-border rounded-lg p-6 space-y-3">
+            <div className="flex items-start gap-3">
+              <span className="text-accent font-mono text-sm shrink-0 w-32">Runtime</span>
+              <span className="text-text-secondary text-sm">
+                The OpenXR runtime, service, and native compositors.{" "}
+                <a
+                  href={REPO_URLS.runtime}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:text-accent-hover underline underline-offset-2"
+                >
+                  displayxr-runtime
+                </a>
+                . Windows installer + macOS{" "}
+                <code className="bg-background text-accent px-1 py-0.5 rounded text-xs font-mono">.pkg</code>.
+              </span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-warning font-mono text-sm shrink-0 w-32">Vendor plug-ins</span>
+              <span className="text-text-secondary text-sm">
+                Display-processor DLLs the runtime discovers at startup — the
+                weaving / interlacing for a specific panel. The{" "}
+                <a
+                  href={REPO_URLS.leiaPlugin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:text-accent-hover underline underline-offset-2"
+                >
+                  Leia SR plug-in
+                </a>{" "}
+                is the reference. See the{" "}
+                <a
+                  href="/vendors"
+                  className="text-accent hover:text-accent-hover underline underline-offset-2"
+                >
+                  Vendors
+                </a>{" "}
+                page.
+              </span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-accent font-mono text-sm shrink-0 w-32">Workspace controllers</span>
+              <span className="text-text-secondary text-sm">
+                Optional spatial-desktop processes (windowing, launcher). The
+                reference{" "}
+                <a
+                  href={REPO_URLS.shell}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:text-accent-hover underline underline-offset-2"
+                >
+                  DisplayXR Shell
+                </a>{" "}
+                ships from its own repo — see below.
+              </span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-accent font-mono text-sm shrink-0 w-32">Meta-installer</span>
+              <span className="text-text-secondary text-sm">
+                Bundles the above with pinned, compatible versions into one
+                download.{" "}
+                <a
+                  href={REPO_URLS.installer}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:text-accent-hover underline underline-offset-2"
+                >
+                  displayxr-installer
+                </a>
+                .
+              </span>
+            </div>
+          </div>
+        </section>
+
         {/* Workspace Controllers */}
         <section>
           <h2 className="text-2xl font-semibold tracking-tight text-text-primary mb-4">
@@ -243,7 +338,7 @@ export default function ArchitecturePage() {
           <p className="text-sm text-text-secondary">
             Spec details:{" "}
             <a
-              href={`${REPO_URLS.runtime}/blob/main/docs/specs/workspace-controller-registration.md`}
+              href={`${REPO_URLS.runtime}/blob/main/docs/specs/runtime/workspace-controller-registration.md`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-accent hover:text-accent-hover underline underline-offset-2"

@@ -38,7 +38,7 @@ const demos: Demo[] = [
       "Real-time 3D gaussian splatting rendering through DisplayXR. Demonstrates the runtime's ability to handle advanced rendering techniques on spatial displays. Loads .spz and .ply files; bundled butterfly scene.",
     status: "shipping",
     icon: <Sparkles size={20} />,
-    tags: ["Windows", "Vulkan", "macOS pending"],
+    tags: ["Windows", "Vulkan", "macOS"],
     repo: REPO_URLS.demoGaussiansplat,
   },
   {
