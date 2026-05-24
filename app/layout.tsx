@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "DisplayXR",
     description:
       "OpenXR for spatial displays. An open runtime and extension stack for tracked stereo and multiview 3D displays.",
-    url: "https://displayxr.dev",
+    url: "https://displayxr.org",
     siteName: "DisplayXR",
     type: "website",
     images: [
