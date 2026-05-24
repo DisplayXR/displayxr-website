@@ -2,13 +2,13 @@ import { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Card } from "@/components/ui/Card";
 import { REPO_URLS } from "@/lib/constants";
-import { Package, LayoutGrid, Bot, Download } from "lucide-react";
+import { Package, LayoutGrid, Bot, Download, Layers, Glasses } from "lucide-react";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "Download DisplayXR",
   description:
-    "Direct installer downloads for the DisplayXR runtime, shell, and MCP tools.",
+    "Installer downloads for DisplayXR — the all-in-one bundle, or the runtime, shell, Leia SR plug-in, and MCP tools individually.",
 };
 
 type Requirement = "Required" | "Optional";
@@ -18,6 +18,7 @@ type Installer = {
   pitch: string;
   filename: string;
   requirement: Requirement;
+  platforms: string;
   releasesUrl: string;
   icon: ReactNode;
 };
@@ -26,9 +27,10 @@ const installers: Installer[] = [
   {
     name: "DisplayXR Runtime",
     pitch:
-      "OpenXR runtime + Windows service. Install this first; everything else depends on it.",
-    filename: "DisplayXRSetup-*.exe",
+      "OpenXR runtime + service. Install this first; everything else depends on it.",
+    filename: "DisplayXRSetup-*.exe · DisplayXR-Installer-*.pkg",
     requirement: "Required",
+    platforms: "Windows · macOS",
     releasesUrl: `${REPO_URLS.runtime}/releases/latest`,
     icon: <Package size={20} />,
   },
@@ -38,8 +40,19 @@ const installers: Installer[] = [
       "Reference spatial-workspace UX — 3D window manager with multi-app compositing and dynamic layouts.",
     filename: "DisplayXRShellSetup-*.exe",
     requirement: "Optional",
+    platforms: "Windows",
     releasesUrl: `${REPO_URLS.shell}/releases/latest`,
     icon: <LayoutGrid size={20} />,
+  },
+  {
+    name: "Leia SR Plug-in",
+    pitch:
+      "Display-processor plug-in for Leia SR hardware. The runtime discovers it at startup. Windows-only because the Leia SR SDK is Windows-only.",
+    filename: "DisplayXRLeiaSRSetup-*.exe",
+    requirement: "Optional",
+    platforms: "Windows",
+    releasesUrl: `${REPO_URLS.leiaPlugin}/releases/latest`,
+    icon: <Glasses size={20} />,
   },
   {
     name: "DisplayXR MCP Tools",
@@ -47,6 +60,7 @@ const installers: Installer[] = [
       "AI-agent + voice control. Writes the Capabilities\\MCP registry flag the runtime and shell read at startup.",
     filename: "DisplayXRMCPSetup-*.exe",
     requirement: "Optional",
+    platforms: "Windows",
     releasesUrl: `${REPO_URLS.mcp}/releases/latest`,
     icon: <Bot size={20} />,
   },
@@ -62,11 +76,47 @@ export default function DownloadPage() {
   return (
     <PageLayout
       title="Download"
-      description="Three small Windows installers. Install in order — Runtime first, then Shell and MCP Tools as needed."
+      description="Start with the all-in-one bundle, or grab individual components below. The runtime is required; the shell, Leia SR plug-in, and MCP tools are optional."
     >
       <div className="space-y-10">
+        {/* Meta-installer — start here */}
+        <div className="bg-accent/10 border border-accent/30 rounded-lg p-6">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="text-accent">
+              <Layers size={22} />
+            </div>
+            <h2 className="text-lg font-semibold text-text-primary">
+              All-in-one installer (recommended)
+            </h2>
+          </div>
+          <p className="text-sm text-text-secondary leading-relaxed mb-4">
+            The{" "}
+            <a
+              href={REPO_URLS.installer}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:text-accent-hover underline underline-offset-2 font-medium"
+            >
+              DisplayXR meta-installer
+            </a>{" "}
+            bundles the runtime, shell, and plug-ins into a single download
+            with pinned, compatible versions — the simplest way to get a
+            working setup. Prefer it unless you need a specific component
+            version. (v1 ships unsigned; your OS may warn on first launch.)
+          </p>
+          <a
+            href={`${REPO_URLS.installer}/releases/latest`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm text-accent hover:text-accent-hover underline underline-offset-2 font-medium"
+          >
+            <Download size={14} />
+            Latest bundle release
+          </a>
+        </div>
+
         {/* Pointer for first-timers */}
-        <div className="bg-accent/10 border border-accent/30 rounded-lg p-5">
+        <div className="bg-surface border border-border rounded-lg p-5">
           <p className="text-sm text-text-secondary leading-relaxed">
             <strong className="text-text-primary">First time installing?</strong>{" "}
             The{" "}
@@ -77,13 +127,13 @@ export default function DownloadPage() {
               Get Started
             </a>{" "}
             walkthrough covers prerequisites, install order, verification,
-            and first launch. This page is the quick installer index for
-            returning users.
+            and first launch. The individual installers below are for users
+            who want to manage components separately.
           </p>
         </div>
 
         {/* Installer cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {installers.map((installer) => (
             <Card
               key={installer.name}
@@ -100,6 +150,9 @@ export default function DownloadPage() {
                   }`}
                 >
                   {installer.requirement}
+                </span>
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border border-accent/30 text-accent bg-accent/10">
+                  {installer.platforms}
                 </span>
                 <code className="text-xs text-text-secondary bg-background px-2 py-0.5 rounded border border-border font-mono">
                   {installer.filename}
@@ -120,15 +173,24 @@ export default function DownloadPage() {
 
         {/* macOS footnote */}
         <p className="text-sm text-text-secondary leading-relaxed">
-          <strong className="text-text-primary">On macOS?</strong> No packaged
-          installer yet — see the{" "}
+          <strong className="text-text-primary">On macOS?</strong> The runtime
+          ships a{" "}
+          <code className="text-xs bg-background px-1.5 py-0.5 rounded border border-border font-mono">
+            .pkg
+          </code>{" "}
+          installer (install from Terminal with{" "}
+          <code className="text-xs bg-background px-1.5 py-0.5 rounded border border-border font-mono">
+            sudo installer
+          </code>{" "}
+          to bypass the Gatekeeper warning on the unsigned package). The shell,
+          Leia SR plug-in, and MCP tools are Windows-only today. See the{" "}
           <a
             href="/getting-started"
             className="text-accent hover:text-accent-hover underline underline-offset-2"
           >
-            macOS source-build walkthrough
-          </a>
-          .
+            Get Started
+          </a>{" "}
+          walkthrough for the macOS flow.
         </p>
       </div>
     </PageLayout>

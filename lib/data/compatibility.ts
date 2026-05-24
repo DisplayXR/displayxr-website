@@ -41,7 +41,7 @@ export const enginePlugins: EnginePlugin[] = [
 ];
 
 export const hardwareBackends: HardwareBackend[] = [
-  { backend: "Leia SR SDK (LeiaSR displays)", status: "shipping", notes: "D3D11/D3D12/Vulkan weavers, eye tracking" },
+  { backend: "Leia SR SDK (LeiaSR displays)", status: "shipping", notes: "Ships as a separate plug-in (DisplayXRLeiaSRSetup-*.exe, Windows-only); D3D11/D3D12/Vulkan weavers, eye tracking" },
   { backend: "sim_display (no hardware)", status: "shipping", notes: "Simulation mode for development" },
 ];
 
