@@ -19,7 +19,7 @@ export default function GettingStartedPage() {
   return (
     <PageLayout
       title="Get Started"
-      description="Pick your platform. Windows ships packaged installers in dependency order; macOS is a developer source build today."
+      description="Pick your platform. Windows installs from a one-click bundle (or per-component installers); macOS is a developer source build today."
     >
       <PlatformTabs />
 

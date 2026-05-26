@@ -15,6 +15,7 @@ import {
   Terminal,
   Hammer,
   Eye,
+  Layers,
 } from "lucide-react";
 import type { ReactNode } from "react";
 
@@ -330,13 +331,20 @@ const macosSteps: Step[] = [
           </li>
         </ul>
         <div className="mt-4 p-4 rounded-md bg-warning/10 border border-warning/30 text-sm text-text-secondary leading-relaxed">
-          <strong className="text-text-primary">Heads up:</strong> macOS is a
-          <strong> developer source build</strong> today — there is no
-          packaged installer, no DisplayXR Shell, no MCP Tools installer, and
-          no Leia SR vendor support on macOS yet. You&apos;ll get the runtime
-          + native compositors (Metal, OpenGL, Vulkan via MoltenVK) and the
-          simulated display driver. Real 3D-display vendors and the shell
-          port are on the roadmap.
+          <strong className="text-text-primary">Heads up:</strong> a runtime{" "}
+          <Mono>.pkg</Mono> installer is available on macOS (see the{" "}
+          <a
+            href="/download"
+            className="text-accent hover:text-accent-hover underline underline-offset-2"
+          >
+            Download
+          </a>{" "}
+          page) — but the DisplayXR Shell, MCP Tools, and Leia SR vendor
+          support are <strong>Windows-only</strong> today. The steps below are
+          the <strong>developer source build</strong>: the runtime + native
+          compositors (Metal, OpenGL, Vulkan via MoltenVK) and the simulated
+          display driver. The shell port and real 3D-display vendors on macOS
+          are on the roadmap.
         </div>
       </>
     ),
@@ -437,10 +445,17 @@ _package/DisplayXR-macOS/run_cube_handle_vk.sh`}</CodeBlock>
 ./your_openxr_app`}</CodeBlock>
         <p className="text-sm text-text-secondary leading-relaxed">
           You can also <Mono>cmake --install build</Mono> from the build
-          directory if you want a more permanent install location. There is
-          no system-wide installer yet — the long-term plan is a signed{" "}
-          <Mono>.pkg</Mono> that registers the runtime under{" "}
-          <Mono>~/.config/openxr/1/active_runtime.json</Mono>.
+          directory if you want a more permanent install location. For a
+          system-wide install without building, use the runtime{" "}
+          <Mono>.pkg</Mono> from the{" "}
+          <a
+            href="/download"
+            className="text-accent hover:text-accent-hover underline underline-offset-2"
+          >
+            Download
+          </a>{" "}
+          page — it&apos;s unsigned today (notarization pending), so install it
+          from Terminal with <Mono>sudo installer</Mono>.
         </p>
       </>
     ),
@@ -555,6 +570,48 @@ const macosFAQs: FAQ[] = [
   },
 ];
 
+function WindowsFastPath() {
+  return (
+    <div className="bg-accent/10 border border-accent/30 rounded-lg p-6">
+      <div className="flex items-center gap-3 mb-3">
+        <div className="text-accent">
+          <Layers size={22} />
+        </div>
+        <h3 className="text-lg font-semibold text-text-primary">
+          Fastest path: one installer
+        </h3>
+      </div>
+      <p className="text-sm text-text-secondary leading-relaxed mb-4">
+        The{" "}
+        <a
+          href={`${REPO_URLS.installer}/releases/latest`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-accent hover:text-accent-hover underline underline-offset-2"
+        >
+          DisplayXR meta-installer
+        </a>{" "}
+        (<Mono>DisplayXRBundle-*.exe</Mono>) installs the runtime, shell, and
+        plug-ins in one step with pinned, compatible versions — recommended for
+        most users. See the{" "}
+        <a
+          href="/download"
+          className="text-accent hover:text-accent-hover underline underline-offset-2"
+        >
+          Download
+        </a>{" "}
+        page. (v1 ships unsigned; SmartScreen shows a one-time prompt — click{" "}
+        <strong>More info → Run anyway</strong>.)
+      </p>
+      <p className="text-sm text-text-secondary leading-relaxed">
+        Prefer to manage components yourself? The steps below install each one
+        individually — useful for pinning a specific version, partial installs,
+        or troubleshooting.
+      </p>
+    </div>
+  );
+}
+
 function StepList({ steps }: { steps: Step[] }) {
   return (
     <section className="space-y-6">
@@ -658,6 +715,12 @@ export function PlatformTabs() {
         })}
       </div>
 
+      {platform === "windows" && <WindowsFastPath />}
+      {platform === "windows" && (
+        <h2 className="text-xl font-semibold text-text-primary -mb-4">
+          Or install components individually
+        </h2>
+      )}
       <StepList steps={steps} />
       <Troubleshooting faqs={faqs} />
     </div>
