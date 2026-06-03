@@ -82,6 +82,13 @@ export function Navbar() {
     };
   }, []);
 
+  // Exactly one nav entry is "current" — the first leaf or menu that matches
+  // the path — so a page shared across menus (e.g. Platform Support) never
+  // lights up two of them at once.
+  const activeIndex = NAV.findIndex((e) =>
+    isMenu(e) ? menuActive(pathname, e) : hrefActive(pathname, e.href, e.external)
+  );
+
   return (
     <nav
       ref={navRef}
@@ -109,9 +116,9 @@ export function Navbar() {
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-1">
-            {NAV.map((entry) => {
+            {NAV.map((entry, idx) => {
               if (!isMenu(entry)) {
-                const active = hrefActive(pathname, entry.href, entry.external);
+                const active = idx === activeIndex;
                 return (
                   <Link
                     key={entry.label}
@@ -130,7 +137,7 @@ export function Navbar() {
                 );
               }
 
-              const active = menuActive(pathname, entry);
+              const active = idx === activeIndex;
               const open = openMenu === entry.label;
               return (
                 <div
