@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/vendors",
     "/demos",
     "/download",
+    "/webxr",
     "/platform-support",
     "/contribute",
     "/roadmap",

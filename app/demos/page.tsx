@@ -233,6 +233,22 @@ export default function DemosPage() {
           </div>
         </section>
 
+        {/* WebXR pointer */}
+        <div className="rounded-lg border border-border bg-surface/50 p-5">
+          <p className="text-sm text-text-secondary leading-relaxed">
+            <strong className="text-text-primary">Building for the browser?</strong>{" "}
+            The{" "}
+            <a
+              href="/webxr"
+              className="text-accent hover:text-accent-hover underline underline-offset-2"
+            >
+              WebXR Bridge
+            </a>{" "}
+            runs WebXR apps on 3D displays — display geometry, rendering modes,
+            and tracked eyes from JavaScript, with a three.js reference sample.
+          </p>
+        </div>
+
         {/* Source link */}
         <div className="pt-8 border-t border-border">
           <p className="text-text-secondary">
