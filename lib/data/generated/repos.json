@@ -1,0 +1,126 @@
+[
+  {
+    "name": ".github",
+    "description": "DisplayXR organization profile",
+    "url": "https://github.com/DisplayXR/.github",
+    "topics": [],
+    "archived": false
+  },
+  {
+    "name": "displayxr-demo-gaussiansplat",
+    "description": "DisplayXR demo — real-time 3D Gaussian Splatting viewer for glasses-free 3D displays. Auto-synced from displayxr-runtime-pvt.",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat",
+    "topics": [],
+    "archived": false
+  },
+  {
+    "name": "displayxr-demo-modelviewer",
+    "description": "DisplayXR demo — glasses-free 3D glTF 2.0 PBR model viewer (OpenXR + Vulkan). Scaffolded from displayxr-demo-gaussiansplat.",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer",
+    "topics": [],
+    "archived": false
+  },
+  {
+    "name": "displayxr-extensions",
+    "description": "OpenXR extension specs and headers for 3D displays",
+    "url": "https://github.com/DisplayXR/displayxr-extensions",
+    "topics": [],
+    "archived": false
+  },
+  {
+    "name": "displayxr-installer",
+    "description": "End-user meta-installer for DisplayXR — single .exe / .pkg bundle that chains runtime + Shell + Leia plug-in + MCP Tools. Tracks issue DisplayXR/displayxr-runtime#284.",
+    "url": "https://github.com/DisplayXR/displayxr-installer",
+    "topics": [],
+    "archived": false
+  },
+  {
+    "name": "displayxr-leia-plugin",
+    "description": "DisplayXR Leia SR display-processor plug-in",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin",
+    "topics": [],
+    "archived": false
+  },
+  {
+    "name": "displayxr-mcp",
+    "description": "Tiny embeddable MCP (Model Context Protocol) server framework for DisplayXR — JSON-RPC 2.0 + stdio↔socket adapter, no runtime/shell coupling",
+    "url": "https://github.com/DisplayXR/displayxr-mcp",
+    "topics": [],
+    "archived": false
+  },
+  {
+    "name": "displayxr-runtime",
+    "description": "Lightweight OpenXR runtime for 3D displays · Windows, macOS, Android",
+    "url": "https://github.com/DisplayXR/displayxr-runtime",
+    "topics": [
+      "3d-display",
+      "eye-tracking",
+      "openxr",
+      "spatial-computing"
+    ],
+    "archived": false
+  },
+  {
+    "name": "displayxr-shell-releases",
+    "description": "DisplayXR Shell — spatial window manager for 3D displays. Installers, docs, and issue tracking.",
+    "url": "https://github.com/DisplayXR/displayxr-shell-releases",
+    "topics": [],
+    "archived": false
+  },
+  {
+    "name": "displayxr-unity",
+    "description": "Unity plugin for eye-tracked 3D light field displays via OpenXR",
+    "url": "https://github.com/DisplayXR/displayxr-unity",
+    "topics": [],
+    "archived": false
+  },
+  {
+    "name": "displayxr-unity-test",
+    "description": "Unity test project for the DisplayXR plugin — sample scenes and demos to validate the plugin against new releases",
+    "url": "https://github.com/DisplayXR/displayxr-unity-test",
+    "topics": [],
+    "archived": false
+  },
+  {
+    "name": "displayxr-unity-test-2d-ui",
+    "description": "URP variant of displayxr-unity-test — exercises XrCompositionLayerWindowSpaceEXT 2D UI overlay (DisplayXR/displayxr-unity#67) via DisplayXRWindowSpaceUI",
+    "url": "https://github.com/DisplayXR/displayxr-unity-test-2d-ui",
+    "topics": [],
+    "archived": false
+  },
+  {
+    "name": "displayxr-unity-test-transparent",
+    "description": "Transparent overlay variant of displayxr-unity-test — exercises chroma-key click-through (DisplayXR/displayxr-unity#57)",
+    "url": "https://github.com/DisplayXR/displayxr-unity-test-transparent",
+    "topics": [],
+    "archived": false
+  },
+  {
+    "name": "displayxr-unreal",
+    "description": "Unreal Engine plugin for DisplayXR",
+    "url": "https://github.com/DisplayXR/displayxr-unreal",
+    "topics": [],
+    "archived": false
+  },
+  {
+    "name": "displayxr-unreal-test",
+    "description": "Unreal test project for the DisplayXR plugin — sample scene and setup to validate the plugin against new releases",
+    "url": "https://github.com/DisplayXR/displayxr-unreal-test",
+    "topics": [],
+    "archived": false
+  },
+  {
+    "name": "displayxr-website",
+    "description": "DisplayXR project website — displayxr.dev",
+    "url": "https://github.com/DisplayXR/displayxr-website",
+    "topics": [],
+    "archived": false
+  },
+  {
+    "name": "kooima-projection",
+    "description": "Generalized off-axis frustum projection math library",
+    "url": "https://github.com/DisplayXR/kooima-projection",
+    "topics": [],
+    "archived": false
+  }
+]

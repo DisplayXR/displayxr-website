@@ -1,0 +1,26 @@
+[
+  {
+    "id": "modelviewer",
+    "repo": "displayxr-demo-modelviewer",
+    "name": "3D Model Viewer",
+    "description": "Interactive PBR viewer for 3D models (.glb / .gltf). Drag-and-drop a model or press L to load. Bundled with a demo model.",
+    "category": "demo",
+    "type": "3d",
+    "icon": "/demos/displayxr-demo-modelviewer/model_viewer_icon.png",
+    "repoUrl": "https://github.com/DisplayXR/displayxr-demo-modelviewer",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.4.0",
+    "tag": "v0.4.0"
+  },
+  {
+    "id": "gaussiansplat",
+    "repo": "displayxr-demo-gaussiansplat",
+    "name": "Gaussian Splat Viewer",
+    "description": "Interactive viewer for 3D Gaussian Splatting scenes (.spz / .ply). Drag-and-drop a scene or press L to load. Bundled with a butterfly demo scene.",
+    "category": "demo",
+    "type": "3d",
+    "icon": "/demos/displayxr-demo-gaussiansplat/icon.png",
+    "repoUrl": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.5.0",
+    "tag": "v1.5.0"
+  }
+]

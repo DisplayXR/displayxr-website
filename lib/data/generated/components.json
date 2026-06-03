@@ -1,0 +1,47 @@
+[
+  {
+    "id": "runtime",
+    "name": "DisplayXR Runtime",
+    "version": "v1.9.1",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v1.9.1",
+    "releaseDate": "2026-06-01",
+    "platforms": "Windows · macOS",
+    "repoUrl": "https://github.com/DisplayXR/displayxr-runtime"
+  },
+  {
+    "id": "shell",
+    "name": "DisplayXR Shell",
+    "version": "v1.5.1",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v1.5.1",
+    "releaseDate": "2026-06-03",
+    "platforms": "Windows",
+    "repoUrl": "https://github.com/DisplayXR/displayxr-shell-releases"
+  },
+  {
+    "id": "leia_plugin",
+    "name": "Leia SR Plug-in",
+    "version": "v1.2.1",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v1.2.1",
+    "releaseDate": "2026-06-02",
+    "platforms": "Windows",
+    "repoUrl": "https://github.com/DisplayXR/displayxr-leia-plugin"
+  },
+  {
+    "id": "mcp_tools",
+    "name": "DisplayXR MCP Tools",
+    "version": "v0.3.4",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.3.4",
+    "releaseDate": "2026-05-31",
+    "platforms": "Windows · macOS",
+    "repoUrl": "https://github.com/DisplayXR/displayxr-mcp"
+  },
+  {
+    "id": "installer",
+    "name": "All-in-one Installer",
+    "version": "v0.12.1",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v0.12.1",
+    "releaseDate": "2026-06-03",
+    "platforms": "Windows · macOS",
+    "repoUrl": "https://github.com/DisplayXR/displayxr-installer"
+  }
+]
