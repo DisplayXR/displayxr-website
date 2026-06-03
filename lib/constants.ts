@@ -1,17 +1,48 @@
 export const GITHUB_ORG_URL = "https://github.com/DisplayXR";
 
-export const NAV_ITEMS = [
+// Persona-led navigation. The header has one universal front door
+// (Get Started), three audience menus (each a curated journey, not a dump —
+// shared pages may appear in two menus on purpose), and a persistent Download
+// action button (see DOWNLOAD_HREF). A nav entry is either a leaf link or a
+// menu of leaves.
+export type NavLeaf = { label: string; href: string; external?: boolean };
+export type NavMenu = { label: string; items: NavLeaf[] };
+export type NavEntry = NavLeaf | NavMenu;
+
+export const isMenu = (e: NavEntry): e is NavMenu =>
+  (e as NavMenu).items !== undefined;
+
+export const NAV: NavEntry[] = [
   { label: "Get Started", href: "/getting-started" },
-  { label: "Docs", href: "/docs" },
-  { label: "Architecture", href: "/architecture" },
-  { label: "Extensions", href: "/extensions" },
-  { label: "Vendors", href: "/vendors" },
-  { label: "Demos", href: "/demos" },
-  { label: "Download", href: "/download" },
-  { label: "Status", href: "/status" },
-  { label: "Compatibility", href: "/compatibility" },
-  { label: "Roadmap", href: "/roadmap" },
-] as const;
+  {
+    label: "App Developers",
+    items: [
+      { label: "Quickstart", href: "/getting-started" },
+      { label: "Demos", href: "/demos" },
+      { label: "Extensions", href: "/extensions" },
+      { label: "Platform Support", href: "/platform-support" },
+    ],
+  },
+  {
+    label: "Contributors",
+    items: [
+      { label: "Contribute", href: "/contribute" },
+      { label: "Architecture", href: "/architecture" },
+      { label: "Roadmap", href: "/roadmap" },
+      { label: "Source & repos", href: GITHUB_ORG_URL, external: true },
+    ],
+  },
+  {
+    label: "Display Vendors",
+    items: [
+      { label: "Plug-in guide", href: "/vendors" },
+      { label: "Extension: display_info", href: "/extensions" },
+      { label: "Platform Support", href: "/platform-support" },
+    ],
+  },
+];
+
+export const DOWNLOAD_HREF = "/download";
 
 export const REPO_URLS = {
   runtime: "https://github.com/DisplayXR/displayxr-runtime",

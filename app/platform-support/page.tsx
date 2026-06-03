@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Badge } from "@/components/ui/Badge";
 import { Table, TableRow, TableCell } from "@/components/ui/Table";
+import { VersionDashboard } from "@/components/status/VersionDashboard";
 import {
   runtimeCompositors,
   enginePlugins,
@@ -11,26 +12,38 @@ import {
 import { vendors, devices } from "@/lib/data/devices";
 
 export const metadata: Metadata = {
-  title: "Compatibility",
+  title: "Platform Support",
   description:
-    "Current platform, graphics API, engine, and hardware support status for DisplayXR.",
+    "Released versions of every DisplayXR component, plus the platform, graphics-API, engine, and hardware support matrix.",
 };
 
-export default function CompatibilityPage() {
+export default function PlatformSupportPage() {
   return (
     <PageLayout
-      title="Compatibility"
-      description="Current support status across platforms, graphics APIs, engines, and hardware backends."
+      title="Platform Support"
+      description="What's released, and what's supported — the latest version of every component, then the platform, graphics-API, engine, and hardware matrix."
     >
       <div className="space-y-16 max-w-4xl">
+        {/* Released versions (generated, auto-synced from the org) */}
+        <section>
+          <h2 className="text-xl font-semibold text-text-primary mb-2">
+            Released versions
+          </h2>
+          <p className="text-sm text-text-secondary mb-6">
+            The latest released version of every DisplayXR component — each
+            links to its GitHub release.
+          </p>
+          <VersionDashboard />
+        </section>
+
         {/* Compatible Devices */}
         <section>
           <h2 className="text-xl font-semibold text-text-primary mb-2">
             Compatible Devices
           </h2>
           <p className="text-sm text-text-secondary mb-6">
-            Devices with spatial displays supported by
-            DisplayXR, grouped by display technology vendor.
+            Devices with spatial displays supported by DisplayXR, grouped by
+            display technology vendor.
           </p>
           <div className="space-y-6">
             {vendors.map((vendor) => {
@@ -51,9 +64,7 @@ export default function CompatibilityPage() {
                       {vendor.description}
                     </p>
                   </div>
-                  <Table
-                    headers={["Device", "OEM", "Form Factor", "Status"]}
-                  >
+                  <Table headers={["Device", "OEM", "Form Factor", "Status"]}>
                     {vendorDevices.map((device) => (
                       <TableRow key={device.name}>
                         <TableCell className="font-medium text-text-primary">

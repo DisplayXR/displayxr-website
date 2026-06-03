@@ -72,10 +72,10 @@ const windowsSteps: Step[] = [
             A tracked 3D display supported by DisplayXR — currently Leia SR
             displays (Lume Pad, Leia 3D laptops). See the{" "}
             <a
-              href="/compatibility"
+              href="/platform-support"
               className="text-accent hover:text-accent-hover underline underline-offset-2"
             >
-              compatibility matrix
+              platform support matrix
             </a>{" "}
             for the full list.
           </li>
