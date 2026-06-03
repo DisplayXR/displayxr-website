@@ -12,7 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/vendors",
     "/demos",
     "/download",
-    "/compatibility",
+    "/platform-support",
+    "/contribute",
     "/roadmap",
   ];
 

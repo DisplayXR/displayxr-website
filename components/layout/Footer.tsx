@@ -2,25 +2,25 @@ import Image from "next/image";
 import { GITHUB_ORG_URL, REPO_URLS } from "@/lib/constants";
 
 const footerLinks = {
-  Project: [
-    { label: "Docs", href: "/docs" },
-    { label: "Architecture", href: "/architecture" },
-    { label: "Extensions", href: "/extensions" },
-    { label: "Vendors", href: "/vendors" },
-    { label: "Compatibility", href: "/compatibility" },
-    { label: "Roadmap", href: "/roadmap" },
-  ],
-  Ecosystem: [
-    { label: "Runtime", href: REPO_URLS.runtime },
-    { label: "Extensions", href: REPO_URLS.extensions },
-    { label: "Unity Plugin", href: REPO_URLS.unity },
-    { label: "Unreal Plugin", href: REPO_URLS.unreal },
+  "App Developers": [
+    { label: "Get Started", href: "/getting-started" },
+    { label: "Download", href: "/download" },
     { label: "Demos", href: "/demos" },
+    { label: "Extensions", href: "/extensions" },
+    { label: "Platform Support", href: "/platform-support" },
   ],
-  Resources: [
+  Contributors: [
+    { label: "Contribute", href: "/contribute" },
+    { label: "Architecture", href: "/architecture" },
+    { label: "Roadmap", href: "/roadmap" },
+    { label: "Docs", href: "/docs" },
     { label: "GitHub", href: GITHUB_ORG_URL },
+  ],
+  "Display Vendors": [
+    { label: "Plug-in guide", href: "/vendors" },
+    { label: "Extensions", href: "/extensions" },
+    { label: "Leia SR plug-in", href: REPO_URLS.leiaPlugin },
     { label: "Projection Library", href: REPO_URLS.projection },
-    { label: "Spatial Shell", href: REPO_URLS.shell },
   ],
 };
 

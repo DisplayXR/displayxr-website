@@ -21,6 +21,17 @@ export default function GettingStartedPage() {
       title="Get Started"
       description="Pick your platform. Windows installs from a one-click bundle (or per-component installers); macOS is a developer source build today."
     >
+      {/* No-hardware reassurance — the #1 first-visit developer question */}
+      <div className="mb-10 rounded-lg border border-accent/30 bg-accent/10 p-5">
+        <p className="text-sm text-text-secondary leading-relaxed">
+          <strong className="text-text-primary">No 3D display? No problem.</strong>{" "}
+          The built-in <Mono>sim_display</Mono> backend lets you install, run,
+          and verify everything on any ordinary monitor. When a real 3D display
+          is connected later, the same app automatically uses the hardware
+          backend — no code changes.
+        </p>
+      </div>
+
       <PlatformTabs />
 
       {/* Where next — platform-agnostic */}
