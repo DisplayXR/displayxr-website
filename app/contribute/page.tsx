@@ -23,7 +23,8 @@ const repoGroups = [
   { key: "core", label: "Core" },
   { key: "engines", label: "Engine plugins" },
   { key: "tools", label: "Libraries & tools" },
-  { key: "apps", label: "Apps & shell" },
+  { key: "demos", label: "Demo apps" },
+  { key: "apps", label: "Workspace controllers" },
 ] as const;
 
 const RUNTIME = REPO_URLS.runtime;

@@ -37,7 +37,7 @@ const audiences: Audience[] = [
     title: "Display Vendors",
     lead: "Making a glasses-free 3D display panel?",
     description:
-      "Implement the display-processor plug-in for your weaving / depth-mapping / eye-tracking integration — five API variants (D3D11, D3D12, Metal, Vulkan, OpenGL) so your weaver runs natively in whatever graphics API the app uses. Vendor-agnostic by design; Leia SR is the first integration, not a privileged path.",
+      "Implement the display-processor plug-in for your weaving / depth-mapping / eye-tracking integration — five API variants (D3D11, D3D12, Metal, Vulkan, OpenGL) so your weaver runs natively in whatever graphics API the app uses. Vendor-neutral by design: the runtime ships with no built-in display backend, so every panel integrates through the same plug-in interface.",
     icon: <MonitorSpeaker size={20} />,
     href: "/vendors",
     cta: "Plug-in guide →",
