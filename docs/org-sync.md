@@ -20,7 +20,7 @@ they need **opposite** handling. Conflating them is the mistake.
 
 | Class | Examples | Strategy |
 |---|---|---|
-| **A — mechanically derivable** | repo list, demo list + icons, extension headers, latest-release tag/date/URL per component, the version matrix | **Generate** from the org. Zero judgment. Machine-written, PR-gated. |
+| **A — mechanically derivable** | repo list, demo list + icons, extension headers, latest-release tag/date/URL per component, the version matrix | **Generate** from the org. Zero judgment. Machine-written, direct-committed to `main`. |
 | **B — editorial narrative** | roadmap phrasing, device marketing blurbs, ADR / architecture prose, "why now" | **Detect & prompt**, never auto-write. A human (or `/sync-website`) authors the prose. |
 
 A system that mechanically rewrites prose produces garbage; a system that leaves
@@ -115,16 +115,19 @@ one uniform scan.
 │  public/demos/<repo>/*.png   (committed icons)              │
 │        │                                                    │
 │        ▼                                                    │
-│  if git diff → open/update PR "chore(sync): org data"       │
+│  if git diff → commit straight to main "chore(sync): …"     │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-- **Pull, PR-gated.** The generator writes `lib/data/generated/*.json` and
+- **Pull, direct-commit.** The generator writes `lib/data/generated/*.json` and
   commits demo icons into `public/`. If nothing changed, it's a no-op. If
-  something changed, it opens (or updates) a single PR. We PR rather than commit
-  to `main` because this is a public marketing site: a 10-second glance before
-  new content goes live, plus git history of every change, plus safety against a
-  malformed API response nuking content. Merge → Vercel auto-deploys.
+  something changed, it commits straight to `main` and Vercel redeploys — the
+  same "released = tested, no review theatre" contract the org's `versions.json`
+  autobump already runs on. Git history still records every change, and the
+  generator's per-adapter try/catch means a malformed API response degrades to
+  "skip that source, keep the last good file" rather than nuking content.
+  (This also keeps the workflow on `contents: write` only — no org-wide "Actions
+  may create PRs" policy needed.)
 - **Generated vs authored split.** `lib/data/generated/*.json` is machine-owned
   and never hand-edited. The authored TSX keeps editorial fields (status
   narrative, marketing copy) and **merges by `id`**. A demo's
@@ -153,8 +156,9 @@ exactly the property that makes the existing versions-bump design trustworthy.
 ### Layer 3 — editorial assist (on demand, `/sync-website` skill)
 
 Class-B content needs judgment. The generator can't write a roadmap entry, but
-it **can** notice that the inputs changed and say so. The sync PR body lists
-editorial-adjacent signals it detected but did not render:
+it **can** notice that the inputs changed and say so. The `_meta.json` signals
+(committed alongside the data) capture editorial-adjacent changes it detected
+but did not render:
 
 - new `docs/adr/ADR-*.md` (across runtime **and** unreal) not yet referenced on
   `/architecture`,
@@ -166,7 +170,8 @@ A `/sync-website` Claude skill (hub-homed in `displayxr-runtime/.claude/skills/`
 alongside `/dxr-release`, so it's invocable from the runtime hub like every
 other release flow) does the prose pass on demand: reads the new
 ADRs / milestones / demo READMEs and writes the roadmap / device / architecture
-updates into the authored TSX, opening its own PR. Mechanical PR = facts;
+updates into the authored TSX, opening a PR for review (prose *does* warrant a
+human glance, unlike the mechanical facts). Mechanical commit = facts;
 skill PR = narrative. They never touch the same fields.
 
 ## Data contract (generated files)
@@ -181,18 +186,19 @@ and merges them.
 | `generated/engines.json` | `{ id, name, version, engineVersion, description, repoUrl, testRepoUrl, releaseUrl, logo }` | `.uplugin` / `package.json` + releases |
 | `generated/extensions.json` | `{ name, group }` | `displayxr-extensions` tree |
 | `generated/repos.json` | `{ name, description, url, topics, archived }` | org repo list |
-| `generated/_meta.json` | `{ generatedAt, signals: { newAdrs[], newRepos[], closedMilestones[] } }` | editorial-drift detector |
+| `generated/_meta.json` | `{ signals: { adrs[], demoRepos[], repos[] } }` | editorial-drift detector |
 
-`_meta.signals` is what the workflow renders into the PR body for Layer 3.
+`_meta.signals` is committed deterministically (no timestamp), so its diff
+between commits is the editorial-drift surface a `/sync-website` pass reads.
 
 ## Rollout
 
 1. **Phase 0 (manual, immediate)** — add modelviewer by hand to fix today's
    drift; refactor `lib/data` into the generated/authored split. *(folded into
    Phase 1)*
-2. **Phase 1 (this PR)** — `scripts/sync-org.mjs` + `sync-org.yml`
-   (cron + dispatch + manual) → first auto-PR. Demo cards, ecosystem grid, and
-   extension catalog become generated.
+2. **Phase 1** — `scripts/sync-org.mjs` + `sync-org.yml`
+   (cron + dispatch + manual) → direct commit to `main`. Demo cards, the version
+   dashboard, and the generated data files land.
 3. **Phase 2** — one `repository_dispatch` step on runtime's `versions-bump.yml`
    for release-latency.
 4. **Phase 3** — `/sync-website` skill for editorial passes, driven by
