@@ -1,0 +1,27 @@
+{
+  "reviewedAdrs": [
+    "displayxr-runtime/docs/adr/ADR-001-native-compositors-per-graphics-api.md",
+    "displayxr-runtime/docs/adr/ADR-002-ipc-layer-preserved-for-multi-app.md",
+    "displayxr-runtime/docs/adr/ADR-003-vendor-abstraction-via-display-processor-vtable.md",
+    "displayxr-runtime/docs/adr/ADR-004-d3d11-native-over-vulkan-multi-compositor.md",
+    "displayxr-runtime/docs/adr/ADR-005-multiview-atlas-layout.md",
+    "displayxr-runtime/docs/adr/ADR-006-legacy-app-compromise-view-scale.md",
+    "displayxr-runtime/docs/adr/ADR-007-compositor-never-weaves.md",
+    "displayxr-runtime/docs/adr/ADR-008-display-as-spatial-entity.md",
+    "displayxr-runtime/docs/adr/ADR-009-upstream-cherry-pick-strategy.md",
+    "displayxr-runtime/docs/adr/ADR-010-shared-app-iosurface-worst-case-sized.md",
+    "displayxr-runtime/docs/adr/ADR-011-d3d11-typeless-swapchain-textures.md",
+    "displayxr-runtime/docs/adr/ADR-012-window-relative-kooima-projection.md",
+    "displayxr-runtime/docs/adr/ADR-013-universal-app-launch-model.md",
+    "displayxr-runtime/docs/adr/ADR-014-shell-owns-rendering-mode.md",
+    "displayxr-runtime/docs/adr/ADR-015-displayxr-owns-multi-display-vendor-routing.md",
+    "displayxr-runtime/docs/adr/ADR-016-workspace-controllers-own-tray-surface-and-lifecycle.md",
+    "displayxr-runtime/docs/adr/ADR-017-modal-dialogs-tiered-strategy.md",
+    "displayxr-runtime/docs/adr/ADR-018-workspace-hit-test-plumbing-vs-policy.md",
+    "displayxr-runtime/docs/adr/ADR-019-vendor-plugin-aux-boundary.md",
+    "displayxr-runtime/docs/adr/ADR-020-plugin-abi-compatibility-policy.md",
+    "displayxr-unreal/Docs/DisplayXR/adr/ADR-001-direct-runtime-loading.md",
+    "displayxr-unreal/Docs/DisplayXR/adr/ADR-002-zero-copy-atlas-handoff.md",
+    "displayxr-unreal/Docs/DisplayXR/adr/ADR-003-ue-native-off-axis-projection.md"
+  ]
+}
