@@ -7,6 +7,7 @@ const footerLinks = {
     { label: "Download", href: "/download" },
     { label: "Demos", href: "/demos" },
     { label: "Extensions", href: "/extensions" },
+    { label: "WebXR", href: "/webxr" },
     { label: "Platform Support", href: "/platform-support" },
   ],
   Contributors: [
