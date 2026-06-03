@@ -16,7 +16,7 @@ interface Extension {
   title: string;
   description: string;
   status: Status;
-  group: "display" | "windowing" | "workspace";
+  group: "display" | "windowing" | "workspace" | "capture";
 }
 
 const extensions: Extension[] = [
@@ -71,6 +71,23 @@ const extensions: Extension[] = [
     status: "shipping",
     group: "workspace",
   },
+  {
+    name: "XR_EXT_workspace_file_dialog",
+    title: "Workspace File Dialog",
+    description:
+      "An async, spatial-native file picker. An app calls for a picker and receives the result through the event queue; the picker is a peer workspace window spawned by the active controller, not a layer inside the app's own window. Workspace-scoped, with graceful fallback to the platform file dialog when no controller advertises support.",
+    status: "beta",
+    group: "workspace",
+  },
+  // Capture
+  {
+    name: "XR_EXT_atlas_capture",
+    title: "Atlas Capture",
+    description:
+      "A vendor-neutral, non-privileged way to snapshot the multi-view atlas the runtime composes for a session to a PNG, at a caller-selected compositor stage. The runtime does the readback from its own atlas image, so apps drop the per-graphics-API staging-texture readbacks they each reimplement today. Any app — handle, texture, hosted, or IPC — can call it.",
+    status: "early",
+    group: "capture",
+  },
 ];
 
 export default function ExtensionsPage() {
@@ -120,6 +137,12 @@ export default function ExtensionsPage() {
               label: "Workspace controller surface",
               blurb:
                 "How a swappable workspace controller (the DisplayXR Shell, or any third-party / OEM / vertical equivalent) drives multi-app composition and the launcher on top of the runtime.",
+            },
+            {
+              key: "capture",
+              label: "Capture",
+              blurb:
+                "Getting the composed 3D frame back out of the runtime — for screenshots, recording, and dataset generation.",
             },
           ] as const
         ).map((group) => {
