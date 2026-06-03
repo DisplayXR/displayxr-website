@@ -5,7 +5,7 @@ export interface EcosystemRepo {
   repo: string;
   description: string;
   url: string;
-  category: "core" | "engines" | "tools" | "apps";
+  category: "core" | "engines" | "tools" | "demos" | "apps";
   status?: Status;
 }
 
@@ -36,15 +36,6 @@ export const ecosystemRepos: EcosystemRepo[] = [
     status: "active",
   },
   {
-    name: "displayxr-unity-test",
-    repo: "DisplayXR/displayxr-unity-test",
-    description:
-      "Ready-to-open Unity 6 test project for the DisplayXR plugin — clone, open, and hit Play.",
-    url: "https://github.com/DisplayXR/displayxr-unity-test",
-    category: "engines",
-    status: "active",
-  },
-  {
     name: "displayxr-unreal",
     repo: "DisplayXR/displayxr-unreal",
     description:
@@ -57,9 +48,18 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-demo-gaussiansplat",
     repo: "DisplayXR/displayxr-demo-gaussiansplat",
     description:
-      "Real-time 3D Gaussian Splatting viewer (macOS + Windows). One repo per demo — see the org page for others.",
+      "Real-time 3D Gaussian Splatting viewer (.spz / .ply) for spatial displays. macOS + Windows.",
     url: "https://github.com/DisplayXR/displayxr-demo-gaussiansplat",
-    category: "apps",
+    category: "demos",
+    status: "active",
+  },
+  {
+    name: "displayxr-demo-modelviewer",
+    repo: "DisplayXR/displayxr-demo-modelviewer",
+    description:
+      "Glasses-free 3D glTF 2.0 PBR model viewer (OpenXR + Vulkan). Drag-and-drop a .glb / .gltf model.",
+    url: "https://github.com/DisplayXR/displayxr-demo-modelviewer",
+    category: "demos",
     status: "active",
   },
   {
@@ -83,7 +83,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-shell-releases",
     repo: "DisplayXR/displayxr-shell-releases",
     description:
-      "Reference spatial workspace controller — built on XR_EXT_spatial_workspace and XR_EXT_app_launcher. 3D window manager with multi-app compositing, 2D window capture, dynamic layouts, and focus-adaptive rendering. One example of a privileged compositor client; build your own for verticals, kiosks, OEM-branded workspaces, or AI-agent drivers.",
+      "Reference spatial workspace controller — a 3D window manager with multi-app compositing, 2D window capture, dynamic layouts, and focus-adaptive rendering. Ships as a standalone installer; build your own controller for verticals, kiosks, or OEM-branded workspaces using the same extension surface.",
     url: "https://github.com/DisplayXR/displayxr-shell-releases",
     category: "apps",
     status: "active",

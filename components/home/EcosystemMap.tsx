@@ -8,10 +8,11 @@ const categoryLabels: Record<string, string> = {
   core: "Core",
   engines: "Engine Plugins",
   tools: "Libraries",
-  apps: "Applications",
+  demos: "Demo Applications",
+  apps: "Workspace Controllers",
 };
 
-const categoryOrder = ["core", "engines", "tools", "apps"];
+const categoryOrder = ["core", "engines", "tools", "demos", "apps"];
 
 export function EcosystemMap() {
   const grouped = categoryOrder.map((cat) => ({

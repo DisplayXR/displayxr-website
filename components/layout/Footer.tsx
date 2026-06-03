@@ -19,7 +19,7 @@ const footerLinks = {
   "Display Vendors": [
     { label: "Plug-in guide", href: "/vendors" },
     { label: "Extensions", href: "/extensions" },
-    { label: "Leia SR plug-in", href: REPO_URLS.leiaPlugin },
+    { label: "Platform Support", href: "/platform-support" },
     { label: "Projection Library", href: REPO_URLS.projection },
   ],
 };
