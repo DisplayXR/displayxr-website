@@ -21,6 +21,7 @@
       "displayxr-runtime/docs/adr/ADR-018-workspace-hit-test-plumbing-vs-policy.md",
       "displayxr-runtime/docs/adr/ADR-019-vendor-plugin-aux-boundary.md",
       "displayxr-runtime/docs/adr/ADR-020-plugin-abi-compatibility-policy.md",
+      "displayxr-runtime/docs/adr/ADR-021-color-management-encoding-state-invariant.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-001-direct-runtime-loading.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-002-zero-copy-atlas-handoff.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-003-ue-native-off-axis-projection.md"
@@ -32,6 +33,7 @@
     ],
     "repos": [
       ".github",
+      "displayxr-common",
       "displayxr-demo-gaussiansplat",
       "displayxr-demo-mediaplayer",
       "displayxr-demo-modelviewer",
@@ -47,8 +49,7 @@
       "displayxr-unity-test-transparent",
       "displayxr-unreal",
       "displayxr-unreal-test",
-      "displayxr-website",
-      "kooima-projection"
+      "displayxr-website"
     ]
   }
 }

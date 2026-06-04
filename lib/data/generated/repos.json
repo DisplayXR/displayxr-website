@@ -7,6 +7,13 @@
     "archived": false
   },
   {
+    "name": "displayxr-common",
+    "description": "Generalized off-axis frustum projection math library",
+    "url": "https://github.com/DisplayXR/displayxr-common",
+    "topics": [],
+    "archived": false
+  },
+  {
     "name": "displayxr-demo-gaussiansplat",
     "description": "DisplayXR demo — real-time 3D Gaussian Splatting viewer for glasses-free 3D displays. Auto-synced from displayxr-runtime-pvt.",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat",
@@ -128,13 +135,6 @@
     "name": "displayxr-website",
     "description": "DisplayXR project website — displayxr.dev",
     "url": "https://github.com/DisplayXR/displayxr-website",
-    "topics": [],
-    "archived": false
-  },
-  {
-    "name": "kooima-projection",
-    "description": "Generalized off-axis frustum projection math library",
-    "url": "https://github.com/DisplayXR/kooima-projection",
     "topics": [],
     "archived": false
   }

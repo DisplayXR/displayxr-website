@@ -7,18 +7,18 @@
     "description": "Unity plugin for eye-tracked 3D light field displays via OpenXR",
     "repoUrl": "https://github.com/DisplayXR/displayxr-unity",
     "testRepoUrl": "https://github.com/DisplayXR/displayxr-unity-test",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v1.14.0",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v1.15.0",
     "logo": "/engines/unity/DisplayXR-test_logo_2d_512x512.png"
   },
   {
     "id": "unreal",
     "name": "Unreal",
-    "version": "v0.2.2",
+    "version": "v0.3.0",
     "engineVersion": "UE 5.7.0",
     "description": "Unreal Engine plugin for DisplayXR",
     "repoUrl": "https://github.com/DisplayXR/displayxr-unreal",
     "testRepoUrl": "https://github.com/DisplayXR/displayxr-unreal-test",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.2.2",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.3.0",
     "logo": "/engines/unreal/Icon128.png"
   }
 ]
