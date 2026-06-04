@@ -14,6 +14,21 @@
     "archived": false
   },
   {
+    "name": "displayxr-demo-mediaplayer",
+    "description": "Lightweight cross-platform stereo image & video player for the DisplayXR runtime — OpenXR client, Vulkan, FFmpeg decode. The minimal counterpart to LeiaPlayerWin.",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer",
+    "topics": [
+      "3d-display",
+      "displayxr",
+      "ffmpeg",
+      "media-player",
+      "openxr",
+      "stereo",
+      "vulkan"
+    ],
+    "archived": false
+  },
+  {
     "name": "displayxr-demo-modelviewer",
     "description": "DisplayXR demo — glasses-free 3D glTF 2.0 PBR model viewer (OpenXR + Vulkan). Scaffolded from displayxr-demo-gaussiansplat.",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer",

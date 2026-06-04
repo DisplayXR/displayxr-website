@@ -27,11 +27,13 @@
     ],
     "demoRepos": [
       "displayxr-demo-gaussiansplat",
+      "displayxr-demo-mediaplayer",
       "displayxr-demo-modelviewer"
     ],
     "repos": [
       ".github",
       "displayxr-demo-gaussiansplat",
+      "displayxr-demo-mediaplayer",
       "displayxr-demo-modelviewer",
       "displayxr-extensions",
       "displayxr-installer",
