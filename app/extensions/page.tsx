@@ -16,7 +16,7 @@ interface Extension {
   title: string;
   description: string;
   status: Status;
-  group: "display" | "windowing" | "workspace" | "capture";
+  group: "display" | "windowing" | "workspace" | "capture" | "agent";
 }
 
 const extensions: Extension[] = [
@@ -25,7 +25,7 @@ const extensions: Extension[] = [
     name: "XR_EXT_display_info",
     title: "Display Info",
     description:
-      "Provides applications with spatial display geometry, resolution, eye-tracking modes, and the data needed for correct off-axis (Kooima) projection and view configuration.",
+      "Provides applications with spatial display geometry, resolution, eye-tracking modes, and the data needed for correct off-axis (Kooima) projection and view configuration. Each rendering mode declares whether it consumes live eye tracking, and apps receive an edge-triggered event on tracking loss and recovery.",
     status: "shipping",
     group: "display",
   },
@@ -78,6 +78,15 @@ const extensions: Extension[] = [
       "An async, spatial-native file picker. An app calls for a picker and receives the result through the event queue; the picker is a peer workspace window spawned by the active controller, not a layer inside the app's own window. Workspace-scoped, with graceful fallback to the platform file dialog when no controller advertises support.",
     status: "beta",
     group: "workspace",
+  },
+  // Agent control
+  {
+    name: "XR_EXT_mcp_tools",
+    title: "App MCP Tools",
+    description:
+      "Lets an application register its own Model Context Protocol tools with the runtime's agent surface. AI agents and voice drivers can then invoke app-defined actions — tool calls arrive through the OpenXR event queue, the app answers inline, and tools are namespaced by the app's manifest id.",
+    status: "early",
+    group: "agent",
   },
   // Capture
   {
@@ -137,6 +146,12 @@ export default function ExtensionsPage() {
               label: "Workspace controller surface",
               blurb:
                 "How a swappable workspace controller (the DisplayXR Shell, or any third-party / OEM / vertical equivalent) drives multi-app composition and the launcher on top of the runtime.",
+            },
+            {
+              key: "agent",
+              label: "Agent control",
+              blurb:
+                "How applications plug into the AI-agent surface — exposing their own actions to agents and voice drivers through the same MCP framework the runtime and workspace controllers use.",
             },
             {
               key: "capture",
