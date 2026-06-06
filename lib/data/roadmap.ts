@@ -96,6 +96,16 @@ export const roadmapSections: RoadmapSection[] = [
         description:
           "Cross-process D3D11 fence to move sync off the render thread, capture-thread as the sole workspace-render driver (3.2× per-cube fps), and vendor 3D-state poll caching (37→59 fps per cube to hit 60Hz P0)",
       },
+      {
+        title: "Standalone demo apps",
+        description:
+          "Three demos ship as independent installers — a real-time Gaussian-splat viewer, a glTF 2.0 PBR model viewer, and a spatial media player for photos, video, and Leia Image Format pictures",
+      },
+      {
+        title: "Truthful per-mode eye tracking",
+        description:
+          "Rendering modes now declare whether they consume live eye tracking, isTracking reports the real tracker state end-to-end (including out-of-process apps), and apps get an edge-triggered event on tracking loss/recovery — shipped as a coordinated runtime + Leia plug-in release",
+      },
     ],
   },
   {

@@ -21,7 +21,7 @@ const footerLinks = {
     { label: "Plug-in guide", href: "/vendors" },
     { label: "Extensions", href: "/extensions" },
     { label: "Platform Support", href: "/platform-support" },
-    { label: "Projection Library", href: REPO_URLS.projection },
+    { label: "Common Library", href: REPO_URLS.common },
   ],
 };
 

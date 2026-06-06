@@ -46,6 +46,11 @@ const adrs = [
     title: "Vendor plug-in / aux boundary",
     href: `${RUNTIME}/blob/main/docs/adr/ADR-019-vendor-plugin-aux-boundary.md`,
   },
+  {
+    id: "ADR-022",
+    title: "Per-mode capability flags + frozen enumerated app structs",
+    href: `${RUNTIME}/blob/main/docs/adr/ADR-022-per-mode-capability-flags-frozen-enum-structs.md`,
+  },
 ];
 
 const extendLinks = [

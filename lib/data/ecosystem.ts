@@ -63,11 +63,20 @@ export const ecosystemRepos: EcosystemRepo[] = [
     status: "active",
   },
   {
-    name: "kooima-projection",
-    repo: "DisplayXR/kooima-projection",
+    name: "displayxr-demo-mediaplayer",
+    repo: "DisplayXR/displayxr-demo-mediaplayer",
     description:
-      "Off-axis frustum projection math library for spatial display rendering.",
-    url: "https://github.com/DisplayXR/kooima-projection",
+      "Spatial media player — photos, GPU-decoded video with synchronized audio, Leia Image Format (LIF) pictures, and folder slideshows, with playback controllable by AI agents. Windows + macOS.",
+    url: "https://github.com/DisplayXR/displayxr-demo-mediaplayer",
+    category: "demos",
+    status: "active",
+  },
+  {
+    name: "displayxr-common",
+    repo: "DisplayXR/displayxr-common",
+    description:
+      "Shared math and common library — off-axis (Kooima) projection, atlas tiling, and window/canvas helpers consumed by the runtime, engine plugins, and demos from a single source of truth.",
+    url: "https://github.com/DisplayXR/displayxr-common",
     category: "tools",
   },
   {
