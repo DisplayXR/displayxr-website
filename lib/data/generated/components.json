@@ -29,9 +29,9 @@
   {
     "id": "mcp_tools",
     "name": "DisplayXR MCP Tools",
-    "version": "v0.3.4",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.3.4",
-    "releaseDate": "2026-05-31",
+    "version": "v0.4.0",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.4.0",
+    "releaseDate": "2026-06-06",
     "platforms": "Windows · macOS",
     "repoUrl": "https://github.com/DisplayXR/displayxr-mcp"
   },

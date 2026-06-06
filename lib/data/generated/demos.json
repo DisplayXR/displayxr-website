@@ -22,5 +22,17 @@
     "repoUrl": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat",
     "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.6.0",
     "tag": "v1.6.0"
+  },
+  {
+    "id": "mediaplayer",
+    "repo": "displayxr-demo-mediaplayer",
+    "name": "Media Player",
+    "description": "Two-view video and image player for 3D displays",
+    "category": "app",
+    "type": "3d",
+    "icon": "/demos/displayxr-demo-mediaplayer/icon.png",
+    "repoUrl": "https://github.com/DisplayXR/displayxr-demo-mediaplayer",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.0.0",
+    "tag": "v1.0.0"
   }
 ]
