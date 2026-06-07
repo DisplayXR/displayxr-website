@@ -12,6 +12,10 @@
     "group": "display"
   },
   {
+    "name": "XR_EXT_local_3d_zone",
+    "group": "display"
+  },
+  {
     "name": "XR_EXT_macos_gl_binding",
     "group": "windowing"
   },
@@ -22,6 +26,10 @@
   {
     "name": "XR_EXT_spatial_workspace",
     "group": "workspace"
+  },
+  {
+    "name": "XR_EXT_view_rig",
+    "group": "display"
   },
   {
     "name": "XR_EXT_win32_window_binding",
