@@ -14,6 +14,7 @@ const footerLinks = {
     { label: "Contribute", href: "/contribute" },
     { label: "Architecture", href: "/architecture" },
     { label: "Roadmap", href: "/roadmap" },
+    { label: "Governance", href: "/governance" },
     { label: "Docs", href: "/docs" },
     { label: "GitHub", href: GITHUB_ORG_URL },
   ],

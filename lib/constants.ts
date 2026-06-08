@@ -30,6 +30,7 @@ export const NAV: NavEntry[] = [
       { label: "Contribute", href: "/contribute" },
       { label: "Architecture", href: "/architecture" },
       { label: "Roadmap", href: "/roadmap" },
+      { label: "Governance", href: "/governance" },
       { label: "Source & repos", href: GITHUB_ORG_URL, external: true },
     ],
   },
