@@ -35,9 +35,10 @@ export function Hero() {
             <span className="text-text-primary font-medium">
               Write once. Run on any spatial display.
             </span>{" "}
-            DisplayXR is an open extension standard and runtime for 3D
-            displays — tracked stereo and multiview lightfield — portable
-            across engines, graphics APIs, and vendor hardware.
+            DisplayXR is an open platform for spatial displays — OpenXR
+            extension specifications, a reference runtime, and reference
+            implementations — for tracked stereo and multiview lightfield
+            3D, portable across engines, graphics APIs, and vendor hardware.
           </p>
           <div className="hero-animate hero-animate-delay-2 flex flex-wrap gap-4">
             <Button href="/getting-started">Get Started</Button>
