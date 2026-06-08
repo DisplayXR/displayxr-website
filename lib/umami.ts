@@ -57,7 +57,14 @@ async function umamiFetch<T>(
   return res.json() as Promise<T>;
 }
 
-type StatValue = { value: number; prev: number };
+// Umami Cloud returns flat numbers ({ pageviews: 27 }); self-hosted v2 wraps
+// them ({ pageviews: { value: 27, prev: 12 } }). Accept either.
+type StatValue = number | { value: number; prev: number };
+
+function statValue(v: StatValue | undefined): number {
+  if (typeof v === "number") return v;
+  return v?.value ?? 0;
+}
 
 export async function getAnalytics(rangeDays = 30): Promise<Analytics> {
   if (!API_KEY || !WEBSITE_ID) {
@@ -87,10 +94,10 @@ export async function getAnalytics(rangeDays = 30): Promise<Analytics> {
 
     return {
       rangeDays,
-      pageviews: stats.pageviews?.value ?? 0,
-      visitors: stats.visitors?.value ?? 0,
-      visits: stats.visits?.value ?? 0,
-      bounces: stats.bounces?.value ?? 0,
+      pageviews: statValue(stats.pageviews),
+      visitors: statValue(stats.visitors),
+      visits: statValue(stats.visits),
+      bounces: statValue(stats.bounces),
       topPages: pages ?? [],
       topReferrers: referrers ?? [],
       topCountries: countries ?? [],
