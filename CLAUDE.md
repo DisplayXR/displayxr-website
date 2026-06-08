@@ -87,6 +87,6 @@ The site is organized around three audiences. Keep it that way:
 ## Repos this site points at
 
 Org: `https://github.com/DisplayXR`. Source repos (runtime, extensions, unity,
-unreal, mcp, kooima-projection, demos) are public; **`displayxr-shell-pvt` is
+unreal, mcp, displayxr-common, demos) are public; **`displayxr-shell-pvt` is
 private** (see above) and the site only links the public `displayxr-shell-releases`.
 Repo URLs are centralized in `lib/constants.ts` (`REPO_URLS`).

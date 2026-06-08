@@ -190,7 +190,7 @@ Visually map the public repos:
 - displayxr-unity — Unity engine plugin (UPM)
 - displayxr-unreal — Unreal Engine plugin
 - displayxr-demos — demo applications
-- kooima-projection — off-axis frustum projection math library
+- displayxr-common — off-axis frustum projection math library (shared `displayxr::math` / `displayxr::common`)
 - displayxr-shell-releases — spatial shell / 3D window manager (binaries + docs)
 
 #### “Why now” section
@@ -590,7 +590,7 @@ The site should link prominently to all public repos:
 - DisplayXR/displayxr-unity — Unity plugin
 - DisplayXR/displayxr-unreal — Unreal plugin
 - DisplayXR/displayxr-demos — demo apps
-- DisplayXR/kooima-projection — projection math library
+- DisplayXR/displayxr-common — projection + shared scaffolding math library
 - DisplayXR/displayxr-shell-releases — spatial shell (binaries, docs, issues)
 
 Note: `displayxr-shell` (source) is private. The public-facing repo is `displayxr-shell-releases` which hosts installers via GitHub Releases.
