@@ -8,8 +8,8 @@
     "type": "3d",
     "icon": "/demos/displayxr-demo-modelviewer/model_viewer_icon.png",
     "repoUrl": "https://github.com/DisplayXR/displayxr-demo-modelviewer",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.9.0",
-    "tag": "v0.9.0"
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.10.0",
+    "tag": "v0.10.0"
   },
   {
     "id": "gaussiansplat",
