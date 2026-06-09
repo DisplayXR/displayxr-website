@@ -20,9 +20,9 @@
   {
     "id": "leia_plugin",
     "name": "Leia SR Plug-in",
-    "version": "v1.5.0",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v1.5.0",
-    "releaseDate": "2026-06-07",
+    "version": "v1.6.0",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v1.6.0",
+    "releaseDate": "2026-06-09",
     "platforms": "Windows",
     "repoUrl": "https://github.com/DisplayXR/displayxr-leia-plugin"
   },
