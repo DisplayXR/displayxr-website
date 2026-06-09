@@ -51,6 +51,11 @@ const adrs = [
     title: "Per-mode capability flags + frozen enumerated app structs",
     href: `${RUNTIME}/blob/main/docs/adr/ADR-022-per-mode-capability-flags-frozen-enum-structs.md`,
   },
+  {
+    id: "ADR-025",
+    title: "Android vendor display processors run out-of-process",
+    href: `${RUNTIME}/blob/main/docs/adr/ADR-025-android-vendor-dp-out-of-process.md`,
+  },
 ];
 
 const extendLinks = [

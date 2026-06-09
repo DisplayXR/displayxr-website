@@ -16,7 +16,7 @@ interface Extension {
   title: string;
   description: string;
   status: Status;
-  group: "display" | "windowing" | "workspace" | "capture" | "agent";
+  group: "display" | "rendering" | "windowing" | "workspace" | "capture" | "agent";
 }
 
 const extensions: Extension[] = [
@@ -28,6 +28,23 @@ const extensions: Extension[] = [
       "Provides applications with spatial display geometry, resolution, eye-tracking modes, and the data needed for correct off-axis (Kooima) projection and view configuration. Each rendering mode declares whether it consumes live eye tracking, and apps receive an edge-triggered event on tracking loss and recovery.",
     status: "shipping",
     group: "display",
+  },
+  // Rendering & projection
+  {
+    name: "XR_EXT_view_rig",
+    title: "View Rig",
+    description:
+      "Lets an app drive the runtime's view-rig math instead of re-implementing the off-axis (Kooima) projection from raw eye positions. The app chains a small rig descriptor — virtual display height and ipd/parallax/perspective factors for a display rig, or convergence and vertical FOV for a camera rig — onto xrLocateViews and consumes standard, render-ready XrView{pose, fov}, exactly as on any other OpenXR runtime. A raw-result channel still exposes the untransformed eye and display-plane inputs for aware consumers that keep doing their own math.",
+    status: "early",
+    group: "rendering",
+  },
+  {
+    name: "XR_EXT_local_3d_zone",
+    title: "Local 3D Zones",
+    description:
+      "Lets an app declare which regions of its window are 3D versus flat 2D via a per-pixel 3D-ness mask, authored as the whole window, a list of rects, or a freeform render target. The runtime composites a flat 2D layer over the weaved 3D output gated by the mask, and a hardware display processor can drive a switchable-lens panel so only the 3D regions weave. Spec v3 adds the 2D side as a first-class post-weave composition layer submitted through the normal frame loop.",
+    status: "beta",
+    group: "rendering",
   },
   // App-side window binding
   {
@@ -134,6 +151,12 @@ export default function ExtensionsPage() {
               label: "Display capability",
               blurb:
                 "What the runtime tells apps about the 3D display they're rendering on.",
+            },
+            {
+              key: "rendering",
+              label: "Rendering & projection",
+              blurb:
+                "How an app drives the runtime's view math and tells it which parts of the window are 3D versus flat 2D — instead of re-implementing the projection or 2D/3D compositing itself.",
             },
             {
               key: "windowing",

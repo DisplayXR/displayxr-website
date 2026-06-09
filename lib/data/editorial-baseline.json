@@ -22,6 +22,9 @@
     "displayxr-runtime/docs/adr/ADR-020-plugin-abi-compatibility-policy.md",
     "displayxr-runtime/docs/adr/ADR-021-color-management-encoding-state-invariant.md",
     "displayxr-runtime/docs/adr/ADR-022-per-mode-capability-flags-frozen-enum-structs.md",
+    "displayxr-runtime/docs/adr/ADR-023-unified-atlas-capture.md",
+    "displayxr-runtime/docs/adr/ADR-024-raw-vs-render-ready-views.md",
+    "displayxr-runtime/docs/adr/ADR-025-android-vendor-dp-out-of-process.md",
     "displayxr-unreal/Docs/DisplayXR/adr/ADR-001-direct-runtime-loading.md",
     "displayxr-unreal/Docs/DisplayXR/adr/ADR-002-zero-copy-atlas-handoff.md",
     "displayxr-unreal/Docs/DisplayXR/adr/ADR-003-ue-native-off-axis-projection.md"
