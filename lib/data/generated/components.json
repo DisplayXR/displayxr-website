@@ -11,9 +11,9 @@
   {
     "id": "shell",
     "name": "DisplayXR Shell",
-    "version": "v1.6.0",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v1.6.0",
-    "releaseDate": "2026-06-06",
+    "version": "v1.7.0",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v1.7.0",
+    "releaseDate": "2026-06-10",
     "platforms": "Windows",
     "repoUrl": "https://github.com/DisplayXR/displayxr-shell-releases"
   },
@@ -38,8 +38,8 @@
   {
     "id": "installer",
     "name": "All-in-one Installer",
-    "version": "v0.16.0",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v0.16.0",
+    "version": "v0.17.0",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v0.17.0",
     "releaseDate": "2026-06-09",
     "platforms": "Windows · macOS",
     "repoUrl": "https://github.com/DisplayXR/displayxr-installer"
