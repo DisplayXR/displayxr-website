@@ -56,6 +56,11 @@ const adrs = [
     title: "Android vendor display processors run out-of-process",
     href: `${RUNTIME}/blob/main/docs/adr/ADR-025-android-vendor-dp-out-of-process.md`,
   },
+  {
+    id: "ADR-026",
+    title: "Orientation-independent rendering modes with config-derived view scale",
+    href: `${RUNTIME}/blob/main/docs/adr/ADR-026-orientation-aware-view-scaling.md`,
+  },
 ];
 
 const extendLinks = [
