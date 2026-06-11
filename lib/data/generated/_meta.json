@@ -27,6 +27,7 @@
       "displayxr-runtime/docs/adr/ADR-024-raw-vs-render-ready-views.md",
       "displayxr-runtime/docs/adr/ADR-025-android-vendor-dp-out-of-process.md",
       "displayxr-runtime/docs/adr/ADR-026-orientation-aware-view-scaling.md",
+      "displayxr-runtime/docs/adr/ADR-027-display-zones.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-001-direct-runtime-loading.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-002-zero-copy-atlas-handoff.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-003-ue-native-off-axis-projection.md"
