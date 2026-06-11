@@ -32,6 +32,7 @@
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-003-ue-native-off-axis-projection.md"
     ],
     "demoRepos": [
+      "displayxr-demo-avatar",
       "displayxr-demo-gaussiansplat",
       "displayxr-demo-mediaplayer",
       "displayxr-demo-modelviewer"
@@ -39,6 +40,7 @@
     "repos": [
       ".github",
       "displayxr-common",
+      "displayxr-demo-avatar",
       "displayxr-demo-gaussiansplat",
       "displayxr-demo-mediaplayer",
       "displayxr-demo-modelviewer",

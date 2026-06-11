@@ -1,5 +1,17 @@
 [
   {
+    "id": "avatar",
+    "repo": "displayxr-demo-avatar",
+    "name": "3D Avatar",
+    "description": "A transparent, click-through 3D avatar that floats over your desktop. The character is weaved in 3D; a flat 2D speech bubble sits beside it; clicks pass through to whatever is behind. W/S dolly with clipping at the display plane.",
+    "category": "demo",
+    "type": "3d",
+    "icon": "/demos/displayxr-demo-avatar/avatar_icon.png",
+    "repoUrl": "https://github.com/DisplayXR/displayxr-demo-avatar",
+    "releaseUrl": null,
+    "tag": null
+  },
+  {
     "id": "modelviewer",
     "repo": "displayxr-demo-modelviewer",
     "name": "3D Model Viewer",
@@ -20,8 +32,8 @@
     "type": "3d",
     "icon": "/demos/displayxr-demo-gaussiansplat/icon.png",
     "repoUrl": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.9.0",
-    "tag": "v1.9.0"
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.10.0",
+    "tag": "v1.10.0"
   },
   {
     "id": "mediaplayer",

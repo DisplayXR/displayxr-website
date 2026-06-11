@@ -38,9 +38,9 @@
   {
     "id": "installer",
     "name": "All-in-one Installer",
-    "version": "v0.17.0",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v0.17.0",
-    "releaseDate": "2026-06-09",
+    "version": "v0.18.0",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v0.18.0",
+    "releaseDate": "2026-06-10",
     "platforms": "Windows · macOS",
     "repoUrl": "https://github.com/DisplayXR/displayxr-installer"
   }
