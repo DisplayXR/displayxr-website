@@ -21,6 +21,13 @@
     "archived": false
   },
   {
+    "name": "displayxr-demo-earthview",
+    "description": "Streaming 3D city viewer on Google Photorealistic 3D Tiles for glasses-free 3D displays (DisplayXR / OpenXR).",
+    "url": "https://github.com/DisplayXR/displayxr-demo-earthview",
+    "topics": [],
+    "archived": false
+  },
+  {
     "name": "displayxr-demo-gaussiansplat",
     "description": "DisplayXR demo — real-time 3D Gaussian Splatting viewer for glasses-free 3D displays. Auto-synced from displayxr-runtime-pvt.",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat",
