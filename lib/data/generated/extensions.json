@@ -12,6 +12,10 @@
     "group": "display"
   },
   {
+    "name": "XR_EXT_display_zones",
+    "group": "display"
+  },
+  {
     "name": "XR_EXT_local_3d_zone",
     "group": "display"
   },
