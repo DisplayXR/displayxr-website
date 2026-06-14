@@ -2,9 +2,9 @@
   {
     "id": "runtime",
     "name": "DisplayXR Runtime",
-    "version": "v1.17.0",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v1.17.0",
-    "releaseDate": "2026-06-12",
+    "version": "v1.17.1",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v1.17.1",
+    "releaseDate": "2026-06-14",
     "platforms": "Windows · macOS",
     "repoUrl": "https://github.com/DisplayXR/displayxr-runtime"
   },
