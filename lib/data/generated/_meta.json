@@ -30,6 +30,7 @@
       "displayxr-runtime/docs/adr/ADR-027-display-zones.md",
       "displayxr-runtime/docs/adr/ADR-028-display-mode-recipe-vs-hardware-state.md",
       "displayxr-runtime/docs/adr/ADR-029-client-owned-transparent-ipc-present.md",
+      "displayxr-runtime/docs/adr/ADR-030-crop-before-dp-zero-copy-only-when-swapchain-equals-atlas.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-001-direct-runtime-loading.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-002-zero-copy-atlas-handoff.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-003-ue-native-off-axis-projection.md"
