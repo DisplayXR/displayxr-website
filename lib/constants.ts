@@ -65,6 +65,8 @@ export const REPO_URLS = {
   demoGaussiansplat: "https://github.com/DisplayXR/displayxr-demo-gaussiansplat",
   demoModelviewer: "https://github.com/DisplayXR/displayxr-demo-modelviewer",
   demoMediaplayer: "https://github.com/DisplayXR/displayxr-demo-mediaplayer",
+  demoAvatar: "https://github.com/DisplayXR/displayxr-demo-avatar",
+  demoEarthview: "https://github.com/DisplayXR/displayxr-demo-earthview",
   common: "https://github.com/DisplayXR/displayxr-common",
   mcp: "https://github.com/DisplayXR/displayxr-mcp",
   shell: "https://github.com/DisplayXR/displayxr-shell-releases",
