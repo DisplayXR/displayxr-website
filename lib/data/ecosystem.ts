@@ -72,6 +72,24 @@ export const ecosystemRepos: EcosystemRepo[] = [
     status: "active",
   },
   {
+    name: "displayxr-demo-avatar",
+    repo: "DisplayXR/displayxr-demo-avatar",
+    description:
+      "A transparent, click-through 3D avatar that floats over your desktop (OpenXR + native Vulkan) — weaved in 3D with a flat 2D speech bubble beside it, and clicks passing through to whatever is behind. Showcases the see-through transparency and mixed 2D/3D display-zone path.",
+    url: "https://github.com/DisplayXR/displayxr-demo-avatar",
+    category: "demos",
+    status: "active",
+  },
+  {
+    name: "displayxr-demo-earthview",
+    repo: "DisplayXR/displayxr-demo-earthview",
+    description:
+      "Streaming glasses-free 3D city viewer on Google Photorealistic 3D Tiles (OpenXR + Vulkan). Fly the full-scale world camera-style, or double-click to frame a neighborhood as a tabletop diorama. Requires a Google Map Tiles API key.",
+    url: "https://github.com/DisplayXR/displayxr-demo-earthview",
+    category: "demos",
+    status: "beta",
+  },
+  {
     name: "displayxr-common",
     repo: "DisplayXR/displayxr-common",
     description:
