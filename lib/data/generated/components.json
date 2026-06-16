@@ -2,7 +2,7 @@
   {
     "id": "runtime",
     "name": "DisplayXR Runtime",
-    "version": "v1.19.0",
+    "version": "v1.20.0",
     "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v1.20.0",
     "releaseDate": "2026-06-16",
     "platforms": "Windows · macOS",
@@ -11,7 +11,7 @@
   {
     "id": "shell",
     "name": "DisplayXR Shell",
-    "version": "v1.7.0",
+    "version": "v1.8.0",
     "releaseUrl": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v1.8.0",
     "releaseDate": "2026-06-16",
     "platforms": "Windows",
