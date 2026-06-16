@@ -9,7 +9,7 @@ export interface DisplayVendor {
 export interface Device {
   name: string;
   oem: string;
-  formFactor: "laptop" | "tablet" | "monitor" | "desktop";
+  formFactor: "laptop" | "tablet" | "monitor" | "desktop" | "handheld";
   status: Status;
   vendorId: string;
   url?: string;
@@ -85,6 +85,24 @@ export const devices: Device[] = [
     status: "shipping",
     vendorId: "leia",
     url: "https://www.barco.com/en/product/eonis-3d-mdrc-8127",
+  },
+
+  // ZTE Android 3D devices (DisplayXR runs natively on Android)
+  {
+    name: "Nubia Pad 2",
+    oem: "ZTE",
+    formFactor: "tablet",
+    status: "shipping",
+    vendorId: "leia",
+    url: "https://www.nubia.com/",
+  },
+  {
+    name: "Red Magic Explorer 3D",
+    oem: "ZTE",
+    formFactor: "handheld",
+    status: "shipping",
+    vendorId: "leia",
+    url: "https://www.redmagic.gg/",
   },
 
   // Simulation

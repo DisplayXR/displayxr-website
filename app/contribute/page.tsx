@@ -56,6 +56,11 @@ const adrs = [
     title: "Android vendor display processors run out-of-process",
     href: `${RUNTIME}/blob/main/docs/adr/ADR-025-android-vendor-dp-out-of-process.md`,
   },
+  {
+    id: "ADR-027",
+    title: "Display zones — decoupled mixed 2D/3D layout with per-zone rigs",
+    href: `${RUNTIME}/blob/main/docs/adr/ADR-027-display-zones.md`,
+  },
 ];
 
 const extendLinks = [
