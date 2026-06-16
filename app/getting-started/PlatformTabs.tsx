@@ -16,6 +16,7 @@ import {
   Hammer,
   Eye,
   Layers,
+  Smartphone,
 } from "lucide-react";
 import type { ReactNode } from "react";
 
@@ -570,6 +571,231 @@ const macosFAQs: FAQ[] = [
   },
 ];
 
+const androidSteps: Step[] = [
+  {
+    num: 1,
+    title: "Check the prerequisites",
+    required: true,
+    icon: <Smartphone size={20} />,
+    body: (
+      <>
+        <p className="text-sm text-text-secondary leading-relaxed mb-3">
+          On the host machine (Windows or macOS):
+        </p>
+        <ul className="space-y-2 text-text-secondary leading-relaxed list-disc list-inside">
+          <li>Android SDK (API 35) + platform-tools (ADB)</li>
+          <li>
+            Android NDK <Mono>26.3.11579264</Mono> and CMake{" "}
+            <Mono>3.22.1</Mono> (both ship through the Android SDK manager)
+          </li>
+          <li>Java JDK 17 and Python 3.6+</li>
+          <li>
+            Android Studio is optional but handy for first-time SDK/NDK setup
+          </li>
+        </ul>
+        <p className="text-sm text-text-secondary leading-relaxed mt-4 mb-2">
+          On the device:
+        </p>
+        <ul className="space-y-2 text-text-secondary leading-relaxed list-disc list-inside">
+          <li>
+            A Leia 3D Android device — <strong>ZTE Nubia Pad 2</strong> or{" "}
+            <strong>Red Magic Explorer 3D</strong> (Lume Pad-class hardware with
+            a lightfield display and face tracking)
+          </li>
+          <li>
+            Developer options + USB debugging enabled (Settings → About → tap
+            Build Number 7 times)
+          </li>
+          <li>
+            The factory <strong>Leia Display Service</strong> +{" "}
+            <strong>Leia Face Tracking Service</strong> present
+          </li>
+        </ul>
+        <div className="mt-4 p-4 rounded-md bg-warning/10 border border-warning/30 text-sm text-text-secondary leading-relaxed">
+          <strong className="text-text-primary">Heads up:</strong> Android is a{" "}
+          <strong>developer source build</strong> today — you build the runtime
+          APK and deploy with <Mono>adb</Mono>; there&apos;s no one-click
+          installer. The DisplayXR Shell and MCP Tools are desktop-only; on
+          Android the runtime drives the Leia display directly through the
+          out-of-process vendor display processor.
+        </div>
+      </>
+    ),
+  },
+  {
+    num: 2,
+    title: "Clone and point at the Android SDK",
+    required: true,
+    icon: <Terminal size={20} />,
+    body: (
+      <>
+        <CodeBlock>{`git clone https://github.com/DisplayXR/displayxr-runtime.git
+cd displayxr-runtime`}</CodeBlock>
+        <p className="text-text-secondary leading-relaxed mb-2">
+          Create <Mono>local.properties</Mono> in the repo root pointing at
+          your SDK:
+        </p>
+        <CodeBlock>{`# Windows
+sdk.dir=C:/Users/<you>/AppData/Local/Android/Sdk
+# macOS
+# sdk.dir=/Users/<you>/Library/Android/sdk`}</CodeBlock>
+        <p className="text-sm text-text-secondary leading-relaxed">
+          The Gradle build auto-downloads Eigen and the OpenXR loader, so the
+          runtime APK builds without the vendor SDK in scope — the Leia CNSDK
+          display-processor plug-in builds separately from{" "}
+          <a
+            href={REPO_URLS.leiaPlugin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:text-accent-hover underline underline-offset-2"
+          >
+            displayxr-leia-plugin
+          </a>
+          .
+        </p>
+      </>
+    ),
+  },
+  {
+    num: 3,
+    title: "Build the runtime APK",
+    required: true,
+    icon: <Hammer size={20} />,
+    body: (
+      <>
+        <CodeBlock>{`./gradlew :src:xrt:targets:openxr_android:assembleInProcessDebug
+
+# APK output:
+# src/xrt/targets/openxr_android/build/outputs/apk/inProcess/debug/openxr_android-inProcess-debug.apk`}</CodeBlock>
+        <p className="text-text-secondary leading-relaxed">
+          The <Mono>inProcess</Mono> variant is the simplest single-app path
+          and the one to start with; an <Mono>outOfProcess</Mono> variant adds
+          the IPC service compositor for multi-app sessions. The APK registers
+          as an OpenXR runtime via the{" "}
+          <Mono>org.khronos.openxr.OpenXRRuntimeService</Mono> intent, which the
+          Khronos loader discovers at <Mono>xrCreateInstance</Mono>.
+        </p>
+      </>
+    ),
+  },
+  {
+    num: 4,
+    title: "Install on the device",
+    required: true,
+    icon: <Package size={20} />,
+    body: (
+      <>
+        <p className="text-text-secondary leading-relaxed mb-2">
+          Confirm the device is attached, then install:
+        </p>
+        <CodeBlock>{`adb devices   # should list your device as "device"
+
+adb install -r \\
+  src/xrt/targets/openxr_android/build/outputs/apk/inProcess/debug/openxr_android-inProcess-debug.apk`}</CodeBlock>
+        <p className="text-sm text-text-secondary leading-relaxed">
+          Verify the runtime registered:{" "}
+          <Mono>adb shell pm list packages | grep monado</Mono> should list{" "}
+          <Mono>org.freedesktop.monado.openxr_runtime.in_process</Mono>.
+        </p>
+      </>
+    ),
+  },
+  {
+    num: 5,
+    title: "Smoke test with a sample app",
+    required: false,
+    icon: <Eye size={20} />,
+    body: (
+      <>
+        <p className="text-text-secondary leading-relaxed mb-2">
+          Build and install an OpenXR app — the{" "}
+          <Mono>cube_handle_vk_android</Mono> test app, or the{" "}
+          <a
+            href={REPO_URLS.demoModelviewer}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:text-accent-hover underline underline-offset-2"
+          >
+            model-viewer
+          </a>{" "}
+          /{" "}
+          <a
+            href={REPO_URLS.demoMediaplayer}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:text-accent-hover underline underline-offset-2"
+          >
+            media-player
+          </a>{" "}
+          demos, which ship Android builds — then launch and watch the log:
+        </p>
+        <CodeBlock>{`adb shell am start -n com.displayxr.cube_handle_vk_android/android.app.NativeActivity
+adb logcat -s cube_handle_vk_android:V DisplayXR:V leia:V`}</CodeBlock>
+        <p className="text-sm text-text-secondary leading-relaxed">
+          A healthy run logs the bring-up chain (
+          <Mono>xrCreateInstance → xrCreateSession → Bring-up chain complete</Mono>
+          ) and a steady frame counter, and the cube renders with eye-tracked
+          off-axis (Kooima) parallax on the lightfield display.
+        </p>
+      </>
+    ),
+  },
+];
+
+const androidFAQs: FAQ[] = [
+  {
+    q: "APK installs but the runtime isn't discovered",
+    a: (
+      <>
+        The Khronos loader finds the runtime through the{" "}
+        <Mono>org.khronos.openxr.OpenXRRuntimeService</Mono> intent. Run{" "}
+        <Mono>
+          adb shell dumpsys package
+          org.freedesktop.monado.openxr_runtime.in_process
+        </Mono>{" "}
+        and confirm the service filter is present and{" "}
+        <Mono>SoFilename = libopenxr_displayxr.so</Mono>.
+      </>
+    ),
+  },
+  {
+    q: "Black screen / no 3D interlacing",
+    a: (
+      <>
+        Confirm the <strong>Leia Display Service</strong> is running (
+        <Mono>adb shell dumpsys activity services | grep -i leia</Mono>) and
+        that the vendor display processor came up —{" "}
+        <Mono>adb logcat | grep &quot;Leia CNSDK DP created&quot;</Mono> should
+        appear. The CNSDK plug-in (
+        <Mono>libdxrp050_leia_cnsdk.so</Mono>) must be present in the runtime
+        APK&apos;s <Mono>jniLibs</Mono>; it builds from the Leia plug-in repo.
+      </>
+    ),
+  },
+  {
+    q: "Is there an Android installer for end users?",
+    a: (
+      <>
+        Not yet — Android is a developer build today (Gradle + <Mono>adb</Mono>
+        ). The runtime, the native Vulkan compositor, out-of-process vendor
+        display processor, orientation-aware rendering, and mixed 2D/3D display
+        zones are all shipping; packaged distribution is on the roadmap.
+      </>
+    ),
+  },
+  {
+    q: "vkCreateAndroidSurfaceKHR fails",
+    a: (
+      <>
+        The Vulkan native compositor needs <Mono>VK_KHR_android_surface</Mono>.
+        The runtime enables it; if surface creation still fails, confirm the
+        device&apos;s Vulkan driver advertises it via{" "}
+        <Mono>adb shell dumpsys SurfaceFlinger | grep -i vulkan</Mono>.
+      </>
+    ),
+  },
+];
+
 function WindowsFastPath() {
   return (
     <div className="bg-accent/10 border border-accent/30 rounded-lg p-6">
@@ -674,17 +900,28 @@ function Troubleshooting({ faqs }: { faqs: FAQ[] }) {
   );
 }
 
-type Platform = "windows" | "macos";
+type Platform = "windows" | "macos" | "android";
 
 export function PlatformTabs() {
   const [platform, setPlatform] = useState<Platform>("windows");
   const tabs: { id: Platform; label: string; icon: ReactNode }[] = [
     { id: "windows", label: "Windows", icon: <Monitor size={16} /> },
     { id: "macos", label: "macOS", icon: <Apple size={16} /> },
+    { id: "android", label: "Android", icon: <Smartphone size={16} /> },
   ];
 
-  const steps = platform === "windows" ? windowsSteps : macosSteps;
-  const faqs = platform === "windows" ? windowsFAQs : macosFAQs;
+  const steps =
+    platform === "windows"
+      ? windowsSteps
+      : platform === "macos"
+        ? macosSteps
+        : androidSteps;
+  const faqs =
+    platform === "windows"
+      ? windowsFAQs
+      : platform === "macos"
+        ? macosFAQs
+        : androidFAQs;
 
   return (
     <div className="space-y-12">

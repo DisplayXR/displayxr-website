@@ -33,6 +33,7 @@ export const runtimeCompositors: RuntimeCompositor[] = [
   { platform: "macOS", graphicsApi: "Metal", status: "shipping", notes: "sim_display weaver, window binding" },
   { platform: "macOS", graphicsApi: "OpenGL", status: "shipping", notes: "" },
   { platform: "macOS", graphicsApi: "Vulkan", status: "shipping", notes: "MoltenVK; runtime error at launch (MoltenVK limitation)" },
+  { platform: "Android", graphicsApi: "Vulkan", status: "shipping", notes: "Out-of-process service compositor; orientation-aware rendering, mixed 2D/3D zones" },
 ];
 
 export const enginePlugins: EnginePlugin[] = [
@@ -41,7 +42,7 @@ export const enginePlugins: EnginePlugin[] = [
 ];
 
 export const hardwareBackends: HardwareBackend[] = [
-  { backend: "Leia SR SDK (LeiaSR displays)", status: "shipping", notes: "Ships as a separate plug-in (DisplayXRLeiaSRSetup-*.exe, Windows-only); D3D11/D3D12/Vulkan weavers, eye tracking" },
+  { backend: "Leia SR SDK (LeiaSR displays)", status: "shipping", notes: "Ships as a separate plug-in (Windows installer + Android CNSDK); D3D11/D3D12/Vulkan weavers, eye tracking. On Android the vendor display processor runs out-of-process" },
   { backend: "sim_display (no hardware)", status: "shipping", notes: "Simulation mode for development" },
 ];
 

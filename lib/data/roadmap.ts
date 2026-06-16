@@ -29,7 +29,7 @@ export const roadmapSections: RoadmapSection[] = [
       {
         title: "Custom OpenXR extensions",
         description:
-          "Extensions for querying spatial display geometry, rendering modes, eye tracking, and binding compositor output to application windows on both Windows and macOS",
+          "Extensions for querying spatial display geometry, rendering modes, eye tracking, and binding compositor output to application windows across Windows, macOS, and Android",
       },
       {
         title: "Unity plugin with sample scene",
@@ -105,6 +105,11 @@ export const roadmapSections: RoadmapSection[] = [
         title: "Truthful per-mode eye tracking",
         description:
           "Rendering modes now declare whether they consume live eye tracking, isTracking reports the real tracker state end-to-end (including out-of-process apps), and apps get an edge-triggered event on tracking loss/recovery — shipped as a coordinated runtime + Leia plug-in release",
+      },
+      {
+        title: "Android runtime",
+        description:
+          "The same OpenXR runtime now ships on Android, driving integrated 3D tablets and handhelds (ZTE Nubia Pad 2, Red Magic Explorer 3D) through the native Vulkan compositor. The vendor display processor runs out-of-process with a zero-copy buffer handoff, rendering is orientation-aware across portrait and landscape, and mixed 2D/3D display zones, per-mode eye tracking, and see-through transparency all carry over from the desktop. Model-viewer and media-player demos ship Android builds",
       },
     ],
   },

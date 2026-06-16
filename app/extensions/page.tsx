@@ -17,6 +17,8 @@ interface Extension {
   description: string;
   status: Status;
   group: "display" | "rendering" | "windowing" | "workspace" | "capture" | "agent";
+  /** Override the default per-header link (for extensions without a published header yet). */
+  href?: string;
 }
 
 const extensions: Extension[] = [
@@ -46,6 +48,14 @@ const extensions: Extension[] = [
     status: "beta",
     group: "rendering",
   },
+  {
+    name: "XR_EXT_display_zones",
+    title: "Display Zones",
+    description:
+      "Declares a layout of independent 3D zones and flat 2D zones across a single display, each 3D zone carrying its own view rig, plus a wish mask the vendor display processor honors when driving a switchable-lens panel. Powers mixed 2D/3D compositions — a weaved 3D object beside a flat 2D HUD, for example — and underpins the out-of-process display compositing used on Android.",
+    status: "beta",
+    group: "rendering",
+  },
   // App-side window binding
   {
     name: "XR_EXT_win32_window_binding",
@@ -70,6 +80,15 @@ const extensions: Extension[] = [
       "macOS-specific OpenGL context binding for the Cocoa window-binding path. Lets GL apps share a CAOpenGLLayer-backed surface with the runtime compositor.",
     status: "shipping",
     group: "windowing",
+  },
+  {
+    name: "XR_EXT_android_surface_binding",
+    title: "Android Surface Binding",
+    description:
+      "Android equivalent of the Win32 and Cocoa window bindings. Binds an Android Surface (SurfaceView) to the session so the runtime composites into the app's surface, and carries the surface lifecycle the out-of-process Android compositor follows across rotation, background, and resume.",
+    status: "shipping",
+    group: "windowing",
+    href: REPO_URLS.extensions,
   },
   // Workspace controller surface (the swappable shell story)
   {
@@ -198,7 +217,10 @@ export default function ExtensionsPage() {
                 {items.map((ext) => (
                   <Card
                     key={ext.name}
-                    href={`${REPO_URLS.extensions}/blob/main/include/openxr/${ext.name}.h`}
+                    href={
+                      ext.href ??
+                      `${REPO_URLS.extensions}/blob/main/include/openxr/${ext.name}.h`
+                    }
                   >
                     <div className="flex items-start justify-between gap-4 mb-2">
                       <code className="text-accent font-mono text-sm font-semibold">

@@ -76,7 +76,8 @@ export default function ArchitecturePage() {
             DisplayXR handles session management, compositor orchestration, and
             extension dispatch. Vendor-specific processing — weaving,
             interlacing, calibration — happens below, in the display processor
-            layer.
+            layer. The same runtime ships on{" "}
+            <strong className="text-text-primary">Windows, macOS, and Android</strong>.
           </p>
           <ArchDiagram />
           <p className="text-sm text-text-secondary italic">
@@ -115,7 +116,7 @@ export default function ArchitecturePage() {
               <span className="text-accent font-mono text-sm shrink-0">Vulkan</span>
               <span className="text-text-secondary text-sm">
                 Native compositor with swapchain management. MoltenVK path
-                available on macOS.
+                available on macOS; the Android compositor is Vulkan-native.
               </span>
             </div>
             <div className="flex items-start gap-3">
@@ -132,6 +133,33 @@ export default function ArchitecturePage() {
               </span>
             </div>
           </div>
+        </section>
+
+        {/* Platforms */}
+        <section>
+          <h2 className="text-2xl font-semibold tracking-tight text-text-primary mb-4">
+            Platforms
+          </h2>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            DisplayXR runs on three platforms from one codebase. On{" "}
+            <strong className="text-text-primary">Windows</strong> it drives
+            LeiaSR displays through the D3D11/D3D12/Vulkan/OpenGL compositors;
+            on <strong className="text-text-primary">macOS</strong> it ships the
+            Metal, OpenGL, and MoltenVK paths against the simulation backend.
+          </p>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            On <strong className="text-text-primary">Android</strong>, the same
+            OpenXR runtime drives integrated 3D tablets and handhelds — such as
+            ZTE&apos;s Nubia Pad 2 and Red Magic Explorer 3D — through the
+            native Vulkan compositor. The vendor display processor runs{" "}
+            <em>out-of-process</em> as a service, so the runtime stays
+            vendor-neutral and apps connect over IPC with a zero-copy buffer
+            handoff. Rendering is orientation-aware — portrait and landscape
+            share one worst-case atlas, with no stall on live rotation — and the
+            same display-zone and see-through transparency model used on the
+            desktop lets a weaved 3D object sit beside a flat 2D HUD or float
+            over the live screen.
+          </p>
         </section>
 
         {/* Shipping Components */}

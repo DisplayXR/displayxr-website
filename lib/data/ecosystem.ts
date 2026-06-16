@@ -14,7 +14,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-runtime",
     repo: "DisplayXR/displayxr-runtime",
     description:
-      "Core OpenXR runtime with native compositors for D3D11, D3D12, Vulkan, Metal, and OpenGL.",
+      "Core OpenXR runtime with native compositors for D3D11, D3D12, Vulkan, Metal, and OpenGL — on Windows, macOS, and Android.",
     url: "https://github.com/DisplayXR/displayxr-runtime",
     category: "core",
   },
@@ -66,7 +66,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-demo-mediaplayer",
     repo: "DisplayXR/displayxr-demo-mediaplayer",
     description:
-      "Spatial media player — photos, GPU-decoded video with synchronized audio, Leia Image Format (LIF) pictures, and folder slideshows, with playback controllable by AI agents. Windows + macOS.",
+      "Spatial media player — photos, GPU-decoded video with synchronized audio, Leia Image Format (LIF) pictures, and folder slideshows, with playback controllable by AI agents. Windows, macOS, Android.",
     url: "https://github.com/DisplayXR/displayxr-demo-mediaplayer",
     category: "demos",
     status: "active",
