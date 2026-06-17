@@ -306,6 +306,62 @@ const windowsSteps: Step[] = [
       </>
     ),
   },
+  {
+    num: 7,
+    title: "Build from source (developers)",
+    required: false,
+    icon: <Hammer size={20} />,
+    body: (
+      <>
+        <p className="text-text-secondary leading-relaxed mb-3">
+          Want to modify or debug the runtime instead of installing it? Build
+          from source. Run the one-liner from an <strong>elevated</strong>{" "}
+          command prompt — it writes the registry:
+        </p>
+        <CodeBlock>{`git clone https://github.com/DisplayXR/displayxr-runtime.git
+cd displayxr-runtime
+scripts\\dev-setup.bat              REM build + register sim-display + set active runtime + VS solution
+scripts\\dev-setup.bat --leia       REM ...also build + register the Leia SR plug-in from source`}</CodeBlock>
+        <p className="text-text-secondary leading-relaxed mb-3">
+          Then build and run a test app (from a{" "}
+          <strong>non-elevated</strong> prompt):
+        </p>
+        <CodeBlock>{`scripts\\build_windows.bat test-apps
+_package\\run_cube_handle_d3d11_win.bat`}</CodeBlock>
+        <p className="text-sm text-text-secondary leading-relaxed mb-3">
+          <strong>The step that&apos;s easy to miss:</strong> a from-source build
+          produces the <Mono>sim-display</Mono> plug-in but doesn&apos;t register
+          it, and Windows plug-in discovery is registry-only — without
+          registration the runtime fails with{" "}
+          <Mono>DEVICE_CREATION_FAILED</Mono>. <Mono>dev-setup.bat</Mono> does
+          build + registration + active-runtime in one step (or run{" "}
+          <Mono>scripts\\register_dev_plugin.bat</Mono> for just the
+          registration).
+        </p>
+        <p className="text-sm text-text-secondary leading-relaxed">
+          Full reference:{" "}
+          <a
+            href="https://github.com/DisplayXR/displayxr-runtime/blob/main/docs/getting-started/building.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:text-accent-hover underline underline-offset-2"
+          >
+            Building DisplayXR
+          </a>
+          . Debug in Visual Studio:{" "}
+          <a
+            href="https://github.com/DisplayXR/displayxr-runtime/blob/main/docs/getting-started/debugging-in-visual-studio.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:text-accent-hover underline underline-offset-2"
+          >
+            Debugging in Visual Studio
+          </a>
+          .
+        </p>
+      </>
+    ),
+  },
 ];
 
 const macosSteps: Step[] = [
