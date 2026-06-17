@@ -101,25 +101,29 @@ export default function DocsPage() {
 
       <div className="mt-16 pt-8 border-t border-border">
         <h2 className="text-xl font-semibold text-text-primary mb-4">
-          Looking for something specific?
+          Browse the repositories
         </h2>
         <p className="text-text-secondary leading-relaxed">
-          Documentation is currently maintained alongside the source code. Each
-          repo contains detailed READMEs and inline docs. The links above point
-          to the most relevant starting points.
+          Each component keeps detailed READMEs and reference docs in its repo.
+          The guides above point to the best starting points; the full set of
+          public repositories is below.
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
-          {Object.entries(REPO_URLS).map(([key, url]) => (
-            <a
-              key={key}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-accent hover:text-accent-hover font-mono underline underline-offset-2"
-            >
-              {url.split("/").pop()}
-            </a>
-          ))}
+          {Object.entries(REPO_URLS)
+            // Internal test harnesses (unity-test, unreal-test) aren't doc
+            // entry points — keep them out of the public browse list.
+            .filter(([key]) => !key.endsWith("Test"))
+            .map(([key, url]) => (
+              <a
+                key={key}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-accent hover:text-accent-hover font-mono underline underline-offset-2"
+              >
+                {url.split("/").pop()}
+              </a>
+            ))}
         </div>
       </div>
     </PageLayout>

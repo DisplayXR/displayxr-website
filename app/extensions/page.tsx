@@ -300,6 +300,39 @@ export default function ExtensionsPage() {
             repository.
           </p>
         </div>
+
+        {/* Where to next */}
+        <section className="pt-12 border-t border-border">
+          <h2 className="text-xl font-semibold text-text-primary mb-4">
+            Where to next
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Card href="/getting-started" title="Build an app">
+              <p className="text-sm text-text-secondary leading-relaxed">
+                Install the runtime and opt into these extensions from your own
+                OpenXR app — no special hardware required.
+              </p>
+            </Card>
+            <Card
+              href={`${REPO_URLS.runtime}/blob/main/docs/guides/implementing-extension.md`}
+              title="Implement an extension"
+            >
+              <p className="text-sm text-text-secondary leading-relaxed">
+                Add or extend an OpenXR extension in the runtime — the
+                contributor guide walks through the wiring end to end.
+              </p>
+            </Card>
+            <Card href="/vendors" title="Integrate a display">
+              <p className="text-sm text-text-secondary leading-relaxed">
+                Vendors: ship a display-processor plug-in that consumes{" "}
+                <code className="bg-surface text-accent px-1 py-0.5 rounded text-xs font-mono">
+                  XR_EXT_display_info
+                </code>{" "}
+                and the window bindings.
+              </p>
+            </Card>
+          </div>
+        </section>
       </div>
     </PageLayout>
   );

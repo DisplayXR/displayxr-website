@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
 import { Table, TableRow, TableCell } from "@/components/ui/Table";
 import { VersionDashboard } from "@/components/status/VersionDashboard";
 import {
@@ -191,6 +192,23 @@ export default function PlatformSupportPage() {
             ))}
           </Table>
         </section>
+
+        {/* Get started CTA */}
+        <div className="rounded-lg border border-accent/30 bg-accent/10 p-6">
+          <h2 className="text-lg font-semibold text-text-primary mb-1">
+            Ready to try it on your platform?
+          </h2>
+          <p className="text-sm text-text-secondary leading-relaxed">
+            Install the Windows bundle or build from source on macOS — then run a
+            sample in simulation on any monitor, no 3D display required.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Button href="/getting-started">Get started →</Button>
+            <Button href="/download" variant="secondary">
+              Download
+            </Button>
+          </div>
+        </div>
       </div>
     </PageLayout>
   );

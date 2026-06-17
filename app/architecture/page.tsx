@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { Card } from "@/components/ui/Card";
 import { REPO_URLS } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -608,6 +609,33 @@ export default function ArchitecturePage() {
             .
           </p>
         </div>
+
+        {/* Where to next */}
+        <section className="pt-12 border-t border-border">
+          <h2 className="text-xl font-semibold text-text-primary mb-4">
+            Where to next
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Card href="/contribute" title="Contribute">
+              <p className="text-sm text-text-secondary leading-relaxed">
+                Add an extension, a driver, or a platform. The ADRs are
+                documented and external contributors PR directly.
+              </p>
+            </Card>
+            <Card href="/vendors" title="Integrate a display">
+              <p className="text-sm text-text-secondary leading-relaxed">
+                Plug your panel into the runtime through the vendor
+                display-processor interface — no app changes required.
+              </p>
+            </Card>
+            <Card href="/getting-started" title="Build an app">
+              <p className="text-sm text-text-secondary leading-relaxed">
+                Install the runtime and build a spatial-display app against
+                standard OpenXR — runs in simulation on any monitor.
+              </p>
+            </Card>
+          </div>
+        </section>
       </div>
     </PageLayout>
   );

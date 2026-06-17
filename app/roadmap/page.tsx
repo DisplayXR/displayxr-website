@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { Button } from "@/components/ui/Button";
 import { roadmapSections, type RoadmapPhase } from "@/lib/data/roadmap";
 import { CheckCircle2, Circle, ArrowRight, Clock } from "lucide-react";
 
@@ -88,6 +89,23 @@ export default function RoadmapPage() {
             </a>
             .
           </p>
+        </div>
+
+        {/* Want to help? */}
+        <div className="mt-8 rounded-lg border border-accent/30 bg-accent/10 p-6">
+          <h2 className="text-lg font-semibold text-text-primary mb-1">
+            Want to help build this?
+          </h2>
+          <p className="text-sm text-text-secondary leading-relaxed">
+            DisplayXR is open source and vendor-neutral. Pick up an open issue,
+            or read the architecture to see how the pieces fit.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Button href="/contribute">Contribute →</Button>
+            <Button href="/architecture" variant="secondary">
+              How it works
+            </Button>
+          </div>
         </div>
       </div>
     </PageLayout>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
 import { REPO_URLS } from "@/lib/constants";
 import { demos, engines } from "@/lib/data/generated";
 import { Boxes } from "lucide-react";
@@ -248,6 +249,26 @@ export default function DemosPage() {
             runs WebXR apps on 3D displays — display geometry, rendering modes,
             and tracked eyes from JavaScript, with a three.js reference sample.
           </p>
+        </div>
+
+        {/* Run-it-yourself CTA */}
+        <div className="rounded-lg border border-accent/30 bg-accent/10 p-6">
+          <h2 className="text-lg font-semibold text-text-primary mb-1">
+            Run these yourself — no special hardware needed
+          </h2>
+          <p className="text-sm text-text-secondary leading-relaxed">
+            Every demo works on an ordinary monitor via the built-in{" "}
+            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-xs font-mono">
+              sim_display
+            </code>{" "}
+            backend. Install DisplayXR, launch a demo, and see it in minutes.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Button href="/getting-started">Get started →</Button>
+            <Button href="/download" variant="secondary">
+              Download
+            </Button>
+          </div>
         </div>
 
         {/* Source link */}
