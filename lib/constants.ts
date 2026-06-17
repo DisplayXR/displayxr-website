@@ -17,7 +17,7 @@ export const NAV: NavEntry[] = [
   {
     label: "App Developers",
     items: [
-      { label: "Quickstart", href: "/getting-started" },
+      { label: "Build apps", href: "/docs" },
       { label: "Demos", href: "/demos" },
       { label: "Extensions", href: "/extensions" },
       { label: "WebXR", href: "/webxr" },
