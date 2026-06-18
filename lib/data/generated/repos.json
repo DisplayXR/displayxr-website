@@ -10,28 +10,56 @@
     "name": "displayxr-common",
     "description": "Generalized off-axis frustum projection math library",
     "url": "https://github.com/DisplayXR/displayxr-common",
-    "topics": [],
+    "topics": [
+      "3d-display",
+      "cpp",
+      "displayxr",
+      "kooima",
+      "projection",
+      "stereoscopic-3d"
+    ],
     "archived": false
   },
   {
     "name": "displayxr-demo-avatar",
-    "description": "DisplayXR demo — a transparent, click-through 3D avatar that floats over your desktop (OpenXR + native Vulkan). Derived from displayxr-demo-modelviewer.",
+    "description": "DisplayXR demo — a transparent, click-through 3D avatar that floats over your desktop (OpenXR + native Vulkan).",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar",
-    "topics": [],
+    "topics": [
+      "3d-display",
+      "avatar",
+      "displayxr",
+      "openxr",
+      "transparent",
+      "vulkan"
+    ],
     "archived": false
   },
   {
     "name": "displayxr-demo-earthview",
     "description": "Streaming 3D city viewer on Google Photorealistic 3D Tiles for glasses-free 3D displays (DisplayXR / OpenXR).",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview",
-    "topics": [],
+    "topics": [
+      "3d-display",
+      "3d-tiles",
+      "cesium",
+      "displayxr",
+      "openxr",
+      "photorealistic"
+    ],
     "archived": false
   },
   {
     "name": "displayxr-demo-gaussiansplat",
-    "description": "DisplayXR demo — real-time 3D Gaussian Splatting viewer for glasses-free 3D displays. Auto-synced from displayxr-runtime-pvt.",
+    "description": "DisplayXR demo — real-time 3D Gaussian Splatting viewer for glasses-free 3D displays (OpenXR + Vulkan, Windows & macOS).",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat",
-    "topics": [],
+    "topics": [
+      "3d-display",
+      "displayxr",
+      "gaussian-splatting",
+      "openxr",
+      "radiance-fields",
+      "vulkan"
+    ],
     "archived": false
   },
   {
@@ -51,37 +79,70 @@
   },
   {
     "name": "displayxr-demo-modelviewer",
-    "description": "DisplayXR demo — glasses-free 3D glTF 2.0 PBR model viewer (OpenXR + Vulkan). Scaffolded from displayxr-demo-gaussiansplat.",
+    "description": "DisplayXR demo — glasses-free 3D glTF 2.0 PBR model viewer (OpenXR + Vulkan, Windows & macOS).",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer",
-    "topics": [],
+    "topics": [
+      "3d-display",
+      "3d-model-viewer",
+      "displayxr",
+      "gltf",
+      "openxr",
+      "pbr",
+      "vulkan"
+    ],
     "archived": false
   },
   {
     "name": "displayxr-extensions",
     "description": "OpenXR extension specs and headers for 3D displays",
     "url": "https://github.com/DisplayXR/displayxr-extensions",
-    "topics": [],
+    "topics": [
+      "3d-display",
+      "displayxr",
+      "openxr",
+      "openxr-extensions",
+      "spatial-computing"
+    ],
     "archived": false
   },
   {
     "name": "displayxr-installer",
-    "description": "End-user meta-installer for DisplayXR — single .exe / .pkg bundle that chains runtime + Shell + Leia plug-in + MCP Tools. Tracks issue DisplayXR/displayxr-runtime#284.",
+    "description": "One-click installer for DisplayXR — a single .exe / .pkg that sets up the runtime, Shell, and Leia SR plug-in.",
     "url": "https://github.com/DisplayXR/displayxr-installer",
-    "topics": [],
+    "topics": [
+      "3d-display",
+      "displayxr",
+      "installer",
+      "macos",
+      "windows"
+    ],
     "archived": false
   },
   {
     "name": "displayxr-leia-plugin",
     "description": "DisplayXR Leia SR display-processor plug-in",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin",
-    "topics": [],
+    "topics": [
+      "3d-display",
+      "display-processor",
+      "displayxr",
+      "leia",
+      "openxr",
+      "vendor-plugin"
+    ],
     "archived": false
   },
   {
     "name": "displayxr-mcp",
     "description": "Tiny embeddable MCP (Model Context Protocol) server framework for DisplayXR — JSON-RPC 2.0 + stdio↔socket adapter, no runtime/shell coupling",
     "url": "https://github.com/DisplayXR/displayxr-mcp",
-    "topics": [],
+    "topics": [
+      "ai-agents",
+      "displayxr",
+      "mcp",
+      "model-context-protocol",
+      "openxr"
+    ],
     "archived": false
   },
   {
@@ -90,6 +151,7 @@
     "url": "https://github.com/DisplayXR/displayxr-runtime",
     "topics": [
       "3d-display",
+      "displayxr",
       "eye-tracking",
       "openxr",
       "spatial-computing"
@@ -100,14 +162,27 @@
     "name": "displayxr-shell-releases",
     "description": "DisplayXR Shell — spatial window manager for 3D displays. Installers, docs, and issue tracking.",
     "url": "https://github.com/DisplayXR/displayxr-shell-releases",
-    "topics": [],
+    "topics": [
+      "3d-display",
+      "displayxr",
+      "openxr",
+      "spatial-computing",
+      "window-manager"
+    ],
     "archived": false
   },
   {
     "name": "displayxr-unity",
     "description": "Unity plugin for eye-tracked 3D light field displays via OpenXR",
     "url": "https://github.com/DisplayXR/displayxr-unity",
-    "topics": [],
+    "topics": [
+      "3d-display",
+      "displayxr",
+      "openxr",
+      "stereoscopic",
+      "unity",
+      "unity-plugin"
+    ],
     "archived": false
   },
   {
@@ -135,7 +210,14 @@
     "name": "displayxr-unreal",
     "description": "Unreal Engine plugin for DisplayXR",
     "url": "https://github.com/DisplayXR/displayxr-unreal",
-    "topics": [],
+    "topics": [
+      "3d-display",
+      "displayxr",
+      "openxr",
+      "stereoscopic",
+      "ue5",
+      "unreal-engine"
+    ],
     "archived": false
   },
   {
@@ -147,9 +229,14 @@
   },
   {
     "name": "displayxr-website",
-    "description": "DisplayXR project website — displayxr.dev",
+    "description": "DisplayXR project website — displayxr.org",
     "url": "https://github.com/DisplayXR/displayxr-website",
-    "topics": [],
+    "topics": [
+      "3d-display",
+      "displayxr",
+      "documentation",
+      "nextjs"
+    ],
     "archived": false
   }
 ]
