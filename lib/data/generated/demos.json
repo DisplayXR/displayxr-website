@@ -8,8 +8,8 @@
     "type": "3d",
     "icon": "/demos/displayxr-demo-avatar/avatar_icon.png",
     "repoUrl": "https://github.com/DisplayXR/displayxr-demo-avatar",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.3.1",
-    "tag": "v0.3.1"
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.4.0",
+    "tag": "v0.4.0"
   },
   {
     "id": "modelviewer",
@@ -20,8 +20,8 @@
     "type": "3d",
     "icon": "/demos/displayxr-demo-modelviewer/model_viewer_icon.png",
     "repoUrl": "https://github.com/DisplayXR/displayxr-demo-modelviewer",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.11.0",
-    "tag": "v0.11.0"
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.12.0",
+    "tag": "v0.12.0"
   },
   {
     "id": "earthview",
@@ -32,8 +32,8 @@
     "type": "3d",
     "icon": "/demos/displayxr-demo-earthview/earthview_icon.png",
     "repoUrl": "https://github.com/DisplayXR/displayxr-demo-earthview",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.2.1",
-    "tag": "v0.2.1"
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.3.0",
+    "tag": "v0.3.0"
   },
   {
     "id": "gaussiansplat",
