@@ -27,13 +27,13 @@
     "id": "earthview",
     "repo": "displayxr-demo-earthview",
     "name": "EarthView",
-    "description": "Streaming 3D city viewer on Google Photorealistic 3D Tiles. Fly the full-scale world camera-style, or double-click to frame a neighborhood as a tabletop diorama. Requires a Google Map Tiles API key.",
+    "description": "Streaming 3D city viewer on Google Photorealistic 3D Tiles. Fly the full-scale world camera-style, or double-click a landmark to inspect it and orbit around it. Requires a Google Map Tiles API key.",
     "category": "demo",
     "type": "3d",
     "icon": "/demos/displayxr-demo-earthview/earthview_icon.png",
     "repoUrl": "https://github.com/DisplayXR/displayxr-demo-earthview",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.2.0",
-    "tag": "v0.2.0"
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.2.1",
+    "tag": "v0.2.1"
   },
   {
     "id": "gaussiansplat",
