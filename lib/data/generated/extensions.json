@@ -36,6 +36,10 @@
     "group": "display"
   },
   {
+    "name": "XR_EXT_weave",
+    "group": "display"
+  },
+  {
     "name": "XR_EXT_win32_window_binding",
     "group": "windowing"
   },

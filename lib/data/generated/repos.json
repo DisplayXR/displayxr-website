@@ -7,6 +7,13 @@
     "archived": false
   },
   {
+    "name": "displayxr-cef-host",
+    "description": "CEF offscreen-render browser stand-in that drives the real DisplayXR display-processor weave via XR_EXT_weave (#625, Step A). The host never weaves.",
+    "url": "https://github.com/DisplayXR/displayxr-cef-host",
+    "topics": [],
+    "archived": false
+  },
+  {
     "name": "displayxr-common",
     "description": "Generalized off-axis frustum projection math library",
     "url": "https://github.com/DisplayXR/displayxr-common",
