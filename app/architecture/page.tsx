@@ -163,6 +163,45 @@ export default function ArchitecturePage() {
           </p>
         </section>
 
+        {/* Regions: 2D and 3D in one window */}
+        <section>
+          <h2 className="text-2xl font-semibold tracking-tight text-text-primary mb-4">
+            One Model for 2D and 3D Regions
+          </h2>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            A spatial-display window is rarely all-3D. A weaved 3D object often
+            needs to sit beside a flat 2D HUD, a toolbar, or live screen content.
+            DisplayXR expresses every such layout through a single mechanism —{" "}
+            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">
+              XR_EXT_display_zones
+            </code>
+            : an app declares any number of <strong className="text-text-primary">3D zones</strong>{" "}
+            (each a rectangle with its own view rig and swapchain) alongside any
+            number of <strong className="text-text-primary">2D zones</strong>, plus a
+            per-pixel <em>wish mask</em> that tells the panel which areas should be
+            physically 3D and which should stay flat. There is now exactly one way
+            to say &quot;this region is 3D, that region is 2D.&quot;
+          </p>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            This replaces an earlier, narrower mechanism. The original{" "}
+            <em>2D-surround / output-rect</em> path could only express a single 3D
+            rectangle surrounded by one monolithic 2D fill — a strict special case
+            of the zone model, where the output rect is just one 3D zone and the
+            surround one 2D zone. It was retired in runtime{" "}
+            <strong className="text-text-primary">v1.25.0</strong>, folding both 2D
+            and 3D region expression onto the same compositing path and removing the
+            redundant per-API fill code.
+          </p>
+          <p className="text-text-secondary leading-relaxed">
+            Crucially, <strong className="text-text-primary">how an app owns its
+            output surface is orthogonal to how it expresses regions.</strong>{" "}
+            Whether the app draws into its own window, shares a texture with the
+            runtime, or lets the runtime host a window for it, zones are how all of
+            them carve up 2D and 3D. A plain full-window app is simply the degenerate
+            one-zone case — it needs no explicit zones at all.
+          </p>
+        </section>
+
         {/* Shipping Components */}
         <section>
           <h2 className="text-2xl font-semibold tracking-tight text-text-primary mb-4">
