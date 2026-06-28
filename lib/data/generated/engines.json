@@ -13,12 +13,12 @@
   {
     "id": "unreal",
     "name": "Unreal",
-    "version": "v0.4.2",
+    "version": "v0.4.3",
     "engineVersion": "UE 5.7.0",
     "description": "Unreal Engine plugin for DisplayXR",
     "repoUrl": "https://github.com/DisplayXR/displayxr-unreal",
     "testRepoUrl": "https://github.com/DisplayXR/displayxr-unreal-test",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.4.2",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.4.3",
     "logo": "/engines/unreal/Icon128.png"
   }
 ]
