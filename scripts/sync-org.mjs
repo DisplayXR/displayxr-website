@@ -147,8 +147,9 @@ const ENGINES = [
     repo: "displayxr-unreal",
     testRepo: "displayxr-unreal-test",
     versionFrom: { kind: "uplugin", path: "DisplayXR.uplugin" },
-    // unreal-test logos are .uasset (not web-usable); fall back to plugin icon.
-    logo2d: { repo: "displayxr-unreal", path: "Resources/Icon128.png" },
+    // The shell logos ship as .uasset (not web-usable); unreal-test also commits
+    // a PNG export of the 2D logo alongside them, mirroring displayxr-unity-test.
+    logo2d: { repo: "displayxr-unreal-test", path: "Content/Icons/DisplayXRTest_logo_2d_512x512.png" },
   },
 ];
 
