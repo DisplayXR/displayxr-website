@@ -8,8 +8,8 @@
     "type": "3d",
     "icon": "/demos/displayxr-demo-avatar/avatar_icon.png",
     "repoUrl": "https://github.com/DisplayXR/displayxr-demo-avatar",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.5.0",
-    "tag": "v0.5.0"
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.6.0",
+    "tag": "v0.6.0"
   },
   {
     "id": "modelviewer",
@@ -32,8 +32,8 @@
     "type": "3d",
     "icon": "/demos/displayxr-demo-earthview/earthview_icon.png",
     "repoUrl": "https://github.com/DisplayXR/displayxr-demo-earthview",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.3.0",
-    "tag": "v0.3.0"
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.4.0",
+    "tag": "v0.4.0"
   },
   {
     "id": "gaussiansplat",
