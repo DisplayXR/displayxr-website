@@ -10,7 +10,7 @@ import {
   hardwareBackends,
   appClasses,
 } from "@/lib/data/compatibility";
-import { vendors, devices } from "@/lib/data/devices";
+import { oems, devices } from "@/lib/data/devices";
 
 export const metadata: Metadata = {
   title: "Platform Support",
@@ -43,30 +43,36 @@ export default function PlatformSupportPage() {
             Compatible Devices
           </h2>
           <p className="text-sm text-text-secondary mb-6">
-            Devices with spatial displays supported by DisplayXR, grouped by
-            display technology vendor.
+            Spatial displays supported by DisplayXR, grouped by OEM. The
+            underlying display technology is shown per device — DisplayXR is
+            vendor-neutral, and each panel is served through a plug-in.
           </p>
           <div className="space-y-6">
-            {vendors.map((vendor) => {
-              const vendorDevices = devices.filter(
-                (d) => d.vendorId === vendor.id
-              );
-              if (vendorDevices.length === 0) return null;
+            {oems.map((oem) => {
+              const oemDevices = devices.filter((d) => d.oemId === oem.id);
+              if (oemDevices.length === 0) return null;
               return (
                 <div
-                  key={vendor.id}
+                  key={oem.id}
                   className="bg-surface border border-border rounded-lg overflow-hidden"
                 >
                   <div className="px-6 py-4 border-b border-border">
                     <h3 className="text-base font-semibold text-text-primary">
-                      {vendor.name}
+                      {oem.name}
                     </h3>
                     <p className="text-sm text-text-secondary">
-                      {vendor.description}
+                      {oem.description}
                     </p>
                   </div>
-                  <Table headers={["Device", "OEM", "Form Factor", "Status"]}>
-                    {vendorDevices.map((device) => (
+                  <Table
+                    headers={[
+                      "Device",
+                      "Form Factor",
+                      "Display Tech",
+                      "Status",
+                    ]}
+                  >
+                    {oemDevices.map((device) => (
                       <TableRow key={device.name}>
                         <TableCell className="font-medium text-text-primary">
                           {device.url ? (
@@ -82,9 +88,11 @@ export default function PlatformSupportPage() {
                             device.name
                           )}
                         </TableCell>
-                        <TableCell>{device.oem}</TableCell>
                         <TableCell className="capitalize">
                           {device.formFactor}
+                        </TableCell>
+                        <TableCell className="font-mono text-sm">
+                          {device.displayTech}
                         </TableCell>
                         <TableCell>
                           <Badge status={device.status} />
