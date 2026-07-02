@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { REPO_URLS } from "@/lib/constants";
-import { Puzzle, Search, ShieldCheck, Rocket } from "lucide-react";
+import { REPO_URLS, GITHUB_ORG_URL } from "@/lib/constants";
+import { Puzzle, Search, ShieldCheck, Rocket, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Vendors & Plug-ins",
@@ -207,6 +207,51 @@ export default function VendorsPage() {
                 environment overrides in full detail.
               </p>
             </a>
+          </div>
+        </section>
+
+        {/* Partner contact CTA */}
+        <section>
+          <div className="rounded-lg border border-accent/30 bg-accent/10 p-6">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="text-accent">
+                <Mail size={22} />
+              </span>
+              <h2 className="text-xl font-semibold tracking-tight text-text-primary">
+                Bring your display to DisplayXR
+              </h2>
+            </div>
+            <p className="text-text-secondary leading-relaxed mb-5">
+              Building a spatial display and want it to run the existing library
+              of DisplayXR content? We&apos;ll help you scope a plug-in and get
+              your hardware onto the platform. A second independent vendor is
+              also the milestone that moves the project toward shared, multi-vendor
+              governance — get in touch early.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={`${GITHUB_ORG_URL}/displayxr-runtime/issues/new?title=Vendor+integration+inquiry&labels=vendor`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2 text-sm font-medium text-background hover:bg-accent-hover"
+              >
+                <Mail size={15} /> Start a conversation on GitHub
+              </a>
+              <a
+                href={REPO_URLS.runtime}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2 text-sm font-medium text-text-primary hover:border-accent/50"
+              >
+                Explore the runtime
+              </a>
+            </div>
+            {/*
+              Once a partner inbox is provisioned on displayxr.org, add an email
+              button here:
+                <a href={`mailto:${CONTACT_EMAIL}?subject=DisplayXR vendor integration`}>…</a>
+              CONTACT_EMAIL is defined in lib/constants.ts.
+            */}
           </div>
         </section>
       </div>

@@ -1,5 +1,9 @@
 export const GITHUB_ORG_URL = "https://github.com/DisplayXR";
 
+// Partner / vendor contact. TODO(david): confirm this inbox is provisioned on
+// the displayxr.org domain before launch; swap if a different address is used.
+export const CONTACT_EMAIL = "partners@displayxr.org";
+
 // Persona-led navigation. The header has one universal front door
 // (Get Started), three audience menus (each a curated journey, not a dump —
 // shared pages may appear in two menus on purpose), and a persistent Download

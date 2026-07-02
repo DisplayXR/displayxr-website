@@ -15,15 +15,24 @@ export function WhyNowSection() {
           <div className="space-y-4 text-text-secondary leading-relaxed">
             <p>
               Spatial computing is still largely framed around headsets. But
-              spatial displays are becoming a real category — tracked
-              spatial display monitors, laptops, and related display systems are
-              shipping from multiple vendors.
+              spatial displays are becoming a real category — tracked spatial
+              display monitors, laptops, and Android devices are already shipping
+              from <span className="text-text-primary font-medium">Samsung,
+              Acer, Lenovo, ZTE, and Barco</span>, with more vendors on the way.
             </p>
             <p>
               These devices need a common interface layer. Without one, the
               ecosystem fragments before it has a chance to grow. DisplayXR
               brings that missing layer, so developers and hardware vendors can
               build against a shared interface rather than isolated SDKs.
+            </p>
+            <p>
+              The end goal is not a parallel standard — it&apos;s{" "}
+              <span className="text-text-primary font-medium">the standard</span>.
+              DisplayXR&apos;s 3D-display extensions are designed to be
+              upstreamed into OpenXR at Khronos (EXT → KHR), with DisplayXR as
+              the open reference implementation, so an app written once runs on
+              any spatial display — exactly as OpenXR did for headsets.
             </p>
           </div>
         </div>

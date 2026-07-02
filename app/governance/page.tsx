@@ -87,9 +87,9 @@ export default function GovernancePage() {
             Project status
           </h2>
           <p className="mb-6 text-sm text-text-secondary leading-relaxed max-w-3xl">
-            DisplayXR is in its incubation phase, maintained by a small core
-            team. During this phase, vendor neutrality rests on three
-            structural guarantees:
+            DisplayXR is in its incubation phase, stewarded by its founder and
+            lead maintainer, David Fattal. During this phase, vendor neutrality
+            rests on three structural guarantees:
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <Card title="Open by license" icon={<Scale size={20} />}>
@@ -123,6 +123,36 @@ export default function GovernancePage() {
                 written down.
               </p>
             </Card>
+          </div>
+
+          {/* Conflict-of-interest disclosure — stated head-on. */}
+          <div className="mt-6 rounded-lg border border-border bg-surface p-6 max-w-3xl">
+            <h3 className="mb-2 text-sm font-semibold text-text-primary">
+              Stewardship &amp; conflict of interest
+            </h3>
+            <p className="text-sm text-text-secondary leading-relaxed">
+              We state the conflict directly rather than leave it to be
+              inferred: DisplayXR&apos;s founder and lead maintainer, David
+              Fattal, is also an employee of Leia Inc. — the vendor whose
+              plug-in is the first integration of the plug-in boundary. Two
+              commitments hold neutrality in place: <strong className="text-text-primary">Leia
+              has no privileged position</strong> — no privileged code path
+              (the runtime ships zero vendor identifiers, CI-asserted), no
+              privileged review authority, and no reserved governance seat — and
+              the project intends to move its identity (domain, organization,
+              name, signing keys, reference builds) to a small{" "}
+              <strong className="text-text-primary">independent steward outside any single
+              vendor</strong> as adoption grows. Full detail in the{" "}
+              <a
+                href={GOVERNANCE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent-hover underline underline-offset-2"
+              >
+                governance document
+              </a>
+              .
+            </p>
           </div>
         </section>
 
