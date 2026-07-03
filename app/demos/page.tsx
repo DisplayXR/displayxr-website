@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { REPO_URLS } from "@/lib/constants";
 import { demos, engines } from "@/lib/data/generated";
-import { Boxes } from "lucide-react";
 import type { ReactNode } from "react";
 import type { Status } from "@/lib/data/compatibility";
 
@@ -47,7 +46,12 @@ const builtIns: BuiltIn[] = [
     description:
       "A minimal OpenXR application rendering a 3D cube through DisplayXR. Available for all supported graphics APIs — the simplest starting point for understanding the runtime.",
     status: "shipping",
-    icon: <Boxes size={20} />,
+    icon: (
+      <IconThumb
+        src="/screenshots/demos/cube.png"
+        alt="Cube sample running on the runtime"
+      />
+    ),
     tags: ["All APIs", "Simulation", "Minimal"],
     repo: `${REPO_URLS.runtime}/tree/main/test_apps`,
   },
