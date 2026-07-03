@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="440" viewBox="0 0 1100 440" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">
+  <!-- DisplayXR · Structured Light register · fragmentation → one target -->
+  <defs>
+    <style>
+      .hi   { stroke:#ECEEF2; stroke-opacity:.8;  stroke-width:1.2; fill:none; }
+      .lo   { stroke:#9AA0AC; stroke-opacity:.45; stroke-width:1;   fill:none; }
+      .guide{ stroke:#9AA0AC; stroke-opacity:.22; stroke-width:1;   fill:none; stroke-dasharray:2 6; }
+      .sig  { stroke:#3B82F6; stroke-width:1.8; fill:none; }
+      .lbl  { fill:#ECEEF2; fill-opacity:.85; font-size:14px; letter-spacing:.16em; }
+      .sub  { fill:#9AA0AC; fill-opacity:.8;  font-size:10.5px; letter-spacing:.08em; }
+      .zone { fill:#9AA0AC; fill-opacity:.55; font-size:11.5px; letter-spacing:.2em; }
+    </style>
+  </defs>
+
+  <rect width="1100" height="440" fill="#0A0B0E"/>
+
+  <text class="zone" x="60" y="40">WITHOUT A STANDARD</text>
+  <text class="zone" x="620" y="40">WITH DISPLAYXR</text>
+  <line class="guide" x1="550" y1="24" x2="550" y2="416"/>
+
+  <!-- BEFORE: one app, N SDK integrations, tangled -->
+  <rect class="hi" x="216" y="70" width="150" height="56" rx="10"/>
+  <text class="lbl" x="291" y="103" text-anchor="middle">APP</text>
+
+  <g class="lo">
+    <rect x="60"  y="330" width="82" height="50" rx="8"/>
+    <rect x="156" y="330" width="82" height="50" rx="8"/>
+    <rect x="252" y="330" width="82" height="50" rx="8"/>
+    <rect x="348" y="330" width="82" height="50" rx="8"/>
+    <rect x="444" y="330" width="82" height="50" rx="8"/>
+  </g>
+  <g class="sub" text-anchor="middle">
+    <text x="101" y="359">SDK A</text>
+    <text x="197" y="359">SDK B</text>
+    <text x="293" y="359">SDK C</text>
+    <text x="389" y="359">SDK D</text>
+    <text x="485" y="359">SDK E</text>
+  </g>
+  <!-- tangled integrations -->
+  <g class="lo">
+    <path d="M 251 126 C 210 220 420 250 485 330"/>
+    <path d="M 271 126 C 300 240 130 240 101 330"/>
+    <path d="M 291 126 C 291 220 200 260 197 330"/>
+    <path d="M 311 126 C 350 200 240 280 293 330"/>
+    <path d="M 331 126 C 420 190 330 270 389 330"/>
+  </g>
+  <text class="sub" x="291" y="416" text-anchor="middle" opacity=".7">FIVE DISPLAYS · FIVE INTEGRATIONS</text>
+
+  <!-- AFTER: one app, one target, any display -->
+  <rect class="hi" x="766" y="70" width="150" height="56" rx="10"/>
+  <text class="lbl" x="841" y="103" text-anchor="middle">APP</text>
+
+  <rect class="hi" x="646" y="196" width="390" height="52" rx="10"/>
+  <text class="lbl" x="841" y="222" text-anchor="middle">DISPLAYXR</text>
+  <text class="sub" x="841" y="238" text-anchor="middle">ONE OPENXR TARGET</text>
+
+  <!-- displays as angled panels -->
+  <g class="lo">
+    <polygon points="640,336 700,346 700,380 640,390"/>
+    <polygon points="738,336 798,346 798,380 738,390"/>
+    <polygon points="836,336 896,346 896,380 836,390"/>
+    <polygon points="934,336 994,346 994,380 934,390"/>
+  </g>
+  <g class="lo">
+    <line x1="700" y1="248" x2="670" y2="336"/>
+    <line x1="794" y1="248" x2="768" y2="336"/>
+    <line x1="888" y1="248" x2="866" y2="336"/>
+    <line x1="982" y1="248" x2="964" y2="336"/>
+  </g>
+  <!-- the signal -->
+  <path class="sig" d="M 841 126 V 196"/>
+  <circle cx="841" cy="161" r="3" fill="#3B82F6"/>
+  <text class="sub" x="841" y="416" text-anchor="middle" opacity=".7">ANY DISPLAY · ONE INTEGRATION</text>
+</svg>

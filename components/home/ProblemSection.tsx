@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 
 export function ProblemSection() {
@@ -31,6 +32,16 @@ export function ProblemSection() {
               entering the space.
             </p>
           </div>
+        </div>
+        <div className="mt-12 max-w-4xl border border-border rounded-lg overflow-hidden">
+          <Image
+            src="/diagrams/dxr-fragmentation.svg"
+            unoptimized
+            alt="Without a standard, one app needs five separate SDK integrations for five displays; with DisplayXR, the same app hits one OpenXR target and runs on any display."
+            width={1100}
+            height={440}
+            className="w-full h-auto"
+          />
         </div>
       </AnimateIn>
     </section>

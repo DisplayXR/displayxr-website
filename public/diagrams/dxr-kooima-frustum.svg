@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">
+  <!-- DisplayXR · Structured Light register · tracked off-axis (Kooima) projection -->
+  <defs>
+    <style>
+      .hi   { stroke:#ECEEF2; stroke-opacity:.8;  stroke-width:1.2; fill:none; }
+      .lo   { stroke:#9AA0AC; stroke-opacity:.45; stroke-width:1;   fill:none; }
+      .guide{ stroke:#9AA0AC; stroke-opacity:.22; stroke-width:1;   fill:none; stroke-dasharray:2 6; }
+      .sig  { stroke:#3B82F6; stroke-width:1.8; fill:none; }
+      .tick { stroke:#9AA0AC; stroke-opacity:.5; stroke-width:1; }
+      .sub  { fill:#9AA0AC; fill-opacity:.8;  font-size:10.5px; letter-spacing:.08em; }
+      .bnd  { fill:#3B82F6; font-size:10.5px; letter-spacing:.14em; }
+    </style>
+    <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9" fill="none" stroke="#9AA0AC" stroke-width="1.4"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="540" fill="#0A0B0E"/>
+
+  <!-- display plane -->
+  <line class="hi" x1="620" y1="96" x2="686" y2="452"/>
+  <line class="lo" x1="612" y1="98"  x2="678" y2="454" opacity=".35"/>
+  <line class="guide" x1="596" y1="-34" x2="710" y2="580"/>
+  <text class="sub" x="712" y="100">DISPLAY PLANE</text>
+
+  <!-- tracked eye -->
+  <circle class="hi" cx="180" cy="240" r="6"/>
+  <g class="tick">
+    <line x1="168" y1="240" x2="192" y2="240"/>
+    <line x1="180" y1="228" x2="180" y2="252"/>
+  </g>
+  <text class="sub" x="120" y="212">TRACKED EYE</text>
+
+  <!-- off-axis frustum -->
+  <g class="lo">
+    <line x1="186" y1="240" x2="620" y2="96"/>
+    <line x1="186" y1="240" x2="686" y2="452"/>
+  </g>
+  <text class="sub" x="316" y="330" opacity=".8">OFF-AXIS FRUSTUM</text>
+  <text class="sub" x="316" y="348" opacity=".6">RECOMPUTED EVERY FRAME</text>
+
+  <!-- moved eye: new frustum, same plane -->
+  <circle class="lo" cx="228" cy="392" r="6"/>
+  <g class="lo" opacity=".45">
+    <line x1="234" y1="392" x2="620" y2="96"/>
+    <line x1="234" y1="392" x2="686" y2="452"/>
+  </g>
+  <path class="lo" d="M 188 254 C 196 300 208 348 222 382" marker-end="url(#arr2)" stroke-dasharray="3 5"/>
+
+  <!-- the signal: the ray through the panel into depth -->
+  <path class="sig" d="M 186 240 L 648 250"/>
+  <circle cx="648" cy="250" r="3.6" fill="#3B82F6"/>
+  <path class="sig" d="M 648 250 L 802 254" opacity=".45"/>
+  <path class="lo" d="M 812 236 l 22 17 l -22 17" opacity=".7"/>
+  <path class="lo" d="M 842 241 l 16 12 l -16 12" opacity=".45"/>
+  <text class="bnd" x="770" y="304">DEPTH BEHIND THE GLASS</text>
+</svg>

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Card } from "@/components/ui/Card";
 import { REPO_URLS } from "@/lib/constants";
@@ -166,6 +167,16 @@ export default function GovernancePage() {
             process. Extension identifiers are provisional until registered
             with Khronos through the official process.
           </p>
+          <div className="mb-6 max-w-3xl border border-border rounded-lg overflow-hidden">
+            <Image
+              src="/diagrams/dxr-triad.svg"
+              unoptimized
+              alt="The three layers: Khronos owns the standard and ratification; DisplayXR is the reference implementation, design authority, and incubator that upstreams provisional XR_DXR_ extensions toward EXT and KHR; Monado is an independent, upstream-aligned implementation sharing lineage with DisplayXR."
+              width={960}
+              height={540}
+              className="w-full h-auto"
+            />
+          </div>
           <ol className="space-y-3">
             {lifecycle.map((item, i) => (
               <li

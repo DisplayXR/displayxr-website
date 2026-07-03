@@ -23,6 +23,7 @@ export default function PlatformSupportPage() {
     <PageLayout
       title="Platform Support"
       description="What's released, and what's supported — the latest version of every component, then the platform, graphics-API, engine, and hardware matrix."
+      art="/art/dxr-platform-panels.webp"
     >
       <div className="space-y-16 max-w-4xl">
         {/* Released versions (generated, auto-synced from the org) */}

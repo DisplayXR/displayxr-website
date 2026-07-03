@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">
+  <!-- DisplayXR · Structured Light register · WebXR path: frames go native, control goes sideband -->
+  <defs>
+    <style>
+      .hi   { stroke:#ECEEF2; stroke-opacity:.8;  stroke-width:1.2; fill:none; }
+      .lo   { stroke:#9AA0AC; stroke-opacity:.45; stroke-width:1;   fill:none; }
+      .guide{ stroke:#9AA0AC; stroke-opacity:.22; stroke-width:1;   fill:none; stroke-dasharray:2 6; }
+      .sig  { stroke:#3B82F6; stroke-width:1.8; fill:none; }
+      .lbl  { fill:#ECEEF2; fill-opacity:.85; font-size:14px; letter-spacing:.16em; }
+      .sub  { fill:#9AA0AC; fill-opacity:.8;  font-size:10.5px; letter-spacing:.08em; }
+      .bnd  { fill:#3B82F6; font-size:10.5px; letter-spacing:.14em; }
+    </style>
+  </defs>
+
+  <rect width="960" height="420" fill="#0A0B0E"/>
+
+  <!-- main row -->
+  <rect class="hi" x="60" y="220" width="180" height="76" rx="10"/>
+  <text class="lbl" x="150" y="254" text-anchor="middle">WEBXR APP</text>
+  <text class="sub" x="150" y="276" text-anchor="middle">THREE.JS · BABYLON · WEBGL</text>
+
+  <rect class="hi" x="316" y="220" width="180" height="76" rx="10"/>
+  <text class="lbl" x="406" y="254" text-anchor="middle">CHROME</text>
+  <text class="sub" x="406" y="276" text-anchor="middle">NATIVE WEBXR → OPENXR</text>
+
+  <rect class="hi" x="572" y="220" width="200" height="76" rx="10"/>
+  <text class="lbl" x="672" y="254" text-anchor="middle">DISPLAYXR</text>
+  <text class="sub" x="672" y="276" text-anchor="middle">RUNTIME + COMPOSITOR</text>
+
+  <polygon class="hi" points="838,224 916,240 916,276 838,292"/>
+  <path class="lo" d="M 866 244 l 14 12 l -14 12" opacity=".6"/>
+
+  <!-- frame path -->
+  <path class="sig" d="M 240 258 H 316 M 496 258 H 572 M 772 258 H 832"/>
+  <text class="bnd" x="406" y="330" text-anchor="middle">FRAMES — UNTOUCHED NATIVE PIPELINE</text>
+  <line class="guide" x1="150" y1="316" x2="672" y2="316"/>
+
+  <!-- sideband -->
+  <rect class="lo" x="376" y="64" width="260" height="64" rx="10"/>
+  <text class="lbl" x="506" y="92" text-anchor="middle" opacity=".75">BRIDGE</text>
+  <text class="sub" x="506" y="112" text-anchor="middle" opacity=".75">METADATA · CONTROL SIDEBAND</text>
+  <g class="lo">
+    <path d="M 150 220 C 150 130 280 96 376 96" stroke-dasharray="4 6"/>
+    <path d="M 636 128 C 660 160 672 180 672 220" stroke-dasharray="4 6"/>
+  </g>
+</svg>

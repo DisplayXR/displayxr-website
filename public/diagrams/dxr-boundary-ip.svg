@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="490" viewBox="0 0 960 490" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">
+  <!-- DisplayXR · Structured Light register · the IP boundary (neutral core vs vendor plug-in) -->
+  <defs>
+    <style>
+      .hi   { stroke:#ECEEF2; stroke-opacity:.8;  stroke-width:1.2; fill:none; }
+      .lo   { stroke:#9AA0AC; stroke-opacity:.45; stroke-width:1;   fill:none; }
+      .guide{ stroke:#9AA0AC; stroke-opacity:.22; stroke-width:1;   fill:none; stroke-dasharray:2 6; }
+      .sig  { stroke:#3B82F6; stroke-width:1.8; fill:none; }
+      .tick { stroke:#9AA0AC; stroke-opacity:.5; stroke-width:1; }
+      .lbl  { fill:#ECEEF2; fill-opacity:.85; font-size:15px; letter-spacing:.18em; }
+      .sub  { fill:#9AA0AC; fill-opacity:.8;  font-size:10.5px; letter-spacing:.08em; }
+      .bnd  { fill:#3B82F6; font-size:11.5px; letter-spacing:.22em; }
+      .zone { fill:#9AA0AC; fill-opacity:.55; font-size:11.5px; letter-spacing:.2em; }
+    </style>
+  </defs>
+
+  <rect width="960" height="490" fill="#0A0B0E"/>
+
+  <!-- zone labels -->
+  <text class="zone" x="60" y="64">OPEN — THE NEUTRAL CORE</text>
+  <text class="zone" x="900" y="64" text-anchor="end">VENDOR — PROPRIETARY</text>
+
+  <!-- the boundary -->
+  <line class="lo" x1="480" y1="88" x2="480" y2="440" stroke-dasharray="7 7"/>
+  <text class="bnd" x="480" y="466" text-anchor="middle">XRT_PLUGIN ABI</text>
+  <g class="tick">
+    <line x1="475" y1="110" x2="485" y2="110"/>
+    <line x1="475" y1="420" x2="485" y2="420"/>
+  </g>
+
+  <!-- neutral core -->
+  <rect class="hi" x="60" y="130" width="340" height="256" rx="12"/>
+  <text class="lbl" x="86" y="168">DISPLAYXR RUNTIME</text>
+  <text class="sub" x="86" y="190">OPENXR STATE TRACKER · EXTENSIONS</text>
+  <g class="lo">
+    <rect x="86" y="212" width="88" height="34" rx="6"/>
+    <rect x="184" y="212" width="88" height="34" rx="6"/>
+    <rect x="282" y="212" width="88" height="34" rx="6"/>
+    <rect x="86" y="256" width="88" height="34" rx="6"/>
+    <rect x="184" y="256" width="88" height="34" rx="6"/>
+  </g>
+  <g class="sub" text-anchor="middle">
+    <text x="130" y="233">D3D11</text>
+    <text x="228" y="233">D3D12</text>
+    <text x="326" y="233">VULKAN</text>
+    <text x="130" y="277">METAL</text>
+    <text x="228" y="277">OPENGL</text>
+  </g>
+  <text class="sub" x="86" y="316">NATIVE COMPOSITORS — NEVER WEAVE</text>
+  <line class="lo" x1="86" y1="336" x2="374" y2="336" stroke-dasharray="1 4"/>
+  <text class="sub" x="86" y="362" opacity=".7">ZERO VENDOR IDENTIFIERS · CI-ASSERTED</text>
+
+  <!-- vendor plug-ins -->
+  <rect class="hi" x="556" y="112" width="290" height="92" rx="12"/>
+  <text class="lbl" x="580" y="148">VENDOR PLUG-IN</text>
+  <text class="sub" x="580" y="170">WEAVING · CALIBRATION · TRACKING</text>
+  <text class="sub" x="580" y="188" opacity=".7">YOUR SDK, STATIC-LINKED</text>
+
+  <rect class="lo" x="556" y="236" width="290" height="70" rx="12"/>
+  <text class="lbl" x="580" y="268" opacity=".6">VENDOR PLUG-IN</text>
+  <text class="sub" x="580" y="290" opacity=".6">ANOTHER PANEL, SAME BOUNDARY</text>
+
+  <rect class="lo" x="556" y="338" width="290" height="70" rx="12"/>
+  <text class="lbl" x="580" y="370" opacity=".6">SIM_DISPLAY</text>
+  <text class="sub" x="580" y="392" opacity=".6">ZERO-HARDWARE REFERENCE</text>
+
+  <!-- display -->
+  <polygon class="hi" points="878,132 936,146 936,190 878,204"/>
+  <path class="lo" d="M 898 154 l 14 12 l -14 12" opacity=".6"/>
+
+  <!-- signal path: runtime → boundary socket → active plug-in → display -->
+  <path class="sig" d="M 400 158 H 556 M 846 158 H 872"/>
+  <circle cx="480" cy="158" r="3.6" fill="#3B82F6"/>
+  <!-- latent connections to the other plug-ins -->
+  <path class="guide" d="M 400 271 H 556 M 400 340 C 470 340 490 373 556 373"/>
+</svg>

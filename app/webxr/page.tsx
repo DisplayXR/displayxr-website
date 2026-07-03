@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Card } from "@/components/ui/Card";
 import {
@@ -181,6 +182,16 @@ export default function WebXRPage() {
                 </p>
               </div>
             ))}
+          </div>
+          <div className="mt-6 border border-border rounded-lg overflow-hidden">
+            <Image
+              src="/diagrams/dxr-webxr-bridge.svg"
+              unoptimized
+              alt="A WebXR app runs through Chrome's native WebXR-to-OpenXR pipeline straight into the DisplayXR runtime and out to the 3D display — frames never leave the native path — while the bridge carries metadata and control over a separate sideband."
+              width={960}
+              height={420}
+              className="w-full h-auto"
+            />
           </div>
         </section>
 

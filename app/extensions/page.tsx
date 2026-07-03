@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
@@ -160,6 +161,16 @@ export default function ExtensionsPage() {
             model. The goal is practical interoperability, not a competing
             specification.
           </p>
+          <div className="mt-6 border border-border rounded-lg overflow-hidden">
+            <Image
+              src="/diagrams/dxr-kooima-frustum.svg"
+              unoptimized
+              alt="Tracked off-axis projection: an asymmetric frustum from the tracked eye position to the corners of the fixed display plane, recomputed every frame as the eye moves, so rendered content reads as depth behind the glass."
+              width={960}
+              height={540}
+              className="w-full h-auto"
+            />
+          </div>
         </section>
 
         {/* Extension list, grouped */}

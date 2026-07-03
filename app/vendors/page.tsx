@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { REPO_URLS, GITHUB_ORG_URL } from "@/lib/constants";
 import { Puzzle, Search, ShieldCheck, Rocket, Mail } from "lucide-react";
@@ -16,6 +17,7 @@ export default function VendorsPage() {
     <PageLayout
       title="Vendors & Plug-ins"
       description="DisplayXR is vendor-neutral. Any 3D-display maker can ship a display-processor plug-in from their own repo — the runtime discovers and loads it at startup. You never fork the runtime."
+      art="/art/dxr-socket-neutral.webp"
     >
       <div className="max-w-3xl space-y-12">
         {/* The model */}
@@ -52,6 +54,16 @@ export default function VendorsPage() {
             runtime tree; that approach is retired. The shipped runtime carries
             zero vendor SDK identifiers in its link line.
           </p>
+          <div className="mt-6 border border-border rounded-lg overflow-hidden">
+            <Image
+              src="/diagrams/dxr-boundary-ip.svg"
+              unoptimized
+              alt="The IP boundary: the open neutral core (DisplayXR runtime with its native compositors, shipping zero vendor identifiers) on one side of the xrt_plugin ABI; vendor plug-ins with their proprietary weaving, calibration, and tracking — plus the zero-hardware sim_display reference — on the other."
+              width={960}
+              height={490}
+              className="w-full h-auto"
+            />
+          </div>
         </section>
 
         {/* Discovery */}
