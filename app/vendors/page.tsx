@@ -17,7 +17,6 @@ export default function VendorsPage() {
     <PageLayout
       title="Vendors & Plug-ins"
       description="DisplayXR is vendor-neutral. Any 3D-display maker can ship a display-processor plug-in from their own repo — the runtime discovers and loads it at startup. You never fork the runtime."
-      art="/art/dxr-socket-neutral.webp"
     >
       <div className="max-w-3xl space-y-12">
         {/* The model */}
