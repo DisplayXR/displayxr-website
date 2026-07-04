@@ -235,6 +235,13 @@
     "archived": false
   },
   {
+    "name": "displayxr-vendor-template",
+    "description": "Vendor-neutral starter kit for a DisplayXR display-processor plug-in (no vendor SDK required).",
+    "url": "https://github.com/DisplayXR/displayxr-vendor-template",
+    "topics": [],
+    "archived": false
+  },
+  {
     "name": "displayxr-website",
     "description": "DisplayXR project website — displayxr.org",
     "url": "https://github.com/DisplayXR/displayxr-website",

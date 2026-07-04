@@ -65,6 +65,7 @@
       "displayxr-unity-test-transparent",
       "displayxr-unreal",
       "displayxr-unreal-test",
+      "displayxr-vendor-template",
       "displayxr-website"
     ]
   }
