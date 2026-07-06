@@ -52,7 +52,7 @@
     "repo": "displayxr-demo-mediaplayer",
     "name": "Media Player",
     "description": "Two-view video and image player for 3D displays",
-    "category": "app",
+    "category": "demo",
     "type": "3d",
     "icon": "/demos/displayxr-demo-mediaplayer/icon.png",
     "repoUrl": "https://github.com/DisplayXR/displayxr-demo-mediaplayer",

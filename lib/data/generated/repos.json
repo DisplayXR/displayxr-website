@@ -207,6 +207,13 @@
     "archived": false
   },
   {
+    "name": "displayxr-unity-test-hdrp",
+    "description": "HDRP off-axis regression test for the DisplayXR Unity plugin (#22, #166 M3)",
+    "url": "https://github.com/DisplayXR/displayxr-unity-test-hdrp",
+    "topics": [],
+    "archived": false
+  },
+  {
     "name": "displayxr-unity-test-transparent",
     "description": "Transparent overlay variant of displayxr-unity-test — exercises chroma-key click-through (DisplayXR/displayxr-unity#57)",
     "url": "https://github.com/DisplayXR/displayxr-unity-test-transparent",
