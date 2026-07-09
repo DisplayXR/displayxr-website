@@ -28,7 +28,7 @@ const extensions: Extension[] = [
     name: "XR_EXT_display_info",
     title: "Display Info",
     description:
-      "Provides applications with spatial display geometry, resolution, eye-tracking modes, and the data needed for correct off-axis (Kooima) projection and view configuration. Each rendering mode declares whether it consumes live eye tracking, and apps receive an edge-triggered event on tracking loss and recovery.",
+      "Provides applications with spatial display geometry, resolution, eye-tracking modes, and the data needed for correct off-axis (Kooima) projection and view configuration. Each rendering mode declares whether it consumes live eye tracking, and apps receive an edge-triggered event on tracking loss and recovery. Spec v16 adds a desktop-position query so a window-owning app can learn where the 3D panel sits in the virtual desktop and open its window there.",
     status: "shipping",
     group: "display",
   },
@@ -72,6 +72,14 @@ const extensions: Extension[] = [
     description:
       "macOS equivalent of the Win32 window binding. Binds an NSView to the session for compositor output into the application's window.",
     status: "shipping",
+    group: "windowing",
+  },
+  {
+    name: "XR_EXT_xlib_window_binding",
+    title: "Xlib Window Binding",
+    description:
+      "Desktop-Linux equivalent of the Win32 and Cocoa window bindings. An app hands the runtime its own X11 window (Display* + Window) so the native Vulkan/XCB compositor renders into the app's window instead of creating its own — enabling windowed (non-fullscreen) rendering and app-owned keyboard and mouse input.",
+    status: "beta",
     group: "windowing",
   },
   {
@@ -133,6 +141,15 @@ const extensions: Extension[] = [
       "A vendor-neutral, non-privileged way to snapshot the multi-view atlas the runtime composes for a session to a PNG, at a caller-selected compositor stage. The runtime does the readback from its own atlas image, so apps drop the per-graphics-API staging-texture readbacks they each reimplement today. Any app — handle, texture, hosted, or IPC — can call it.",
     status: "early",
     group: "capture",
+  },
+  // Present-owner weave service
+  {
+    name: "XR_EXT_weave",
+    title: "Window Weave Service",
+    description:
+      "A window-bound, synchronous weave service for present-owners — callers that own their OS window and present it themselves, but want the runtime's vendor display processor to weave a sub-rect of that window for them. The caller hands the runtime a pre-weave stereo (side-by-side) texture and a window-relative rect and gets back a weaved shared texture plus a fence to composite and present. The caller never weaves; it is the runtime half of the inline-3D-in-a-browser path.",
+    status: "experimental",
+    group: "rendering",
   },
 ];
 

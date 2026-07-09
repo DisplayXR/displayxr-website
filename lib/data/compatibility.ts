@@ -34,6 +34,7 @@ export const runtimeCompositors: RuntimeCompositor[] = [
   { platform: "macOS", graphicsApi: "OpenGL", status: "shipping", notes: "" },
   { platform: "macOS", graphicsApi: "Vulkan", status: "shipping", notes: "MoltenVK; runtime error at launch (MoltenVK limitation)" },
   { platform: "Android", graphicsApi: "Vulkan", status: "shipping", notes: "Out-of-process service compositor; orientation-aware rendering, mixed 2D/3D zones" },
+  { platform: "Linux", graphicsApi: "Vulkan", status: "beta", notes: "Preview — native Vulkan compositor over an X11/XCB surface, xlib window binding. Hardware-validated on Ubuntu 22.04; distributed as a user-level tarball (no installer yet), not yet GA" },
 ];
 
 export const enginePlugins: EnginePlugin[] = [
