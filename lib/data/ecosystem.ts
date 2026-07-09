@@ -14,7 +14,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-runtime",
     repo: "DisplayXR/displayxr-runtime",
     description:
-      "Core OpenXR runtime with native compositors for D3D11, D3D12, Vulkan, Metal, and OpenGL — on Windows, macOS, and Android.",
+      "Core OpenXR runtime with native compositors for D3D11, D3D12, Vulkan, Metal, and OpenGL — on Windows, macOS, and Android, with a Vulkan-only compositor now in Preview on desktop Linux.",
     url: "https://github.com/DisplayXR/displayxr-runtime",
     category: "core",
   },
@@ -32,6 +32,15 @@ export const ecosystemRepos: EcosystemRepo[] = [
     description:
       "Unity engine plugin (UPM package) with eye-tracked stereo rendering, sample scenes, and standalone editor preview.",
     url: "https://github.com/DisplayXR/displayxr-unity",
+    category: "engines",
+    status: "active",
+  },
+  {
+    name: "displayxr-unity-samples",
+    repo: "DisplayXR/displayxr-unity-samples",
+    description:
+      "Ready-to-open Unity sample projects — Built-in/URP/HDRP pipeline tests plus a transparent Desktop Avatar showcase — wired to the DisplayXR Unity plugin, with one shared installer. Consolidates the earlier per-feature test repos into a single monorepo.",
+    url: "https://github.com/DisplayXR/displayxr-unity-samples",
     category: "engines",
     status: "active",
   },
@@ -114,5 +123,23 @@ export const ecosystemRepos: EcosystemRepo[] = [
     url: "https://github.com/DisplayXR/displayxr-shell-releases",
     category: "apps",
     status: "active",
+  },
+  {
+    name: "displayxr-vendor-template",
+    repo: "DisplayXR/displayxr-vendor-template",
+    description:
+      "Vendor-neutral starter kit for building a DisplayXR display-processor plug-in — the ABI, discovery, and build scaffolding a new 3D-display maker needs, with no vendor SDK required. Fork it to bring up a plug-in against the sim_display path, then swap in your own weaver.",
+    url: "https://github.com/DisplayXR/displayxr-vendor-template",
+    category: "tools",
+    status: "early",
+  },
+  {
+    name: "displayxr-cef-host",
+    repo: "DisplayXR/displayxr-cef-host",
+    description:
+      "A CEF (Chromium Embedded Framework) offscreen-render browser host that drives the real DisplayXR display-processor weave through XR_EXT_weave — the reference present-owner for inline 3D in a browser surface. The host itself never weaves; it hands the runtime a stereo texture and a window rect and composites the weaved result.",
+    url: "https://github.com/DisplayXR/displayxr-cef-host",
+    category: "tools",
+    status: "experimental",
   },
 ];

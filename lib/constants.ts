@@ -63,6 +63,7 @@ export const REPO_URLS = {
   leiaPlugin: "https://github.com/DisplayXR/displayxr-leia-plugin",
   extensions: "https://github.com/DisplayXR/displayxr-extensions",
   unity: "https://github.com/DisplayXR/displayxr-unity",
+  unitySamples: "https://github.com/DisplayXR/displayxr-unity-samples",
   unityTest: "https://github.com/DisplayXR/displayxr-unity-test",
   unreal: "https://github.com/DisplayXR/displayxr-unreal",
   unrealTest: "https://github.com/DisplayXR/displayxr-unreal-test",
@@ -74,4 +75,6 @@ export const REPO_URLS = {
   common: "https://github.com/DisplayXR/displayxr-common",
   mcp: "https://github.com/DisplayXR/displayxr-mcp",
   shell: "https://github.com/DisplayXR/displayxr-shell-releases",
+  vendorTemplate: "https://github.com/DisplayXR/displayxr-vendor-template",
+  cefHost: "https://github.com/DisplayXR/displayxr-cef-host",
 } as const;
