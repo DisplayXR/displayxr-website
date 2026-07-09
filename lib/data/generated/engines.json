@@ -2,7 +2,7 @@
   {
     "id": "unity",
     "name": "Unity",
-    "version": "v2.3.2",
+    "version": "v2.4.0",
     "engineVersion": "Unity 2022.3",
     "description": "Unity plugin for eye-tracked 3D light field displays via OpenXR",
     "repoUrl": "https://github.com/DisplayXR/displayxr-unity",

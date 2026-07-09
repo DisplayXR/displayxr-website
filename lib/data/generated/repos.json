@@ -193,30 +193,9 @@
     "archived": false
   },
   {
-    "name": "displayxr-unity-test",
-    "description": "Unity test project for the DisplayXR plugin — sample scenes and demos to validate the plugin against new releases",
-    "url": "https://github.com/DisplayXR/displayxr-unity-test",
-    "topics": [],
-    "archived": false
-  },
-  {
-    "name": "displayxr-unity-test-2d-ui",
-    "description": "URP variant of displayxr-unity-test — exercises XrCompositionLayerWindowSpaceEXT 2D UI overlay (DisplayXR/displayxr-unity#67) via DisplayXRWindowSpaceUI",
-    "url": "https://github.com/DisplayXR/displayxr-unity-test-2d-ui",
-    "topics": [],
-    "archived": false
-  },
-  {
-    "name": "displayxr-unity-test-hdrp",
-    "description": "HDRP off-axis regression test for the DisplayXR Unity plugin (#22, #166 M3)",
-    "url": "https://github.com/DisplayXR/displayxr-unity-test-hdrp",
-    "topics": [],
-    "archived": false
-  },
-  {
-    "name": "displayxr-unity-test-transparent",
-    "description": "Transparent overlay variant of displayxr-unity-test — exercises chroma-key click-through (DisplayXR/displayxr-unity#57)",
-    "url": "https://github.com/DisplayXR/displayxr-unity-test-transparent",
+    "name": "displayxr-unity-samples",
+    "description": "DisplayXR Unity plugin samples — BiRP/URP/HDRP pipeline tests + the Desktop Avatar showcase, with one shared installer",
+    "url": "https://github.com/DisplayXR/displayxr-unity-samples",
     "topics": [],
     "archived": false
   },
