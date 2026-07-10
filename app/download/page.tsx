@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Card } from "@/components/ui/Card";
 import { REPO_URLS } from "@/lib/constants";
-import { Package, LayoutGrid, Bot, Download, Layers, Glasses } from "lucide-react";
+import { Package, LayoutGrid, Bot, Download, Layers, Glasses, Globe, AlertTriangle } from "lucide-react";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
@@ -113,6 +113,63 @@ export default function DownloadPage() {
             <Download size={14} />
             Latest bundle release
           </a>
+        </div>
+
+        {/* DisplayXR Browser — developer preview */}
+        <div className="bg-accent/10 border border-accent/30 rounded-lg p-6">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="text-accent">
+              <Globe size={22} />
+            </div>
+            <h2 className="text-lg font-semibold text-text-primary">
+              DisplayXR Browser{" "}
+              <span className="align-middle inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border border-accent/30 text-accent bg-accent/10">
+                Developer Preview
+              </span>
+            </h2>
+          </div>
+          <p className="text-sm text-text-secondary leading-relaxed mb-4">
+            A Chromium-based browser that renders the whole web normally{" "}
+            <strong className="text-text-primary">and</strong> weaves glasses-free 3D for{" "}
+            <a href="/webxr" className="text-accent hover:text-accent-hover underline underline-offset-2 font-medium">
+              inline-3D WebXR
+            </a>{" "}
+            pages on DisplayXR hardware — the surrounding 2D page stays flat. On any other machine it is
+            an ordinary browser. <strong className="text-text-primary">Windows</strong>, and it needs a
+            DisplayXR 3D display + the runtime and a display plug-in (the installer chains/detects them).
+          </p>
+          {/* Security disclaimer — mandatory, locked policy */}
+          <div className="flex items-start gap-2.5 bg-warning/10 border border-warning/30 rounded-md p-3 mb-4">
+            <div className="text-warning mt-0.5 shrink-0">
+              <AlertTriangle size={16} />
+            </div>
+            <p className="text-sm text-text-secondary leading-relaxed">
+              <strong className="text-text-primary">Developer preview.</strong> Rebased ~monthly onto
+              Chrome stable, but <strong className="text-text-primary">not</strong> maintained to
+              Chrome&rsquo;s mid-cycle security cadence — don&rsquo;t use it for sensitive browsing; use
+              your primary browser for banking, etc.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <a
+              href={`${REPO_URLS.browser}/releases/latest`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-accent hover:text-accent-hover underline underline-offset-2 font-medium"
+            >
+              <Download size={14} />
+              Latest preview release
+            </a>
+            <a
+              href={REPO_URLS.web}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-accent hover:text-accent-hover underline underline-offset-2 font-medium"
+            >
+              <Globe size={14} />
+              inline-3D web samples
+            </a>
+          </div>
         </div>
 
         {/* Pointer for first-timers */}
