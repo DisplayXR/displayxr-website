@@ -46,6 +46,7 @@
     ],
     "repos": [
       ".github",
+      "displayxr-browser",
       "displayxr-cef-host",
       "displayxr-common",
       "displayxr-demo-avatar",
@@ -64,6 +65,7 @@
       "displayxr-unreal",
       "displayxr-unreal-test",
       "displayxr-vendor-template",
+      "displayxr-web",
       "displayxr-website"
     ]
   }

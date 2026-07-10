@@ -7,6 +7,13 @@
     "archived": false
   },
   {
+    "name": "displayxr-browser",
+    "description": "DisplayXR Browser — developer-preview Chromium that renders the web normally + weaves glasses-free inline-3D on DisplayXR hardware (Step-B fork productization).",
+    "url": "https://github.com/DisplayXR/displayxr-browser",
+    "topics": [],
+    "archived": false
+  },
+  {
     "name": "displayxr-cef-host",
     "description": "CEF offscreen-render browser stand-in that drives the real DisplayXR display-processor weave via XR_EXT_weave (#625, Step A). The host never weaves.",
     "url": "https://github.com/DisplayXR/displayxr-cef-host",
@@ -224,6 +231,13 @@
     "name": "displayxr-vendor-template",
     "description": "Vendor-neutral starter kit for a DisplayXR display-processor plug-in (no vendor SDK required).",
     "url": "https://github.com/DisplayXR/displayxr-vendor-template",
+    "topics": [],
+    "archived": false
+  },
+  {
+    "name": "displayxr-web",
+    "description": "Inline-3D web samples + JS helper for the DisplayXR Browser — the analog of immersive-web/webxr-samples. Served via GitHub Pages.",
+    "url": "https://github.com/DisplayXR/displayxr-web",
     "topics": [],
     "archived": false
   },
