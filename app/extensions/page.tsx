@@ -91,7 +91,7 @@ const extensions: Extension[] = [
     group: "windowing",
   },
   {
-    name: "XR_EXT_android_surface_binding",
+    name: "XR_DXR_android_surface_binding",
     title: "Android Surface Binding",
     description:
       "Android equivalent of the Win32 and Cocoa window bindings. Binds an Android Surface (SurfaceView) to the session so the runtime composites into the app's surface, and carries the surface lifecycle the out-of-process Android compositor follows across rotation, background, and resume.",
