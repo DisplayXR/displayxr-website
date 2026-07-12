@@ -77,4 +77,6 @@ export const REPO_URLS = {
   shell: "https://github.com/DisplayXR/displayxr-shell-releases",
   vendorTemplate: "https://github.com/DisplayXR/displayxr-vendor-template",
   cefHost: "https://github.com/DisplayXR/displayxr-cef-host",
+  browser: "https://github.com/DisplayXR/displayxr-browser",
+  web: "https://github.com/DisplayXR/displayxr-web",
 } as const;

@@ -49,7 +49,7 @@ export default function GettingStartedPage() {
           <Card href="/extensions" title="Build for 3D displays">
             <p className="text-sm text-text-secondary leading-relaxed">
               The OpenXR extensions DisplayXR adds —{" "}
-              <Mono>XR_EXT_display_info</Mono>, window bindings, and the
+              <Mono>XR_DXR_display_info</Mono>, window bindings, and the
               workspace surface.
             </p>
           </Card>

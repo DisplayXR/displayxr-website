@@ -173,7 +173,7 @@ const windowsSteps: Step[] = [
             href="/extensions"
             className="text-accent hover:text-accent-hover underline underline-offset-2"
           >
-            <Mono>XR_EXT_spatial_workspace</Mono>
+            <Mono>XR_DXR_spatial_workspace</Mono>
           </a>{" "}
           contract; the shell is just the reference implementation.
         </p>

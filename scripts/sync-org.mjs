@@ -278,7 +278,7 @@ function extGroup(name) {
 async function buildExtensions() {
   const paths = await tree("displayxr-extensions");
   const names = paths
-    .filter((p) => /\/XR_EXT_[^/]+\.h$/.test(p))
+    .filter((p) => /\/XR_(?:EXT|DXR)_[^/]+\.h$/.test(p))
     .map((p) => basename(p).replace(/\.h$/, ""));
   return [...new Set(names)]
     .sort()

@@ -22,7 +22,7 @@ npm run start
 
 - `app/page.tsx` — homepage (Hero / Problem / Solution / Ecosystem / WhyNow / CTA sections under `components/home/`)
 - `app/architecture/` — runtime architecture, native compositors, workspace controllers
-- `app/extensions/` — `XR_EXT_*` extension specs (display info, window bindings, spatial workspace, app launcher)
+- `app/extensions/` — `XR_DXR_*` extension specs (display info, window bindings, spatial workspace, app launcher)
 - `app/demos/` — demo apps and engine sample scenes
 - `app/compatibility/` — device and platform support matrix
 - `app/roadmap/` — release timeline (data in `lib/data/roadmap.ts`)

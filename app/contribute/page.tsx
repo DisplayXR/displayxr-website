@@ -66,7 +66,7 @@ const adrs = [
 const extendLinks = [
   {
     title: "Add an OpenXR extension",
-    desc: "Wire a new XR_EXT_* through the loader, state tracker, and compositors.",
+    desc: "Wire a new XR_DXR_* through the loader, state tracker, and compositors.",
     href: `${RUNTIME}/blob/main/docs/guides/implementing-extension.md`,
   },
   {

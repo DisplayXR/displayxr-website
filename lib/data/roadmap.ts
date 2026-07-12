@@ -89,7 +89,7 @@ export const roadmapSections: RoadmapSection[] = [
       {
         title: "Workspace controller surface",
         description:
-          "XR_EXT_spatial_workspace and XR_EXT_app_launcher headers shipped, controller registration via Windows registry contract, and the reference shell now ships separately as its own installer. Any third-party (OEM, vertical, kiosk, AI-agent driver) can ship a workspace controller with the same first-class authority",
+          "XR_DXR_spatial_workspace and XR_DXR_app_launcher headers shipped, controller registration via Windows registry contract, and the reference shell now ships separately as its own installer. Any third-party (OEM, vertical, kiosk, AI-agent driver) can ship a workspace controller with the same first-class authority",
       },
       {
         title: "Multi-compositor performance pass",
@@ -111,6 +111,11 @@ export const roadmapSections: RoadmapSection[] = [
         description:
           "The same OpenXR runtime now ships on Android, driving integrated 3D tablets and handhelds (ZTE Nubia Pad 2, Red Magic Explorer 3D) through the native Vulkan compositor. The vendor display processor runs out-of-process with a zero-copy buffer handoff, rendering is orientation-aware across portrait and landscape, and mixed 2D/3D display zones, per-mode eye tracking, and see-through transparency all carry over from the desktop. Model-viewer and media-player demos ship Android builds",
       },
+      {
+        title: "Extensions under the DXR vendor author tag",
+        description:
+          "All fourteen DisplayXR extensions renamed from the provisional XR_EXT_* naming to XR_DXR_*, under the project's vendor author tag (Khronos registration in flight), and shipped as a coordinated v2.0.0 release train — runtime, shell, vendor plug-in, engine plugins, demos, and meta-installer moving together. Apps built against the old names keep working on runtimes before v2.0.0 or rebuild against the v2.0.0 headers; migration is one command (scripts/dxr_rename.py in the runtime repo)",
+      },
     ],
   },
   {
@@ -120,7 +125,7 @@ export const roadmapSections: RoadmapSection[] = [
       {
         title: "Linux runtime (Preview)",
         description:
-          "A fourth platform: the same OpenXR runtime now brings up a native Vulkan compositor over an X11/XCB surface, with apps binding their own window through XR_EXT_xlib_window_binding. Hardware-validated on real spatial-display hardware — the stereo cube and all five demos render, and a real vendor Vulkan weave lights the panel's lens. It ships today as a user-level tarball across Ubuntu 22.04/24.04/26.04; not yet GA (no installer), with the deployment target and windowed-3D phasing still in flight",
+          "A fourth platform: the same OpenXR runtime now brings up a native Vulkan compositor over an X11/XCB surface, with apps binding their own window through XR_DXR_xlib_window_binding. Hardware-validated on real spatial-display hardware — the stereo cube and all five demos render, and a real vendor Vulkan weave lights the panel's lens. It ships today as a user-level tarball across Ubuntu 22.04/24.04/26.04; not yet GA (no installer), with the deployment target and windowed-3D phasing still in flight",
       },
       {
         title: "Shell input forwarding",
@@ -131,6 +136,11 @@ export const roadmapSections: RoadmapSection[] = [
         title: "macOS spatial shell",
         description:
           "Port the multi-compositor and shell to macOS via Metal",
+      },
+      {
+        title: "DisplayXR Browser (developer preview)",
+        description:
+          "A Chromium-based browser that renders the web normally and weaves glasses-free inline 3D on DisplayXR hardware, built on the runtime's window-bound weave service. The weave is GPU-resident — no per-frame CPU readback — and inline-3D web samples plus a JS helper library ship alongside it. Developer-preview packaging is in flight",
       },
       {
         title: "Expand demos and engine integrations",
