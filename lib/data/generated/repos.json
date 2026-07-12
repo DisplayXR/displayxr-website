@@ -15,7 +15,7 @@
   },
   {
     "name": "displayxr-cef-host",
-    "description": "CEF offscreen-render browser stand-in that drives the real DisplayXR display-processor weave via XR_EXT_weave (#625, Step A). The host never weaves.",
+    "description": "CEF offscreen-render browser stand-in that drives the real DisplayXR display-processor weave via XR_DXR_weave (#625, Step A). The host never weaves.",
     "url": "https://github.com/DisplayXR/displayxr-cef-host",
     "topics": [],
     "archived": false

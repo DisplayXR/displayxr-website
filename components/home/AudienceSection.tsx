@@ -19,7 +19,7 @@ const audiences: Audience[] = [
     title: "App Developers",
     lead: "Writing an OpenXR app for spatial displays?",
     description:
-      "Standard OpenXR — your existing app code works unchanged. Native compositors mean no Vulkan-interop layer; D3D11, D3D12, Metal, Vulkan, and OpenGL each get their own. Opt into XR_EXT_display_info for 3D-display geometry, eye-tracking modes, and asymmetric (Kooima) projection.",
+      "Standard OpenXR — your existing app code works unchanged. Native compositors mean no Vulkan-interop layer; D3D11, D3D12, Metal, Vulkan, and OpenGL each get their own. Opt into XR_DXR_display_info for 3D-display geometry, eye-tracking modes, and asymmetric (Kooima) projection.",
     icon: <Code2 size={20} />,
     href: "/getting-started",
     cta: "Get started →",
@@ -97,7 +97,7 @@ export function AudienceSection() {
                 OEMs and vertical integrators (laptops, monitors, kiosks, CAD /
                 medical / automotive HMIs) can ship the bare runtime, the
                 reference DisplayXR Shell, or their own workspace controller
-                built on XR_EXT_spatial_workspace + XR_EXT_app_launcher — and
+                built on XR_DXR_spatial_workspace + XR_EXT_app_launcher — and
                 embed displayxr-mcp to expose the same surface to an AI agent.
               </p>
               <span className="mt-3 inline-block text-sm text-accent hover:text-accent-hover">

@@ -140,7 +140,7 @@ export default function ArchitecturePage() {
             needs to sit beside a flat 2D HUD, a toolbar, or live screen content.
             DisplayXR expresses every such layout through a single mechanism —{" "}
             <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">
-              XR_EXT_display_zones
+              XR_DXR_display_zones
             </code>
             : an app declares any number of <strong className="text-text-primary">3D zones</strong>{" "}
             (each a rectangle with its own view rig and swapchain) alongside any
@@ -332,7 +332,7 @@ export default function ArchitecturePage() {
             multi-app composition, window chrome, layout presets, an app
             launcher. The runtime exposes two extensions for this:{" "}
             <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">
-              XR_EXT_spatial_workspace
+              XR_DXR_spatial_workspace
             </code>{" "}
             for window pose / hit-test / capture, and{" "}
             <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">

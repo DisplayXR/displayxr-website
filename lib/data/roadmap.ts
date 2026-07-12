@@ -89,7 +89,7 @@ export const roadmapSections: RoadmapSection[] = [
       {
         title: "Workspace controller surface",
         description:
-          "XR_EXT_spatial_workspace and XR_EXT_app_launcher headers shipped, controller registration via Windows registry contract, and the reference shell now ships separately as its own installer. Any third-party (OEM, vertical, kiosk, AI-agent driver) can ship a workspace controller with the same first-class authority",
+          "XR_DXR_spatial_workspace and XR_EXT_app_launcher headers shipped, controller registration via Windows registry contract, and the reference shell now ships separately as its own installer. Any third-party (OEM, vertical, kiosk, AI-agent driver) can ship a workspace controller with the same first-class authority",
       },
       {
         title: "Multi-compositor performance pass",
@@ -120,7 +120,7 @@ export const roadmapSections: RoadmapSection[] = [
       {
         title: "Linux runtime (Preview)",
         description:
-          "A fourth platform: the same OpenXR runtime now brings up a native Vulkan compositor over an X11/XCB surface, with apps binding their own window through XR_EXT_xlib_window_binding. Hardware-validated on real spatial-display hardware — the stereo cube and all five demos render, and a real vendor Vulkan weave lights the panel's lens. It ships today as a user-level tarball across Ubuntu 22.04/24.04/26.04; not yet GA (no installer), with the deployment target and windowed-3D phasing still in flight",
+          "A fourth platform: the same OpenXR runtime now brings up a native Vulkan compositor over an X11/XCB surface, with apps binding their own window through XR_DXR_xlib_window_binding. Hardware-validated on real spatial-display hardware — the stereo cube and all five demos render, and a real vendor Vulkan weave lights the panel's lens. It ships today as a user-level tarball across Ubuntu 22.04/24.04/26.04; not yet GA (no installer), with the deployment target and windowed-3D phasing still in flight",
       },
       {
         title: "Shell input forwarding",

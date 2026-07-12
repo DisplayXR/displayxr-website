@@ -43,7 +43,7 @@ const features = [
   {
     title: "Workspace Extensions",
     description:
-      "XR_EXT_spatial_workspace + XR_EXT_app_launcher — a documented surface for swappable workspace controllers that compose multi-app 3D layouts, drive window placement, and register launcher tiles. The DisplayXR Shell is the reference; OEMs, vertical integrators, kiosks, and AI-agent drivers can ship their own.",
+      "XR_DXR_spatial_workspace + XR_EXT_app_launcher — a documented surface for swappable workspace controllers that compose multi-app 3D layouts, drive window placement, and register launcher tiles. The DisplayXR Shell is the reference; OEMs, vertical integrators, kiosks, and AI-agent drivers can ship their own.",
     icon: <AppWindow size={20} />,
   },
 ];
