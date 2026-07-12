@@ -1,1 +1,54 @@
-[]
+[
+  {
+    "name": "XR_DXR_atlas_capture",
+    "group": "display"
+  },
+  {
+    "name": "XR_DXR_cocoa_window_binding",
+    "group": "windowing"
+  },
+  {
+    "name": "XR_DXR_display_info",
+    "group": "display"
+  },
+  {
+    "name": "XR_DXR_display_zones",
+    "group": "display"
+  },
+  {
+    "name": "XR_DXR_local_3d_zone",
+    "group": "display"
+  },
+  {
+    "name": "XR_DXR_macos_gl_binding",
+    "group": "windowing"
+  },
+  {
+    "name": "XR_DXR_mcp_tools",
+    "group": "display"
+  },
+  {
+    "name": "XR_DXR_spatial_workspace",
+    "group": "workspace"
+  },
+  {
+    "name": "XR_DXR_view_rig",
+    "group": "display"
+  },
+  {
+    "name": "XR_DXR_weave",
+    "group": "display"
+  },
+  {
+    "name": "XR_DXR_win32_window_binding",
+    "group": "windowing"
+  },
+  {
+    "name": "XR_DXR_workspace_file_dialog",
+    "group": "workspace"
+  },
+  {
+    "name": "XR_DXR_xlib_window_binding",
+    "group": "windowing"
+  }
+]
