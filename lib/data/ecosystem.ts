@@ -137,9 +137,27 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-cef-host",
     repo: "DisplayXR/displayxr-cef-host",
     description:
-      "A CEF (Chromium Embedded Framework) offscreen-render browser host that drives the real DisplayXR display-processor weave through XR_EXT_weave — the reference present-owner for inline 3D in a browser surface. The host itself never weaves; it hands the runtime a stereo texture and a window rect and composites the weaved result.",
+      "A CEF (Chromium Embedded Framework) offscreen-render browser host that drives the real DisplayXR display-processor weave through XR_DXR_weave — the reference present-owner for inline 3D in a browser surface. The host itself never weaves; it hands the runtime a stereo texture and a window rect and composites the weaved result.",
     url: "https://github.com/DisplayXR/displayxr-cef-host",
     category: "tools",
+    status: "experimental",
+  },
+  {
+    name: "displayxr-browser",
+    repo: "DisplayXR/displayxr-browser",
+    description:
+      "DisplayXR Browser — a developer-preview Chromium that renders the web normally and weaves glasses-free inline 3D on DisplayXR hardware. The productization of the inline-3D browser work validated by the CEF host, with a GPU-resident weave (no per-frame CPU readback).",
+    url: "https://github.com/DisplayXR/displayxr-browser",
+    category: "apps",
+    status: "experimental",
+  },
+  {
+    name: "displayxr-web",
+    repo: "DisplayXR/displayxr-web",
+    description:
+      "Inline-3D web samples and the JS helper library for the DisplayXR Browser — the DisplayXR analog of the webxr-samples gallery, served via GitHub Pages.",
+    url: "https://github.com/DisplayXR/displayxr-web",
+    category: "demos",
     status: "experimental",
   },
 ];

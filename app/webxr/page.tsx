@@ -99,7 +99,7 @@ const howItWorks: { icon: ReactNode; title: string; body: ReactNode }[] = [
       <>
         <Mono>displayxr-webxr-bridge.exe</Mono> runs a <em>headless</em> OpenXR
         session against the DisplayXR service, reads{" "}
-        <Mono>XR_EXT_display_info</Mono>, rendering-mode events, and eye poses,
+        <Mono>XR_DXR_display_info</Mono>, rendering-mode events, and eye poses,
         and relays them over a <Mono>127.0.0.1:9014</Mono> WebSocket.
       </>
     ),
