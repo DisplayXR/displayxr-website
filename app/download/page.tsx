@@ -71,7 +71,9 @@ const installers: Installer[] = [
     filename: "DisplayXR-Browser-Preview-Setup-*.exe",
     requirement: "Optional",
     platforms: "Windows",
-    releasesUrl: `${REPO_URLS.browser}/releases/latest`,
+    // /releases (not /releases/latest): the preview ships as a GitHub *pre-release*,
+    // which /releases/latest excludes (404s). The list shows the preview at the top.
+    releasesUrl: `${REPO_URLS.browser}/releases`,
     icon: <Globe size={20} />,
   },
 ];
