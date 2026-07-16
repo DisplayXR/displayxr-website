@@ -21,6 +21,7 @@ type Installer = {
   platforms: string;
   releasesUrl: string;
   icon: ReactNode;
+  links?: { label: string; href: string }[];
 };
 
 const installers: Installer[] = [
@@ -75,6 +76,10 @@ const installers: Installer[] = [
     // which /releases/latest excludes (404s). The list shows the preview at the top.
     releasesUrl: `${REPO_URLS.browser}/releases`,
     icon: <Globe size={20} />,
+    links: [
+      { label: "See it live", href: "https://displayxr.github.io/displayxr-web/" },
+      { label: "Build inline-3D apps (SDK)", href: REPO_URLS.web },
+    ],
   },
 ];
 
@@ -179,6 +184,21 @@ export default function DownloadPage() {
                 <Download size={14} />
                 Latest release
               </a>
+              {installer.links && installer.links.length > 0 && (
+                <div className="mt-3 flex flex-col gap-1.5">
+                  {installer.links.map((lnk) => (
+                    <a
+                      key={lnk.href}
+                      href={lnk.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm text-text-secondary hover:text-accent underline underline-offset-2"
+                    >
+                      {lnk.label} ↗
+                    </a>
+                  ))}
+                </div>
+              )}
             </Card>
           ))}
         </div>
