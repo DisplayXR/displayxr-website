@@ -120,6 +120,13 @@
     "archived": false
   },
   {
+    "name": "displayxr-gallery",
+    "description": "DisplayXR Gallery — share and browse 3D photos & videos on 3D displays. Community feedback & bug reports.",
+    "url": "https://github.com/DisplayXR/displayxr-gallery",
+    "topics": [],
+    "archived": false
+  },
+  {
     "name": "displayxr-installer",
     "description": "One-click installer for DisplayXR — a single .exe / .pkg that sets up the runtime, Shell, and Leia SR plug-in.",
     "url": "https://github.com/DisplayXR/displayxr-installer",
