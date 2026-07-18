@@ -7,7 +7,7 @@
     "description": "Unity plugin for eye-tracked 3D light field displays via OpenXR",
     "repoUrl": "https://github.com/DisplayXR/displayxr-unity",
     "testRepoUrl": "https://github.com/DisplayXR/displayxr-unity-test",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.6.0",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.7.0",
     "logo": "/engines/unity/DisplayXR-test_logo_2d_512x512.png"
   },
   {
