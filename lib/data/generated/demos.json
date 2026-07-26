@@ -32,8 +32,8 @@
     "type": "3d",
     "icon": "/demos/displayxr-demo-earthview/earthview_icon.png",
     "repoUrl": "https://github.com/DisplayXR/displayxr-demo-earthview",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.6.2",
-    "tag": "v0.6.2"
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.6.3",
+    "tag": "v0.6.3"
   },
   {
     "id": "gaussiansplat",
