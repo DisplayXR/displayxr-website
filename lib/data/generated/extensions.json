@@ -36,6 +36,10 @@
     "group": "display"
   },
   {
+    "name": "XR_DXR_wayland_surface_binding",
+    "group": "display"
+  },
+  {
     "name": "XR_DXR_weave",
     "group": "display"
   },
