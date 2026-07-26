@@ -8,8 +8,8 @@
     "type": "3d",
     "icon": "/demos/displayxr-demo-avatar/avatar_icon.png",
     "repoUrl": "https://github.com/DisplayXR/displayxr-demo-avatar",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.9.1",
-    "tag": "v0.9.1"
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.9.2",
+    "tag": "v0.9.2"
   },
   {
     "id": "modelviewer",

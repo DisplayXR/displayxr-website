@@ -3,7 +3,7 @@
     "id": "runtime",
     "name": "DisplayXR Runtime",
     "version": "v2.1.2",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.1.2",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.2.0",
     "releaseDate": "2026-07-26",
     "platforms": "Windows · macOS",
     "repoUrl": "https://github.com/DisplayXR/displayxr-runtime"
@@ -20,8 +20,8 @@
   {
     "id": "leia_plugin",
     "name": "Leia SR Plug-in",
-    "version": "v2.0.4",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.0.4",
+    "version": "v2.0.5",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.0.5",
     "releaseDate": "2026-07-26",
     "platforms": "Windows",
     "repoUrl": "https://github.com/DisplayXR/displayxr-leia-plugin"
