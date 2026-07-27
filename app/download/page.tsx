@@ -29,9 +29,10 @@ const installers: Installer[] = [
     name: "DisplayXR Runtime",
     pitch:
       "OpenXR runtime + service. Install this first; everything else depends on it.",
-    filename: "DisplayXRSetup-*.exe · DisplayXR-Installer-*.pkg",
+    filename:
+      "DisplayXRSetup-*.exe · DisplayXR-Installer-*.pkg · displayxr-runtime_*_amd64.deb",
     requirement: "Required",
-    platforms: "Windows · macOS",
+    platforms: "Windows · macOS · Linux",
     releasesUrl: `${REPO_URLS.runtime}/releases/latest`,
     icon: <Package size={20} />,
   },
@@ -119,7 +120,21 @@ export default function DownloadPage() {
             bundles the runtime, shell, and plug-ins into a single download
             with pinned, compatible versions — the simplest way to get a
             working setup. Prefer it unless you need a specific component
-            version. (v1 ships unsigned; your OS may warn on first launch.)
+            version. Windows{" "}
+            <code className="text-xs bg-background px-1.5 py-0.5 rounded border border-border font-mono">
+              .exe
+            </code>
+            , macOS{" "}
+            <code className="text-xs bg-background px-1.5 py-0.5 rounded border border-border font-mono">
+              .pkg
+            </code>
+            , and a Linux{" "}
+            <code className="text-xs bg-background px-1.5 py-0.5 rounded border border-border font-mono">
+              .tar.gz
+            </code>{" "}
+            that installs the runtime, the display plug-in, and all five demos
+            in one command. (v1 ships unsigned; your OS may warn on first
+            launch.)
           </p>
           <a
             href={`${REPO_URLS.installer}/releases/latest`}
@@ -223,6 +238,32 @@ export default function DownloadPage() {
             Get Started
           </a>{" "}
           walkthrough for the macOS flow.
+        </p>
+
+        {/* Linux footnote */}
+        <p className="text-sm text-text-secondary leading-relaxed">
+          <strong className="text-text-primary">On Linux?</strong> Linux is a
+          Preview platform — Vulkan-only, X11 or Wayland, validated on Ubuntu
+          22.04, 24.04, and 26.04. Take the bundle{" "}
+          <code className="text-xs bg-background px-1.5 py-0.5 rounded border border-border font-mono">
+            .tar.gz
+          </code>{" "}
+          and run its{" "}
+          <code className="text-xs bg-background px-1.5 py-0.5 rounded border border-border font-mono">
+            install.sh
+          </code>
+          : it lays down the runtime, the display-processor plug-in, and all
+          five demos as{" "}
+          <code className="text-xs bg-background px-1.5 py-0.5 rounded border border-border font-mono">
+            .deb
+          </code>{" "}
+          packages, registers the active runtime, and self-checks on install —
+          no environment variables to set. Individual{" "}
+          <code className="text-xs bg-background px-1.5 py-0.5 rounded border border-border font-mono">
+            .deb
+          </code>{" "}
+          files are attached to each component&apos;s own release if you prefer
+          to install piecemeal. The shell and MCP tools are Windows-only today.
         </p>
       </div>
     </PageLayout>

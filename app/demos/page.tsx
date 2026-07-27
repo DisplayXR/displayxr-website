@@ -19,9 +19,11 @@ export const metadata: Metadata = {
 // generator owns name/description/icon/version; status + tags stay authored.
 // A missing entry falls back to sensible defaults so a new demo still renders.
 const demoEditorial: Record<string, { status: Status; tags: string[] }> = {
-  modelviewer: { status: "active", tags: ["Windows", "macOS", "Android", "Vulkan"] },
-  mediaplayer: { status: "active", tags: ["Windows", "macOS", "Android", "Vulkan"] },
-  gaussiansplat: { status: "shipping", tags: ["Windows", "macOS", "Vulkan"] },
+  modelviewer: { status: "active", tags: ["Windows", "macOS", "Linux", "Android", "Vulkan"] },
+  mediaplayer: { status: "active", tags: ["Windows", "macOS", "Linux", "Android", "Vulkan"] },
+  gaussiansplat: { status: "shipping", tags: ["Windows", "macOS", "Linux", "Android", "Vulkan"] },
+  avatar: { status: "active", tags: ["Windows", "macOS", "Linux", "Android", "Vulkan"] },
+  earthview: { status: "beta", tags: ["Windows", "macOS", "Linux", "Android", "Vulkan"] },
 };
 
 const engineEditorial: Record<string, { status: Status; tags: string[] }> = {

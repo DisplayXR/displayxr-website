@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/Badge";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { GitHubIcon } from "@/components/ui/GitHubIcon";
 import { ecosystemRepos } from "@/lib/data/ecosystem";
+import { GALLERY_URL } from "@/lib/constants";
 
 const categoryLabels: Record<string, string> = {
   core: "Core",
@@ -35,6 +36,34 @@ export function EcosystemMap() {
           DisplayXR is developing as a full ecosystem — runtime, extensions,
           engine plugins, projection math, demos, and reference workspace
           controllers.
+        </p>
+      </AnimateIn>
+
+      <AnimateIn>
+        <h4 className="text-xs font-medium text-text-secondary uppercase tracking-wider mb-4">
+          See it running
+        </h4>
+        <p className="text-text-secondary leading-relaxed mb-4 max-w-2xl">
+          The{" "}
+          <a
+            href={GALLERY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:text-accent-hover underline underline-offset-2"
+          >
+            DisplayXR Gallery
+          </a>{" "}
+          is a live gallery of 3D photography: a curated set of stereo
+          captures, woven natively in the DisplayXR Browser and degrading to a
+          cursor-driven parallax preview in any other browser. It doubles as
+          the reference for how an inline-3D page should behave &mdash; the
+          same page serves both, with no separate 3D build.
+        </p>
+        <p className="text-text-secondary leading-relaxed mb-12 max-w-2xl">
+          Every photo carries per-eye depth, so a Depth view can turn any shot
+          into its own depth map. On a 3D display that view stays dimensional
+          rather than flattening into a picture of a depth map &mdash; which is
+          the difference the format is for.
         </p>
       </AnimateIn>
 

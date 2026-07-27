@@ -14,7 +14,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-runtime",
     repo: "DisplayXR/displayxr-runtime",
     description:
-      "Core OpenXR runtime with native compositors for D3D11, D3D12, Vulkan, Metal, and OpenGL — on Windows, macOS, and Android, with a Vulkan-only compositor now in Preview on desktop Linux.",
+      "Core OpenXR runtime with native compositors for D3D11, D3D12, Vulkan, Metal, and OpenGL — on Windows, macOS, and Android, plus a Vulkan-only compositor on desktop Linux (Preview, shipping as .deb packages).",
     url: "https://github.com/DisplayXR/displayxr-runtime",
     category: "core",
   },
@@ -57,7 +57,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-demo-gaussiansplat",
     repo: "DisplayXR/displayxr-demo-gaussiansplat",
     description:
-      "Real-time 3D Gaussian Splatting viewer (.spz / .ply) for spatial displays. macOS + Windows.",
+      "Real-time 3D Gaussian Splatting viewer (.spz / .ply) for spatial displays. Windows, macOS, Linux, Android.",
     url: "https://github.com/DisplayXR/displayxr-demo-gaussiansplat",
     category: "demos",
     status: "active",
@@ -66,7 +66,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-demo-modelviewer",
     repo: "DisplayXR/displayxr-demo-modelviewer",
     description:
-      "Glasses-free 3D glTF 2.0 PBR model viewer (OpenXR + Vulkan). Drag-and-drop a .glb / .gltf model.",
+      "Glasses-free 3D glTF 2.0 PBR model viewer (OpenXR + Vulkan). Drag-and-drop a .glb / .gltf model. Windows, macOS, Linux, Android.",
     url: "https://github.com/DisplayXR/displayxr-demo-modelviewer",
     category: "demos",
     status: "active",
@@ -75,7 +75,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-demo-mediaplayer",
     repo: "DisplayXR/displayxr-demo-mediaplayer",
     description:
-      "Spatial media player — photos, GPU-decoded video with synchronized audio, Leia Image Format (LIF) pictures, and folder slideshows, with playback controllable by AI agents. Windows, macOS, Android.",
+      "Spatial media player — photos, GPU-decoded video with synchronized audio, Leia Image Format (LIF) pictures, and folder slideshows, with playback controllable by AI agents. Windows, macOS, Linux, Android.",
     url: "https://github.com/DisplayXR/displayxr-demo-mediaplayer",
     category: "demos",
     status: "active",
@@ -84,7 +84,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-demo-avatar",
     repo: "DisplayXR/displayxr-demo-avatar",
     description:
-      "A transparent, click-through 3D avatar that floats over your desktop (OpenXR + native Vulkan) — weaved in 3D with a flat 2D speech bubble beside it, and clicks passing through to whatever is behind. Showcases the see-through transparency and mixed 2D/3D display-zone path.",
+      "A transparent, click-through 3D avatar that floats over your desktop (OpenXR + native Vulkan) — weaved in 3D with a flat 2D speech bubble beside it, and clicks passing through to whatever is behind. Showcases the see-through transparency and mixed 2D/3D display-zone path, now with live desktop content composited under the weave on all four platforms.",
     url: "https://github.com/DisplayXR/displayxr-demo-avatar",
     category: "demos",
     status: "active",
@@ -159,5 +159,14 @@ export const ecosystemRepos: EcosystemRepo[] = [
     url: "https://github.com/DisplayXR/displayxr-web",
     category: "demos",
     status: "experimental",
+  },
+  {
+    name: "displayxr-gallery",
+    repo: "DisplayXR/displayxr-gallery",
+    description:
+      "A social gallery of side-by-side 3D photography — woven natively in the DisplayXR Browser, with a cursor-driven parallax preview everywhere else. The working reference for how an inline-3D page should behave. Public mirror for feedback and issues; the site is live.",
+    url: "https://github.com/DisplayXR/displayxr-gallery",
+    category: "demos",
+    status: "active",
   },
 ];
