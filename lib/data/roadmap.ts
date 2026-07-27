@@ -99,7 +99,7 @@ export const roadmapSections: RoadmapSection[] = [
       {
         title: "Standalone demo apps",
         description:
-          "A growing family of demos ships from their own repositories — a real-time Gaussian-splat viewer, a glTF 2.0 PBR model viewer, a spatial media player for photos, video, and Leia Image Format pictures, a transparent click-through 3D avatar that floats over the desktop, and a streaming 3D city viewer on Google Photorealistic 3D Tiles",
+          "A growing family of demos ships from their own repositories — a real-time Gaussian-splat viewer, a glTF 2.0 PBR model viewer, a spatial media player for stereo photos and video, a transparent click-through 3D avatar that floats over the desktop, and a streaming 3D city viewer on Google Photorealistic 3D Tiles",
       },
       {
         title: "Truthful per-mode eye tracking",

@@ -75,7 +75,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-demo-mediaplayer",
     repo: "DisplayXR/displayxr-demo-mediaplayer",
     description:
-      "Spatial media player — photos, GPU-decoded video with synchronized audio, Leia Image Format (LIF) pictures, and folder slideshows, with playback controllable by AI agents. Windows, macOS, Linux, Android.",
+      "Spatial media player — stereo photos, GPU-decoded video with synchronized audio, and folder slideshows, with playback controllable by AI agents. Windows, macOS, Linux, Android.",
     url: "https://github.com/DisplayXR/displayxr-demo-mediaplayer",
     category: "demos",
     status: "active",
