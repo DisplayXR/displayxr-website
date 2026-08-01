@@ -189,8 +189,8 @@ export default function ExtensionsPage() {
             <code className="bg-surface text-accent px-1 py-0.5 rounded text-xs font-mono">
               XR_EXT_*
             </code>{" "}
-            naming (registration of the DXR author tag is in final review with
-            Khronos). The rename is a breaking change: apps built against the old
+            naming (the DXR author tag is officially registered with Khronos
+            as of July 2026). The rename is a breaking change: apps built against the old
             names need a runtime older than v2.0.0, or a rebuild against the
             v2.0.0 headers — the runtime repository ships a one-command
             migration script (

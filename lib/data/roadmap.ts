@@ -114,7 +114,7 @@ export const roadmapSections: RoadmapSection[] = [
       {
         title: "Extensions under the DXR vendor author tag",
         description:
-          "All fourteen DisplayXR extensions renamed from the provisional XR_EXT_* naming to XR_DXR_*, under the project's vendor author tag (registration in final review with Khronos), and shipped as a coordinated v2.0.0 release train — runtime, shell, vendor plug-in, engine plugins, demos, and meta-installer moving together. Apps built against the old names keep working on runtimes before v2.0.0 or rebuild against the v2.0.0 headers; migration is one command (scripts/dxr_rename.py in the runtime repo)",
+          "All fourteen DisplayXR extensions renamed from the provisional XR_EXT_* naming to XR_DXR_*, under the project's vendor author tag (officially registered with Khronos, July 2026), and shipped as a coordinated v2.0.0 release train — runtime, shell, vendor plug-in, engine plugins, demos, and meta-installer moving together. Apps built against the old names keep working on runtimes before v2.0.0 or rebuild against the v2.0.0 headers; migration is one command (scripts/dxr_rename.py in the runtime repo)",
       },
     ],
   },
