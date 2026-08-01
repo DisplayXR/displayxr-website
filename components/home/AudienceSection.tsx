@@ -97,7 +97,7 @@ export function AudienceSection() {
                 OEMs and vertical integrators (laptops, monitors, kiosks, CAD /
                 medical / automotive HMIs) can ship the bare runtime, the
                 reference DisplayXR Shell, or their own workspace controller
-                built on XR_DXR_spatial_workspace + XR_DXR_app_launcher — and
+                built on XR_DXR_spatial_workspace — and
                 embed displayxr-mcp to expose the same surface to an AI agent.
               </p>
               <span className="mt-3 inline-block text-sm text-accent hover:text-accent-hover">

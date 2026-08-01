@@ -37,7 +37,7 @@ repo takes on a new obligation just to feed the website.
 |---|---|---|
 | Version matrix (core components) | `displayxr-runtime/versions.json` | raw fetch — already auto-bumped on every release |
 | Component releases (tag, date, assets, URL) | GitHub Releases API per repo | `gh api` / REST |
-| **Demo cards** (name, description, 2D icon, **3D SBS icon**, category) | each demo repo's **`*.displayxr.json`** launcher manifest + its `icon` / `icon_3d` PNGs | the *same* contract the Shell's `XR_DXR_app_launcher` reads |
+| **Demo cards** (name, description, 2D icon, **3D SBS icon**, category) | each demo repo's **`*.displayxr.json`** launcher manifest + its `icon` / `icon_3d` PNGs | the *same* contract the Shell's launcher reads |
 | Engine plugins (Unity / Unreal) | GitHub latest-release tag + repo description; icon from plugin `Resources/` or `*-test` `*_logo_2d` PNG | REST (engines are **not** in `versions.json` — intentionally) |
 | Engine sample scenes (`*-test` repos) | GitHub latest-release tag + `*_logo_2d` / `*_logo_3d` PNGs | REST |
 | Extension catalog | `displayxr-extensions` directory listing of `XR_DXR_*` | Git tree API |

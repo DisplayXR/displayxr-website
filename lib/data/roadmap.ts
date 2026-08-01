@@ -89,7 +89,7 @@ export const roadmapSections: RoadmapSection[] = [
       {
         title: "Workspace controller surface",
         description:
-          "XR_DXR_spatial_workspace and XR_DXR_app_launcher headers shipped, controller registration via Windows registry contract, and the reference shell now ships separately as its own installer. Any third-party (OEM, vertical, kiosk, AI-agent driver) can ship a workspace controller with the same first-class authority",
+          "XR_DXR_spatial_workspace header shipped, launcher tiles via *.displayxr.json app manifests, controller registration via Windows registry contract, and the reference shell now ships separately as its own installer. Any third-party (OEM, vertical, kiosk, AI-agent driver) can ship a workspace controller with the same first-class authority",
       },
       {
         title: "Multi-compositor performance pass",

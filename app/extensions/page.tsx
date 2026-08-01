@@ -109,15 +109,6 @@ const extensions: Extension[] = [
     group: "workspace",
   },
   {
-    name: "XR_DXR_app_launcher",
-    title: "App Launcher",
-    description:
-      "Companion to spatial_workspace: lets a workspace controller register launcher tiles, query installed apps, and drive launch/lifecycle events. Decouples the launcher UX from the runtime.",
-    status: "shipping",
-    group: "workspace",
-    href: REPO_URLS.extensions,
-  },
-  {
     name: "XR_DXR_workspace_file_dialog",
     title: "Workspace File Dialog",
     description:

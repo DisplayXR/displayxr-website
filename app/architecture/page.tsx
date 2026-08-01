@@ -330,16 +330,16 @@ export default function ArchitecturePage() {
             A <strong className="text-text-primary">workspace controller</strong>{" "}
             is an optional process that adds spatial-desktop features on top:
             multi-app composition, window chrome, layout presets, an app
-            launcher. The runtime exposes two extensions for this:{" "}
+            launcher. The runtime exposes one extension for this:{" "}
             <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">
               XR_DXR_spatial_workspace
             </code>{" "}
-            for window pose / hit-test / capture, and{" "}
+            for window pose / hit-test / capture; launcher tiles come from each
+            app&apos;s{" "}
             <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">
-              XR_DXR_app_launcher
+              *.displayxr.json
             </code>{" "}
-            for tile registration and lifecycle. Anything that speaks them is a
-            first-class controller.
+            manifest. Anything that speaks it is a first-class controller.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
             <div className="bg-surface border border-border rounded-lg p-6">
