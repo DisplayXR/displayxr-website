@@ -33,6 +33,8 @@
       "displayxr-runtime/docs/adr/ADR-030-crop-before-dp-zero-copy-only-when-swapchain-equals-atlas.md",
       "displayxr-runtime/docs/adr/ADR-031-remove-surround-output-rect-zones-sole-region-model.md",
       "displayxr-runtime/docs/adr/ADR-032-array-layered-swapchains-first-class.md",
+      "displayxr-runtime/docs/adr/ADR-033-placement-reports-geometry-weaver-owns-phase.md",
+      "displayxr-runtime/docs/adr/ADR-034-input-provider-plugins.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-001-direct-runtime-loading.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-002-zero-copy-atlas-handoff.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-003-ue-native-off-axis-projection.md"
