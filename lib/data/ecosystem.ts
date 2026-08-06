@@ -137,7 +137,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-cef-host",
     repo: "DisplayXR/displayxr-cef-host",
     description:
-      "A CEF (Chromium Embedded Framework) offscreen-render browser host that drives the real DisplayXR display-processor weave through XR_DXR_weave — the reference present-owner for inline 3D in a browser surface. The host itself never weaves; it hands the runtime a stereo texture and a window rect and composites the weaved result.",
+      "The minimal reference host for XR_DXR_weave — not a browser to use, which is DisplayXR Browser. A small CEF (Chromium Embedded Framework) offscreen-render app that hands the runtime a stereo texture and a window rect and composites the weaved result; it never weaves itself. Kept because it builds in minutes where the browser fork takes hours, which makes it the place to reproduce a weave or display-processor regression, and because it shows how to drive the weave from your own present-owner without forking Chromium.",
     url: "https://github.com/DisplayXR/displayxr-cef-host",
     category: "tools",
     status: "experimental",
