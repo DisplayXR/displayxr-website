@@ -83,6 +83,14 @@ const extensions: Extension[] = [
     group: "windowing",
   },
   {
+    name: "XR_DXR_wayland_surface_binding",
+    title: "Wayland Surface Binding",
+    description:
+      "The Wayland sibling of the Xlib binding. An app hands the runtime its own wl_display and wl_surface and keeps ownership of the surface lifecycle — registry, xdg-shell toplevel, configure acks, the event loop — while the runtime builds its Vulkan surface from the pair. Transparency is native here: a Wayland surface composites its premultiplied alpha over whatever is behind it, so a transparent background needs none of the ARGB-visual work X11 requires.",
+    status: "early",
+    group: "windowing",
+  },
+  {
     name: "XR_DXR_macos_gl_binding",
     title: "macOS GL Binding",
     description:

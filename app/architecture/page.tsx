@@ -45,7 +45,11 @@ export default function ArchitecturePage() {
             extension dispatch. Vendor-specific processing — weaving,
             interlacing, calibration — happens below, in the display processor
             layer. The same runtime ships on{" "}
-            <strong className="text-text-primary">Windows, macOS, and Android</strong>.
+            <strong className="text-text-primary">
+              Windows, macOS, and Android
+            </strong>
+            , with desktop <strong className="text-text-primary">Linux</strong>{" "}
+            in Preview.
           </p>
           <ArchDiagram />
           <p className="text-sm text-text-secondary italic">
@@ -109,7 +113,7 @@ export default function ArchitecturePage() {
             Platforms
           </h2>
           <p className="text-text-secondary leading-relaxed mb-4">
-            DisplayXR runs on three platforms from one codebase. On{" "}
+            DisplayXR runs on four platforms from one codebase. On{" "}
             <strong className="text-text-primary">Windows</strong> it drives
             LeiaSR displays through the D3D11/D3D12/Vulkan/OpenGL compositors;
             on <strong className="text-text-primary">macOS</strong> it ships the
@@ -127,6 +131,31 @@ export default function ArchitecturePage() {
             same display-zone and see-through transparency model used on the
             desktop lets a weaved 3D object sit beside a flat 2D HUD or float
             over the live screen.
+          </p>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            Desktop <strong className="text-text-primary">Linux</strong> is
+            Vulkan-only and in Preview. One native Vulkan compositor presents
+            over either an X11/XCB or a Wayland surface, and apps hand the
+            runtime their own window through{" "}
+            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">
+              XR_DXR_xlib_window_binding
+            </code>{" "}
+            or{" "}
+            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">
+              XR_DXR_wayland_surface_binding
+            </code>
+            . Transparent overlays work the same way they do elsewhere: a
+            per-pixel-transparent 3D object stands on the desktop with live
+            screen content composited under the weave, captured through the
+            desktop portal. Every component — runtime, vendor plug-in, and all
+            five demos — ships as a{" "}
+            <code className="bg-background text-accent px-1 py-0.5 rounded text-xs font-mono">
+              .deb
+            </code>
+            , and the bundle installs the whole stack in one command with no
+            environment variables to set. It is Preview rather than GA: the
+            service-side render path and windowed-3D phase origin are still in
+            flight.
           </p>
         </section>
 
@@ -166,6 +195,85 @@ export default function ArchitecturePage() {
             runtime, or lets the runtime host a window for it, zones are how all of
             them carve up 2D and 3D. A plain full-window app is simply the degenerate
             one-zone case — it needs no explicit zones at all.
+          </p>
+        </section>
+
+        {/* Compositing on a Woven Surface */}
+        <section>
+          <h2 className="text-2xl font-semibold tracking-tight text-text-primary mb-4">
+            Compositing on a Woven Surface
+          </h2>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            A woven window is not an ordinary element. The runtime reads its
+            composited quad every frame and interleaves the two eyes into the
+            display&rsquo;s view pattern. That has a consequence authors meet
+            immediately:{" "}
+            <strong className="text-text-primary">
+              what you draw on top of a 3D window is not automatically 2D
+            </strong>
+            .
+          </p>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            Put a caption, a badge, or a hover plate over a woven window and
+            &mdash; unaided &mdash; it is woven along with the content, arriving
+            interleaved instead of crisp. DisplayXR handles the common case with{" "}
+            <strong className="text-text-primary">overlay exclusion</strong>:
+            mark the element and the compositor punches a per-pixel 2D hole in
+            the weave there, compositing it over the woven 3D. The plate stays
+            sharp, and a translucent scrim still reveals the depth underneath
+            it.
+          </p>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            <strong className="text-text-primary">
+              Exclusion is for partial regions, not whole windows.
+            </strong>{" "}
+            The compositor identifies a window by its rect. An overlay covering
+            the entire window shares that rect, the match becomes ambiguous, and
+            the window falls back to presenting its raw side-by-side buffer. So
+            a full-surface effect &mdash; a depth view, a colour grade, a
+            transition &mdash; cannot be layered on top. This is a property of
+            matching by rect, not a gap to be patched.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+            <div className="bg-surface border border-border rounded-lg p-6">
+              <h3 className="text-sm font-semibold text-accent mb-2">
+                Partial overlay &mdash; use exclusion
+              </h3>
+              <p className="text-sm text-text-secondary leading-relaxed">
+                Caption bands, badges, hover plates, floating toolbars &mdash;
+                anything occupying a sub-region of the window. Marked elements
+                composite as crisp 2D over the woven 3D.
+              </p>
+            </div>
+            <div className="bg-surface border border-border rounded-lg p-6">
+              <h3 className="text-sm font-semibold text-warning mb-2">
+                Full-surface effect &mdash; swap the source
+              </h3>
+              <p className="text-sm text-text-secondary leading-relaxed">
+                Depth views, colour grades, transitions &mdash; anything edge to
+                edge. Redraw the buffer the window is woven from. Same weave,
+                real stereo depth, no extra layer.
+              </p>
+            </div>
+          </div>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            The pattern that does work is to change{" "}
+            <strong className="text-text-primary">what gets woven</strong>{" "}
+            instead of drawing over it. A window&rsquo;s source is a buffer the
+            runtime repaints from every frame: swap or redraw that buffer and
+            the effect travels through the same weave. It keeps real stereo
+            depth, costs no additional compositing layer, and there is nothing
+            left to collide.
+          </p>
+          <p className="text-text-secondary leading-relaxed">
+            Progressive enhancement is a requirement here, not a slogan: an
+            inline-3D page has to be a first-class page on an ordinary monitor.
+            Where the runtime is absent, the same content renders from the
+            stereo pair and its per-eye depth, synthesizing an in-between
+            viewpoint that tracks the cursor &mdash; so the depth stays legible
+            as motion parallax instead of being discarded. The 3D display makes
+            the depth literal; the fallback keeps it visible. One page, one
+            codebase, no separate &ldquo;3D version&rdquo;.
           </p>
         </section>
 

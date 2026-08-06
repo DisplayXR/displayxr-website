@@ -29,7 +29,7 @@ export const roadmapSections: RoadmapSection[] = [
       {
         title: "Custom OpenXR extensions",
         description:
-          "Extensions for querying spatial display geometry, rendering modes, eye tracking, and binding compositor output to application windows across Windows, macOS, and Android",
+          "Extensions for querying spatial display geometry, rendering modes, eye tracking, and binding compositor output to application windows across Windows, macOS, Android, and Linux (X11 and Wayland)",
       },
       {
         title: "Unity plugin with sample scene",
@@ -99,7 +99,7 @@ export const roadmapSections: RoadmapSection[] = [
       {
         title: "Standalone demo apps",
         description:
-          "A growing family of demos ships from their own repositories — a real-time Gaussian-splat viewer, a glTF 2.0 PBR model viewer, a spatial media player for photos, video, and Leia Image Format pictures, a transparent click-through 3D avatar that floats over the desktop, and a streaming 3D city viewer on Google Photorealistic 3D Tiles",
+          "A growing family of demos ships from their own repositories — a real-time Gaussian-splat viewer, a glTF 2.0 PBR model viewer, a spatial media player for stereo photos and video, a transparent click-through 3D avatar that floats over the desktop, and a streaming 3D city viewer on Google Photorealistic 3D Tiles",
       },
       {
         title: "Truthful per-mode eye tracking",
@@ -125,7 +125,7 @@ export const roadmapSections: RoadmapSection[] = [
       {
         title: "Linux runtime (Preview)",
         description:
-          "A fourth platform: the same OpenXR runtime now brings up a native Vulkan compositor over an X11/XCB surface, with apps binding their own window through XR_DXR_xlib_window_binding. Hardware-validated on real spatial-display hardware — the stereo cube and all five demos render, and a real vendor Vulkan weave lights the panel's lens. It ships today as a user-level tarball across Ubuntu 22.04/24.04/26.04; not yet GA (no installer), with the deployment target and windowed-3D phasing still in flight",
+          "A fourth platform: the same OpenXR runtime brings up a native Vulkan compositor over an X11/XCB or Wayland surface, with apps binding their own window through XR_DXR_xlib_window_binding or XR_DXR_wayland_surface_binding. All five demos are now native Linux window-owning apps with windowed weaving, and the transparent desktop avatar reaches parity with the other platforms — a per-pixel-transparent 3D character standing on the desktop with live screen content composited under the weave. Distribution is no longer a hand-unpacked tarball: every component ships a .deb, and the meta-bundle installs the whole stack — runtime, vendor display-processor plug-in, and all five demos — with one command and no environment variables. Hardware-validated end to end on a production 3D display across Ubuntu 22.04/24.04/26.04. Still Preview rather than GA: the service-side render path, windowed-3D phase origin, and the Intel Arc deployment target are in flight",
       },
       {
         title: "Shell input forwarding",
