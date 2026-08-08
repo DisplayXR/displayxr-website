@@ -67,6 +67,21 @@ export interface NewsItem {
    * window (e.g. a launch you want to run through an event). ISO date.
    */
   pinnedUntil?: string;
+  /**
+   * Ticker ordering weight. Default 0; higher sorts first, ties fall back to
+   * date. Use `1` and only for a genuine landmark — something whose importance
+   * outlives the news cycle it shipped in.
+   *
+   * This exists because recency alone cannot express "this one matters more".
+   * The Khronos author-ID registration lost a ticker slot to a browser version
+   * bump that shipped six days later, which is the wrong outcome.
+   *
+   * Deliberately scoped: it reorders the ticker ONLY. It does not extend the
+   * freshness window (that is `pinnedUntil`), and it does not reorder /news,
+   * which stays strictly chronological so the archive reads as a timeline.
+   * Every item being a landmark means none of them are — keep this rare.
+   */
+  priority?: number;
 }
 
 /** How long a banner item stays in the homepage ticker. */
@@ -166,6 +181,9 @@ export const NEWS: NewsItem[] = [
     date: "2026-07-31",
     kind: "standards",
     tier: "banner",
+    // The one landmark in the current pool: a standards-body registration
+    // outlives the week it landed in, unlike everything above it by date.
+    priority: 1,
     headline: "DXR is a registered OpenXR author ID",
     blurb:
       "Khronos accepted the registration, so The DisplayXR Project now holds the DXR tag in the official OpenXR registry and the XR_DXR_* extension namespace is reserved — the first formal step toward upstreaming the spatial-display extensions.",
@@ -271,11 +289,14 @@ export function getBannerNews(now: Date = new Date()): NewsItem[] {
     if (item.pinnedUntil && ageInDays(item.pinnedUntil, now) <= 0) return true;
     return ageInDays(item.date, now) <= BANNER_MAX_AGE_DAYS;
   })
-    .sort((a, b) => b.date.localeCompare(a.date))
+    .sort(
+      (a, b) =>
+        (b.priority ?? 0) - (a.priority ?? 0) || b.date.localeCompare(a.date),
+    )
     .slice(0, BANNER_MAX_ITEMS);
 }
 
-/** Everything, newest first — the /news archive. */
+/** Everything, strictly newest first — `priority` does not apply here. */
 export function getAllNews(): NewsItem[] {
   return [...NEWS].sort((a, b) => b.date.localeCompare(a.date));
 }
