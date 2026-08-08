@@ -21,6 +21,10 @@ export const NAV: NavEntry[] = [
   {
     label: "App Developers",
     items: [
+      // Intentionally duplicated into Display Vendors — a shared page may
+      // appear in two menus (see the IA note in CLAUDE.md). Kept out of the
+      // top level so the nav keeps telling the three-persona story.
+      { label: "What's New", href: "/news" },
       { label: "Build apps", href: "/docs" },
       { label: "Demos", href: "/demos" },
       { label: "Extensions", href: "/extensions" },
@@ -41,6 +45,7 @@ export const NAV: NavEntry[] = [
   {
     label: "Display Vendors",
     items: [
+      { label: "What's New", href: "/news" },
       { label: "Plug-in guide", href: "/vendors" },
       { label: "Extension: display_info", href: "/extensions" },
       { label: "Platform Support", href: "/platform-support" },

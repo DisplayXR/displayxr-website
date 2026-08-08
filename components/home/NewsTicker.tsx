@@ -109,6 +109,21 @@ export function NewsTicker({ items }: NewsTickerProps) {
           ))}
         </div>
       )}
+
+      {/* The pill links to the story it names; this is the only route from the
+          hero to the feed itself, which holds more than the ticker can show. */}
+      <a
+        href="/news"
+        className="group hidden shrink-0 items-center gap-1 text-sm text-text-secondary transition-colors hover:text-text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:inline-flex"
+      >
+        All updates
+        <span
+          className="transition-transform group-hover:translate-x-0.5"
+          aria-hidden
+        >
+          →
+        </span>
+      </a>
     </div>
   );
 }

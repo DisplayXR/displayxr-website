@@ -173,9 +173,11 @@ export const NEWS: NewsItem[] = [
   },
   {
     id: "unreal-plugin",
+    // "list", not "banner": Unreal support already existed — this release
+    // improved it. First-of-kind is the banner bar; a version is not.
     date: "2026-08-01",
     kind: "engine",
-    tier: "banner",
+    tier: "list",
     headline: "Unreal Engine plug-in: zero-copy, adaptive N-view",
     blurb:
       "A first-class Unreal HMD plug-in that loads the runtime directly, hands the atlas over with no copy, and adapts its view count to the display.",
@@ -233,9 +235,11 @@ export const NEWS: NewsItem[] = [
   },
   {
     id: "macos-shell-beta",
+    // "list": still true and still notable, but the oldest item in the pool —
+    // it would age out of the ticker within weeks anyway.
     date: "2026-06-28",
     kind: "platform",
-    tier: "banner",
+    tier: "list",
     headline: "The spatial shell comes to macOS (beta)",
     blurb:
       "The multi-app spatial workspace now ships for macOS as an installable package, alongside the native Metal, OpenGL and Vulkan compositors.",
