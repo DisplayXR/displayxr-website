@@ -48,6 +48,14 @@ export function Footer() {
             <p className="text-sm text-text-secondary leading-relaxed">
               An open platform for spatial displays — extension specs, a reference runtime, and reference implementations.
             </p>
+            {/* Cross-persona, so it lives here rather than in one audience column. */}
+            <a
+              href="/news"
+              className="mt-4 inline-flex items-center gap-1.5 text-sm text-text-secondary hover:text-text-primary transition-colors"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
+              What&rsquo;s New
+            </a>
           </div>
 
           {/* Link columns */}

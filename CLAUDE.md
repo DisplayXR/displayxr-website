@@ -22,6 +22,11 @@ silently overwrites your change.
 - Demo cards are driven by each demo repo's `*.displayxr.json` launcher manifest
   (the same file the Shell reads). Adding a demo repo *is* adding it to the site —
   don't hand-author demo cards.
+- The **"What's New" feed is the inverse case**: `lib/data/news.ts` is *authored*
+  and must stay outside `generated/`. The generator only detects that a release
+  happened (`generated/news-candidates.json`); `/sync-website` decides what is
+  news and writes the entry. Never auto-fill the feed from release tags — a
+  homepage banner reading "v2.4.1 released" is worse than no banner.
 
 Full design + the two-layer model: **`docs/org-sync.md`**. Read it before
 touching anything under `lib/data/generated/` or `scripts/sync-org.mjs`.

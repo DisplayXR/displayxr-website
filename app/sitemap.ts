@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contribute",
     "/roadmap",
     "/governance",
+    "/news",
   ];
 
   return routes.map((route) => ({

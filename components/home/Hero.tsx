@@ -1,7 +1,12 @@
 import { Button } from "@/components/ui/Button";
+import { NewsTicker } from "@/components/home/NewsTicker";
 import { GITHUB_ORG_URL } from "@/lib/constants";
+import { getBannerNews } from "@/lib/data/news";
 
 export function Hero() {
+  // Filtered server-side; renders nothing once the pool ages out.
+  const news = getBannerNews();
+
   return (
     <section className="relative overflow-hidden">
       {/* Hero background animation (ping-pong palindrome loop) */}
@@ -28,6 +33,7 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-[1200px] px-6 md:px-12 pt-28 pb-36 md:pt-36 md:pb-44">
         <div className="max-w-3xl">
+          <NewsTicker items={news} />
           <h1 className="hero-animate text-4xl md:text-6xl lg:text-7xl font-display tracking-tight text-text-primary leading-[1.05] mb-6">
             OpenXR for Spatial Displays
           </h1>

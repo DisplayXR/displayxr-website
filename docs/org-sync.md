@@ -164,7 +164,9 @@ but did not render:
   `/architecture`,
 - newly-closed milestones,
 - a brand-new demo / repo whose card now exists but whose roadmap mention does
-  not.
+  not,
+- **recent releases and the feature bullets in their notes**
+  (`generated/news-candidates.json`) — candidates for the "What's New" feed.
 
 A `/sync-website` Claude skill (hub-homed in `displayxr-runtime/.claude/skills/`
 alongside `/dxr-release`, so it's invocable from the runtime hub like every
@@ -173,6 +175,31 @@ ADRs / milestones / demo READMEs and writes the roadmap / device / architecture
 updates into the authored TSX, opening a PR for review (prose *does* warrant a
 human glance, unlike the mechanical facts). Mechanical commit = facts;
 skill PR = narrative. They never touch the same fields.
+
+#### The "What's New" feed is the sharpest case of this split
+
+The homepage ticker and `/news` render `lib/data/news.ts` — **authored**. The
+generator's job stops at "a release happened, and here are the bullets it filed
+under *Highlights / Features*"; it writes those to
+`generated/news-candidates.json` and makes no editorial call. Deciding whether an
+event is *news* — and writing a headline that survives being the only sentence
+someone reads — is exactly the judgment the mechanical layer must not fake. A
+generated feed would fill the homepage with "v2.4.1 released", which is worse
+than an empty banner.
+
+Two properties keep it maintenance-free once written:
+
+- **Expiry is derived, not curated.** `getBannerNews()` filters banner-tier items
+  to a 90-day window and caps the ticker at four. Nothing has to be pruned by
+  hand, and when nothing qualifies the ticker renders nothing at all.
+- **Triage converges.** Most releases are not news, so "is this release in
+  `news.ts`" is false forever and would re-flag the whole history each run. The
+  skill records every candidate it triaged — surfaced *or* skipped — in
+  `editorial-baseline.json`'s `reviewedNewsCandidates`, the same pattern
+  `reviewedAdrs` uses.
+
+The rubric itself (banner / list / skip, and the writing rules) lives in the
+skill, next to the judgment it governs — not here.
 
 ## Data contract (generated files)
 
@@ -186,6 +213,7 @@ and merges them.
 | `generated/engines.json` | `{ id, name, version, engineVersion, description, repoUrl, testRepoUrl, releaseUrl, logo }` | `.uplugin` / `package.json` + releases |
 | `generated/extensions.json` | `{ name, group }` | `displayxr-extensions` tree |
 | `generated/repos.json` | `{ name, description, url, topics, archived }` | org repo list |
+| `generated/news-candidates.json` | `{ id, repo, tag, title, date, url, prerelease, featureLines[], looksMechanical }` | last 4 releases/repo + feature-section parse |
 | `generated/_meta.json` | `{ signals: { adrs[], demoRepos[], repos[] } }` | editorial-drift detector |
 
 `_meta.signals` is committed deterministically (no timestamp), so its diff

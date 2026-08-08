@@ -322,6 +322,96 @@ async function buildSignals(allRepos) {
   };
 }
 
+// ── news candidates ───────────────────────────────────────────────────────────
+// The MECHANICAL half of the news pipeline: detect that something happened.
+// It deliberately makes no editorial call — it never decides what is news, and
+// it never writes lib/data/news.ts (that file is authored). It writes a
+// candidate list; the /sync-website skill in the displayxr-runtime hub reads
+// it, drops anything already recorded in editorial-baseline.json's
+// reviewedNewsCandidates, and PRs the survivors it judges news-worthy.
+//
+// Deterministic by construction: last N releases per repo, no date arithmetic,
+// so an unchanged org produces an unchanged file.
+const NEWS_RELEASES_PER_REPO = 4;
+const NEWS_MAX_LINES = 8;
+
+// Sections that describe new capability. "Fixes", "Docs", "Chore", "Other" are
+// deliberately not read — a release whose notes are only those is mechanical.
+const FEATURE_HEADINGS = /^#{1,4}\s*(highlights?|features?|what'?s new|added)\b/i;
+const ANY_HEADING = /^#{1,4}\s+/;
+
+// Lines that are housekeeping even when they appear under a feature heading.
+const MECHANICAL_LINE =
+  /^(chore|ci|build|deps?|docs?|test|refactor|style|revert)\b|^(bump|release marker|version bump)\b|versions?\.json|^merge (pull request|branch)\b/i;
+
+function extractFeatureLines(body) {
+  const lines = (body || "").split(/\r?\n/);
+  const out = [];
+  let inFeatureSection = false;
+
+  for (const line of lines) {
+    if (ANY_HEADING.test(line)) {
+      inFeatureSection = FEATURE_HEADINGS.test(line);
+      continue;
+    }
+    if (!inFeatureSection) continue;
+    // Tables, code fences, quotes and raw HTML carry no headline.
+    if (/^\s*(\||```|>|<)/.test(line)) continue;
+
+    const text = line
+      .replace(/^\s*[-*]\s+/, "") // bullet marker
+      .replace(/^\b[0-9a-f]{7,40}\b\s+/, "") // leading commit sha
+      .replace(/\s*—?\s*\b[0-9a-f]{7,40}\b\s*$/, "") // trailing commit sha
+      .trim();
+    if (!text || text.length < 12) continue;
+    if (MECHANICAL_LINE.test(text)) continue;
+
+    out.push(text.length > 240 ? text.slice(0, 237) + "…" : text);
+    if (out.length >= NEWS_MAX_LINES) break;
+  }
+  return out;
+}
+
+async function buildNewsCandidates(allRepos) {
+  const repos = allRepos.filter((r) => !r.archived).map((r) => r.name).sort();
+  const candidates = [];
+
+  for (const repo of repos) {
+    let releases;
+    try {
+      releases = await api(
+        `/repos/${ORG}/${repo}/releases?per_page=${NEWS_RELEASES_PER_REPO}`,
+      );
+    } catch (e) {
+      warn(`news scan ${repo} — ${e.message}`);
+      continue;
+    }
+
+    for (const r of releases) {
+      if (r.draft) continue;
+      const featureLines = extractFeatureLines(r.body);
+      candidates.push({
+        // Stable across runs — the skill dedupes on this.
+        id: `${repo}@${r.tag_name}`,
+        repo,
+        tag: r.tag_name,
+        title: r.name || r.tag_name,
+        date: (r.published_at || "").slice(0, 10),
+        url: r.html_url,
+        prerelease: !!r.prerelease,
+        featureLines,
+        // Advisory only. True == "notes describe no new capability", which is
+        // the common case (a patch release). The skill still gets the final say.
+        looksMechanical: featureLines.length === 0,
+      });
+    }
+  }
+
+  return candidates.sort(
+    (a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id),
+  );
+}
+
 // ── main ──────────────────────────────────────────────────────────────────────
 async function main() {
   console.log("Syncing from DisplayXR org…");
@@ -341,24 +431,28 @@ async function main() {
     .sort();
   console.log(`  discovered ${demoRepos.length} demo repos: ${demoRepos.join(", ")}`);
 
-  const [components, demos, engines, extensions, repos, signals] = await Promise.all([
-    buildComponents(versions),
-    buildDemos(demoRepos),
-    buildEngines(),
-    buildExtensions(),
-    buildRepos(allRepos),
-    buildSignals(allRepos),
-  ]);
+  const [components, demos, engines, extensions, repos, signals, newsCandidates] =
+    await Promise.all([
+      buildComponents(versions),
+      buildDemos(demoRepos),
+      buildEngines(),
+      buildExtensions(),
+      buildRepos(allRepos),
+      buildSignals(allRepos),
+      buildNewsCandidates(allRepos),
+    ]);
 
   writeGen("components.json", components);
   writeGen("demos.json", demos);
   writeGen("engines.json", engines);
   writeGen("extensions.json", extensions);
   writeGen("repos.json", repos);
+  writeGen("news-candidates.json", newsCandidates);
   writeGen("_meta.json", { signals });
 
+  const unreviewed = newsCandidates.filter((c) => !c.looksMechanical).length;
   console.log(
-    `\nDone. ${components.length} components · ${demos.length} demos · ${engines.length} engines · ${extensions.length} extensions · ${repos.length} repos`,
+    `\nDone. ${components.length} components · ${demos.length} demos · ${engines.length} engines · ${extensions.length} extensions · ${repos.length} repos · ${newsCandidates.length} news candidates (${unreviewed} with feature notes)`,
   );
   if (warnings.length) console.log(`${warnings.length} warning(s) — see above.`);
 }
