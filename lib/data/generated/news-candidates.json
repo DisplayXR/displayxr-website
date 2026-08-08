@@ -29,8 +29,17 @@
     "date": "2026-08-08",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.19.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Physically-correct materials, end to end. The viewer now renders the full glTF",
+      "PBR extension set — transmission, volume, clearcoat, sheen, anisotropy,",
+      "iridescence, specular and IOR — under pinned viewing conditions (HDRI",
+      "environment, fixed exposure and tone curve) so a model looks the same",
+      "everywhere. It also renders the display's **active** rendering mode rather than",
+      "assuming two views, so a 2x2 quad display is filled correctly on Windows,",
+      "macOS and Linux.",
+      "Pin the viewing conditions — HDRI environment, exposure, tone curve (#70)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.7",
@@ -91,8 +100,14 @@
     "date": "2026-08-03",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.10.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "A large iGPU performance pass: the avatar now holds 60 fps on integrated",
+      "graphics, up from 41, by caching the static bubble and pipelining the",
+      "silhouette readback. The Vulkan session also moves to",
+      "`XR_KHR_vulkan_enable2`, picking up the runtime's late-weave pacing.",
+      "Migrate the Windows VK OpenXR session to `XR_KHR_vulkan_enable2` (#55)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-earthview@v0.7.0",
@@ -102,8 +117,12 @@
     "date": "2026-08-03",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The Windows Vulkan session moves to `XR_KHR_vulkan_enable2`, so EarthView picks",
+      "up the runtime's late-weave presentation pacing with no change in use.",
+      "Migrate the Windows VK session to `XR_KHR_vulkan_enable2` (#39)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.19.0",
@@ -113,8 +132,16 @@
     "date": "2026-08-03",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.19.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Transparent mode gets a real punch-through region — baked and shaped, with the",
+      "chrome hidden and right-mouse drag to move — and the HUD moves to the shared",
+      "cached-layer uploader for a cheaper compose. The Vulkan session also moves to",
+      "`XR_KHR_vulkan_enable2`, picking up the runtime's late-weave pacing.",
+      "Transparent-mode punch-through: baked + shaped, chrome hidden, RMB drag (#82)",
+      "HUD via `dxr::CachedLayerUploader` (displayxr-common v2.6.0) (#81)",
+      "Migrate the Windows VK OpenXR session to `XR_KHR_vulkan_enable2` (#80)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.6.0",
@@ -124,8 +151,13 @@
     "date": "2026-08-03",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.6.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The Vulkan session now runs on `XR_KHR_vulkan_enable2`, so the player picks up",
+      "the runtime's late-weave presentation pacing — eye-position latency at weave",
+      "time drops to roughly one display refresh with no change to how you use it.",
+      "Migrate the VK session from `XR_KHR_vulkan_enable` to `vulkan_enable2` (#43)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.18.0",
@@ -135,8 +167,14 @@
     "date": "2026-08-03",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.18.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Transparent mode gets a real punch-through region, and the HUD moves to the",
+      "shared overlay kit for a measurably cheaper compose. The Vulkan session also",
+      "moves to `XR_KHR_vulkan_enable2`, picking up the runtime's late-weave pacing.",
+      "Overlay-kit migration + transparent-mode punch-through (#67)",
+      "Migrate the Windows VK OpenXR session to `XR_KHR_vulkan_enable2` (#66)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.0.15",
@@ -157,8 +195,17 @@
     "date": "2026-08-03",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.1.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The weaver now adapts its latency per frame instead of guessing. It consumes the",
+      "runtime's measured weave-to-scanout feedback and prefers that over the built-in",
+      "heuristic, with `LEIA_D3D11_*` knobs to override on both the D3D11 and D3D12",
+      "arms. Paired with the runtime's late-weave pacing, eye position is sampled",
+      "much closer to scanout.",
+      "Adaptive per-frame `setLatency` on the D3D11 arm (`LEIA_D3D11_*` knobs) (#117)",
+      "D3D12 adaptive `setLatency`; couple `N_buffered` defaults to the runtime's late-weave gate (#120)",
+      "Consume the runtime's frame-timing feedback — measured horizon preferred over the heuristic (#122)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.4.0",
@@ -334,8 +381,13 @@
     "date": "2026-07-31",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.9.3",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Zone edges are soft by default — a 16px feather between the zone and the",
+      "surrounding band, so the boundary no longer reads as a hard seam.",
+      "Ship the 16px soft zone-vs-band edge by default (#48)",
+      "Env-gated exerciser for `XrDisplayZoneFeatherDXR` (#48)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.17.0",
@@ -345,8 +397,14 @@
     "date": "2026-07-31",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.17.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Display zones are on by default on Windows: the viewer declares a full-window 3D",
+      "zone and reports Local2D state with an on-screen toast, so what the display is",
+      "doing is visible rather than inferred.",
+      "Zones-by-default — full-window zone + Local2D toast on Windows (#63, #64)",
+      "Toast confirmation for the other user-visible state changes (#62)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.0.8",
@@ -356,8 +414,14 @@
     "date": "2026-07-31",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.0.8",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Vulkan weaving works again on SR 1.36. That core ships the subpixel pixel-stamp",
+      "but no Vulkan weaver, so a pre-stamp weaver rendered a coloured replica. The",
+      "plug-in now picks the right weaver three ways at runtime, matching the SDK it",
+      "finds rather than assuming one.",
+      "Three-way weaver selection for the ST-5318 pixel-stamp break (#114)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.10.0",
@@ -479,8 +543,13 @@
     "date": "2026-07-26",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.16.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Linux gets a first-class handle app with model loading — `O` / `Ctrl+O` opens a",
+      "file, and the shortcut is now uniform across every platform.",
+      "Linux handle app + `O`/`Ctrl+O` file-open, and a default-asset `.deb` fix (#59, #60)",
+      "Uniform `Ctrl+O` for model-open on all platforms (#61)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.0.13",
@@ -534,8 +603,13 @@
     "date": "2026-07-18",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.6.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Agent tooling reaches the Windows build: `XR_DXR_mcp_tools` is wired up, so an",
+      "MCP client can drive and inspect EarthView the same way it can on the other",
+      "Port the `XR_DXR_mcp_tools` agent tools to the Windows build (#26)",
+      "Consume common's MCP tool-call hook, dropping the forked event pump (#26)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.5.2",
@@ -593,28 +667,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-browser@preview-150.0.7871.24",
-    "repo": "displayxr-browser",
-    "tag": "preview-150.0.7871.24",
-    "title": "DisplayXR Browser — Developer Preview (Chromium 150.0.7871.24)",
-    "date": "2026-07-16",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-150.0.7871.24",
-    "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-shell-releases@v2.0.2",
-    "repo": "displayxr-shell-releases",
-    "tag": "v2.0.2",
-    "title": "DisplayXR Shell v2.0.2",
-    "date": "2026-07-16",
-    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.0.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-mcp@v0.5.0",
     "repo": "displayxr-mcp",
     "tag": "v0.5.0",
@@ -622,8 +674,14 @@
     "date": "2026-07-12",
     "url": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.5.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Breaking.** The DisplayXR extensions are renamed `XR_EXT_*` -> `XR_DXR_*`,",
+      "matching the runtime's v2.0.0 train. This is a clean break with no aliasing:",
+      "components built against the old names and the new ones do not mix. Upgrade the",
+      "whole stack together.",
+      "Rename DisplayXR extensions `XR_EXT_*` -> `XR_DXR_*` (DisplayXR/displayxr-runtime#734)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-mcp@v0.4.2",
@@ -633,8 +691,14 @@
     "date": "2026-07-03",
     "url": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.4.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Relicensed to Apache-2.0 (vendored OpenXR headers stay BSL-1.0), and the",
+      "installer is now code-signable end to end, including a two-pass signed",
+      "uninstaller.",
+      "`SIGN_CMD`-gated installer + two-pass signed uninstaller (#666, #14)",
+      "Relicense to Apache-2.0; vendor-neutral `NOTICE`"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unreal@v0.5.1",
