@@ -53,6 +53,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.5.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.5.0",
+    "title": "v2.5.0",
+    "date": "2026-08-08",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.5.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.7",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.7",
@@ -247,23 +258,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.2.4",
-    "repo": "displayxr-runtime",
-    "tag": "v2.2.4",
-    "title": "DisplayXR Runtime v2.2.4",
-    "date": "2026-08-02",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.2.4",
-    "prerelease": false,
-    "featureLines": [
-      "This release makes **every graphics API work on Intel iGPUs of Optimus laptops**:",
-      "New `DXR_VK_FORCE_GPU` / `DXR_D3D_FORCE_GPU` adapter overrides to pin the runtime to a specific GPU.",
-      "**NT-handle DComp bridge** — the legacy KMT ring silently shared no pixels on Intel UHD drivers, leaving transparent Vulkan windows invisible.",
-      "LUID-matched bridge devices so the composition path always lives on the same adapter as the app.",
-      "Pairs with **leia-plugin v2.0.9**'s capture-adapter fix (#819)."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.3.0",
