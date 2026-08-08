@@ -42,6 +42,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-leia-plugin@v2.1.2",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.1.2",
+    "title": "v2.1.2",
+    "date": "2026-08-08",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.1.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.7",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.7",
@@ -407,23 +418,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-leia-plugin@v2.0.8",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.0.8",
-    "title": "v2.0.8",
-    "date": "2026-07-31",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.0.8",
-    "prerelease": false,
-    "featureLines": [
-      "Vulkan weaving works again on SR 1.36. That core ships the subpixel pixel-stamp",
-      "but no Vulkan weaver, so a pre-stamp weaver rendered a coloured replica. The",
-      "plug-in now picks the right weaver three ways at runtime, matching the SDK it",
-      "finds rather than assuming one.",
-      "Three-way weaver selection for the ST-5318 pixel-stamp break (#114)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-unity@v2.10.0",
     "repo": "displayxr-unity",
     "tag": "v2.10.0",
@@ -662,6 +656,28 @@
     "title": "DisplayXR Shell v2.0.3",
     "date": "2026-07-17",
     "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.0.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-browser@preview-150.0.7871.24",
+    "repo": "displayxr-browser",
+    "tag": "preview-150.0.7871.24",
+    "title": "DisplayXR Browser — Developer Preview (Chromium 150.0.7871.24)",
+    "date": "2026-07-16",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-150.0.7871.24",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-shell-releases@v2.0.2",
+    "repo": "displayxr-shell-releases",
+    "tag": "v2.0.2",
+    "title": "DisplayXR Shell v2.0.2",
+    "date": "2026-07-16",
+    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.0.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
