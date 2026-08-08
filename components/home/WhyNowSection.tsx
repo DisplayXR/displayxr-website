@@ -29,10 +29,13 @@ export function WhyNowSection() {
             <p>
               The end goal is not a parallel standard — it&apos;s{" "}
               <span className="text-text-primary font-medium">the standard</span>.
-              DisplayXR&apos;s 3D-display extensions are designed to be
-              upstreamed into OpenXR at Khronos (EXT → KHR), with DisplayXR as
-              the open reference implementation, so an app written once runs on
-              any spatial display — exactly as OpenXR did for headsets.
+              The 3D-display extensions ship under the project&apos;s own{" "}
+              <span className="text-text-primary font-medium">DXR</span> author
+              tag, registered with Khronos in July 2026, and are designed to be
+              upstreamed as cross-vendor KHR extensions — with DisplayXR as the
+              open reference implementation, validated against the official
+              OpenXR conformance suite on every release. An app written once
+              runs on any spatial display, exactly as OpenXR did for headsets.
             </p>
           </div>
         </div>
