@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { Rss } from "lucide-react";
 import { PageLayout } from "@/components/layout/PageLayout";
 import {
   NEWS_KIND_LABELS,
@@ -39,6 +40,22 @@ export default function NewsPage() {
       description="New platforms, graphics APIs, engines, vendors and capabilities across the DisplayXR ecosystem. Version bumps and internal changes don't make this list — for exact component versions, see Platform Support."
       art="/art/dxr-platform-panels.webp"
     >
+      <div className="mb-10 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+        <a
+          href="/news/rss.xml"
+          className="inline-flex items-center gap-1.5 text-text-secondary transition-colors hover:text-text-primary"
+        >
+          <Rss size={14} />
+          RSS
+        </a>
+        <a
+          href="/platform-support"
+          className="text-text-secondary transition-colors hover:text-text-primary"
+        >
+          Component versions →
+        </a>
+      </div>
+
       <div className="space-y-14">
         {quarters.map(([quarter, items]) => (
           <section key={quarter}>

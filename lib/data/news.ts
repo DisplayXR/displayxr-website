@@ -163,12 +163,12 @@ export const NEWS: NewsItem[] = [
   },
   {
     id: "khronos-dxr-author-id",
-    date: "2026-08-01",
+    date: "2026-07-31",
     kind: "standards",
     tier: "banner",
     headline: "DXR is a registered OpenXR author ID",
     blurb:
-      "Khronos merged the DisplayXR author-ID registration, so the XR_DXR_* extension namespace is officially reserved in the OpenXR registry.",
+      "Khronos accepted the registration, so The DisplayXR Project now holds the DXR tag in the official OpenXR registry and the XR_DXR_* extension namespace is reserved — the first formal step toward upstreaming the spatial-display extensions.",
     href: "https://github.com/KhronosGroup/OpenXR-Docs/pull/201",
   },
   {

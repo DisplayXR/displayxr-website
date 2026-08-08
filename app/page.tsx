@@ -4,6 +4,7 @@ import { SolutionSection } from "@/components/home/SolutionSection";
 import { AudienceSection } from "@/components/home/AudienceSection";
 import { EcosystemMap } from "@/components/home/EcosystemMap";
 import { WhyNowSection } from "@/components/home/WhyNowSection";
+import { LatestSection } from "@/components/home/LatestSection";
 import { CTASection } from "@/components/home/CTASection";
 
 export default function Home() {
@@ -15,6 +16,8 @@ export default function Home() {
       <AudienceSection />
       <EcosystemMap />
       <WhyNowSection />
+      {/* Proof for the argument above: the cadence is real. */}
+      <LatestSection />
       <CTASection />
     </>
   );

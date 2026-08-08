@@ -32,6 +32,13 @@ export const metadata: Metadata = {
   },
   description:
     "An open platform for spatial displays — OpenXR extension specifications, a reference runtime, and reference implementations for tracked stereo and multiview lightfield 3D displays. Build portable spatial display applications across engines, graphics APIs, and vendor hardware.",
+  alternates: {
+    types: {
+      "application/rss+xml": [
+        { url: "/news/rss.xml", title: "DisplayXR — What's New" },
+      ],
+    },
+  },
   openGraph: {
     title: "DisplayXR",
     description:
