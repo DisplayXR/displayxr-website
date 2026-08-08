@@ -2,12 +2,12 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { REPO_URLS, GITHUB_ORG_URL } from "@/lib/constants";
-import { Puzzle, Search, ShieldCheck, Rocket, Mail } from "lucide-react";
+import { Puzzle, Search, ShieldCheck, Rocket, Mail, Gamepad2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Vendors & Plug-ins",
   description:
-    "How 3D-display vendors integrate with DisplayXR — a vendor-neutral runtime that loads display-processor plug-ins discovered at startup. No runtime fork required.",
+    "How hardware vendors integrate with DisplayXR — a vendor-neutral runtime that discovers display-processor and input-provider plug-ins at startup. No runtime fork required.",
 };
 
 const DOCS_BASE = `${REPO_URLS.runtime}/blob/main/docs`;
@@ -16,7 +16,7 @@ export default function VendorsPage() {
   return (
     <PageLayout
       title="Vendors & Plug-ins"
-      description="DisplayXR is vendor-neutral. Any 3D-display maker can ship a display-processor plug-in from their own repo — the runtime discovers and loads it at startup. You never fork the runtime."
+      description="DisplayXR is vendor-neutral. Any 3D-display maker can ship a display-processor plug-in from their own repo — and any tracking-hardware maker can ship an input provider. The runtime discovers and loads both at startup. You never fork the runtime."
     >
       <div className="max-w-3xl space-y-12">
         {/* The model */}
@@ -163,6 +163,65 @@ export default function VendorsPage() {
             Your vendor SDK is static-linked into the plug-in only. Zero
             compositor changes are required.
           </p>
+        </section>
+
+        {/* Input providers — the second plug-in type */}
+        <section>
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-accent">
+              <Gamepad2 size={22} />
+            </span>
+            <h2 className="text-2xl font-semibold tracking-tight text-text-primary">
+              Input providers
+            </h2>
+          </div>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            Displays are not the only hardware that plugs in. An{" "}
+            <strong className="text-text-primary">input provider</strong> is a
+            second, independent plug-in type that surfaces tracked motion
+            controllers — or hands, or generic trackers — from an external
+            tracking source into the standard OpenXR action system. Unmodified
+            OpenXR apps consume them through{" "}
+            <code className="bg-surface text-accent px-1 py-0.5 rounded text-xs font-mono">
+              xrSyncActions
+            </code>{" "}
+            with no idea where the poses came from.
+          </p>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            It is deliberately <em>not</em> an extension of the display-processor
+            vtable. Input providers have their own entry point (
+            <code className="bg-surface text-accent px-1 py-0.5 rounded text-xs font-mono">
+              xrtInputPluginNegotiate
+            </code>
+            ), their own ABI version, and their own discovery root, so a
+            tracking-hardware maker ships one without touching the display side —
+            and a display vendor is never obliged to implement input. Discovery,
+            probe order, and ABI gating mirror the display-processor loader, so
+            everything you learn from one applies to the other.
+          </p>
+          <p className="text-text-secondary leading-relaxed mb-6">
+            A provider exposes N devices, each self-describing its type and
+            claimed interaction profile, with pose, buttons, and haptics. If a
+            provider supplies a left/right pair it claims those roles; otherwise
+            the keyboard-emulated fallback fills them. The runtime ships a
+            reference provider plus a loopback-TCP one with a documented wire
+            protocol, so you can drive the action system from any language
+            before committing to a native plug-in.
+          </p>
+          <a
+            href={`${DOCS_BASE}/adr/ADR-034-input-provider-plugins.md`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-surface border border-border rounded-lg p-6 card-interactive cursor-pointer block"
+          >
+            <h3 className="text-sm font-semibold text-accent mb-2">
+              ADR-034: Input Provider Plug-ins →
+            </h3>
+            <p className="text-sm text-text-secondary leading-relaxed">
+              Why input is a second plug-in type rather than a vtable extension,
+              the negotiation contract, role arbitration, and the wire protocol.
+            </p>
+          </a>
         </section>
 
         {/* Get started */}

@@ -119,7 +119,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-shell-releases",
     repo: "DisplayXR/displayxr-shell-releases",
     description:
-      "Reference spatial workspace controller — a 3D window manager with multi-app compositing, 2D window capture, dynamic layouts, and focus-adaptive rendering. Ships as a standalone installer; build your own controller for verticals, kiosks, or OEM-branded workspaces using the same extension surface.",
+      "Reference spatial workspace controller — a 3D window manager with multi-app compositing, 2D window capture, dynamic layouts, and focus-adaptive rendering. Windows, with a macOS build in beta. Ships as a standalone installer; build your own controller for verticals, kiosks, or OEM-branded workspaces using the same extension surface.",
     url: "https://github.com/DisplayXR/displayxr-shell-releases",
     category: "apps",
     status: "active",
@@ -137,7 +137,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-cef-host",
     repo: "DisplayXR/displayxr-cef-host",
     description:
-      "The minimal reference host for XR_DXR_weave — not a browser to use, which is DisplayXR Browser. A small CEF (Chromium Embedded Framework) offscreen-render app that hands the runtime a stereo texture and a window rect and composites the weaved result; it never weaves itself. Kept because it builds in minutes where the browser fork takes hours, which makes it the place to reproduce a weave or display-processor regression, and because it shows how to drive the weave from your own present-owner without forking Chromium.",
+      "The original proof that XR_DXR_weave works — not a browser to use, which is DisplayXR Browser. A small CEF (Chromium Embedded Framework) offscreen-render app that hands the runtime a stereo texture and a window rect and composites the weaved result; it never weaves itself. Kept as the smallest worked example of driving the weave from your own present-owner without forking Chromium, and because it builds in minutes where the browser fork takes hours. Note that it is pinned to weave spec v1 while the runtime is on v6, so it does not exercise batched submit, the 2D overlay atlas, or N-view input — treat it as a starting point to read, not a current conformance harness.",
     url: "https://github.com/DisplayXR/displayxr-cef-host",
     category: "tools",
     status: "experimental",

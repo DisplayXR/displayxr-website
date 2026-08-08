@@ -35,9 +35,9 @@ const features = [
     icon: <Gamepad2 size={20} />,
   },
   {
-    title: "Vendor Display Processor",
+    title: "Vendor Plug-ins",
     description:
-      "A clean boundary where vendor-specific processing (weaving, interlacing, calibration) plugs in without touching app code.",
+      "Two independent plug-in types, discovered at startup, neither touching app code: a display processor for vendor-specific weaving, interlacing and calibration, and an input provider that surfaces tracked motion controllers, hands, or trackers into the standard OpenXR action system.",
     icon: <MonitorSpeaker size={20} />,
   },
   {

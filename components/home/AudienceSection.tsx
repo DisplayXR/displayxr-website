@@ -35,9 +35,9 @@ const audiences: Audience[] = [
   },
   {
     title: "Display Vendors",
-    lead: "Making a glasses-free 3D display panel?",
+    lead: "Making a glasses-free 3D display panel — or the hardware that tracks in front of it?",
     description:
-      "Implement the display-processor plug-in for your weaving / depth-mapping / eye-tracking integration — five API variants (D3D11, D3D12, Metal, Vulkan, OpenGL) so your weaver runs natively in whatever graphics API the app uses. Vendor-neutral by design: the runtime ships with no built-in display backend, so every panel integrates through the same plug-in interface.",
+      "Implement the display-processor plug-in for your weaving / depth-mapping / eye-tracking integration — five API variants (D3D11, D3D12, Metal, Vulkan, OpenGL) so your weaver runs natively in whatever graphics API the app uses. Tracking hardware plugs in the same way through a separate input-provider contract, surfacing motion controllers and hands into the standard OpenXR action system. Vendor-neutral by design: the runtime ships with no built-in display backend, so every panel integrates through the same plug-in interface.",
     icon: <MonitorSpeaker size={20} />,
     href: "/vendors",
     cta: "Plug-in guide →",
