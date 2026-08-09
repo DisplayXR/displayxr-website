@@ -39,7 +39,7 @@ export const runtimeCompositors: RuntimeCompositor[] = [
 
 export const enginePlugins: EnginePlugin[] = [
   { engine: "Unity", status: "active", notes: "UPM package, sample scene, CI" },
-  { engine: "Unreal", status: "beta", notes: "UE 5.3+, Win/macOS/Android, Blueprint components, Kooima eye-tracked stereo" },
+  { engine: "Unreal", status: "beta", notes: "UE 5.7, Win/macOS/Android, Blueprint components, Kooima eye-tracked stereo" },
 ];
 
 export const hardwareBackends: HardwareBackend[] = [

@@ -39,7 +39,7 @@ export const roadmapSections: RoadmapSection[] = [
       {
         title: "Unreal Engine plugin (beta)",
         description:
-          "Initial release of the Unreal plugin for UE 5.3+ on Windows, macOS, and Android — eye-tracked Kooima stereo, camera- and display-centric rigs, Blueprint components, material expressions, and zero-copy atlas handoff",
+          "Initial release of the Unreal plugin for UE 5.7 on Windows, macOS, and Android — eye-tracked Kooima stereo, camera- and display-centric rigs, Blueprint components, material expressions, and zero-copy atlas handoff",
       },
       {
         title: "Standard OpenXR app compatibility",
