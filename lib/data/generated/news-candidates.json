@@ -1,14 +1,42 @@
 [
   {
-    "id": "displayxr-runtime@v2.5.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.5.1",
-    "title": "v2.5.1",
+    "id": "displayxr-demo-gaussiansplat@v1.20.1",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.20.1",
+    "title": "v1.20.1",
     "date": "2026-08-10",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.5.1",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.20.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.0.17",
+    "repo": "displayxr-installer",
+    "tag": "v2.0.17",
+    "title": "DisplayXR v2.0.17",
+    "date": "2026-08-10",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.0.17",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.5.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.5.1",
+    "title": "DisplayXR Runtime v2.5.1",
+    "date": "2026-08-10",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.5.1",
+    "prerelease": false,
+    "featureLines": [
+      "A maintenance release, weighted toward **Linux preview** and **weave diagnostics**. The Linux Vulkan compositor now reads the panel's real refresh rate via RandR instead of assuming 60 Hz, and the Linux VK test apps move to `XR_KHR_vulka…",
+      "No API or ABI change: `XRT_PLUGIN_API_VERSION_CURRENT` stays at **v5**, so existing vendor plug-ins (`leia_plugin` v2.1.2) load unchanged — no plug-in re-release required.",
+      "`feat(test_apps)`: migrate Linux VK apps to `XR_KHR_vulkan_enable2` (INV-5.9)",
+      "`feat(lint)`: enforce INV-5.9 — VK apps MUST use enable2 (`vkCreateDevice` = ERROR) (#899)",
+      "`feat`: file-triggered weave pixel-capture harness in the D3D11 service (#895)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.8",
@@ -535,19 +563,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-demo-gaussiansplat@v1.18.3",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.18.3",
-    "title": "v1.18.3",
-    "date": "2026-07-26",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.18.3",
-    "prerelease": false,
-    "featureLines": [
-      "**First Linux release**: gaussiansplat is now a windowed handle app on Linux (X11 window + `XR_DXR_xlib_window_binding`, Ctrl+O zenity picker) and ships a `.deb`."
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-demo-mediaplayer@v1.5.3",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.5.3",
@@ -559,17 +574,6 @@
       "**Linux:** window binding fixed (SPEC_VERSION 2), panel-centered window, and the `.deb` now stages the correct sidecar assets (idle screen instead of the RED|BLUE test pattern)."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.0.13",
-    "repo": "displayxr-installer",
-    "tag": "v2.0.13",
-    "title": "DisplayXR v2.0.13",
-    "date": "2026-07-26",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.0.13",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unity-samples@v2.0.2",
