@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.5.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.5.1",
+    "title": "v2.5.1",
+    "date": "2026-08-10",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.5.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.8",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.8",
@@ -345,26 +356,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.3.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.3.0",
-    "title": "DisplayXR Runtime v2.3.0",
-    "date": "2026-08-02",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.3.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Input-provider plug-in channel (ADR-034).** DisplayXR now supports a second vendor plug-in type: input providers that surface motion controllers from external tracking sources. This release ships the in-tree `sim_input` reference provi…",
-      "**Official Khronos CTS in CI.** The conformance harness was resurrected (#830, pinned to openxr-cts-1.1.54) and now runs the full suite on release tags — including a real conformance fix: `XrEventDataSessionStateChanged.time` was 0.",
-      "**Vendor-shippable geometry publisher (#817 / ADR-033):** compositor-published window geometry enables Wayland windowed weaving, with a schema gate and packaging contract so vendors can ship it.",
-      "Input-provider plug-in channel: ABI header (`xrtInputPluginNegotiate`), loader, and builder arbitration (#823)",
-      "`sim_input` — in-tree reference input provider plug-in DLL (#823)",
-      "`net_input` — loopback-TCP-fed input provider + wire protocol + feeder (#823)",
-      "Ultraleap input provider — LeapC hands as motion controllers, SDK-gated (#825)",
-      "Actions mode for cube test apps + 6DOF tracking-origin fix + OpenComposite note (#823)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unity-samples@v2.1.1",
