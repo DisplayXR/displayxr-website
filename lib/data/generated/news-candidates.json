@@ -33,8 +33,10 @@
     "date": "2026-08-09",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.20.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Transmissive materials — glass, and anything using `KHR_materials_transmission` — now render the scene behind them faithfully instead of washed out and desaturated. The transmitted light was being put through the tone curve twice, and th…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.12.0",
