@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-installer@v2.0.18",
+    "repo": "displayxr-installer",
+    "tag": "v2.0.18",
+    "title": "DisplayXR v2.0.18",
+    "date": "2026-08-11",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.0.18",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-avatar@v0.10.1",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.10.1",
@@ -525,17 +536,6 @@
     "title": "DisplayXR Unity Samples v2.0.3",
     "date": "2026-07-29",
     "url": "https://github.com/DisplayXR/displayxr-unity-samples/releases/tag/v2.0.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.0.14",
-    "repo": "displayxr-installer",
-    "tag": "v2.0.14",
-    "title": "DisplayXR v2.0.14",
-    "date": "2026-07-27",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.0.14",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
