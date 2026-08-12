@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-mediaplayer@v1.8.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.8.0",
+    "title": "v1.8.0",
+    "date": "2026-08-12",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.8.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.0.18",
     "repo": "displayxr-installer",
     "tag": "v2.0.18",
@@ -615,17 +626,6 @@
       "Consume common's MCP tool-call hook, dropping the forked event pump (#26)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.5.2",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.5.2",
-    "title": "v1.5.2",
-    "date": "2026-07-18",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.5.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-mcp@v0.5.2",
