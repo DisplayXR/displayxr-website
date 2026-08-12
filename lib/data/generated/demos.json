@@ -20,8 +20,8 @@
     "type": "3d",
     "icon": "/demos/displayxr-demo-modelviewer/model_viewer_icon.png",
     "repoUrl": "https://github.com/DisplayXR/displayxr-demo-modelviewer",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.20.1",
-    "tag": "v0.20.1"
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.20.2",
+    "tag": "v0.20.2"
   },
   {
     "id": "earthview",
