@@ -49,8 +49,17 @@
     "date": "2026-08-12",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.21.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Four new draft glTF material extensions render in the viewer, closing the last big gaps in the PBR surface model:",
+      "**Subsurface scattering** — `KHR_materials_scatter` gives skin, wax, marble and leaves the multiple-scattering look they were missing, with `KHR_texture_transform` support so tiled/atlased scatter textures land where the asset says they …",
+      "**A real coat layer** — `KHR_materials_coat` adds coloured tint, darkening, anisotropy and a tunable IOR. It supersedes `KHR_materials_clearcoat` and maps it 1:1, so existing clearcoat assets keep rendering byte-identically.",
+      "**Rough diffuse substrates** — `KHR_materials_diffuse_roughness` drives an Oren-Nayar diffuse term independent of specular roughness, for chalk, unglazed clay and worn paint.",
+      "**Fuzz that can be darker than the surface under it** — `KHR_materials_fuzz` replaces `KHR_materials_sheen`, sits above the coat, and carries a weight separate from its colour, so black soot on a pale surface finally reads as soot.",
+      "Nothing existing has to change: every prior asset renders as it did before. Two new sweep assets, `coat_test.glb` and `diffuse_fuzz_test.glb`, ship next to the executable alongside `material_grid.glb`.",
+      "`KHR_materials_scatter` (draft) — subsurface / multiple scattering (#79, #80)",
+      "`KHR_texture_transform` — UV offset/rotation/scale on material textures (#79, #80)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.0.18",
