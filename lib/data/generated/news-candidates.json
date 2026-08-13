@@ -45,8 +45,16 @@
     "date": "2026-08-13",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.22.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Coated and varnished materials no longer show a hard dark band on their shadow side. The",
+      "clear-coat darkening is now computed with the right Fresnel form for each kind of light, so a",
+      "coated surface reads as a smooth wet-look gradient from its lit side into its unlit side instead",
+      "of falling off a cliff at the terminator.",
+      "`coatNormalTexture` is also supported now, so a coat can carry its own bump independently of the",
+      "surface beneath it — a smooth varnish over a rough or bumpy base stays smooth. That was the last",
+      "unimplemented property in the coat spec's table, so `KHR_materials_coat` is fully implemented."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.0.19",
@@ -60,12 +68,34 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.0.20",
+    "repo": "displayxr-installer",
+    "tag": "v2.0.20",
+    "title": "DisplayXR v2.0.20",
+    "date": "2026-08-13",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.0.20",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@sr-sdk-v2-1.37.0.1450",
     "repo": "displayxr-leia-plugin",
     "tag": "sr-sdk-v2-1.37.0.1450",
     "title": "SR v2 C99 SDK 1.37.0+1450 (win64, landing set)",
     "date": "2026-08-13",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/sr-sdk-v2-1.37.0.1450",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.6.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.6.0",
+    "title": "v2.6.0",
+    "date": "2026-08-13",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.6.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -317,17 +347,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-installer@v2.0.16",
-    "repo": "displayxr-installer",
-    "tag": "v2.0.16",
-    "title": "DisplayXR v2.0.16",
-    "date": "2026-08-04",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.0.16",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-leia-plugin@v2.1.1",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.1.1",
@@ -435,25 +454,6 @@
       "Adaptive per-frame `setLatency` on the D3D11 arm (`LEIA_D3D11_*` knobs) (#117)",
       "D3D12 adaptive `setLatency`; couple `N_buffered` defaults to the runtime's late-weave gate (#120)",
       "Consume the runtime's frame-timing feedback — measured horizon preferred over the heuristic (#122)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.4.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.4.0",
-    "title": "DisplayXR Runtime v2.4.0",
-    "date": "2026-08-03",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.4.0",
-    "prerelease": false,
-    "featureLines": [
-      "Default-on **late-weave** presentation pacing cuts weave-time eye-position latency to ~1 display refresh on every present path (measured 62→17 ms D3D12, 96→17 ms Vulkan, 29→17 ms workspace), backed by a new closed-loop measured-latency f…",
-      "Late-weave presentation pacing on every in-process path, **default-on** (opt out with `DXR_LATE_WEAVE=0`) (#840)",
-      "Weave-latency harness + late-weave phase 1 (env-gated groundwork) (#834)",
-      "VK native weave-latency harness + late-weave via `present_wait` pacing (#838)",
-      "Runtime-side `present_id`/`present_wait` enablement on `XR_KHR_vulkan_enable2` — Vulkan apps get late-weave with zero app-side code; `cube_handle_vk_win` migrated (#841)",
-      "DP frame-timing slot: measured weave→scanout latency fed back to the vendor eye predictor (append-only ABI slot) (#843)",
-      "Decoupled presentation: `DXR_PRESENT_OPAQUE` opaque flip present, default-off (#833, #836)"
     ],
     "looksMechanical": false
   },
