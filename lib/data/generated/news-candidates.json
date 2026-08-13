@@ -101,6 +101,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.0.21",
+    "repo": "displayxr-installer",
+    "tag": "v2.0.21",
+    "title": "DisplayXR v2.0.21",
+    "date": "2026-08-13",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.0.21",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@sr-sdk-v2-1.37.0.1450",
     "repo": "displayxr-leia-plugin",
     "tag": "sr-sdk-v2-1.37.0.1450",
@@ -145,6 +156,17 @@
       "Composed-chain pacing holds rate — catch-up guard, slip-rate escalation, adaptive align (#912)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-shell-releases@v2.1.0",
+    "repo": "displayxr-shell-releases",
+    "tag": "v2.1.0",
+    "title": "DisplayXR Shell v2.1.0",
+    "date": "2026-08-13",
+    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.1.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.20.2",
@@ -226,17 +248,6 @@
     "title": "v1.20.1",
     "date": "2026-08-10",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.20.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.0.17",
-    "repo": "displayxr-installer",
-    "tag": "v2.0.17",
-    "title": "DisplayXR v2.0.17",
-    "date": "2026-08-10",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.0.17",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -689,17 +700,6 @@
     "title": "DisplayXR Shell v2.0.3",
     "date": "2026-07-17",
     "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.0.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-shell-releases@v2.0.2",
-    "repo": "displayxr-shell-releases",
-    "tag": "v2.0.2",
-    "title": "DisplayXR Shell v2.0.2",
-    "date": "2026-07-16",
-    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.0.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
