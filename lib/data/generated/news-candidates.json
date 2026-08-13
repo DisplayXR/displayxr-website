@@ -68,6 +68,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-modelviewer@v0.22.1",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.22.1",
+    "title": "v0.22.1",
+    "date": "2026-08-13",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.22.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.0.19",
     "repo": "displayxr-installer",
     "tag": "v2.0.19",
@@ -165,17 +176,6 @@
       "Assume stereo when nothing identifies a file; the pixel detector becomes opt-in (#45)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.20.2",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.20.2",
-    "title": "v0.20.2",
-    "date": "2026-08-12",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.20.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-modelviewer@v0.21.0",
