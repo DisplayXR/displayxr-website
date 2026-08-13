@@ -90,15 +90,33 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.6.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.6.0",
-    "title": "v2.6.0",
+    "id": "displayxr-leia-plugin@v2.2.0",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.2.0",
+    "title": "v2.2.0",
     "date": "2026-08-13",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.6.0",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.2.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.6.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.6.0",
+    "title": "DisplayXR Runtime v2.6.0",
+    "date": "2026-08-13",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.6.0",
+    "prerelease": false,
+    "featureLines": [
+      "The VK shared-queue late-weave tier ships for the first time: `VK_LAYER_DXR_queue_lock` (#902/#903) is now packaged and registered by the installer (#917), and the new additive `xrt_display_processor_vk::weave_submitted` plug-in slot (#9…",
+      "`VK_LAYER_DXR_queue_lock` — shared-queue late-weave repaint on single-graphics-queue GPUs (#902, #903)",
+      "`xrt_display_processor_vk::weave_submitted` vtable slot for VK late latching (#902, #919 — additive, ABI-compatible)",
+      "Late-weave pacing on the live/composition swapchain (D3D11 + D3D12)",
+      "VK bridge pacing is governor-managed, default-on where `present_wait` is absent (#912)",
+      "Composed-chain pacing holds rate — catch-up guard, slip-rate escalation, adaptive align (#912)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.20.2",
@@ -434,26 +452,6 @@
       "the runtime's late-weave presentation pacing — eye-position latency at weave",
       "time drops to roughly one display refresh with no change to how you use it.",
       "Migrate the VK session from `XR_KHR_vulkan_enable` to `vulkan_enable2` (#43)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.1.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.1.0",
-    "title": "v2.1.0",
-    "date": "2026-08-03",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.1.0",
-    "prerelease": false,
-    "featureLines": [
-      "The weaver now adapts its latency per frame instead of guessing. It consumes the",
-      "runtime's measured weave-to-scanout feedback and prefers that over the built-in",
-      "heuristic, with `LEIA_D3D11_*` knobs to override on both the D3D11 and D3D12",
-      "arms. Paired with the runtime's late-weave pacing, eye position is sampled",
-      "much closer to scanout.",
-      "Adaptive per-frame `setLatency` on the D3D11 arm (`LEIA_D3D11_*` knobs) (#117)",
-      "D3D12 adaptive `setLatency`; couple `N_buffered` defaults to the runtime's late-weave gate (#120)",
-      "Consume the runtime's frame-timing feedback — measured horizon preferred over the heuristic (#122)"
     ],
     "looksMechanical": false
   },
