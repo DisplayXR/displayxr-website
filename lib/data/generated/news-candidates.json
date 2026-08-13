@@ -97,8 +97,14 @@
     "date": "2026-08-13",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.2.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "This release adds **SR v2 C99 API support across all four Windows arms (D3D11, D3D12, OpenGL, Vulkan) with automatic v1 fallback** — one plug-in binary now runs against SR Platform 1.34.12, 1.36.x, and 1.37.x, selecting the newest API th…",
+      "SR v2 C99 API migration for all four Windows arms (D3D11, D3D12, GL, VK), additive and capability-gated with automatic v1 fallback; `DXR_LEIA_SR_API=v1|v2|auto` override (#140)",
+      "Vulkan arm re-ported to the `srCreateWeaverVulkan` spelling; phase snapping now uses `srWeaverSnapToPhase` on the v2 path (#625 — the probe workaround is retired on v2, kept on v1); late latching driven where the SDK wires it (VK submit …",
+      "WGC background-capture delivery cap (`LEIA_DP_CAPTURE_MIN_INTERVAL_MS`, default 66 ms) (#139)",
+      "Runtime pin bumped v2.4.1 → v2.6.0 to fill the `weave_submitted` slot (#142)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.6.0",
