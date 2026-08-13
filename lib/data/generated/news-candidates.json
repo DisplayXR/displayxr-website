@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-avatar@v0.10.2",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.10.2",
+    "title": "v0.10.2",
+    "date": "2026-08-13",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.10.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.21.1",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.21.1",
@@ -7,8 +18,17 @@
     "date": "2026-08-13",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.21.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Materials now render correctly. Every surface normal in the viewer was being",
+      "flipped, so all shading was evaluated as if you were looking at the model edge-on",
+      "at perfect grazing incidence — which made materials read as mirrors of the",
+      "environment rather than as themselves. Metals, coated surfaces, and fabrics were",
+      "the most visibly wrong: the material grid's gold row rendered blue and its",
+      "clearcoat row rendered black instead of red.",
+      "With this release, view-dependent shading — Fresnel falloff, specular highlights,",
+      "clearcoat, sheen — responds to the actual viewing angle again. This affects"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.20.2",
@@ -515,22 +535,6 @@
     "prerelease": false,
     "featureLines": [
       "Portable code-signing for the packaged `Binaries/Win64` DLLs via a provider-runner `sign-artifact` workflow (`DXR_SIGN_REPO`), replacing the local-cert-only path. Signing stays capability-gated — an unset env yields an unsigned ZIP rathe…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.9.3",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.9.3",
-    "title": "v0.9.3",
-    "date": "2026-07-31",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.9.3",
-    "prerelease": false,
-    "featureLines": [
-      "Zone edges are soft by default — a 16px feather between the zone and the",
-      "surrounding band, so the boundary no longer reads as a hard seam.",
-      "Ship the 16px soft zone-vs-band edge by default (#48)",
-      "Env-gated exerciser for `XrDisplayZoneFeatherDXR` (#48)"
     ],
     "looksMechanical": false
   },
