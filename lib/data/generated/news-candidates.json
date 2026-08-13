@@ -18,6 +18,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-avatar@v0.10.3",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.10.3",
+    "title": "v0.10.3",
+    "date": "2026-08-13",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.10.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.21.1",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.21.1",
@@ -491,17 +502,6 @@
     "date": "2026-08-01",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.6",
     "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.9.4",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.9.4",
-    "title": "v0.9.4",
-    "date": "2026-08-01",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.9.4",
-    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
