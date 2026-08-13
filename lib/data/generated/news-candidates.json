@@ -29,6 +29,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-gaussiansplat@v1.21.0",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.21.0",
+    "title": "v1.21.0",
+    "date": "2026-08-13",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.21.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.21.1",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.21.1",
@@ -465,25 +476,6 @@
       "The Windows Vulkan session moves to `XR_KHR_vulkan_enable2`, so EarthView picks",
       "up the runtime's late-weave presentation pacing with no change in use.",
       "Migrate the Windows VK session to `XR_KHR_vulkan_enable2` (#39)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.19.0",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.19.0",
-    "title": "v1.19.0",
-    "date": "2026-08-03",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.19.0",
-    "prerelease": false,
-    "featureLines": [
-      "Transparent mode gets a real punch-through region — baked and shaped, with the",
-      "chrome hidden and right-mouse drag to move — and the HUD moves to the shared",
-      "cached-layer uploader for a cheaper compose. The Vulkan session also moves to",
-      "`XR_KHR_vulkan_enable2`, picking up the runtime's late-weave pacing.",
-      "Transparent-mode punch-through: baked + shaped, chrome hidden, RMB drag (#82)",
-      "HUD via `dxr::CachedLayerUploader` (displayxr-common v2.6.0) (#81)",
-      "Migrate the Windows VK OpenXR session to `XR_KHR_vulkan_enable2` (#80)"
     ],
     "looksMechanical": false
   },
