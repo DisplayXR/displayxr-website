@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-modelviewer@v0.21.1",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.21.1",
+    "title": "v0.21.1",
+    "date": "2026-08-13",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.21.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.20.2",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.20.2",
@@ -145,19 +156,6 @@
       "**The clipped-tile \"tail\" is fixed** (#73). Scrolling 3D content against the top or bottom of the viewport smeared a vertical tail off the clipped edge — a single boundary row replicated for exactly the clipped height. Root cause, measur…",
       "**Chromium 151.0.7922.77** (from .76) — the current stable patch level. The upstream delta is a single file (`chrome/VERSION`), so the weave-gate auto-passed: every weave-bearing file in this build is byte-identical to code hardware-vali…",
       "Also plumbs each tracked quad's texture coordinates and visible rect through the compositor to the weave stage, replacing an implicit full-image assumption — validated against scaled (0.5×) video resources."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.20.0",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.20.0",
-    "title": "v0.20.0",
-    "date": "2026-08-09",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.20.0",
-    "prerelease": false,
-    "featureLines": [
-      "Transmissive materials — glass, and anything using `KHR_materials_transmission` — now render the scene behind them faithfully instead of washed out and desaturated. The transmitted light was being put through the tone curve twice, and th…"
     ],
     "looksMechanical": false
   },
