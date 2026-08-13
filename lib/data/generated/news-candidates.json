@@ -7,8 +7,15 @@
     "date": "2026-08-13",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.10.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Leo is lit correctly again on Linux and Android, and in Windows zones frames. On",
+      "those paths the avatar's surface normals were inverted, so every view-dependent",
+      "shading term was evaluated as if the surface were seen at perfect grazing",
+      "incidence — the character rendered as a mirror of its surroundings instead of as",
+      "its own materials. Fur, eyes and clothing now shade as authored, and the Windows",
+      "look no longer differs between zones and non-zones frames."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.21.1",
@@ -29,6 +36,39 @@
       "clearcoat, sheen — responds to the actual viewing angle again. This affects"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.22.0",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.22.0",
+    "title": "v0.22.0",
+    "date": "2026-08-13",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.22.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.0.19",
+    "repo": "displayxr-installer",
+    "tag": "v2.0.19",
+    "title": "DisplayXR v2.0.19",
+    "date": "2026-08-13",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.0.19",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@sr-sdk-v2-1.37.0.1450",
+    "repo": "displayxr-leia-plugin",
+    "tag": "sr-sdk-v2-1.37.0.1450",
+    "title": "SR v2 C99 SDK 1.37.0+1450 (win64, landing set)",
+    "date": "2026-08-13",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/sr-sdk-v2-1.37.0.1450",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.20.2",
@@ -121,17 +161,6 @@
     "title": "v1.20.1",
     "date": "2026-08-10",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.20.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.20.1",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.20.1",
-    "title": "v0.20.1",
-    "date": "2026-08-10",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.20.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -390,17 +419,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-installer@v2.0.15",
-    "repo": "displayxr-installer",
-    "tag": "v2.0.15",
-    "title": "DisplayXR v2.0.15",
-    "date": "2026-08-03",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.0.15",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-leia-plugin@v2.1.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.1.0",
@@ -438,17 +456,6 @@
       "Decoupled presentation: `DXR_PRESENT_OPAQUE` opaque flip present, default-off (#833, #836)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.0.9",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.0.9",
-    "title": "v2.0.9",
-    "date": "2026-08-02",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.0.9",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unity-samples@v2.1.1",
