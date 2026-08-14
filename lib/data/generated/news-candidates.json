@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.6.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.6.1",
+    "title": "v2.6.1",
+    "date": "2026-08-14",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.6.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-avatar@v0.10.2",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.10.2",
@@ -100,8 +111,11 @@
     "date": "2026-08-13",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.23.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Transparent mode (Ctrl+T) now keeps the window floating above other apps. Previously the model would drop behind whatever you clicked next, which made transparency awkward to use alongside another window; it now stays on top for as long …",
+      "Keep the window topmost while transparent (Ctrl+T) — entering transparent mode raises the window to topmost, and leaving it restores the normal z-order (#94)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.0.19",
@@ -427,19 +441,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.4.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.4.1",
-    "title": "DisplayXR Runtime v2.4.1",
-    "date": "2026-08-04",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.4.1",
-    "prerelease": false,
-    "featureLines": [
-      "Patch release on top of v2.4.0 — **all v2.4.0 users should upgrade**. Fixes a window-resize crash (E_INVALIDARG on waitable swapchains) that hit opaque-target apps under the default-on late-weave path (#849). Also adds a late-weave laten…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.10.0",
