@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-leia-plugin@v2.2.1",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.2.1",
+    "title": "v2.2.1",
+    "date": "2026-08-14",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.2.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-mcp@v0.5.3",
     "repo": "displayxr-mcp",
     "tag": "v0.5.3",
@@ -23,6 +34,17 @@
       "**`XR_EXT_hand_tracking` wired to input providers** (#825 Tier 2) — the oxr hand-tracking path was compiled but inert, because no device ever filled the static hand-tracking roles. Builder arbitration now fills the `unobstructed` / `conf…"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.6.2",
+    "repo": "displayxr-runtime",
+    "tag": "v2.6.2",
+    "title": "v2.6.2",
+    "date": "2026-08-14",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.6.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-avatar@v0.10.2",
@@ -391,26 +413,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.5.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.5.0",
-    "title": "DisplayXR Runtime v2.5.0",
-    "date": "2026-08-08",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.5.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Weave rate is now decoupled from app render rate.** #868 ships for the first time: when an app falls behind, the compositor re-weaves the *last* atlas at panel rate instead of leaving a stale frame on screen — so eye tracking keeps the…",
-      "The full follow-up set lands in the same release: **late-weave pacing for the D3D11/D3D12 repaints** (#884/#887) — they previously wove a full refresh period early; they now weave as late as still lands, so the eye position used is the f…",
-      "Also in this release: atlas capture reads the display processor's actual input, fixing black captures in the zero-copy path (#880); `SIM_DISPLAY_FORCE_MODE` is now authoritative over app mode requests; late-weave is refresh-rate-aware en…",
-      "**Pairing:** best used with **Leia SR plug-in v2.1.2 or newer**, which carries the VK post-weave `PRESENT_SRC` barrier fix that pairs with this runtime's VK repaint.",
-      "feat(#868): re-weave the last atlas at panel rate when the app falls behind (D3D11 + D3D12 + VK + GL) (#873)",
-      "feat(#884,#887): late-weave pacing for the D3D11/D3D12 repaints + D3D11 repaint counters (#890)",
-      "feat(#884): one-shot log when repaint late-weave pacing engages",
-      "feat(#885): GL repaint default-ON — the last backend, matching D3D11/D3D12/VK (#893)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-unity@v2.11.0",
     "repo": "displayxr-unity",
     "tag": "v2.11.0",
@@ -444,17 +446,6 @@
       "**Browser zoom preserves the 3D effect** — Ctrl +/− rescales the page and the weave tracks the element through the device-pixel-ratio change."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.1.1",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.1.1",
-    "title": "v2.1.1",
-    "date": "2026-08-04",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.1.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-avatar@v0.10.0",
