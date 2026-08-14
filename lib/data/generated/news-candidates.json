@@ -3,12 +3,15 @@
     "id": "displayxr-runtime@v2.6.1",
     "repo": "displayxr-runtime",
     "tag": "v2.6.1",
-    "title": "v2.6.1",
+    "title": "DisplayXR Runtime v2.6.1",
     "date": "2026-08-14",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.6.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Fixes the **workspace wedge family** — three distinct stalls that made the shell and browser feel frozen on runtime v2.6.0 once SR v2 late latching was live. Ctrl+L taking 20-50 s to open the launcher, the compositor dropping to ~18 fps …",
+      "**`XR_EXT_hand_tracking` wired to input providers** (#825 Tier 2) — the oxr hand-tracking path was compiled but inert, because no device ever filled the static hand-tracking roles. Builder arbitration now fills the `unobstructed` / `conf…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.10.2",
