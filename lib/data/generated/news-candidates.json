@@ -3,12 +3,17 @@
     "id": "displayxr-runtime@v2.6.3",
     "repo": "displayxr-runtime",
     "tag": "v2.6.3",
-    "title": "v2.6.3",
+    "title": "DisplayXR Runtime v2.6.3",
     "date": "2026-08-15",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.6.3",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Workspace-stability release — three more slices of the [#925](https://github.com/DisplayXR/displayxr-runtime/issues/925) epic land in the D3D11 service compositor. Workspace-control calls (focus, move, resize, close) now go through a **c…",
+      "No API or ABI changes — a drop-in update for existing apps and plug-ins.",
+      "**`feat(d3d11_service)`**: workspace-control command queue (#925 S3) — focus/move/resize/close requests are enqueued and drained on the render thread, so a workspace controller can never block or re-enter the compositor mid-frame.",
+      "**`feat(d3d11_service)`**: idle-client eviction, opt-in (#925 S4 tier 2) — a client that stops submitting for longer than `DXR_EVICT_IDLE_MS` is evicted from the render set rather than stalling the composite. Off by default; set the env …"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.2.1",
