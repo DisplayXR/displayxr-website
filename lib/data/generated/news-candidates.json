@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.6.3",
+    "repo": "displayxr-runtime",
+    "tag": "v2.6.3",
+    "title": "v2.6.3",
+    "date": "2026-08-15",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.6.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.2.1",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.2.1",
@@ -39,12 +50,15 @@
     "id": "displayxr-runtime@v2.6.2",
     "repo": "displayxr-runtime",
     "tag": "v2.6.2",
-    "title": "v2.6.2",
+    "title": "DisplayXR Runtime v2.6.2",
     "date": "2026-08-14",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.6.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "This release hardens the workspace compositor against \"one bad actor freezes everything\": all remaining unbounded waits on the service critical path are now bounded, the in-process present path can no longer wedge on a jammed flip chain,…",
+      "feat(build): real debug symbols in Windows Release builds (#926)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.10.2",
@@ -326,23 +340,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.5.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.5.1",
-    "title": "DisplayXR Runtime v2.5.1",
-    "date": "2026-08-10",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.5.1",
-    "prerelease": false,
-    "featureLines": [
-      "A maintenance release, weighted toward **Linux preview** and **weave diagnostics**. The Linux Vulkan compositor now reads the panel's real refresh rate via RandR instead of assuming 60 Hz, and the Linux VK test apps move to `XR_KHR_vulka…",
-      "No API or ABI change: `XRT_PLUGIN_API_VERSION_CURRENT` stays at **v5**, so existing vendor plug-ins (`leia_plugin` v2.1.2) load unchanged — no plug-in re-release required.",
-      "`feat(test_apps)`: migrate Linux VK apps to `XR_KHR_vulkan_enable2` (INV-5.9)",
-      "`feat(lint)`: enforce INV-5.9 — VK apps MUST use enable2 (`vkCreateDevice` = ERROR) (#899)",
-      "`feat`: file-triggered weave pixel-capture harness in the D3D11 service (#895)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.8",
