@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.7.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.7.0",
+    "title": "v2.7.0",
+    "date": "2026-08-18",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.7.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.6.3",
     "repo": "displayxr-runtime",
     "tag": "v2.6.3",
@@ -245,24 +256,6 @@
       "Vulkan arm re-ported to the `srCreateWeaverVulkan` spelling; phase snapping now uses `srWeaverSnapToPhase` on the v2 path (#625 — the probe workaround is retired on v2, kept on v1); late latching driven where the SDK wires it (VK submit …",
       "WGC background-capture delivery cap (`LEIA_DP_CAPTURE_MIN_INTERVAL_MS`, default 66 ms) (#139)",
       "Runtime pin bumped v2.4.1 → v2.6.0 to fill the `weave_submitted` slot (#142)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.6.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.6.0",
-    "title": "DisplayXR Runtime v2.6.0",
-    "date": "2026-08-13",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.6.0",
-    "prerelease": false,
-    "featureLines": [
-      "The VK shared-queue late-weave tier ships for the first time: `VK_LAYER_DXR_queue_lock` (#902/#903) is now packaged and registered by the installer (#917), and the new additive `xrt_display_processor_vk::weave_submitted` plug-in slot (#9…",
-      "`VK_LAYER_DXR_queue_lock` — shared-queue late-weave repaint on single-graphics-queue GPUs (#902, #903)",
-      "`xrt_display_processor_vk::weave_submitted` vtable slot for VK late latching (#902, #919 — additive, ABI-compatible)",
-      "Late-weave pacing on the live/composition swapchain (D3D11 + D3D12)",
-      "VK bridge pacing is governor-managed, default-on where `present_wait` is absent (#912)",
-      "Composed-chain pacing holds rate — catch-up guard, slip-rate escalation, adaptive align (#912)"
     ],
     "looksMechanical": false
   },
