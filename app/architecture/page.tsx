@@ -625,6 +625,56 @@ export default function ArchitecturePage() {
           </p>
         </section>
 
+        {/* Running Several Apps at Once */}
+        <section>
+          <h2 className="text-2xl font-semibold tracking-tight text-text-primary mb-4">
+            Running Several Apps at Once
+          </h2>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            A spatial display is one piece of hardware, and only one interlacing
+            pattern can be on it at a time. So the service keeps{" "}
+            <strong className="text-text-primary">
+              one always-on compositor pipeline
+            </strong>{" "}
+            with exactly{" "}
+            <strong className="text-text-primary">
+              one display processor per panel
+            </strong>
+            . Any number of connected apps render into that single pipeline and
+            none of them drives the panel itself, so concurrent sessions cannot
+            contend for the lens or strand each other in a mode someone else
+            set.
+          </p>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            Which app the panel is showing is decided by the operating system
+            rather than by a bespoke switcher. A connected app is an ordinary
+            window: it has a taskbar and Alt-Tab entry, focusing it hands it the
+            display, and launching it brings it to the front. A workspace
+            controller composes the apps launched inside it — anything else can
+            take the panel over a running workspace and give it back, with
+            neither side being torn down.
+          </p>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            Handing the panel over does not restart the display processor. An
+            append-only vtable slot lets the runtime re-bind a live processor to
+            a different window, so a plug-in that implements it switches apps
+            without the panel dropping to flat and back.
+          </p>
+          <p className="text-sm text-text-secondary">
+            Design detail:{" "}
+            <a
+              href={`${REPO_URLS.runtime}/blob/main/docs/adr/ADR-035-service-owned-arbitration-single-pipeline-isolated-satellites.md`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:text-accent-hover underline underline-offset-2"
+            >
+              ADR-035
+            </a>
+            . The rest of that decision — per-client authorization and process
+            isolation for in-service plug-ins — is still being phased in.
+          </p>
+        </section>
+
         {/* Per-Graphics-API Design */}
         <section>
           <h2 className="text-2xl font-semibold tracking-tight text-text-primary mb-4">

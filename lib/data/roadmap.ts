@@ -116,6 +116,11 @@ export const roadmapSections: RoadmapSection[] = [
         description:
           "All fourteen DisplayXR extensions renamed from the provisional XR_EXT_* naming to XR_DXR_*, under the project's vendor author tag (officially registered with Khronos, July 2026), and shipped as a coordinated v2.0.0 release train — runtime, shell, vendor plug-in, engine plugins, demos, and meta-installer moving together. Apps built against the old names keep working on runtimes before v2.0.0 or rebuild against the v2.0.0 headers; migration is one command (scripts/dxr_rename.py in the runtime repo)",
       },
+      {
+        title: "One compositor pipeline, with OS-native app switching",
+        description:
+          "The service runs a single always-on compositor pipeline with one display processor per panel, so any number of concurrent apps share the display instead of contending for it. Which app the panel shows follows the operating system's foreground window — connected apps carry a taskbar and Alt-Tab entry, focusing one hands it the display, and an app can take the panel over a running workspace and hand it back without either being torn down. Panel ownership is leased with mode changes applied on the render thread, client commits are paced to the display, and a plug-in that implements the new re-bind slot switches apps without the panel dropping to flat and back",
+      },
     ],
   },
   {
