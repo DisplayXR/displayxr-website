@@ -1,14 +1,27 @@
 [
   {
-    "id": "displayxr-runtime@v2.7.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.7.0",
-    "title": "v2.7.0",
+    "id": "displayxr-leia-plugin@v2.3.0",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.3.0",
+    "title": "v2.3.0",
     "date": "2026-08-18",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.7.0",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.3.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.7.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.7.0",
+    "title": "DisplayXR Runtime v2.7.0",
+    "date": "2026-08-18",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.7.0",
+    "prerelease": false,
+    "featureLines": [
+      "One compositor pipeline and Windows-native app switching. The service now runs a single always-on multi-compositor with **one display processor per panel** — N concurrent IPC apps no longer mean N weavers fighting over the lens — and eve…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.6.3",
@@ -407,17 +420,6 @@
     "title": "v1.7.0",
     "date": "2026-08-08",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.7.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.1.2",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.1.2",
-    "title": "v2.1.2",
-    "date": "2026-08-08",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.1.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
