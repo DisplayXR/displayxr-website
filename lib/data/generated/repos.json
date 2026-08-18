@@ -259,5 +259,12 @@
       "nextjs"
     ],
     "archived": false
+  },
+  {
+    "name": "glTF-Sample-Assets",
+    "description": "An assortment of assets that demonstrate features and capabilities of the glTF format",
+    "url": "https://github.com/DisplayXR/glTF-Sample-Assets",
+    "topics": [],
+    "archived": false
   }
 ]

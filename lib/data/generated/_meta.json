@@ -70,7 +70,8 @@
       "displayxr-unreal-test",
       "displayxr-vendor-template",
       "displayxr-web",
-      "displayxr-website"
+      "displayxr-website",
+      "glTF-Sample-Assets"
     ]
   }
 }
