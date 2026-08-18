@@ -107,6 +107,46 @@ export const NEWS_KIND_LABELS: Record<NewsKind, string> = {
  */
 export const NEWS: NewsItem[] = [
   {
+    id: "multi-app-one-pipeline",
+    date: "2026-08-18",
+    kind: "capability",
+    tier: "banner",
+    headline: "Several spatial apps at once, switched with Alt-Tab",
+    blurb:
+      "The service now runs a single always-on compositor pipeline with one display processor per panel, so concurrent apps no longer contend for the lens — and every app on it behaves like an ordinary window: it appears in the taskbar and in Alt-Tab, focusing it hands it the display, and it can take the panel over a running spatial workspace and hand it back without either side being torn down.",
+    href: "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.7.0",
+  },
+  {
+    id: "unreal-editor-3d-preview",
+    date: "2026-08-15",
+    kind: "engine",
+    tier: "list",
+    headline: "See weaved 3D inside the Unreal editor viewport",
+    blurb:
+      "Play-in-Editor previews the runtime’s woven output in the viewport tab itself and follows it live as panels and splitters move, so an Unreal scene can be checked on the display without packaging a build.",
+    href: "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.7.0",
+  },
+  {
+    id: "mediaplayer-drop-and-detect",
+    date: "2026-08-12",
+    kind: "demo",
+    tier: "list",
+    headline: "Drop a stereo photo on the player and it just opens",
+    blurb:
+      "The spatial media player loads files and folders by drag-and-drop and works the stereo layout out from the file itself — container metadata first, then a pixel analysis calibrated on 2,380 real photos — rather than trusting the filename.",
+    href: "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.8.0",
+  },
+  {
+    id: "unity-plugin-linux",
+    date: "2026-08-09",
+    kind: "platform",
+    tier: "list",
+    headline: "The Unity plug-in now builds and ships for Linux",
+    blurb:
+      "First Linux (x86_64) release of the Unity plug-in: the Vulkan backend is platform-parametric and deploys into a Linux player, verified against real weaving hardware. Preview — the primary stereo path only, with the runtime self-hosting its weave window.",
+    href: "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.12.0",
+  },
+  {
     id: "browser-preview-chromium-151",
     date: "2026-08-06",
     kind: "product",

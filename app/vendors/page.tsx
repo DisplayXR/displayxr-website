@@ -53,6 +53,24 @@ export default function VendorsPage() {
             runtime tree; that approach is retired. The shipped runtime carries
             zero vendor SDK identifiers in its link line.
           </p>
+          <p className="text-text-secondary leading-relaxed mt-4">
+            The same line is drawn inside windowed weaving. Whoever owns the
+            placement of the drawn region — the app, the runtime, or a Wayland
+            compositor — tells your plug-in where that region landed, as a plain
+            panel-space position anyone could observe. Turning position into an
+            interlacing phase is yours alone: snapping, quantization, and
+            everything else that needs lens pitch, slant, or subpixel layout
+            stays inside your binary and never crosses the ABI (
+            <a
+              href={`${DOCS_BASE}/adr/ADR-033-placement-reports-geometry-weaver-owns-phase.md`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:text-accent-hover underline underline-offset-2"
+            >
+              ADR-033
+            </a>
+            ).
+          </p>
           <div className="mt-6 border border-border rounded-lg overflow-hidden">
             <Image
               src="/diagrams/dxr-boundary-ip.svg"

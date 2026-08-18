@@ -61,6 +61,12 @@ const adrs = [
     title: "Display zones — decoupled mixed 2D/3D layout with per-zone rigs",
     href: `${RUNTIME}/blob/main/docs/adr/ADR-027-display-zones.md`,
   },
+  {
+    id: "ADR-035",
+    title:
+      "The service owns arbitration, runs one compositor pipeline, and isolates its satellites",
+    href: `${RUNTIME}/blob/main/docs/adr/ADR-035-service-owned-arbitration-single-pipeline-isolated-satellites.md`,
+  },
 ];
 
 const extendLinks = [
