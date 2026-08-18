@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-earthview@v0.7.1",
+    "repo": "displayxr-demo-earthview",
+    "tag": "v0.7.1",
+    "title": "v0.7.1",
+    "date": "2026-08-18",
+    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.3.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.3.0",
@@ -36,8 +47,15 @@
     "date": "2026-08-18",
     "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.2.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Voice control works again. A missing dependency ceiling let a new major of the",
+      "`mcp` Python package into the shipped voice runtime, where it wedged during",
+      "session initialization — voice appeared to start and then silently did nothing,",
+      "leaving an empty log behind. The runtime is now pinned to the major we test, and",
+      "a wedged voice process says so (in the log, and as a toast) instead of failing",
+      "invisibly. Voice reaches `[realtime] session ready` and push-to-talk arms."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.6.3",
@@ -683,22 +701,6 @@
     "prerelease": true,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-earthview@v0.6.2",
-    "repo": "displayxr-demo-earthview",
-    "tag": "v0.6.2",
-    "title": "v0.6.2",
-    "date": "2026-07-18",
-    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.6.2",
-    "prerelease": false,
-    "featureLines": [
-      "Agent tooling reaches the Windows build: `XR_DXR_mcp_tools` is wired up, so an",
-      "MCP client can drive and inspect EarthView the same way it can on the other",
-      "Port the `XR_DXR_mcp_tools` agent tools to the Windows build (#26)",
-      "Consume common's MCP tool-call hook, dropping the forked event pump (#26)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-mcp@v0.5.2",
