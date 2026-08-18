@@ -7,8 +7,13 @@
     "date": "2026-08-18",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.3.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The display processor can now re-bind its live weaver to a different window. Paired with `displayxr-runtime` v2.7.0's new `set_window` display-processor slot, switching focus between apps no longer destroys and recreates the SR weaver — …",
+      "The re-bind carries everything derived from the bound window along with it: the WGC background capture is re-created against the new window, so compose-under transparency keeps its correct monitor, its window-on-monitor rect for the back…",
+      "**`set_window` on the D3D11 display processor (vtable slot 20)** — re-binds a live weaver in place on both SR SDK API families (v1 `SR::IWeaverBase1::setWindowHandle`, v2 `srWeaverSetWindowHandle`), guarded, DPI-aware, and safe against a…",
+      "**Runtime pin moved to v2.7.0** so the slot-20 path is actually compiled in — it is guarded on `XRT_DP_D3D11_HAS_SET_WINDOW`, a macro that only exists in runtime headers from v2.7.0 onward. Both pin sites (`CMakeLists.txt` `DXR_RUNTIME_G…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.7.0",
@@ -22,6 +27,17 @@
       "One compositor pipeline and Windows-native app switching. The service now runs a single always-on multi-compositor with **one display processor per panel** — N concurrent IPC apps no longer mean N weavers fighting over the lens — and eve…"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-shell-releases@v2.2.0",
+    "repo": "displayxr-shell-releases",
+    "tag": "v2.2.0",
+    "title": "DisplayXR Shell v2.2.0",
+    "date": "2026-08-18",
+    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.2.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-runtime@v2.6.3",
@@ -691,17 +707,6 @@
     "title": "v0.5.2",
     "date": "2026-07-18",
     "url": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.5.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-shell-releases@v2.0.4",
-    "repo": "displayxr-shell-releases",
-    "tag": "v2.0.4",
-    "title": "DisplayXR Shell v2.0.4",
-    "date": "2026-07-18",
-    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.0.4",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
