@@ -36,6 +36,7 @@
       "displayxr-runtime/docs/adr/ADR-033-placement-reports-geometry-weaver-owns-phase.md",
       "displayxr-runtime/docs/adr/ADR-034-input-provider-plugins.md",
       "displayxr-runtime/docs/adr/ADR-035-service-owned-arbitration-single-pipeline-isolated-satellites.md",
+      "displayxr-runtime/docs/adr/ADR-036-android-per-window-compositor-instances.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-001-direct-runtime-loading.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-002-zero-copy-atlas-handoff.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-003-ue-native-off-axis-projection.md"

@@ -1,11 +1,71 @@
 [
   {
+    "id": "displayxr-browser@preview-0.1.10",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.10",
+    "title": "DisplayXR Browser 0.1.10 — element identity (Phase 1)",
+    "date": "2026-08-19",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.10",
+    "prerelease": false,
+    "featureLines": [
+      "The compositor now identifies inline-3D elements **by identity, not by geometric guessing** (patches 0059–0062, the first phase of the 2026-08-18 architecture audit):",
+      "**Canvas tiles carry a stable element identity end-to-end** — from Blink through the compositor to the GPU weave stage. The tracked rect now rides the layer that owns the canvas pixels (the identity join did not previously exist), and id…",
+      "**The GPU weave state is keyed by element identity** instead of position in a geometrically-sorted list — a canvas moving, appearing, or disappearing can no longer silently re-point another tile's scratch/woven state (the mechanism behin…",
+      "**2D overlay exclusions get identity too**, with a per-entry tracked/legacy merge that fixes the historical all-or-nothing failure (the patch-0049 revert), and precise per-element diagnostics — including, for the first time, an explicit …",
+      "**Overlapping 2D overlays now stack in true paint order** rather than a geometric sort — translucent overlays over woven tiles composite correctly.",
+      "The 70% geometric overlap matcher is retained as a logged fallback (grep `ID-MATCH FALLBACK` / `INLINE3D_` in a `--v=1` log); known residual per-element misses are tracked in #94 and behave exactly as pre-Phase-1.",
+      "**Chromium 151.0.7922.77** — pin unchanged."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.7.2",
+    "repo": "displayxr-runtime",
+    "tag": "v2.7.2",
+    "title": "v2.7.2",
+    "date": "2026-08-19",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.7.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-browser@preview-0.1.9",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.9",
+    "title": "DisplayXR Browser 0.1.9 — scroll-sync + navigation-ghost fixes",
+    "date": "2026-08-18",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.9",
+    "prerelease": false,
+    "featureLines": [
+      "**The scroll-sync rect shift is fixed** (#83, first release to ship it). On 0.1.5–0.1.8, ANY page scroll permanently shifted all weave/exclusion metadata rects by the full scroll offset (the shift baseline never reset in this compositor …",
+      "**The back-navigation ghost is fixed** (#87, two halves):",
+      "The GPU draw-back of the woven texture is now gated on a weave submit having succeeded **this frame**. Previously, a frame with registered rects but no successful submit (exactly the first frames after Back) blitted the *previous page's*…",
+      "Inline-3D rect state (rects, exclusions, scroll base) is now cleared on session shutdown **and** on navigation commit. Previously nothing cleared it: the setter's only caller was a live session's per-frame report, so the state survived s…",
+      "Also in this release's issue sweep: #88 (browser popups — omnibox/autofill — read ghosted under a live 3D panel; structural, tracked for the per-region display-mode work) and #90 (3D demand not retracted on navigation) are filed; #30/#31…",
+      "**Chromium 151.0.7922.77** — pin unchanged from 0.1.8.",
+      "Companion SDK changes landed on `displayxr-web` main (unreleased 1.1.0): bfcache/pagehide lifecycle handling, a stalled-frame watchdog after bfcache restore, a loud warning on concurrent sessions (they clobber the shared rect channel), R…"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-demo-earthview@v0.7.1",
     "repo": "displayxr-demo-earthview",
     "tag": "v0.7.1",
     "title": "v0.7.1",
     "date": "2026-08-18",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.1.0",
+    "repo": "displayxr-installer",
+    "tag": "v2.1.0",
+    "title": "DisplayXR v2.1.0",
+    "date": "2026-08-18",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.1.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -43,12 +103,14 @@
     "id": "displayxr-runtime@v2.7.1",
     "repo": "displayxr-runtime",
     "tag": "v2.7.1",
-    "title": "v2.7.1",
+    "title": "DisplayXR Runtime v2.7.1",
     "date": "2026-08-18",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.7.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Fixes a defect introduced in v2.7.0 that could freeze an app: a transparent or display-zones app running over IPC without the spatial workspace could wedge its own frame thread after its first frame. Vulkan apps of that kind also had nob…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-shell-releases@v2.2.0",
@@ -120,20 +182,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.6.2",
-    "repo": "displayxr-runtime",
-    "tag": "v2.6.2",
-    "title": "DisplayXR Runtime v2.6.2",
-    "date": "2026-08-14",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.6.2",
-    "prerelease": false,
-    "featureLines": [
-      "This release hardens the workspace compositor against \"one bad actor freezes everything\": all remaining unbounded waits on the service critical path are now bounded, the in-process present path can no longer wedge on a jammed flip chain,…",
-      "feat(build): real debug symbols in Windows Release builds (#926)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.10.2",
@@ -366,17 +414,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-installer@v2.0.18",
-    "repo": "displayxr-installer",
-    "tag": "v2.0.18",
-    "title": "DisplayXR v2.0.18",
-    "date": "2026-08-11",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.0.18",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-demo-avatar@v0.10.1",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.10.1",
@@ -561,17 +598,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-browser@preview-0.1.6",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.6",
-    "title": "DisplayXR Browser Preview 0.1.6 — display follows the foreground tab",
-    "date": "2026-08-01",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.6",
-    "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-demo-earthview@v0.6.4",
     "repo": "displayxr-demo-earthview",
     "tag": "v0.6.4",
@@ -685,17 +711,6 @@
     "date": "2026-07-23",
     "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.0.5",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@preview-150.0.7871.129",
-    "repo": "displayxr-browser",
-    "tag": "preview-150.0.7871.129",
-    "title": "DisplayXR Browser Preview (150.0.7871.129)",
-    "date": "2026-07-20",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-150.0.7871.129",
-    "prerelease": true,
     "featureLines": [],
     "looksMechanical": true
   },
