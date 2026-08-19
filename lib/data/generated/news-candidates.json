@@ -22,12 +22,21 @@
     "id": "displayxr-runtime@v2.7.2",
     "repo": "displayxr-runtime",
     "tag": "v2.7.2",
-    "title": "v2.7.2",
+    "title": "DisplayXR Runtime v2.7.2",
     "date": "2026-08-19",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.7.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Fixes scroll **trails** in inline-3D weave clients: the woven output is now cleared per frame on every submit path, so stale woven pixels can no longer persist across a scroll — or even across a page navigation — when a client falls into…",
+      "Android grows up alongside it: `XR_DXR_weave` now works on Android (spec v7, platform-neutral handle kinds + explicit window geometry), and concurrent multi-app arrives as per-window compositor instances backed by out-of-process satellit…",
+      "feat(XR_DXR_weave): spec v7 — platform-neutral handle kinds + explicit window geometry (#1036)",
+      "feat(comp_multi,ipc,oxr): `XR_DXR_weave` on Android — `comp_multi_weave_android.c` (#1036)",
+      "feat(android,ipc): satellite compositor slots + a main-process slot broker (#1053)",
+      "feat(android,ipc): a satellite dies with its client (#1053)",
+      "feat(android): per-window Kooima rebase for OOP satellites (#1034)",
+      "feat(android): window-origin contract — DP `set_window_screen_rect` + Choreographer poll (#1033)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.9",
