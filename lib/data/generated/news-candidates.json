@@ -19,32 +19,97 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.8.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.8.0",
-    "title": "v2.8.0",
+    "id": "displayxr-browser@preview-0.1.13",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.13",
+    "title": "DisplayXR Browser 0.1.13 — degrade gracefully, recover automatically",
     "date": "2026-08-20",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.8.0",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.13",
+    "prerelease": false,
+    "featureLines": [
+      "Two resilience fixes, both hardware-validated including a live service-kill test:",
+      "**A missed weave frame shows mono, never black** (#99). When a weave submission misses (GPU contention, service hiccup), the affected tiles now draw their content as flat mono 2D for that frame instead of leaving a black hole — the failu…",
+      "**A browser that launches during a service restart recovers by itself** (#92). Previously, losing the startup race left the browser permanently degraded (single-rect submits, mono scenes) until quit — the root cause behind several \"brows…",
+      "Known remaining gap, tracked in #103: a service death *under* a live session still requires a browser relaunch (tiles degrade to mono via #99's fix); the sandbox prevents in-place reconnection and a browser-process broker is the planned …",
+      "**Chromium 151.0.7922.77** — pin unchanged."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-browser@preview-0.1.14",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.14",
+    "title": "DisplayXR Browser 0.1.14 — the dark-tile quartet, closed",
+    "date": "2026-08-20",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.14",
+    "prerelease": false,
+    "featureLines": [
+      "The intermittent dark/blinking scene tiles under GPU load (glTF and gaussian-splat viewers, worst on heavy content — displayxr-web#12) are **fixed**, hardware-confirmed on real Leia hardware under deliberate load. The bug was five stacke…",
+      "**A missed weave frame shows the tile as mono, never black** (#99): per-tile recovery draw with a proper flush bracket.",
+      "**A browser that loses the service-startup race recovers by itself** (#92): transient init failures retry pre-sandbox, and a degraded session re-negotiates on a backoff and swaps to full capability in place. Diagnostic tag `[DisplayXR][w…",
+      "**One invalid head-pose sample can no longer flip a frame to mono** (displayxr-web#12): the last-good stereo views are latched (~0.5 s grace), and the scene-layer scope survives lazy scroll churn.",
+      "**The weave never samples its own suppression hole** (the root asymmetry): canvas quads are only withheld from the page when their resource actually resolved for the weave; a tile without a clean resource stays visible as 2D that frame.",
+      "**A contended canvas read keeps last frame's stereo pixels** (the per-frame trigger): the zero-copy open retries once, the CPU fallback reads the clean canvas rather than the output, and a still-contended tile re-weaves its previous cont…",
+      "Pairs with **SDK 1.1.1** (validate-before-clear + replay in the shared viewer — protects even hand-rolled render loops on older browsers).",
+      "**Chromium 151.0.7922.77** — pin unchanged."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-leia-plugin@sr-sdk-v2-1.37.0.1483",
+    "repo": "displayxr-leia-plugin",
+    "tag": "sr-sdk-v2-1.37.0.1483",
+    "title": "[SUPERSEDED by 1490] SR v2 C99 SDK 1.37.0+1483 (win64, RC lineage — complete: Vulkan + connection-state)",
+    "date": "2026-08-20",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/sr-sdk-v2-1.37.0.1483",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
   {
-    "id": "displayxr-browser@preview-0.1.10",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.10",
-    "title": "DisplayXR Browser 0.1.10 — element identity (Phase 1)",
-    "date": "2026-08-19",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.10",
+    "id": "displayxr-leia-plugin@sr-sdk-v2-1.37.0.1490",
+    "repo": "displayxr-leia-plugin",
+    "tag": "sr-sdk-v2-1.37.0.1490",
+    "title": "SR v2 C99 SDK 1.37.0+1490 (win64) — converged, pinned release SDK",
+    "date": "2026-08-20",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/sr-sdk-v2-1.37.0.1490",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.8.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.8.0",
+    "title": "DisplayXR Runtime v2.8.0",
+    "date": "2026-08-20",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.8.0",
     "prerelease": false,
     "featureLines": [
-      "The compositor now identifies inline-3D elements **by identity, not by geometric guessing** (patches 0059–0062, the first phase of the 2026-08-18 architecture audit):",
-      "**Canvas tiles carry a stable element identity end-to-end** — from Blink through the compositor to the GPU weave stage. The tracked rect now rides the layer that owns the canvas pixels (the identity join did not previously exist), and id…",
-      "**The GPU weave state is keyed by element identity** instead of position in a geometrically-sorted list — a canvas moving, appearing, or disappearing can no longer silently re-point another tile's scratch/woven state (the mechanism behin…",
-      "**2D overlay exclusions get identity too**, with a per-entry tracked/legacy merge that fixes the historical all-or-nothing failure (the patch-0049 revert), and precise per-element diagnostics — including, for the first time, an explicit …",
-      "**Overlapping 2D overlays now stack in true paint order** rather than a geometric sort — translucent overlays over woven tiles composite correctly.",
-      "The 70% geometric overlap matcher is retained as a logged fallback (grep `ID-MATCH FALLBACK` / `INLINE3D_` in a `--v=1` log); known residual per-element misses are tracked in #94 and behave exactly as pre-Phase-1.",
-      "**Chromium 151.0.7922.77** — pin unchanged."
+      "**`XR_DXR_weave` spec v8 — the weave path now publishes a per-region hardware wish.** A weave client can declare which parts of its window are flat: `XrWeaveSubmitFlatRegionsDXR` rides along on submit for content-driven regions, and the …",
+      "The wish stays **advisory by design**: it never gates content, and a display processor that ignores it loses nothing but the physical 2D switch (ADR-027). Two robustness pieces ship with it — the wish raster now honours the DP's advertis…",
+      "The DisplayXR browser is the first client to drive the v8 wish (0.1.12). See #1065.",
+      "Alongside it: `XR_DXR_android_surface_binding` lands end to end (header, spec, runtime implementation, and an in-process window-rect feed with per-window Kooima, ADR-036 D6), the Android IPC client can adopt an already-connected service …",
+      "feat(weave): per-region hardware wish on the weave path (spec v8) (#1065)",
+      "feat(extensions): `XR_DXR_android_surface_binding` — header + spec (#1037)",
+      "feat(android): implement `XR_DXR_android_surface_binding` in the runtime (#1037)",
+      "feat(android): in-process window-rect feed + per-window Kooima (#1037, ADR-036 D6)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.13.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.13.0",
+    "title": "DisplayXR v2.13.0",
+    "date": "2026-08-20",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.13.0",
+    "prerelease": false,
+    "featureLines": [
+      "**The display-centric rig frames itself correctly in the 2D fallback** (#256). `DisplayXRDisplay` treats its transform as the virtual **display plane** — that exact pose is what the driver sends the runtime, and the Kooima projection put…",
+      "**The gate is \"XR is not going to run\", not \"is not running right now.\"** `DisplayXRDisplayLoader.SubsystemRunning == false` alone would be wrong — the editor's dock/undock auto-switch restarts the subsystem mid-Play and would drag the c…",
+      "**`DisplayXRCamera` (camera-centric) needs nothing** — its transform is already a viewer position and its FOV is the camera's own, so the authored viewpoint renders unchanged; and the convergence drops itself. `invConvergenceDistance` le…",
+      "**`DisplayXRRuntime` — a pre-session availability API** (#257). `DisplayXRRuntime.IsInstalled` / `DisplayXRRuntime.ResolvedManifestPath` answer \"can this machine run DisplayXR at all?\" with no OpenXR instance, no session and no native su…"
     ],
     "looksMechanical": false
   },
@@ -68,7 +133,7 @@
     "id": "displayxr-leia-plugin@sr-sdk-v2-1.37.0.1479",
     "repo": "displayxr-leia-plugin",
     "tag": "sr-sdk-v2-1.37.0.1479",
-    "title": "SR v2 C99 SDK 1.37.0+1479 (win64, RC lineage) — NOT PINNABLE: no sr_vk.h",
+    "title": "[SUPERSEDED by 1490] SR v2 C99 SDK 1.37.0+1479 (win64, RC lineage) — NOT PINNABLE: no sr_vk.h",
     "date": "2026-08-19",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/sr-sdk-v2-1.37.0.1479",
     "prerelease": false,
@@ -105,25 +170,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.9",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.9",
-    "title": "DisplayXR Browser 0.1.9 — scroll-sync + navigation-ghost fixes",
-    "date": "2026-08-18",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.9",
-    "prerelease": false,
-    "featureLines": [
-      "**The scroll-sync rect shift is fixed** (#83, first release to ship it). On 0.1.5–0.1.8, ANY page scroll permanently shifted all weave/exclusion metadata rects by the full scroll offset (the shift baseline never reset in this compositor …",
-      "**The back-navigation ghost is fixed** (#87, two halves):",
-      "The GPU draw-back of the woven texture is now gated on a weave submit having succeeded **this frame**. Previously, a frame with registered rects but no successful submit (exactly the first frames after Back) blitted the *previous page's*…",
-      "Inline-3D rect state (rects, exclusions, scroll base) is now cleared on session shutdown **and** on navigation commit. Previously nothing cleared it: the setter's only caller was a live session's per-frame report, so the state survived s…",
-      "Also in this release's issue sweep: #88 (browser popups — omnibox/autofill — read ghosted under a live 3D panel; structural, tracked for the per-region display-mode work) and #90 (3D demand not retracted on navigation) are filed; #30/#31…",
-      "**Chromium 151.0.7922.77** — pin unchanged from 0.1.8.",
-      "Companion SDK changes landed on `displayxr-web` main (unreleased 1.1.0): bfcache/pagehide lifecycle handling, a stalled-frame watchdog after bfcache restore, a loud warning on concurrent sessions (they clobber the shared rect channel), R…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-earthview@v0.7.1",
@@ -221,17 +267,6 @@
       "**The in-tab preview is now the default and only editor preview** — `r.DisplayXR.EditorNativePIE` defaults to `1` (set `0` for no editor preview at all). On a runtime without `XR_DXR_display_zones` the module warns once at Play and the e…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.2.1",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.2.1",
-    "title": "v2.2.1",
-    "date": "2026-08-14",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.2.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-mcp@v0.5.3",
@@ -383,23 +418,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.2.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.2.0",
-    "title": "v2.2.0",
-    "date": "2026-08-13",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.2.0",
-    "prerelease": false,
-    "featureLines": [
-      "This release adds **SR v2 C99 API support across all four Windows arms (D3D11, D3D12, OpenGL, Vulkan) with automatic v1 fallback** — one plug-in binary now runs against SR Platform 1.34.12, 1.36.x, and 1.37.x, selecting the newest API th…",
-      "SR v2 C99 API migration for all four Windows arms (D3D11, D3D12, GL, VK), additive and capability-gated with automatic v1 fallback; `DXR_LEIA_SR_API=v1|v2|auto` override (#140)",
-      "Vulkan arm re-ported to the `srCreateWeaverVulkan` spelling; phase snapping now uses `srWeaverSnapToPhase` on the v2 path (#625 — the probe workaround is retired on v2, kept on v1); late latching driven where the SDK wires it (VK submit …",
-      "WGC background-capture delivery cap (`LEIA_DP_CAPTURE_MIN_INTERVAL_MS`, default 66 ms) (#139)",
-      "Runtime pin bumped v2.4.1 → v2.6.0 to fill the `weave_submitted` slot (#142)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-shell-releases@v2.1.0",
@@ -601,17 +619,6 @@
     "title": "DisplayXR Unity Samples v2.1.1",
     "date": "2026-08-02",
     "url": "https://github.com/DisplayXR/displayxr-unity-samples/releases/tag/v2.1.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unity@v2.10.1",
-    "repo": "displayxr-unity",
-    "tag": "v2.10.1",
-    "title": "DisplayXR v2.10.1",
-    "date": "2026-08-02",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.10.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
