@@ -1,5 +1,9 @@
 [
   {
+    "name": "XR_DXR_android_surface_binding",
+    "group": "display"
+  },
+  {
     "name": "XR_DXR_atlas_capture",
     "group": "display"
   },

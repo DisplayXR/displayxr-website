@@ -1,5 +1,35 @@
 [
   {
+    "id": "displayxr-browser@preview-0.1.12",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.12",
+    "title": "DisplayXR Browser 0.1.12 — the lens follows the page",
+    "date": "2026-08-20",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.12",
+    "prerelease": false,
+    "featureLines": [
+      "**Phase 3 of the inline-3D architecture redesign** (patches 0066-0069): the physical lens element now follows page geometry, and the 3D demand lifecycle survives navigation.",
+      "**Navigation drops the lens** (#90). Leaving an inline-3D page — including Back/forward through the bfcache — now re-evaluates the display wish immediately, so a 2D page after a 3D page is crisp within the debounce instead of staying len…",
+      "**Per-region hardware wish** (weave spec v8, runtime v2.8.0+). The flat regions the draw-order compositor already computes — page chrome over tiles, frosted panels — are now reported to the display so capable panels switch those regions …",
+      "**Frosted glass stays crisp** (#23). A `backdrop-filter` element over a woven tile keeps its page-drawn glass instead of being overwritten by the weave; the depth behind it reads flat — the honest compromise, correct on every panel tier.",
+      "**Browser-UI popups stop ghosting** (#88). The omnibox dropdown, autofill popups and menus — separate windows the compositor can never see — are latched as sticky flat regions with the display, enumerated by the same owner relation Windo…",
+      "All wish features require **runtime v2.8.0** (weave spec v8) and are inert-by-construction on older runtimes.",
+      "**Chromium 151.0.7922.77** — pin unchanged."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.8.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.8.0",
+    "title": "v2.8.0",
+    "date": "2026-08-20",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.8.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.10",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.10",
@@ -17,6 +47,33 @@
       "**Chromium 151.0.7922.77** — pin unchanged."
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-browser@preview-0.1.11",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.11",
+    "title": "DisplayXR Browser 0.1.11 — occlusion by draw order",
+    "date": "2026-08-19",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.11",
+    "prerelease": false,
+    "featureLines": [
+      "**Any 2D content over woven 3D tiles now composites correctly, per-pixel, automatically** (patches 0063-0065, Phase 2 of the inline-3D architecture redesign). The compositor splits the page at each tile's paint position: content painted …",
+      "The entire exclusion machinery is retired (-1,815 lines): the overlay atlas, the geometric overlay matching, the `data-inline3d-overlay` requirement. `XRDisplayLayer.excludeElement()` remains API-compatible as a deprecated no-op, and pag…",
+      "Still woven (unliftable by design, warned in `--v=1` logs): backdrop-filter elements and other render-pass content over tiles, non-normal blend modes, 3D-transformed contexts, protected video. A kill switch (`--disable-inline-3d-occlusio…",
+      "**Chromium 151.0.7922.77** — pin unchanged."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-leia-plugin@sr-sdk-v2-1.37.0.1479",
+    "repo": "displayxr-leia-plugin",
+    "tag": "sr-sdk-v2-1.37.0.1479",
+    "title": "SR v2 C99 SDK 1.37.0+1479 (win64, RC lineage) — NOT PINNABLE: no sr_vk.h",
+    "date": "2026-08-19",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/sr-sdk-v2-1.37.0.1479",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-runtime@v2.7.2",
@@ -37,6 +94,17 @@
       "feat(android): window-origin contract — DP `set_window_screen_rect` + Choreographer poll (#1033)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.12.1",
+    "repo": "displayxr-unity",
+    "tag": "v2.12.1",
+    "title": "DisplayXR v2.12.1",
+    "date": "2026-08-19",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.12.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@preview-0.1.9",
@@ -136,22 +204,6 @@
       "leaving an empty log behind. The runtime is now pinned to the major we test, and",
       "a wedged voice process says so (in the log, and as a toast) instead of failing",
       "invisibly. Voice reaches `[realtime] session ready` and push-to-talk arms."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.6.3",
-    "repo": "displayxr-runtime",
-    "tag": "v2.6.3",
-    "title": "DisplayXR Runtime v2.6.3",
-    "date": "2026-08-15",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.6.3",
-    "prerelease": false,
-    "featureLines": [
-      "Workspace-stability release — three more slices of the [#925](https://github.com/DisplayXR/displayxr-runtime/issues/925) epic land in the D3D11 service compositor. Workspace-control calls (focus, move, resize, close) now go through a **c…",
-      "No API or ABI changes — a drop-in update for existing apps and plug-ins.",
-      "**`feat(d3d11_service)`**: workspace-control command queue (#925 S3) — focus/move/resize/close requests are enqueued and drained on the render thread, so a workspace controller can never block or re-enter the compositor mid-frame.",
-      "**`feat(d3d11_service)`**: idle-client eviction, opt-in (#925 S4 tier 2) — a client that stops submitting for longer than `DXR_EVICT_IDLE_MS` is evicted from the render set rather than stalling the composite. Off by default; set the env …"
     ],
     "looksMechanical": false
   },
@@ -333,17 +385,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-leia-plugin@sr-sdk-v2-1.37.0.1450",
-    "repo": "displayxr-leia-plugin",
-    "tag": "sr-sdk-v2-1.37.0.1450",
-    "title": "SR v2 C99 SDK 1.37.0+1450 (win64, landing set)",
-    "date": "2026-08-13",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/sr-sdk-v2-1.37.0.1450",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-leia-plugin@v2.2.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.2.0",
@@ -445,21 +486,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-browser@preview-0.1.8",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.8",
-    "title": "DisplayXR Browser 0.1.8 — Chromium 151, clipped-tile fix",
-    "date": "2026-08-09",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.8",
-    "prerelease": false,
-    "featureLines": [
-      "**The clipped-tile \"tail\" is fixed** (#73). Scrolling 3D content against the top or bottom of the viewport smeared a vertical tail off the clipped edge — a single boundary row replicated for exactly the clipped height. Root cause, measur…",
-      "**Chromium 151.0.7922.77** (from .76) — the current stable patch level. The upstream delta is a single file (`chrome/VERSION`), so the weave-gate auto-passed: every weave-bearing file in this build is byte-identical to code hardware-vali…",
-      "Also plumbs each tracked quad's texture coordinates and visible rect through the compositor to the weave stage, replacing an implicit full-image assumption — validated against scaled (0.5×) video resources."
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-unity@v2.12.0",
     "repo": "displayxr-unity",
     "tag": "v2.12.0",
@@ -517,22 +543,6 @@
       "**`Auto` (the new default behaviour at runtime) points the runtime at whichever adapter Unity actually landed on**, using the same dedicated-VRAM classification the runtime uses for its `igpu`/`dgpu` keywords. On the ordinary discrete pa…",
       "This closes the mismatch class behind #240 at the source: previously the plugin pinned Unity to the dGPU while the runtime independently suggested the dGPU, and any deviation (a panel driven by the iGPU, a manually-set GpuPreference, Uni…",
       "**`DisplayXRLocal2D.maxRefreshHz`** (#244, PR #245) — optional cap on how often the Local2D overlay canvas re-renders. The component leaves its offscreen orthographic camera enabled, so the canvas re-rendered **every frame regardless of …"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.7",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.7",
-    "title": "DisplayXR Browser 0.1.7 — Chromium 151",
-    "date": "2026-08-06",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.7",
-    "prerelease": false,
-    "featureLines": [
-      "**Chromium 151.0.7922.76** (from 150.0.7871.129) — a full milestone bump plus the current stable patch level.",
-      "The inline-3D patch series needed four rebases for the milestone, each because upstream moved code our patches anchor on:",
-      "**Installer now checks the runtime VERSION, not just its presence** (#68). Previously any installed runtime satisfied the prerequisite check, so a user on v2.2.2 could install a browser whose headline fix was a silent no-op and be told e…",
-      "**Browser zoom preserves the 3D effect** — Ctrl +/− rescales the page and the weave tracks the element through the device-pixel-ratio change."
     ],
     "looksMechanical": false
   },
@@ -647,19 +657,6 @@
     "prerelease": false,
     "featureLines": [
       "Portable code-signing for the packaged `Binaries/Win64` DLLs via a provider-runner `sign-artifact` workflow (`DXR_SIGN_REPO`), replacing the local-cert-only path. Signing stays capability-gated — an unset env yields an unsigned ZIP rathe…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.10.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.10.0",
-    "title": "DisplayXR v2.10.0",
-    "date": "2026-07-30",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.10.0",
-    "prerelease": false,
-    "featureLines": [
-      "`DisplayXRProvider.SetZoneFeather(index, featherPx)` (#238) — per-zone cosmetic edge-feather radius in client-window pixels, chained as `XrDisplayZoneFeatherDXR` on the zone at submit (display-zones spec v3, runtime#800/#803). Zone edges…"
     ],
     "looksMechanical": false
   },
