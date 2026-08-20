@@ -70,9 +70,31 @@
     "id": "displayxr-leia-plugin@sr-sdk-v2-1.37.0.1490",
     "repo": "displayxr-leia-plugin",
     "tag": "sr-sdk-v2-1.37.0.1490",
-    "title": "SR v2 C99 SDK 1.37.0+1490 (win64) — converged, pinned release SDK",
+    "title": "[SUPERSEDED by 1494] SR v2 C99 SDK 1.37.0+1490 (win64) — converged",
     "date": "2026-08-20",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/sr-sdk-v2-1.37.0.1490",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@sr-sdk-v2-1.37.0.1494",
+    "repo": "displayxr-leia-plugin",
+    "tag": "sr-sdk-v2-1.37.0.1494",
+    "title": "SR v2 C99 SDK 1.37.0+1494 (win64) — pinned release SDK, matches the 1494 runtime",
+    "date": "2026-08-20",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/sr-sdk-v2-1.37.0.1494",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.4.0",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.4.0",
+    "title": "v2.4.0",
+    "date": "2026-08-20",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.4.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -130,17 +152,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-leia-plugin@sr-sdk-v2-1.37.0.1479",
-    "repo": "displayxr-leia-plugin",
-    "tag": "sr-sdk-v2-1.37.0.1479",
-    "title": "[SUPERSEDED by 1490] SR v2 C99 SDK 1.37.0+1479 (win64, RC lineage) — NOT PINNABLE: no sr_vk.h",
-    "date": "2026-08-19",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/sr-sdk-v2-1.37.0.1479",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-runtime@v2.7.2",
     "repo": "displayxr-runtime",
     "tag": "v2.7.2",
@@ -192,22 +203,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.3.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.3.0",
-    "title": "v2.3.0",
-    "date": "2026-08-18",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.3.0",
-    "prerelease": false,
-    "featureLines": [
-      "The display processor can now re-bind its live weaver to a different window. Paired with `displayxr-runtime` v2.7.0's new `set_window` display-processor slot, switching focus between apps no longer destroys and recreates the SR weaver — …",
-      "The re-bind carries everything derived from the bound window along with it: the WGC background capture is re-created against the new window, so compose-under transparency keeps its correct monitor, its window-on-monitor rect for the back…",
-      "**`set_window` on the D3D11 display processor (vtable slot 20)** — re-binds a live weaver in place on both SR SDK API families (v1 `SR::IWeaverBase1::setWindowHandle`, v2 `srWeaverSetWindowHandle`), guarded, DPI-aware, and safe against a…",
-      "**Runtime pin moved to v2.7.0** so the slot-20 path is actually compiled in — it is guarded on `XRT_DP_D3D11_HAS_SET_WINDOW`, a macro that only exists in runtime headers from v2.7.0 onward. Both pin sites (`CMakeLists.txt` `DXR_RUNTIME_G…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.7.0",
