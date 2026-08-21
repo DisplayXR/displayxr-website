@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-avatar@v0.11.0",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.11.0",
+    "title": "v0.11.0",
+    "date": "2026-08-21",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.22.0",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.22.0",
@@ -556,23 +567,6 @@
       "**`Auto` (the new default behaviour at runtime) points the runtime at whichever adapter Unity actually landed on**, using the same dedicated-VRAM classification the runtime uses for its `igpu`/`dgpu` keywords. On the ordinary discrete pa…",
       "This closes the mismatch class behind #240 at the source: previously the plugin pinned Unity to the dGPU while the runtime independently suggested the dGPU, and any deviation (a panel driven by the iGPU, a manually-set GpuPreference, Uni…",
       "**`DisplayXRLocal2D.maxRefreshHz`** (#244, PR #245) — optional cap on how often the Local2D overlay canvas re-renders. The component leaves its offscreen orthographic camera enabled, so the canvas re-rendered **every frame regardless of …"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.10.0",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.10.0",
-    "title": "v0.10.0",
-    "date": "2026-08-03",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.10.0",
-    "prerelease": false,
-    "featureLines": [
-      "A large iGPU performance pass: the avatar now holds 60 fps on integrated",
-      "graphics, up from 41, by caching the static bubble and pipelining the",
-      "silhouette readback. The Vulkan session also moves to",
-      "`XR_KHR_vulkan_enable2`, picking up the runtime's late-weave pacing.",
-      "Migrate the Windows VK OpenXR session to `XR_KHR_vulkan_enable2` (#55)"
     ],
     "looksMechanical": false
   },
