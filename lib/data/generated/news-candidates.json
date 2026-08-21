@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-gaussiansplat@v1.22.0",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.22.0",
+    "title": "v1.22.0",
+    "date": "2026-08-21",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.22.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.12",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.12",
@@ -526,17 +537,6 @@
       "**Not verified on hardware.** This lands the build and the shipping path; whether Unity's `vk::Image::CreateImageViews` crash (#248 defect 2) reproduces on a Linux player is the open question, and answering it either way strengthens the …"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.20.0",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.20.0",
-    "title": "v1.20.0",
-    "date": "2026-08-08",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.20.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.7.0",
