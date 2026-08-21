@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-modelviewer@v0.24.0",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.24.0",
+    "title": "v0.24.0",
+    "date": "2026-08-21",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.24.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.12",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.12",
@@ -334,26 +345,6 @@
     "featureLines": [
       "Transparent mode (Ctrl+T) now keeps the window floating above other apps, matching the avatar demo.",
       "Keep the window topmost while transparent (Ctrl+T) (#86)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.21.1",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.21.1",
-    "title": "v0.21.1",
-    "date": "2026-08-13",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.21.1",
-    "prerelease": false,
-    "featureLines": [
-      "Materials now render correctly. Every surface normal in the viewer was being",
-      "flipped, so all shading was evaluated as if you were looking at the model edge-on",
-      "at perfect grazing incidence — which made materials read as mirrors of the",
-      "environment rather than as themselves. Metals, coated surfaces, and fabrics were",
-      "the most visibly wrong: the material grid's gold row rendered blue and its",
-      "clearcoat row rendered black instead of red.",
-      "With this release, view-dependent shading — Fresnel falloff, specular highlights,",
-      "clearcoat, sheen — responds to the actual viewing angle again. This affects"
     ],
     "looksMechanical": false
   },
