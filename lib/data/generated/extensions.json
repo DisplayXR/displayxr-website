@@ -32,6 +32,10 @@
     "group": "display"
   },
   {
+    "name": "XR_DXR_result_codes",
+    "group": "display"
+  },
+  {
     "name": "XR_DXR_spatial_workspace",
     "group": "workspace"
   },

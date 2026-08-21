@@ -96,8 +96,17 @@
     "date": "2026-08-20",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.4.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**The plug-in now survives an SR platform restart — no DisplayXR restart needed.**",
+      "When the LeiaSR platform restarts or is upgraded underneath a long-lived",
+      "`displayxr-service.exe` (installing a new LeiaSR runtime, for instance), every",
+      "IPC/service-path app used to weave **untracked** until someone manually",
+      "restarted the DisplayXR service — and it failed *silently*, because the SR SDK",
+      "keeps returning a success code and a frozen-but-plausible eye pair that no",
+      "`is_tracking` heuristic can tell apart from a viewer holding still.",
+      "This release makes the plug-in detect that itself and rebuild its SRContext +"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.8.0",
