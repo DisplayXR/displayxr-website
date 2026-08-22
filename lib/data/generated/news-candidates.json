@@ -7,8 +7,17 @@
     "date": "2026-08-21",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Leo now frames himself properly in his 3D zone. Two things changed: the fit considers **width as well as height**, so a character with outstretched arms no longer clips at the zone edges in the portrait window; and the size is taken from…",
+      "Android also becomes a first-class in-process app this release, with a working click-through overlay.",
+      "Width-aware auto-fit against the 3D zone, via the shared `dxr::AutoFitVHeight` rule in displayxr-common v2.7.0 (#72): the avatar spans at most 80% of the zone in both axes. The viewport is the zone rect (the bottom fraction of the window…",
+      "Fit sized from the **active clip's** swept bounds, with an all-clips bounds sweep at load providing the safety envelope (#73). The vertical placement is clamped so the union floor — the feet of whichever clip dips lowest — stays in frame…",
+      "Active-clip fit and union-floor clamp extended to the macOS, Linux, and Android legs (#74).",
+      "Android: converted to a first-class in-process (Architecture A) app.",
+      "Android: click-through via a touchable tight overlay window (#66), with the input punch-through machinery inert on stock Android 13.",
+      "Android: the overlay box aspect is a runtime knob (`debug.dxr.avatar.overlay.aspect`)."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.22.0",
@@ -18,8 +27,12 @@
     "date": "2026-08-21",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.22.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Splat scenes now frame themselves to the window in **both** dimensions. The load-time auto-fit only ever considered the scene's height, so a wide scene in a narrow or portrait window ran off the sides; it now sizes so the scene spans at …",
+      "Width-aware load-time auto-fit, via the shared `dxr::AutoFitVHeight` rule in displayxr-common v2.7.0 (#89). The virtual display height becomes `max(H, W / viewportAspect) / 0.8`, so a wide scene is width-bound instead of overflowing. The…",
+      "Android fits against the real panel aspect, reconstructed from the per-view rect and the view count (#89) — a 2-view mode's per-view rect is half the panel's aspect, which would otherwise over-constrain the width rule by up to 2x."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.24.0",
@@ -29,8 +42,13 @@
     "date": "2026-08-21",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.24.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Models now frame themselves to the window in **both** dimensions. The load-time auto-fit only ever considered the model's height, so a wide model in a narrow or portrait window ran off the sides; it now sizes so the model spans at most 8…",
+      "Width-aware load-time auto-fit, via the shared `dxr::AutoFitVHeight` rule in displayxr-common v2.7.0 (#96). The virtual display height becomes `max(H, W / viewportAspect) / 0.8`, replacing the old fixed 1.4x vertical comfort factor — the…",
+      "Applied on all four platform legs (Windows, macOS, Linux, Android). Each fits against its own live viewport; Android derives the panel aspect from the active rendering mode's tile grid when no frame has landed yet.",
+      "The fit log now reports both extents, the viewport and its aspect, and which axis bound the fit."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.12",
