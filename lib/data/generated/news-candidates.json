@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.9.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.9.0",
+    "title": "v2.9.0",
+    "date": "2026-08-23",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.9.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.15",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.15",
@@ -258,19 +269,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.7.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.7.0",
-    "title": "DisplayXR Runtime v2.7.0",
-    "date": "2026-08-18",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.7.0",
-    "prerelease": false,
-    "featureLines": [
-      "One compositor pipeline and Windows-native app switching. The service now runs a single always-on multi-compositor with **one display processor per panel** — N concurrent IPC apps no longer mean N weavers fighting over the lens — and eve…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.7.1",
