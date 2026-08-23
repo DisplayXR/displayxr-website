@@ -1,14 +1,34 @@
 [
   {
-    "id": "displayxr-runtime@v2.9.0",
+    "id": "displayxr-runtime@v2.10.0",
     "repo": "displayxr-runtime",
-    "tag": "v2.9.0",
-    "title": "v2.9.0",
+    "tag": "v2.10.0",
+    "title": "v2.10.0",
     "date": "2026-08-23",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.9.0",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.10.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.9.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.9.0",
+    "title": "DisplayXR Runtime v2.9.0",
+    "date": "2026-08-23",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.9.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Weave-on-scanout is now the default on hybrid-GPU machines.** The runtime renders on the most capable adapter and weaves/presents on the adapter that actually drives the 3D panel. On a laptop whose panel hangs off the integrated GPU th…",
+      "Adapter placement is no longer hardcoded to \"high performance\": every selection site now resolves by capability through the ADR-037 resolver. The in-process D3D12 path (Unity/Unreal) gained the same split, and OpenGL sessions place their…",
+      "`DXR_WEAVE_ON_SCANOUT=0` disables the split. Paths that cannot use it — Vulkan, OpenGL, self-presenting clients, and D3D12 frames carrying display zones — fall back automatically and log the reason.",
+      "Also in this release: a hybrid single-APK Android runtime (in-process by default, IPC on demand) with compose-under background transparency, the perf-decomposition ladder harness (#1113), and OEM-facing Android platform requirements for …",
+      "feat(comp_split_gate): name the weave-DEVICE choice for an ineligible client",
+      "feat(918): Vulkan and OpenGL state their rung-2 placement instead of staying silent",
+      "feat(918): auto-engage the split on the three paths that implement it",
+      "feat(918): the output-device split is requested by default (ADR-037 §1)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.15",
@@ -269,19 +289,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.7.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.7.1",
-    "title": "DisplayXR Runtime v2.7.1",
-    "date": "2026-08-18",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.7.1",
-    "prerelease": false,
-    "featureLines": [
-      "Fixes a defect introduced in v2.7.0 that could freeze an app: a transparent or display-zones app running over IPC without the spatial workspace could wedge its own frame thread after its first frame. Vulkan apps of that kind also had nob…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-shell-releases@v2.2.0",
