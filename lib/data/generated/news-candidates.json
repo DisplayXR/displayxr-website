@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-browser@preview-0.1.15",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.15",
+    "title": "0.1.15 — edge-correct weaving, self-healing reconnect, no more woven chrome",
+    "date": "2026-08-22",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.15",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@sr-sdk-v2-1.37.0.1502",
+    "repo": "displayxr-leia-plugin",
+    "tag": "sr-sdk-v2-1.37.0.1502",
+    "title": "SR v2 C99 SDK 1.37.0+1502 (win64) — pinned release SDK, first LeiaSR-SDK-* named artifact",
+    "date": "2026-08-22",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/sr-sdk-v2-1.37.0.1502",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-avatar@v0.11.0",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.11.0",
@@ -107,17 +129,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-leia-plugin@sr-sdk-v2-1.37.0.1483",
-    "repo": "displayxr-leia-plugin",
-    "tag": "sr-sdk-v2-1.37.0.1483",
-    "title": "[SUPERSEDED by 1490] SR v2 C99 SDK 1.37.0+1483 (win64, RC lineage — complete: Vulkan + connection-state)",
-    "date": "2026-08-20",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/sr-sdk-v2-1.37.0.1483",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-leia-plugin@sr-sdk-v2-1.37.0.1490",
     "repo": "displayxr-leia-plugin",
     "tag": "sr-sdk-v2-1.37.0.1490",
@@ -192,22 +203,6 @@
       "**The gate is \"XR is not going to run\", not \"is not running right now.\"** `DisplayXRDisplayLoader.SubsystemRunning == false` alone would be wrong — the editor's dock/undock auto-switch restarts the subsystem mid-Play and would drag the c…",
       "**`DisplayXRCamera` (camera-centric) needs nothing** — its transform is already a viewer position and its FOV is the camera's own, so the authored viewpoint renders unchanged; and the convergence drops itself. `invConvergenceDistance` le…",
       "**`DisplayXRRuntime` — a pre-session availability API** (#257). `DisplayXRRuntime.IsInstalled` / `DisplayXRRuntime.ResolvedManifestPath` answer \"can this machine run DisplayXR at all?\" with no OpenXR instance, no session and no native su…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.11",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.11",
-    "title": "DisplayXR Browser 0.1.11 — occlusion by draw order",
-    "date": "2026-08-19",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.11",
-    "prerelease": false,
-    "featureLines": [
-      "**Any 2D content over woven 3D tiles now composites correctly, per-pixel, automatically** (patches 0063-0065, Phase 2 of the inline-3D architecture redesign). The compositor splits the page at each tile's paint position: content painted …",
-      "The entire exclusion machinery is retired (-1,815 lines): the overlay atlas, the geometric overlay matching, the `data-inline3d-overlay` requirement. `XRDisplayLayer.excludeElement()` remains API-compatible as a deprecated no-op, and pag…",
-      "Still woven (unliftable by design, warned in `--v=1` logs): backdrop-filter elements and other render-pass content over tiles, non-normal blend modes, 3D-transformed contexts, protected video. A kill switch (`--disable-inline-3d-occlusio…",
-      "**Chromium 151.0.7922.77** — pin unchanged."
     ],
     "looksMechanical": false
   },
