@@ -14,10 +14,21 @@
     "id": "displayxr-browser@preview-0.1.18",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.18",
-    "title": "DisplayXR Browser Preview (151.0.7922.174)",
+    "title": "0.1.18 — Chromium 151.0.7922.174 security rebase",
     "date": "2026-08-24",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.18",
     "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.5.0",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.5.0",
+    "title": "v2.5.0",
+    "date": "2026-08-24",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.5.0",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -155,17 +166,6 @@
       "The fit log now reports both extents, the viewport and its aspect, and which axis bound the fit."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@sr-sdk-v2-1.37.0.1490",
-    "repo": "displayxr-leia-plugin",
-    "tag": "sr-sdk-v2-1.37.0.1490",
-    "title": "[SUPERSEDED by 1494] SR v2 C99 SDK 1.37.0+1490 (win64) — converged",
-    "date": "2026-08-20",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/sr-sdk-v2-1.37.0.1490",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-leia-plugin@sr-sdk-v2-1.37.0.1494",
