@@ -22,6 +22,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-earthview@v0.7.2",
+    "repo": "displayxr-demo-earthview",
+    "tag": "v0.7.2",
+    "title": "v0.7.2",
+    "date": "2026-08-24",
+    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.22.1",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.22.1",
@@ -673,20 +684,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-earthview@v0.6.3",
-    "repo": "displayxr-demo-earthview",
-    "tag": "v0.6.3",
-    "title": "v0.6.3",
-    "date": "2026-07-26",
-    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.6.3",
-    "prerelease": false,
-    "featureLines": [
-      "**First Linux release:** EarthView is now a windowed handle app on Linux (X11 window + `XR_DXR_xlib_window_binding`), HW-validated weaving Google 3D Tiles on a Leia panel. Ships as `displayxr-earthview_0.6.3_amd64.deb`.",
-      "The Windows installer is code-signed."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unity-samples@v2.0.2",
