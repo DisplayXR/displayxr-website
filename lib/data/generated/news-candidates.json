@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-browser@preview-0.1.18",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.18",
+    "title": "DisplayXR Browser Preview (151.0.7922.174)",
+    "date": "2026-08-24",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.18",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.11.0",
     "repo": "displayxr-runtime",
     "tag": "v2.11.0",
@@ -142,26 +153,6 @@
       "Width-aware load-time auto-fit, via the shared `dxr::AutoFitVHeight` rule in displayxr-common v2.7.0 (#96). The virtual display height becomes `max(H, W / viewportAspect) / 0.8`, replacing the old fixed 1.4x vertical comfort factor — the…",
       "Applied on all four platform legs (Windows, macOS, Linux, Android). Each fits against its own live viewport; Android derives the panel aspect from the active rendering mode's tile grid when no frame has landed yet.",
       "The fit log now reports both extents, the viewport and its aspect, and which axis bound the fit."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.14",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.14",
-    "title": "DisplayXR Browser 0.1.14 — the dark-tile quartet, closed",
-    "date": "2026-08-20",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.14",
-    "prerelease": false,
-    "featureLines": [
-      "The intermittent dark/blinking scene tiles under GPU load (glTF and gaussian-splat viewers, worst on heavy content — displayxr-web#12) are **fixed**, hardware-confirmed on real Leia hardware under deliberate load. The bug was five stacke…",
-      "**A missed weave frame shows the tile as mono, never black** (#99): per-tile recovery draw with a proper flush bracket.",
-      "**A browser that loses the service-startup race recovers by itself** (#92): transient init failures retry pre-sandbox, and a degraded session re-negotiates on a backoff and swaps to full capability in place. Diagnostic tag `[DisplayXR][w…",
-      "**One invalid head-pose sample can no longer flip a frame to mono** (displayxr-web#12): the last-good stereo views are latched (~0.5 s grace), and the scene-layer scope survives lazy scroll churn.",
-      "**The weave never samples its own suppression hole** (the root asymmetry): canvas quads are only withheld from the page when their resource actually resolved for the weave; a tile without a clean resource stays visible as 2D that frame.",
-      "**A contended canvas read keeps last frame's stereo pixels** (the per-frame trigger): the zero-copy open retries once, the CPU fallback reads the clean canvas rather than the output, and a still-contended tile re-weaves its previous cont…",
-      "Pairs with **SDK 1.1.1** (validate-before-clear + replay in the shared viewer — protects even hand-rolled render loops on older browsers).",
-      "**Chromium 151.0.7922.77** — pin unchanged."
     ],
     "looksMechanical": false
   },
