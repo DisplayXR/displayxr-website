@@ -250,10 +250,11 @@ export default function DemosPage() {
               href="/webxr"
               className="text-accent hover:text-accent-hover underline underline-offset-2"
             >
-              WebXR Bridge
+              WebXR page
             </a>{" "}
-            runs WebXR apps on 3D displays — display geometry, rendering modes,
-            and tracked eyes from JavaScript, with a three.js reference sample.
+            covers both routes: standard WebXR runs on the runtime unmodified,
+            and inline 3D in the DisplayXR Browser is the path for pages authored
+            for a 3D display.
           </p>
         </div>
 
