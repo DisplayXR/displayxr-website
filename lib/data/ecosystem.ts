@@ -137,7 +137,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-cef-host",
     repo: "DisplayXR/displayxr-cef-host",
     description:
-      "The original proof that XR_DXR_weave works — not a browser to use, which is DisplayXR Browser. A small CEF (Chromium Embedded Framework) offscreen-render app that hands the runtime a stereo texture and a window rect and composites the weaved result; it never weaves itself. Kept as the smallest worked example of driving the weave from your own present-owner without forking Chromium, and because it builds in minutes where the browser fork takes hours. Note that it is pinned to weave spec v1 while the runtime is on v6, so it does not exercise batched submit, the 2D overlay atlas, or N-view input — treat it as a starting point to read, not a current conformance harness.",
+      "The original proof that XR_DXR_weave works — not a browser to use, which is DisplayXR Browser. A small CEF (Chromium Embedded Framework) offscreen-render app that hands the runtime a stereo texture and a window rect and composites the weaved result; it never weaves itself. Kept as the smallest worked example of driving the weave from your own present-owner without forking Chromium, and because it builds in minutes where the browser fork takes hours. Note that it is pinned to weave spec v1 while the runtime is on v9, so it does not exercise batched submit, the 2D overlay atlas, N-view input, the Android handle kinds, or IPC brokering — treat it as a starting point to read, not a current conformance harness.",
     url: "https://github.com/DisplayXR/displayxr-cef-host",
     category: "tools",
     status: "experimental",
@@ -146,10 +146,10 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-browser",
     repo: "DisplayXR/displayxr-browser",
     description:
-      "DisplayXR Browser — a developer-preview Chromium that renders the web normally and weaves glasses-free inline 3D on DisplayXR hardware. The productization of the inline-3D browser work validated by the CEF host, with a GPU-resident weave (no per-frame CPU readback).",
+      "DisplayXR Browser — a developer-preview Chromium that renders the web normally and weaves glasses-free inline 3D on DisplayXR hardware, on Windows and Android. The productization of the inline-3D browser work validated by the CEF host, with a GPU-resident weave (no per-frame CPU readback). Pinned in the org version matrix as `browser`, and installable via the dev orchestrator with `--with browser`; it is deliberately not in the all-in-one bundle, because it is rebased ~monthly onto Chrome stable and is not patched to Chrome's mid-cycle security cadence.",
     url: "https://github.com/DisplayXR/displayxr-browser",
     category: "apps",
-    status: "experimental",
+    status: "active",
   },
   {
     name: "displayxr-web",

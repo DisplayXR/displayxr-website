@@ -1,14 +1,30 @@
 [
   {
+    "id": "displayxr-browser@preview-0.1.16",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.16",
+    "title": "0.1.16 — overlapping 3D tiles, both in 3D",
+    "date": "2026-08-23",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.16",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.10.0",
     "repo": "displayxr-runtime",
     "tag": "v2.10.0",
-    "title": "v2.10.0",
+    "title": "DisplayXR Runtime v2.10.0",
     "date": "2026-08-23",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.10.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Unity and Unreal apps that use display zones now get weave-on-scanout.** v2.9.0 shipped the in-process D3D12 split for projection-only frames; a frame carrying display zones or a Local2D layer retired the split for the session, which m…",
+      "Verified on hardware: the reference Unity avatar no longer retires the split, and its Local2D band transports cleanly.",
+      "`feat(comp_d3d12)`: zones and Local2D composite on the scanout adapter (7bf9f6871)",
+      "`feat(comp_xbridge)`: the planes get D3D12 ends, the way the atlas already had them (ab7cc7783)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.9.0",
@@ -100,42 +116,6 @@
       "Width-aware load-time auto-fit, via the shared `dxr::AutoFitVHeight` rule in displayxr-common v2.7.0 (#96). The virtual display height becomes `max(H, W / viewportAspect) / 0.8`, replacing the old fixed 1.4x vertical comfort factor — the…",
       "Applied on all four platform legs (Windows, macOS, Linux, Android). Each fits against its own live viewport; Android derives the panel aspect from the active rendering mode's tile grid when no frame has landed yet.",
       "The fit log now reports both extents, the viewport and its aspect, and which axis bound the fit."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.12",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.12",
-    "title": "DisplayXR Browser 0.1.12 — the lens follows the page",
-    "date": "2026-08-20",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.12",
-    "prerelease": false,
-    "featureLines": [
-      "**Phase 3 of the inline-3D architecture redesign** (patches 0066-0069): the physical lens element now follows page geometry, and the 3D demand lifecycle survives navigation.",
-      "**Navigation drops the lens** (#90). Leaving an inline-3D page — including Back/forward through the bfcache — now re-evaluates the display wish immediately, so a 2D page after a 3D page is crisp within the debounce instead of staying len…",
-      "**Per-region hardware wish** (weave spec v8, runtime v2.8.0+). The flat regions the draw-order compositor already computes — page chrome over tiles, frosted panels — are now reported to the display so capable panels switch those regions …",
-      "**Frosted glass stays crisp** (#23). A `backdrop-filter` element over a woven tile keeps its page-drawn glass instead of being overwritten by the weave; the depth behind it reads flat — the honest compromise, correct on every panel tier.",
-      "**Browser-UI popups stop ghosting** (#88). The omnibox dropdown, autofill popups and menus — separate windows the compositor can never see — are latched as sticky flat regions with the display, enumerated by the same owner relation Windo…",
-      "All wish features require **runtime v2.8.0** (weave spec v8) and are inert-by-construction on older runtimes.",
-      "**Chromium 151.0.7922.77** — pin unchanged."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.13",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.13",
-    "title": "DisplayXR Browser 0.1.13 — degrade gracefully, recover automatically",
-    "date": "2026-08-20",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.13",
-    "prerelease": false,
-    "featureLines": [
-      "Two resilience fixes, both hardware-validated including a live service-kill test:",
-      "**A missed weave frame shows mono, never black** (#99). When a weave submission misses (GPU contention, service hiccup), the affected tiles now draw their content as flat mono 2D for that frame instead of leaving a black hole — the failu…",
-      "**A browser that launches during a service restart recovers by itself** (#92). Previously, losing the startup race left the browser permanently degraded (single-rect submits, mono scenes) until quit — the root cause behind several \"brows…",
-      "Known remaining gap, tracked in #103: a service death *under* a live session still requires a browser relaunch (tiles degrade to mono via #99's fix); the sandbox prevents in-place reconnection and a browser-process broker is the planned …",
-      "**Chromium 151.0.7922.77** — pin unchanged."
     ],
     "looksMechanical": false
   },
@@ -719,17 +699,6 @@
     "title": "DisplayXR Unity Samples v2.0.2",
     "date": "2026-07-24",
     "url": "https://github.com/DisplayXR/displayxr-unity-samples/releases/tag/v2.0.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-shell-releases@v2.0.5",
-    "repo": "displayxr-shell-releases",
-    "tag": "v2.0.5",
-    "title": "DisplayXR Shell v2.0.5",
-    "date": "2026-07-23",
-    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.0.5",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true

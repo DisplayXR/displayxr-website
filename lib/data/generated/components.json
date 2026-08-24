@@ -21,8 +21,8 @@
     "id": "leia_plugin",
     "name": "Leia SR Plug-in",
     "version": "v2.4.0",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/sr-sdk-v2-1.37.0.1502",
-    "releaseDate": "2026-08-22",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.4.0",
+    "releaseDate": "2026-08-20",
     "platforms": "Windows",
     "repoUrl": "https://github.com/DisplayXR/displayxr-leia-plugin"
   },
@@ -34,6 +34,15 @@
     "releaseDate": "2026-08-14",
     "platforms": "Windows · macOS",
     "repoUrl": "https://github.com/DisplayXR/displayxr-mcp"
+  },
+  {
+    "id": "browser",
+    "name": "DisplayXR Browser (Developer Preview)",
+    "version": "preview-0.1.16",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.16",
+    "releaseDate": "2026-08-23",
+    "platforms": "Windows · Android",
+    "repoUrl": "https://github.com/DisplayXR/displayxr-browser"
   },
   {
     "id": "installer",
