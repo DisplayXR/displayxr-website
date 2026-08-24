@@ -44,6 +44,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-gaussiansplat@v1.22.2",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.22.2",
+    "title": "v1.22.2",
+    "date": "2026-08-24",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.22.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@v1.8.1",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.8.1",
@@ -121,6 +132,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.12.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.12.1",
+    "title": "v2.12.1",
+    "date": "2026-08-24",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.12.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.16",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.16",
@@ -144,26 +166,6 @@
       "Verified on hardware: the reference Unity avatar no longer retires the split, and its Local2D band transports cleanly.",
       "`feat(comp_d3d12)`: zones and Local2D composite on the scanout adapter (7bf9f6871)",
       "`feat(comp_xbridge)`: the planes get D3D12 ends, the way the atlas already had them (ab7cc7783)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.9.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.9.0",
-    "title": "DisplayXR Runtime v2.9.0",
-    "date": "2026-08-23",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.9.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Weave-on-scanout is now the default on hybrid-GPU machines.** The runtime renders on the most capable adapter and weaves/presents on the adapter that actually drives the 3D panel. On a laptop whose panel hangs off the integrated GPU th…",
-      "Adapter placement is no longer hardcoded to \"high performance\": every selection site now resolves by capability through the ADR-037 resolver. The in-process D3D12 path (Unity/Unreal) gained the same split, and OpenGL sessions place their…",
-      "`DXR_WEAVE_ON_SCANOUT=0` disables the split. Paths that cannot use it — Vulkan, OpenGL, self-presenting clients, and D3D12 frames carrying display zones — fall back automatically and log the reason.",
-      "Also in this release: a hybrid single-APK Android runtime (in-process by default, IPC on demand) with compose-under background transparency, the perf-decomposition ladder harness (#1113), and OEM-facing Android platform requirements for …",
-      "feat(comp_split_gate): name the weave-DEVICE choice for an ineligible client",
-      "feat(918): Vulkan and OpenGL state their rung-2 placement instead of staying silent",
-      "feat(918): auto-engage the split on the three paths that implement it",
-      "feat(918): the output-device split is requested by default (ADR-037 §1)"
     ],
     "looksMechanical": false
   },
@@ -492,17 +494,6 @@
     "title": "DisplayXR Shell v2.1.1",
     "date": "2026-08-13",
     "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.1.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.20.2",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.20.2",
-    "title": "v1.20.2",
-    "date": "2026-08-12",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.20.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
