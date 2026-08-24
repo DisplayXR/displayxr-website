@@ -44,6 +44,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-modelviewer@v0.24.1",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.24.1",
+    "title": "v0.24.1",
+    "date": "2026-08-24",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.24.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.5.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.5.0",
@@ -382,25 +393,6 @@
     "featureLines": [
       "Transparent mode (Ctrl+T) now keeps the window floating above other apps, matching the avatar demo.",
       "Keep the window topmost while transparent (Ctrl+T) (#86)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.22.0",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.22.0",
-    "title": "v0.22.0",
-    "date": "2026-08-13",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.22.0",
-    "prerelease": false,
-    "featureLines": [
-      "Coated and varnished materials no longer show a hard dark band on their shadow side. The",
-      "clear-coat darkening is now computed with the right Fresnel form for each kind of light, so a",
-      "coated surface reads as a smooth wet-look gradient from its lit side into its unlit side instead",
-      "of falling off a cliff at the terminator.",
-      "`coatNormalTexture` is also supported now, so a coat can carry its own bump independently of the",
-      "surface beneath it — a smooth varnish over a rough or bumpy base stays smooth. That was the last",
-      "unimplemented property in the coat spec's table, so `KHR_materials_coat` is fully implemented."
     ],
     "looksMechanical": false
   },
