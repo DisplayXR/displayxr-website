@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.11.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.11.0",
+    "title": "v2.11.0",
+    "date": "2026-08-24",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.11.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.16",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.16",
@@ -120,6 +131,23 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-browser@preview-0.1.13",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.13",
+    "title": "DisplayXR Browser 0.1.13 — degrade gracefully, recover automatically",
+    "date": "2026-08-20",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.13",
+    "prerelease": false,
+    "featureLines": [
+      "Two resilience fixes, both hardware-validated including a live service-kill test:",
+      "**A missed weave frame shows mono, never black** (#99). When a weave submission misses (GPU contention, service hiccup), the affected tiles now draw their content as flat mono 2D for that frame instead of leaving a black hole — the failu…",
+      "**A browser that launches during a service restart recovers by itself** (#92). Previously, losing the startup race left the browser permanently degraded (single-rect submits, mono scenes) until quit — the root cause behind several \"brows…",
+      "Known remaining gap, tracked in #103: a service death *under* a live session still requires a browser relaunch (tiles degrade to mono via #99's fix); the sandbox prevents in-place reconnection and a browser-process broker is the planned …",
+      "**Chromium 151.0.7922.77** — pin unchanged."
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-browser@preview-0.1.14",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.14",
@@ -214,26 +242,6 @@
       "**The gate is \"XR is not going to run\", not \"is not running right now.\"** `DisplayXRDisplayLoader.SubsystemRunning == false` alone would be wrong — the editor's dock/undock auto-switch restarts the subsystem mid-Play and would drag the c…",
       "**`DisplayXRCamera` (camera-centric) needs nothing** — its transform is already a viewer position and its FOV is the camera's own, so the authored viewpoint renders unchanged; and the convergence drops itself. `invConvergenceDistance` le…",
       "**`DisplayXRRuntime` — a pre-session availability API** (#257). `DisplayXRRuntime.IsInstalled` / `DisplayXRRuntime.ResolvedManifestPath` answer \"can this machine run DisplayXR at all?\" with no OpenXR instance, no session and no native su…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.7.2",
-    "repo": "displayxr-runtime",
-    "tag": "v2.7.2",
-    "title": "DisplayXR Runtime v2.7.2",
-    "date": "2026-08-19",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.7.2",
-    "prerelease": false,
-    "featureLines": [
-      "Fixes scroll **trails** in inline-3D weave clients: the woven output is now cleared per frame on every submit path, so stale woven pixels can no longer persist across a scroll — or even across a page navigation — when a client falls into…",
-      "Android grows up alongside it: `XR_DXR_weave` now works on Android (spec v7, platform-neutral handle kinds + explicit window geometry), and concurrent multi-app arrives as per-window compositor instances backed by out-of-process satellit…",
-      "feat(XR_DXR_weave): spec v7 — platform-neutral handle kinds + explicit window geometry (#1036)",
-      "feat(comp_multi,ipc,oxr): `XR_DXR_weave` on Android — `comp_multi_weave_android.c` (#1036)",
-      "feat(android,ipc): satellite compositor slots + a main-process slot broker (#1053)",
-      "feat(android,ipc): a satellite dies with its client (#1053)",
-      "feat(android): per-window Kooima rebase for OOP satellites (#1034)",
-      "feat(android): window-origin contract — DP `set_window_screen_rect` + Choreographer poll (#1033)"
     ],
     "looksMechanical": false
   },
@@ -699,6 +707,17 @@
     "title": "DisplayXR Unity Samples v2.0.2",
     "date": "2026-07-24",
     "url": "https://github.com/DisplayXR/displayxr-unity-samples/releases/tag/v2.0.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-shell-releases@v2.0.5",
+    "repo": "displayxr-shell-releases",
+    "tag": "v2.0.5",
+    "title": "DisplayXR Shell v2.0.5",
+    "date": "2026-07-23",
+    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.0.5",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
