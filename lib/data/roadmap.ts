@@ -82,9 +82,9 @@ export const roadmapSections: RoadmapSection[] = [
           "Live spatial state and control exposed to AI agents over the Model Context Protocol — introspect stereo projection, capture frames, arrange windows in 6-DOF, save/load workspaces, all via natural language. Framework extracted to displayxr-mcp (May 2026) so the runtime, the reference shell, and any third-party workspace controller can embed the same agent surface",
       },
       {
-        title: "WebXR Bridge",
+        title: "WebXR Bridge (shipped, since retired)",
         description:
-          "Chrome extension plus local bridge giving browser WebXR apps the full DisplayXR surface — display info, rendering mode switching, tracked eye poses, HUD overlay, and input forwarding. Ships with a three.js reference sample and a standalone minimal starter; falls back gracefully to standard WebXR when the extension isn't installed",
+          "A Chrome extension plus a local bridge that gave WebXR pages the full DisplayXR surface — display info, rendering mode switching, tracked eye poses, HUD overlay, and input forwarding. Retired in runtime v2.11: it only ever helped pages explicitly written against session.displayXR, and that audience is better served by inline 3D in the DisplayXR Browser. Standard WebXR still runs on the runtime unaugmented",
       },
       {
         title: "Workspace controller surface",

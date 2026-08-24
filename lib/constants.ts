@@ -55,13 +55,6 @@ export const NAV: NavEntry[] = [
 
 export const DOWNLOAD_HREF = "/download";
 
-// WebXR Bridge lives in the runtime repo (webxr-bridge/). The Chrome extension
-// is NOT on the Web Store yet — set CHROME_STORE_URL when it's published and the
-// /webxr install CTA flips from "load unpacked" to a one-click store link.
-export const WEBXR_BRIDGE_URL =
-  "https://github.com/DisplayXR/displayxr-runtime/tree/main/webxr-bridge";
-export const CHROME_STORE_URL: string | null = null;
-
 export const REPO_URLS = {
   runtime: "https://github.com/DisplayXR/displayxr-runtime",
   installer: "https://github.com/DisplayXR/displayxr-installer",

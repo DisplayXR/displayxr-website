@@ -313,18 +313,6 @@ export default function ArchitecturePage() {
                 optional. See <em>Workspace Controllers</em> below.
               </span>
             </div>
-            <div className="flex items-start gap-3">
-              <span className="text-accent font-mono text-sm shrink-0 w-28">WebXR&nbsp;Bridge</span>
-              <span className="text-text-secondary text-sm">
-                Chrome extension plus a local bridge that gives WebXR pages the
-                full DisplayXR surface — display geometry, rendering mode
-                switching, tracked eye poses, HUD overlay, and input forwarding
-                — on top of Chrome&apos;s native WebXR session. Ships with a
-                three.js reference sample and a standalone minimal starter, and
-                falls back gracefully to standard WebXR when the extension
-                isn&apos;t installed.
-              </span>
-            </div>
           </div>
         </section>
 
@@ -431,8 +419,8 @@ export default function ArchitecturePage() {
           <p className="text-text-secondary leading-relaxed mb-4">
             The runtime is useful on its own. A bare install gives you a
             standards-compliant OpenXR + WebXR surface for a 3D display — full-screen
-            apps, simulation backend, native compositors, the WebXR bridge.
-            No spatial desktop, no windowing, no launcher.
+            apps, simulation backend, native compositors. No spatial desktop,
+            no windowing, no launcher.
           </p>
           <p className="text-text-secondary leading-relaxed mb-4">
             A <strong className="text-text-primary">workspace controller</strong>{" "}
