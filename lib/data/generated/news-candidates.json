@@ -1,14 +1,29 @@
 [
   {
+    "id": "displayxr-browser@preview-0.1.17",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.17",
+    "title": "0.1.17 — Android arrives",
+    "date": "2026-08-24",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.17",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.11.0",
     "repo": "displayxr-runtime",
     "tag": "v2.11.0",
-    "title": "v2.11.0",
+    "title": "DisplayXR Runtime v2.11.0",
     "date": "2026-08-24",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.11.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**The D3D12 ladder is complete: app-authored zone masks now weave on the scanout adapter.** v2.10.0 brought zones and Local2D across; this release brings the last layer kind, so every layer an in-process D3D12 app can submit now composit…",
+      "It also fixes a zone wish publish that was **inert on the split path** — the mask transported correctly and then reached nothing — plus two silent-drop cases in the same family. Both remaining fallbacks are now genuine failures rather th…",
+      "`feat(comp_d3d12)`: app-authored zone masks weave on the scanout adapter (ea1ec7251) — #918 D12-5. The Tier-3 authored mask crosses as `COMP_XBRIDGE_PLANE_MASK` by pointer (no NT share, no re-open drain), sized at the mask rather than th…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.16",
@@ -127,23 +142,6 @@
       "Width-aware load-time auto-fit, via the shared `dxr::AutoFitVHeight` rule in displayxr-common v2.7.0 (#96). The virtual display height becomes `max(H, W / viewportAspect) / 0.8`, replacing the old fixed 1.4x vertical comfort factor — the…",
       "Applied on all four platform legs (Windows, macOS, Linux, Android). Each fits against its own live viewport; Android derives the panel aspect from the active rendering mode's tile grid when no frame has landed yet.",
       "The fit log now reports both extents, the viewport and its aspect, and which axis bound the fit."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.13",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.13",
-    "title": "DisplayXR Browser 0.1.13 — degrade gracefully, recover automatically",
-    "date": "2026-08-20",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.13",
-    "prerelease": false,
-    "featureLines": [
-      "Two resilience fixes, both hardware-validated including a live service-kill test:",
-      "**A missed weave frame shows mono, never black** (#99). When a weave submission misses (GPU contention, service hiccup), the affected tiles now draw their content as flat mono 2D for that frame instead of leaving a black hole — the failu…",
-      "**A browser that launches during a service restart recovers by itself** (#92). Previously, losing the startup race left the browser permanently degraded (single-rect submits, mono scenes) until quit — the root cause behind several \"brows…",
-      "Known remaining gap, tracked in #103: a service death *under* a live session still requires a browser relaunch (tiles degrade to mono via #99's fix); the sandbox prevents in-place reconnection and a browser-process broker is the planned …",
-      "**Chromium 151.0.7922.77** — pin unchanged."
     ],
     "looksMechanical": false
   },
