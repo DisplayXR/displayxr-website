@@ -29,8 +29,17 @@
     "date": "2026-08-24",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.5.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Weaving on Android gets measurably smoother, and a long-standing crash class on",
+      "Windows is closed.",
+      "**Android weaving costs less per frame.** The compose → weave → alpha-gate",
+      "chain is now ordered with GPU semaphores instead of blocking the render",
+      "thread, removing a measured **2.9 ms/frame** stall on the out-of-process path",
+      "and **~1.5 ms** in-process. No app change needed — both call paths benefit.",
+      "**A throwing weaver can no longer kill the app.** The SR SDK's v1 `weave()`",
+      "throws as routine control flow; on the per-frame display-processor path that"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.11.0",
@@ -46,6 +55,17 @@
       "`feat(comp_d3d12)`: app-authored zone masks weave on the scanout adapter (ea1ec7251) — #918 D12-5. The Tier-3 authored mask crosses as `COMP_XBRIDGE_PLANE_MASK` by pointer (no NT share, no re-open drain), sized at the mask rather than th…"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.12.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.12.0",
+    "title": "v2.12.0",
+    "date": "2026-08-24",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.12.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@preview-0.1.16",
@@ -195,26 +215,6 @@
       "keeps returning a success code and a frozen-but-plausible eye pair that no",
       "`is_tracking` heuristic can tell apart from a viewer holding still.",
       "This release makes the plug-in detect that itself and rebuild its SRContext +"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.8.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.8.0",
-    "title": "DisplayXR Runtime v2.8.0",
-    "date": "2026-08-20",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.8.0",
-    "prerelease": false,
-    "featureLines": [
-      "**`XR_DXR_weave` spec v8 — the weave path now publishes a per-region hardware wish.** A weave client can declare which parts of its window are flat: `XrWeaveSubmitFlatRegionsDXR` rides along on submit for content-driven regions, and the …",
-      "The wish stays **advisory by design**: it never gates content, and a display processor that ignores it loses nothing but the physical 2D switch (ADR-027). Two robustness pieces ship with it — the wish raster now honours the DP's advertis…",
-      "The DisplayXR browser is the first client to drive the v8 wish (0.1.12). See #1065.",
-      "Alongside it: `XR_DXR_android_surface_binding` lands end to end (header, spec, runtime implementation, and an in-process window-rect feed with per-window Kooima, ADR-036 D6), the Android IPC client can adopt an already-connected service …",
-      "feat(weave): per-region hardware wish on the weave path (spec v8) (#1065)",
-      "feat(extensions): `XR_DXR_android_surface_binding` — header + spec (#1037)",
-      "feat(android): implement `XR_DXR_android_surface_binding` in the runtime (#1037)",
-      "feat(android): in-process window-rect feed + per-window Kooima (#1037, ADR-036 D6)"
     ],
     "looksMechanical": false
   },
