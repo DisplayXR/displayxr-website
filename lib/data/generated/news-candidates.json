@@ -3,9 +3,23 @@
     "id": "displayxr-runtime@v2.13.0",
     "repo": "displayxr-runtime",
     "tag": "v2.13.0",
-    "title": "v2.13.0",
+    "title": "DisplayXR Runtime v2.13.0",
     "date": "2026-08-25",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.13.0",
+    "prerelease": false,
+    "featureLines": [
+      "**In-process Vulkan now weaves on the scanout adapter — the last graphics API to get it.** Every path the runtime supports now renders on the most capable adapter and weaves on the one driving the panel: D3D11, D3D12 (Unity/Unreal), the …",
+      "Also in this release: three classes of silent failure on the cross-adapter path are now loud. A copy whose formats belong to different typeless families (silently dropped by Windows, producing a black panel), a presentation surface that …"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.13.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.13.1",
+    "title": "v2.13.1",
+    "date": "2026-08-25",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.13.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -124,21 +138,6 @@
       "and **~1.5 ms** in-process. No app change needed — both call paths benefit.",
       "**A throwing weaver can no longer kill the app.** The SR SDK's v1 `weave()`",
       "throws as routine control flow; on the per-frame display-processor path that"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.11.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.11.0",
-    "title": "DisplayXR Runtime v2.11.0",
-    "date": "2026-08-24",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.11.0",
-    "prerelease": false,
-    "featureLines": [
-      "**The D3D12 ladder is complete: app-authored zone masks now weave on the scanout adapter.** v2.10.0 brought zones and Local2D across; this release brings the last layer kind, so every layer an in-process D3D12 app can submit now composit…",
-      "It also fixes a zone wish publish that was **inert on the split path** — the mask transported correctly and then reached nothing — plus two silent-drop cases in the same family. Both remaining fallbacks are now genuine failures rather th…",
-      "`feat(comp_d3d12)`: app-authored zone masks weave on the scanout adapter (ea1ec7251) — #918 D12-5. The Tier-3 authored mask crosses as `COMP_XBRIDGE_PLANE_MASK` by pointer (no NT share, no re-open drain), sized at the mask rather than th…"
     ],
     "looksMechanical": false
   },
