@@ -17,12 +17,16 @@
     "id": "displayxr-runtime@v2.13.1",
     "repo": "displayxr-runtime",
     "tag": "v2.13.1",
-    "title": "v2.13.1",
+    "title": "DisplayXR Runtime v2.13.1",
     "date": "2026-08-25",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.13.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**The panel no longer gets stuck in 3D.** Once an inline-3D web page had taken the display into 3D, it stayed there — after Back, after a tab switch, after opening a new tab — sitting in 3D over ordinary 2D content indefinitely. This rel…",
+      "The cause was a too-narrow gate in `comp_d3d11_service_weave_set_screen_flat_regions()`: it republished the hardware wish only when the calling client still had cached 3D rects, on the reasoning that \"the next submit picks the latch up o…",
+      "**The client half ships separately** as displayxr-browser patch 0116 (browser#159) — neither half fixes the symptom alone. Update both."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.17",
