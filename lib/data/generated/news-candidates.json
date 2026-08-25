@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@preview-0.1.19",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.19",
+    "title": "DisplayXR Browser Preview (151.0.7922.174)",
+    "date": "2026-08-25",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.19",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.13.0",
     "repo": "displayxr-runtime",
     "tag": "v2.13.0",
@@ -186,17 +197,6 @@
     "title": "0.1.16 — overlapping 3D tiles, both in 3D",
     "date": "2026-08-23",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.16",
-    "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.15",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.15",
-    "title": "0.1.15 — edge-correct weaving, self-healing reconnect, no more woven chrome",
-    "date": "2026-08-22",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.15",
     "prerelease": true,
     "featureLines": [],
     "looksMechanical": true
