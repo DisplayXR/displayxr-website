@@ -3,10 +3,21 @@
     "id": "displayxr-browser@preview-0.1.19",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.19",
-    "title": "DisplayXR Browser Preview (151.0.7922.174)",
+    "title": "0.1.19 — the panel comes back to 2D",
     "date": "2026-08-25",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.19",
-    "prerelease": true,
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.2.0",
+    "repo": "displayxr-installer",
+    "tag": "v2.2.0",
+    "title": "DisplayXR v2.2.0",
+    "date": "2026-08-25",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.0",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -40,13 +51,24 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.13.2",
+    "repo": "displayxr-runtime",
+    "tag": "v2.13.2",
+    "title": "v2.13.2",
+    "date": "2026-08-25",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.13.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.17",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.17",
     "title": "0.1.17 — Android arrives",
     "date": "2026-08-24",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.17",
-    "prerelease": true,
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -57,7 +79,7 @@
     "title": "0.1.18 — Chromium 151.0.7922.174 security rebase",
     "date": "2026-08-24",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.18",
-    "prerelease": true,
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -157,26 +179,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.12.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.12.0",
-    "title": "DisplayXR Runtime v2.12.0",
-    "date": "2026-08-24",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.12.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Breaking — the WebXR Bridge v2 metadata sideband is retired.** `displayxr-webxr-bridge.exe`, the MV3 browser extension, the native messaging host, and the service orchestrator's whole bridge axis (the `:9014` trampoline, the watchdog t…",
-      "**Vulkan apps now weave and present on the scanout adapter.** On a split-GPU machine a Vulkan session renders its atlas on the render adapter and weaves/presents on the scanout one, with no `VkSwapchain` acquire, no Vulkan weave, and no …",
-      "**Displays that weave in their own FPGA/ASIC can now declare their weave scope.** A new `get_scanout_caps` slot on the per-API display-processor vtables lets a plug-in say whether its transform covers a *canvas* region or the *whole pane…",
-      "`feat(vk_native)`: in-process Stage A — weave and present on the scanout adapter (#1178 VK-1)",
-      "`feat(vk_native)`: the deposit ring gains a consumer-release timeline (#1178)",
-      "`feat(vk_native)`: the deposit gains PLANE surfaces (#1178 VK-1b)",
-      "`feat(vk_native)`: the 2D-under backdrop crosses as a bridge plane (#1178 VK-1b)",
-      "`feat(vk_native)`: the Local2D plane and the output-device composite (#1178 VK-1b-2)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.12.1",
     "repo": "displayxr-runtime",
     "tag": "v2.12.1",
@@ -197,7 +199,7 @@
     "title": "0.1.16 — overlapping 3D tiles, both in 3D",
     "date": "2026-08-23",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.16",
-    "prerelease": true,
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -443,17 +445,6 @@
       "Keep the window topmost while transparent (Ctrl+T) — entering transparent mode raises the window to topmost, and leaving it restores the normal z-order (#94)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.0.19",
-    "repo": "displayxr-installer",
-    "tag": "v2.0.19",
-    "title": "DisplayXR v2.0.19",
-    "date": "2026-08-13",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.0.19",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.0.20",

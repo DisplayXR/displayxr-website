@@ -2,8 +2,8 @@
   {
     "id": "runtime",
     "name": "DisplayXR Runtime",
-    "version": "v2.13.1",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.13.1",
+    "version": "v2.13.2",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.13.2",
     "releaseDate": "2026-08-25",
     "platforms": "Windows · macOS",
     "repoUrl": "https://github.com/DisplayXR/displayxr-runtime"
@@ -47,9 +47,9 @@
   {
     "id": "installer",
     "name": "All-in-one Installer",
-    "version": "v2.1.0",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.1.0",
-    "releaseDate": "2026-08-18",
+    "version": "v2.2.0",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.0",
+    "releaseDate": "2026-08-25",
     "platforms": "Windows · macOS",
     "repoUrl": "https://github.com/DisplayXR/displayxr-installer"
   }
