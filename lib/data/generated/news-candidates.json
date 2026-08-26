@@ -51,6 +51,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.13.4",
+    "repo": "displayxr-runtime",
+    "tag": "v2.13.4",
+    "title": "v2.13.4",
+    "date": "2026-08-26",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.13.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.19",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.19",
@@ -82,20 +93,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.13.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.13.0",
-    "title": "DisplayXR Runtime v2.13.0",
-    "date": "2026-08-25",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.13.0",
-    "prerelease": false,
-    "featureLines": [
-      "**In-process Vulkan now weaves on the scanout adapter — the last graphics API to get it.** Every path the runtime supports now renders on the most capable adapter and weaves on the one driving the panel: D3D11, D3D12 (Unity/Unreal), the …",
-      "Also in this release: three classes of silent failure on the cross-adapter path are now loud. A copy whose formats belong to different typeless families (silently dropped by Windows, producing a black panel), a presentation surface that …"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.13.1",
