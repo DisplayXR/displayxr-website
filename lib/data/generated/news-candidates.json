@@ -22,6 +22,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-mediaplayer@v1.9.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.9.0",
+    "title": "v1.9.0",
+    "date": "2026-08-26",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.2.2",
     "repo": "displayxr-installer",
     "tag": "v2.2.2",
@@ -87,12 +98,14 @@
     "id": "displayxr-runtime@v2.13.5",
     "repo": "displayxr-runtime",
     "tag": "v2.13.5",
-    "title": "v2.13.5",
+    "title": "DisplayXR Runtime v2.13.5",
     "date": "2026-08-26",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.13.5",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Android: fixes the rapid left/right view mixing (flicker) seen on 3D displays after a background/resume round-trip — e.g. after every file-picker in the media player."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.19",
@@ -512,26 +525,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.8.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.8.0",
-    "title": "v1.8.0",
-    "date": "2026-08-12",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.8.0",
-    "prerelease": false,
-    "featureLines": [
-      "Getting media into the player is now a drag away, and it no longer cares what your files are called.",
-      "**Drop files or a folder on the window to load them** (#44). Dropping a folder expands it and starts the slideshow from its first asset — no command-line arguments, no file dialog.",
-      "**The stereo layout is worked out from the file itself** (#45). The player reads container metadata and, when that is silent, analyses the pixels — so ordinary LIF, MPO, and side-by-side photos load with the correct layout without being …",
-      "Load media by dropping files on the window (#44)",
-      "Accept a dropped folder — expand it and start the slideshow (#44)",
-      "Detect side-by-side layout from container metadata and pixel analysis instead of the filename alone (#45)",
-      "Sobel high-pass + mid-frame seam detector, thresholds calibrated on 2380 real photos (#45)",
-      "Assume stereo when nothing identifies a file; the pixel detector becomes opt-in (#45)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.10.1",
