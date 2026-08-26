@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-leia-plugin@v2.5.1",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.5.1",
+    "title": "v2.5.1",
+    "date": "2026-08-26",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.5.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.19",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.19",
@@ -17,6 +28,17 @@
     "title": "DisplayXR v2.2.0",
     "date": "2026-08-25",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.2.1",
+    "repo": "displayxr-installer",
+    "tag": "v2.2.1",
+    "title": "DisplayXR v2.2.1",
+    "date": "2026-08-25",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -54,12 +76,16 @@
     "id": "displayxr-runtime@v2.13.2",
     "repo": "displayxr-runtime",
     "tag": "v2.13.2",
-    "title": "v2.13.2",
+    "title": "DisplayXR Runtime v2.13.2",
     "date": "2026-08-25",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.13.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "A diagnostics-quality patch. `displayxr-cli` was reporting the **DPI-virtualised** panel size rather than the real one — on a 4K panel at the Windows-default 150% scaling it printed `2560x1440`, and `selftest` asserted that wrong number …",
+      "Also removes an inherited Monado banner that told users of a perfectly healthy runtime they had \"probably built Monado without the main compositor\" — a log line that made a correct state look like a broken build, and cost real debugging …",
+      "No render-path changes. Every app renders exactly as it did on v2.13.1."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.17",
@@ -266,17 +292,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-leia-plugin@sr-sdk-v2-1.37.0.1494",
-    "repo": "displayxr-leia-plugin",
-    "tag": "sr-sdk-v2-1.37.0.1494",
-    "title": "SR v2 C99 SDK 1.37.0+1494 (win64) — pinned release SDK, matches the 1494 runtime",
-    "date": "2026-08-20",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/sr-sdk-v2-1.37.0.1494",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-leia-plugin@v2.4.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.4.0",
@@ -445,17 +460,6 @@
       "Keep the window topmost while transparent (Ctrl+T) — entering transparent mode raises the window to topmost, and leaving it restores the normal z-order (#94)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.0.20",
-    "repo": "displayxr-installer",
-    "tag": "v2.0.20",
-    "title": "DisplayXR v2.0.20",
-    "date": "2026-08-13",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.0.20",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.0.21",
