@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.13.3",
+    "repo": "displayxr-runtime",
+    "tag": "v2.13.3",
+    "title": "v2.13.3",
+    "date": "2026-08-26",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.13.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.19",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.19",
@@ -201,20 +212,6 @@
       "and **~1.5 ms** in-process. No app change needed — both call paths benefit.",
       "**A throwing weaver can no longer kill the app.** The SR SDK's v1 `weave()`",
       "throws as routine control flow; on the per-frame display-processor path that"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.12.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.12.1",
-    "title": "DisplayXR Runtime v2.12.1",
-    "date": "2026-08-24",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.12.1",
-    "prerelease": false,
-    "featureLines": [
-      "3D rendering on Android is smooth again. The Vulkan compositor was driving the vendor display processor from two different threads, and the interlacer only ever accepts the thread that reached it first — so one of the two weave streams w…",
-      "Also fixed: the in-process Vulkan output-device split rendered pure black on hardware while every counter claimed success, because the cross-adapter bridge assumed an RGBA atlas and Windows silently drops a mismatched-format copy instead…"
     ],
     "looksMechanical": false
   },
