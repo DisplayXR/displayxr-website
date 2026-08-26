@@ -29,8 +29,11 @@
     "date": "2026-08-26",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Android: side-by-side layout — full, half or 2D — is now detected automatically, matching Windows/macOS/Linux; the `_2x1` / `_half_2x1` naming convention still takes precedence.",
+      "Android stereo-layout detection now runs the same layered resolver as the desktop: filename (`*_2x1` / `*_half_2x1`, the SAF picker now passes the document's display name) > container metadata (LIF/MPO) > content cross-correlation (image…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.2.2",
@@ -39,6 +42,17 @@
     "title": "DisplayXR v2.2.2",
     "date": "2026-08-26",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.2.3",
+    "repo": "displayxr-installer",
+    "tag": "v2.2.3",
+    "title": "DisplayXR v2.2.3",
+    "date": "2026-08-26",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.3",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -61,6 +75,17 @@
     "title": "v2.5.2",
     "date": "2026-08-26",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.5.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.6.0",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.0",
+    "title": "v2.6.0",
+    "date": "2026-08-26",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -284,17 +309,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-leia-plugin@sr-sdk-v2-1.37.0.1502",
-    "repo": "displayxr-leia-plugin",
-    "tag": "sr-sdk-v2-1.37.0.1502",
-    "title": "SR v2 C99 SDK 1.37.0+1502 (win64) — pinned release SDK, first LeiaSR-SDK-* named artifact",
-    "date": "2026-08-22",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/sr-sdk-v2-1.37.0.1502",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-demo-avatar@v0.11.0",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.11.0",
@@ -379,17 +393,6 @@
     "title": "v0.7.1",
     "date": "2026-08-18",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.1.0",
-    "repo": "displayxr-installer",
-    "tag": "v2.1.0",
-    "title": "DisplayXR v2.1.0",
-    "date": "2026-08-18",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.1.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
