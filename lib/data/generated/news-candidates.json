@@ -87,6 +87,26 @@
     "date": "2026-08-26",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.0",
     "prerelease": false,
+    "featureLines": [
+      "Android is now a first-class release target for this plug-in. `libdxrp050_leia_cnsdk.so`",
+      "is built by CI on every PR and attached to this release as",
+      "`displayxr-leia-cnsdk-v2.6.0-android-arm64-v8a.tar.gz` — no more hand-built plug-ins of",
+      "unknown provenance dropped into a runtime APK.",
+      "The plug-in also stops describing a Lume Pad when it is not running on one. Panel",
+      "geometry now comes from the device, so it renders correctly on non-Lume-Pad panels —",
+      "measured on a 1080x2400 OLED phone, where the previous hardcoded 2560x1600 / 0.235x0.147 m",
+      "sized the atlas for a display that was not there and put every rendered pixel outside the"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.6.1",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.1",
+    "title": "v2.6.1",
+    "date": "2026-08-26",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.1",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -274,26 +294,6 @@
       "Rotating the device now re-frames the scene instead of keeping the load-time framing forever, so a portrait-fitted model no longer renders roughly 1.9x mis-sized in landscape. The re-frame is a 200 ms animation rather than a snap, and it…",
       "Measured on an NP02J: the load-time viewport was reported as 3840x1200 (aspect 3.200, height-bound, `rig_vh` 1.07) and is now 1600x2560 (aspect 0.625, width-bound, `rig_vh` 1.80). A rotation moves the base between 1.80 and 1.07 with the …",
       "Android: refit the framing base on every viewport change, preserving the user's zoom — `vHeight` is a function of (content, viewport), so it is re-derived on rotation instead of being fixed at load, animated over 200 ms and retargeting i…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.5.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.5.0",
-    "title": "v2.5.0",
-    "date": "2026-08-24",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.5.0",
-    "prerelease": false,
-    "featureLines": [
-      "Weaving on Android gets measurably smoother, and a long-standing crash class on",
-      "Windows is closed.",
-      "**Android weaving costs less per frame.** The compose → weave → alpha-gate",
-      "chain is now ordered with GPU semaphores instead of blocking the render",
-      "thread, removing a measured **2.9 ms/frame** stall on the out-of-process path",
-      "and **~1.5 ms** in-process. No app change needed — both call paths benefit.",
-      "**A throwing weaver can no longer kill the app.** The SR SDK's v1 `weave()`",
-      "throws as routine control flow; on the per-frame display-processor path that"
     ],
     "looksMechanical": false
   },
