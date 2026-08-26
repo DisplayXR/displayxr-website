@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-mediaplayer@v1.8.3",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.8.3",
+    "title": "v1.8.3",
+    "date": "2026-08-26",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.8.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.2.2",
     "repo": "displayxr-installer",
     "tag": "v2.2.2",
@@ -28,6 +39,17 @@
     "title": "v2.5.1",
     "date": "2026-08-26",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.5.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.5.2",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.5.2",
+    "title": "v2.5.2",
+    "date": "2026-08-26",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.5.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -54,7 +76,7 @@
     "id": "displayxr-runtime@v2.13.4",
     "repo": "displayxr-runtime",
     "tag": "v2.13.4",
-    "title": "v2.13.4",
+    "title": "DisplayXR Runtime v2.13.4",
     "date": "2026-08-26",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.13.4",
     "prerelease": false,
@@ -315,26 +337,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-leia-plugin@v2.4.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.4.0",
-    "title": "v2.4.0",
-    "date": "2026-08-20",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.4.0",
-    "prerelease": false,
-    "featureLines": [
-      "**The plug-in now survives an SR platform restart — no DisplayXR restart needed.**",
-      "When the LeiaSR platform restarts or is upgraded underneath a long-lived",
-      "`displayxr-service.exe` (installing a new LeiaSR runtime, for instance), every",
-      "IPC/service-path app used to weave **untracked** until someone manually",
-      "restarted the DisplayXR service — and it failed *silently*, because the SR SDK",
-      "keeps returning a success code and a frozen-but-plausible eye pair that no",
-      "`is_tracking` heuristic can tell apart from a viewer holding still.",
-      "This release makes the plug-in detect that itself and rebuild its SRContext +"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-unity@v2.13.0",
     "repo": "displayxr-unity",
     "tag": "v2.13.0",
@@ -565,17 +567,6 @@
       "**Not verified on hardware.** This lands the build and the shipping path; whether Unity's `vk::Image::CreateImageViews` crash (#248 defect 2) reproduces on a Linux player is the open question, and answering it either way strengthens the …"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.7.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.7.0",
-    "title": "v1.7.0",
-    "date": "2026-08-08",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.7.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.11.0",
