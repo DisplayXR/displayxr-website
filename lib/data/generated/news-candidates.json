@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-demo-mediaplayer@v1.8.2",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.8.2",
+    "title": "v1.8.2",
+    "date": "2026-08-26",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.8.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.2.2",
+    "repo": "displayxr-installer",
+    "tag": "v2.2.2",
+    "title": "DisplayXR v2.2.2",
+    "date": "2026-08-26",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.5.1",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.5.1",
@@ -14,12 +36,19 @@
     "id": "displayxr-runtime@v2.13.3",
     "repo": "displayxr-runtime",
     "tag": "v2.13.3",
-    "title": "v2.13.3",
+    "title": "DisplayXR Runtime v2.13.3",
     "date": "2026-08-26",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.13.3",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "A transparent IPC app that loses focus no longer freezes. Previously a non-focused",
+      "`CLIENT_TEXTURE` (ADR-029) client was skipped entirely — it could not be *woven*, because the",
+      "interlace phase follows the panel owner's window, so it was given nothing at all and its",
+      "window sat on its last frame for as long as another app held focus. It now gets a live flat",
+      "2D repaint instead, which carries no phase and is therefore always safe.",
+      "Alongside that, the service→client weave handoff is properly synchronised for the first time."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.19",
@@ -459,17 +488,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-installer@v2.0.21",
-    "repo": "displayxr-installer",
-    "tag": "v2.0.21",
-    "title": "DisplayXR v2.0.21",
-    "date": "2026-08-13",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.0.21",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-shell-releases@v2.1.0",
     "repo": "displayxr-shell-releases",
     "tag": "v2.1.0",
@@ -593,22 +611,6 @@
       "The Windows Vulkan session moves to `XR_KHR_vulkan_enable2`, so EarthView picks",
       "up the runtime's late-weave presentation pacing with no change in use.",
       "Migrate the Windows VK session to `XR_KHR_vulkan_enable2` (#39)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.6.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.6.0",
-    "title": "v1.6.0",
-    "date": "2026-08-03",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.6.0",
-    "prerelease": false,
-    "featureLines": [
-      "The Vulkan session now runs on `XR_KHR_vulkan_enable2`, so the player picks up",
-      "the runtime's late-weave presentation pacing — eye-position latency at weave",
-      "time drops to roughly one display refresh with no change to how you use it.",
-      "Migrate the VK session from `XR_KHR_vulkan_enable` to `vulkan_enable2` (#43)"
     ],
     "looksMechanical": false
   },
