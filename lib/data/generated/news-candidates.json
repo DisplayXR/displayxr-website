@@ -29,8 +29,17 @@
     "date": "2026-08-27",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.3",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "On Android, your Google Map Tiles API key now survives a reinstall. It used to",
+      "live only in app-private storage, which Android wipes on uninstall — so every",
+      "clean install, and every automated test pass, silently lost it. The key can now",
+      "also be supplied by `persist.dxr.ev.key` (survives uninstall *and* reboot) or",
+      "`debug.dxr.ev.key`.",
+      "Keys are also **checked before they are saved**, as they already were on macOS",
+      "and Windows. A wrong key used to fail exactly like a missing one — no error, no",
+      "tiles, an empty blue sphere. If the device simply cannot reach Google the key is"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.22.3",
@@ -124,17 +133,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.14.5",
-    "repo": "displayxr-runtime",
-    "tag": "v2.14.5",
-    "title": "v2.14.5",
-    "date": "2026-08-27",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.5",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-runtime@v2.14.6",
     "repo": "displayxr-runtime",
     "tag": "v2.14.6",
@@ -167,6 +165,17 @@
     "title": "v2.14.8",
     "date": "2026-08-27",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.8",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.14.9",
+    "repo": "displayxr-runtime",
+    "tag": "v2.14.9",
+    "title": "v2.14.9",
+    "date": "2026-08-27",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.9",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
