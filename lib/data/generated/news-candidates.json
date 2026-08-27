@@ -33,6 +33,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.14.3",
+    "repo": "displayxr-runtime",
+    "tag": "v2.14.3",
+    "title": "v2.14.3",
+    "date": "2026-08-27",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@v1.8.2",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.8.2",
@@ -142,19 +153,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.13.5",
-    "repo": "displayxr-runtime",
-    "tag": "v2.13.5",
-    "title": "DisplayXR Runtime v2.13.5",
-    "date": "2026-08-26",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.13.5",
-    "prerelease": false,
-    "featureLines": [
-      "Android: fixes the rapid left/right view mixing (flicker) seen on 3D displays after a background/resume round-trip — e.g. after every file-picker in the media player."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.19",
