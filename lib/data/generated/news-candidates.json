@@ -102,6 +102,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-leia-plugin@v2.6.4",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.4",
+    "title": "v2.6.4",
+    "date": "2026-08-27",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.14.5",
     "repo": "displayxr-runtime",
     "tag": "v2.14.5",
@@ -195,26 +206,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.6.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.0",
-    "title": "v2.6.0",
-    "date": "2026-08-26",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.0",
-    "prerelease": false,
-    "featureLines": [
-      "Android is now a first-class release target for this plug-in. `libdxrp050_leia_cnsdk.so`",
-      "is built by CI on every PR and attached to this release as",
-      "`displayxr-leia-cnsdk-v2.6.0-android-arm64-v8a.tar.gz` — no more hand-built plug-ins of",
-      "unknown provenance dropped into a runtime APK.",
-      "The plug-in also stops describing a Lume Pad when it is not running on one. Panel",
-      "geometry now comes from the device, so it renders correctly on non-Lume-Pad panels —",
-      "measured on a 1080x2400 OLED phone, where the previous hardcoded 2560x1600 / 0.235x0.147 m",
-      "sized the atlas for a display that was not there and put every rendered pixel outside the"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.6.1",
