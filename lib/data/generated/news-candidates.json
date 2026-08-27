@@ -66,17 +66,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.14.2",
-    "repo": "displayxr-runtime",
-    "tag": "v2.14.2",
-    "title": "v2.14.2",
-    "date": "2026-08-27",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-runtime@v2.14.3",
     "repo": "displayxr-runtime",
     "tag": "v2.14.3",
@@ -111,6 +100,21 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.14.6",
+    "repo": "displayxr-runtime",
+    "tag": "v2.14.6",
+    "title": "v2.14.6",
+    "date": "2026-08-27",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.6",
+    "prerelease": false,
+    "featureLines": [
+      "**`vk_bundle` ABI fingerprint guard (#1243 / #1244).** A display-processor plug-in built with a different `NDEBUG` configuration than the runtime received a `vk_bundle*` whose Vulkan function-pointer table was offset from where it expect…",
+      "The plug-in loader now compares two fingerprints — `sizeof(struct vk_bundle)` and `offsetof(struct vk_bundle, vkGetInstanceProcAddr)` — against the values the plug-in was compiled with, and refuses a mismatched VK display-processor facto…",
+      "**Installer filename no longer carries the build number (#1241).** `DisplayXRSetup-X.Y.Z.exe` rather than `DisplayXRSetup-X.Y.Z.<build>.exe`. The signed installer previously could not replace the unsigned CI one because their names never…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.8.2",
