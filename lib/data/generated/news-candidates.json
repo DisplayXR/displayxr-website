@@ -66,6 +66,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.2.6",
+    "repo": "displayxr-installer",
+    "tag": "v2.2.6",
+    "title": "DisplayXR v2.2.6",
+    "date": "2026-08-27",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.6",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.6.2",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.6.2",
@@ -173,17 +184,6 @@
       "Android stereo-layout detection now runs the same layered resolver as the desktop: filename (`*_2x1` / `*_half_2x1`, the SAF picker now passes the document's display name) > container metadata (LIF/MPO) > content cross-correlation (image…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.2.2",
-    "repo": "displayxr-installer",
-    "tag": "v2.2.2",
-    "title": "DisplayXR v2.2.2",
-    "date": "2026-08-26",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.2.3",
