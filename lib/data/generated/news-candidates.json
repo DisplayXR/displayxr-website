@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@preview-0.1.20",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.20",
+    "title": "0.1.20 — chrome that covers a tile stops being woven",
+    "date": "2026-08-27",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.20",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-avatar@v0.11.1",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.11.1",
@@ -28,6 +39,17 @@
     "title": "v0.24.3",
     "date": "2026-08-27",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.24.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.2.4",
+    "repo": "displayxr-installer",
+    "tag": "v2.2.4",
+    "title": "DisplayXR v2.2.4",
+    "date": "2026-08-27",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.4",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -202,17 +224,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-installer@v2.2.0",
-    "repo": "displayxr-installer",
-    "tag": "v2.2.0",
-    "title": "DisplayXR v2.2.0",
-    "date": "2026-08-25",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-installer@v2.2.1",
     "repo": "displayxr-installer",
     "tag": "v2.2.1",
@@ -319,17 +330,6 @@
       "Android: refit the framing base on every viewport change, preserving the user's zoom — `vHeight` is a function of (content, viewport), so it is re-derived on rotation instead of being fixed at load, animated over 200 ms and retargeting i…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.16",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.16",
-    "title": "0.1.16 — overlapping 3D tiles, both in 3D",
-    "date": "2026-08-23",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.16",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-avatar@v0.11.0",
