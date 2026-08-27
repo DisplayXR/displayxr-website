@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.14.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.14.0",
+    "title": "v2.14.0",
+    "date": "2026-08-27",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@v1.8.2",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.8.2",
@@ -184,21 +195,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.13.2",
-    "repo": "displayxr-runtime",
-    "tag": "v2.13.2",
-    "title": "DisplayXR Runtime v2.13.2",
-    "date": "2026-08-25",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.13.2",
-    "prerelease": false,
-    "featureLines": [
-      "A diagnostics-quality patch. `displayxr-cli` was reporting the **DPI-virtualised** panel size rather than the real one — on a 4K panel at the Windows-default 150% scaling it printed `2560x1440`, and `selftest` asserted that wrong number …",
-      "Also removes an inherited Monado banner that told users of a perfectly healthy runtime they had \"probably built Monado without the main compositor\" — a log line that made a correct state look like a broken build, and cost real debugging …",
-      "No render-path changes. Every app renders exactly as it did on v2.13.1."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.17",
