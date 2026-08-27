@@ -55,6 +55,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.2.5",
+    "repo": "displayxr-installer",
+    "tag": "v2.2.5",
+    "title": "DisplayXR v2.2.5",
+    "date": "2026-08-27",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.6.2",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.6.2",
@@ -76,20 +87,6 @@
     "featureLines": [
       "**Android sessions no longer crash on release-config pairings.** The plug-in now builds RelWithDebInfo to match the runtime's build configuration, fixing the `vk_bundle` ABI skew that broke every v2.14.x Android release (runtime#1243, #2…",
       "**Tracking watchdog self-heals face-tracking subscription loss.** If the CNSDK face-tracking subscription silently drops, the plug-in now detects it and resubscribes — fixing the \"stuck in 2D until you minimize and reopen the app\" bug (#…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.14.4",
-    "repo": "displayxr-runtime",
-    "tag": "v2.14.4",
-    "title": "DisplayXR Runtime v2.14.4",
-    "date": "2026-08-27",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.4",
-    "prerelease": false,
-    "featureLines": [
-      "Ships the fix for a stray `vulkan-1.dll` in the install directory that shadowed the system Vulkan loader and crashed **every Vulkan app** inside the GPU vendor's ICD — a failure the Windows event log misattributed to the graphics driver,…",
-      "`feat(#1234)`: report VK late-weave repaint reachability in `selftest` and `info` (#1238) — a real pacing-capability loss (`#868 repaint loop NOT started`) was previously invisible to the self-test gate, which passed regardless."
     ],
     "looksMechanical": false
   },
@@ -126,6 +123,17 @@
     "title": "v2.14.7",
     "date": "2026-08-27",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.7",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.14.8",
+    "repo": "displayxr-runtime",
+    "tag": "v2.14.8",
+    "title": "v2.14.8",
+    "date": "2026-08-27",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.8",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -226,17 +234,6 @@
     "title": "0.1.19 — the panel comes back to 2D",
     "date": "2026-08-25",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.19",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.2.1",
-    "repo": "displayxr-installer",
-    "tag": "v2.2.1",
-    "title": "DisplayXR v2.2.1",
-    "date": "2026-08-25",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
