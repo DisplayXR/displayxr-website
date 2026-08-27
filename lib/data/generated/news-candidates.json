@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-gaussiansplat@v1.22.3",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.22.3",
+    "title": "v1.22.3",
+    "date": "2026-08-27",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.22.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.14.1",
     "repo": "displayxr-runtime",
     "tag": "v2.14.1",
@@ -36,12 +47,15 @@
     "id": "displayxr-runtime@v2.14.4",
     "repo": "displayxr-runtime",
     "tag": "v2.14.4",
-    "title": "v2.14.4",
+    "title": "DisplayXR Runtime v2.14.4",
     "date": "2026-08-27",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.4",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Ships the fix for a stray `vulkan-1.dll` in the install directory that shadowed the system Vulkan loader and crashed **every Vulkan app** inside the GPU vendor's ICD — a failure the Windows event log misattributed to the graphics driver,…",
+      "`feat(#1234)`: report VK late-weave repaint reachability in `selftest` and `info` (#1238) — a real pacing-capability loss (`#868 repaint loop NOT started`) was previously invisible to the self-test gate, which passed regardless."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.8.2",
@@ -456,20 +470,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.21.0",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.21.0",
-    "title": "v1.21.0",
-    "date": "2026-08-13",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.21.0",
-    "prerelease": false,
-    "featureLines": [
-      "Transparent mode (Ctrl+T) now keeps the window floating above other apps, matching the avatar demo.",
-      "Keep the window topmost while transparent (Ctrl+T) (#86)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.23.0",
