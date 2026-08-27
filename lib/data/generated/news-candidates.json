@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-avatar@v0.11.1",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.11.1",
+    "title": "v0.11.1",
+    "date": "2026-08-27",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.22.3",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.22.3",
@@ -28,17 +39,6 @@
     "title": "v2.6.2",
     "date": "2026-08-27",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.14.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.14.1",
-    "title": "v2.14.1",
-    "date": "2026-08-27",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -78,6 +78,17 @@
       "`feat(#1234)`: report VK late-weave repaint reachability in `selftest` and `info` (#1238) — a real pacing-capability loss (`#868 repaint loop NOT started`) was previously invisible to the self-test gate, which passed regardless."
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.14.5",
+    "repo": "displayxr-runtime",
+    "tag": "v2.14.5",
+    "title": "v2.14.5",
+    "date": "2026-08-27",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.8.2",
@@ -509,17 +520,6 @@
     "title": "DisplayXR Shell v2.1.1",
     "date": "2026-08-13",
     "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.1.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.10.1",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.10.1",
-    "title": "v0.10.1",
-    "date": "2026-08-10",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.10.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
