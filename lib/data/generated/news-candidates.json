@@ -1,16 +1,5 @@
 [
   {
-    "id": "displayxr-runtime@v2.14.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.14.0",
-    "title": "v2.14.0",
-    "date": "2026-08-27",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-runtime@v2.14.1",
     "repo": "displayxr-runtime",
     "tag": "v2.14.1",
@@ -39,6 +28,17 @@
     "title": "v2.14.3",
     "date": "2026-08-27",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.14.4",
+    "repo": "displayxr-runtime",
+    "tag": "v2.14.4",
+    "title": "v2.14.4",
+    "date": "2026-08-27",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.4",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
