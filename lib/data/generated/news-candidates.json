@@ -73,19 +73,11 @@
     "date": "2026-08-27",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.3",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.14.3",
-    "repo": "displayxr-runtime",
-    "tag": "v2.14.3",
-    "title": "v2.14.3",
-    "date": "2026-08-27",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Android sessions no longer crash on release-config pairings.** The plug-in now builds RelWithDebInfo to match the runtime's build configuration, fixing the `vk_bundle` ABI skew that broke every v2.14.x Android release (runtime#1243, #2…",
+      "**Tracking watchdog self-heals face-tracking subscription loss.** If the CNSDK face-tracking subscription silently drops, the plug-in now detects it and resubscribes — fixing the \"stuck in 2D until you minimize and reopen the app\" bug (#…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.14.4",
@@ -126,6 +118,17 @@
       "**Installer filename no longer carries the build number (#1241).** `DisplayXRSetup-X.Y.Z.exe` rather than `DisplayXRSetup-X.Y.Z.<build>.exe`. The signed installer previously could not replace the unsigned CI one because their names never…"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.14.7",
+    "repo": "displayxr-runtime",
+    "tag": "v2.14.7",
+    "title": "v2.14.7",
+    "date": "2026-08-27",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.7",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.8.2",
