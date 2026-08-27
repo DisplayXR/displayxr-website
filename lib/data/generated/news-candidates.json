@@ -11,6 +11,28 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-modelviewer@v0.24.3",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.24.3",
+    "title": "v0.24.3",
+    "date": "2026-08-27",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.24.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.6.2",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.2",
+    "title": "v2.6.2",
+    "date": "2026-08-27",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.14.1",
     "repo": "displayxr-runtime",
     "tag": "v2.14.1",
@@ -111,17 +133,6 @@
     "title": "DisplayXR v2.2.3",
     "date": "2026-08-26",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.5.1",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.5.1",
-    "title": "v2.5.1",
-    "date": "2026-08-26",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.5.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -470,20 +481,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.23.0",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.23.0",
-    "title": "v0.23.0",
-    "date": "2026-08-13",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.23.0",
-    "prerelease": false,
-    "featureLines": [
-      "Transparent mode (Ctrl+T) now keeps the window floating above other apps. Previously the model would drop behind whatever you clicked next, which made transparency awkward to use alongside another window; it now stays on top for as long …",
-      "Keep the window topmost while transparent (Ctrl+T) — entering transparent mode raises the window to topmost, and leaving it restores the normal z-order (#94)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-shell-releases@v2.1.0",
