@@ -77,9 +77,8 @@ export const REPO_URLS = {
   cefHost: "https://github.com/DisplayXR/displayxr-cef-host",
   browser: "https://github.com/DisplayXR/displayxr-browser",
   web: "https://github.com/DisplayXR/displayxr-web",
-  gallery: "https://github.com/DisplayXR/displayxr-gallery",
 } as const;
 
-// The DisplayXR Gallery runs as a hosted site; the repo above is the public
-// mirror used for feedback and issues.
+// The DisplayXR Gallery is a hosted site published directly from a private
+// repo — there is no public source or feedback repo for it.
 export const GALLERY_URL = "https://displayxr-gallery.vercel.app";

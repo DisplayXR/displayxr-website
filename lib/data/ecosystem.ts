@@ -160,13 +160,4 @@ export const ecosystemRepos: EcosystemRepo[] = [
     category: "demos",
     status: "experimental",
   },
-  {
-    name: "displayxr-gallery",
-    repo: "DisplayXR/displayxr-gallery",
-    description:
-      "A social gallery of side-by-side 3D photography — woven natively in the DisplayXR Browser, with a cursor-driven parallax preview everywhere else. The working reference for how an inline-3D page should behave. Public mirror for feedback and issues; the site is live.",
-    url: "https://github.com/DisplayXR/displayxr-gallery",
-    category: "demos",
-    status: "active",
-  },
 ];
