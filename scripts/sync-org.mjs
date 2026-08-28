@@ -183,9 +183,16 @@ const ENGINES = [
     id: "unity",
     name: "Unity",
     repo: "displayxr-unity",
-    testRepo: "displayxr-unity-test",
+    // displayxr-unity-test was archived 2026-07-08 and consolidated, along with
+    // its three sibling test repos, into the displayxr-unity-samples monorepo.
+    // Pointing at the archive shipped an archived repo behind /demos's
+    // "Demo project" link.
+    testRepo: "displayxr-unity-samples",
     versionFrom: { kind: "package-json", path: "package.json" },
-    logo2d: { repo: "displayxr-unity-test", path: "Assets/XR/DisplayXR-test_logo_2d_512x512.png" },
+    logo2d: {
+      repo: "displayxr-unity-samples",
+      path: "samples/birp-multipass/Assets/XR/DisplayXR-test_logo_2d_512x512.png",
+    },
   },
   {
     id: "unreal",

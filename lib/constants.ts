@@ -62,7 +62,7 @@ export const REPO_URLS = {
   extensions: "https://github.com/DisplayXR/displayxr-extensions",
   unity: "https://github.com/DisplayXR/displayxr-unity",
   unitySamples: "https://github.com/DisplayXR/displayxr-unity-samples",
-  unityTest: "https://github.com/DisplayXR/displayxr-unity-test",
+  unityTest: "https://github.com/DisplayXR/displayxr-unity-samples",
   unreal: "https://github.com/DisplayXR/displayxr-unreal",
   unrealTest: "https://github.com/DisplayXR/displayxr-unreal-test",
   demoGaussiansplat: "https://github.com/DisplayXR/displayxr-demo-gaussiansplat",

@@ -265,17 +265,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-browser@preview-0.1.17",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.17",
-    "title": "0.1.17 — Android arrives",
-    "date": "2026-08-24",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.17",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-browser@preview-0.1.18",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.18",
@@ -670,17 +659,6 @@
     "title": "DisplayXR Unity Samples v2.0.2",
     "date": "2026-07-24",
     "url": "https://github.com/DisplayXR/displayxr-unity-samples/releases/tag/v2.0.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-shell-releases@v2.0.5",
-    "repo": "displayxr-shell-releases",
-    "tag": "v2.0.5",
-    "title": "DisplayXR Shell v2.0.5",
-    "date": "2026-07-23",
-    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.0.5",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
