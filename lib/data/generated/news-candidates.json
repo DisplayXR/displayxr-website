@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-leia-plugin@v2.6.5",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.5",
+    "title": "v2.6.5",
+    "date": "2026-08-28",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.20",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.20",
@@ -173,12 +184,15 @@
     "id": "displayxr-runtime@v2.14.9",
     "repo": "displayxr-runtime",
     "tag": "v2.14.9",
-    "title": "v2.14.9",
+    "title": "DisplayXR Runtime v2.14.9",
     "date": "2026-08-27",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.9",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "On **Android**, the runtime service now stays **resident** once started, so client apps can always reach the runtime. Previously the service stopped ~1.5 s after its last client disconnected, and background-restricted OEM ROMs refuse to …",
+      "Also hardens the plug-in loader's `vk_bundle` ABI guard on the code path Android actually takes: a config-skewed plug-in is now refused up front instead of crashing inside the GPU driver."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.8.2",
@@ -223,17 +237,6 @@
     "title": "DisplayXR v2.2.3",
     "date": "2026-08-26",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.6.1",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.1",
-    "title": "v2.6.1",
-    "date": "2026-08-26",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
