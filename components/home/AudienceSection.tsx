@@ -17,7 +17,7 @@ type Audience = {
 const audiences: Audience[] = [
   {
     title: "App Developers",
-    lead: "Writing an OpenXR app for spatial displays?",
+    lead: "Your OpenXR app already runs. Opt in for 1:1 scale.",
     description:
       "Standard OpenXR — your existing app code works unchanged. Native compositors mean no Vulkan-interop layer; D3D11, D3D12, Metal, Vulkan, and OpenGL each get their own. Opt into XR_DXR_display_info for 3D-display geometry, eye-tracking modes, and asymmetric (Kooima) projection.",
     icon: <Code2 size={20} />,
@@ -28,16 +28,16 @@ const audiences: Audience[] = [
     title: "Contributors",
     lead: "Want to expand the runtime or platform support?",
     description:
-      "DisplayXR is open source and vendor-neutral. Add an OpenXR extension, a driver, or a new platform — the native-compositor architecture and the ADRs are documented, and external contributors PR directly against the repo. The roadmap shows where help lands.",
+      "DisplayXR is open source and vendor-neutral. Add an OpenXR extension, a driver, or a new platform — the native-compositor architecture and the ADRs are documented, and external contributors PR directly against the repo. You do not need a spatial display to work on one: the runtime ships a simulated tracked panel, the same one the official Khronos conformance suite runs against in CI on every release.",
     icon: <GitPullRequest size={20} />,
     href: "/contribute",
     cta: "How to contribute →",
   },
   {
-    title: "Display Vendors",
-    lead: "Making a glasses-free 3D display panel — or the hardware that tracks in front of it?",
+    title: "Display & Tracking Vendors",
+    lead: "Making a spatial display — or the hardware that tracks in front of it?",
     description:
-      "Implement the display-processor plug-in for your weaving / depth-mapping / eye-tracking integration — five API variants (D3D11, D3D12, Metal, Vulkan, OpenGL) so your weaver runs natively in whatever graphics API the app uses. Tracking hardware plugs in the same way through a separate input-provider contract, surfacing motion controllers and hands into the standard OpenXR action system. Vendor-neutral by design: the runtime ships with no built-in display backend, so every panel integrates through the same plug-in interface.",
+      "One plug-in, not a runtime. Two mandatory functions out of about nineteen; the starter template builds with no vendor SDK at all. Your weaver, calibration and eye tracking stay static-linked inside your own binary and never cross the ABI, in whichever of the five graphics APIs the app happens to use. Tracking hardware plugs in the same way through a separate input-provider contract — the panel and the thing that senses in front of it are different products from different companies, so there are two sockets, not one.",
     icon: <MonitorSpeaker size={20} />,
     href: "/vendors",
     cta: "Plug-in guide →",
@@ -56,7 +56,7 @@ export function AudienceSection() {
           Three audiences, one stack
         </h3>
         <p className="text-text-secondary leading-relaxed mb-12 max-w-2xl">
-          DisplayXR is layered so app developers, contributors, and display
+          DisplayXR is layered so app developers, contributors, and hardware
           vendors can each pick up exactly the part they need without forking
           the rest.
         </p>

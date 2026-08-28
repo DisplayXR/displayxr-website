@@ -48,6 +48,26 @@ const features = [
   },
 ];
 
+// Claims a sceptical reader can check, as opposed to adjectives. Each one is
+// asserted somewhere mechanical — a CI job, a link line, a driver that ships.
+const receipts = [
+  {
+    stat: "Zero",
+    label: "vendor identifiers in the shipped runtime",
+    body: "Neutrality is enforced in the binary, not promised in a policy document. The compositor never weaves; the display processor always does, behind a plug-in ABI — and CI fails any change that puts a vendor symbol in the runtime's link line.",
+  },
+  {
+    stat: "Every release",
+    label: "runs the official Khronos OpenXR CTS",
+    body: "The conformance suite runs on pull requests as a smoke subset, and the full non-interactive suite nightly and on every release tag — hardware-free, against the simulated display.",
+  },
+  {
+    stat: "No hardware",
+    label: "required to build for a spatial display",
+    body: "The runtime ships a simulated tracked panel in an ordinary 2D window, with the viewer's eye position on the mouse and keyboard. It is the same driver the conformance suite runs against.",
+  },
+];
+
 export function SolutionSection() {
   return (
     <section className="mx-auto max-w-[1200px] px-6 md:px-12 py-24">
@@ -71,6 +91,31 @@ export function SolutionSection() {
           </AnimateIn>
         ))}
       </div>
+
+      {/* The receipts. Deliberately below the capability grid: the cards say
+          what the stack is, these say why any of it is checkable. */}
+      <AnimateIn delay={240}>
+        <div className="mt-16 border-t border-border pt-10">
+          <h4 className="text-xs font-medium text-text-secondary uppercase tracking-wider mb-8">
+            Things you can check
+          </h4>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {receipts.map((r) => (
+              <div key={r.label}>
+                <p className="text-2xl font-display tracking-tight text-text-primary leading-tight">
+                  {r.stat}
+                </p>
+                <p className="text-sm font-medium text-accent mt-1 mb-3">
+                  {r.label}
+                </p>
+                <p className="text-sm text-text-secondary leading-relaxed">
+                  {r.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </AnimateIn>
     </section>
   );
 }

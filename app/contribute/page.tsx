@@ -115,6 +115,25 @@ export default function ContributePage() {
       description="DisplayXR is open source and vendor-neutral. Whether you want to add a feature, an extension, or a new platform, here's how the project is laid out and where to start."
     >
       <div className="space-y-16">
+        {/* The no-hardware point belongs at the very top of this page: it is the
+            cheapest answer to "can I even work on this?" */}
+        <section>
+          <p className="text-text-secondary leading-relaxed max-w-3xl">
+            <strong className="text-text-primary">
+              You do not need a spatial display to work on one.
+            </strong>{" "}
+            The runtime ships{" "}
+            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">
+              sim_display
+            </code>
+            , a simulated tracked panel in an ordinary 2D window with the
+            viewer&apos;s eye position on your mouse and keyboard — side-by-side,
+            anaglyph or blended. It is the same driver the official Khronos
+            conformance suite runs against in CI, so the path you develop on is
+            the path that gets tested.
+          </p>
+        </section>
+
         {/* Orient */}
         <section>
           <h2 className="mb-4 text-xl font-semibold text-text-primary">

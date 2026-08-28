@@ -47,6 +47,9 @@ export const NAV: NavEntry[] = [
     items: [
       { label: "What's New", href: "/news" },
       { label: "Plug-in guide", href: "/vendors" },
+      // Tracking hardware is a second, independent plug-in type (ADR-034) and
+      // had no entry point of its own in the nav. Same page, different socket.
+      { label: "Input providers", href: "/vendors#input-providers" },
       { label: "Extension: display_info", href: "/extensions" },
       { label: "Platform Support", href: "/platform-support" },
     ],

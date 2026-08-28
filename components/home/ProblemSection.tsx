@@ -11,7 +11,7 @@ export function ProblemSection() {
             The Problem
           </h2>
           <h3 className="text-3xl md:text-4xl font-display tracking-tight text-text-primary mb-8">
-            Spatial displays deserve a common interface
+            The hardware is solved. The ecosystem is not.
           </h3>
           <div className="space-y-4 text-text-secondary leading-relaxed">
             <p>
@@ -23,13 +23,21 @@ export function ProblemSection() {
             <p>
               Today, every vendor ships its own SDK with its own compositor, its
               own rendering path, and its own way of handling eye tracking and
-              display geometry. Developers who want to target multiple displays
-              must write and maintain separate integrations for each.
+              display geometry. So the bottleneck in this category is not the
+              optics. It is content, and the reason is arithmetic:
             </p>
             <p>
-              The result is fragmentation: duplicated effort, inconsistent
-              behavior, and a higher barrier for both developers and vendors
-              entering the space.
+              <span className="text-text-primary font-medium">
+                A developer has to author it again for every display.
+              </span>{" "}
+              Nobody does that four times, so most do it zero times.{" "}
+              <span className="text-text-primary font-medium">
+                A display vendor has to ship an entire authoring toolchain with
+                its panel
+              </span>{" "}
+              — a runtime, an SDK, a content pipeline, developer relations —
+              or ship a panel with nothing to run on it. Neither cost scales,
+              and both are paid over and over for the same result.
             </p>
           </div>
         </div>
