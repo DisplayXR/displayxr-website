@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-browser@preview-0.1.22",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.22",
+    "title": "DisplayXR Browser Preview (151.0.7922.174)",
+    "date": "2026-08-28",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.22",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.2.7",
     "repo": "displayxr-installer",
     "tag": "v2.2.7",
@@ -58,6 +69,17 @@
       "`feat(android)`: one-command `install-android-bundle.sh` — the Android bundle counterpart (#1250)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.13.1",
+    "repo": "displayxr-unity",
+    "tag": "v2.13.1",
+    "title": "DisplayXR v2.13.1",
+    "date": "2026-08-28",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.13.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@preview-0.1.20",
@@ -271,17 +293,6 @@
     "title": "0.1.19 — the panel comes back to 2D",
     "date": "2026-08-25",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.19",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.18",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.18",
-    "title": "0.1.18 — Chromium 151.0.7922.174 security rebase",
-    "date": "2026-08-24",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.18",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -571,25 +582,6 @@
       "Phase 1 scope: the **primary stereo path only**. The runtime self-hosts its weave window (no window-binding extension chained — `XR_DXR_xlib_window_binding` needs Unity's X11 window handle, which `IUnityGraphics` does not expose). The wi…",
       "`DisplayXRProviderRuntimeDeploy` now deploys the `.so` + `UnitySubsystemsManifest.json` into a Linux player's `<name>_Data/`, and `IsSinglePassEligible()` gains an explicit **Linux × Vulkan** row (URP/HDRP → SPI, BiRP → MultiPass, matchi…",
       "**Not verified on hardware.** This lands the build and the shipping path; whether Unity's `vk::Image::CreateImageViews` crash (#248 defect 2) reproduces on a Linux player is the open question, and answering it either way strengthens the …"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.11.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.11.0",
-    "title": "DisplayXR v2.11.0",
-    "date": "2026-08-08",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.11.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Vulkan groundwork + deliberate D3D12 fallback for Vulkan projects** (#248). Unity 6000.4's Vulkan XR path is broken for third-party display providers in two ways, both hardware-evidenced (see PR #248 and `docs~/unity-bug-report-vk-xr-p…",
-      "**`DisplayXRGpuPreference` speaks Vulkan** (#247) — the adapter steer now sets `DXR_VK_FORCE_GPU` when Unity is on Vulkan (previously it always set `DXR_D3D_FORCE_GPU`, a silent no-op there). The runtime honours it transitively: it steer…",
-      "**App-selectable target GPU** (#242) — an app can now choose which GPU it runs on instead of being unconditionally pinned to the discrete one.",
-      "**`DisplayXRGpuPreference.Target`** (`Auto` | `Discrete` | `Integrated`), settable from app code before XR initialization (e.g. a `[RuntimeInitializeOnLoadMethod]`), plus a **Target GPU** field on the manifest settings asset (shown in Pr…",
-      "**`Auto` (the new default behaviour at runtime) points the runtime at whichever adapter Unity actually landed on**, using the same dedicated-VRAM classification the runtime uses for its `igpu`/`dgpu` keywords. On the ordinary discrete pa…",
-      "This closes the mismatch class behind #240 at the source: previously the plugin pinned Unity to the dGPU while the runtime independently suggested the dGPU, and any deviation (a panel driven by the iGPU, a manually-set GpuPreference, Uni…",
-      "**`DisplayXRLocal2D.maxRefreshHz`** (#244, PR #245) — optional cap on how often the Local2D overlay canvas re-renders. The component leaves its offscreen orthographic camera enabled, so the canvas re-rendered **every frame regardless of …"
     ],
     "looksMechanical": false
   },
