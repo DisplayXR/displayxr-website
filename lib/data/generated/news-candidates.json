@@ -11,6 +11,20 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.2.9",
+    "repo": "displayxr-installer",
+    "tag": "v2.2.9",
+    "title": "DisplayXR v2.2.9",
+    "date": "2026-08-29",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.9",
+    "prerelease": false,
+    "featureLines": [
+      "**Runtime v2.14.12 + Leia SR plug-in v2.6.6** — the **Android windowed-3D phase-anchor matched pair**. These two ship together: install both (this bundle does) to get correct windowed-3D phase anchoring; mixing either with an older count…",
+      "**Browser pinned at preview-0.1.23** — dual-platform (Windows + Android), **opt-in** component (`--with browser` in the dev orchestrator; not installed by default). Preview builds track Chrome stable at a ~monthly rebase, not Chrome's mi…"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-leia-plugin@v2.6.6",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.6.6",
@@ -47,9 +61,28 @@
     "id": "displayxr-runtime@v2.14.12",
     "repo": "displayxr-runtime",
     "tag": "v2.14.12",
-    "title": "v2.14.12",
+    "title": "DisplayXR Runtime v2.14.12",
     "date": "2026-08-29",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.12",
+    "prerelease": false,
+    "featureLines": [
+      "feat(d3d11): #1264 Phase C flip — the in-process D3D11 tier joins the accepted same-adapter default (#1275)",
+      "feat(compositor): #1264 fire-keyed event-absorption shed (opt-in) (#1276)",
+      "feat(d3d11): #1264 ADR-039 Phase C bring-up — same-adapter split for the in-process D3D11 tier",
+      "feat(d3d12): #1264 same-adapter out queue at PRIORITY_HIGH — isolate the weave from the app's direct queue",
+      "feat(d3d12): #1264 wire u_repaint_trace into the d3d12 fill loop",
+      "feat(d3d12): #1264 ADR-039 Phase B bring-up — same-adapter split for the D3D12 tier",
+      "feat(compositor): #1264 flip DXR_SPLIT_SAME_ADAPTER default-on for the VK tier (#1271)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.15.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.15.0",
+    "title": "v2.15.0",
+    "date": "2026-08-29",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.15.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -80,7 +113,7 @@
     "id": "displayxr-browser@preview-0.1.23",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.23",
-    "title": "DisplayXR Browser Preview (151.0.7922.174)",
+    "title": "0.1.23 — Android windowed 3D anchors correctly (with runtime ≥ v2.14.12)",
     "date": "2026-08-28",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.23",
     "prerelease": false,
@@ -212,17 +245,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-installer@v2.2.5",
-    "repo": "displayxr-installer",
-    "tag": "v2.2.5",
-    "title": "DisplayXR v2.2.5",
-    "date": "2026-08-27",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.5",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-installer@v2.2.6",
     "repo": "displayxr-installer",
     "tag": "v2.2.6",
@@ -257,20 +279,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.14.9",
-    "repo": "displayxr-runtime",
-    "tag": "v2.14.9",
-    "title": "DisplayXR Runtime v2.14.9",
-    "date": "2026-08-27",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.9",
-    "prerelease": false,
-    "featureLines": [
-      "On **Android**, the runtime service now stays **resident** once started, so client apps can always reach the runtime. Previously the service stopped ~1.5 s after its last client disconnected, and background-restricted OEM ROMs refuse to …",
-      "Also hardens the plug-in loader's `vk_bundle` ABI guard on the code path Android actually takes: a config-skewed plug-in is now refused up front instead of crashing inside the GPU driver."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.8.2",
