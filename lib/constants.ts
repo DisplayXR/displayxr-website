@@ -44,14 +44,19 @@ export const NAV: NavEntry[] = [
   },
   {
     label: "Display Vendors",
+    // Ordered by the job, not by cadence: a vendor arriving cold wants to know
+    // what a plug-in costs. "What's New" stays in this menu (a shared page in
+    // two menus is sanctioned by the IA) but sits last — the hero ticker's
+    // "All updates" link already carries the route to the feed. The App
+    // Developers menu keeps it first, where a returning reader expects it.
     items: [
-      { label: "What's New", href: "/news" },
       { label: "Plug-in guide", href: "/vendors" },
       // Tracking hardware is a second, independent plug-in type (ADR-034) and
       // had no entry point of its own in the nav. Same page, different socket.
       { label: "Input providers", href: "/vendors#input-providers" },
       { label: "Extension: display_info", href: "/extensions" },
       { label: "Platform Support", href: "/platform-support" },
+      { label: "What's New", href: "/news" },
     ],
   },
 ];
