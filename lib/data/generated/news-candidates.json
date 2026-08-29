@@ -18,8 +18,10 @@
     "date": "2026-08-29",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.6",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Consume the runtime's per-weave forward horizon raw in the vendor eye predictor, so prediction lead time follows the actual weave cadence instead of a fixed assumption (#207, pairs with runtime leia#206)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.14.11",
@@ -40,6 +42,17 @@
       "component on every later run — so the skew could never be repaired by reinstalling (#1268 /"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.14.12",
+    "repo": "displayxr-runtime",
+    "tag": "v2.14.12",
+    "title": "v2.14.12",
+    "date": "2026-08-29",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.12",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@preview-0.1.21",
@@ -241,17 +254,6 @@
     "title": "v2.6.4",
     "date": "2026-08-27",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.4",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.14.8",
-    "repo": "displayxr-runtime",
-    "tag": "v2.14.8",
-    "title": "v2.14.8",
-    "date": "2026-08-27",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.8",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
