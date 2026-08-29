@@ -183,8 +183,9 @@ export default function VendorsPage() {
           </p>
         </section>
 
-        {/* Input providers — the second plug-in type */}
-        <section>
+        {/* Input providers — the second plug-in type. The id is linked from the
+            nav and footer so tracking-hardware makers have a direct entry point. */}
+        <section id="input-providers" className="scroll-mt-32">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-accent">
               <Gamepad2 size={22} />
@@ -249,9 +250,26 @@ export default function VendorsPage() {
               <Rocket size={22} />
             </span>
             <h2 className="text-2xl font-semibold tracking-tight text-text-primary">
-              Start from the reference
+              Start from the template
             </h2>
           </div>
+          <p className="text-text-secondary leading-relaxed mb-4">
+            The{" "}
+            <a
+              href={REPO_URLS.vendorTemplate}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:text-accent-hover underline underline-offset-2"
+            >
+              vendor plug-in template
+            </a>{" "}
+            is a buildable, ABI-correct starter kit that requires{" "}
+            <strong className="text-text-primary">no vendor SDK at all</strong>.
+            Clone it, rename the example driver to your own, and replace one
+            function — the weave. It builds green before you touch it, so the
+            first thing you see is a working pixel path rather than a build
+            error.
+          </p>
           <p className="text-text-secondary leading-relaxed mb-6">
             The{" "}
             <a
@@ -262,10 +280,47 @@ export default function VendorsPage() {
             >
               Leia SR plug-in
             </a>{" "}
-            is a complete, shipping integration — the recommended starting
-            point. Fork it, swap the driver for your hardware, and point the
-            installer at your plug-in id.
+            is a complete, shipping integration and the worked example to{" "}
+            <em>read</em> — a real weaver, eye-tracking listener and installer in
+            one place. It builds against a proprietary vendor SDK, so it is a
+            reference rather than a starting point.
           </p>
+          <div className="mb-6 rounded-lg border border-border bg-surface p-5">
+            <h3 className="text-sm font-semibold text-text-primary mb-3">
+              What the first plug-in actually costs
+            </h3>
+            <ul className="space-y-2 text-sm text-text-secondary leading-relaxed list-disc pl-5">
+              <li>
+                <strong className="text-text-primary">
+                  Two mandatory vtable slots out of ~19
+                </strong>{" "}
+                — <code className="bg-background text-accent px-1 py-0.5 rounded text-xs font-mono">process_atlas</code>{" "}
+                and{" "}
+                <code className="bg-background text-accent px-1 py-0.5 rounded text-xs font-mono">destroy</code>{" "}
+                — every other slot is optional and NULL-safe, so you implement
+                only what your product needs.
+              </li>
+              <li>
+                <strong className="text-text-primary">
+                  About a week of DisplayXR plumbing
+                </strong>{" "}
+                for a competent engineer: negotiate, probe, create the device,
+                report display info, installer and registration.
+              </li>
+              <li>
+                <strong className="text-text-primary">
+                  Your weaver and calibration stay yours.
+                </strong>{" "}
+                They are your own work, static-linked inside your binary, and
+                they never cross the ABI.
+              </li>
+              <li>
+                You ship a library and an installer from your own repo on your
+                own cadence, and{" "}
+                <strong className="text-text-primary">never fork the runtime</strong>.
+              </li>
+            </ul>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <a
               href={`${DOCS_BASE}/guides/vendor-plugin-onboarding.md`}

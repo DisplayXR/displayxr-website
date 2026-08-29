@@ -20,6 +20,7 @@ const footerLinks = {
   ],
   "Display Vendors": [
     { label: "Plug-in guide", href: "/vendors" },
+    { label: "Input providers", href: "/vendors#input-providers" },
     { label: "Extensions", href: "/extensions" },
     { label: "Platform Support", href: "/platform-support" },
     { label: "Common Library", href: REPO_URLS.common },
