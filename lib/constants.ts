@@ -20,16 +20,20 @@ export const NAV: NavEntry[] = [
   { label: "Get Started", href: "/getting-started" },
   {
     label: "App Developers",
+    // Same ordering rule as Display Vendors: the persona's job first, cadence
+    // last. "What's New" is still intentionally duplicated across these two
+    // menus — a shared page may appear in two (see the IA note in CLAUDE.md),
+    // and keeping it out of the top level is what preserves the three-persona
+    // story. Contributors deliberately has no equivalent: /news is a product
+    // feed that excludes version bumps and internal changes, so a contributor's
+    // cadence surface is Roadmap and the repos, both already in that menu.
     items: [
-      // Intentionally duplicated into Display Vendors — a shared page may
-      // appear in two menus (see the IA note in CLAUDE.md). Kept out of the
-      // top level so the nav keeps telling the three-persona story.
-      { label: "What's New", href: "/news" },
       { label: "Build apps", href: "/docs" },
       { label: "Demos", href: "/demos" },
       { label: "Extensions", href: "/extensions" },
       { label: "WebXR", href: "/webxr" },
       { label: "Platform Support", href: "/platform-support" },
+      { label: "What's New", href: "/news" },
     ],
   },
   {
@@ -45,10 +49,8 @@ export const NAV: NavEntry[] = [
   {
     label: "Display Vendors",
     // Ordered by the job, not by cadence: a vendor arriving cold wants to know
-    // what a plug-in costs. "What's New" stays in this menu (a shared page in
-    // two menus is sanctioned by the IA) but sits last — the hero ticker's
-    // "All updates" link already carries the route to the feed. The App
-    // Developers menu keeps it first, where a returning reader expects it.
+    // what a plug-in costs, so the plug-in guide leads and "What's New" sits
+    // last. The hero ticker's "All updates" link already routes to the feed.
     items: [
       { label: "Plug-in guide", href: "/vendors" },
       // Tracking hardware is a second, independent plug-in type (ADR-034) and
