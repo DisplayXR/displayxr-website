@@ -105,6 +105,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.15.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.15.1",
+    "title": "v2.15.1",
+    "date": "2026-08-29",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.15.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.21",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.21",
@@ -171,20 +182,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.14.10",
-    "repo": "displayxr-runtime",
-    "tag": "v2.14.10",
-    "title": "DisplayXR Runtime v2.14.10",
-    "date": "2026-08-28",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.10",
-    "prerelease": false,
-    "featureLines": [
-      "**Glasses-free 3D is now correctly aligned for windowed landscape apps on Android.** The Android APK bundles Leia SR plug-in **v2.6.5**, which fixes interlace phase alignment for landscape windows that don't span the full panel — anythin…",
-      "`feat(android)`: one-command `install-android-bundle.sh` — the Android bundle counterpart (#1250)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.13.1",
