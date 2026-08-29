@@ -1,14 +1,45 @@
 [
   {
-    "id": "displayxr-runtime@v2.14.11",
-    "repo": "displayxr-runtime",
-    "tag": "v2.14.11",
-    "title": "v2.14.11",
+    "id": "displayxr-installer@v2.2.8",
+    "repo": "displayxr-installer",
+    "tag": "v2.2.8",
+    "title": "DisplayXR v2.2.8",
     "date": "2026-08-29",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.11",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.8",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.6.6",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.6",
+    "title": "v2.6.6",
+    "date": "2026-08-29",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.6",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.14.11",
+    "repo": "displayxr-runtime",
+    "tag": "v2.14.11",
+    "title": "DisplayXR Runtime v2.14.11",
+    "date": "2026-08-29",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.11",
+    "prerelease": false,
+    "featureLines": [
+      "The Windows runtime installer no longer leaves a machine in an unrepairable state when a",
+      "DisplayXR client is running. It now closes DisplayXR-owned processes that hold",
+      "`DisplayXRClient.dll` — path-scoped, so your own Google Chrome is never touched — and, if a",
+      "third-party holder remains, it writes **no** file and **no** registry value, aborting with",
+      "errorlevel 2 instead of stamping a `Version` it did not actually install. Previously,",
+      "installing with the DisplayXR Browser open silently stranded a stale client DLL against a",
+      "newer service, and the version stamp made the meta-bundle's version gate skip the runtime",
+      "component on every later run — so the skew could never be repaired by reinstalling (#1268 /"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.21",
@@ -168,17 +199,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-installer@v2.2.4",
-    "repo": "displayxr-installer",
-    "tag": "v2.2.4",
-    "title": "DisplayXR v2.2.4",
-    "date": "2026-08-27",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.4",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-installer@v2.2.5",
     "repo": "displayxr-installer",
     "tag": "v2.2.5",
@@ -196,17 +216,6 @@
     "title": "DisplayXR v2.2.6",
     "date": "2026-08-27",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.6",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.6.2",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.2",
-    "title": "v2.6.2",
-    "date": "2026-08-27",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
