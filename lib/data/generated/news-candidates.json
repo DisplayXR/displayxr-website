@@ -25,6 +25,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-installer@v2.3.0",
+    "repo": "displayxr-installer",
+    "tag": "v2.3.0",
+    "title": "DisplayXR v2.3.0",
+    "date": "2026-08-29",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.6.6",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.6.6",
@@ -80,12 +91,18 @@
     "id": "displayxr-runtime@v2.15.0",
     "repo": "displayxr-runtime",
     "tag": "v2.15.0",
-    "title": "v2.15.0",
+    "title": "DisplayXR Runtime v2.15.0",
     "date": "2026-08-29",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.15.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "This release ships ADR-039 — one fill engine for every tier. On single-adapter (iGPU-only) machines, VK, D3D11, and D3D12 sessions now all run their weave/repaint/present on the runtime's own D3D11 fill arm by default, so panel-rate weav…",
+      "feat(d3d12): #1264 reroute — Tier-3 authored-mask transport on the d3d11 arm (#1285) (7f8642b91)",
+      "feat(d3d12): #1264 flip — the D3D12 tier joins the accepted same-adapter default via the reroute (#1282) (a1d722aa2)",
+      "feat(d3d12): #1264 reroute plane transport — Local2D/backdrop/zones ride the d3d11 arm (b2be23dee)",
+      "feat(d3d12): #1264 heavy-d3d12 reroute — same-adapter sessions run on the d3d11 fill arm (24338f45c)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.21",
@@ -240,17 +257,6 @@
     "title": "v0.24.3",
     "date": "2026-08-27",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.24.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.2.6",
-    "repo": "displayxr-installer",
-    "tag": "v2.2.6",
-    "title": "DisplayXR v2.2.6",
-    "date": "2026-08-27",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.6",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
