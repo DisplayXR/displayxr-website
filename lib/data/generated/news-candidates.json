@@ -7,6 +7,26 @@
     "date": "2026-08-30",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.7",
     "prerelease": false,
+    "featureLines": [
+      "Head **roll** now drives look-around correctly on Android. Previously the plug-in",
+      "derived both eyes from a single tracked face *point* — centre ± a fixed horizontal",
+      "32.5 mm — so the eye *vector* was constant: tilt an ear toward your shoulder and the",
+      "pair kept the full horizontal disparity (it should fall to d·cosθ) and gained none of",
+      "the vertical disparity it should have (d·sinθ). The runtime's Kooima projection builds",
+      "a real per-eye off-axis frustum from whatever points it is handed, so this affected",
+      "look-around in **every DXR app on Android**.",
+      "The plug-in now reports a genuine eye **pair** from CNSDK, preferring the experimental"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.6.8",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.8",
+    "title": "v2.6.8",
+    "date": "2026-08-30",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.8",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -267,17 +287,6 @@
     "title": "v0.24.3",
     "date": "2026-08-27",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.24.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.6.4",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.4",
-    "title": "v2.6.4",
-    "date": "2026-08-27",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.4",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
