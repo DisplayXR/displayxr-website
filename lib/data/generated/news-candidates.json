@@ -27,8 +27,10 @@
     "date": "2026-08-30",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.8",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Head-roll look-around on Android works again: tilt your head and the stereo view follows smoothly, in both portrait and landscape, with no geometry pops while the tracker settles. (Restores the capability regressed in v2.6.7; human-verif…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.2.8",
