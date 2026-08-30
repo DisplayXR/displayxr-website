@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-leia-plugin@v2.6.7",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.7",
+    "title": "v2.6.7",
+    "date": "2026-08-30",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.7",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.2.8",
     "repo": "displayxr-installer",
     "tag": "v2.2.8",
@@ -31,6 +42,17 @@
     "title": "DisplayXR v2.3.0",
     "date": "2026-08-29",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.3.1",
+    "repo": "displayxr-installer",
+    "tag": "v2.3.1",
+    "title": "DisplayXR v2.3.1",
+    "date": "2026-08-29",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -108,12 +130,14 @@
     "id": "displayxr-runtime@v2.15.1",
     "repo": "displayxr-runtime",
     "tag": "v2.15.1",
-    "title": "v2.15.1",
+    "title": "DisplayXR Runtime v2.15.1",
     "date": "2026-08-29",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.15.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Patch release fixing a telemetry bug surfaced by the first post-v2.15.0 perf baselines: on split sessions (the new default path) the frame witness's mode column was hardcoded 3D, so 2D display mode could never be reported as settled. The…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.21",
@@ -144,17 +168,6 @@
     "title": "0.1.23 — Android windowed 3D anchors correctly (with runtime ≥ v2.14.12)",
     "date": "2026-08-28",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.23",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.2.7",
-    "repo": "displayxr-installer",
-    "tag": "v2.2.7",
-    "title": "DisplayXR v2.2.7",
-    "date": "2026-08-28",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.7",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -257,20 +270,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.6.3",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.3",
-    "title": "v2.6.3",
-    "date": "2026-08-27",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.3",
-    "prerelease": false,
-    "featureLines": [
-      "**Android sessions no longer crash on release-config pairings.** The plug-in now builds RelWithDebInfo to match the runtime's build configuration, fixing the `vk_bundle` ABI skew that broke every v2.14.x Android release (runtime#1243, #2…",
-      "**Tracking watchdog self-heals face-tracking subscription loss.** If the CNSDK face-tracking subscription silently drops, the plug-in now detects it and resubscribes — fixing the \"stuck in 2D until you minimize and reopen the app\" bug (#…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.6.4",
