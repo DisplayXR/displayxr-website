@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-leia-plugin@v2.6.9",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.9",
+    "title": "v2.6.9",
+    "date": "2026-08-31",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.9",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.15.2",
     "repo": "displayxr-runtime",
     "tag": "v2.15.2",
@@ -33,12 +44,21 @@
     "id": "displayxr-runtime@v2.15.3",
     "repo": "displayxr-runtime",
     "tag": "v2.15.3",
-    "title": "v2.15.3",
+    "title": "DisplayXR Runtime v2.15.3",
     "date": "2026-08-31",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.15.3",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Two weave-correctness and weave-cost fixes on Android, both verified on device.",
+      "The post-weave GPU stall — which cost **3.25 ms/frame, roughly 7x the weave it",
+      "was protecting** — is narrowed to the display processor's own queue, and the",
+      "display processor can now learn the panel's size in the display's *current*",
+      "orientation, which a windowed weave needs to place its phase.",
+      "**`feat(dp-vk)`: report the panel size in the display's CURRENT orientation** (#1308).",
+      "Adds an append-only `set_panel_size` slot to `xrt_display_processor_vk`, so a",
+      "display processor can learn which panel dimension is \"height\" right now. A"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.13.2",
@@ -195,19 +215,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.6.5",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.5",
-    "title": "v2.6.5",
-    "date": "2026-08-28",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.5",
-    "prerelease": false,
-    "featureLines": [
-      "On Android, glasses-free 3D is now correctly phase-aligned for landscape windows that do not span the full panel — any app showing the status bar, for example. Previously the interlace was anchored to the panel's top edge instead of the …"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-mcp@v0.5.4",
