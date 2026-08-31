@@ -30,6 +30,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.15.3",
+    "repo": "displayxr-runtime",
+    "tag": "v2.15.3",
+    "title": "v2.15.3",
+    "date": "2026-08-31",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.15.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity@v2.13.2",
     "repo": "displayxr-unity",
     "tag": "v2.13.2",
@@ -119,25 +130,6 @@
     "prerelease": false,
     "featureLines": [
       "Consume the runtime's per-weave forward horizon raw in the vendor eye predictor, so prediction lead time follows the actual weave cadence instead of a fixed assumption (#207, pairs with runtime leia#206)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.14.12",
-    "repo": "displayxr-runtime",
-    "tag": "v2.14.12",
-    "title": "DisplayXR Runtime v2.14.12",
-    "date": "2026-08-29",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.14.12",
-    "prerelease": false,
-    "featureLines": [
-      "feat(d3d11): #1264 Phase C flip — the in-process D3D11 tier joins the accepted same-adapter default (#1275)",
-      "feat(compositor): #1264 fire-keyed event-absorption shed (opt-in) (#1276)",
-      "feat(d3d11): #1264 ADR-039 Phase C bring-up — same-adapter split for the in-process D3D11 tier",
-      "feat(d3d12): #1264 same-adapter out queue at PRIORITY_HIGH — isolate the weave from the app's direct queue",
-      "feat(d3d12): #1264 wire u_repaint_trace into the d3d12 fill loop",
-      "feat(d3d12): #1264 ADR-039 Phase B bring-up — same-adapter split for the D3D12 tier",
-      "feat(compositor): #1264 flip DXR_SPLIT_SAME_ADAPTER default-on for the VK tier (#1271)"
     ],
     "looksMechanical": false
   },
