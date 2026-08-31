@@ -1,11 +1,41 @@
 [
   {
+    "id": "displayxr-installer@v2.3.2",
+    "repo": "displayxr-installer",
+    "tag": "v2.3.2",
+    "title": "DisplayXR v2.3.2",
+    "date": "2026-08-31",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.15.2",
     "repo": "displayxr-runtime",
     "tag": "v2.15.2",
-    "title": "v2.15.2",
+    "title": "DisplayXR Runtime v2.15.2",
     "date": "2026-08-31",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.15.2",
+    "prerelease": false,
+    "featureLines": [
+      "**Android weave satellite (#1277)** reaches golden-standard parity on device and gains its P1 surface: per-window container-scale auto-derivation, occlusion, input passthrough and a full-panel overlay, plus weave-idle lens release (#1278…",
+      "**Interactive window resize on hybrid-GPU machines** is fixed on the weave-on-scanout split path: the 3D no longer shimmers while resizing (#1297), the Local2D/zones 2D band no longer blinks (#1298), and egress-ring churn during a drag d…",
+      "feat(compositor): #1277 P1 — occlusion, input passthrough, full-panel satellite overlay",
+      "feat(compositor): #1277 P1 — per-window container-scale auto-derivation for the weave satellite",
+      "feat(weave): #1277 P0 second half — physical-rect weave under a container scale",
+      "feat(weave): #1277 P0 verified — satellite reaches golden-standard parity on device",
+      "feat(weave): #1277 P0 — Android weave satellite: service-presented weave behind `debug.dxr.weave_satellite`"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.13.2",
+    "repo": "displayxr-unity",
+    "tag": "v2.13.2",
+    "title": "DisplayXR v2.13.2",
+    "date": "2026-08-31",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.13.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -42,17 +72,6 @@
       "Head-roll look-around on Android works again: tilt your head and the stereo view follows smoothly, in both portrait and landscape, with no geometry pops while the tracker settles. (Restores the capability regressed in v2.6.7; human-verif…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.2.8",
-    "repo": "displayxr-installer",
-    "tag": "v2.2.8",
-    "title": "DisplayXR v2.2.8",
-    "date": "2026-08-29",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.2.8",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.2.9",
@@ -587,26 +606,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unity@v2.12.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.12.0",
-    "title": "DisplayXR v2.12.0",
-    "date": "2026-08-09",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.12.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Linux (x86_64) support — the first Linux release of the plugin.** *Preview*: hardware-verified rendering through the real Leia SR weaver on an Odyssey G90XF, with one gap called out under \"Known limitations\" below. Mirrors how the runt…",
-      "**Linux (x86_64) support for the provider Vulkan backend** (#249) — the plugin now builds and ships `Runtime/Plugins/Linux/x86_64/libdisplayxr_unity.so`, with `DXR_GFX_VULKAN` compiled in. The DisplayXR runtime's Linux support is code-co…",
-      "The Vulkan backend is now **platform-parametric** rather than Windows-only: the enable2 session flow, image create-info mirroring, dedicated allocations, parked-in-`GENERAL` layout scheme and per-frame copy are all shared, and the only p…",
-      "The **cross-adapter guard now compares `deviceUUID`, not `deviceLUID`.** `deviceLUID` is only valid when `deviceLUIDValid` is set (in practice, Windows), so a LUID comparison would silently degrade to \"guard skipped\" on Linux. `deviceUUI…",
-      "**The XR pre-init adapter policy is per-platform, deliberately.** Windows keeps the #248 non-matching-sentinel that steers a Vulkan project onto D3D12; **Linux declines the query instead** — correct on a single-GPU box, and there is no o…",
-      "Phase 1 scope: the **primary stereo path only**. The runtime self-hosts its weave window (no window-binding extension chained — `XR_DXR_xlib_window_binding` needs Unity's X11 window handle, which `IUnityGraphics` does not expose). The wi…",
-      "`DisplayXRProviderRuntimeDeploy` now deploys the `.so` + `UnitySubsystemsManifest.json` into a Linux player's `<name>_Data/`, and `IsSinglePassEligible()` gains an explicit **Linux × Vulkan** row (URP/HDRP → SPI, BiRP → MultiPass, matchi…",
-      "**Not verified on hardware.** This lands the build and the shipping path; whether Unity's `vk::Image::CreateImageViews` crash (#248 defect 2) reproduces on a Linux player is the open question, and answering it either way strengthens the …"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-earthview@v0.7.0",
