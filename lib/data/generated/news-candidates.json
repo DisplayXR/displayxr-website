@@ -55,6 +55,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.16.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.0",
+    "title": "v2.16.0",
+    "date": "2026-09-01",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity@v2.14.0",
     "repo": "displayxr-unity",
     "tag": "v2.14.0",
@@ -71,6 +82,25 @@
       "**`Samples~/WindowSpaceUI` — a shipped mouse input router for window-space UI** (#268). `DisplayXRWindowSpaceUI` renders correctly but its buttons are dead: the composition layer carries **pixels, not input**, and the component moves you…",
       "**Fixed a stale assumption while promoting it:** the editor path read the cursor from the native overlay window, on the premise that the woven output is a separate window. That stopped being true in **v2.8.0**, when weave-to-texture insi…",
       "**Edit-mode Game-view framing preview for the display-centric rig** (#265). `DisplayXRDisplay` treats its transform as the virtual **display plane**, not as a viewpoint. Outside Play there is no provider and no Kooima, so Unity renders a…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.15.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.15.0",
+    "title": "DisplayXR v2.15.0",
+    "date": "2026-09-01",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.15.0",
+    "prerelease": false,
+    "featureLines": [
+      "**`DisplayXRTargetDisplay` — put the app window on the 3D panel** (#266). Unity creates its window before any app script runs and opens it wherever Windows decides, normally the OS primary. So on a machine where the 3D panel is a *second…",
+      "**The move is performed in native, inside a `PER_MONITOR_AWARE_V2` thread context, deliberately.** The coordinates are signed virtual-desktop *physical* pixels; managed code in this plugin runs in Unity's process DPI awareness, where Win…",
+      "**Detection is on the return value, never the coordinates**: an older runtime ignores the chained struct and leaves it untouched, but `(0,0)` is a *legitimate* origin for a panel that is the primary display — which is the most common con…",
+      "Opt-in: window placement is app policy, and an app that manages its own window should not have one moved out from under it. Windows-only; needs a runtime advertising v16+, and logs once and does nothing otherwise.",
+      "**`DisplayXRCamera.AuthoredFieldOfView`** (#274) — the FOV the rig actually projects with. While a session runs the provider hands Unity a full per-eye projection and Unity's XR then *writes* `Camera.fieldOfView` from it each frame, a tr…",
+      "**The setter closes a gap that was not obvious**: an app could not change FOV at runtime *at all*. Assigning `Camera.fieldOfView` while XR is active is overwritten next frame **and** ignored by the rig, which projects from its cache. Set…",
+      "Does **not** address the other half of #274: a rig-less camera still receives head-tracked poses and has no authored-FOV record, since nothing captured one before XR started. Documented rather than half-solved — use `DisplayXRWindowSpace…"
     ],
     "looksMechanical": false
   },
@@ -230,23 +260,6 @@
     "prerelease": false,
     "featureLines": [
       "Consume the runtime's per-weave forward horizon raw in the vendor eye predictor, so prediction lead time follows the actual weave cadence instead of a fixed assumption (#207, pairs with runtime leia#206)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.15.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.15.0",
-    "title": "DisplayXR Runtime v2.15.0",
-    "date": "2026-08-29",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.15.0",
-    "prerelease": false,
-    "featureLines": [
-      "This release ships ADR-039 — one fill engine for every tier. On single-adapter (iGPU-only) machines, VK, D3D11, and D3D12 sessions now all run their weave/repaint/present on the runtime's own D3D11 fill arm by default, so panel-rate weav…",
-      "feat(d3d12): #1264 reroute — Tier-3 authored-mask transport on the d3d11 arm (#1285) (7f8642b91)",
-      "feat(d3d12): #1264 flip — the D3D12 tier joins the accepted same-adapter default via the reroute (#1282) (a1d722aa2)",
-      "feat(d3d12): #1264 reroute plane transport — Local2D/backdrop/zones ride the d3d11 arm (b2be23dee)",
-      "feat(d3d12): #1264 heavy-d3d12 reroute — same-adapter sessions run on the d3d11 fill arm (24338f45c)"
     ],
     "looksMechanical": false
   },
@@ -499,22 +512,6 @@
       "Android: converted to a first-class in-process (Architecture A) app.",
       "Android: click-through via a touchable tight overlay window (#66), with the input punch-through machinery inert on stock Android 13.",
       "Android: the overlay box aspect is a runtime knob (`debug.dxr.avatar.overlay.aspect`)."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.13.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.13.0",
-    "title": "DisplayXR v2.13.0",
-    "date": "2026-08-20",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.13.0",
-    "prerelease": false,
-    "featureLines": [
-      "**The display-centric rig frames itself correctly in the 2D fallback** (#256). `DisplayXRDisplay` treats its transform as the virtual **display plane** — that exact pose is what the driver sends the runtime, and the Kooima projection put…",
-      "**The gate is \"XR is not going to run\", not \"is not running right now.\"** `DisplayXRDisplayLoader.SubsystemRunning == false` alone would be wrong — the editor's dock/undock auto-switch restarts the subsystem mid-Play and would drag the c…",
-      "**`DisplayXRCamera` (camera-centric) needs nothing** — its transform is already a viewer position and its FOV is the camera's own, so the authored viewpoint renders unchanged; and the convergence drops itself. `invConvergenceDistance` le…",
-      "**`DisplayXRRuntime` — a pre-session availability API** (#257). `DisplayXRRuntime.IsInstalled` / `DisplayXRRuntime.ResolvedManifestPath` answer \"can this machine run DisplayXR at all?\" with no OpenXR instance, no session and no native su…"
     ],
     "looksMechanical": false
   },
