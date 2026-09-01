@@ -1,5 +1,25 @@
 [
   {
+    "id": "displayxr-unity@v2.14.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.14.0",
+    "title": "DisplayXR v2.14.0",
+    "date": "2026-09-01",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.14.0",
+    "prerelease": false,
+    "featureLines": [
+      "**`DisplayXRSceneMode` — author a scene as 2D or 3D** (#267). While a session is running, XR is active process-wide and Unity renders *every* camera in stereo — including a plain camera with **no rig component on it at all**. The rig com…",
+      "**It works with no rig present**, which is the point — a 2D menu usually has none. When a rig *is* present its `ipdFactor` is ramped in step, via `DisplayXRModeSwitch`, because the transition is asymmetric and hand-rolled ramps get it ba…",
+      "**It waits for a late mode table.** In a **built player** the runtime's mode table is not populated at scene-load time — it reads empty or stale for a while *after* the session reports running, and only later advertises the mono mode. De…",
+      "Held requests survive a not-yet-running session *and* a subsystem restart (the editor's dock/undock auto-switch stops and restarts the session mid-Play, and a once-only push into a dead session succeeds *silently*). The 3D mode returned …",
+      "The three underlying levers (`RequestRenderingMode`, `RequestDisplayMode`, `DisplayXRModeSwitch`) all already existed with **zero mentions anywhere in `docs~/`**. The capability was there; the surface was not.",
+      "**`Samples~/WindowSpaceUI` — a shipped mouse input router for window-space UI** (#268). `DisplayXRWindowSpaceUI` renders correctly but its buttons are dead: the composition layer carries **pixels, not input**, and the component moves you…",
+      "**Fixed a stale assumption while promoting it:** the editor path read the cursor from the native overlay window, on the premise that the woven output is a separate window. That stopped being true in **v2.8.0**, when weave-to-texture insi…",
+      "**Edit-mode Game-view framing preview for the display-centric rig** (#265). `DisplayXRDisplay` treats its transform as the virtual **display plane**, not as a viewpoint. Outside Play there is no provider and no Kooima, so Unity renders a…"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-installer@v2.3.2",
     "repo": "displayxr-installer",
     "tag": "v2.3.2",
@@ -18,8 +38,13 @@
     "date": "2026-08-31",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.9",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Fixes **inverted left/right views** when weaving into a window that isn't",
+      "fullscreen — including mini-windows. The weave's bottom-origin phase now takes",
+      "the panel's orientation from the runtime instead of inferring it from the",
+      "window's shape."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.15.2",
@@ -479,17 +504,6 @@
       "**`DisplayXRRuntime` — a pre-session availability API** (#257). `DisplayXRRuntime.IsInstalled` / `DisplayXRRuntime.ResolvedManifestPath` answer \"can this machine run DisplayXR at all?\" with no OpenXR instance, no session and no native su…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.12.1",
-    "repo": "displayxr-unity",
-    "tag": "v2.12.1",
-    "title": "DisplayXR v2.12.1",
-    "date": "2026-08-19",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.12.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-earthview@v0.7.1",
