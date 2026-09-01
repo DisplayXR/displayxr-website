@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-avatar@v0.11.2",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.11.2",
+    "title": "v0.11.2",
+    "date": "2026-09-01",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.22.4",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.22.4",
@@ -17,6 +28,17 @@
     "title": "v1.9.1",
     "date": "2026-09-01",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.24.4",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.24.4",
+    "title": "v0.24.4",
+    "date": "2026-09-01",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.24.4",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -470,22 +492,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-demo-modelviewer@v0.24.0",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.24.0",
-    "title": "v0.24.0",
-    "date": "2026-08-21",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.24.0",
-    "prerelease": false,
-    "featureLines": [
-      "Models now frame themselves to the window in **both** dimensions. The load-time auto-fit only ever considered the model's height, so a wide model in a narrow or portrait window ran off the sides; it now sizes so the model spans at most 8…",
-      "Width-aware load-time auto-fit, via the shared `dxr::AutoFitVHeight` rule in displayxr-common v2.7.0 (#96). The virtual display height becomes `max(H, W / viewportAspect) / 0.8`, replacing the old fixed 1.4x vertical comfort factor — the…",
-      "Applied on all four platform legs (Windows, macOS, Linux, Android). Each fits against its own live viewport; Android derives the panel aspect from the active rendering mode's tile grid when no frame has landed yet.",
-      "The fit log now reports both extents, the viewport and its aspect, and which axis bound the fit."
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-unity@v2.13.0",
     "repo": "displayxr-unity",
     "tag": "v2.13.0",
@@ -555,24 +561,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.10.2",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.10.2",
-    "title": "v0.10.2",
-    "date": "2026-08-13",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.10.2",
-    "prerelease": false,
-    "featureLines": [
-      "Leo is lit correctly again on Linux and Android, and in Windows zones frames. On",
-      "those paths the avatar's surface normals were inverted, so every view-dependent",
-      "shading term was evaluated as if the surface were seen at perfect grazing",
-      "incidence — the character rendered as a mirror of its surroundings instead of as",
-      "its own materials. Fur, eyes and clothing now shade as authored, and the Windows",
-      "look no longer differs between zones and non-zones frames."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.10.3",
