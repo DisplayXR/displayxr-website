@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-demo-gaussiansplat@v1.22.4",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.22.4",
+    "title": "v1.22.4",
+    "date": "2026-09-01",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.22.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@v1.9.1",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.9.1",
+    "title": "v1.9.1",
+    "date": "2026-09-01",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity@v2.14.0",
     "repo": "displayxr-unity",
     "tag": "v2.14.0",
@@ -401,17 +423,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-demo-mediaplayer@v1.8.1",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.8.1",
-    "title": "v1.8.1",
-    "date": "2026-08-24",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.8.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-demo-modelviewer@v0.24.1",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.24.1",
@@ -455,21 +466,6 @@
       "Android: converted to a first-class in-process (Architecture A) app.",
       "Android: click-through via a touchable tight overlay window (#66), with the input punch-through machinery inert on stock Android 13.",
       "Android: the overlay box aspect is a runtime knob (`debug.dxr.avatar.overlay.aspect`)."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.22.0",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.22.0",
-    "title": "v1.22.0",
-    "date": "2026-08-21",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.22.0",
-    "prerelease": false,
-    "featureLines": [
-      "Splat scenes now frame themselves to the window in **both** dimensions. The load-time auto-fit only ever considered the scene's height, so a wide scene in a narrow or portrait window ran off the sides; it now sizes so the scene spans at …",
-      "Width-aware load-time auto-fit, via the shared `dxr::AutoFitVHeight` rule in displayxr-common v2.7.0 (#89). The virtual display height becomes `max(H, W / viewportAspect) / 0.8`, so a wide scene is width-bound instead of overflowing. The…",
-      "Android fits against the real panel aspect, reconstructed from the per-view rect and the view count (#89) — a 2-view mode's per-view rect is half the panel's aspect, which would otherwise over-constrain the width rule by up to 2x."
     ],
     "looksMechanical": false
   },
