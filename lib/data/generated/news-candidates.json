@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-leia-plugin@v2.6.10",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.10",
+    "title": "v2.6.10",
+    "date": "2026-09-02",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.10",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity@v2.16.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.16.0",
+    "title": "DisplayXR v2.16.0",
+    "date": "2026-09-02",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.16.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-avatar@v0.11.2",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.11.2",
@@ -58,12 +80,21 @@
     "id": "displayxr-runtime@v2.16.0",
     "repo": "displayxr-runtime",
     "tag": "v2.16.0",
-    "title": "v2.16.0",
+    "title": "DisplayXR Runtime v2.16.0",
     "date": "2026-09-01",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Apps can now open their window *on* the 3D panel.** `XR_DXR_display_info` goes to",
+      "**spec version 18** with a new chained struct, `XrDisplayDesktopInfoDXR`, that publishes the",
+      "3D panel's full desktop rectangle plus a stable OS device name — so an application no longer",
+      "has to guess, or land on the OS primary monitor, when it positions its own window. Resolved",
+      "natively on **Windows, macOS and Linux/X11**. This unblocks window placement in the DisplayXR",
+      "Unity plug-in (DisplayXR/displayxr-unity#266). Issue #1301.",
+      "Also in this release: **#206** — the display processor is now fed the **measured**",
+      "weave→scanout residual every frame, and the runtime publishes the *last measured* value rather"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.14.0",
@@ -251,19 +282,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-leia-plugin@v2.6.6",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.6",
-    "title": "v2.6.6",
-    "date": "2026-08-29",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.6",
-    "prerelease": false,
-    "featureLines": [
-      "Consume the runtime's per-weave forward horizon raw in the vendor eye predictor, so prediction lead time follows the actual weave cadence instead of a fixed assumption (#207, pairs with runtime leia#206)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.15.1",
     "repo": "displayxr-runtime",
     "tag": "v2.15.1",
@@ -316,17 +334,6 @@
     "title": "v0.5.4",
     "date": "2026-08-28",
     "url": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.5.4",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unity@v2.13.1",
-    "repo": "displayxr-unity",
-    "tag": "v2.13.1",
-    "title": "DisplayXR v2.13.1",
-    "date": "2026-08-28",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.13.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
