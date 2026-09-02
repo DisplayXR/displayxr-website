@@ -7,8 +7,12 @@
     "date": "2026-09-02",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.10",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The plug-in now consumes the runtime's **measured, per-frame prediction horizon**",
+      "instead of CNSDK's hardcoded `facePredictLatencyMs`. Verified end-to-end on",
+      "hardware, with the horizon reaching CNSDK's consumption site."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.16.0",
