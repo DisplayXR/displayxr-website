@@ -1,5 +1,25 @@
 [
   {
+    "id": "displayxr-browser@preview-0.1.24",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.24",
+    "title": "0.1.24 — inline-3D on by default on Android",
+    "date": "2026-09-03",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.24",
+    "prerelease": true,
+    "featureLines": [
+      "**inline-3D is now ON by default on Android.** Every previous Android preview shipped",
+      "the feature switched off: it was reachable only via `--enable-inline-3d`, which on",
+      "Android arrives through `/data/local/tmp/chrome-command-line` — a file that needs adb.",
+      "Our test tablets had carried that file since bring-up, so every internal check passed",
+      "while testers without developer tools saw a browser that rendered the whole web",
+      "normally and showed **nothing** where the 3D should be. Two colleagues hit it",
+      "independently and neither could have diagnosed it: the runtime self-test reports a",
+      "clean PASS (it is idle — nothing ever connects to it) and every demo app weaves"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-leia-plugin@v2.6.11",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.6.11",
@@ -23,9 +43,24 @@
     "id": "displayxr-runtime@v2.16.2",
     "repo": "displayxr-runtime",
     "tag": "v2.16.2",
-    "title": "v2.16.2",
+    "title": "DisplayXR Runtime v2.16.2",
     "date": "2026-09-03",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.2",
+    "prerelease": false,
+    "featureLines": [
+      "**This release completes the #206 per-frame prediction-horizon chain end to end.** It contains **no runtime code change** — it exists to rebuild the Android runtime APK against Leia SR plug-in **v2.6.11**, the first plug-in whose *binary…",
+      "The two prior releases each shipped a broken link in that chain:",
+      "Verified directly on the published `DisplayXR-Runtime-Leia-2.16.2-android-arm64.apk`, not from version strings: the `PUBLISHED to CNSDK` log branch — which is dead-code-eliminated whenever the version guard compiles out — is **present** …"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.16.2",
+    "repo": "displayxr-unity",
+    "tag": "v2.16.2",
+    "title": "DisplayXR v2.16.2",
+    "date": "2026-09-03",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.16.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -152,26 +187,6 @@
       "Unity plug-in (DisplayXR/displayxr-unity#266). Issue #1301.",
       "Also in this release: **#206** — the display processor is now fed the **measured**",
       "weave→scanout residual every frame, and the runtime publishes the *last measured* value rather"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.14.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.14.0",
-    "title": "DisplayXR v2.14.0",
-    "date": "2026-09-01",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.14.0",
-    "prerelease": false,
-    "featureLines": [
-      "**`DisplayXRSceneMode` — author a scene as 2D or 3D** (#267). While a session is running, XR is active process-wide and Unity renders *every* camera in stereo — including a plain camera with **no rig component on it at all**. The rig com…",
-      "**It works with no rig present**, which is the point — a 2D menu usually has none. When a rig *is* present its `ipdFactor` is ramped in step, via `DisplayXRModeSwitch`, because the transition is asymmetric and hand-rolled ramps get it ba…",
-      "**It waits for a late mode table.** In a **built player** the runtime's mode table is not populated at scene-load time — it reads empty or stale for a while *after* the session reports running, and only later advertises the mono mode. De…",
-      "Held requests survive a not-yet-running session *and* a subsystem restart (the editor's dock/undock auto-switch stops and restarts the session mid-Play, and a once-only push into a dead session succeeds *silently*). The 3D mode returned …",
-      "The three underlying levers (`RequestRenderingMode`, `RequestDisplayMode`, `DisplayXRModeSwitch`) all already existed with **zero mentions anywhere in `docs~/`**. The capability was there; the surface was not.",
-      "**`Samples~/WindowSpaceUI` — a shipped mouse input router for window-space UI** (#268). `DisplayXRWindowSpaceUI` renders correctly but its buttons are dead: the composition layer carries **pixels, not input**, and the component moves you…",
-      "**Fixed a stale assumption while promoting it:** the editor path read the cursor from the native overlay window, on the premise that the woven output is a separate window. That stopped being true in **v2.8.0**, when weave-to-texture insi…",
-      "**Edit-mode Game-view framing preview for the display-centric rig** (#265). `DisplayXRDisplay` treats its transform as the virtual **display plane**, not as a viewpoint. Outside Play there is no provider and no Kooima, so Unity renders a…"
     ],
     "looksMechanical": false
   },
@@ -330,17 +345,6 @@
     "title": "v0.5.4",
     "date": "2026-08-28",
     "url": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.5.4",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.20",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.20",
-    "title": "0.1.20 — chrome that covers a tile stops being woven",
-    "date": "2026-08-27",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.20",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
