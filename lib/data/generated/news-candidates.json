@@ -1,5 +1,25 @@
 [
   {
+    "id": "displayxr-leia-plugin@v2.6.11",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.11",
+    "title": "v2.6.11",
+    "date": "2026-09-03",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.11",
+    "prerelease": false,
+    "featureLines": [
+      "**The per-frame prediction horizon now actually reaches CNSDK on Android.** The",
+      "`#206` horizon-forwarding code shipped in v2.6.10 as source only — it was",
+      "compiled *out*. The consumer in `src/drv_leia_android/leia_cnsdk.cpp` is guarded",
+      "on CNSDK's own `VERSION` macro, and `leia_interlacer_set_predicted_scanout_ns`",
+      "first exists in CNSDK **0.10.63**; the Android CI pinned 0.10.62, so the guard",
+      "removed the call. The plug-in still built, still loaded, still reported v2.6.10,",
+      "and forwarded nothing — CNSDK silently fell back to its hardcoded 40 ms horizon.",
+      "This release raises the CNSDK build pin to v0.10.63, so the weave path publishes"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-leia-plugin@v2.6.10",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.6.10",
@@ -18,12 +38,14 @@
     "id": "displayxr-runtime@v2.16.1",
     "repo": "displayxr-runtime",
     "tag": "v2.16.1",
-    "title": "v2.16.1",
+    "title": "DisplayXR Runtime v2.16.1",
     "date": "2026-09-02",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Also carries the #939 / #1319 / #1323 service weave-DP ownership fixes and the #1215 `wait_image` service→client read-done fence."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.16.0",
@@ -224,26 +246,6 @@
       "**`feat(dp-vk)`: report the panel size in the display's CURRENT orientation** (#1308).",
       "Adds an append-only `set_panel_size` slot to `xrt_display_processor_vk`, so a",
       "display processor can learn which panel dimension is \"height\" right now. A"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.6.7",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.7",
-    "title": "v2.6.7",
-    "date": "2026-08-30",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.7",
-    "prerelease": false,
-    "featureLines": [
-      "Head **roll** now drives look-around correctly on Android. Previously the plug-in",
-      "derived both eyes from a single tracked face *point* — centre ± a fixed horizontal",
-      "32.5 mm — so the eye *vector* was constant: tilt an ear toward your shoulder and the",
-      "pair kept the full horizontal disparity (it should fall to d·cosθ) and gained none of",
-      "the vertical disparity it should have (d·sinθ). The runtime's Kooima projection builds",
-      "a real per-eye off-axis frustum from whatever points it is handed, so this affected",
-      "look-around in **every DXR app on Android**.",
-      "The plug-in now reports a genuine eye **pair** from CNSDK, preferring the experimental"
     ],
     "looksMechanical": false
   },
