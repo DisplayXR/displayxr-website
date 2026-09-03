@@ -20,6 +20,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.16.2",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.2",
+    "title": "v2.16.2",
+    "date": "2026-09-03",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.6.10",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.6.10",
@@ -207,25 +218,6 @@
       "fullscreen — including mini-windows. The weave's bottom-origin phase now takes",
       "the panel's orientation from the runtime instead of inferring it from the",
       "window's shape."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.15.2",
-    "repo": "displayxr-runtime",
-    "tag": "v2.15.2",
-    "title": "DisplayXR Runtime v2.15.2",
-    "date": "2026-08-31",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.15.2",
-    "prerelease": false,
-    "featureLines": [
-      "**Android weave satellite (#1277)** reaches golden-standard parity on device and gains its P1 surface: per-window container-scale auto-derivation, occlusion, input passthrough and a full-panel overlay, plus weave-idle lens release (#1278…",
-      "**Interactive window resize on hybrid-GPU machines** is fixed on the weave-on-scanout split path: the 3D no longer shimmers while resizing (#1297), the Local2D/zones 2D band no longer blinks (#1298), and egress-ring churn during a drag d…",
-      "feat(compositor): #1277 P1 — occlusion, input passthrough, full-panel satellite overlay",
-      "feat(compositor): #1277 P1 — per-window container-scale auto-derivation for the weave satellite",
-      "feat(weave): #1277 P0 second half — physical-rect weave under a container scale",
-      "feat(weave): #1277 P0 verified — satellite reaches golden-standard parity on device",
-      "feat(weave): #1277 P0 — Android weave satellite: service-presented weave behind `debug.dxr.weave_satellite`"
     ],
     "looksMechanical": false
   },
