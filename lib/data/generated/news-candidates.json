@@ -20,6 +20,28 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-browser@preview-0.1.25",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.25",
+    "title": "DisplayXR Browser 0.1.25 — release-signed Android build",
+    "date": "2026-09-03",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.25",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-browser@preview-0.1.26",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.26",
+    "title": "DisplayXR Browser preview-0.1.26",
+    "date": "2026-09-03",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.26",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.6.11",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.6.11",
@@ -55,12 +77,50 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-unity@v2.16.2",
+    "id": "displayxr-unity@v2.17.0",
     "repo": "displayxr-unity",
-    "tag": "v2.16.2",
-    "title": "DisplayXR v2.16.2",
+    "tag": "v2.17.0",
+    "title": "DisplayXR v2.17.0",
     "date": "2026-09-03",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.16.2",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.17.0",
+    "prerelease": false,
+    "featureLines": [
+      "**A pre-release visibility check** (`tools~/visibility_check.ps1`) and a required hardware step in the release process (#295). Asserts a transparent app on a no-runtime machine is visible, not cloaked, on-screen and >200×200 — and that t…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.18.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.18.0",
+    "title": "DisplayXR v2.18.0",
+    "date": "2026-09-03",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.18.0",
+    "prerelease": false,
+    "featureLines": [
+      "**`XR_DXR_display_info` v18 — the window move is gated on `isPanelConfirmed`** (#266, #287). The provider now chains the runtime's v18 `XrDisplayDesktopInfoDXR` (desktop rect, device name, `isPrimary`, `isPanelConfirmed`) alongside the v…",
+      "**Cloak / un-cloak / revert log lines carry `(t+NNNN ms)` since process start, and the backstop timeout is overridable** (#296, #300). The 20 s early-cloak backstop is only safe when the overlay comes up faster than that on the *customer…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.18.1",
+    "repo": "displayxr-unity",
+    "tag": "v2.18.1",
+    "title": "DisplayXR v2.18.1",
+    "date": "2026-09-03",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.18.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity@v2.18.2",
+    "repo": "displayxr-unity",
+    "tag": "v2.18.2",
+    "title": "DisplayXR v2.18.2",
+    "date": "2026-09-03",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.18.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -92,28 +152,6 @@
       "Also carries the #939 / #1319 / #1323 service weave-DP ownership fixes and the #1215 `wait_image` service→client read-done fence."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.16.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.16.0",
-    "title": "DisplayXR v2.16.0",
-    "date": "2026-09-02",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.16.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unity@v2.16.1",
-    "repo": "displayxr-unity",
-    "tag": "v2.16.1",
-    "title": "DisplayXR v2.16.1",
-    "date": "2026-09-02",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.16.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-avatar@v0.11.2",
@@ -187,25 +225,6 @@
       "Unity plug-in (DisplayXR/displayxr-unity#266). Issue #1301.",
       "Also in this release: **#206** — the display processor is now fed the **measured**",
       "weave→scanout residual every frame, and the runtime publishes the *last measured* value rather"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.15.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.15.0",
-    "title": "DisplayXR v2.15.0",
-    "date": "2026-09-01",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.15.0",
-    "prerelease": false,
-    "featureLines": [
-      "**`DisplayXRTargetDisplay` — put the app window on the 3D panel** (#266). Unity creates its window before any app script runs and opens it wherever Windows decides, normally the OS primary. So on a machine where the 3D panel is a *second…",
-      "**The move is performed in native, inside a `PER_MONITOR_AWARE_V2` thread context, deliberately.** The coordinates are signed virtual-desktop *physical* pixels; managed code in this plugin runs in Unity's process DPI awareness, where Win…",
-      "**Detection is on the return value, never the coordinates**: an older runtime ignores the chained struct and leaves it untouched, but `(0,0)` is a *legitimate* origin for a panel that is the primary display — which is the most common con…",
-      "Opt-in: window placement is app policy, and an app that manages its own window should not have one moved out from under it. Windows-only; needs a runtime advertising v16+, and logs once and does nothing otherwise.",
-      "**`DisplayXRCamera.AuthoredFieldOfView`** (#274) — the FOV the rig actually projects with. While a session runs the provider hands Unity a full per-eye projection and Unity's XR then *writes* `Camera.fieldOfView` from it each frame, a tr…",
-      "**The setter closes a gap that was not obvious**: an app could not change FOV at runtime *at all*. Assigning `Camera.fieldOfView` while XR is active is overwritten next frame **and** ignored by the rig, which projects from its cache. Set…",
-      "Does **not** address the other half of #274: a rig-less camera still receives head-tracked poses and has no authored-FOV record, since nothing captured one before XR started. Documented rather than half-solved — use `DisplayXRWindowSpace…"
     ],
     "looksMechanical": false
   },
@@ -301,28 +320,6 @@
     "title": "DisplayXR v2.3.1",
     "date": "2026-08-29",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.21",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.21",
-    "title": "0.1.21 — navigating between pages no longer leaves 2D content woven",
-    "date": "2026-08-28",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.21",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.22",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.22",
-    "title": "0.1.22 — Android returns to the release train",
-    "date": "2026-08-28",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.22",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
