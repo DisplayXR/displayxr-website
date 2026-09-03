@@ -77,6 +77,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.16.3",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.3",
+    "title": "v2.16.3",
+    "date": "2026-09-03",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity@v2.17.0",
     "repo": "displayxr-unity",
     "tag": "v2.17.0",
@@ -252,26 +263,6 @@
       "fullscreen — including mini-windows. The weave's bottom-origin phase now takes",
       "the panel's orientation from the runtime instead of inferring it from the",
       "window's shape."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.15.3",
-    "repo": "displayxr-runtime",
-    "tag": "v2.15.3",
-    "title": "DisplayXR Runtime v2.15.3",
-    "date": "2026-08-31",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.15.3",
-    "prerelease": false,
-    "featureLines": [
-      "Two weave-correctness and weave-cost fixes on Android, both verified on device.",
-      "The post-weave GPU stall — which cost **3.25 ms/frame, roughly 7x the weave it",
-      "was protecting** — is narrowed to the display processor's own queue, and the",
-      "display processor can now learn the panel's size in the display's *current*",
-      "orientation, which a windowed weave needs to place its phase.",
-      "**`feat(dp-vk)`: report the panel size in the display's CURRENT orientation** (#1308).",
-      "Adds an append-only `set_panel_size` slot to `xrt_display_processor_vk`, so a",
-      "display processor can learn which panel dimension is \"height\" right now. A"
     ],
     "looksMechanical": false
   },
