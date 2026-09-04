@@ -67,6 +67,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.3.5",
+    "repo": "displayxr-installer",
+    "tag": "v2.3.5",
+    "title": "DisplayXR v2.3.5",
+    "date": "2026-09-04",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.6.13",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.6.13",
@@ -112,9 +123,22 @@
     "id": "displayxr-runtime@v2.16.6",
     "repo": "displayxr-runtime",
     "tag": "v2.16.6",
-    "title": "v2.16.6",
+    "title": "DisplayXR Runtime v2.16.6",
     "date": "2026-09-04",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.6",
+    "prerelease": false,
+    "featureLines": [
+      "Run the DisplayXR Browser and a plain-Chrome WebXR session side by side and neither one leaving drops the other out of 3D. Three teardown residuals on #939 — all hardware-verified at the panel — are fixed: a departing hosted client's par…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.16.7",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.7",
+    "title": "v2.16.7",
+    "date": "2026-09-04",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.7",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -228,22 +252,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.16.3",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.3",
-    "title": "DisplayXR Runtime v2.16.3",
-    "date": "2026-09-03",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.3",
-    "prerelease": false,
-    "featureLines": [
-      "**Late-weave governor holds depth 1 under the frame partition (#1339 / #1342).** When the app is paced by the frame partition, the governor no longer lets queue depth grow — so a `D=3` partition now tracks like `D=1`. Blind-verified on t…",
-      "**Witness columns renamed to `present/s` `repaint/s` `weave/s` (#1343)**, matching the present / repaint / weave vocabulary; the legacy keys are still emitted for one release so existing parsers keep working.",
-      "**CI now runs the Catch2 unit suites on every PR (#1340)** — `tests/` had ~20 suites CI built and never executed — with the ADR-027 tier-1 zone dispatch pinned by a hardware-free test (#1341).",
-      "feat(service): route an opaque external-HWND present-owner to the client-presents path (#939) (#1336)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-unity@v2.18.1",
     "repo": "displayxr-unity",
     "tag": "v2.18.1",
@@ -342,17 +350,6 @@
     "title": "DisplayXR v2.3.2",
     "date": "2026-08-31",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.3.1",
-    "repo": "displayxr-installer",
-    "tag": "v2.3.1",
-    "title": "DisplayXR v2.3.1",
-    "date": "2026-08-29",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
