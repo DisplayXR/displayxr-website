@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-demo-gaussiansplat@v1.23.0",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.23.0",
+    "title": "v1.23.0",
+    "date": "2026-09-04",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.23.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.16.4",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.4",
+    "title": "v2.16.4",
+    "date": "2026-09-04",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity@v2.18.3",
     "repo": "displayxr-unity",
     "tag": "v2.18.3",
@@ -244,26 +266,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.16.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.0",
-    "title": "DisplayXR Runtime v2.16.0",
-    "date": "2026-09-01",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Apps can now open their window *on* the 3D panel.** `XR_DXR_display_info` goes to",
-      "**spec version 18** with a new chained struct, `XrDisplayDesktopInfoDXR`, that publishes the",
-      "3D panel's full desktop rectangle plus a stable OS device name — so an application no longer",
-      "has to guess, or land on the OS primary monitor, when it positions its own window. Resolved",
-      "natively on **Windows, macOS and Linux/X11**. This unblocks window placement in the DisplayXR",
-      "Unity plug-in (DisplayXR/displayxr-unity#266). Issue #1301.",
-      "Also in this release: **#206** — the display processor is now fed the **measured**",
-      "weave→scanout residual every frame, and the runtime publishes the *last measured* value rather"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-installer@v2.3.2",
     "repo": "displayxr-installer",
     "tag": "v2.3.2",
@@ -430,17 +432,6 @@
     "title": "v0.7.2",
     "date": "2026-08-24",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.22.1",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.22.1",
-    "title": "v1.22.1",
-    "date": "2026-08-24",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.22.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
