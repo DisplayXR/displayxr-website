@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-demo-avatar@v0.11.3",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.11.3",
+    "title": "v0.11.3",
+    "date": "2026-09-04",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-earthview@v0.7.5",
+    "repo": "displayxr-demo-earthview",
+    "tag": "v0.7.5",
+    "title": "v0.7.5",
+    "date": "2026-09-04",
+    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.23.0",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.23.0",
@@ -26,8 +48,12 @@
     "date": "2026-09-04",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.25.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Transparent-background mode is now safe to use inside the DisplayXR workspace — toggling it (or full-screen) no longer pops the app's native window back into view — and an agent can drive that same toggle over MCP. This release also ship…",
+      "New MCP tool `set_transparent_background` — toggle or explicitly set transparent-background mode from an agent, through exactly the same path as Ctrl+T; `get_status` now also reports `transparent_background` (#111)",
+      "Khronos-shaped OpenPBR conformance assets for coat, fuzz and diffuse_roughness, plus the generator that builds them, screenshots and the required glTF variant — as submitted to glTF-Sample-Assets (#112)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.16.4",
@@ -514,17 +540,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-demo-earthview@v0.7.1",
-    "repo": "displayxr-demo-earthview",
-    "tag": "v0.7.1",
-    "title": "v0.7.1",
-    "date": "2026-08-18",
-    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-shell-releases@v2.2.0",
     "repo": "displayxr-shell-releases",
     "tag": "v2.2.0",
@@ -564,17 +579,6 @@
     "title": "v0.5.3",
     "date": "2026-08-14",
     "url": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.5.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.10.3",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.10.3",
-    "title": "v0.10.3",
-    "date": "2026-08-13",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.10.3",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
