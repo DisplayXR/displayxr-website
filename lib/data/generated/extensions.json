@@ -12,6 +12,10 @@
     "group": "windowing"
   },
   {
+    "name": "XR_DXR_depth_budget",
+    "group": "display"
+  },
+  {
     "name": "XR_DXR_display_info",
     "group": "display"
   },

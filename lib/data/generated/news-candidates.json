@@ -82,8 +82,17 @@
     "date": "2026-09-05",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.27.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Undock now handles every catalogue asset: multi-file glTF (buffers and images",
+      "fetched relative to the URL, same origin only, path-validated) and a `room`",
+      "lighting mode that reproduces the storefront's image-based environment (the",
+      "default for undock launches; `--env=room|studio|sky|none`, `L` cycles).",
+      "**Multi-file `.gltf` over `--src=` and the `displayxr-view:` protocol (#117, fixes #114).**",
+      "A `.gltf` is JSON that points at its payload, so downloading the one file left",
+      "the window empty — only self-contained `.glb` worked. After the primary",
+      "download, and only for a `.gltf`, the JSON is read back, its `buffers[].uri` /"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.6.14",
@@ -118,6 +127,17 @@
       "No runtime source changes since v2.16.7 — this is a pin + packaging release."
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.16.9",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.9",
+    "title": "v2.16.9",
+    "date": "2026-09-05",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.9",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-avatar@v0.11.3",
@@ -207,19 +227,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.16.5",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.5",
-    "title": "DisplayXR Runtime v2.16.5",
-    "date": "2026-09-04",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.5",
-    "prerelease": false,
-    "featureLines": [
-      "The DisplayXR Browser beside a plain-Chrome WebXR session no longer blinks or goes black (#939, leg 4). Every focus trade against a plain-Chrome session used to replay a stale hardware-2D wish onto a 3D panel (lens 3D -> 2D -> 3D), re-la…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.16.6",
