@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@preview-0.1.27",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.27",
+    "title": "DisplayXR Browser preview-0.1.27",
+    "date": "2026-09-05",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.27",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-avatar@v0.11.3",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.11.3",
@@ -136,12 +147,21 @@
     "id": "displayxr-runtime@v2.16.7",
     "repo": "displayxr-runtime",
     "tag": "v2.16.7",
-    "title": "v2.16.7",
+    "title": "DisplayXR Runtime v2.16.7",
     "date": "2026-09-04",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.7",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Android CNSDK pairing fix. `v2.16.2`/`v2.16.3` shipped a `libleiaCore-loader.so`",
+      "(0.10.62) that did **not** match the CNSDK the bundled Leia plug-in was built",
+      "against (0.10.63); CNSDK's loader shim exact-matches, so `leia_cnsdk_create`",
+      "failed with `-22` and **every in-process app on Android silently ran in 2D** —",
+      "`xrCreateSession` still returned `XR_SUCCESS` and the runtime self-checks still",
+      "passed. This release pins the loader to 0.10.63, makes the Android build *prove*",
+      "loader == plug-in from the artifacts themselves (not from the two hand-typed",
+      "pins that drifted), and stamps the bundled loader version into the runtime"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.18.3",
@@ -350,17 +370,6 @@
     "title": "DisplayXR v2.3.2",
     "date": "2026-08-31",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.23",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.23",
-    "title": "0.1.23 — Android windowed 3D anchors correctly (with runtime ≥ v2.14.12)",
-    "date": "2026-08-28",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.23",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
