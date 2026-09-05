@@ -42,6 +42,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-gaussiansplat@v1.24.1",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.24.1",
+    "title": "v1.24.1",
+    "date": "2026-09-05",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.24.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.26.0",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.26.0",
@@ -85,12 +96,15 @@
     "id": "displayxr-runtime@v2.16.8",
     "repo": "displayxr-runtime",
     "tag": "v2.16.8",
-    "title": "v2.16.8",
+    "title": "DisplayXR Runtime v2.16.8",
     "date": "2026-09-05",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.8",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Android CNSDK **0.10.66 lockstep**. The runtime's bundled `libleiaCore-loader.so`, the pinned Leia plug-in (`displayxr-leia-plugin` v2.6.14) and the on-device CNSDK implementation are now all the same version — the pairing that #1357 sho…",
+      "No runtime source changes since v2.16.7 — this is a pin + packaging release."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.11.3",
@@ -464,17 +478,6 @@
       "tiles, an empty blue sphere. If the device simply cannot reach Google the key is"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.22.3",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.22.3",
-    "title": "v1.22.3",
-    "date": "2026-08-27",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.22.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-modelviewer@v0.24.3",
