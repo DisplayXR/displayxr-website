@@ -29,6 +29,26 @@
     "date": "2026-09-05",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.24.0",
     "prerelease": false,
+    "featureLines": [
+      "Undock: launch as a floating transparent window from a web page or a native app (`displayxr-view:` protocol; first command line for this viewer: positional scene path, `--transparent/--rect/--src`), download toast, single-instance hand-o…",
+      "Command line, where there was none before: a positional scene path plus `--transparent`, `--rect`, `--src` and `--vh`, parsed before anything else starts (#99)",
+      "`displayxr-view:` protocol handler — the viewer registers the scheme itself at launch, so a page or a native app can spawn it directly (#99)",
+      "Single-instance hand-off: a second launch of our own type passes its URL to the running instance over `WM_COPYDATA` instead of stacking a rival window; a foreign `type=` is forwarded to the sibling viewer (#99)",
+      "`--transparent` is a creation parameter, not a post-hoc toggle — the window is born shaped and topmost so it floats over the desktop from the first frame; Ctrl+T is unchanged (#99)",
+      "`--rect` places the window in physical virtual-screen pixels, clamped into the panel's monitor only when the runtime confirms it actually located a 3D panel (#99)",
+      "`--vh` pins the virtual display height as the launcher's statement about the asset, outranking auto-fit's guess from the bounding box (#99)",
+      "`--src=<url>` downloads on a detached worker into a per-user cache; the URL a redirect chain lands on is re-checked under the stricter protocol policy (#99)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.26.0",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.26.0",
+    "title": "v0.26.0",
+    "date": "2026-09-05",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.26.0",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -506,22 +526,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.24.2",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.24.2",
-    "title": "v0.24.2",
-    "date": "2026-08-24",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.24.2",
-    "prerelease": false,
-    "featureLines": [
-      "Android load-time framing now matches the window you are actually looking at. A model opens fitted to the real app viewport in **both** orientations — previously the fit was measured against the tiled atlas (twice as wide as the panel), …",
-      "Rotating the device now re-frames the scene instead of keeping the load-time framing forever, so a portrait-fitted model no longer renders roughly 1.9x mis-sized in landscape. The re-frame is a 200 ms animation rather than a snap, and it…",
-      "Measured on an NP02J: the load-time viewport was reported as 3840x1200 (aspect 3.200, height-bound, `rig_vh` 1.07) and is now 1600x2560 (aspect 0.625, width-bound, `rig_vh` 1.80). A rotation moves the base between 1.80 and 1.07 with the …",
-      "Android: refit the framing base on every viewport change, preserving the user's zoom — `vHeight` is a function of (content, viewport), so it is re-derived on rotation instead of being fixed at load, animated over 200 ms and retargeting i…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.11.0",
