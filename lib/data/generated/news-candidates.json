@@ -49,8 +49,10 @@
     "date": "2026-09-05",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.24.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Undock fix: splat files written by current tools (SPZ v3/v4, zstd streams) now load, and a corrupt or unsupported file shows an error instead of closing the viewer."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.26.0",
@@ -71,6 +73,17 @@
       "have installed."
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.27.0",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.27.0",
+    "title": "v0.27.0",
+    "date": "2026-09-05",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.27.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-leia-plugin@v2.6.14",
@@ -478,17 +491,6 @@
       "tiles, an empty blue sphere. If the device simply cannot reach Google the key is"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.24.3",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.24.3",
-    "title": "v0.24.3",
-    "date": "2026-08-27",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.24.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.8.2",
