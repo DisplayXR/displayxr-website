@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-common@v2.9.4",
+    "repo": "displayxr-common",
+    "tag": "v2.9.4",
+    "title": "v2.9.4 (broken test TU — use v2.9.5)",
+    "date": "2026-09-05",
+    "url": "https://github.com/DisplayXR/displayxr-common/releases/tag/v2.9.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-avatar@v0.11.3",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.11.3",
