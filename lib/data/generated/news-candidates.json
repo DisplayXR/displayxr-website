@@ -22,6 +22,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-gaussiansplat@v1.24.0",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.24.0",
+    "title": "v1.24.0",
+    "date": "2026-09-05",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.24.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-avatar@v0.11.3",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.11.3",
@@ -495,21 +506,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.22.2",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.22.2",
-    "title": "v1.22.2",
-    "date": "2026-08-24",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.22.2",
-    "prerelease": false,
-    "featureLines": [
-      "On Android, a splat scene now loads framed to the window you are actually looking at. Previously the fit was computed against the wrong rectangle — first the tiled multiview atlas, then the device's native panel regardless of how the dev…",
-      "Verified on device (NP02J): a 1600x2560 portrait viewport (aspect 0.625) that framed at rig height 3.67 now lands at a corrected 1.84 x 1.51 fit box, and rotation moves the base between 3.67 and 1.89 in both directions with the user's zo…",
-      "Refit the base framing on device rotation over a short (200 ms) transition, preserving the user's pinch-zoom in both directions (#92)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.24.2",
