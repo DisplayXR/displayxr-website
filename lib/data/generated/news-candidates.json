@@ -49,6 +49,26 @@
     "date": "2026-09-05",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.26.0",
     "prerelease": false,
+    "featureLines": [
+      "The model viewer can now be **undocked** — launched as a floating, transparent",
+      "window straight from a web page or a native app, with its position, size and the",
+      "model it loads all set at launch. A page links `displayxr-view:` and the viewer",
+      "opens on top of it; a native app spawns the same thing with a handful of flags.",
+      "This release also adds a **studio lighting mode** and **4x MSAA**, so the floating",
+      "window reads as a finished object rather than an aliased cut-out.",
+      "It requires nothing new from the runtime — it runs against the runtime you already",
+      "have installed."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.6.14",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.14",
+    "title": "v2.6.14",
+    "date": "2026-09-05",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.14",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -334,21 +354,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.6.10",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.10",
-    "title": "v2.6.10",
-    "date": "2026-09-02",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.10",
-    "prerelease": false,
-    "featureLines": [
-      "The plug-in now consumes the runtime's **measured, per-frame prediction horizon**",
-      "instead of CNSDK's hardcoded `facePredictLatencyMs`. Verified end-to-end on",
-      "hardware, with the horizon reaching CNSDK's consumption site."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.11.2",
