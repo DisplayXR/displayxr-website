@@ -22,6 +22,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-avatar@v0.11.4",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.11.4",
+    "title": "v0.11.4",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-earthview@v0.7.6",
     "repo": "displayxr-demo-earthview",
     "tag": "v0.7.6",
@@ -65,8 +76,13 @@
     "date": "2026-09-06",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.25.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The splat viewer now consumes the runtime's rear depth budget (`XR_DXR_depth_budget`, runtime v2.16.9+ with a plug-in that supplies the background preview). In transparent mode the hard far cull no longer sits fixed at the display plane …",
+      "Consume `XR_DXR_depth_budget` via `dxr::ClipPolicy` so the transparent-mode far cull tracks the runtime's rear depth budget instead of sitting fixed at the display plane (#100)",
+      "v2 content-bounds ROI narrows the depth-budget analysis (and picking) to the scene's silhouette (#100)",
+      "Use displayxr-common v2.11.1's `frameEndNext` directly for the depth-budget integration (#100)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.9.2",
@@ -101,6 +117,17 @@
     "title": "v0.28.1",
     "date": "2026-09-06",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.28.2",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.28.2",
+    "title": "v0.28.2",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -195,26 +222,6 @@
     "prerelease": false,
     "featureLines": [
       "Undock fix: splat files written by current tools (SPZ v3/v4, zstd streams) now load, and a corrupt or unsupported file shows an error instead of closing the viewer."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.26.0",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.26.0",
-    "title": "v0.26.0",
-    "date": "2026-09-05",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.26.0",
-    "prerelease": false,
-    "featureLines": [
-      "The model viewer can now be **undocked** — launched as a floating, transparent",
-      "window straight from a web page or a native app, with its position, size and the",
-      "model it loads all set at launch. A page links `displayxr-view:` and the viewer",
-      "opens on top of it; a native app spawns the same thing with a handful of flags.",
-      "This release also adds a **studio lighting mode** and **4x MSAA**, so the floating",
-      "window reads as a finished object rather than an aliased cut-out.",
-      "It requires nothing new from the runtime — it runs against the runtime you already",
-      "have installed."
     ],
     "looksMechanical": false
   },
@@ -521,26 +528,6 @@
     "featureLines": [
       "Android: side-by-side layout — full, half or 2D — is now detected automatically, matching Windows/macOS/Linux; the `_2x1` / `_half_2x1` naming convention still takes precedence.",
       "Android stereo-layout detection now runs the same layered resolver as the desktop: filename (`*_2x1` / `*_half_2x1`, the SAF picker now passes the document's display name) > container metadata (LIF/MPO) > content cross-correlation (image…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.11.0",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.11.0",
-    "title": "v0.11.0",
-    "date": "2026-08-21",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.0",
-    "prerelease": false,
-    "featureLines": [
-      "Leo now frames himself properly in his 3D zone. Two things changed: the fit considers **width as well as height**, so a character with outstretched arms no longer clips at the zone edges in the portrait window; and the size is taken from…",
-      "Android also becomes a first-class in-process app this release, with a working click-through overlay.",
-      "Width-aware auto-fit against the 3D zone, via the shared `dxr::AutoFitVHeight` rule in displayxr-common v2.7.0 (#72): the avatar spans at most 80% of the zone in both axes. The viewport is the zone rect (the bottom fraction of the window…",
-      "Fit sized from the **active clip's** swept bounds, with an all-clips bounds sweep at load providing the safety envelope (#73). The vertical placement is clamped so the union floor — the feet of whichever clip dips lowest — stays in frame…",
-      "Active-clip fit and union-floor clamp extended to the macOS, Linux, and Android legs (#74).",
-      "Android: converted to a first-class in-process (Architecture A) app.",
-      "Android: click-through via a touchable tight overlay window (#66), with the input punch-through machinery inert on stock Android 13.",
-      "Android: the overlay box aspect is a runtime knob (`debug.dxr.avatar.overlay.aspect`)."
     ],
     "looksMechanical": false
   },
