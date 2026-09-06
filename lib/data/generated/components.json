@@ -20,8 +20,8 @@
   {
     "id": "leia_plugin",
     "name": "Leia SR Plug-in",
-    "version": "v2.6.16",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.16",
+    "version": "v2.6.17",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.17",
     "releaseDate": "2026-09-06",
     "platforms": "Windows",
     "repoUrl": "https://github.com/DisplayXR/displayxr-leia-plugin"
@@ -47,8 +47,8 @@
   {
     "id": "installer",
     "name": "All-in-one Installer",
-    "version": "v2.3.6",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.6",
+    "version": "v2.3.7",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.7",
     "releaseDate": "2026-09-06",
     "platforms": "Windows · macOS",
     "repoUrl": "https://github.com/DisplayXR/displayxr-installer"

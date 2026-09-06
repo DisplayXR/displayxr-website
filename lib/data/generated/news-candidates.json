@@ -55,8 +55,11 @@
     "date": "2026-09-06",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.6",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The avatar now reports its rendered silhouette to the runtime as an `XR_DXR_depth_budget` v3 content mask — built from the same click-through silhouette coverage it already computes for its zone, with no extra GPU readback. This makes th…",
+      "Chain the silhouette content mask for `XR_DXR_depth_budget` v3 (#81)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-earthview@v0.7.6",
@@ -189,8 +192,11 @@
     "date": "2026-09-06",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.3",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The model viewer now reports its rendered **silhouette** to the runtime instead of just a bounding box, so the rear-depth-budget decision is made under the model's actual outline. Desktop structure sitting beside the model (a monitor edg…",
+      "Chain the silhouette content mask for `XR_DXR_depth_budget` v3 (#116, #122) — derives an occupancy grid from the click-through region's per-frame coverage buffer (the same union-over-eyes rendered-alpha silhouette already computed for th…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.3.6",
@@ -199,6 +205,17 @@
     "title": "DisplayXR v2.3.6",
     "date": "2026-09-06",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.6",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.3.7",
+    "repo": "displayxr-installer",
+    "tag": "v2.3.7",
+    "title": "DisplayXR v2.3.7",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.7",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -228,6 +245,17 @@
       "Downsampled CPU preview of the desktop under the window, built from the existing background-capture pipeline at zero extra per-weave cost (#224)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.6.17",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.17",
+    "title": "v2.6.17",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.17",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-runtime@v2.16.11",
@@ -284,6 +312,26 @@
       "`XR_DXR_depth_budget` bumps to SPEC_VERSION 3: the rear depth budget is now decided under the app's rendered silhouette via `XrContentMaskDXR` (an occupancy mask chained at `xrEndFrame`), with precedence mask → bounds → 3D zones → whole …",
       "feat(depth-budget): measure under the silhouette, not the box around it (#1365)",
       "feat(depth-budget): v3 header draft — XrContentMaskDXR occupancy mask (#1365)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.19.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.19.0",
+    "title": "DisplayXR v2.19.0",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.19.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Background-aware foreground clipping — `XR_DXR_depth_budget` (#318).** A transparent overlay used to throw away *every* pixel behind the display plane: content behind the plane carries positive disparity while being drawn *over* deskto…",
+      "**Honours both clip paths.** BiRP takes it through the native per-eye far (`dxr_prov_get_eye_clip`); URP's `DisplayXR/ForegroundClipURP` gets it as the new `_DXRRearOffset` global, because its shader derives each eye's display-plane dist…",
+      "**`DisplayXRContentBounds`** — a new component for the content root (the avatar, the model). It unions the world bounds of its renderers each frame and hands the box to the provider, which projects it through every eye and reports the un…",
+      "**The silhouette, not a box around it (`XrContentMaskDXR`, spec v3).** A rectangle around a character is roughly three times its area, so most of what the runtime measured was background the model never covers — and any horizontal struct…",
+      "**`DisplayXRDepthBudget`** — read-only `State` / `FarOffsetVH` / `CueEnergy` / `RearOffsetWorld` for HUDs, debugging and tests, plus one log line per state change (never per frame). Nothing to wire.",
+      "**Apply as delivered; do not smooth.** The runtime already time-ramps the value (~300 ms opening, ~150 ms closing), so the plane glides rather than pops; an app-side filter on top fights that ramp for a slower, less predictable plane.",
+      "**Nothing changes without it.** The extension is enabled only when the runtime enumerates it, and the offset is 0 — clip exactly on the plane, byte-for-byte today's behaviour — on an older runtime, on a runtime whose display processor su…",
+      "**Report only what occupies the rear volume.** The region is a *rectangle*, so every extra renderer widens the patch of desktop the runtime judges — and a ground plane or skybox is worse than merely wide: its AABB has corners behind the …"
     ],
     "looksMechanical": false
   },
@@ -374,17 +422,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-leia-plugin@v2.6.13",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.13",
-    "title": "v2.6.13",
-    "date": "2026-09-04",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.13",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-unity@v2.18.3",
     "repo": "displayxr-unity",
     "tag": "v2.18.3",
@@ -416,28 +453,6 @@
     "date": "2026-09-03",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.26",
     "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.3.3",
-    "repo": "displayxr-installer",
-    "tag": "v2.3.3",
-    "title": "DisplayXR v2.3.3",
-    "date": "2026-09-03",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unity@v2.18.1",
-    "repo": "displayxr-unity",
-    "tag": "v2.18.1",
-    "title": "DisplayXR v2.18.1",
-    "date": "2026-09-03",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.18.1",
-    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
