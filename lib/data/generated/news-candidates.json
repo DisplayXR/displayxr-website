@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@preview-0.1.28",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.28",
+    "title": "DisplayXR Browser preview-0.1.28",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.28",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.25.0",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.25.0",
@@ -21,8 +32,12 @@
     "date": "2026-09-06",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Undock opens at the page's angle and fit (`pose=`/`--pose`, `margin=`/`--margin`), and the auto-fit now uses the same framing rule as the web SDK (swept-width and depth caps), so an undocked model matches its tile.",
+      "Undock opens at the page's pose and fit margin — `pose=`/`--pose` and `margin=`/`--margin` carry the page's camera angle and framing margin into the undocked window (#121)",
+      "Undock auto-fit matches the page's framing rule — the same swept-width and depth caps the web SDK applies, so the undocked model is framed exactly as it was in the tile (#119)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.27",
@@ -314,26 +329,6 @@
     "prerelease": false,
     "featureLines": [
       "**\"Create Scene Content\" button on the Basic Scene and URP Basic Scene samples** (#314). \"Scene Setup\" set up the Play session, not the scene: content was built in `Start()` and discarded on Stop, so nobody could move a cube or use the l…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.24",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.24",
-    "title": "0.1.24 — inline-3D on by default on Android",
-    "date": "2026-09-03",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.24",
-    "prerelease": true,
-    "featureLines": [
-      "**inline-3D is now ON by default on Android.** Every previous Android preview shipped",
-      "the feature switched off: it was reachable only via `--enable-inline-3d`, which on",
-      "Android arrives through `/data/local/tmp/chrome-command-line` — a file that needs adb.",
-      "Our test tablets had carried that file since bring-up, so every internal check passed",
-      "while testers without developer tools saw a browser that rendered the whole web",
-      "normally and showed **nothing** where the 3D should be. Two colleagues hit it",
-      "independently and neither could have diagnosed it: the runtime self-test reports a",
-      "clean PASS (it is idle — nothing ever connects to it) and every demo app weaves"
     ],
     "looksMechanical": false
   },
