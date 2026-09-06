@@ -194,22 +194,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.16.10",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.10",
-    "title": "DisplayXR Runtime v2.16.10",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.10",
-    "prerelease": false,
-    "featureLines": [
-      "**Android: the Leia runtime APK now bundles CNSDK loader 0.10.67 (`0.10.67+191.ea486b2`) and Leia plug-in v2.6.15**, lockstepped with the 0.10.67 device services — loader == plug-in == impl == 0.10.67 (the #1357 pair rule). CNSDK 0.10.67…",
-      "**Pairs with:** CNSDK services 0.10.67, DisplayXR Browser preview-0.1.28.",
-      "**No Windows / macOS / Linux runtime code changed in this release** — those installers are rebuilds of the v2.16.9 sources at the new tag.",
-      "_None — no runtime source changes in this release._"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.16.11",
     "repo": "displayxr-runtime",
     "tag": "v2.16.11",
@@ -251,6 +235,17 @@
       "`xrLocateViews` now honours `XrViewLocateInfo::space` on **both** legs — the rig pose goes in, the eyes come out in the space the app asked for — and the hosted world-absolute concession chain is deleted (#1370, ADR-024 Amendment 1). Als…"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.16.14",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.14",
+    "title": "v2.16.14",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.14",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@preview-0.1.27",
