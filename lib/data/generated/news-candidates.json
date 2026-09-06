@@ -25,6 +25,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-gaussiansplat@v1.25.1",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.25.1",
+    "title": "v1.25.1",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.25.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.28.0",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.28.0",
@@ -207,25 +218,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.23.0",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.23.0",
-    "title": "v1.23.0",
-    "date": "2026-09-04",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.23.0",
-    "prerelease": false,
-    "featureLines": [
-      "Transparent-background mode (Ctrl+T) now behaves correctly inside the DisplayXR",
-      "workspace — toggling it no longer pops the demo's native window back into view —",
-      "and an agent can drive that same toggle over MCP with the new",
-      "`set_transparent_background` tool.",
-      "New MCP tool `set_transparent_background` — toggle or explicitly set",
-      "transparent-background mode from an agent, taking exactly the same path as the",
-      "Ctrl+T key binding (#98)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.25.0",
