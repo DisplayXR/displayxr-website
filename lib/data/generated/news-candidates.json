@@ -62,6 +62,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-avatar@v0.11.7",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.11.7",
+    "title": "v0.11.7",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.7",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-earthview@v0.7.6",
     "repo": "displayxr-demo-earthview",
     "tag": "v0.7.6",
@@ -303,12 +314,15 @@
     "id": "displayxr-runtime@v2.16.15",
     "repo": "displayxr-runtime",
     "tag": "v2.16.15",
-    "title": "v2.16.15",
+    "title": "DisplayXR Runtime v2.16.15",
     "date": "2026-09-06",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.15",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Android-only release.** A hosted app's Activity relaunch no longer kills the process (#1358), and the APK finally names itself after the real release tag (#1379) — this is the first build whose `versionName` is the tag itself (`v2.16.1…",
+      "**OEM acceptance probe (PR #1386)** — `scripts/android-oem-probe.sh`, read-only adb probes for platform requirements R6/S9/R8/S4. N6 status corrected in the spec (vendor SDK 0.10.67 fixes the core-release join hang)."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.19.0",
@@ -371,17 +385,6 @@
       "fix on top of 0.10.65 corrects the convention; there is no API change and no"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.11.3",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.11.3",
-    "title": "v0.11.3",
-    "date": "2026-09-04",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-earthview@v0.7.5",
