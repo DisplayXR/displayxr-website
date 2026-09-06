@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-earthview@v0.7.6",
+    "repo": "displayxr-demo-earthview",
+    "tag": "v0.7.6",
+    "title": "v0.7.6",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.6",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.25.0",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.25.0",
@@ -527,17 +538,6 @@
       "Android stereo-layout detection now runs the same layered resolver as the desktop: filename (`*_2x1` / `*_half_2x1`, the SAF picker now passes the document's display name) > container metadata (LIF/MPO) > content cross-correlation (image…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-earthview@v0.7.2",
-    "repo": "displayxr-demo-earthview",
-    "tag": "v0.7.2",
-    "title": "v0.7.2",
-    "date": "2026-08-24",
-    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-avatar@v0.11.0",
