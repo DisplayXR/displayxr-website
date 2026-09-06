@@ -100,6 +100,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-gaussiansplat@v1.25.3",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.25.3",
+    "title": "v1.25.3",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.25.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@v1.9.2",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.9.2",
@@ -268,19 +279,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.24.1",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.24.1",
-    "title": "v1.24.1",
-    "date": "2026-09-05",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.24.1",
-    "prerelease": false,
-    "featureLines": [
-      "Undock fix: splat files written by current tools (SPZ v3/v4, zstd streams) now load, and a corrupt or unsupported file shows an error instead of closing the viewer."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.27.0",
