@@ -258,22 +258,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.16.11",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.11",
-    "title": "DisplayXR Runtime v2.16.11",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.11",
-    "prerelease": false,
-    "featureLines": [
-      "The rear depth budget now reaches every shipping compositor — the native Vulkan path (plain and hybrid-GPU split) and D3D12, via a shared `comp_rear_budget` helper. `XR_DXR_depth_budget` bumps to SPEC_VERSION 2, adding `XrContentBoundsDX…",
-      "feat(depth-budget): v2 content-bounds ROI — `XrContentBoundsDXR` on `xrEndFrame` (#1365)",
-      "feat(compositor): rear depth budget on the VK native and D3D12 compositors (#1364)",
-      "feat(vk): poll the split's D3D11 weaver for the rear budget (#1364)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.16.12",
     "repo": "displayxr-runtime",
     "tag": "v2.16.12",
@@ -314,6 +298,17 @@
       "feat(depth-budget): v3 header draft — XrContentMaskDXR occupancy mask (#1365)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.16.15",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.15",
+    "title": "v2.16.15",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.15",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.19.0",
