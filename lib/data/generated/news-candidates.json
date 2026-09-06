@@ -48,6 +48,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-avatar@v0.11.6",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.11.6",
+    "title": "v0.11.6",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.6",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-earthview@v0.7.6",
     "repo": "displayxr-demo-earthview",
     "tag": "v0.7.6",
@@ -107,8 +118,11 @@
     "date": "2026-09-06",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.25.3",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The splat viewer now reports its rendered silhouette to the runtime (`XR_DXR_depth_budget` v3 content mask, built from the click-through region it already computes), so the rear-depth-budget decision is made only under the scene's outlin…",
+      "Chain the silhouette content mask for `XR_DXR_depth_budget` v3 (#107)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.9.2",
@@ -166,6 +180,17 @@
       "Consume `XR_DXR_depth_budget` via `dxr::ClipPolicy` for adaptive far-clip in transparent mode (#116, 640ce77)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.28.3",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.28.3",
+    "title": "v0.28.3",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.3.6",
@@ -251,12 +276,16 @@
     "id": "displayxr-runtime@v2.16.14",
     "repo": "displayxr-runtime",
     "tag": "v2.16.14",
-    "title": "v2.16.14",
+    "title": "DisplayXR Runtime v2.16.14",
     "date": "2026-09-06",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.14",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "`XR_DXR_depth_budget` bumps to SPEC_VERSION 3: the rear depth budget is now decided under the app's rendered silhouette via `XrContentMaskDXR` (an occupancy mask chained at `xrEndFrame`), with precedence mask → bounds → 3D zones → whole …",
+      "feat(depth-budget): measure under the silhouette, not the box around it (#1365)",
+      "feat(depth-budget): v3 header draft — XrContentMaskDXR occupancy mask (#1365)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.27",
@@ -279,26 +308,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.27.0",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.27.0",
-    "title": "v0.27.0",
-    "date": "2026-09-05",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.27.0",
-    "prerelease": false,
-    "featureLines": [
-      "Undock now handles every catalogue asset: multi-file glTF (buffers and images",
-      "fetched relative to the URL, same origin only, path-validated) and a `room`",
-      "lighting mode that reproduces the storefront's image-based environment (the",
-      "default for undock launches; `--env=room|studio|sky|none`, `L` cycles).",
-      "**Multi-file `.gltf` over `--src=` and the `displayxr-view:` protocol (#117, fixes #114).**",
-      "A `.gltf` is JSON that points at its payload, so downloading the one file left",
-      "the window empty — only self-contained `.glb` worked. After the primary",
-      "download, and only for a `.gltf`, the JSON is read back, its `buffers[].uri` /"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.6.14",
@@ -439,17 +448,6 @@
     "title": "DisplayXR v2.18.2",
     "date": "2026-09-03",
     "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.18.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.11.2",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.11.2",
-    "title": "v0.11.2",
-    "date": "2026-09-01",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
