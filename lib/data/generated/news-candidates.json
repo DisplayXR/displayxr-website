@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-browser@preview-0.1.29",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.29",
+    "title": "DisplayXR Browser preview-0.1.29",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.29",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-earthview@v0.7.6",
     "repo": "displayxr-demo-earthview",
     "tag": "v0.7.6",
@@ -98,12 +109,17 @@
     "id": "displayxr-runtime@v2.16.10",
     "repo": "displayxr-runtime",
     "tag": "v2.16.10",
-    "title": "v2.16.10",
+    "title": "DisplayXR Runtime v2.16.10",
     "date": "2026-09-06",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.10",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Android: the Leia runtime APK now bundles CNSDK loader 0.10.67 (`0.10.67+191.ea486b2`) and Leia plug-in v2.6.15**, lockstepped with the 0.10.67 device services — loader == plug-in == impl == 0.10.67 (the #1357 pair rule). CNSDK 0.10.67…",
+      "**Pairs with:** CNSDK services 0.10.67, DisplayXR Browser preview-0.1.28.",
+      "**No Windows / macOS / Linux runtime code changed in this release** — those installers are rebuilds of the v2.16.9 sources at the new tag.",
+      "_None — no runtime source changes in this release._"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.27",
@@ -350,17 +366,6 @@
       "**\"Create Scene Content\" button on the Basic Scene and URP Basic Scene samples** (#314). \"Scene Setup\" set up the Play session, not the scene: content was built in `Start()` and discarded on Stop, so nobody could move a cube or use the l…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.25",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.25",
-    "title": "DisplayXR Browser 0.1.25 — release-signed Android build",
-    "date": "2026-09-03",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.25",
-    "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@preview-0.1.26",
