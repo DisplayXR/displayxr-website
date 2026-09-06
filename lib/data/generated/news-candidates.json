@@ -7,6 +7,20 @@
     "date": "2026-09-06",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.25.0",
     "prerelease": false,
+    "featureLines": [
+      "Undock opens at the page's angle and fit (`pose=`/`--pose`, `margin=`/`--margin`); SPZ files written by current tools load upright.",
+      "Undock opens at the page's pose and fit margin — the undocked window inherits the angle and framing the page was showing, via `pose=`/`--pose` and `margin=`/`--margin` (#106)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.28.0",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.28.0",
+    "title": "v0.28.0",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.0",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -438,17 +452,6 @@
     "title": "v1.9.1",
     "date": "2026-09-01",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.24.4",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.24.4",
-    "title": "v0.24.4",
-    "date": "2026-09-01",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.24.4",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
