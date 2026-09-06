@@ -95,6 +95,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.16.10",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.10",
+    "title": "v2.16.10",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.10",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.27",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.27",
@@ -295,19 +306,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.16.6",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.6",
-    "title": "DisplayXR Runtime v2.16.6",
-    "date": "2026-09-04",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.6",
-    "prerelease": false,
-    "featureLines": [
-      "Run the DisplayXR Browser and a plain-Chrome WebXR session side by side and neither one leaving drops the other out of 3D. Three teardown residuals on #939 — all hardware-verified at the panel — are fixed: a departing hosted client's par…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.16.7",
