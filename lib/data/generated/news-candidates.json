@@ -84,6 +84,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-leia-plugin@v2.6.15",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.15",
+    "title": "v2.6.15",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.15",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.27",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.27",
@@ -374,26 +385,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.6.11",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.11",
-    "title": "v2.6.11",
-    "date": "2026-09-03",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.11",
-    "prerelease": false,
-    "featureLines": [
-      "**The per-frame prediction horizon now actually reaches CNSDK on Android.** The",
-      "`#206` horizon-forwarding code shipped in v2.6.10 as source only — it was",
-      "compiled *out*. The consumer in `src/drv_leia_android/leia_cnsdk.cpp` is guarded",
-      "on CNSDK's own `VERSION` macro, and `leia_interlacer_set_predicted_scanout_ns`",
-      "first exists in CNSDK **0.10.63**; the Android CI pinned 0.10.62, so the guard",
-      "removed the call. The plug-in still built, still loaded, still reported v2.6.10,",
-      "and forwarded nothing — CNSDK silently fell back to its hardcoded 40 ms horizon.",
-      "This release raises the CNSDK build pin to v0.10.63, so the weave path publishes"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.6.12",
