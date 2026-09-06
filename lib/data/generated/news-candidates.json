@@ -207,9 +207,23 @@
     "id": "displayxr-runtime@v2.16.12",
     "repo": "displayxr-runtime",
     "tag": "v2.16.12",
-    "title": "v2.16.12",
+    "title": "DisplayXR Runtime v2.16.12",
     "date": "2026-09-06",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.12",
+    "prerelease": false,
+    "featureLines": [
+      "Android freeform windowing. A runtime-spawned hosted app now behaves correctly when its window is not the whole panel: it publishes its on-screen window rect in-process, so the per-window Kooima projection, the vendor DP's phase origin a…",
+      "No Windows, macOS or Linux runtime behaviour changes in this release."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.16.13",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.13",
+    "title": "v2.16.13",
+    "date": "2026-09-06",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.13",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -286,24 +300,6 @@
       "result was a display that stayed flat 2D at a normal 40–55 cm while head",
       "tracking was alive and reporting, on every runtime version. CNSDK's two-file",
       "fix on top of 0.10.65 corrects the convention; there is no API change and no"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.16.9",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.9",
-    "title": "DisplayXR Runtime v2.16.9",
-    "date": "2026-09-05",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.9",
-    "prerelease": false,
-    "featureLines": [
-      "This release adds the `XR_DXR_depth_budget` extension: the runtime tells a transparent app how far behind the display plane it may render, derived from a vendor-neutral analysis of the desktop content behind the window. It also adds the …",
-      "`XR_DXR_depth_budget` — the app-facing rear depth budget (#1364)",
-      "`u_bg_neutrality` + `u_rear_budget` — the rear depth budget policy (#1364)",
-      "Append `get_background_preview` to every per-API DP variant (#1364)",
-      "Run the rear-depth policy on the in-process render thread (d3d11) (#1364)",
-      "Carry the rear depth budget on the locate-views-rig IPC reply (#1364)"
     ],
     "looksMechanical": false
   },
