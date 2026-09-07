@@ -33,6 +33,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-mediaplayer@v1.9.4",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.9.4",
+    "title": "v1.9.4",
+    "date": "2026-09-07",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.16.16",
     "repo": "displayxr-runtime",
     "tag": "v2.16.16",
@@ -67,12 +78,14 @@
     "id": "displayxr-runtime@v2.16.18",
     "repo": "displayxr-runtime",
     "tag": "v2.16.18",
-    "title": "v2.16.18",
+    "title": "DisplayXR Runtime v2.16.18",
     "date": "2026-09-07",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.18",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "On a weave-on-scanout box — the default on hybrid iGPU/dGPU machines (#918 VK-1) — the Vulkan native compositor never composited window-space layers. Every app-authored 2D overlay (HUDs, transport bars, button strips) was accepted and th…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.19.1",
@@ -537,20 +550,6 @@
       "Keys are also **checked before they are saved**, as they already were on macOS",
       "and Windows. A wrong key used to fail exactly like a missing one — no error, no",
       "tiles, an empty blue sphere. If the device simply cannot reach Google the key is"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.9.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.9.0",
-    "title": "v1.9.0",
-    "date": "2026-08-26",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.0",
-    "prerelease": false,
-    "featureLines": [
-      "Android: side-by-side layout — full, half or 2D — is now detected automatically, matching Windows/macOS/Linux; the `_2x1` / `_half_2x1` naming convention still takes precedence.",
-      "Android stereo-layout detection now runs the same layered resolver as the desktop: filename (`*_2x1` / `*_half_2x1`, the SAF picker now passes the document's display name) > container metadata (LIF/MPO) > content cross-correlation (image…"
     ],
     "looksMechanical": false
   },
