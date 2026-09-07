@@ -16,6 +16,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.16.16",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.16",
+    "title": "v2.16.16",
+    "date": "2026-09-07",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.16",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity@v2.19.1",
     "repo": "displayxr-unity",
     "tag": "v2.19.1",
@@ -294,20 +305,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.16.12",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.12",
-    "title": "DisplayXR Runtime v2.16.12",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.12",
-    "prerelease": false,
-    "featureLines": [
-      "Android freeform windowing. A runtime-spawned hosted app now behaves correctly when its window is not the whole panel: it publishes its on-screen window rect in-process, so the per-window Kooima projection, the vendor DP's phase origin a…",
-      "No Windows, macOS or Linux runtime behaviour changes in this release."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.16.13",
