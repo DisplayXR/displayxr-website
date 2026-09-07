@@ -7,6 +7,22 @@
     "date": "2026-09-07",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.30",
     "prerelease": true,
+    "featureLines": [
+      "**Undock to the desktop.** A page can now lift an inline-3D element out of the tab into a floating, transparent native viewer that hovers over the desktop — no external-protocol prompt, no \"Open DisplayXR…?\" dialog. The browser computes …",
+      "`XRDisplayLayer.undock(init)` resolves once the native viewer is launched; `XRDisplayLayer.getUndockCapabilities()` reports which viewer types are installed; the session fires `undockend` when the floating window closes (#25, #46)",
+      "Browser-process undock service: registry probe for the installed viewers, physical-pixel rect from the renderer's device scale factor, clean runtime environment for the child, one live undock per frame (#25, #46)",
+      "Retiring an emulated 1-view mode on a forwarded 2-view request now fires `renderingmodechange` (#42)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.19.1",
+    "repo": "displayxr-unity",
+    "tag": "v2.19.1",
+    "title": "DisplayXR v2.19.1",
+    "date": "2026-09-07",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.19.1",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -453,17 +469,6 @@
       "**\"Create Scene Content\" button on the Basic Scene and URP Basic Scene samples** (#314). \"Scene Setup\" set up the Play session, not the scene: content was built in `Start()` and discarded on Stop, so nobody could move a cube or use the l…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.18.2",
-    "repo": "displayxr-unity",
-    "tag": "v2.18.2",
-    "title": "DisplayXR v2.18.2",
-    "date": "2026-09-03",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.18.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-earthview@v0.7.4",
