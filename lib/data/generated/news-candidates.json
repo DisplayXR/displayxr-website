@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@preview-0.1.30",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.30",
+    "title": "DisplayXR Browser preview-0.1.30",
+    "date": "2026-09-07",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.30",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.28",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.28",
@@ -442,17 +453,6 @@
       "**\"Create Scene Content\" button on the Basic Scene and URP Basic Scene samples** (#314). \"Scene Setup\" set up the Play session, not the scene: content was built in `Start()` and discarded on Stop, so nobody could move a cube or use the l…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.26",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.26",
-    "title": "DisplayXR Browser preview-0.1.26",
-    "date": "2026-09-03",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.26",
-    "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.18.2",
