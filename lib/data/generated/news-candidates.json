@@ -16,12 +16,37 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-mediaplayer@v1.9.3",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.9.3",
+    "title": "v1.9.3",
+    "date": "2026-09-07",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.16.16",
     "repo": "displayxr-runtime",
     "tag": "v2.16.16",
-    "title": "v2.16.16",
+    "title": "DisplayXR Runtime v2.16.16",
     "date": "2026-09-07",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.16",
+    "prerelease": false,
+    "featureLines": [
+      "3D now weaves crisply inside the OEM recents **\"freeform\" scaled mini-window** on Android (#1367). The window manager hands a scaled-down surface whose logical size × scale is not an integer number of pixels; anything but an exact-intege…",
+      "`feat(android)`: weave 1:1 inside the OEM scaled mini-window (#1367)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.16.17",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.17",
+    "title": "v2.16.17",
+    "date": "2026-09-07",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.17",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -307,19 +332,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.16.13",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.13",
-    "title": "DisplayXR Runtime v2.16.13",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.13",
-    "prerelease": false,
-    "featureLines": [
-      "`xrLocateViews` now honours `XrViewLocateInfo::space` on **both** legs — the rig pose goes in, the eyes come out in the space the app asked for — and the hosted world-absolute concession chain is deleted (#1370, ADR-024 Amendment 1). Als…"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.16.14",
     "repo": "displayxr-runtime",
     "tag": "v2.16.14",
@@ -519,17 +531,6 @@
       "tiles, an empty blue sphere. If the device simply cannot reach Google the key is"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.8.3",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.8.3",
-    "title": "v1.8.3",
-    "date": "2026-08-26",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.8.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.9.0",
