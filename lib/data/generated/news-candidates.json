@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-leia-plugin@v2.6.18",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.18",
+    "title": "v2.6.18",
+    "date": "2026-09-08",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.18",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.30",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.30",
@@ -422,26 +433,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.6.14",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.14",
-    "title": "v2.6.14",
-    "date": "2026-09-05",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.14",
-    "prerelease": false,
-    "featureLines": [
-      "**Android: K68 EVT panels no longer sit flat-2D at normal viewing distance.** The",
-      "Android plug-in is now built against **CNSDK v0.10.66** (was v0.10.63). CNSDK's",
-      "device service regenerated `donopx` 3.46× too large on K68 **EVT** hardware —",
-      "the `don_mm`-vs-`donopx` convention was chosen by device *class* rather than by",
-      "magnitude — which parked the no-face phase gate's window at 651–3686 mm. The",
-      "result was a display that stayed flat 2D at a normal 40–55 cm while head",
-      "tracking was alive and reporting, on every runtime version. CNSDK's two-file",
-      "fix on top of 0.10.65 corrects the convention; there is no API change and no"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-earthview@v0.7.5",
