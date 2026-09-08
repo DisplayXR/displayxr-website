@@ -20,15 +20,32 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.16.19",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.19",
-    "title": "v2.16.19",
+    "id": "displayxr-leia-plugin@v2.6.19",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.19",
+    "title": "v2.6.19",
     "date": "2026-09-08",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.19",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.19",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.16.19",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.19",
+    "title": "DisplayXR Runtime v2.16.19",
+    "date": "2026-09-08",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.19",
+    "prerelease": false,
+    "featureLines": [
+      "**The Android mini-window weave stall (#1394) is cured.** Paired with CNSDK 0.10.68 and Leia plug-in v2.6.18, the stall no longer reproduces on device: **0 stalls across 24 + 8 + 8 mini-window toggles**, against a 6-in-9 baseline before …",
+      "**`MiniWindowLayout` ships here as a supported cross-APK contract** (`contractVersion()` = 2, `@Keep`, R8 keep rules, and a DEX assertion in CI). This is the first release to publish it, and it is what lets the DisplayXR Browser drive it…",
+      "**A display processor can now report a dropped frame.** The new `get_last_frame_dropped` DP slot means a vendor-dropped weave is discarded rather than presented stale: the runtime shows a defined black frame, and the drop is neither coun…",
+      "`feat(vk)`: let a display processor say a frame was DROPPED, and discard it (#1394) (#1411)",
+      "`feat(android)`: publish `MiniWindowLayout` as a supported cross-APK contract (#1403 Option B)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.30",
@@ -357,17 +374,6 @@
     "title": "DisplayXR v2.3.7",
     "date": "2026-09-06",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.7",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.6.15",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.15",
-    "title": "v2.6.15",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.15",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
