@@ -20,6 +20,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-browser@preview-0.1.32",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.32",
+    "title": "DisplayXR Browser preview-0.1.32",
+    "date": "2026-09-08",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.32",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.6.18",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.6.18",
@@ -80,12 +91,14 @@
     "id": "displayxr-runtime@v2.16.20",
     "repo": "displayxr-runtime",
     "tag": "v2.16.20",
-    "title": "v2.16.20",
+    "title": "DisplayXR Runtime v2.16.20",
     "date": "2026-09-08",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.20",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The Android Leia APK now bundles **Leia plug-in v2.6.19**, which compiles in the `get_last_frame_dropped` display-processor slot — dropped weaves are reported back through the runtime instead of being invisible. The plug-in is re-pinned …"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.30",
@@ -169,17 +182,6 @@
     "date": "2026-09-07",
     "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.19.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.28",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.28",
-    "title": "DisplayXR Browser preview-0.1.28",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.28",
-    "prerelease": true,
     "featureLines": [],
     "looksMechanical": true
   },
