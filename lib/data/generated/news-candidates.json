@@ -7,8 +7,17 @@
     "date": "2026-09-08",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.31",
     "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "DisplayXR Browser now weaves **1:1 inside the OEM scaled recents \"mini-window\"** on 3D",
+      "tablets. Previously a browser window promoted into the OEM's scaled mini-window presented a",
+      "weave whose pitch no longer matched the panel, so 3D broke as soon as the window left",
+      "fullscreen. The browser now takes the runtime's option-B contract (`displayxr-runtime` #1403)",
+      "and weaves at native panel scale inside that window — device-verified on the NP02J.",
+      "Requires the DisplayXR runtime **≥ v2.16.17**; the full contract path lands at **≥ v2.16.19**.",
+      "Rebased the patch series onto **Chromium 153.0.8010.27** (was 152.0.7977.83)",
+      "Android: a default landing page, plus a guard so it cannot drift from the Windows one (#183)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.6.18",
