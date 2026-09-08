@@ -7,6 +7,26 @@
     "date": "2026-09-08",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.18",
     "prerelease": false,
+    "featureLines": [
+      "**Android mini-window weaving no longer stalls.** This release pairs the plug-in",
+      "with **CNSDK v0.10.68**, the first core carrying LeiaInc/CNSDK#734 (the fix for",
+      "CNSDK#733): a failed weaver `vkQueueSubmit` now disarms its fence and returns an",
+      "error out of `Apply2DEffect`, with a 500 ms bounded fence wait as the net,",
+      "instead of waiting forever on a fence nothing will ever signal. That unbounded",
+      "wait was the stall behind displayxr-runtime#1394.",
+      "The plug-in side complements it — a weave the core reports as dropped is no",
+      "longer presented, so a failed frame shows the previous good image rather than a"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.16.19",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.19",
+    "title": "v2.16.19",
+    "date": "2026-09-08",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.19",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -377,20 +397,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.16.15",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.15",
-    "title": "DisplayXR Runtime v2.16.15",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.15",
-    "prerelease": false,
-    "featureLines": [
-      "**Android-only release.** A hosted app's Activity relaunch no longer kills the process (#1358), and the APK finally names itself after the real release tag (#1379) — this is the first build whose `versionName` is the tag itself (`v2.16.1…",
-      "**OEM acceptance probe (PR #1386)** — `scripts/android-oem-probe.sh`, read-only adb probes for platform requirements R6/S9/R8/S4. N6 status corrected in the spec (vendor SDK 0.10.67 fixes the core-release join hang)."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.19.0",
