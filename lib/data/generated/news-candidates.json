@@ -77,6 +77,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.16.20",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.20",
+    "title": "v2.16.20",
+    "date": "2026-09-08",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.20",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.30",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.30",
@@ -119,20 +130,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.16.16",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.16",
-    "title": "DisplayXR Runtime v2.16.16",
-    "date": "2026-09-07",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.16",
-    "prerelease": false,
-    "featureLines": [
-      "3D now weaves crisply inside the OEM recents **\"freeform\" scaled mini-window** on Android (#1367). The window manager hands a scaled-down surface whose logical size × scale is not an integer number of pixels; anything but an exact-intege…",
-      "`feat(android)`: weave 1:1 inside the OEM scaled mini-window (#1367)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.16.17",
