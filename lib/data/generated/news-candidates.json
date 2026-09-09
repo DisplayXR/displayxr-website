@@ -7,8 +7,17 @@
     "date": "2026-09-09",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.33",
     "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**3D elements clipped by the window edge now weave correctly.** A 3D element only partly",
+      "inside the browser window used to show a double image: the runtime splits every submitted",
+      "rect at its own integer midpoint, while the browser drew the side-by-side pair at the",
+      "tile's *unclipped* width — so the eye split landed inside one eye. A horizontally clipped",
+      "tile is now repacked against the unclipped pair, so each piece's own left and right columns",
+      "land in its own halves. Device-verified on a 3D tablet in **both** the OEM scaled",
+      "mini-window and fullscreen. (browser#86)",
+      "**The Android APK is now signed v2-only**, matching the DisplayXR runtime and all five"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.9.5",
@@ -70,6 +79,17 @@
       "`feat(scripts)`: let `DXR_VCVARS` pin the MSVC toolchain (wins over `vswhere -latest`, so a box with VS 2022 + a newer VS builds against the validated one)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.16.22",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.22",
+    "title": "v2.16.22",
+    "date": "2026-09-09",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.22",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@preview-0.1.31",
@@ -221,19 +241,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.16.18",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.18",
-    "title": "DisplayXR Runtime v2.16.18",
-    "date": "2026-09-07",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.18",
-    "prerelease": false,
-    "featureLines": [
-      "On a weave-on-scanout box — the default on hybrid iGPU/dGPU machines (#918 VK-1) — the Vulkan native compositor never composited window-space layers. Every app-authored 2D overlay (HUDs, transport bars, button strips) was accepted and th…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.19.1",
