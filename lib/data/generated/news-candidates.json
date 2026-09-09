@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@preview-0.1.33",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.33",
+    "title": "DisplayXR Browser preview-0.1.33",
+    "date": "2026-09-09",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.33",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@v1.9.5",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.9.5",
@@ -18,6 +29,17 @@
       "Android: tap-to-open on the empty splash when no media is loaded (#67, #68)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-installer@v2.3.8",
+    "repo": "displayxr-installer",
+    "tag": "v2.3.8",
+    "title": "DisplayXR v2.3.8",
+    "date": "2026-09-09",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.8",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-leia-plugin@v2.6.20",
@@ -221,17 +243,6 @@
     "date": "2026-09-07",
     "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.19.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.29",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.29",
-    "title": "DisplayXR Browser preview-0.1.29",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.29",
-    "prerelease": true,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -494,17 +505,6 @@
     "title": "v0.7.5",
     "date": "2026-09-04",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.5",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.3.4",
-    "repo": "displayxr-installer",
-    "tag": "v2.3.4",
-    "title": "DisplayXR v2.3.4",
-    "date": "2026-09-04",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.4",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true

@@ -38,18 +38,18 @@
   {
     "id": "browser",
     "name": "DisplayXR Browser (Developer Preview)",
-    "version": "preview-0.1.32",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.32",
-    "releaseDate": "2026-09-08",
+    "version": "preview-0.1.33",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.33",
+    "releaseDate": "2026-09-09",
     "platforms": "Windows · Android",
     "repoUrl": "https://github.com/DisplayXR/displayxr-browser"
   },
   {
     "id": "installer",
     "name": "All-in-one Installer",
-    "version": "v2.3.7",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.7",
-    "releaseDate": "2026-09-06",
+    "version": "v2.3.8",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.8",
+    "releaseDate": "2026-09-09",
     "platforms": "Windows · macOS",
     "repoUrl": "https://github.com/DisplayXR/displayxr-installer"
   }
