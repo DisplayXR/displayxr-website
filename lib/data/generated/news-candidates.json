@@ -7,6 +7,37 @@
     "date": "2026-09-09",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.5",
     "prerelease": false,
+    "featureLines": [
+      "**Two-track stereo mp4 (\"LVF v2\") plays in 3D on Android.** Open a file whose left and right views are stored as two video tracks (v1 LeiaCam2 files included) and the player decodes both eyes, pairs them frame-exact, and applies the file…",
+      "**`tools/lvf2.py`** converts side-by-side or v1 dual-track mp4s into two-track LVF v2 and can `inspect` any mp4 against the format contract.",
+      "**The idle screen is shown in 2D** on 3D panels — the logo and label are crisp instead of ghosted, and the display goes back to 3D the moment media loads (a manual mode choice while idle is respected).",
+      "**Tap the empty splash to open a file** on Android, and reopening a file after a first one no longer freezes the app.",
+      "Android: two-track LVF reader (v1 + v2) — second decoder for the right eye, exact-PTS pairing against the master's presented frame, interpolated convergence applied as a per-eye shift; `StereoLayout::Dual` in the shared layout enum (desk…",
+      "`tools/lvf2.py` — LVF v2 converter + inspector: `abl`/`abr` language tags, disabled right-eye track, `mett` convergence track with the video's edit list, `covr` poster; stdlib + optional mutagen (#68)",
+      "Android: idle splash rendered in the flat mode — borrowed on show, handed back on first media load; retiles on `RENDERING_MODE_CHANGED` (#64, #68)",
+      "Android: tap-to-open on the empty splash when no media is loaded (#67, #68)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.6.20",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.20",
+    "title": "v2.6.20",
+    "date": "2026-09-09",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.20",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.16.21",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.21",
+    "title": "v2.16.21",
+    "date": "2026-09-09",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.21",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -160,23 +191,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.16.17",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.17",
-    "title": "DisplayXR Runtime v2.16.17",
-    "date": "2026-09-07",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.17",
-    "prerelease": false,
-    "featureLines": [
-      "Apps that own their own Android Surface now get the **1:1 weave inside the OEM scaled mini-window**. `XR_DXR_android_surface_binding` moves to `SPEC_VERSION 2` and adds `XrEventDataAndroidWindowLayoutHintDXR`, so a surface-binding app (m…",
-      "Second: a wedged vendor weave no longer freezes the app. The Vulkan hand-off to the display processor is now bounded and a wedged weave is treated as a recoverable condition with a clean session teardown, so a stuck vendor weave degrades…",
-      "feat(android): `XR_DXR_android_surface_binding` v2 — mini-window layout hint (#1396) (#1398)",
-      "`SPEC_VERSION` 2 + `XrEventDataAndroidWindowLayoutHintDXR`",
-      "shared `MiniWindowLayout` helper; hosted path byte-identical"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.16.18",
@@ -422,21 +436,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.6.16",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.16",
-    "title": "v2.6.16",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.16",
-    "prerelease": false,
-    "featureLines": [
-      "The plug-in now implements the runtime's `get_background_preview` display-processor slot: a downsampled preview of the desktop under the app window, produced once per capture generation from the existing WGC background capture (GenerateM…",
-      "`get_background_preview` wired on the D3D11/D3D12/VK/GL display processors (#224)",
-      "Downsampled CPU preview of the desktop under the window, built from the existing background-capture pipeline at zero extra per-weave cost (#224)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.6.17",
