@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-mediaplayer@v1.9.5",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.9.5",
+    "title": "v1.9.5",
+    "date": "2026-09-09",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.31",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.31",
@@ -27,8 +38,14 @@
     "date": "2026-09-08",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.32",
     "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**WebXR `immersive-vr` apps now run in the browser tab, on the 3D display, with no page changes.** Open any WebXR app and press its *Enter VR* button — the session renders in-tab through DisplayXR's inline-3D path. The separate runtime-h…",
+      "Verified against immersive-web `immersive-vr-session` / `input-tracking` / `controller-state`, aframe.io hello-world, Babylon playground `#F41V6N`, and xrdinosaurs.com.",
+      "Controls while in VR: **WASD / Q / E** move, **right-mouse** look, **P** pause, **wheel** zoom, **V** eased 2D/3D, **Ctrl+Alt** controllers, **F11** fullscreen, **Esc** frees the pointer (in fullscreen) — the **Exit VR** overlay returns …",
+      "Known limits carried into this release (tracked, not blockers): Babylon re-applies its own canvas size each frame (pair renders at half resolution); side-by-side width capped at 3072 px; `local-floor` is a JS rebase; hand tracking is rej…",
+      "Also in this release: Chromium **153.0.8010.27** (rebased from 152), and on Android the browser now opens on the DisplayXR samples index instead of a blank New Tab Page."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.6.18",
@@ -527,17 +544,6 @@
     "title": "v0.7.4",
     "date": "2026-09-01",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.4",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.9.1",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.9.1",
-    "title": "v1.9.1",
-    "date": "2026-09-01",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
