@@ -27,8 +27,12 @@
     "date": "2026-09-09",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.20",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**2D rendering modes now switch the Leia panel to 2D on Android.** When the runtime renders flat (e.g. a media player's idle splash screen), the plug-in now turns the panel's lens off instead of leaving it in 3D — 2D content is shown as …",
+      "Android DP implements `request_display_mode` / `get_hardware_3d_state` — hardware 2D/3D follows the runtime's rendering mode (#236)",
+      "Android DP applies the runtime's 2D/3D request immediately (`leia_core_enable_3d()` at request time) and honours the wish on resume and bootstrap (#236)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.16.21",
