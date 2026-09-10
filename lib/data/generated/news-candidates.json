@@ -1,11 +1,66 @@
 [
   {
+    "id": "displayxr-demo-mediaplayer@v1.9.6",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.9.6",
+    "title": "v1.9.6",
+    "date": "2026-09-10",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.6",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.3.9",
+    "repo": "displayxr-installer",
+    "tag": "v2.3.9",
+    "title": "DisplayXR v2.3.9",
+    "date": "2026-09-10",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.9",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.16.23",
     "repo": "displayxr-runtime",
     "tag": "v2.16.23",
-    "title": "v2.16.23",
+    "title": "DisplayXR Runtime v2.16.23",
     "date": "2026-09-10",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.23",
+    "prerelease": false,
+    "featureLines": [
+      "**Android OEM mini-window support (#1424, #1425).** The OEM ships two distinct scaled-window families — the recents-card \"freeform\" mini-window (*Normal*) and the drop-zone window (*Hang*) — and the runtime now queries the vendor placeme…",
+      "When the vendor API and a **settled touch-ratio measurement** still disagree, the measurement now wins, adopting whichever candidate Rect explains it. A drag that straddles a window-geometry change is discarded outright — a moving window…",
+      "**Exit-side torn geometry**: a sample carrying a new origin with the previous logical extent (the fullscreen return from a mini-window) is skipped for up to two frames, and a view or surface that has not followed the window for three con…",
+      "The compositor **keeps weaving for an off-panel placement whose extent still fits** (`OFF_PANEL_PLACEMENT`, throttled to once per 5 s) instead of dropping to flat 2D — only a container-scaled window whose *logical* extent cannot fit degr…",
+      "New `SWAP_DIAG` present diagnostic: `vkAcquireNextImageKHR` / `vkQueuePresentKHR` failures are tallied per target and reported at most once per 5 s. `VK_SUBOPTIMAL_KHR` — returned on essentially every frame in a scaled window on this dev…",
+      "`tests_aux_mini_window_tell` pins the scale-source contract structurally (both families queried, discriminator order, straddle guard, measurement-wins) and is mutation-checked.",
+      "Android APK bundles displayxr-leia-plugin v2.6.20 / CNSDK 0.10.68.",
+      "feat(android,#1424): make \"renders fine, never reaches glass\" observable — `SWAP_DIAG` present-failure counters and `OFF_PANEL_PLACEMENT` now reports the on-panel visible extent beside the fixed buffer extent (part of #1425)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unreal@v0.8.0",
+    "repo": "displayxr-unreal",
+    "tag": "v0.8.0",
+    "title": "DisplayXR v0.8.0",
+    "date": "2026-09-10",
+    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.8.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Rig gizmos in the editor.** Selecting a `DisplayXR Camera` draws its convergence plane — the screen plane at `1/InvConvergenceDistance` in front of the camera, sized from the camera's FOV and aspect, with edges back to the camera; inve…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unreal@v0.9.0",
+    "repo": "displayxr-unreal",
+    "tag": "v0.9.0",
+    "title": "DisplayXR v0.9.0",
+    "date": "2026-09-10",
+    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.9.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -367,17 +422,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-demo-mediaplayer@v1.9.2",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.9.2",
-    "title": "v1.9.2",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-demo-modelviewer@v0.28.0",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.28.0",
@@ -508,17 +552,6 @@
     "title": "v0.7.5",
     "date": "2026-09-04",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.5",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.3.5",
-    "repo": "displayxr-installer",
-    "tag": "v2.3.5",
-    "title": "DisplayXR v2.3.5",
-    "date": "2026-09-04",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.5",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -762,34 +795,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unreal@v0.5.1",
-    "repo": "displayxr-unreal",
-    "tag": "v0.5.1",
-    "title": "DisplayXR v0.5.1",
-    "date": "2026-07-03",
-    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.5.1",
-    "prerelease": false,
-    "featureLines": [
-      "Packaged `Binaries/Win64/*.dll` are now EV code-signed before zipping. (#666)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unreal@v0.5.0",
-    "repo": "displayxr-unreal",
-    "tag": "v0.5.0",
-    "title": "v0.5.0 — UE over IPC + first-class shell citizen",
-    "date": "2026-06-30",
-    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.5.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Render over IPC (shell / forced-IPC)** via a canonical `arraySize=2` stereo array swapchain (the single-tiled shared texture is non-coherent cross-process from UE's process). Resolves the 0.4.3 \"content arrives black at the service com…",
-      "**Camera-look under the shell** — driven straight on the local `PlayerController` (`AddYaw/PitchInput`), since UE routes mouse by capture/cursor-position and is never foreground under the shell.",
-      "**Keyboard input** relayed to UE's window (WASD/QE); Ctrl is swallowed (reserved for shell chords; UE's default pawn binds it to vertical movement)."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-common@v1.0.0",
