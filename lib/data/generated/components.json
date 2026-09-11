@@ -37,7 +37,7 @@
   },
   {
     "id": "browser",
-    "name": "DisplayXR Browser (Developer Preview)",
+    "name": "DisplayXR Browser",
     "version": "v1.0.0",
     "releaseUrl": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.0",
     "releaseDate": "2026-09-11",
