@@ -93,8 +93,8 @@ export default function WebXRPage() {
             <Ext href={BROWSER_URL}>
               <Card title="DisplayXR Browser" icon={<Globe size={20} />}>
                 <p className="text-sm text-text-secondary leading-relaxed">
-                  Developer-preview Chromium that weaves inline 3D on DisplayXR
-                  hardware. <ArrowUpRight size={13} className="inline" />
+                  Chromium that weaves inline 3D on DisplayXR hardware.{" "}
+                  <ArrowUpRight size={13} className="inline" />
                 </p>
               </Card>
             </Ext>

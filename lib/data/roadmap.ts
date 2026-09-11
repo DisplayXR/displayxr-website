@@ -143,9 +143,9 @@ export const roadmapSections: RoadmapSection[] = [
           "Port the multi-compositor and shell to macOS via Metal",
       },
       {
-        title: "DisplayXR Browser (developer preview)",
+        title: "DisplayXR Browser",
         description:
-          "A Chromium-based browser that renders the web normally and weaves glasses-free inline 3D on DisplayXR hardware, built on the runtime's window-bound weave service. The weave is GPU-resident — no per-frame CPU readback — and inline-3D web samples plus a JS helper library ship alongside it. Developer-preview packaging is in flight",
+          "A Chromium-based browser that renders the web normally and weaves glasses-free inline 3D on DisplayXR hardware, built on the runtime's window-bound weave service. The weave is GPU-resident — no per-frame CPU readback — and inline-3D web samples plus a JS helper library ship alongside it. 1.0 release channel: security updates follow Chrome stable",
       },
       {
         title: "Expand demos and engine integrations",
