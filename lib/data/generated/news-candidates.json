@@ -67,6 +67,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.16.25",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.25",
+    "title": "v2.16.25",
+    "date": "2026-09-11",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.25",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unreal@v0.9.1",
     "repo": "displayxr-unreal",
     "tag": "v0.9.1",
@@ -206,21 +217,6 @@
       "**2D rendering modes now switch the Leia panel to 2D on Android.** When the runtime renders flat (e.g. a media player's idle splash screen), the plug-in now turns the panel's lens off instead of leaving it in 3D — 2D content is shown as …",
       "Android DP implements `request_display_mode` / `get_hardware_3d_state` — hardware 2D/3D follows the runtime's rendering mode (#236)",
       "Android DP applies the runtime's 2D/3D request immediately (`leia_core_enable_3d()` at request time) and honours the wish on resume and bootstrap (#236)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.16.21",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.21",
-    "title": "DisplayXR Runtime v2.16.21",
-    "date": "2026-09-09",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.21",
-    "prerelease": false,
-    "featureLines": [
-      "On **Android in-process**, a request for a **2D rendering mode now reaches the display processor** (PR #1422). Three independent breaks were fixed: the session's hardware-3D state is now seeded from the *active* mode instead of a zero-in…",
-      "Also in this release: MSVC toolchain fixes for VS 2026 (`_MSVC_LANG` filesystem guard, `DXR_VCVARS` toolchain pin) and a dev-setup fix pointing the in-place runtime manifest at `_package/bin`.",
-      "`feat(scripts)`: let `DXR_VCVARS` pin the MSVC toolchain (wins over `vswhere -latest`, so a box with VS 2022 + a newer VS builds against the validated one)"
     ],
     "looksMechanical": false
   },
