@@ -70,9 +70,25 @@
     "id": "displayxr-runtime@v2.16.25",
     "repo": "displayxr-runtime",
     "tag": "v2.16.25",
-    "title": "v2.16.25",
+    "title": "DisplayXR Runtime v2.16.25",
     "date": "2026-09-11",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.25",
+    "prerelease": false,
+    "featureLines": [
+      "**Legacy native OpenXR apps can now be given a camera rig without touching their code.** `XR_DXR_view_rig`-less legacy sessions — the \"raw views\" side of ADR-024, where the runtime rather than the app owns the camera — pick up **instance…",
+      "This is the **first external contribution to the DisplayXR runtime** — thanks to **Greg Fodor** (PortalVR), who authored the feature and carried it through five review rounds (#1381 / #1446).",
+      "Also in this release: the published extension surfaces are now **derived from the headers** rather than hand-maintained, closing a drift vector between the runtime and `displayxr-extensions`.",
+      "`feat(oxr)`: add instance-scoped legacy camera profiles (#1381) — per-executable camera-rig JSON profiles + `DXR_LEGACY_CAMERA_RIG` override, seeded at `oxr_session_create` and consumed by the existing `oxr_session_locate_views` qwerty f…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.16.26",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.26",
+    "title": "v2.16.26",
+    "date": "2026-09-11",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.26",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -217,19 +233,6 @@
       "**2D rendering modes now switch the Leia panel to 2D on Android.** When the runtime renders flat (e.g. a media player's idle splash screen), the plug-in now turns the panel's lens off instead of leaving it in 3D — 2D content is shown as …",
       "Android DP implements `request_display_mode` / `get_hardware_3d_state` — hardware 2D/3D follows the runtime's rendering mode (#236)",
       "Android DP applies the runtime's 2D/3D request immediately (`leia_core_enable_3d()` at request time) and honours the wish on resume and bootstrap (#236)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.16.22",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.22",
-    "title": "DisplayXR Runtime v2.16.22",
-    "date": "2026-09-09",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.22",
-    "prerelease": false,
-    "featureLines": [
-      "Fixes a present-owner weave caller (the DisplayXR Browser) being left with a **NULL woven texture for the life of the session** after a single failed handle export — the tiles it suppressed for weaving were then drawn by nobody, showing …"
     ],
     "looksMechanical": false
   },
