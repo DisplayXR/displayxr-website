@@ -5,6 +5,10 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { REPO_URLS } from "@/lib/constants";
 import type { Status } from "@/lib/data/compatibility";
+import {
+  extensionsGenerated,
+  type ExtensionGroup,
+} from "@/lib/data/generated";
 
 export const metadata: Metadata = {
   title: "Extensions",
@@ -12,144 +16,188 @@ export const metadata: Metadata = {
     "Custom OpenXR extensions for tracked spatial display capabilities — display info, window bindings, and more.",
 };
 
+/**
+ * Editorial prose for the extensions, keyed by extension name.
+ *
+ * The LIST itself is NOT maintained here — it comes from
+ * lib/data/generated/extensions.json, which the runtime generates from its
+ * XR_DXR_*.h headers plus its hand-written docs/specs/extensions/index.json and
+ * publishes to displayxr-extensions. An extension with no entry below still
+ * renders, using the one-line summary from that manifest. That is deliberate:
+ * this page used to hand-list the extensions and quietly shipped 15 of 16
+ * (XR_DXR_depth_budget was missing for weeks — displayxr-extensions#2).
+ * Adding richer prose here is an editorial upgrade, never a prerequisite for
+ * appearing on the page.
+ */
+interface Editorial {
+  title?: string;
+  description: string;
+  status: Status;
+  /** Override the default per-header link. */
+  href?: string;
+}
+
+const editorial: Record<string, Editorial> = {
+  "XR_DXR_display_info": {
+    title: "Display Info",
+    status: "shipping",
+    description:
+      "Provides applications with spatial display geometry, resolution, eye-tracking modes, and the data needed for correct off-axis (Kooima) projection and view configuration. Each rendering mode declares whether it consumes live eye tracking, and apps receive an edge-triggered event on tracking loss and recovery. Spec v16 adds a desktop-position query so a window-owning app can learn where the 3D panel sits in the virtual desktop and open its window there.",
+  },
+  "XR_DXR_view_rig": {
+    title: "View Rig",
+    status: "early",
+    description:
+      "Lets an app drive the runtime's view-rig math instead of re-implementing the off-axis (Kooima) projection from raw eye positions. The app chains a small rig descriptor — virtual display height and ipd/parallax/perspective factors for a display rig, or convergence and vertical FOV for a camera rig — onto xrLocateViews and consumes standard, render-ready XrView{pose, fov}, exactly as on any other OpenXR runtime. A raw-result channel still exposes the untransformed eye and display-plane inputs for aware consumers that keep doing their own math.",
+  },
+  "XR_DXR_local_3d_zone": {
+    title: "Local 3D Zones",
+    status: "beta",
+    description:
+      "Lets an app declare which regions of its window are 3D versus flat 2D via a per-pixel 3D-ness mask, authored as the whole window, a list of rects, or a freeform render target. The runtime composites a flat 2D layer over the weaved 3D output gated by the mask, and a hardware display processor can drive a switchable-lens panel so only the 3D regions weave. Spec v3 adds the 2D side as a first-class post-weave composition layer submitted through the normal frame loop.",
+  },
+  "XR_DXR_display_zones": {
+    title: "Display Zones",
+    status: "beta",
+    description:
+      "Declares a layout of independent 3D zones and flat 2D zones across a single display, each 3D zone carrying its own view rig, plus a wish mask the vendor display processor honors when driving a switchable-lens panel. Powers mixed 2D/3D compositions — a weaved 3D object beside a flat 2D HUD, for example — and underpins the out-of-process display compositing used on Android.",
+  },
+  "XR_DXR_depth_budget": {
+    title: "Rear Depth Budget",
+    status: "early",
+    description:
+      "An advisory limit on how far behind the display plane a transparent app may render, chained onto XrViewState at xrLocateViews. On a 3D display a transparent window composites over whatever is behind it, and content pushed too far back stops fusing against that background; the runtime measures the background\u2019s horizontal-disparity cue and publishes a rear offset the app clamps its geometry to. The runtime owns the policy, the display processor owns the pixels, the app owns the geometry \u2014 see ADR-040.",
+  },
+  "XR_DXR_win32_window_binding": {
+    title: "Win32 Window Binding",
+    status: "shipping",
+    description:
+      "Allows applications to bind an existing Win32 HWND to the DisplayXR session. The runtime composites into the application's own window rather than creating a separate one.",
+  },
+  "XR_DXR_cocoa_window_binding": {
+    title: "Cocoa Window Binding",
+    status: "shipping",
+    description:
+      "macOS equivalent of the Win32 window binding. Binds an NSView to the session for compositor output into the application's window.",
+  },
+  "XR_DXR_xlib_window_binding": {
+    title: "Xlib Window Binding",
+    status: "beta",
+    description:
+      "Desktop-Linux equivalent of the Win32 and Cocoa window bindings. An app hands the runtime its own X11 window (Display* + Window) so the native Vulkan/XCB compositor renders into the app's window instead of creating its own — enabling windowed (non-fullscreen) rendering and app-owned keyboard and mouse input.",
+  },
+  "XR_DXR_wayland_surface_binding": {
+    title: "Wayland Surface Binding",
+    status: "early",
+    description:
+      "The Wayland sibling of the Xlib binding. An app hands the runtime its own wl_display and wl_surface and keeps ownership of the surface lifecycle — registry, xdg-shell toplevel, configure acks, the event loop — while the runtime builds its Vulkan surface from the pair. Transparency is native here: a Wayland surface composites its premultiplied alpha over whatever is behind it, so a transparent background needs none of the ARGB-visual work X11 requires.",
+  },
+  "XR_DXR_macos_gl_binding": {
+    title: "macOS GL Binding",
+    status: "shipping",
+    description:
+      "macOS-specific OpenGL context binding for the Cocoa window-binding path. Lets GL apps share a CAOpenGLLayer-backed surface with the runtime compositor.",
+  },
+  "XR_DXR_android_surface_binding": {
+    title: "Android Surface Binding",
+    status: "shipping",
+    description:
+      "Android equivalent of the Win32 and Cocoa window bindings. Binds an Android Surface (SurfaceView) to the session so the runtime composites into the app's surface, and carries the surface lifecycle the out-of-process Android compositor follows across rotation, background, and resume.",
+  },
+  "XR_DXR_spatial_workspace": {
+    title: "Spatial Workspace",
+    status: "shipping",
+    description:
+      "Defines how a privileged workspace controller process drives multi-app composition, window pose, hit-test, and capture on the runtime. The contract that lets the DisplayXR Shell — or any OEM, vertical, kiosk, or AI-agent controller — replace the spatial-desktop layer without runtime modifications.",
+  },
+  "XR_DXR_workspace_file_dialog": {
+    title: "Workspace File Dialog",
+    status: "beta",
+    description:
+      "An async, spatial-native file picker. An app calls for a picker and receives the result through the event queue; the picker is a peer workspace window spawned by the active controller, not a layer inside the app's own window. Workspace-scoped, with graceful fallback to the platform file dialog when no controller advertises support.",
+  },
+  "XR_DXR_mcp_tools": {
+    title: "App MCP Tools",
+    status: "early",
+    description:
+      "Lets an application register its own Model Context Protocol tools with the runtime's agent surface. AI agents and voice drivers can then invoke app-defined actions — tool calls arrive through the OpenXR event queue, the app answers inline, and tools are namespaced by the app's manifest id.",
+  },
+  "XR_DXR_atlas_capture": {
+    title: "Atlas Capture",
+    status: "early",
+    description:
+      "A vendor-neutral, non-privileged way to snapshot the multi-view atlas the runtime composes for a session to a PNG, at a caller-selected compositor stage. The runtime does the readback from its own atlas image, so apps drop the per-graphics-API staging-texture readbacks they each reimplement today. Any app — handle, texture, hosted, or IPC — can call it.",
+  },
+  "XR_DXR_weave": {
+    title: "Window Weave Service",
+    status: "experimental",
+    description:
+      "A window-bound, synchronous weave service for present-owners — callers that own their OS window and present it themselves, but want the runtime's vendor display processor to weave a sub-rect of that window for them. The caller hands the runtime a pre-weave stereo (side-by-side) texture and a window-relative rect and gets back a weaved shared texture plus a fence to composite and present. The caller never weaves; it is the runtime half of the inline-3D-in-a-browser path.",
+  },
+};
+
 interface Extension {
   name: string;
   title: string;
   description: string;
   status: Status;
-  group: "display" | "rendering" | "windowing" | "workspace" | "capture" | "agent";
-  /** Override the default per-header link (for extensions without a published header yet). */
-  href?: string;
+  group: ExtensionGroup;
+  href: string;
 }
 
-const extensions: Extension[] = [
-  // Display capability
+const extensions: Extension[] = extensionsGenerated.map((e) => {
+  const ed = editorial[e.name];
+  return {
+    name: e.name,
+    title: ed?.title ?? e.title,
+    description: ed?.description ?? e.summary,
+    status: ed?.status ?? "early",
+    group: e.group,
+    href: ed?.href ?? `${REPO_URLS.extensions}/blob/main/${e.header}`,
+  };
+});
+
+/**
+ * Editorial section blurbs, in display order. `key` matches the `group` the
+ * runtime's manifest assigns each extension; a group it introduces that has no
+ * blurb here still renders (see below) rather than swallowing its extensions.
+ */
+const GROUPS: { key: string; label: string; blurb: string }[] = [
   {
-    name: "XR_DXR_display_info",
-    title: "Display Info",
-    description:
-      "Provides applications with spatial display geometry, resolution, eye-tracking modes, and the data needed for correct off-axis (Kooima) projection and view configuration. Each rendering mode declares whether it consumes live eye tracking, and apps receive an edge-triggered event on tracking loss and recovery. Spec v16 adds a desktop-position query so a window-owning app can learn where the 3D panel sits in the virtual desktop and open its window there.",
-    status: "shipping",
-    group: "display",
-  },
-  // Rendering & projection
-  {
-    name: "XR_DXR_view_rig",
-    title: "View Rig",
-    description:
-      "Lets an app drive the runtime's view-rig math instead of re-implementing the off-axis (Kooima) projection from raw eye positions. The app chains a small rig descriptor — virtual display height and ipd/parallax/perspective factors for a display rig, or convergence and vertical FOV for a camera rig — onto xrLocateViews and consumes standard, render-ready XrView{pose, fov}, exactly as on any other OpenXR runtime. A raw-result channel still exposes the untransformed eye and display-plane inputs for aware consumers that keep doing their own math.",
-    status: "early",
-    group: "rendering",
-  },
-  {
-    name: "XR_DXR_local_3d_zone",
-    title: "Local 3D Zones",
-    description:
-      "Lets an app declare which regions of its window are 3D versus flat 2D via a per-pixel 3D-ness mask, authored as the whole window, a list of rects, or a freeform render target. The runtime composites a flat 2D layer over the weaved 3D output gated by the mask, and a hardware display processor can drive a switchable-lens panel so only the 3D regions weave. Spec v3 adds the 2D side as a first-class post-weave composition layer submitted through the normal frame loop.",
-    status: "beta",
-    group: "rendering",
+    key: "display",
+    label: "Display capability",
+    blurb:
+      "What the runtime tells apps about the 3D display they're rendering on.",
   },
   {
-    name: "XR_DXR_display_zones",
-    title: "Display Zones",
-    description:
-      "Declares a layout of independent 3D zones and flat 2D zones across a single display, each 3D zone carrying its own view rig, plus a wish mask the vendor display processor honors when driving a switchable-lens panel. Powers mixed 2D/3D compositions — a weaved 3D object beside a flat 2D HUD, for example — and underpins the out-of-process display compositing used on Android.",
-    status: "beta",
-    group: "rendering",
-  },
-  // App-side window binding
-  {
-    name: "XR_DXR_win32_window_binding",
-    title: "Win32 Window Binding",
-    description:
-      "Allows applications to bind an existing Win32 HWND to the DisplayXR session. The runtime composites into the application's own window rather than creating a separate one.",
-    status: "shipping",
-    group: "windowing",
+    key: "rendering",
+    label: "Rendering & projection",
+    blurb:
+      "How an app drives the runtime's view math and tells it which parts of the window are 3D versus flat 2D — instead of re-implementing the projection or 2D/3D compositing itself.",
   },
   {
-    name: "XR_DXR_cocoa_window_binding",
-    title: "Cocoa Window Binding",
-    description:
-      "macOS equivalent of the Win32 window binding. Binds an NSView to the session for compositor output into the application's window.",
-    status: "shipping",
-    group: "windowing",
+    key: "windowing",
+    label: "App window binding",
+    blurb:
+      "How an app hands its native window to the runtime so the compositor can output into it.",
   },
   {
-    name: "XR_DXR_xlib_window_binding",
-    title: "Xlib Window Binding",
-    description:
-      "Desktop-Linux equivalent of the Win32 and Cocoa window bindings. An app hands the runtime its own X11 window (Display* + Window) so the native Vulkan/XCB compositor renders into the app's window instead of creating its own — enabling windowed (non-fullscreen) rendering and app-owned keyboard and mouse input.",
-    status: "beta",
-    group: "windowing",
+    key: "workspace",
+    label: "Workspace controller surface",
+    blurb:
+      "How a swappable workspace controller (the DisplayXR Shell, or any third-party / OEM / vertical equivalent) drives multi-app composition and the launcher on top of the runtime.",
   },
   {
-    name: "XR_DXR_wayland_surface_binding",
-    title: "Wayland Surface Binding",
-    description:
-      "The Wayland sibling of the Xlib binding. An app hands the runtime its own wl_display and wl_surface and keeps ownership of the surface lifecycle — registry, xdg-shell toplevel, configure acks, the event loop — while the runtime builds its Vulkan surface from the pair. Transparency is native here: a Wayland surface composites its premultiplied alpha over whatever is behind it, so a transparent background needs none of the ARGB-visual work X11 requires.",
-    status: "early",
-    group: "windowing",
+    key: "agent",
+    label: "Agent control",
+    blurb:
+      "How applications plug into the AI-agent surface — exposing their own actions to agents and voice drivers through the same MCP framework the runtime and workspace controllers use.",
   },
   {
-    name: "XR_DXR_macos_gl_binding",
-    title: "macOS GL Binding",
-    description:
-      "macOS-specific OpenGL context binding for the Cocoa window-binding path. Lets GL apps share a CAOpenGLLayer-backed surface with the runtime compositor.",
-    status: "shipping",
-    group: "windowing",
-  },
-  {
-    name: "XR_DXR_android_surface_binding",
-    title: "Android Surface Binding",
-    description:
-      "Android equivalent of the Win32 and Cocoa window bindings. Binds an Android Surface (SurfaceView) to the session so the runtime composites into the app's surface, and carries the surface lifecycle the out-of-process Android compositor follows across rotation, background, and resume.",
-    status: "shipping",
-    group: "windowing",
-    href: REPO_URLS.extensions,
-  },
-  // Workspace controller surface (the swappable shell story)
-  {
-    name: "XR_DXR_spatial_workspace",
-    title: "Spatial Workspace",
-    description:
-      "Defines how a privileged workspace controller process drives multi-app composition, window pose, hit-test, and capture on the runtime. The contract that lets the DisplayXR Shell — or any OEM, vertical, kiosk, or AI-agent controller — replace the spatial-desktop layer without runtime modifications.",
-    status: "shipping",
-    group: "workspace",
-  },
-  {
-    name: "XR_DXR_workspace_file_dialog",
-    title: "Workspace File Dialog",
-    description:
-      "An async, spatial-native file picker. An app calls for a picker and receives the result through the event queue; the picker is a peer workspace window spawned by the active controller, not a layer inside the app's own window. Workspace-scoped, with graceful fallback to the platform file dialog when no controller advertises support.",
-    status: "beta",
-    group: "workspace",
-  },
-  // Agent control
-  {
-    name: "XR_DXR_mcp_tools",
-    title: "App MCP Tools",
-    description:
-      "Lets an application register its own Model Context Protocol tools with the runtime's agent surface. AI agents and voice drivers can then invoke app-defined actions — tool calls arrive through the OpenXR event queue, the app answers inline, and tools are namespaced by the app's manifest id.",
-    status: "early",
-    group: "agent",
-  },
-  // Capture
-  {
-    name: "XR_DXR_atlas_capture",
-    title: "Atlas Capture",
-    description:
-      "A vendor-neutral, non-privileged way to snapshot the multi-view atlas the runtime composes for a session to a PNG, at a caller-selected compositor stage. The runtime does the readback from its own atlas image, so apps drop the per-graphics-API staging-texture readbacks they each reimplement today. Any app — handle, texture, hosted, or IPC — can call it.",
-    status: "early",
-    group: "capture",
-  },
-  // Present-owner weave service
-  {
-    name: "XR_DXR_weave",
-    title: "Window Weave Service",
-    description:
-      "A window-bound, synchronous weave service for present-owners — callers that own their OS window and present it themselves, but want the runtime's vendor display processor to weave a sub-rect of that window for them. The caller hands the runtime a pre-weave stereo (side-by-side) texture and a window-relative rect and gets back a weaved shared texture plus a fence to composite and present. The caller never weaves; it is the runtime half of the inline-3D-in-a-browser path.",
-    status: "experimental",
-    group: "rendering",
+    key: "capture",
+    label: "Capture",
+    blurb:
+      "Getting the composed 3D frame back out of the runtime — for screenshots, recording, and dataset generation.",
   },
 ];
 
@@ -211,46 +259,15 @@ export default function ExtensionsPage() {
         </section>
 
         {/* Extension list, grouped */}
-        {(
-          [
-            {
-              key: "display",
-              label: "Display capability",
-              blurb:
-                "What the runtime tells apps about the 3D display they're rendering on.",
-            },
-            {
-              key: "rendering",
-              label: "Rendering & projection",
-              blurb:
-                "How an app drives the runtime's view math and tells it which parts of the window are 3D versus flat 2D — instead of re-implementing the projection or 2D/3D compositing itself.",
-            },
-            {
-              key: "windowing",
-              label: "App window binding",
-              blurb:
-                "How an app hands its native window to the runtime so the compositor can output into it.",
-            },
-            {
-              key: "workspace",
-              label: "Workspace controller surface",
-              blurb:
-                "How a swappable workspace controller (the DisplayXR Shell, or any third-party / OEM / vertical equivalent) drives multi-app composition and the launcher on top of the runtime.",
-            },
-            {
-              key: "agent",
-              label: "Agent control",
-              blurb:
-                "How applications plug into the AI-agent surface — exposing their own actions to agents and voice drivers through the same MCP framework the runtime and workspace controllers use.",
-            },
-            {
-              key: "capture",
-              label: "Capture",
-              blurb:
-                "Getting the composed 3D frame back out of the runtime — for screenshots, recording, and dataset generation.",
-            },
-          ] as const
-        ).map((group) => {
+        {[
+          ...GROUPS,
+          // A group the runtime's manifest introduces but this page has no
+          // blurb for still gets a section — same reason the list is derived:
+          // nothing published should be invisible here.
+          ...[...new Set(extensions.map((e) => e.group))]
+            .filter((g) => !GROUPS.some((x) => x.key === g))
+            .map((g) => ({ key: g, label: g, blurb: "" })),
+        ].map((group) => {
           const items = extensions.filter((e) => e.group === group.key);
           if (items.length === 0) return null;
           return (
