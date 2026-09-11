@@ -8,7 +8,7 @@ import type { ReactNode } from "react";
 export const metadata: Metadata = {
   title: "Download DisplayXR",
   description:
-    "Installer downloads for DisplayXR — the all-in-one bundle, or the runtime, shell, Leia SR plug-in, MCP tools, and the inline-3D browser preview individually.",
+    "Installer downloads for DisplayXR — the all-in-one bundle, or the runtime, shell, Leia SR plug-in, MCP tools, and the inline-3D browser individually.",
 };
 
 type Requirement = "Required" | "Optional";
@@ -67,15 +67,13 @@ const installers: Installer[] = [
     icon: <Bot size={20} />,
   },
   {
-    name: "DisplayXR Browser (Developer Preview)",
+    name: "DisplayXR Browser",
     pitch:
-      "A Chromium-based browser that renders the web normally and weaves glasses-free inline-3D for inline-3d WebXR pages on DisplayXR hardware. Developer preview — rebased ~monthly onto Chrome stable but not patched to Chrome's mid-cycle security cadence; don't use it for sensitive browsing.",
-    filename: "DisplayXR-Browser-Preview-Setup-*.exe",
+      "A Chromium-based browser that renders the web normally and weaves glasses-free inline-3D for inline-3d WebXR pages on DisplayXR hardware. Security updates follow Chrome stable: every Chrome stable point release is rebuilt and published automatically when the browser's own code is untouched upstream, and verified on a DisplayXR display first when it is not. Not affiliated with Google; no Google account sign-in or sync.",
+    filename: "DisplayXR-Browser-Setup-*.exe",
     requirement: "Optional",
     platforms: "Windows",
-    // /releases (not /releases/latest): the preview ships as a GitHub *pre-release*,
-    // which /releases/latest excludes (404s). The list shows the preview at the top.
-    releasesUrl: `${REPO_URLS.browser}/releases`,
+    releasesUrl: `${REPO_URLS.browser}/releases/latest`,
     icon: <Globe size={20} />,
     links: [
       { label: "See it live", href: "https://displayxr.github.io/displayxr-web/" },

@@ -100,9 +100,11 @@ async function latestRelease(repo) {
 }
 
 // Resolve one specific release by tag. Needed wherever versions.json pins a
-// tag, because /releases/latest is a different question: it excludes
-// pre-releases and honours an explicit "latest" marker, so for a pre-release
-// channel like the browser's it happily returns a months-old build.
+// tag, because /releases/latest is a different question — it answers "newest
+// published", and a pin deliberately lags the newest release (the auto-bump
+// moves it only when a component release dispatches it), so the two disagree
+// routinely. Without this, a card can show the pinned version next to some
+// other release's date and url.
 async function releaseByTag(repo, tag) {
   try {
     const r = await api(`/repos/${ORG}/${repo}/releases/tags/${tag}`);
@@ -114,29 +116,6 @@ async function releaseByTag(repo, tag) {
     };
   } catch {
     return null; // tag not published (yet) — caller falls back
-  }
-}
-
-// Newest published release by date, pre-releases included. The correct
-// "current build" for a channel that ships pre-releases: /releases/latest
-// skips them entirely and otherwise honours an explicit latest marker, which
-// on displayxr-browser points at a build several releases back.
-async function newestRelease(repo) {
-  try {
-    const rs = await api(`/repos/${ORG}/${repo}/releases?per_page=20`);
-    const live = (rs || [])
-      .filter((r) => !r.draft)
-      .sort((a, b) => (b.published_at || "").localeCompare(a.published_at || ""));
-    const r = live[0];
-    if (!r) return null;
-    return {
-      tag: r.tag_name,
-      releaseUrl: r.html_url,
-      releaseDate: (r.published_at || "").slice(0, 10),
-      assets: (r.assets || []).map((a) => a.name),
-    };
-  } catch {
-    return null;
   }
 }
 
@@ -170,9 +149,11 @@ const COMPONENTS = [
   { id: "mcp_tools", vkey: "mcp_tools", repo: "displayxr-mcp", name: "DisplayXR MCP Tools", platforms: "Windows · macOS" },
   // The browser is in versions.json (it ships an installer the orchestrator can
   // chain), but it is NOT in the all-in-one bundle and is opt-in on the dev
-  // orchestrator — it is rebased ~monthly onto Chrome stable and not patched to
-  // Chrome's mid-cycle security cadence. Its pin is `preview-X.Y.Z`.
-  { id: "browser", vkey: "browser", repo: "displayxr-browser", name: "DisplayXR Browser (Developer Preview)", platforms: "Windows · Android", prerelease: true },
+  // orchestrator — a full standalone browser is not part of the display stack
+  // the default install lays down. Its pin is `vX.Y.Z` from v1.0.0 (releases up
+  // to preview-0.1.35 used `preview-X.Y.Z`), and its releases are ordinary
+  // non-pre-releases, so it resolves like every other component.
+  { id: "browser", vkey: "browser", repo: "displayxr-browser", name: "DisplayXR Browser", platforms: "Windows · Android" },
   { id: "installer", vkey: null, repo: "displayxr-installer", name: "All-in-one Installer", platforms: "Windows · macOS" },
 ];
 
@@ -220,8 +201,7 @@ async function buildComponents(versions) {
     // other release's date. Fall back to /releases/latest when the pinned tag
     // is not published (or the component has no pin at all).
     const pinned = (c.vkey && versions[c.vkey]) || null;
-    const fallback = c.prerelease ? newestRelease : latestRelease;
-    const rel = (pinned && (await releaseByTag(c.repo, pinned))) || (await fallback(c.repo));
+    const rel = (pinned && (await releaseByTag(c.repo, pinned))) || (await latestRelease(c.repo));
     const version = pinned || rel?.tag || null;
     if (!version) warn(`no version for component ${c.id}`);
     out.push({

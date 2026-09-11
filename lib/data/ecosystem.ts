@@ -146,7 +146,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-browser",
     repo: "DisplayXR/displayxr-browser",
     description:
-      "DisplayXR Browser — a developer-preview Chromium that renders the web normally and weaves glasses-free inline 3D on DisplayXR hardware, on Windows and Android. The productization of the inline-3D browser work validated by the CEF host, with a GPU-resident weave (no per-frame CPU readback). Pinned in the org version matrix as `browser`, and installable via the dev orchestrator with `--with browser`; it is deliberately not in the all-in-one bundle, because it is rebased ~monthly onto Chrome stable and is not patched to Chrome's mid-cycle security cadence.",
+      "DisplayXR Browser — a Chromium that renders the web normally and weaves glasses-free inline 3D on DisplayXR hardware, on Windows and Android. The productization of the inline-3D browser work validated by the CEF host, with a GPU-resident weave (no per-frame CPU readback). Security updates follow Chrome stable: every Chrome stable point release is rebuilt and published automatically when the browser's own code is untouched upstream, and verified on a DisplayXR display first when it is not. Pinned in the org version matrix as `browser`, and installable via the dev orchestrator with `--with browser`; it is deliberately not in the all-in-one bundle, because a full standalone browser is not part of the display stack the default install lays down.",
     url: "https://github.com/DisplayXR/displayxr-browser",
     category: "apps",
     status: "active",
