@@ -18,6 +18,26 @@
     "date": "2026-09-11",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.35",
     "prerelease": false,
+    "featureLines": [
+      "**Chromium 154.0.8037.17** (from 153.0.8010.27): the full 179-patch series re-anchored; from here the",
+      "pin follows Chrome stable automatically (chromium-watch + auto-rebase).",
+      "**Native immersive-vr is now the default in-tab path** (`0142–0179`, `0183`): a stock `immersive-vr`",
+      "WebXR app (three.js, Babylon, A-Frame) converts on a plain double-click of the browser icon — no launch",
+      "flags — weaves in-tab (windowed or fullscreen), takes controller input and exits cleanly. The vendored",
+      "content-script shim remains available as `--immersive-vr-shim`; `--no-immersive-vr-emulation` still",
+      "means neither path. Android: compiles and is enabled, **not yet exercised on an Android panel**.",
+      "**inline-3D:** a zero-identity tile rect is never suppressed unwoven and legacy rects tolerate the 1-px"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-browser@v1.0.0",
+    "repo": "displayxr-browser",
+    "tag": "v1.0.0",
+    "title": "DisplayXR Browser v1.0.0",
+    "date": "2026-09-11",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.0",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -214,23 +234,6 @@
     "prerelease": false,
     "featureLines": [
       "Fixes a present-owner weave caller (the DisplayXR Browser) being left with a **NULL woven texture for the life of the session** after a single failed handle export — the tiles it suppressed for weaving were then drawn by nobody, showing …"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.32",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.32",
-    "title": "DisplayXR Browser preview-0.1.32",
-    "date": "2026-09-08",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.32",
-    "prerelease": true,
-    "featureLines": [
-      "**WebXR `immersive-vr` apps now run in the browser tab, on the 3D display, with no page changes.** Open any WebXR app and press its *Enter VR* button — the session renders in-tab through DisplayXR's inline-3D path. The separate runtime-h…",
-      "Verified against immersive-web `immersive-vr-session` / `input-tracking` / `controller-state`, aframe.io hello-world, Babylon playground `#F41V6N`, and xrdinosaurs.com.",
-      "Controls while in VR: **WASD / Q / E** move, **right-mouse** look, **P** pause, **wheel** zoom, **V** eased 2D/3D, **Ctrl+Alt** controllers, **F11** fullscreen, **Esc** frees the pointer (in fullscreen) — the **Exit VR** overlay returns …",
-      "Known limits carried into this release (tracked, not blockers): Babylon re-applies its own canvas size each frame (pair renders at half resolution); side-by-side width capped at 3072 px; `local-floor` is a JS rebase; hand tracking is rej…",
-      "Also in this release: Chromium **153.0.8010.27** (rebased from 152), and on Android the browser now opens on the DisplayXR samples index instead of a blank New Tab Page."
     ],
     "looksMechanical": false
   },

@@ -38,8 +38,8 @@
   {
     "id": "browser",
     "name": "DisplayXR Browser (Developer Preview)",
-    "version": "preview-0.1.35",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.35",
+    "version": "v1.0.0",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.0",
     "releaseDate": "2026-09-11",
     "platforms": "Windows · Android",
     "repoUrl": "https://github.com/DisplayXR/displayxr-browser"
