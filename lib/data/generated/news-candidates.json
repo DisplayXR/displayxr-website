@@ -6,7 +6,40 @@
     "title": "DisplayXR Browser preview-0.1.34",
     "date": "2026-09-11",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.34",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@android-bundle-2026-09-11",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-2026-09-11",
+    "title": "Android tablet bundle android-bundle-2026-09-11",
+    "date": "2026-09-11",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-09-11",
     "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.16.24",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.24",
+    "title": "v2.16.24",
+    "date": "2026-09-11",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.24",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unreal@v0.9.1",
+    "repo": "displayxr-unreal",
+    "tag": "v0.9.1",
+    "title": "DisplayXR v0.9.1",
+    "date": "2026-09-11",
+    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.9.1",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -248,19 +281,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.16.20",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.20",
-    "title": "DisplayXR Runtime v2.16.20",
-    "date": "2026-09-08",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.20",
-    "prerelease": false,
-    "featureLines": [
-      "The Android Leia APK now bundles **Leia plug-in v2.6.19**, which compiles in the `get_last_frame_dropped` display-processor slot — dropped weaves are reported back through the runtime instead of being invisible. The plug-in is re-pinned …"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-demo-mediaplayer@v1.9.3",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.9.3",
@@ -475,17 +495,6 @@
       "Chain the silhouette content mask for `XR_DXR_depth_budget` v3 (#116, #122) — derives an occupancy grid from the click-through region's per-frame coverage buffer (the same union-over-eyes rendered-alpha silhouette already computed for th…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.3.6",
-    "repo": "displayxr-installer",
-    "tag": "v2.3.6",
-    "title": "DisplayXR v2.3.6",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.6",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.3.7",
@@ -720,19 +729,6 @@
       "both eyes under the display provider and silently never tracked.",
       "**desktop-avatar: opt-in 3D-zone edge feather** (#10) — requests a soft composite edge",
       "on the avatar's 3D zone via the plugin's new `SetZoneFeather` API"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unreal@v0.6.0",
-    "repo": "displayxr-unreal",
-    "tag": "v0.6.0",
-    "title": "DisplayXR v0.6.0",
-    "date": "2026-08-01",
-    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.6.0",
-    "prerelease": false,
-    "featureLines": [
-      "Portable code-signing for the packaged `Binaries/Win64` DLLs via a provider-runner `sign-artifact` workflow (`DXR_SIGN_REPO`), replacing the local-cert-only path. Signing stays capability-gated — an unset env yields an unsigned ZIP rathe…"
     ],
     "looksMechanical": false
   },
