@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-browser@preview-0.1.35",
+    "repo": "displayxr-browser",
+    "tag": "preview-0.1.35",
+    "title": "DisplayXR Browser preview-0.1.35",
+    "date": "2026-09-11",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.35",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@android-bundle-2026-09-11",
     "repo": "displayxr-installer",
     "tag": "android-bundle-2026-09-11",
@@ -25,12 +36,15 @@
     "id": "displayxr-runtime@v2.16.24",
     "repo": "displayxr-runtime",
     "tag": "v2.16.24",
-    "title": "v2.16.24",
+    "title": "DisplayXR Runtime v2.16.24",
     "date": "2026-09-11",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.24",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "This release is the forward-horizon / eye-predictor latency train. The forward horizon now **learns its whole-period pipeline offset from realised flips** (#1435 / #1437) and steps that offset one period per change so it converges instea…",
+      "`feat(versions)`: pin `cnsdk_services` for the Android tablet bundle (#1436)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unreal@v0.9.1",
@@ -200,26 +214,6 @@
     "prerelease": false,
     "featureLines": [
       "Fixes a present-owner weave caller (the DisplayXR Browser) being left with a **NULL woven texture for the life of the session** after a single failed handle export — the tiles it suppressed for weaving were then drawn by nobody, showing …"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.31",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.31",
-    "title": "DisplayXR Browser preview-0.1.31",
-    "date": "2026-09-08",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.31",
-    "prerelease": true,
-    "featureLines": [
-      "DisplayXR Browser now weaves **1:1 inside the OEM scaled recents \"mini-window\"** on 3D",
-      "tablets. Previously a browser window promoted into the OEM's scaled mini-window presented a",
-      "weave whose pitch no longer matched the panel, so 3D broke as soon as the window left",
-      "fullscreen. The browser now takes the runtime's option-B contract (`displayxr-runtime` #1403)",
-      "and weaves at native panel scale inside that window — device-verified on the NP02J.",
-      "Requires the DisplayXR runtime **≥ v2.16.17**; the full contract path lands at **≥ v2.16.19**.",
-      "Rebased the patch series onto **Chromium 153.0.8010.27** (was 152.0.7977.83)",
-      "Android: a default landing page, plus a guard so it cannot drift from the Windows one (#183)"
     ],
     "looksMechanical": false
   },
