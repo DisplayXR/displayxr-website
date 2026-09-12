@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.16.27",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.27",
+    "title": "v2.16.27",
+    "date": "2026-09-12",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.27",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.34",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.34",
@@ -86,12 +97,14 @@
     "id": "displayxr-runtime@v2.16.26",
     "repo": "displayxr-runtime",
     "tag": "v2.16.26",
-    "title": "v2.16.26",
+    "title": "DisplayXR Runtime v2.16.26",
     "date": "2026-09-11",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.26",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "This is the build the Arc-box leg re-runs on (Suki). It adds the `join N/M` and `present gap` columns to the `DXR_DP_FORWARD_HORIZON_TRACE` row and a 250 ms freshness cutoff on the residual the display processor receives, on all paths in…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unreal@v0.9.1",
@@ -125,26 +138,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.16.23",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.23",
-    "title": "DisplayXR Runtime v2.16.23",
-    "date": "2026-09-10",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.23",
-    "prerelease": false,
-    "featureLines": [
-      "**Android OEM mini-window support (#1424, #1425).** The OEM ships two distinct scaled-window families — the recents-card \"freeform\" mini-window (*Normal*) and the drop-zone window (*Hang*) — and the runtime now queries the vendor placeme…",
-      "When the vendor API and a **settled touch-ratio measurement** still disagree, the measurement now wins, adopting whichever candidate Rect explains it. A drag that straddles a window-geometry change is discarded outright — a moving window…",
-      "**Exit-side torn geometry**: a sample carrying a new origin with the previous logical extent (the fullscreen return from a mini-window) is skipped for up to two frames, and a view or surface that has not followed the window for three con…",
-      "The compositor **keeps weaving for an off-panel placement whose extent still fits** (`OFF_PANEL_PLACEMENT`, throttled to once per 5 s) instead of dropping to flat 2D — only a container-scaled window whose *logical* extent cannot fit degr…",
-      "New `SWAP_DIAG` present diagnostic: `vkAcquireNextImageKHR` / `vkQueuePresentKHR` failures are tallied per target and reported at most once per 5 s. `VK_SUBOPTIMAL_KHR` — returned on essentially every frame in a scaled window on this dev…",
-      "`tests_aux_mini_window_tell` pins the scale-source contract structurally (both families queried, discriminator order, straddle guard, measurement-wins) and is mutation-checked.",
-      "Android APK bundles displayxr-leia-plugin v2.6.20 / CNSDK 0.10.68.",
-      "feat(android,#1424): make \"renders fine, never reaches glass\" observable — `SWAP_DIAG` present-failure counters and `OFF_PANEL_PLACEMENT` now reports the on-panel visible extent beside the fixed buffer extent (part of #1425)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unreal@v0.8.0",
