@@ -39,6 +39,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.16.29",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.29",
+    "title": "v2.16.29",
+    "date": "2026-09-12",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.29",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@preview-0.1.34",
     "repo": "displayxr-browser",
     "tag": "preview-0.1.34",
@@ -90,22 +101,6 @@
     "prerelease": true,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.16.25",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.25",
-    "title": "DisplayXR Runtime v2.16.25",
-    "date": "2026-09-11",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.25",
-    "prerelease": false,
-    "featureLines": [
-      "**Legacy native OpenXR apps can now be given a camera rig without touching their code.** `XR_DXR_view_rig`-less legacy sessions — the \"raw views\" side of ADR-024, where the runtime rather than the app owns the camera — pick up **instance…",
-      "This is the **first external contribution to the DisplayXR runtime** — thanks to **Greg Fodor** (PortalVR), who authored the feature and carried it through five review rounds (#1381 / #1446).",
-      "Also in this release: the published extension surfaces are now **derived from the headers** rather than hand-maintained, closing a drift vector between the runtime and `displayxr-extensions`.",
-      "`feat(oxr)`: add instance-scoped legacy camera profiles (#1381) — per-executable camera-rig JSON profiles + `DXR_LEGACY_CAMERA_RIG` override, seeded at `oxr_session_create` and consumed by the existing `oxr_session_locate_views` qwerty f…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.16.26",
