@@ -18,6 +18,26 @@
     "date": "2026-09-12",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.25.4",
     "prerelease": false,
+    "featureLines": [
+      "The demo now starts on Android devices whose OEM build blocks one package from",
+      "starting another package's components. It consumes the shared **DisplayXR client",
+      "wake library** instead of its own hand-rolled `wakeRuntime()`, which used",
+      "`startService` behind a silent catch and never actually worked — so on those",
+      "builds the app failed at startup with `XR_ERROR_RUNTIME_UNAVAILABLE` and told the",
+      "user to go open the DisplayXR app once by hand.",
+      "Measured on a Lume Phone with the first adopter of the shared library:",
+      "**Requires DisplayXR runtime v2.16.28 or later** — that is the release that ships"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@v1.9.7",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.9.7",
+    "title": "v1.9.7",
+    "date": "2026-09-12",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.7",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -293,23 +313,6 @@
       "The reporting logic shipped in v2.6.18, but the slot is `#ifdef`-guarded on the",
       "runtime headers the plug-in is built against, and that pin was still v2.16.0 —",
       "so it compiled out silently. This release is what actually turns it on."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.9.3",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.9.3",
-    "title": "v1.9.3",
-    "date": "2026-09-07",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.3",
-    "prerelease": false,
-    "featureLines": [
-      "**3D now survives the mini-window on Android.** On a 3D tablet, opening the media player from recents in a scaled \"freeform\" mini-window used to drop it to 2D. This release consumes the runtime's window-layout hint, so the player weaves …",
-      "Requires **DisplayXR runtime v2.16.17 or newer**. On an older runtime the hint is simply never delivered and behaviour is unchanged (2D fallback in the mini-window; fullscreen is unaffected either way).",
-      "Android: apply the runtime's mini-window layout hint — the player now handles `XrEventDataAndroidWindowLayoutHintDXR` from `XR_DXR_android_surface_binding` v2 and re-lays-out its surface to the hinted geometry, keeping 3D weaving correct…",
-      "Re-pinned the vendored `XR_DXR_android_surface_binding.h` header to the v2 revision that declares the window-layout-hint event",
-      "_No Windows, macOS or Linux behaviour changes in this release._"
     ],
     "looksMechanical": false
   },
