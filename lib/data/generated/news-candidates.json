@@ -1,14 +1,27 @@
 [
   {
-    "id": "displayxr-runtime@v2.16.27",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.27",
-    "title": "v2.16.27",
+    "id": "displayxr-browser@v1.0.1",
+    "repo": "displayxr-browser",
+    "tag": "v1.0.1",
+    "title": "DisplayXR Browser v1.0.1",
     "date": "2026-09-12",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.27",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.16.27",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.27",
+    "title": "DisplayXR Runtime v2.16.27",
+    "date": "2026-09-12",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.27",
+    "prerelease": false,
+    "featureLines": [
+      "This is the build the Arc-box leg should install (Suki). #1456 makes the forward-horizon join-coverage gate cumulative and sticky, with a 30 s dwell between refuse/recover edges, a gate reset at chain teardown, and `refused N (bad N, goo…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.34",
@@ -162,26 +175,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.33",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.33",
-    "title": "DisplayXR Browser preview-0.1.33",
-    "date": "2026-09-09",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.33",
-    "prerelease": false,
-    "featureLines": [
-      "**3D elements clipped by the window edge now weave correctly.** A 3D element only partly",
-      "inside the browser window used to show a double image: the runtime splits every submitted",
-      "rect at its own integer midpoint, while the browser drew the side-by-side pair at the",
-      "tile's *unclipped* width — so the eye split landed inside one eye. A horizontally clipped",
-      "tile is now repacked against the unclipped pair, so each piece's own left and right columns",
-      "land in its own halves. Device-verified on a 3D tablet in **both** the OEM scaled",
-      "mini-window and fullscreen. (browser#86)",
-      "**The Android APK is now signed v2-only**, matching the DisplayXR runtime and all five"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.9.5",
