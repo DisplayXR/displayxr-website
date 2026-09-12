@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-avatar@v0.11.8",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.11.8",
+    "title": "v0.11.8",
+    "date": "2026-09-12",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.8",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.25.4",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.25.4",
@@ -38,8 +49,17 @@
     "date": "2026-09-12",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.7",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The demo now starts on Android devices whose OEM build blocks one package from",
+      "starting another package's components. It consumes the shared **DisplayXR client",
+      "wake library** instead of its own hand-rolled `wakeRuntime()`, which used",
+      "`startService` behind a silent catch and never actually worked — so on those",
+      "builds the app failed at startup with `XR_ERROR_RUNTIME_UNAVAILABLE` and told the",
+      "user to go open the DisplayXR app once by hand.",
+      "Measured on a Lume Phone with the first adopter of the shared library:",
+      "**Requires DisplayXR runtime v2.16.28 or later** — that is the release that ships"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.28.4",
@@ -337,21 +357,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.11.4",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.11.4",
-    "title": "v0.11.4",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.4",
-    "prerelease": false,
-    "featureLines": [
-      "The avatar now consumes the runtime's rear depth budget (`XR_DXR_depth_budget`, runtime v2.16.9+ with a plug-in that supplies the background preview): in transparent mode the far clip no longer sits fixed at the display plane — the full …",
-      "Consume `XR_DXR_depth_budget` via `dxr::ClipPolicy` for adaptive far-clip in transparent mode (#81, #82)",
-      "Content-bounds ROI for rear depth budget v2 -- clip analysis scoped to the avatar's silhouette (#81, #82)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.11.5",
