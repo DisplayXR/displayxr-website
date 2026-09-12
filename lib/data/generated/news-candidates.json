@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-modelviewer@v0.28.4",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.28.4",
+    "title": "v0.28.4",
+    "date": "2026-09-12",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.16.27",
     "repo": "displayxr-runtime",
     "tag": "v2.16.27",
@@ -42,12 +53,19 @@
     "id": "displayxr-runtime@v2.16.29",
     "repo": "displayxr-runtime",
     "tag": "v2.16.29",
-    "title": "v2.16.29",
+    "title": "DisplayXR Runtime v2.16.29",
     "date": "2026-09-12",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.29",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Input-provider plug-ins can now publish a **navigation (rig) pose** that drives the fly camera — arbitrated exactly like the hands, with the runtime-owned rig composer acting as the head's pose source so alignment and recenter stay runti…",
+      "`feat(xrt)`: declare the rig (navigation) role — headers only (#1380)",
+      "`feat(input)`: arbitrate the rig (navigation) role like the hands (#1380)",
+      "`feat(input)`: persistent host iface + display-geometry cache; anchor `RIG_LOCAL` origins at the initial rig (#1380)",
+      "`feat(input)`: rig composer — the head's pose source composes the navigation role onto the fly camera (#1380)",
+      "`feat(sim_input)`: scripted navigation device + rig-role selftest — the role runs hardware-free in CI (#1380)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@preview-0.1.34",
@@ -411,21 +429,6 @@
     "featureLines": [
       "The splat viewer now reports its rendered silhouette to the runtime (`XR_DXR_depth_budget` v3 content mask, built from the click-through region it already computes), so the rear-depth-budget decision is made only under the scene's outlin…",
       "Chain the silhouette content mask for `XR_DXR_depth_budget` v3 (#107)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.28.0",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.28.0",
-    "title": "v0.28.0",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.0",
-    "prerelease": false,
-    "featureLines": [
-      "Undock opens at the page's angle and fit (`pose=`/`--pose`, `margin=`/`--margin`), and the auto-fit now uses the same framing rule as the web SDK (swept-width and depth caps), so an undocked model matches its tile.",
-      "Undock opens at the page's pose and fit margin — `pose=`/`--pose` and `margin=`/`--margin` carry the page's camera angle and framing margin into the undocked window (#121)",
-      "Undock auto-fit matches the page's framing rule — the same swept-width and depth caps the web SDK applies, so the undocked model is framed exactly as it was in the tile (#119)"
     ],
     "looksMechanical": false
   },
