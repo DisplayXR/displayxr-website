@@ -18,6 +18,21 @@
     "date": "2026-09-12",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.8",
     "prerelease": false,
+    "featureLines": [
+      "The demo now consumes the shared DisplayXR client wake library instead of its own hand-rolled `wakeRuntime()`, which used `startService` with a silent catch and never worked. On OEM Android builds that block one package from starting ano…",
+      "Requires DisplayXR runtime **v2.16.28 or later** (the release carrying `DisplayXR-Client-*.aar`).",
+      "Android: adopt the shared DisplayXR client wake library and delete the demo's own `wakeRuntime()` (#89)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-earthview@v0.7.7",
+    "repo": "displayxr-demo-earthview",
+    "tag": "v0.7.7",
+    "title": "v0.7.7",
+    "date": "2026-09-12",
+    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.7",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -600,26 +615,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-earthview@v0.7.3",
-    "repo": "displayxr-demo-earthview",
-    "tag": "v0.7.3",
-    "title": "v0.7.3",
-    "date": "2026-08-27",
-    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.3",
-    "prerelease": false,
-    "featureLines": [
-      "On Android, your Google Map Tiles API key now survives a reinstall. It used to",
-      "live only in app-private storage, which Android wipes on uninstall — so every",
-      "clean install, and every automated test pass, silently lost it. The key can now",
-      "also be supplied by `persist.dxr.ev.key` (survives uninstall *and* reboot) or",
-      "`debug.dxr.ev.key`.",
-      "Keys are also **checked before they are saved**, as they already were on macOS",
-      "and Windows. A wrong key used to fail exactly like a missing one — no error, no",
-      "tiles, an empty blue sphere. If the device simply cannot reach Google the key is"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-shell-releases@v2.2.0",
