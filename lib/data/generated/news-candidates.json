@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-gaussiansplat@v1.25.4",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.25.4",
+    "title": "v1.25.4",
+    "date": "2026-09-12",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.25.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.28.4",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.28.4",
@@ -18,8 +29,17 @@
     "date": "2026-09-12",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.4",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Model Viewer is the first DisplayXR demo to use the shared **DisplayXR client wake library**. On Android devices whose OEM build blocks one app from starting another app's components, the demo used to fail at launch with `XR_ERROR_RUNTIM…",
+      "The demo's own hand-rolled `wakeRuntime()` — a `startService` call with a silent `catch` — never actually worked on those devices and has been deleted.",
+      "Measured on a Lume Phone against a single runtime build:",
+      "**Before:** 12 broker queries, 6 provider blocks, the broker answered 0 times, `xrCreateInstance` → `XR_ERROR_RUNTIME_UNAVAILABLE`.",
+      "**After:** 1 query, 0 blocks, the broker answered, `xrCreateInstance` → `XR_SUCCESS`.",
+      "**Requires DisplayXR runtime v2.16.28 or later** — that is the runtime release that ships `DisplayXR-Client-*.aar`.",
+      "Android: adopt the DisplayXR client wake library and delete the demo's own `wakeRuntime()` (#125)",
+      "Android CI: fetch the wake library at build time instead of vendoring the client AAR, with no token required (#125)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.16.27",
@@ -376,20 +396,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.25.0",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.25.0",
-    "title": "v1.25.0",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.25.0",
-    "prerelease": false,
-    "featureLines": [
-      "Undock opens at the page's angle and fit (`pose=`/`--pose`, `margin=`/`--margin`); SPZ files written by current tools load upright.",
-      "Undock opens at the page's pose and fit margin — the undocked window inherits the angle and framing the page was showing, via `pose=`/`--pose` and `margin=`/`--margin` (#106)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.25.1",
