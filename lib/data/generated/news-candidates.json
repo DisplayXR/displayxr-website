@@ -3,9 +3,24 @@
     "id": "displayxr-runtime@v2.16.30",
     "repo": "displayxr-runtime",
     "tag": "v2.16.30",
-    "title": "v2.16.30",
+    "title": "DisplayXR Runtime v2.16.30",
     "date": "2026-09-13",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.30",
+    "prerelease": false,
+    "featureLines": [
+      "This release completes the Android client-wake fix. v2.16.29 shipped the no-display `WakeActivity` but **not** the piece that arms the runtime's IPC service — so it fixed apps that reach the runtime through the Khronos loader (all five d…",
+      "Measured on a Lume Phone (runtime force-stopped each time): with the wake alone the browser's connector still failed (`blockingConnect` refused, zero `ServiceRecord`s); with this fix it connects on the launch path and reports inline-3D w…",
+      "Also here: the client wake library's return contract is now documented — `wake()` returning `true` means \"no longer stopped\", **not** \"bindable\" (the gap is ~650 ms, and it only matters to clients that bypass the loader and bind directly…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.16.31",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.31",
+    "title": "v2.16.31",
+    "date": "2026-09-13",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.31",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -108,19 +123,6 @@
       "**Requires DisplayXR runtime v2.16.28 or later** — that is the runtime release that ships `DisplayXR-Client-*.aar`.",
       "Android: adopt the DisplayXR client wake library and delete the demo's own `wakeRuntime()` (#125)",
       "Android CI: fetch the wake library at build time instead of vendoring the client AAR, with no token required (#125)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.16.27",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.27",
-    "title": "DisplayXR Runtime v2.16.27",
-    "date": "2026-09-12",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.27",
-    "prerelease": false,
-    "featureLines": [
-      "This is the build the Arc-box leg should install (Suki). #1456 makes the forward-horizon join-coverage gate cumulative and sticky, with a 30 s dwell between refuse/recover edges, a gate reset at chain teardown, and `refused N (bad N, goo…"
     ],
     "looksMechanical": false
   },
