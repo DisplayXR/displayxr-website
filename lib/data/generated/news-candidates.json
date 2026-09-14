@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-unreal@v0.9.2",
+    "repo": "displayxr-unreal",
+    "tag": "v0.9.2",
+    "title": "DisplayXR v0.9.2",
+    "date": "2026-09-14",
+    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.9.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.16.30",
     "repo": "displayxr-runtime",
     "tag": "v2.16.30",
@@ -637,21 +648,6 @@
       "leaving an empty log behind. The runtime is now pinned to the major we test, and",
       "a wedged voice process says so (in the log, and as a toast) instead of failing",
       "invisibly. Voice reaches `[realtime] session ready` and push-to-talk arms."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unreal@v0.7.0",
-    "repo": "displayxr-unreal",
-    "tag": "v0.7.0",
-    "title": "DisplayXR v0.7.0",
-    "date": "2026-08-15",
-    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.7.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Weave-to-texture preview inside the PIE viewport tab** ([#38](https://github.com/DisplayXR/displayxr-unreal/issues/38) M2, Unity-parity, verified weaved 3D on hardware). With `r.DisplayXR.EditorNativePIE 1`, Play shows the runtime's **…",
-      "**Live viewport tracking for the in-tab preview** (#38 M3). The preview follows the PIE viewport every editor tick: layout moves (splitters, panel changes) apply immediately — interlace phase is computed from the proxy's live screen rect…",
-      "**The in-tab preview is now the default and only editor preview** — `r.DisplayXR.EditorNativePIE` defaults to `1` (set `0` for no editor preview at all). On a runtime without `XR_DXR_display_zones` the module warns once at Play and the e…"
     ],
     "looksMechanical": false
   },
