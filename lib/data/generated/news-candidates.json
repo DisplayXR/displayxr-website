@@ -47,8 +47,10 @@
     "date": "2026-09-15",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.6",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The transparent (Undocked) rear clip is now stable on its own, independent of the runtime's depth-budget guard: the model's content mask no longer flaps at the text/blank border even with the runtime ratchet disabled. Panel-verified on W…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.16.32",
@@ -80,6 +82,17 @@
       "`739dc9198` feat(depth-budget): mask ratchet — make the measured region monotonic in budget state (#1470)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.16.34",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.34",
+    "title": "v2.16.34",
+    "date": "2026-09-15",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.34",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@v1.0.2",
@@ -144,21 +157,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.16.30",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.30",
-    "title": "DisplayXR Runtime v2.16.30",
-    "date": "2026-09-13",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.30",
-    "prerelease": false,
-    "featureLines": [
-      "This release completes the Android client-wake fix. v2.16.29 shipped the no-display `WakeActivity` but **not** the piece that arms the runtime's IPC service — so it fixed apps that reach the runtime through the Khronos loader (all five d…",
-      "Measured on a Lume Phone (runtime force-stopped each time): with the wake alone the browser's connector still failed (`blockingConnect` refused, zero `ServiceRecord`s); with this fix it connects on the launch path and reports inline-3D w…",
-      "Also here: the client wake library's return contract is now documented — `wake()` returning `true` means \"no longer stopped\", **not** \"bindable\" (the gap is ~650 ms, and it only matters to clients that bypass the loader and bind directly…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.16.31",
