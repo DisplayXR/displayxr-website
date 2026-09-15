@@ -7,8 +7,10 @@
     "date": "2026-09-15",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.9",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Rear depth clip no longer flickers in transparent mode.** When the avatar straddled a text/blank border behind the window, the rear clip toggled every ~0.6–1.1 s: the content mask was built from the post-far-clip alpha silhouette, so t…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.25.5",
@@ -31,6 +33,19 @@
     "title": "v0.28.5",
     "date": "2026-09-15",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.5",
+    "prerelease": false,
+    "featureLines": [
+      "In transparent / Undocked mode the rear depth clip no longer flickers when a model straddles a text/blank border. The viewer's depth-budget content mask (`XrContentMaskDXR`, v3) was built from the post-far-clip swapchain alpha, so the re…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.28.6",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.28.6",
+    "title": "v0.28.6",
+    "date": "2026-09-15",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.6",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -529,26 +544,6 @@
     "featureLines": [
       "The splat viewer now reports its rendered silhouette to the runtime (`XR_DXR_depth_budget` v3 content mask, built from the click-through region it already computes), so the rear-depth-budget decision is made only under the scene's outlin…",
       "Chain the silhouette content mask for `XR_DXR_depth_budget` v3 (#107)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.28.2",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.28.2",
-    "title": "v0.28.2",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.2",
-    "prerelease": false,
-    "featureLines": [
-      "The model viewer now consumes the runtime's rear depth budget (`XR_DXR_depth_budget`,",
-      "runtime v2.16.9+ with a plug-in that supplies the background preview). In transparent",
-      "mode the far clip no longer sits fixed at the display plane — the full model is shown",
-      "when the desktop behind it is depth-neutral, and the clip slides back in as soon as",
-      "structure appears behind it. v2 content bounds narrow the analysis to the model's own",
-      "silhouette rather than the full canvas, and the HUD now shows the current budget state.",
-      "Behavior is unchanged on runtimes without the extension.",
-      "Consume `XR_DXR_depth_budget` via `dxr::ClipPolicy` for adaptive far-clip in transparent mode (#116, 640ce77)"
     ],
     "looksMechanical": false
   },
