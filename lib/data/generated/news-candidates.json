@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-avatar@v0.11.9",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.11.9",
+    "title": "v0.11.9",
+    "date": "2026-09-15",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.9",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.25.5",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.25.5",
@@ -12,6 +23,17 @@
       "Pre-cull silhouette coverage raster in the preprocess stage, one extra scatter with no new pass (#112)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.28.5",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.28.5",
+    "title": "v0.28.5",
+    "date": "2026-09-15",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-runtime@v2.16.32",
@@ -33,12 +55,16 @@
     "id": "displayxr-runtime@v2.16.33",
     "repo": "displayxr-runtime",
     "tag": "v2.16.33",
-    "title": "v2.16.33",
+    "title": "DisplayXR Runtime v2.16.33",
     "date": "2026-09-15",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.33",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Depth-budget oscillation fix (#1470).** The v3 rendered-silhouette mask fed the app's own clip state back into the runtime's measurement: clipping shrank the mask, the smaller mask relaxed the budget, the app un-clipped, the mask grew,…",
+      "**`XR_DXR_depth_budget` spec moves to v4:** the mask is the **unclipped** silhouette — what the app *would* draw with an unrestricted budget — never the clipped result.",
+      "`739dc9198` feat(depth-budget): mask ratchet — make the measured region monotonic in budget state (#1470)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.0.2",
@@ -441,17 +467,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-demo-avatar@v0.11.5",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.11.5",
-    "title": "v0.11.5",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.5",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-demo-avatar@v0.11.6",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.11.6",
@@ -516,17 +531,6 @@
       "Chain the silhouette content mask for `XR_DXR_depth_budget` v3 (#107)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.28.1",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.28.1",
-    "title": "v0.28.1",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-modelviewer@v0.28.2",
