@@ -7,8 +7,11 @@
     "date": "2026-09-15",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.25.5",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The rear depth clip no longer flickers. When the splat cloud straddled a text/blank border, the `XR_DXR_depth_budget` content mask was built from *post-cull* alpha, so the runtime's clip decision fed straight back into the measurement th…",
+      "Pre-cull silhouette coverage raster in the preprocess stage, one extra scatter with no new pass (#112)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.16.32",
