@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-avatar@v0.11.10",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.11.10",
+    "title": "v0.11.10",
+    "date": "2026-09-15",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.10",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-avatar@v0.11.9",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.11.9",
@@ -87,12 +98,15 @@
     "id": "displayxr-runtime@v2.16.34",
     "repo": "displayxr-runtime",
     "tag": "v2.16.34",
-    "title": "v2.16.34",
+    "title": "DisplayXR Runtime v2.16.34",
     "date": "2026-09-15",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.34",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "This is the build for the Arc-box (Suki) re-test of #1435 / #1339. The forward-horizon coverage verdict now closes only on 1024 *armed* horizons (burst-proof; a healthy chain's first lock moves to ~17 s), and repaints now take a frame-la…",
+      "New env switches for A/B: `DXR_WEAVE_REPAINT_QUEUE_CAP=0`, `DXR_LATE_WEAVE_REPAINT_HOLD=0`."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.0.2",
@@ -478,20 +492,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.11.6",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.11.6",
-    "title": "v0.11.6",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.6",
-    "prerelease": false,
-    "featureLines": [
-      "The avatar now reports its rendered silhouette to the runtime as an `XR_DXR_depth_budget` v3 content mask — built from the same click-through silhouette coverage it already computes for its zone, with no extra GPU readback. This makes th…",
-      "Chain the silhouette content mask for `XR_DXR_depth_budget` v3 (#81)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.11.7",
