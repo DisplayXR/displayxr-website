@@ -13,6 +13,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-avatar@v0.11.11",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.11.11",
+    "title": "v0.11.11",
+    "date": "2026-09-15",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.11",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-avatar@v0.11.9",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.11.9",
@@ -66,6 +77,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-leia-plugin@v2.6.22",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.22",
+    "title": "v2.6.22",
+    "date": "2026-09-15",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.22",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.16.32",
     "repo": "displayxr-runtime",
     "tag": "v2.16.32",
@@ -109,6 +131,17 @@
       "New env switches for A/B: `DXR_WEAVE_REPAINT_QUEUE_CAP=0`, `DXR_LATE_WEAVE_REPAINT_HOLD=0`."
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.16.35",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.35",
+    "title": "v2.16.35",
+    "date": "2026-09-15",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.35",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.19.3",
@@ -184,19 +217,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.16.31",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.31",
-    "title": "DisplayXR Runtime v2.16.31",
-    "date": "2026-09-13",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.31",
-    "prerelease": false,
-    "featureLines": [
-      "Two fixes surfaced by the first external input-provider install. `displayxr-cli selftest` no longer fails when a vendor input provider that supplies a navigation device is installed but its hardware is absent (#1465) — and the rig-role c…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.0.1",
@@ -445,26 +465,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-leia-plugin@v2.6.18",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.18",
-    "title": "v2.6.18",
-    "date": "2026-09-08",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.18",
-    "prerelease": false,
-    "featureLines": [
-      "**Android mini-window weaving no longer stalls.** This release pairs the plug-in",
-      "with **CNSDK v0.10.68**, the first core carrying LeiaInc/CNSDK#734 (the fix for",
-      "CNSDK#733): a failed weaver `vkQueueSubmit` now disarms its fence and returns an",
-      "error out of `Apply2DEffect`, with a 500 ms bounded fence wait as the net,",
-      "instead of waiting forever on a fence nothing will ever signal. That unbounded",
-      "wait was the stall behind displayxr-runtime#1394.",
-      "The plug-in side complements it — a weave the core reports as dropped is no",
-      "longer presented, so a failed frame shows the previous good image rather than a"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-leia-plugin@v2.6.19",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.6.19",
@@ -502,17 +502,6 @@
     "title": "DisplayXR v2.19.1",
     "date": "2026-09-07",
     "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.19.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.11.7",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.11.7",
-    "title": "v0.11.7",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.7",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
