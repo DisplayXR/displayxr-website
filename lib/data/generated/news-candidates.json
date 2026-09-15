@@ -7,8 +7,10 @@
     "date": "2026-09-15",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.10",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "In transparent (window) mode the avatar's rear clip is now stable on its own. The content mask the app publishes through `XR_DXR_depth_budget` no longer depends on the rear budget the runtime last published, so the budget ↔ mask feedback…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.11.9",
@@ -107,6 +109,17 @@
       "New env switches for A/B: `DXR_WEAVE_REPAINT_QUEUE_CAP=0`, `DXR_LATE_WEAVE_REPAINT_HOLD=0`."
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.19.3",
+    "repo": "displayxr-unity",
+    "tag": "v2.19.3",
+    "title": "DisplayXR v2.19.3",
+    "date": "2026-09-15",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.19.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@v1.0.2",
@@ -611,19 +624,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unity@v2.18.4",
-    "repo": "displayxr-unity",
-    "tag": "v2.18.4",
-    "title": "DisplayXR v2.18.4",
-    "date": "2026-09-04",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.18.4",
-    "prerelease": false,
-    "featureLines": [
-      "**\"Create Scene Content\" button on the Basic Scene and URP Basic Scene samples** (#314). \"Scene Setup\" set up the Play session, not the scene: content was built in `Start()` and discarded on Stop, so nobody could move a cube or use the l…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-earthview@v0.7.4",
