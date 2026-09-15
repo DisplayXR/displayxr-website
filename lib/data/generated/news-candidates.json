@@ -1,11 +1,38 @@
 [
   {
+    "id": "displayxr-demo-gaussiansplat@v1.25.5",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.25.5",
+    "title": "v1.25.5",
+    "date": "2026-09-15",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.25.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.16.32",
     "repo": "displayxr-runtime",
     "tag": "v2.16.32",
-    "title": "v2.16.32",
+    "title": "DisplayXR Runtime v2.16.32",
     "date": "2026-09-15",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.32",
+    "prerelease": false,
+    "featureLines": [
+      "The Android runtime is now built against **CNSDK 0.10.69**, and the tablet bundle's service pin moves with it.",
+      "0.10.69 stops the blink detector re-extracting its model when the cache is current: `libleiaBlinkDetectorPlugin.so` drops **14,592 kB → 640 kB resident** and stops rewriting ~14 MB to flash on every engine restart. That plug-in loads out…",
+      "**Not credited:** 0.10.69 also carries two foreground-status fixes that CNSDK reports as untested on any device. Nothing observed after this release should be attributed to them.",
+      "To reach a device, the 0.10.69 service packages also need an Android tablet bundle rebuild — this release carries the matching loader, not the services themselves."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.16.33",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.33",
+    "title": "v2.16.33",
+    "date": "2026-09-15",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.33",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -200,24 +227,6 @@
       "**Requires DisplayXR runtime v2.16.28 or later** — that is the runtime release that ships `DisplayXR-Client-*.aar`.",
       "Android: adopt the DisplayXR client wake library and delete the demo's own `wakeRuntime()` (#125)",
       "Android CI: fetch the wake library at build time instead of vendoring the client AAR, with no token required (#125)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.16.29",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.29",
-    "title": "DisplayXR Runtime v2.16.29",
-    "date": "2026-09-12",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.29",
-    "prerelease": false,
-    "featureLines": [
-      "Input-provider plug-ins can now publish a **navigation (rig) pose** that drives the fly camera — arbitrated exactly like the hands, with the runtime-owned rig composer acting as the head's pose source so alignment and recenter stay runti…",
-      "`feat(xrt)`: declare the rig (navigation) role — headers only (#1380)",
-      "`feat(input)`: arbitrate the rig (navigation) role like the hands (#1380)",
-      "`feat(input)`: persistent host iface + display-geometry cache; anchor `RIG_LOCAL` origins at the initial rig (#1380)",
-      "`feat(input)`: rig composer — the head's pose source composes the navigation role onto the fly camera (#1380)",
-      "`feat(sim_input)`: scripted navigation device + rig-role selftest — the role runs hardware-free in CI (#1380)"
     ],
     "looksMechanical": false
   },
@@ -471,17 +480,6 @@
     "title": "v0.7.6",
     "date": "2026-09-06",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.6",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.25.1",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.25.1",
-    "title": "v1.25.1",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.25.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
