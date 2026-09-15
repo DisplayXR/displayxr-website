@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.16.32",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.32",
+    "title": "v2.16.32",
+    "date": "2026-09-15",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.32",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.0.2",
     "repo": "displayxr-browser",
     "tag": "v1.0.2",
@@ -18,8 +29,17 @@
     "date": "2026-09-14",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.21",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The Android plug-in (`libdxrp050_leia_cnsdk.so`) is now built against **CNSDK 0.10.69**.",
+      "That CNSDK release stops the blink detector re-extracting its model when the on-disk",
+      "cache is already current. `libleiaBlinkDetectorPlugin.so` drops from **14,592 kB to",
+      "640 kB resident**, and roughly **14 MB of flash writes per engine restart** go away",
+      "entirely. The blink plug-in is loaded out of the vendor **service** package and into",
+      "each client process, so the saving lands in every client — in-app ones included. SNPE",
+      "comes out of the service package with it.",
+      "This plug-in release exists so that `displayxr-runtime` can move its own `CNSDK_TAG`:"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity-samples@v2.2.0",
@@ -180,21 +200,6 @@
       "**Requires DisplayXR runtime v2.16.28 or later** — that is the runtime release that ships `DisplayXR-Client-*.aar`.",
       "Android: adopt the DisplayXR client wake library and delete the demo's own `wakeRuntime()` (#125)",
       "Android CI: fetch the wake library at build time instead of vendoring the client AAR, with no token required (#125)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.16.28",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.28",
-    "title": "DisplayXR Runtime v2.16.28",
-    "date": "2026-09-12",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.28",
-    "prerelease": false,
-    "featureLines": [
-      "The **Android client wake library now ships as a release asset** (`DisplayXR-Client-2.16.28.aar`), so an app can simply depend on it instead of hand-copying wake code. It fixes apps failing at startup with `RUNTIME_UNAVAILABLE` on OEM bu…",
-      "Also in this release: a zone that hangs off the window no longer falls back to the full-canvas Kooima projection over IPC (#1458), and the R8.6 vendor-requirements spec gains the detail that the process thaw is hooked into `realStartActi…",
-      "`feat(android)`: wake the runtime with an activity, not a service (#1453, #1454)"
     ],
     "looksMechanical": false
   },
