@@ -22,6 +22,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-leia-plugin@v2.6.24",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.24",
+    "title": "v2.6.24",
+    "date": "2026-09-16",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.24",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.16.36",
     "repo": "displayxr-runtime",
     "tag": "v2.16.36",
@@ -35,6 +46,17 @@
       "No perceptual change is claimed: the leg it was found on read \"no shiver\", and the bound only rate-limits learning, not the weave. The new rule is provably never looser than the old one, so it cannot admit a step the previous bound blocked."
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.16.37",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.37",
+    "title": "v2.16.37",
+    "date": "2026-09-16",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.37",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-avatar@v0.11.10",
@@ -134,21 +156,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.16.33",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.33",
-    "title": "DisplayXR Runtime v2.16.33",
-    "date": "2026-09-15",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.33",
-    "prerelease": false,
-    "featureLines": [
-      "**Depth-budget oscillation fix (#1470).** The v3 rendered-silhouette mask fed the app's own clip state back into the runtime's measurement: clipping shrank the mask, the smaller mask relaxed the budget, the app un-clipped, the mask grew,…",
-      "**`XR_DXR_depth_budget` spec moves to v4:** the mask is the **unclipped** silhouette — what the app *would* draw with an unrestricted budget — never the clipped result.",
-      "`739dc9198` feat(depth-budget): mask ratchet — make the measured region monotonic in budget state (#1470)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.16.34",
@@ -465,21 +472,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.6.20",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.20",
-    "title": "v2.6.20",
-    "date": "2026-09-09",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.20",
-    "prerelease": false,
-    "featureLines": [
-      "**2D rendering modes now switch the Leia panel to 2D on Android.** When the runtime renders flat (e.g. a media player's idle splash screen), the plug-in now turns the panel's lens off instead of leaving it in 3D — 2D content is shown as …",
-      "Android DP implements `request_display_mode` / `get_hardware_3d_state` — hardware 2D/3D follows the runtime's rendering mode (#236)",
-      "Android DP applies the runtime's 2D/3D request immediately (`leia_core_enable_3d()` at request time) and honours the wish on resume and bootstrap (#236)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.9.4",
