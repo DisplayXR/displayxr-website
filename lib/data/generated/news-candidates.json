@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.16.36",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.36",
+    "title": "v2.16.36",
+    "date": "2026-09-16",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.36",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-avatar@v0.11.10",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.11.10",
@@ -77,6 +88,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-installer@v2.3.10",
+    "repo": "displayxr-installer",
+    "tag": "v2.3.10",
+    "title": "DisplayXR v2.3.10",
+    "date": "2026-09-15",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.10",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.6.22",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.6.22",
@@ -86,22 +108,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.16.32",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.32",
-    "title": "DisplayXR Runtime v2.16.32",
-    "date": "2026-09-15",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.32",
-    "prerelease": false,
-    "featureLines": [
-      "The Android runtime is now built against **CNSDK 0.10.69**, and the tablet bundle's service pin moves with it.",
-      "0.10.69 stops the blink detector re-extracting its model when the cache is current: `libleiaBlinkDetectorPlugin.so` drops **14,592 kB → 640 kB resident** and stops rewriting ~14 MB to flash on every engine restart. That plug-in loads out…",
-      "**Not credited:** 0.10.69 also carries two foreground-status fixes that CNSDK reports as untested on any device. Nothing observed after this release should be attributed to them.",
-      "To reach a device, the 0.10.69 service packages also need an Android tablet bundle rebuild — this release carries the matching loader, not the services themselves."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.16.33",
@@ -136,12 +142,17 @@
     "id": "displayxr-runtime@v2.16.35",
     "repo": "displayxr-runtime",
     "tag": "v2.16.35",
-    "title": "v2.16.35",
+    "title": "DisplayXR Runtime v2.16.35",
     "date": "2026-09-15",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.35",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Depth-budget follow-ups (#1470/#1474): the mask ratchet now uses two separate verdicts — close on the current silhouette, and re-open only when the held close-mask is also neutral — so a fraction metric over a union can no longer be dilu…",
+      "CTS \"multithreading\" race fix (#1476): the handle tree and the action-name stores are now locked, and `multithreading` runs in the PR-time CTS smoke.",
+      "feat(depth-budget): `DXR_REAR_BUDGET_TRACE` — what the analysis actually measured (#1474) (babd4cdf0)",
+      "feat(depth-budget): name why the region fell back to the bounds (#1474) (8a2c55332)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.19.3",
@@ -560,17 +571,6 @@
       "Chain the silhouette content mask for `XR_DXR_depth_budget` v3 (#116, #122) — derives an occupancy grid from the click-through region's per-frame coverage buffer (the same union-over-eyes rendered-alpha silhouette already computed for th…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.3.7",
-    "repo": "displayxr-installer",
-    "tag": "v2.3.7",
-    "title": "DisplayXR v2.3.7",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.7",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.19.0",
