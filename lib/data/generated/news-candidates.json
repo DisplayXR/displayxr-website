@@ -1,14 +1,29 @@
 [
   {
-    "id": "displayxr-runtime@v2.16.36",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.36",
-    "title": "v2.16.36",
+    "id": "displayxr-leia-plugin@v2.6.23",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.23",
+    "title": "v2.6.23",
     "date": "2026-09-16",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.36",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.23",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.16.36",
+    "repo": "displayxr-runtime",
+    "tag": "v2.16.36",
+    "title": "DisplayXR Runtime v2.16.36",
+    "date": "2026-09-16",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.36",
+    "prerelease": false,
+    "featureLines": [
+      "A single-fix release for the #1435 forward-horizon offset loop. The rate limit on applied offset steps is now measured from the **last applied step** rather than from the coverage-epoch boundary: a per-epoch flag let two steps that strad…",
+      "It presented as a direction asymmetry because it is one — a climb fires late in its epoch (the residual needs time to re-read the same sign) while the correction it provokes is ready one window refill later, so the step-back was always t…",
+      "No perceptual change is claimed: the leg it was found on read \"no shiver\", and the bound only rate-limits learning, not the weave. The new rule is provably never looser than the old one, so it cannot admit a step the previous bound blocked."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.11.10",
@@ -472,26 +487,6 @@
       "**2D rendering modes now switch the Leia panel to 2D on Android.** When the runtime renders flat (e.g. a media player's idle splash screen), the plug-in now turns the panel's lens off instead of leaving it in 3D — 2D content is shown as …",
       "Android DP implements `request_display_mode` / `get_hardware_3d_state` — hardware 2D/3D follows the runtime's rendering mode (#236)",
       "Android DP applies the runtime's 2D/3D request immediately (`leia_core_enable_3d()` at request time) and honours the wish on resume and bootstrap (#236)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.6.19",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.19",
-    "title": "v2.6.19",
-    "date": "2026-09-08",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.19",
-    "prerelease": false,
-    "featureLines": [
-      "**The plug-in now tells the runtime when a weave was dropped.** Against runtime",
-      "**v2.16.19 or newer**, the Android display processor fills the appended VK DP slot",
-      "`get_last_frame_dropped` (runtime#1394 / #1411), so the compositor discards a",
-      "frame whose CNSDK weave failed instead of presenting a target the weaver never",
-      "wrote — no present, no `present_serial` bump, no frame-timing pollution.",
-      "The reporting logic shipped in v2.6.18, but the slot is `#ifdef`-guarded on the",
-      "runtime headers the plug-in is built against, and that pin was still v2.16.0 —",
-      "so it compiled out silently. This release is what actually turns it on."
     ],
     "looksMechanical": false
   },
