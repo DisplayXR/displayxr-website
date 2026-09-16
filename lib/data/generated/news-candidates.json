@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.0.3",
+    "repo": "displayxr-browser",
+    "tag": "v1.0.3",
+    "title": "DisplayXR Browser v1.0.3",
+    "date": "2026-09-16",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.6.23",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.6.23",
@@ -342,26 +353,6 @@
       "**Requires DisplayXR runtime v2.16.28 or later** — that is the runtime release that ships `DisplayXR-Client-*.aar`.",
       "Android: adopt the DisplayXR client wake library and delete the demo's own `wakeRuntime()` (#125)",
       "Android CI: fetch the wake library at build time instead of vendoring the client AAR, with no token required (#125)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@preview-0.1.35",
-    "repo": "displayxr-browser",
-    "tag": "preview-0.1.35",
-    "title": "DisplayXR Browser preview-0.1.35",
-    "date": "2026-09-11",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/preview-0.1.35",
-    "prerelease": false,
-    "featureLines": [
-      "**Chromium 154.0.8037.17** (from 153.0.8010.27): the full 179-patch series re-anchored; from here the",
-      "pin follows Chrome stable automatically (chromium-watch + auto-rebase).",
-      "**Native immersive-vr is now the default in-tab path** (`0142–0179`, `0183`): a stock `immersive-vr`",
-      "WebXR app (three.js, Babylon, A-Frame) converts on a plain double-click of the browser icon — no launch",
-      "flags — weaves in-tab (windowed or fullscreen), takes controller input and exits cleanly. The vendored",
-      "content-script shim remains available as `--immersive-vr-shim`; `--no-immersive-vr-emulation` still",
-      "means neither path. Android: compiles and is enabled, **not yet exercised on an Android panel**.",
-      "**inline-3D:** a zero-identity tile rect is never suppressed unwoven and legacy rects tolerate the 1-px"
     ],
     "looksMechanical": false
   },
