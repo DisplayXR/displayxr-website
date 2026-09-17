@@ -13,7 +13,7 @@
   {
     "id": "unreal",
     "name": "Unreal",
-    "version": "v0.9.2",
+    "version": "v0.9.3",
     "engineVersion": "UE 5.7.0",
     "description": "Unreal Engine plugin for DisplayXR",
     "repoUrl": "https://github.com/DisplayXR/displayxr-unreal",
