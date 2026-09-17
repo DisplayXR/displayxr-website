@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-leia-plugin@v2.6.25",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.6.25",
+    "title": "v2.6.25",
+    "date": "2026-09-17",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.25",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unreal@v0.9.3",
+    "repo": "displayxr-unreal",
+    "tag": "v0.9.3",
+    "title": "DisplayXR v0.9.3",
+    "date": "2026-09-17",
+    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.9.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.0.3",
     "repo": "displayxr-browser",
     "tag": "v1.0.3",
@@ -220,26 +242,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-leia-plugin@v2.6.21",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.21",
-    "title": "v2.6.21",
-    "date": "2026-09-14",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.21",
-    "prerelease": false,
-    "featureLines": [
-      "The Android plug-in (`libdxrp050_leia_cnsdk.so`) is now built against **CNSDK 0.10.69**.",
-      "That CNSDK release stops the blink detector re-extracting its model when the on-disk",
-      "cache is already current. `libleiaBlinkDetectorPlugin.so` drops from **14,592 kB to",
-      "640 kB resident**, and roughly **14 MB of flash writes per engine restart** go away",
-      "entirely. The blink plug-in is loaded out of the vendor **service** package and into",
-      "each client process, so the saving lands in every client — in-app ones included. SNPE",
-      "comes out of the service package with it.",
-      "This plug-in release exists so that `displayxr-runtime` can move its own `CNSDK_TAG`:"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-unity-samples@v2.2.0",
     "repo": "displayxr-unity-samples",
     "tag": "v2.2.0",
@@ -427,19 +429,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unreal@v0.8.0",
-    "repo": "displayxr-unreal",
-    "tag": "v0.8.0",
-    "title": "DisplayXR v0.8.0",
-    "date": "2026-09-10",
-    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.8.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Rig gizmos in the editor.** Selecting a `DisplayXR Camera` draws its convergence plane — the screen plane at `1/InvConvergenceDistance` in front of the camera, sized from the camera's FOV and aspect, with edges back to the camera; inve…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unreal@v0.9.0",
