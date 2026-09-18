@@ -7,8 +7,17 @@
     "date": "2026-09-17",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.25",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Weaving on Linux no longer looks washed out.** Content on the Vulkan",
+      "`vk_native` path (Intel iGPU) came out pale because the weave applied a",
+      "linear→sRGB encode on output to an atlas that was already sRGB-encoded — so",
+      "every frame was encoded twice. The conversion is now derived from the target",
+      "surface format instead of being hardcoded, so colour comes out as authored.",
+      "Confirmed on panel on an Acer DS1_156, with both `cube` and the avatar demo.",
+      "Opt-in per-weave eye-prediction recorder plus an offline scorer, behind",
+      "`DXR_LEIA_SR_PREDICT_TRACE` — a developer diagnostic for evaluating eye"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unreal@v0.9.3",
