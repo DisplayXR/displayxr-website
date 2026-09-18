@@ -7,6 +7,20 @@
     "date": "2026-09-18",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.26",
     "prerelease": false,
+    "featureLines": [
+      "On Linux, weave colour is now driven by the atlas encoding the runtime *declares* rather than guessed by the display processor — pairs with runtime #1509.",
+      "Linux display processor consumes the runtime's out-of-band atlas-encoding declaration (ADR-021) instead of a hardcoded sRGB pair, which had flipped twice on honest panel readings. Verified on-box on an Intel-iGPU/Xorg machine. `DXR_LEIA_…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.17.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.17.0",
+    "title": "v2.17.0",
+    "date": "2026-09-18",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.17.0",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -197,20 +211,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.16.34",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.34",
-    "title": "DisplayXR Runtime v2.16.34",
-    "date": "2026-09-15",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.34",
-    "prerelease": false,
-    "featureLines": [
-      "This is the build for the Arc-box (Suki) re-test of #1435 / #1339. The forward-horizon coverage verdict now closes only on 1024 *armed* horizons (burst-proof; a healthy chain's first lock moves to ~17 s), and repaints now take a frame-la…",
-      "New env switches for A/B: `DXR_WEAVE_REPAINT_QUEUE_CAP=0`, `DXR_LATE_WEAVE_REPAINT_HOLD=0`."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.16.35",
