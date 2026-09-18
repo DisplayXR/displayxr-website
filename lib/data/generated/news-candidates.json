@@ -17,9 +17,29 @@
     "id": "displayxr-runtime@v2.17.0",
     "repo": "displayxr-runtime",
     "tag": "v2.17.0",
-    "title": "v2.17.0",
+    "title": "DisplayXR Runtime v2.17.0",
     "date": "2026-09-18",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.17.0",
+    "prerelease": false,
+    "featureLines": [
+      "OpenXR SDK/loader/CTS moved to **1.1.63**, and `XR_EXT_view_configuration_views_change` is adopted — a throttled doorbell plus EXT-gated live recommended view sizes, including on the IPC/shell path. View configurations are now conformant…",
+      "Also: d3d12 swapchain images are created TYPELESS for every enumerated format, the vk/gl/metal acquire ring is lifted into `util/` (N outstanding acquires, one image for a static swapchain), and the CTS `xrLocateSpace_xrLocateViews` excl…",
+      "feat(oxr): name the mode the floor cannot reach, and add DXR_MODE_FLOOR (#1499)",
+      "feat(oxr): fire the view-size doorbell on the IPC/shell path (#1488 PR B)",
+      "feat(oxr): derive the IPC leg's per-view render size from a window rect (#1488)",
+      "feat(oxr): advertise PRIMARY_STEREO with exactly 2 views + PRIMARY_MULTIVIEW_DXR for N-view (#1486)",
+      "feat(display_info): add XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MULTIVIEW_DXR (spec v19) (#1486)",
+      "feat(test_apps): make cube_handle_d3d11_win the #1488 reference consumer"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.17.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.17.1",
+    "title": "v2.17.1",
+    "date": "2026-09-18",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.17.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -211,22 +231,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.16.35",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.35",
-    "title": "DisplayXR Runtime v2.16.35",
-    "date": "2026-09-15",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.35",
-    "prerelease": false,
-    "featureLines": [
-      "Depth-budget follow-ups (#1470/#1474): the mask ratchet now uses two separate verdicts — close on the current silhouette, and re-open only when the held close-mask is also neutral — so a fraction metric over a union can no longer be dilu…",
-      "CTS \"multithreading\" race fix (#1476): the handle tree and the action-name stores are now locked, and `multithreading` runs in the PR-time CTS smoke.",
-      "feat(depth-budget): `DXR_REAR_BUDGET_TRACE` — what the analysis actually measured (#1474) (babd4cdf0)",
-      "feat(depth-budget): name why the region fell back to the bounds (#1474) (8a2c55332)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.19.3",
