@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-demo-avatar@v0.11.12",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.11.12",
+    "title": "v0.11.12",
+    "date": "2026-09-19",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.12",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-earthview@v0.7.8",
+    "repo": "displayxr-demo-earthview",
+    "tag": "v0.7.8",
+    "title": "v0.7.8",
+    "date": "2026-09-19",
+    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.8",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.25.6",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.25.6",
@@ -345,21 +367,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-demo-avatar@v0.11.8",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.11.8",
-    "title": "v0.11.8",
-    "date": "2026-09-12",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.8",
-    "prerelease": false,
-    "featureLines": [
-      "The demo now consumes the shared DisplayXR client wake library instead of its own hand-rolled `wakeRuntime()`, which used `startService` with a silent catch and never worked. On OEM Android builds that block one package from starting ano…",
-      "Requires DisplayXR runtime **v2.16.28 or later** (the release carrying `DisplayXR-Client-*.aar`).",
-      "Android: adopt the shared DisplayXR client wake library and delete the demo's own `wakeRuntime()` (#89)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-demo-earthview@v0.7.7",
     "repo": "displayxr-demo-earthview",
     "tag": "v0.7.7",
@@ -605,17 +612,6 @@
     "title": "v0.7.5",
     "date": "2026-09-04",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.5",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-earthview@v0.7.4",
-    "repo": "displayxr-demo-earthview",
-    "tag": "v0.7.4",
-    "title": "v0.7.4",
-    "date": "2026-09-01",
-    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.4",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
