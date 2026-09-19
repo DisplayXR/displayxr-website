@@ -7,8 +7,17 @@
     "date": "2026-09-19",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.12",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Leo now begins the multiview view configuration directly. Every platform leg opts into",
+      "`XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MULTIVIEW_DXR` (`XR_DXR_display_info` spec 19), so the",
+      "demo renders the display's real view count instead of a stereo pair promoted after the fact.",
+      "On Windows the avatar also adopts whatever 3D mode the runtime is already in at startup,",
+      "rather than forcing mode 1 — launch it on a display that is running a quad or 2D mode and it",
+      "joins that mode instead of fighting it.",
+      "**Requires DisplayXR Runtime v2.17.1.** On an older runtime the demo degrades to",
+      "`PRIMARY_STEREO` and keeps working, but without the multiview path or startup mode adoption."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-earthview@v0.7.8",
@@ -69,8 +78,35 @@
     "date": "2026-09-19",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.7",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The model viewer now asks the runtime for the **multiview** view configuration",
+      "(`XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MULTIVIEW_DXR`, `XR_DXR_display_info` spec",
+      "version 19) on every platform leg instead of the fixed two-view stereo path, so",
+      "the display's real view count drives the render — no more hard-coded pair when",
+      "the panel wants more views.",
+      "**Requires DisplayXR Runtime v2.17.1.** On an older runtime the extension's spec",
+      "version is too low, the viewer falls back to `PRIMARY_STEREO` and behaves exactly",
+      "as v0.28.6 did — so this release is safe to install ahead of the runtime, it just"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-installer@v2.3.11",
+    "repo": "displayxr-installer",
+    "tag": "v2.3.11",
+    "title": "DisplayXR Bundle v2.3.11",
+    "date": "2026-09-19",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.11",
+    "prerelease": false,
+    "featureLines": [
+      "Bundle refresh for the OpenXR 1.1.63 / view-configuration train. Every component below is its own signed installer chained by this bundle; the runtime and shell are the ones that change behaviour.",
+      "Upgrading from v2.3.10: the runtime sub-installer replaces `openxr_loader.dll` (1.1.51 → 1.1.63) in the runtime tree. Apps built against older headers keep working; demos released before today degrade to `PRIMARY_STEREO` on this runtime …",
+      "---## What's Changed",
+      "fix(bundle): repoint the plug-in markers at CNSDK 0.10.69 / plug-in v2.6.21 by @dfattal in https://github.com/DisplayXR/displayxr-installer/pull/58",
+      "fix(bundle): plug-in markers -> v2.6.22, and say which one actually proves it by @dfattal in https://github.com/DisplayXR/displayxr-installer/pull/60",
+      "**Full Changelog**: https://github.com/DisplayXR/displayxr-installer/compare/v2.3.10...v2.3.11"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-shell-releases@v2.3.0",
@@ -80,8 +116,17 @@
     "date": "2026-09-19",
     "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.3.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The shell installer now refuses to install against a runtime it cannot work with. It",
+      "requires **DisplayXR Runtime >= 2.16.0** and hard-aborts below that floor instead of",
+      "installing a shell that would fail at startup — and every installer modal is now",
+      "`IfSilent`-guarded, so unattended / bundle installs never stall on a dialog nobody can",
+      "see. Recommended pairing for this release: **runtime v2.17.1**.",
+      "Installer: hard runtime-version floor `MIN_RUNTIME_VERSION=2.16.0`, derived from the",
+      "pinned extension headers rather than hand-typed, with all modals `IfSilent`-guarded",
+      "so silent installs stay silent (#115, #113)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.19.4",
@@ -90,6 +135,17 @@
     "title": "DisplayXR v2.19.4",
     "date": "2026-09-19",
     "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.19.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unreal@v0.9.4",
+    "repo": "displayxr-unreal",
+    "tag": "v0.9.4",
+    "title": "DisplayXR v0.9.4",
+    "date": "2026-09-19",
+    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.9.4",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -526,17 +582,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-unreal@v0.9.0",
-    "repo": "displayxr-unreal",
-    "tag": "v0.9.0",
-    "title": "DisplayXR v0.9.0",
-    "date": "2026-09-10",
-    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.9.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-demo-mediaplayer@v1.9.5",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.9.5",
@@ -555,17 +600,6 @@
       "Android: tap-to-open on the empty splash when no media is loaded (#67, #68)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.3.8",
-    "repo": "displayxr-installer",
-    "tag": "v2.3.8",
-    "title": "DisplayXR v2.3.8",
-    "date": "2026-09-09",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.8",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.19.1",
