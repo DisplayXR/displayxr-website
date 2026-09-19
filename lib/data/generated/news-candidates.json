@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-gaussiansplat@v1.25.6",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.25.6",
+    "title": "v1.25.6",
+    "date": "2026-09-19",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.25.6",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.6.26",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.6.26",
@@ -37,12 +48,14 @@
     "id": "displayxr-runtime@v2.17.1",
     "repo": "displayxr-runtime",
     "tag": "v2.17.1",
-    "title": "v2.17.1",
+    "title": "DisplayXR Runtime v2.17.1",
     "date": "2026-09-18",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.17.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Patch over v2.17.0: fixes the one-dropped-frame-per-2D→3D-toggle regression introduced by the conformant PRIMARY_STEREO view count (#1528) — `xrBeginFrame` latches the begun mode's view count and the in-flight 1-view frame is granted acr…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.6.25",
@@ -517,22 +530,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.25.2",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.25.2",
-    "title": "v1.25.2",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.25.2",
-    "prerelease": false,
-    "featureLines": [
-      "The splat viewer now consumes the runtime's rear depth budget (`XR_DXR_depth_budget`, runtime v2.16.9+ with a plug-in that supplies the background preview). In transparent mode the hard far cull no longer sits fixed at the display plane …",
-      "Consume `XR_DXR_depth_budget` via `dxr::ClipPolicy` so the transparent-mode far cull tracks the runtime's rear depth budget instead of sitting fixed at the display plane (#100)",
-      "v2 content-bounds ROI narrows the depth-budget analysis (and picking) to the scene's silhouette (#100)",
-      "Use displayxr-common v2.11.1's `frameEndNext` directly for the depth-budget integration (#100)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.25.3",
