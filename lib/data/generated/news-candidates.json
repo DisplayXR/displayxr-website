@@ -18,8 +18,17 @@
     "date": "2026-09-19",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.8",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "EarthView now renders through the runtime's native multi-view path. It begins its",
+      "session in `XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MULTIVIEW_DXR`, so on a display whose",
+      "active mode needs more than two views the city is drawn for every view the runtime",
+      "asks for instead of being fed a fixed stereo pair.",
+      "On Windows the demo also adopts whatever 3D mode the runtime is already in when it",
+      "starts, rather than forcing its own — launch it into a quad or 2D workspace and it",
+      "comes up matching the display instead of switching it.",
+      "**Requires DisplayXR Runtime v2.17.1.** Against an older runtime the demo falls back"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.25.6",
@@ -45,8 +54,12 @@
     "date": "2026-09-19",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.8",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The media player now begins its OpenXR session with `XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MULTIVIEW_DXR`, so it renders correctly on N-view panels instead of only the first two tiles. On Android this also clears a silent, permanent black p…",
+      "Opt into `XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MULTIVIEW_DXR` on both the desktop and Android legs, selected once after `xrGetSystem` and fed to every view-configuration-typed call (`xrEnumerateViewConfigurationViews`, `XrSessionBeginInfo`…",
+      "Re-vendored `XR_DXR_display_info.h` at spec 19 and vendored the runtime's `dxr_view_config.h` opt-in helper; `VENDORED.json` re-pinned and `check_vendored_headers.py` green."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.28.7",
