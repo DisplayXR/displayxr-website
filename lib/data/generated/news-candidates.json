@@ -29,8 +29,13 @@
     "date": "2026-09-19",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.25.6",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The viewer now begins its session in `XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MULTIVIEW_DXR`, so it renders whatever view count the active display actually asks for instead of a fixed pair. On Windows, macOS and Linux it also adopts the runti…",
+      "**Requires DisplayXR Runtime v2.17.1 or newer.** On older runtimes the demo degrades to `PRIMARY_STEREO` and keeps working as before.",
+      "Opt every platform leg into `XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MULTIVIEW_DXR` (`XR_DXR_display_info` SPEC_VERSION 19) (#114, runtime#1486)",
+      "Pin `displayxr-common` to v2.14.0 (#115)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.9.8",
@@ -61,6 +66,17 @@
     "title": "DisplayXR Shell v2.3.0",
     "date": "2026-09-19",
     "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.3.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity@v2.19.4",
+    "repo": "displayxr-unity",
+    "tag": "v2.19.4",
+    "title": "DisplayXR v2.19.4",
+    "date": "2026-09-19",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.19.4",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -571,26 +587,6 @@
     "featureLines": [
       "The splat viewer now reports its rendered silhouette to the runtime (`XR_DXR_depth_budget` v3 content mask, built from the click-through region it already computes), so the rear-depth-budget decision is made only under the scene's outlin…",
       "Chain the silhouette content mask for `XR_DXR_depth_budget` v3 (#107)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.19.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.19.0",
-    "title": "DisplayXR v2.19.0",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.19.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Background-aware foreground clipping — `XR_DXR_depth_budget` (#318).** A transparent overlay used to throw away *every* pixel behind the display plane: content behind the plane carries positive disparity while being drawn *over* deskto…",
-      "**Honours both clip paths.** BiRP takes it through the native per-eye far (`dxr_prov_get_eye_clip`); URP's `DisplayXR/ForegroundClipURP` gets it as the new `_DXRRearOffset` global, because its shader derives each eye's display-plane dist…",
-      "**`DisplayXRContentBounds`** — a new component for the content root (the avatar, the model). It unions the world bounds of its renderers each frame and hands the box to the provider, which projects it through every eye and reports the un…",
-      "**The silhouette, not a box around it (`XrContentMaskDXR`, spec v3).** A rectangle around a character is roughly three times its area, so most of what the runtime measured was background the model never covers — and any horizontal struct…",
-      "**`DisplayXRDepthBudget`** — read-only `State` / `FarOffsetVH` / `CueEnergy` / `RearOffsetWorld` for HUDs, debugging and tests, plus one log line per state change (never per frame). Nothing to wire.",
-      "**Apply as delivered; do not smooth.** The runtime already time-ramps the value (~300 ms opening, ~150 ms closing), so the plane glides rather than pops; an app-side filter on top fights that ramp for a slower, less predictable plane.",
-      "**Nothing changes without it.** The extension is enabled only when the runtime enumerates it, and the offset is 0 — clip exactly on the plane, byte-for-byte today's behaviour — on an older runtime, on a runtime whose display processor su…",
-      "**Report only what occupies the rear volume.** The region is a *rectangle*, so every extra renderer widens the patch of desktop the runtime judges — and a ground plane or skybox is worse than merely wide: its AABB has corners behind the …"
     ],
     "looksMechanical": false
   },
