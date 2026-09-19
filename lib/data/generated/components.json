@@ -11,9 +11,9 @@
   {
     "id": "shell",
     "name": "DisplayXR Shell",
-    "version": "v2.2.0",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.2.0",
-    "releaseDate": "2026-08-18",
+    "version": "v2.3.0",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.3.0",
+    "releaseDate": "2026-09-19",
     "platforms": "Windows",
     "repoUrl": "https://github.com/DisplayXR/displayxr-shell-releases"
   },

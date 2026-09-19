@@ -11,6 +11,39 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-mediaplayer@v1.9.8",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.9.8",
+    "title": "v1.9.8",
+    "date": "2026-09-19",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.8",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.28.7",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.28.7",
+    "title": "v0.28.7",
+    "date": "2026-09-19",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.7",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-shell-releases@v2.3.0",
+    "repo": "displayxr-shell-releases",
+    "tag": "v2.3.0",
+    "title": "DisplayXR Shell v2.3.0",
+    "date": "2026-09-19",
+    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.3.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.6.26",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.6.26",
@@ -499,17 +532,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-demo-mediaplayer@v1.9.4",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.9.4",
-    "title": "v1.9.4",
-    "date": "2026-09-07",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.4",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-unity@v2.19.1",
     "repo": "displayxr-unity",
     "tag": "v2.19.1",
@@ -542,20 +564,6 @@
     "featureLines": [
       "The splat viewer now reports its rendered silhouette to the runtime (`XR_DXR_depth_budget` v3 content mask, built from the click-through region it already computes), so the rear-depth-budget decision is made only under the scene's outlin…",
       "Chain the silhouette content mask for `XR_DXR_depth_budget` v3 (#107)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.28.3",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.28.3",
-    "title": "v0.28.3",
-    "date": "2026-09-06",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.3",
-    "prerelease": false,
-    "featureLines": [
-      "The model viewer now reports its rendered **silhouette** to the runtime instead of just a bounding box, so the rear-depth-budget decision is made under the model's actual outline. Desktop structure sitting beside the model (a monitor edg…",
-      "Chain the silhouette content mask for `XR_DXR_depth_budget` v3 (#116, #122) — derives an occupancy grid from the click-through region's per-frame coverage buffer (the same union-over-eyes rendered-alpha silhouette already computed for th…"
     ],
     "looksMechanical": false
   },
@@ -721,17 +729,6 @@
     "title": "DisplayXR Unity Samples v2.0.3",
     "date": "2026-07-29",
     "url": "https://github.com/DisplayXR/displayxr-unity-samples/releases/tag/v2.0.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-shell-releases@v2.0.5",
-    "repo": "displayxr-shell-releases",
-    "tag": "v2.0.5",
-    "title": "DisplayXR Shell v2.0.5",
-    "date": "2026-07-23",
-    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.0.5",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
