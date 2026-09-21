@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-avatar@v0.12.0",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.12.0",
+    "title": "v0.12.0",
+    "date": "2026-09-21",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.12.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.7.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.7.0",
@@ -7,8 +18,16 @@
     "date": "2026-09-21",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Transparent 3D on Linux composes cleanly over the desktop.** On GNOME the plug-in now captures the desktop with the app's own window excluded, and composes it under the stereo fringe with no halo.",
+      "**The rear depth budget works on Linux.** `get_background_preview` is now implemented there, so the runtime clips depth behind the display plane only where a real background cue exists.",
+      "**Dragging a window on Linux snaps to the lens phase.** The Vulkan `snap_window_rect` slot is wired to `srWeaverSnapToPhase`.",
+      "Linux: window-excluded desktop capture through mutter (DisplayConfig, CaptureExclusion1, ScreenCast RecordArea), replacing the portal path. Delivery is capped at 66 ms to match Windows (#256)",
+      "Linux: `get_background_preview` fed from the window-excluded capture (#256)",
+      "Linux: drag phase-snap through `srWeaverSnapToPhase` (#253)",
+      "Linux: the runtime pin moves to v2.18.0, and CI builds only the runtime targets the plug-in needs (#258)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.18.0",
@@ -325,19 +344,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.11.9",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.11.9",
-    "title": "v0.11.9",
-    "date": "2026-09-15",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.9",
-    "prerelease": false,
-    "featureLines": [
-      "**Rear depth clip no longer flickers in transparent mode.** When the avatar straddled a text/blank border behind the window, the rear clip toggled every ~0.6–1.1 s: the content mask was built from the post-far-clip alpha silhouette, so t…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.25.5",
