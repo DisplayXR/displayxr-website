@@ -7,6 +7,26 @@
     "date": "2026-09-21",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.12.0",
     "prerelease": false,
+    "featureLines": [
+      "**The avatar on Linux now behaves as it does on Windows.** Keyboard and mouse input and the hotkeys now match, and dragging the window with the right mouse button snaps to the lens phase through `xrWeaveSnapWindowRectDXR`. The overlay al…",
+      "**Transparency and click-through on Linux.** The avatar renders transparently over the desktop, clicks outside its silhouette go through to the desktop, and the rear depth budget is driven by `XR_DXR_depth_budget` rather than a fixed value.",
+      "**Face-the-viewer and display zones on Linux.** The avatar turns to face the viewer in billboard mode, and the tiger zone matches Windows.",
+      "Linux: Windows-parity input, plus a click-through silhouette that matches the rendered avatar",
+      "Linux: `XR_DXR_depth_budget` wired to the rear depth budget",
+      "Linux: right-mouse-button window drag owned by the client, phase-snapped through `xrWeaveSnapWindowRectDXR`",
+      "Linux: the overlay is kept above other windows (`_NET_WM_STATE_ABOVE`)",
+      "Linux: the billboard mode turns the avatar to face the viewer"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.29.0",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.29.0",
+    "title": "v0.29.0",
+    "date": "2026-09-21",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.29.0",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -514,26 +534,6 @@
       "user to go open the DisplayXR app once by hand.",
       "Measured on a Lume Phone with the first adopter of the shared library:",
       "**Requires DisplayXR runtime v2.16.28 or later** — that is the release that ships"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.28.4",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.28.4",
-    "title": "v0.28.4",
-    "date": "2026-09-12",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.4",
-    "prerelease": false,
-    "featureLines": [
-      "Model Viewer is the first DisplayXR demo to use the shared **DisplayXR client wake library**. On Android devices whose OEM build blocks one app from starting another app's components, the demo used to fail at launch with `XR_ERROR_RUNTIM…",
-      "The demo's own hand-rolled `wakeRuntime()` — a `startService` call with a silent `catch` — never actually worked on those devices and has been deleted.",
-      "Measured on a Lume Phone against a single runtime build:",
-      "**Before:** 12 broker queries, 6 provider blocks, the broker answered 0 times, `xrCreateInstance` → `XR_ERROR_RUNTIME_UNAVAILABLE`.",
-      "**After:** 1 query, 0 blocks, the broker answered, `xrCreateInstance` → `XR_SUCCESS`.",
-      "**Requires DisplayXR runtime v2.16.28 or later** — that is the runtime release that ships `DisplayXR-Client-*.aar`.",
-      "Android: adopt the DisplayXR client wake library and delete the demo's own `wakeRuntime()` (#125)",
-      "Android CI: fetch the wake library at build time instead of vendoring the client AAR, with no token required (#125)"
     ],
     "looksMechanical": false
   },
