@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.18.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.18.0",
+    "title": "v2.18.0",
+    "date": "2026-09-21",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.18.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-avatar@v0.11.12",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.11.12",
@@ -262,21 +273,6 @@
       "**Opt-in absolute weave target time** via the SR SDK's `srWeaverSetTargetTime` (SDK 1.37.0+1584, ST-5753) (#245). Enabled with `DXR_LEIA_SR_TARGET_TIME=1`; **default off**, so this release changes nothing for anyone who does not set it. …",
       "**Fully backwards compatible with older SR runtimes.** Three distinguishable ways to decline, each with its own one-shot warning — the runtime predates the slot (`SR_ERROR_FUNCTION_UNSUPPORTED`), the backend lacks the interface (`SR_ERRO…",
       "**The SDK's three known 1584 state-machine defects are unreachable by construction.** All three live on the clear and toggle paths, so the plug-in probes once per weaver, then sets a fresh target every weave and never clears, never toggl…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.16.36",
-    "repo": "displayxr-runtime",
-    "tag": "v2.16.36",
-    "title": "DisplayXR Runtime v2.16.36",
-    "date": "2026-09-16",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.16.36",
-    "prerelease": false,
-    "featureLines": [
-      "A single-fix release for the #1435 forward-horizon offset loop. The rate limit on applied offset steps is now measured from the **last applied step** rather than from the coverage-epoch boundary: a per-epoch flag let two steps that strad…",
-      "It presented as a direction asymmetry because it is one — a climb fires late in its epoch (the residual needs time to re-read the same sign) while the correction it provokes is ready one window refill later, so the step-back was always t…",
-      "No perceptual change is claimed: the leg it was found on read \"no shiver\", and the bound only rate-limits learning, not the weave. The new rule is provably never looser than the old one, so it cannot admit a step the previous bound blocked."
     ],
     "looksMechanical": false
   },
