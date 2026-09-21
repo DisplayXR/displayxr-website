@@ -51,6 +51,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-mediaplayer@v1.9.9",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.9.9",
+    "title": "v1.9.9",
+    "date": "2026-09-21",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.9",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.29.0",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.29.0",
@@ -630,26 +641,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.9.5",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.9.5",
-    "title": "v1.9.5",
-    "date": "2026-09-09",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.5",
-    "prerelease": false,
-    "featureLines": [
-      "**Two-track stereo mp4 (\"LVF v2\") plays in 3D on Android.** Open a file whose left and right views are stored as two video tracks (v1 LeiaCam2 files included) and the player decodes both eyes, pairs them frame-exact, and applies the file…",
-      "**`tools/lvf2.py`** converts side-by-side or v1 dual-track mp4s into two-track LVF v2 and can `inspect` any mp4 against the format contract.",
-      "**The idle screen is shown in 2D** on 3D panels — the logo and label are crisp instead of ghosted, and the display goes back to 3D the moment media loads (a manual mode choice while idle is respected).",
-      "**Tap the empty splash to open a file** on Android, and reopening a file after a first one no longer freezes the app.",
-      "Android: two-track LVF reader (v1 + v2) — second decoder for the right eye, exact-PTS pairing against the master's presented frame, interpolated convergence applied as a per-eye shift; `StereoLayout::Dual` in the shared layout enum (desk…",
-      "`tools/lvf2.py` — LVF v2 converter + inspector: `abl`/`abr` language tags, disabled right-eye track, `mett` convergence track with the video's edit list, `covr` poster; stdlib + optional mutagen (#68)",
-      "Android: idle splash rendered in the flat mode — borrowed on show, handed back on first media load; retiles on `RENDERING_MODE_CHANGED` (#64, #68)",
-      "Android: tap-to-open on the empty splash when no media is loaded (#67, #68)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.19.1",
