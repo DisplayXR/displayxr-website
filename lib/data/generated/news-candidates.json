@@ -67,12 +67,14 @@
     "id": "displayxr-runtime@v2.19.1",
     "repo": "displayxr-runtime",
     "tag": "v2.19.1",
-    "title": "v2.19.1",
+    "title": "DisplayXR Runtime v2.19.1",
     "date": "2026-09-22",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.19.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Patch release that hardens the native Wayland path (#1653): the build now fails, rather than the session, when the Wayland surface extension is missing, the weaver is constructed windowless by decision, and 1:1 is judged by the committed…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.12.0",
