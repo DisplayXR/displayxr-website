@@ -22,6 +22,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-mediaplayer@v1.9.10",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.9.10",
+    "title": "v1.9.10",
+    "date": "2026-09-22",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.10",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.30.0",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.30.0",
@@ -623,17 +634,6 @@
     "title": "DisplayXR v0.9.1",
     "date": "2026-09-11",
     "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.9.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.9.6",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.9.6",
-    "title": "v1.9.6",
-    "date": "2026-09-10",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.6",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
