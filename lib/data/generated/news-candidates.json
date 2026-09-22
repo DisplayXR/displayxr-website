@@ -124,9 +124,28 @@
     "id": "displayxr-runtime@v2.20.0",
     "repo": "displayxr-runtime",
     "tag": "v2.20.0",
-    "title": "v2.20.0",
+    "title": "DisplayXR Runtime v2.20.0",
     "date": "2026-09-22",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.20.0",
+    "prerelease": false,
+    "featureLines": [
+      "Native-Wayland windows on Linux now carry their own client-side window chrome — a translucent, rounded title bar with drag, close, minimise, maximise, a window menu and edge resize — and the interlace phase is snapped when a window is dr…",
+      "**Client-side window chrome for native-Wayland windows** (#1654). A translucent title bar with rounded corners: drag to move, close, minimise, double-click to maximise and restore, right-click for a window menu, and edge resize. It hides…",
+      "**Shared title-bar implementation.** The bar comes from `displayxr-common` v2.18.0, which the X11 path in the demos also adopts — one title bar across both Linux window backends.",
+      "**F11 toggles fullscreen** on both Linux window backends.",
+      "**Drop-time interlace-phase snapping for native Wayland** (#1609). After a drag is released the window is moved onto the interlace lattice, the runtime **verifies the requested position was actually reached**, and **declines honestly** w…",
+      "**Panel-scoped weaving for a spanning window.** A window spanning the 3D panel and another display now weaves only the portion on the panel; the off-panel portion is painted flat 2D.",
+      "**Window-scoped geometry fix.** Window-scoped metrics are now taken from the **content rect** rather than the compositor's window frame, which now includes the title bar."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.20.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.20.1",
+    "title": "v2.20.1",
+    "date": "2026-09-22",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.20.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -228,26 +247,6 @@
       "Linux: `get_background_preview` fed from the window-excluded capture (#256)",
       "Linux: drag phase-snap through `srWeaverSnapToPhase` (#253)",
       "Linux: the runtime pin moves to v2.18.0, and CI builds only the runtime targets the plug-in needs (#258)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.18.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.18.0",
-    "title": "DisplayXR Runtime v2.18.0",
-    "date": "2026-09-21",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.18.0",
-    "prerelease": false,
-    "featureLines": [
-      "A large Linux release. Drag-time lens phase snapping now works on desktop Linux (a display-processor `snap_window_rect` slot, `XR_DXR_weave` advertised on Linux, and a client-owned X11 drag in the test apps), and it survives desktop scal…",
-      "feat(vk_native,wayland): say why the geometry publisher is missing, and what fixes it",
-      "feat(linux,tarball): install and enable the GNOME Shell extension from install.sh",
-      "feat(linux,deb): ship the GNOME Shell extension in the runtime .deb and enable it per user",
-      "feat(linux): per-user enable script for the GNOME Shell extension that respects opt-out",
-      "feat(aux_util): the shared format-honesty colour policy, as two pure functions (#1589/#1610) (#1627)",
-      "feat(gnome-shell): capture exclusion — the GNOME equivalent of WDA_EXCLUDEFROMCAPTURE (extension v2)",
-      "feat(vk_native,linux): summarise the reachable-lattice snap search's cost (#1617)"
     ],
     "looksMechanical": false
   },
