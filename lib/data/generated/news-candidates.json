@@ -121,6 +121,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.20.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.20.0",
+    "title": "v2.20.0",
+    "date": "2026-09-22",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.20.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-avatar@v0.12.0",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.12.0",
@@ -402,19 +413,6 @@
     "featureLines": [
       "On Linux, weave colour is now driven by the atlas encoding the runtime *declares* rather than guessed by the display processor — pairs with runtime #1509.",
       "Linux display processor consumes the runtime's out-of-band atlas-encoding declaration (ADR-021) instead of a hardcoded sRGB pair, which had flipped twice on honest panel readings. Verified on-box on an Intel-iGPU/Xorg machine. `DXR_LEIA_…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.17.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.17.1",
-    "title": "DisplayXR Runtime v2.17.1",
-    "date": "2026-09-18",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.17.1",
-    "prerelease": false,
-    "featureLines": [
-      "Patch over v2.17.0: fixes the one-dropped-frame-per-2D→3D-toggle regression introduced by the conformant PRIMARY_STEREO view count (#1528) — `xrBeginFrame` latches the begun mode's view count and the in-flight 1-view frame is granted acr…"
     ],
     "looksMechanical": false
   },
