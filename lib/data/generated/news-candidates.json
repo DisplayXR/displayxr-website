@@ -22,6 +22,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-gaussiansplat@v1.27.1",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.27.1",
+    "title": "v1.27.1",
+    "date": "2026-09-22",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.27.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@v1.9.10",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.9.10",
@@ -465,20 +476,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.25.5",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.25.5",
-    "title": "v1.25.5",
-    "date": "2026-09-15",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.25.5",
-    "prerelease": false,
-    "featureLines": [
-      "The rear depth clip no longer flickers. When the splat cloud straddled a text/blank border, the `XR_DXR_depth_budget` content mask was built from *post-cull* alpha, so the runtime's clip decision fed straight back into the measurement th…",
-      "Pre-cull silhouette coverage raster in the preprocess stage, one extra scatter with no new pass (#112)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.28.6",
