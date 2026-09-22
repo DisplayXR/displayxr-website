@@ -22,6 +22,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-modelviewer@v0.30.0",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.30.0",
+    "title": "v0.30.0",
+    "date": "2026-09-22",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.30.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.4.0",
     "repo": "displayxr-installer",
     "tag": "v2.4.0",
@@ -51,6 +62,17 @@
       "feat(aux_util): `u_display_mode_hold` — a hardware-2D hold that restores the session's choice"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.19.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.19.1",
+    "title": "v2.19.1",
+    "date": "2026-09-22",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.19.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-avatar@v0.12.0",
@@ -338,26 +360,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.17.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.17.0",
-    "title": "DisplayXR Runtime v2.17.0",
-    "date": "2026-09-18",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.17.0",
-    "prerelease": false,
-    "featureLines": [
-      "OpenXR SDK/loader/CTS moved to **1.1.63**, and `XR_EXT_view_configuration_views_change` is adopted — a throttled doorbell plus EXT-gated live recommended view sizes, including on the IPC/shell path. View configurations are now conformant…",
-      "Also: d3d12 swapchain images are created TYPELESS for every enumerated format, the vk/gl/metal acquire ring is lifted into `util/` (N outstanding acquires, one image for a static swapchain), and the CTS `xrLocateSpace_xrLocateViews` excl…",
-      "feat(oxr): name the mode the floor cannot reach, and add DXR_MODE_FLOOR (#1499)",
-      "feat(oxr): fire the view-size doorbell on the IPC/shell path (#1488 PR B)",
-      "feat(oxr): derive the IPC leg's per-view render size from a window rect (#1488)",
-      "feat(oxr): advertise PRIMARY_STEREO with exactly 2 views + PRIMARY_MULTIVIEW_DXR for N-view (#1486)",
-      "feat(display_info): add XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MULTIVIEW_DXR (spec v19) (#1486)",
-      "feat(test_apps): make cube_handle_d3d11_win the #1488 reference consumer"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.17.1",
     "repo": "displayxr-runtime",
     "tag": "v2.17.1",
@@ -462,19 +464,6 @@
     "featureLines": [
       "The rear depth clip no longer flickers. When the splat cloud straddled a text/blank border, the `XR_DXR_depth_budget` content mask was built from *post-cull* alpha, so the runtime's clip decision fed straight back into the measurement th…",
       "Pre-cull silhouette coverage raster in the preprocess stage, one extra scatter with no new pass (#112)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.28.5",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.28.5",
-    "title": "v0.28.5",
-    "date": "2026-09-15",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.5",
-    "prerelease": false,
-    "featureLines": [
-      "In transparent / Undocked mode the rear depth clip no longer flickers when a model straddles a text/blank border. The viewer's depth-budget content mask (`XrContentMaskDXR`, v3) was built from the post-far-clip swapchain alpha, so the re…"
     ],
     "looksMechanical": false
   },
