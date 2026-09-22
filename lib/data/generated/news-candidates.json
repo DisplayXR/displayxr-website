@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.0.4",
+    "repo": "displayxr-browser",
+    "tag": "v1.0.4",
+    "title": "DisplayXR Browser v1.0.4",
+    "date": "2026-09-22",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-earthview@v0.8.0",
     "repo": "displayxr-demo-earthview",
     "tag": "v0.8.0",
@@ -597,17 +608,6 @@
       "**Requires DisplayXR runtime v2.16.28 or later** — that is the release that ships"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.0.0",
-    "repo": "displayxr-browser",
-    "tag": "v1.0.0",
-    "title": "DisplayXR Browser v1.0.0",
-    "date": "2026-09-11",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@android-bundle-2026-09-11",
