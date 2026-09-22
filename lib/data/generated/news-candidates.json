@@ -1,14 +1,45 @@
 [
   {
-    "id": "displayxr-runtime@v2.19.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.19.0",
-    "title": "v2.19.0",
+    "id": "displayxr-demo-gaussiansplat@v1.27.0",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.27.0",
+    "title": "v1.27.0",
     "date": "2026-09-22",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.19.0",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.27.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.4.0",
+    "repo": "displayxr-installer",
+    "tag": "v2.4.0",
+    "title": "DisplayXR v2.4.0",
+    "date": "2026-09-22",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.0",
+    "prerelease": false,
+    "featureLines": [
+      "This refresh brings a large Linux release across the stack, D3D11 service compositor fixes, and a bundle-side fix that restarts `displayxr-service` at Medium integrity. Each component below is a separately signed installer, and this bund…",
+      "**Bundle change:** after installing, the bundle restarts `displayxr-service` through explorer.exe so that it runs at Medium integrity, not elevated (#59, runtime #1478).",
+      "DisplayXR Browser v1.0.3 is still opt-in (`--with browser`) and is not part of the default install."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.19.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.19.0",
+    "title": "DisplayXR Runtime v2.19.0",
+    "date": "2026-09-22",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.19.0",
+    "prerelease": false,
+    "featureLines": [
+      "The D3D11 service (shell / IPC) compositor now applies the shared facing and painter's-order rules to every layer — back-facing quads are culled and layers composite in depth order (#1590/#1598), and only a full-tile projection layer can…",
+      "feat(comp_d3d11): composite `XR_KHR_composition_layer_equirect2` on the in-process path",
+      "feat(aux_util): `u_grip_surface` — one grip → grip_surface transform",
+      "feat(aux_util): `u_display_mode_hold` — a hardware-2D hold that restores the session's choice"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.12.0",
@@ -542,26 +573,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-demo-gaussiansplat@v1.25.4",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.25.4",
-    "title": "v1.25.4",
-    "date": "2026-09-12",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.25.4",
-    "prerelease": false,
-    "featureLines": [
-      "The demo now starts on Android devices whose OEM build blocks one package from",
-      "starting another package's components. It consumes the shared **DisplayXR client",
-      "wake library** instead of its own hand-rolled `wakeRuntime()`, which used",
-      "`startService` behind a silent catch and never actually worked — so on those",
-      "builds the app failed at startup with `XR_ERROR_RUNTIME_UNAVAILABLE` and told the",
-      "user to go open the DisplayXR app once by hand.",
-      "Measured on a Lume Phone with the first adopter of the shared library:",
-      "**Requires DisplayXR runtime v2.16.28 or later** — that is the release that ships"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-demo-mediaplayer@v1.9.7",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.9.7",
@@ -621,17 +632,6 @@
     "title": "v1.9.6",
     "date": "2026-09-10",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.6",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.3.9",
-    "repo": "displayxr-installer",
-    "tag": "v2.3.9",
-    "title": "DisplayXR v2.3.9",
-    "date": "2026-09-10",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.9",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
