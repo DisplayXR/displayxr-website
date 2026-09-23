@@ -36,12 +36,15 @@
     "id": "displayxr-runtime@v2.21.0",
     "repo": "displayxr-runtime",
     "tag": "v2.21.0",
-    "title": "v2.21.0",
+    "title": "DisplayXR Runtime v2.21.0",
     "date": "2026-09-23",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Native Wayland: phase-clean window drag (#1686, closes #1609).** The interlace phase now stays correct *while* a window is being dragged, not only after it is dropped. When a drag starts, the app asks the display processor's snap for t…",
+      "Also in this release: the GNOME Shell extension now loads on GNOME 42 as well as 45+ (#1677). Ubuntu 22.04, 24.04 and 26.04 are documented as supported, with an X11 session recommended on 22.04 (#1682). A `Linux Packaging` required CI ch…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.0.4",
