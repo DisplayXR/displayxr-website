@@ -47,6 +47,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.21.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.21.1",
+    "title": "v2.21.1",
+    "date": "2026-09-23",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.0.4",
     "repo": "displayxr-browser",
     "tag": "v1.0.4",
@@ -135,19 +146,6 @@
       "This refresh brings a large Linux release across the stack, D3D11 service compositor fixes, and a bundle-side fix that restarts `displayxr-service` at Medium integrity. Each component below is a separately signed installer, and this bund…",
       "**Bundle change:** after installing, the bundle restarts `displayxr-service` through explorer.exe so that it runs at Medium integrity, not elevated (#59, runtime #1478).",
       "DisplayXR Browser v1.0.3 is still opt-in (`--with browser`) and is not part of the default install."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.19.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.19.1",
-    "title": "DisplayXR Runtime v2.19.1",
-    "date": "2026-09-22",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.19.1",
-    "prerelease": false,
-    "featureLines": [
-      "Patch release that hardens the native Wayland path (#1653): the build now fails, rather than the session, when the Wayland surface extension is missing, the weaver is constructed windowless by decision, and 1:1 is judged by the committed…"
     ],
     "looksMechanical": false
   },
