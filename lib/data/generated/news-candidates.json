@@ -11,6 +11,28 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-gaussiansplat@v1.27.2",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.27.2",
+    "title": "v1.27.2",
+    "date": "2026-09-23",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.27.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@android-bundle-20260923",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-20260923",
+    "title": "Android tablet bundle 2026-09-23",
+    "date": "2026-09-23",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-20260923",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.0.4",
     "repo": "displayxr-browser",
     "tag": "v1.0.4",
@@ -304,22 +326,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-demo-gaussiansplat@v1.25.6",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.25.6",
-    "title": "v1.25.6",
-    "date": "2026-09-19",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.25.6",
-    "prerelease": false,
-    "featureLines": [
-      "The viewer now begins its session in `XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MULTIVIEW_DXR`, so it renders whatever view count the active display actually asks for instead of a fixed pair. On Windows, macOS and Linux it also adopts the runti…",
-      "**Requires DisplayXR Runtime v2.17.1 or newer.** On older runtimes the demo degrades to `PRIMARY_STEREO` and keeps working as before.",
-      "Opt every platform leg into `XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MULTIVIEW_DXR` (`XR_DXR_display_info` SPEC_VERSION 19) (#114, runtime#1486)",
-      "Pin `displayxr-common` to v2.14.0 (#115)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-demo-mediaplayer@v1.9.8",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.9.8",
@@ -607,17 +613,6 @@
       "**Requires DisplayXR runtime v2.16.28 or later** — that is the release that ships"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@android-bundle-2026-09-11",
-    "repo": "displayxr-installer",
-    "tag": "android-bundle-2026-09-11",
-    "title": "Android tablet bundle android-bundle-2026-09-11",
-    "date": "2026-09-11",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-09-11",
-    "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unreal@v0.9.1",
