@@ -33,6 +33,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-leia-plugin@v2.7.1",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.7.1",
+    "title": "v2.7.1",
+    "date": "2026-09-23",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.21.0",
     "repo": "displayxr-runtime",
     "tag": "v2.21.0",
@@ -50,12 +61,14 @@
     "id": "displayxr-runtime@v2.21.1",
     "repo": "displayxr-runtime",
     "tag": "v2.21.1",
-    "title": "v2.21.1",
+    "title": "DisplayXR Runtime v2.21.1",
     "date": "2026-09-23",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Native-Wayland window drags now snap to the 3D panel's phase lattice even when they start on another display, and the drop no longer oscillates. On desktop Linux, an app that can go transparent but is currently opaque no longer keeps the…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.0.4",
@@ -471,21 +484,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.6.24",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.24",
-    "title": "v2.6.24",
-    "date": "2026-09-16",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.24",
-    "prerelease": false,
-    "featureLines": [
-      "**Opt-in absolute weave target time** via the SR SDK's `srWeaverSetTargetTime` (SDK 1.37.0+1584, ST-5753) (#245). Enabled with `DXR_LEIA_SR_TARGET_TIME=1`; **default off**, so this release changes nothing for anyone who does not set it. …",
-      "**Fully backwards compatible with older SR runtimes.** Three distinguishable ways to decline, each with its own one-shot warning — the runtime predates the slot (`SR_ERROR_FUNCTION_UNSUPPORTED`), the backend lacks the interface (`SR_ERRO…",
-      "**The SDK's three known 1584 state-machine defects are unreachable by construction.** All three live on the clear and toggle paths, so the plug-in probes once per weaver, then sets a fresh target every weave and never clears, never toggl…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.11.10",
