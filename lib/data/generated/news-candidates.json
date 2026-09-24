@@ -98,6 +98,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-mediaplayer@v1.10.1",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.10.1",
+    "title": "v1.10.1",
+    "date": "2026-09-24",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.10.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.31.0",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.31.0",
@@ -407,21 +418,6 @@
       "joins that mode instead of fighting it.",
       "**Requires DisplayXR Runtime v2.17.1.** On an older runtime the demo degrades to",
       "`PRIMARY_STEREO` and keeps working, but without the multiview path or startup mode adoption."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.9.8",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.9.8",
-    "title": "v1.9.8",
-    "date": "2026-09-19",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.8",
-    "prerelease": false,
-    "featureLines": [
-      "The media player now begins its OpenXR session with `XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MULTIVIEW_DXR`, so it renders correctly on N-view panels instead of only the first two tiles. On Android this also clears a silent, permanent black p…",
-      "Opt into `XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MULTIVIEW_DXR` on both the desktop and Android legs, selected once after `xrGetSystem` and fed to every view-configuration-typed call (`xrEnumerateViewConfigurationViews`, `XrSessionBeginInfo`…",
-      "Re-vendored `XR_DXR_display_info.h` at spec 19 and vendored the runtime's `dxr_view_config.h` opt-in helper; `VENDORED.json` re-pinned and `check_vendored_headers.py` green."
     ],
     "looksMechanical": false
   },
