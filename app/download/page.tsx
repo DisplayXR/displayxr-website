@@ -240,9 +240,10 @@ export default function DownloadPage() {
 
         {/* Linux footnote */}
         <p className="text-sm text-text-secondary leading-relaxed">
-          <strong className="text-text-primary">On Linux?</strong> Linux is a
-          Preview platform — Vulkan-only, X11 or Wayland, supported on Ubuntu
-          22.04, 24.04, and 26.04 (on 22.04, use an X11 session). Take the bundle{" "}
+          <strong className="text-text-primary">On Linux?</strong> DisplayXR
+          runs natively on Wayland — Ubuntu 24.04 or 26.04 with GNOME is the
+          recommended setup. X11 is supported as a legacy path, and Ubuntu
+          22.04 is supported with an X11 session. Take the bundle{" "}
           <code className="text-xs bg-background px-1.5 py-0.5 rounded border border-border font-mono">
             .tar.gz
           </code>{" "}

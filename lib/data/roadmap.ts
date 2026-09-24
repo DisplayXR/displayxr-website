@@ -121,17 +121,17 @@ export const roadmapSections: RoadmapSection[] = [
         description:
           "The service runs a single always-on compositor pipeline with one display processor per panel, so any number of concurrent apps share the display instead of contending for it. Which app the panel shows follows the operating system's foreground window — connected apps carry a taskbar and Alt-Tab entry, focusing one hands it the display, and an app can take the panel over a running workspace and hand it back without either being torn down. Panel ownership is leased with mode changes applied on the render thread, client commits are paced to the display, and a plug-in that implements the new re-bind slot switches apps without the panel dropping to flat and back",
       },
+      {
+        title: "Linux runtime — native Wayland",
+        description:
+          "Linux is a shipping platform, and native Wayland is its primary target: glasses-free 3D windows run as native Wayland apps on Ubuntu 24.04 and 26.04 with GNOME, through a native Vulkan compositor and XR_DXR_wayland_surface_binding. Windows carry a translucent, rounded client-side title bar that sits outside the weave; a GNOME Shell extension shipped with the runtime tells it where each window is and keeps every step of a drag on the lens's phase lattice at any output scale, so the 3D stays locked while a window moves; and a window spanning the 3D panel and another display weaves only the part on the panel. Transparent apps float 3D over the live desktop, captured with the app's own window excluded and only while the content is actually transparent, and an opaque window declares an opaque surface so GNOME can scan a fullscreen weave out directly. All five demos ship one binary per app that picks native Wayland automatically by capability probe. X11 and XWayland remain supported as the legacy path (XR_DXR_xlib_window_binding), weaving only when the panel is addressed 1:1 at an integer scale. Every component ships a .deb built on the oldest supported release, and the meta-bundle installs runtime, vendor display-processor plug-in and all five demos with one command. Ubuntu 22.04 is supported with an X11 session recommended, but not yet hardware-validated. The out-of-process service path on Linux remains on the roadmap",
+      },
     ],
   },
   {
     phase: "now",
     label: "Now",
     items: [
-      {
-        title: "Linux runtime (Preview)",
-        description:
-          "A fourth platform: the same OpenXR runtime brings up a native Vulkan compositor over an X11/XCB or Wayland surface, with apps binding their own window through XR_DXR_xlib_window_binding or XR_DXR_wayland_surface_binding. Native Wayland is now a first-class window system: windows carry a translucent, rounded client-side title bar, a bundled GNOME Shell extension keeps a dragged window on the lens's phase lattice while it moves, and a window spanning the 3D panel and another display weaves only the part on the panel. All five demos share one Linux window implementation that picks native Wayland or X11 per session by capability probe, so each app ships a single binary; an opaque window declares an opaque Wayland surface so the desktop compositor can scan a fullscreen weave out directly, and an app that can go transparent only runs the desktop capture while its content actually is. The desktop avatar, model viewer and splat viewer run transparent over the desktop with click-through and the rear depth budget. Every component ships a .deb built on the oldest supported release and install-tested on Ubuntu 22.04, 24.04 and 26.04, and the meta-bundle installs the whole stack — runtime, vendor display-processor plug-in, and all five demos — with one command and no environment variables. Hardware-validated end to end on a production 3D display on 24.04 and 26.04; on 22.04 an X11 session is recommended. Still Preview rather than GA: the service-side render path, windowed-3D phase origin, and the Intel Arc deployment target are in flight",
-      },
       {
         title: "Shell input forwarding",
         description:
