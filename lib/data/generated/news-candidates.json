@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-avatar@v0.13.0",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.13.0",
+    "title": "v0.13.0",
+    "date": "2026-09-24",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.13.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.31.0",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.31.0",
@@ -7,8 +18,17 @@
     "date": "2026-09-24",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.31.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**One Linux binary for X11 and native Wayland.** The Linux build now uses the shared `displayxr::linux_window` helper from displayxr-common. The window system is picked at startup by capability probe (native Wayland when the compositor s…",
+      "**Rear depth budget on Linux.** Transparent models are now clipped at the display plane according to the runtime's `XR_DXR_depth_budget` advice, with content bounds and a content mask, matching the Windows build.",
+      "**A portable `.deb`.** The Linux package is built on Ubuntu 22.04 with versioned dependencies, so one package installs and runs on 22.04, 24.04 and 26.04.",
+      "Linux: window, header bar, phase-snapped drag, close/minimize, F11 and click-through region now come from `displayxr::linux_window`; input and mouse controls are unchanged, and right-drag moves the window (#143)",
+      "Linux: the title bar hides while the background is transparent (Ctrl+T or a transparent start), without moving the content rect (#143)",
+      "Linux: `XR_DXR_depth_budget` rear clip, with v2 content bounds and v3 content mask chained on `xrEndFrame` (#146)",
+      "Linux: header bar drawn by `displayxr::csd` — translucent, rounded corners, 1.5x title metrics (#137, #138)",
+      "Linux: displayxr-common v2.21.0 — native-Wayland drag-lattice client follow-ups (a drag that starts on a fractionally scaled monitor gets a table when it reaches the 3D panel; table requests made early and off the render thread) (#147)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.0.5",
@@ -499,19 +519,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.11.10",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.11.10",
-    "title": "v0.11.10",
-    "date": "2026-09-15",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.10",
-    "prerelease": false,
-    "featureLines": [
-      "In transparent (window) mode the avatar's rear clip is now stable on its own. The content mask the app publishes through `XR_DXR_depth_budget` no longer depends on the rear budget the runtime last published, so the budget ↔ mask feedback…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.11.11",
