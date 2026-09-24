@@ -34,7 +34,7 @@ export const runtimeCompositors: RuntimeCompositor[] = [
   { platform: "macOS", graphicsApi: "OpenGL", status: "shipping", notes: "" },
   { platform: "macOS", graphicsApi: "Vulkan", status: "shipping", notes: "MoltenVK; runtime error at launch (MoltenVK limitation)" },
   { platform: "Android", graphicsApi: "Vulkan", status: "shipping", notes: "Out-of-process service compositor; orientation-aware rendering, mixed 2D/3D zones" },
-  { platform: "Linux", graphicsApi: "Vulkan", status: "beta", notes: "Preview — native Vulkan compositor over an X11/XCB or Wayland surface, xlib and wayland surface bindings, transparent overlays with live desktop content composited under the weave. Hardware-validated on Ubuntu 22.04/24.04/26.04; ships as .deb packages plus a one-command bundle tarball, not yet GA" },
+  { platform: "Linux", graphicsApi: "Vulkan", status: "shipping", notes: "Native Wayland on Ubuntu 24.04/26.04 with GNOME is the primary, hardware-validated target — client-side title bar, phase-locked window drag at any scale, transparent overlays over the live desktop. X11/XWayland supported as legacy (weaves when the panel is 1:1 at an integer scale). Ubuntu 22.04 supported with X11, not yet hardware-validated. Ships as .deb packages plus a one-command bundle tarball" },
 ];
 
 export const enginePlugins: EnginePlugin[] = [

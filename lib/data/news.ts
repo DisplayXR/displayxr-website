@@ -107,6 +107,36 @@ export const NEWS_KIND_LABELS: Record<NewsKind, string> = {
  */
 export const NEWS: NewsItem[] = [
   {
+    id: "native-wayland",
+    date: "2026-09-24",
+    kind: "platform",
+    tier: "banner",
+    headline: "DisplayXR runs natively on Wayland",
+    blurb:
+      "Glasses-free 3D windows now run as native Wayland apps on Ubuntu 24.04 and 26.04 with GNOME — the primary Linux target from here on — with a translucent title bar, transparent 3D over the live desktop, and a GNOME Shell extension shipped with the runtime that keeps a window’s 3D locked while you drag it.",
+    href: "https://github.com/DisplayXR/displayxr-runtime/blob/main/docs/roadmap/linux-support.md",
+  },
+  {
+    id: "linux-demos-native-wayland",
+    date: "2026-09-24",
+    kind: "demo",
+    tier: "list",
+    headline: "Every demo now runs natively on Wayland",
+    blurb:
+      "All five demos ship one Linux binary that picks native Wayland automatically and falls back to X11 — and the city viewer gains mouse navigation with double-click focus and orbit, while the splat viewer gains a transparent, click-through mode.",
+    href: "https://github.com/DisplayXR/displayxr-common",
+  },
+  {
+    id: "linux-deb-three-releases",
+    date: "2026-09-22",
+    kind: "platform",
+    tier: "list",
+    headline: "One Linux package for Ubuntu 22.04, 24.04 and 26.04",
+    blurb:
+      "The Linux .deb and tarball are built on the oldest supported release and install-tested on all three in CI before they are attached; 24.04 and 26.04 are the hardware-validated targets, and 22.04 is supported with an X11 session, not yet hardware-validated.",
+    href: "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.20.1",
+  },
+  {
     id: "multi-app-one-pipeline",
     date: "2026-08-18",
     kind: "capability",

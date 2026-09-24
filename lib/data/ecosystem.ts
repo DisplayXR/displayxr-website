@@ -14,7 +14,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-runtime",
     repo: "DisplayXR/displayxr-runtime",
     description:
-      "Core OpenXR runtime with native compositors for D3D11, D3D12, Vulkan, Metal, and OpenGL — on Windows, macOS, and Android, plus a Vulkan-only compositor on desktop Linux (Preview, shipping as .deb packages).",
+      "Core OpenXR runtime with native compositors for D3D11, D3D12, Vulkan, Metal, and OpenGL — on Windows, macOS, and Android, plus a Vulkan-only compositor on desktop Linux, native on Wayland (shipping as .deb packages).",
     url: "https://github.com/DisplayXR/displayxr-runtime",
     category: "core",
   },
@@ -102,7 +102,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-common",
     repo: "DisplayXR/displayxr-common",
     description:
-      "Shared math and common library — off-axis (Kooima) projection, atlas tiling, and window/canvas helpers consumed by the runtime, engine plugins, and demos from a single source of truth.",
+      "Shared math and common library — off-axis (Kooima) projection, atlas tiling, and window/canvas helpers — including one Linux app window that picks native Wayland or X11 by capability probe, with shared client-side window chrome — consumed by the runtime, engine plugins, and demos from a single source of truth.",
     url: "https://github.com/DisplayXR/displayxr-common",
     category: "tools",
   },

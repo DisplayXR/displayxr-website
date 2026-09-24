@@ -46,10 +46,9 @@ export default function ArchitecturePage() {
             interlacing, calibration — happens below, in the display processor
             layer. The same runtime ships on{" "}
             <strong className="text-text-primary">
-              Windows, macOS, and Android
+              Windows, macOS, Android, and desktop Linux
             </strong>
-            , with desktop <strong className="text-text-primary">Linux</strong>{" "}
-            in Preview.
+            .
           </p>
           <ArchDiagram />
           <p className="text-sm text-text-secondary italic">
@@ -133,29 +132,42 @@ export default function ArchitecturePage() {
             over the live screen.
           </p>
           <p className="text-text-secondary leading-relaxed mb-4">
-            Desktop <strong className="text-text-primary">Linux</strong> is
-            Vulkan-only and in Preview. One native Vulkan compositor presents
-            over either an X11/XCB or a Wayland surface, and apps hand the
-            runtime their own window through{" "}
-            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">
-              XR_DXR_xlib_window_binding
-            </code>{" "}
-            or{" "}
+            Desktop <strong className="text-text-primary">Linux</strong>{" "}
+            ships, and its primary target is{" "}
+            <strong className="text-text-primary">native Wayland</strong>:
+            glasses-free 3D windows run as native Wayland apps on Ubuntu 24.04
+            and 26.04 with GNOME. One native Vulkan compositor presents into
+            the app&apos;s own surface, handed over through{" "}
             <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">
               XR_DXR_wayland_surface_binding
             </code>
-            . Transparent overlays work the same way they do elsewhere: a
+            . Wayland never tells a client where its window is, so a small
+            GNOME Shell extension shipped with the runtime publishes window
+            geometry to it and keeps every step of a drag on the lens&apos;s
+            phase lattice, at any output scale; the window&apos;s translucent
+            title bar lives on its own surface, above the 3D content and
+            outside the weave, and an opaque window declares an opaque surface
+            so the desktop compositor can scan a fullscreen weave out directly.
+            Transparent overlays work the same way they do elsewhere: a
             per-pixel-transparent 3D object stands on the desktop with live
-            screen content composited under the weave, captured through the
-            desktop portal. Every component — runtime, vendor plug-in, and all
-            five demos — ships as a{" "}
+            screen content composited under the weave — captured with the
+            app&apos;s own window excluded, and only while its content is
+            actually transparent. Apps ship one binary that picks native
+            Wayland automatically; X11 and XWayland remain supported as the
+            legacy path through{" "}
+            <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">
+              XR_DXR_xlib_window_binding
+            </code>
+            , weaving only when the panel is addressed 1:1 at an integer
+            scale. Every component — runtime, vendor plug-in, and all five
+            demos — ships as a{" "}
             <code className="bg-background text-accent px-1 py-0.5 rounded text-xs font-mono">
               .deb
-            </code>
-            , and the bundle installs the whole stack in one command with no
-            environment variables to set. It is Preview rather than GA: the
-            service-side render path and windowed-3D phase origin are still in
-            flight.
+            </code>{" "}
+            built on the oldest supported Ubuntu release, and the bundle
+            installs the whole stack in one command with no environment
+            variables to set. Ubuntu 22.04 is supported with an X11 session
+            recommended, but is not yet hardware-validated.
           </p>
         </section>
 
