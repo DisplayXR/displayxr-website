@@ -7,6 +7,25 @@
     "date": "2026-09-24",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.13.0",
     "prerelease": false,
+    "featureLines": [
+      "**One Linux binary for X11 and native Wayland.** The Linux build now uses the shared `displayxr::linux_window` helper from displayxr-common. `auto` picks native Wayland when the compositor supports fractional scaling, viewporter and the …",
+      "**Transparent overlay and click-through on both backends.** The transparent avatar overlay, Ctrl+T click-through and the silhouette input region now work on native Wayland as well as X11; F11 goes fullscreen on the 3D panel's monitor.",
+      "**A portable `.deb`.** The Linux package is built on Ubuntu 22.04 with versioned dependencies, so one package installs and runs on 22.04, 24.04 and 26.04.",
+      "Linux: window, drag and input region come from `displayxr::linux_window`. Right-drag moves the window (phase-snapped on X11, a compositor move with the drag lattice on native Wayland); every key and mouse binding is kept; B toggles decor…",
+      "Linux: the click-through region is applied through the helper (XShape on X11, the surface input region on Wayland), and any title bar hides while the background is transparent (#107)",
+      "Linux: displayxr-common v2.21.0 — native-Wayland drag-lattice follow-ups (a drag that starts on a fractionally scaled monitor gets a table when it reaches the 3D panel; table requests made early and off the render thread) (#108)",
+      "Linux: displayxr-common v2.22.0 — an opaque window declares an opaque Wayland surface, so the compositor can scan a fullscreen weave out directly (#109)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-gaussiansplat@v1.28.0",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.28.0",
+    "title": "v1.28.0",
+    "date": "2026-09-24",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.28.0",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -259,26 +278,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.26.0",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.26.0",
-    "title": "v1.26.0",
-    "date": "2026-09-21",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.26.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Camera rig for photo-lifted splats.** Scenes lifted from a single photo now open at the capture camera's viewpoint, with one focus point. `.sog` bundles load directly, including their optional camera block, and a photo lift that carrie…",
-      "**Scenes fit the display the same way on every platform.** One depth-aware scene-fit module replaces the per-renderer fits that disagreed.",
-      "**The splat viewer on Linux now behaves as it does on Windows.** Input, hotkeys, orbit, turntable and exit behave the same, and dragging the window snaps to the lens phase.",
-      "Camera rig for photo-lifted splats, `.sog` loading, and the camera block v2, with a rig hint, one focus point and a resolver (#118)",
-      "Photo lifts without a camera block are detected automatically and still use the camera rig (#120)",
-      "One renderer-independent, depth-aware scene-fit module, with `gs_fit_probe --selftest` (#119)",
-      "Performance: opacity-aware splat extent, a cull for splats that are exactly invisible, and the `DXR_GS_*` settings (scale, keep, cull alpha, compacted indirect draw, which is off by default) (#117)",
-      "Linux: window and input parity with Windows, including phase-snapped drag and a tracked run script (#123)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.9.9",
