@@ -144,16 +144,24 @@ export default function ArchitecturePage() {
             <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">
               XR_DXR_wayland_surface_binding
             </code>
-            . Transparent overlays work the same way they do elsewhere: a
-            per-pixel-transparent 3D object stands on the desktop with live
-            screen content composited under the weave, captured through the
-            desktop portal. Every component — runtime, vendor plug-in, and all
-            five demos — ships as a{" "}
+            . On native Wayland, where a client is never told where its own
+            window is, a small bundled GNOME Shell extension publishes window
+            geometry to the runtime and keeps a dragged window on the
+            lens&apos;s phase lattice while it moves; the window&apos;s
+            translucent title bar lives on its own surface, above the 3D
+            content and outside the weave. Transparent overlays work the same
+            way they do elsewhere: a per-pixel-transparent 3D object stands on
+            the desktop with live screen content composited under the weave —
+            captured with the app&apos;s own window excluded, and only while
+            its content is actually transparent. Every component — runtime,
+            vendor plug-in, and all five demos — ships as a{" "}
             <code className="bg-background text-accent px-1 py-0.5 rounded text-xs font-mono">
               .deb
-            </code>
-            , and the bundle installs the whole stack in one command with no
-            environment variables to set. It is Preview rather than GA: the
+            </code>{" "}
+            built on the oldest supported Ubuntu release, so one package
+            installs on 22.04, 24.04 and 26.04, and the bundle installs the
+            whole stack in one command with no environment variables to set.
+            It is Preview rather than GA: the
             service-side render path and windowed-3D phase origin are still in
             flight.
           </p>

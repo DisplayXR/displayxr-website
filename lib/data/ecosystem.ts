@@ -102,7 +102,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-common",
     repo: "DisplayXR/displayxr-common",
     description:
-      "Shared math and common library — off-axis (Kooima) projection, atlas tiling, and window/canvas helpers consumed by the runtime, engine plugins, and demos from a single source of truth.",
+      "Shared math and common library — off-axis (Kooima) projection, atlas tiling, and window/canvas helpers — including one Linux app window that picks native Wayland or X11 by capability probe, with shared client-side window chrome — consumed by the runtime, engine plugins, and demos from a single source of truth.",
     url: "https://github.com/DisplayXR/displayxr-common",
     category: "tools",
   },

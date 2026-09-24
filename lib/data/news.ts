@@ -107,6 +107,36 @@ export const NEWS_KIND_LABELS: Record<NewsKind, string> = {
  */
 export const NEWS: NewsItem[] = [
   {
+    id: "linux-demos-native-wayland",
+    date: "2026-09-24",
+    kind: "demo",
+    tier: "list",
+    headline: "Every demo runs natively on Wayland or X11",
+    blurb:
+      "All five demos now share one Linux window implementation that picks native Wayland or X11 per session by capability probe — one binary per app, with the shared title bar and F11 fullscreen on the 3D panel — and the city viewer gains Windows-parity mouse navigation with double-click focus and orbit, while the splat viewer gains a transparent, click-through mode driven by the rear depth budget.",
+    href: "https://github.com/DisplayXR/displayxr-common",
+  },
+  {
+    id: "wayland-phase-locked-drag",
+    date: "2026-09-23",
+    kind: "capability",
+    tier: "banner",
+    headline: "Drag a 3D window on Wayland and the 3D holds",
+    blurb:
+      "Native-Wayland windows now carry a translucent, rounded title bar, and a bundled GNOME Shell extension keeps every step of a drag on the lens’s phase lattice, so the 3D stays clean mid-drag instead of shimmering until the drop — and a window spanning the 3D panel and another display weaves only the part on the panel.",
+    href: "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.0",
+  },
+  {
+    id: "linux-deb-three-releases",
+    date: "2026-09-22",
+    kind: "platform",
+    tier: "list",
+    headline: "One Linux package for Ubuntu 22.04, 24.04 and 26.04",
+    blurb:
+      "The Linux .deb and tarball are now built on the oldest supported release with versioned dependencies, and CI installs and runs the package on all three releases before it is attached; hardware validation so far is on 24.04 and 26.04, and an X11 session is recommended on 22.04.",
+    href: "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.20.1",
+  },
+  {
     id: "multi-app-one-pipeline",
     date: "2026-08-18",
     kind: "capability",
