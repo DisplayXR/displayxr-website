@@ -142,6 +142,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-mediaplayer@v1.10.2",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.10.2",
+    "title": "v1.10.2",
+    "date": "2026-09-24",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.10.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.31.0",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.31.0",
@@ -406,17 +417,6 @@
       "Linux: the billboard mode turns the avatar to face the viewer"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.9.9",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.9.9",
-    "title": "v1.9.9",
-    "date": "2026-09-21",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.9",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-leia-plugin@v2.7.0",
