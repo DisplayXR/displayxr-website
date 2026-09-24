@@ -26,8 +26,34 @@
     "date": "2026-09-24",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.28.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**One Linux binary for X11 and native Wayland.** The Linux build now uses the shared `displayxr::linux_window` helper from displayxr-common. `auto` picks native Wayland when the compositor is ready and X11 otherwise; `--platform=x11|wayl…",
+      "**Transparency on Linux.** Ctrl+T switches to a transparent background with click-through shaped from the frame's own alpha, and the rear depth budget (`XR_DXR_depth_budget`) with content bounds and a content mask decides how far behind …",
+      "**Correct framing and real 3D from the first frame.** The scene is auto-fitted to the live content rect, and stereo separation is applied before any 2D/3D switch.",
+      "Linux: window and input come from `displayxr::linux_window`; the old invisible 28 px drag strip is now the shared visible header bar, placed above the 3D area so the content is exactly the requested size. F11 goes fullscreen on the 3D pa…",
+      "Linux: Ctrl+T transparent background with click-through (Windows parity); the header bar hides and the window stays on top while transparent; `--transparent` starts transparent (#134)",
+      "Linux: rear depth budget — near/far/cull resolved through the runtime's `XR_DXR_depth_budget`, with content bounds (projected scene AABB) and, while transparent, a content mask chained on `xrEndFrame` (#134)",
+      "Linux: right-drag moves the window from drawn content on both backends, so the window can still be moved while the header bar is hidden (#134)",
+      "Linux: displayxr-common v2.21.0 — native-Wayland drag-lattice follow-ups (#134)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@v1.10.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.10.0",
+    "title": "v1.10.0",
+    "date": "2026-09-24",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.10.0",
+    "prerelease": false,
+    "featureLines": [
+      "**X11 or native Wayland on Linux.** The platform is now chosen by displayxr-common's shared capability probe (`displayxr::linux_window`): native Wayland when the compositor is ready, X11 otherwise; `--platform=x11|wayland|auto` overrides…",
+      "**sRGB-correct swapchains.** The player now picks an 8-bit `_SRGB` colour swapchain and keeps every write into it matched, so video, images, text and the HUD stay correct on a format-honest runtime.",
+      "Linux: the probe's choice becomes SDL's video driver; the session chains the matching binding (`XR_DXR_xlib_window_binding` or `XR_DXR_wayland_surface_binding` with window geometry republished on resize) (#82)",
+      "Linux: displayxr-common v2.21.0 — native-Wayland drag-lattice follow-ups (#83)",
+      "Linux: displayxr-common v2.22.0 — an opaque window declares an opaque Wayland surface, so the compositor can scan a fullscreen weave out directly (#84)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.31.0",
@@ -595,26 +621,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.9.7",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.9.7",
-    "title": "v1.9.7",
-    "date": "2026-09-12",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.7",
-    "prerelease": false,
-    "featureLines": [
-      "The demo now starts on Android devices whose OEM build blocks one package from",
-      "starting another package's components. It consumes the shared **DisplayXR client",
-      "wake library** instead of its own hand-rolled `wakeRuntime()`, which used",
-      "`startService` behind a silent catch and never actually worked — so on those",
-      "builds the app failed at startup with `XR_ERROR_RUNTIME_UNAVAILABLE` and told the",
-      "user to go open the DisplayXR app once by hand.",
-      "Measured on a Lume Phone with the first adopter of the shared library:",
-      "**Requires DisplayXR runtime v2.16.28 or later** — that is the release that ships"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unreal@v0.9.1",
