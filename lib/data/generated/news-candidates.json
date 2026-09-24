@@ -19,6 +19,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-earthview@v0.9.0",
+    "repo": "displayxr-demo-earthview",
+    "tag": "v0.9.0",
+    "title": "v0.9.0",
+    "date": "2026-09-24",
+    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.9.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.28.0",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.28.0",
@@ -371,26 +382,6 @@
       "joins that mode instead of fighting it.",
       "**Requires DisplayXR Runtime v2.17.1.** On an older runtime the demo degrades to",
       "`PRIMARY_STEREO` and keeps working, but without the multiview path or startup mode adoption."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-earthview@v0.7.8",
-    "repo": "displayxr-demo-earthview",
-    "tag": "v0.7.8",
-    "title": "v0.7.8",
-    "date": "2026-09-19",
-    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.7.8",
-    "prerelease": false,
-    "featureLines": [
-      "EarthView now renders through the runtime's native multi-view path. It begins its",
-      "session in `XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MULTIVIEW_DXR`, so on a display whose",
-      "active mode needs more than two views the city is drawn for every view the runtime",
-      "asks for instead of being fed a fixed stereo pair.",
-      "On Windows the demo also adopts whatever 3D mode the runtime is already in when it",
-      "starts, rather than forcing its own — launch it into a quad or 2D workspace and it",
-      "comes up matching the display instead of switching it.",
-      "**Requires DisplayXR Runtime v2.17.1.** Against an older runtime the demo falls back"
     ],
     "looksMechanical": false
   },
