@@ -26,8 +26,17 @@
     "date": "2026-09-24",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.9.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**One Linux binary for X11 and native Wayland.** The Linux build now uses the shared `displayxr::linux_window` helper from displayxr-common: `auto` picks native Wayland when the compositor is ready and X11 otherwise, and `--platform=x11|…",
+      "**Windows navigation on Linux.** Mouse-look, wheel dolly, WASD/QE flight, bookmarks and double-click focus with a POI orbit now work on the Linux build, with the same constants as Windows.",
+      "**A portable `.deb`.** The Linux package is built on Ubuntu 22.04 with versioned dependencies, so one package installs and runs on 22.04, 24.04 and 26.04.",
+      "Linux: window and input come from `displayxr::linux_window`; the content is exactly the requested window size, and title-bar drags are phase-snapped on X11 and run as a compositor move on native Wayland (#69)",
+      "Linux: geo navigation ported from Windows — left-drag look, wheel dolly, W/S/A/D pan, E/Q climb, Space reframes the current bookmark, B cycles bookmarks, C returns to fly, Esc exits; held keys and drags clear on focus loss (#70)",
+      "Linux: double-click focus — a depth pick sets the point of interest, the camera re-aims so it sits on the zero-parallax plane, the view switches to the display rig, left-drag orbits it, the wheel scales the orbit, and a slow turntable st…",
+      "Linux: displayxr-common v2.21.0 — native-Wayland drag-lattice follow-ups (#71)",
+      "Linux: displayxr-common v2.22.0 — an opaque window declares an opaque Wayland surface, so the compositor can scan a fullscreen weave out directly (#72)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.28.0",
@@ -85,6 +94,28 @@
       "Linux: displayxr-common v2.21.0 — native-Wayland drag-lattice client follow-ups (a drag that starts on a fractionally scaled monitor gets a table when it reaches the 3D panel; table requests made early and off the render thread) (#147)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.31.1",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.31.1",
+    "title": "v0.31.1",
+    "date": "2026-09-24",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.31.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.21.2",
+    "repo": "displayxr-runtime",
+    "tag": "v2.21.2",
+    "title": "v2.21.2",
+    "date": "2026-09-24",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@v1.0.5",
@@ -254,25 +285,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.20.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.20.0",
-    "title": "DisplayXR Runtime v2.20.0",
-    "date": "2026-09-22",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.20.0",
-    "prerelease": false,
-    "featureLines": [
-      "Native-Wayland windows on Linux now carry their own client-side window chrome — a translucent, rounded title bar with drag, close, minimise, maximise, a window menu and edge resize — and the interlace phase is snapped when a window is dr…",
-      "**Client-side window chrome for native-Wayland windows** (#1654). A translucent title bar with rounded corners: drag to move, close, minimise, double-click to maximise and restore, right-click for a window menu, and edge resize. It hides…",
-      "**Shared title-bar implementation.** The bar comes from `displayxr-common` v2.18.0, which the X11 path in the demos also adopts — one title bar across both Linux window backends.",
-      "**F11 toggles fullscreen** on both Linux window backends.",
-      "**Drop-time interlace-phase snapping for native Wayland** (#1609). After a drag is released the window is moved onto the interlace lattice, the runtime **verifies the requested position was actually reached**, and **declines honestly** w…",
-      "**Panel-scoped weaving for a spanning window.** A window spanning the 3D panel and another display now weaves only the portion on the panel; the off-panel portion is painted flat 2D.",
-      "**Window-scoped geometry fix.** Window-scoped metrics are now taken from the **content rect** rather than the compositor's window frame, which now includes the title bar."
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.20.1",
     "repo": "displayxr-runtime",
     "tag": "v2.20.1",
@@ -397,26 +409,6 @@
       "The media player now begins its OpenXR session with `XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MULTIVIEW_DXR`, so it renders correctly on N-view panels instead of only the first two tiles. On Android this also clears a silent, permanent black p…",
       "Opt into `XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MULTIVIEW_DXR` on both the desktop and Android legs, selected once after `xrGetSystem` and fed to every view-configuration-typed call (`xrEnumerateViewConfigurationViews`, `XrSessionBeginInfo`…",
       "Re-vendored `XR_DXR_display_info.h` at spec 19 and vendored the runtime's `dxr_view_config.h` opt-in helper; `VENDORED.json` re-pinned and `check_vendored_headers.py` green."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.28.7",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.28.7",
-    "title": "v0.28.7",
-    "date": "2026-09-19",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.7",
-    "prerelease": false,
-    "featureLines": [
-      "The model viewer now asks the runtime for the **multiview** view configuration",
-      "(`XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MULTIVIEW_DXR`, `XR_DXR_display_info` spec",
-      "version 19) on every platform leg instead of the fixed two-view stereo path, so",
-      "the display's real view count drives the render — no more hard-coded pair when",
-      "the panel wants more views.",
-      "**Requires DisplayXR Runtime v2.17.1.** On an older runtime the extension's spec",
-      "version is too low, the viewer falls back to `PRIMARY_STEREO` and behaves exactly",
-      "as v0.28.6 did — so this release is safe to install ahead of the runtime, it just"
     ],
     "looksMechanical": false
   },
