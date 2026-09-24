@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-modelviewer@v0.31.0",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.31.0",
+    "title": "v0.31.0",
+    "date": "2026-09-24",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.31.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.0.5",
     "repo": "displayxr-browser",
     "tag": "v1.0.5",
@@ -40,8 +51,12 @@
     "date": "2026-09-23",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Linux: the desktop capture now runs only while content is transparent.** A session that can become transparent no longer pays for a full-panel screen capture, compose-under and post-weave alpha-gate on every opaque frame. The plug-in i…",
+      "**Linux: one `.deb` for Ubuntu 22.04, 24.04 and 26.04.** The package is now built on 22.04 with versioned `Depends` and is install-tested on all three releases before it is attached.",
+      "Linux: lazy desktop capture. Capture, compose-under and alpha-gate run only while transparency is enabled *and* the content is transparent. Capture start/stop is serialised on a per-display-processor worker thread, so two ScreenCast sess…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.21.0",
@@ -508,19 +523,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.28.6",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.28.6",
-    "title": "v0.28.6",
-    "date": "2026-09-15",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.28.6",
-    "prerelease": false,
-    "featureLines": [
-      "The transparent (Undocked) rear clip is now stable on its own, independent of the runtime's depth-budget guard: the model's content mask no longer flaps at the text/blank border even with the runtime ratchet disabled. Panel-verified on W…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.3.10",
