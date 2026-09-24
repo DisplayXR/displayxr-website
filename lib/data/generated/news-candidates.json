@@ -151,6 +151,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-modelviewer@v0.31.2",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.31.2",
+    "title": "v0.31.2",
+    "date": "2026-09-24",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.31.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.4.1",
     "repo": "displayxr-installer",
     "tag": "v2.4.1",
@@ -395,25 +406,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.29.0",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.29.0",
-    "title": "v0.29.0",
-    "date": "2026-09-21",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.29.0",
-    "prerelease": false,
-    "featureLines": [
-      "**The model viewer on Linux now behaves as it does on Windows.** Mouse and keyboard input and the hotkeys now match, and dragging the window snaps to the lens phase.",
-      "**Transparency and click-through on Linux.** Ctrl+T switches to a transparent background, and clicks outside the model go through to the desktop via XShape (`MODEL_TRANSPARENT` sets the startup state).",
-      "**Client-side title bar on Linux.** A header bar sits outside the bound content window, so the 3D content area stays the size the runtime expects.",
-      "Linux: mouse, keyboard and window-drag parity with Windows, with a phase-snapped drag (#132)",
-      "Linux: transparent background (Ctrl+T) with XShape click-through (#132)",
-      "Linux: client-side header bar outside the bound content window (#132)",
-      "Linux: the workspace manifest sidecar ships with the package (INV-9.1)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.7.0",
