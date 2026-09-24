@@ -30,6 +30,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-avatar@v0.13.2",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.13.2",
+    "title": "v0.13.2",
+    "date": "2026-09-24",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.13.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-earthview@v0.9.0",
     "repo": "displayxr-demo-earthview",
     "tag": "v0.9.0",
@@ -423,26 +434,6 @@
       "Linux: `get_background_preview` fed from the window-excluded capture (#256)",
       "Linux: drag phase-snap through `srWeaverSnapToPhase` (#253)",
       "Linux: the runtime pin moves to v2.18.0, and CI builds only the runtime targets the plug-in needs (#258)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.11.12",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.11.12",
-    "title": "v0.11.12",
-    "date": "2026-09-19",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.11.12",
-    "prerelease": false,
-    "featureLines": [
-      "Leo now begins the multiview view configuration directly. Every platform leg opts into",
-      "`XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MULTIVIEW_DXR` (`XR_DXR_display_info` spec 19), so the",
-      "demo renders the display's real view count instead of a stereo pair promoted after the fact.",
-      "On Windows the avatar also adopts whatever 3D mode the runtime is already in at startup,",
-      "rather than forcing mode 1 — launch it on a display that is running a quad or 2D mode and it",
-      "joins that mode instead of fighting it.",
-      "**Requires DisplayXR Runtime v2.17.1.** On an older runtime the demo degrades to",
-      "`PRIMARY_STEREO` and keeps working, but without the multiview path or startup mode adoption."
     ],
     "looksMechanical": false
   },
