@@ -160,6 +160,13 @@
     "archived": false
   },
   {
+    "name": "displayxr-models",
+    "description": "Content-addressed ONNX model blobs for DisplayXR Convert-to-3D (permissive licences only)",
+    "url": "https://github.com/DisplayXR/displayxr-models",
+    "topics": [],
+    "archived": false
+  },
+  {
     "name": "displayxr-runtime",
     "description": "Lightweight OpenXR runtime for 3D displays · Windows, macOS, Android",
     "url": "https://github.com/DisplayXR/displayxr-runtime",

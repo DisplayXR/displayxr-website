@@ -22,6 +22,28 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-leia-plugin@v2.7.3",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.7.3",
+    "title": "v2.7.3",
+    "date": "2026-09-25",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-models@blobs",
+    "repo": "displayxr-models",
+    "tag": "blobs",
+    "title": "Model blobs (content-addressed, permanent)",
+    "date": "2026-09-25",
+    "url": "https://github.com/DisplayXR/displayxr-models/releases/tag/blobs",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.21.4",
     "repo": "displayxr-runtime",
     "tag": "v2.21.4",
@@ -55,12 +77,15 @@
     "id": "displayxr-runtime@v2.21.6",
     "repo": "displayxr-runtime",
     "tag": "v2.21.6",
-    "title": "v2.21.6",
+    "title": "DisplayXR Runtime v2.21.6",
     "date": "2026-09-25",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.6",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The desktop Linux `XR_DXR_weave` service is now feature-complete for the DisplayXR browser. It hands off frames over dma-buf with no copies, using explicit DRM modifiers and sync-file fences (spec 10). A bulk grid snap (spec 11) keeps wi…",
+      "feat(linux,weave): paint XR_DXR_weave flat regions flat on the service (#1699)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.13.0",
@@ -486,20 +511,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.6.26",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.6.26",
-    "title": "v2.6.26",
-    "date": "2026-09-18",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.6.26",
-    "prerelease": false,
-    "featureLines": [
-      "On Linux, weave colour is now driven by the atlas encoding the runtime *declares* rather than guessed by the display processor — pairs with runtime #1509.",
-      "Linux display processor consumes the runtime's out-of-band atlas-encoding declaration (ADR-021) instead of a hardcoded sRGB pair, which had flipped twice on honest panel readings. Verified on-box on an Intel-iGPU/Xorg machine. `DXR_LEIA_…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unreal@v0.9.3",
