@@ -1,11 +1,39 @@
 [
   {
+    "id": "displayxr-installer@v2.4.2",
+    "repo": "displayxr-installer",
+    "tag": "v2.4.2",
+    "title": "DisplayXR v2.4.2",
+    "date": "2026-09-25",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.21.4",
     "repo": "displayxr-runtime",
     "tag": "v2.21.4",
-    "title": "v2.21.4",
+    "title": "DisplayXR Runtime v2.21.4",
     "date": "2026-09-25",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.4",
+    "prerelease": false,
+    "featureLines": [
+      "On multi-monitor Windows boxes where the 3D panel is not the Windows primary display, the D3D11 service compositor (browser, shell, forced-IPC apps) and the in-process GL compositor now weave with the active vendor plug-in's display proc…",
+      "feat(weave): XR_DXR_weave v11 bulk grid snap — header + the shared runtime loop (#1723)",
+      "feat(ipc): weave_snap_window_grid — the whole grid in one round trip (#1723)",
+      "feat(weave): xrWeaveSnapWindowGridDXR entry point, in-process and IPC (#1723)",
+      "feat(test_apps): serve the Wayland drag-lattice probe from one grid call (#1723)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.21.5",
+    "repo": "displayxr-runtime",
+    "tag": "v2.21.5",
+    "title": "v2.21.5",
+    "date": "2026-09-25",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.5",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -324,19 +352,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.21.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.21.1",
-    "title": "DisplayXR Runtime v2.21.1",
-    "date": "2026-09-23",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.1",
-    "prerelease": false,
-    "featureLines": [
-      "Native-Wayland window drags now snap to the 3D panel's phase lattice even when they start on another display, and the drop no longer oscillates. On desktop Linux, an app that can go transparent but is currently opaque no longer keeps the…"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-browser@v1.0.4",
     "repo": "displayxr-browser",
     "tag": "v1.0.4",
@@ -431,24 +446,6 @@
       "Linux: `get_background_preview` fed from the window-excluded capture (#256)",
       "Linux: drag phase-snap through `srWeaverSnapToPhase` (#253)",
       "Linux: the runtime pin moves to v2.18.0, and CI builds only the runtime targets the plug-in needs (#258)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.3.11",
-    "repo": "displayxr-installer",
-    "tag": "v2.3.11",
-    "title": "DisplayXR Bundle v2.3.11",
-    "date": "2026-09-19",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.3.11",
-    "prerelease": false,
-    "featureLines": [
-      "Bundle refresh for the OpenXR 1.1.63 / view-configuration train. Every component below is its own signed installer chained by this bundle; the runtime and shell are the ones that change behaviour.",
-      "Upgrading from v2.3.10: the runtime sub-installer replaces `openxr_loader.dll` (1.1.51 → 1.1.63) in the runtime tree. Apps built against older headers keep working; demos released before today degrade to `PRIMARY_STEREO` on this runtime …",
-      "---## What's Changed",
-      "fix(bundle): repoint the plug-in markers at CNSDK 0.10.69 / plug-in v2.6.21 by @dfattal in https://github.com/DisplayXR/displayxr-installer/pull/58",
-      "fix(bundle): plug-in markers -> v2.6.22, and say which one actually proves it by @dfattal in https://github.com/DisplayXR/displayxr-installer/pull/60",
-      "**Full Changelog**: https://github.com/DisplayXR/displayxr-installer/compare/v2.3.10...v2.3.11"
     ],
     "looksMechanical": false
   },
