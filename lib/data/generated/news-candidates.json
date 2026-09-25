@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.4.3",
+    "repo": "displayxr-installer",
+    "tag": "v2.4.3",
+    "title": "DisplayXR v2.4.3",
+    "date": "2026-09-25",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.21.4",
     "repo": "displayxr-runtime",
     "tag": "v2.21.4",
@@ -31,9 +42,22 @@
     "id": "displayxr-runtime@v2.21.5",
     "repo": "displayxr-runtime",
     "tag": "v2.21.5",
-    "title": "v2.21.5",
+    "title": "DisplayXR Runtime v2.21.5",
     "date": "2026-09-25",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.5",
+    "prerelease": false,
+    "featureLines": [
+      "The Windows runtime installer now uses the Windows Restart Manager to name the programs holding `DisplayXRClient.dll` and offers to close them normally. It also closes Chromium browsers' WebXR helper process, which made bundle 2.4.2 fail…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.21.6",
+    "repo": "displayxr-runtime",
+    "tag": "v2.21.6",
+    "title": "v2.21.6",
+    "date": "2026-09-25",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.6",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -271,19 +295,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.21.2",
-    "repo": "displayxr-runtime",
-    "tag": "v2.21.2",
-    "title": "DisplayXR Runtime v2.21.2",
-    "date": "2026-09-24",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.2",
-    "prerelease": false,
-    "featureLines": [
-      "On native Wayland, drag phase-snap now works at **any** output scale, not only 100 % and 200 % (GNOME Shell extension **v8**). The OpenGL compositor now draws quad and equirect2 layers and handles colour according to each swapchain's for…"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.21.3",
     "repo": "displayxr-runtime",
     "tag": "v2.21.3",
@@ -394,21 +405,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.4.0",
-    "repo": "displayxr-installer",
-    "tag": "v2.4.0",
-    "title": "DisplayXR v2.4.0",
-    "date": "2026-09-22",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.0",
-    "prerelease": false,
-    "featureLines": [
-      "This refresh brings a large Linux release across the stack, D3D11 service compositor fixes, and a bundle-side fix that restarts `displayxr-service` at Medium integrity. Each component below is a separately signed installer, and this bund…",
-      "**Bundle change:** after installing, the bundle restarts `displayxr-service` through explorer.exe so that it runs at Medium integrity, not elevated (#59, runtime #1478).",
-      "DisplayXR Browser v1.0.3 is still opt-in (`--with browser`) and is not part of the default install."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.12.0",
