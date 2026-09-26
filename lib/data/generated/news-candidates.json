@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.21.7",
+    "repo": "displayxr-runtime",
+    "tag": "v2.21.7",
+    "title": "v2.21.7",
+    "date": "2026-09-26",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.7",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.4.2",
     "repo": "displayxr-installer",
     "tag": "v2.4.2",
@@ -316,26 +327,6 @@
       "**Correct panel geometry after an unattended reboot.** When Windows restarts with the panel asleep, or the SR platform identifies the panel late, the plug-in no longer locks in the wrong panel geometry for the life of the DisplayXR service.",
       "**Waits for the panel, never latches the fallback.** At startup the plug-in waits up to 20 s for SR to identify the panel (tunable via `DXR_LEIA_SR_READY_TIMEOUT_S`). If that budget runs out, the fallback geometry is used only as a place…",
       "**Late re-derivation in place.** The moment SR identifies the panel, the plug-in re-derives the real geometry (views, FOV, physical size, nominal viewer, view scale) on the live device, so apps pick it up without a service restart. (#267…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.21.3",
-    "repo": "displayxr-runtime",
-    "tag": "v2.21.3",
-    "title": "DisplayXR Runtime v2.21.3",
-    "date": "2026-09-24",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.3",
-    "prerelease": false,
-    "featureLines": [
-      "The service no longer locks in wrong or empty panel geometry when it auto-starts before the Leia SR platform has identified the panel (an unattended reboot with the panel asleep, or SR identifying it late). It now re-pulls the vendor dis…",
-      "feat(weave): spec v10 — DMABUF handle kind, fd-typed output, sync_file fences; desktop-Linux dma-buf transport contract (#1699)",
-      "feat(comp_multi): desktop-Linux XR_DXR_weave engine, stage A and stage B (dma-buf in/out + sync-file fences) (#1699)",
-      "feat(oxr): accept the spec v10 dma-buf chains in xrWeaveSubmitDXR (#1699)",
-      "feat(ipc): weave_submit_dmabuf / weave_get_output_dmabuf wire; server-side per-window Kooima for desktop-Linux weave clients; one comp_multi weave gate (#1699)",
-      "feat(aux_vk): dma-buf + DRM-modifier + sync-fd helpers (#1699)",
-      "feat(null): Linux service target gets get_vk and the dma-buf import/export device set; XRT_OS_LINUX_DESKTOP promoted to a global define (#1699, #1702)",
-      "feat(test_apps): weave_present_vk_linux — a Wayland/X11 present-owner weave client; shared dma-buf weave transport calls (#1699)"
     ],
     "looksMechanical": false
   },
