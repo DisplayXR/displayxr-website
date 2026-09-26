@@ -3,12 +3,21 @@
     "id": "displayxr-runtime@v2.21.7",
     "repo": "displayxr-runtime",
     "tag": "v2.21.7",
-    "title": "v2.21.7",
+    "title": "DisplayXR Runtime v2.21.7",
     "date": "2026-09-26",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.7",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The Linux packages (`.deb` and tarball) now include the DisplayXR service, started on demand per user session through systemd user socket activation. The packaged runtime is hybrid: sessions that need the service to weave or own presenta…",
+      "feat(linux,packaging): ship displayxr-service, socket-activated per user (#1744)",
+      "feat(linux): hybrid runtime — present-owners go to the service by capability (#1744)",
+      "feat(cts,linux): interactive CTS harness for the vulkan lane (#1727) (#1738)",
+      "feat(linux,qwerty): feed the self-created XCB window's keyboard and mouse into qwerty (#1727) (#1736)",
+      "feat(vk_native): draw XR_KHR_composition_layer_equirect2 layers (#1602)",
+      "feat(vk_native): wire the shared colour hatch and fast-path predicate (#1589)",
+      "feat(vk_native): compose in linear light — true-format sources, private _SRGB target, raw copy to the atlas"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.4.2",
