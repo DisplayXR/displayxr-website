@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-leia-plugin@v2.7.4",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.7.4",
+    "title": "v2.7.4",
+    "date": "2026-09-26",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.21.7",
     "repo": "displayxr-runtime",
     "tag": "v2.21.7",
@@ -448,25 +459,6 @@
       "Linux: right-mouse-button window drag owned by the client, phase-snapped through `xrWeaveSnapWindowRectDXR`",
       "Linux: the overlay is kept above other windows (`_NET_WM_STATE_ABOVE`)",
       "Linux: the billboard mode turns the avatar to face the viewer"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.7.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.7.0",
-    "title": "v2.7.0",
-    "date": "2026-09-21",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Transparent 3D on Linux composes cleanly over the desktop.** On GNOME the plug-in now captures the desktop with the app's own window excluded, and composes it under the stereo fringe with no halo.",
-      "**The rear depth budget works on Linux.** `get_background_preview` is now implemented there, so the runtime clips depth behind the display plane only where a real background cue exists.",
-      "**Dragging a window on Linux snaps to the lens phase.** The Vulkan `snap_window_rect` slot is wired to `srWeaverSnapToPhase`.",
-      "Linux: window-excluded desktop capture through mutter (DisplayConfig, CaptureExclusion1, ScreenCast RecordArea), replacing the portal path. Delivery is capped at 66 ms to match Windows (#256)",
-      "Linux: `get_background_preview` fed from the window-excluded capture (#256)",
-      "Linux: drag phase-snap through `srWeaverSnapToPhase` (#253)",
-      "Linux: the runtime pin moves to v2.18.0, and CI builds only the runtime targets the plug-in needs (#258)"
     ],
     "looksMechanical": false
   },
