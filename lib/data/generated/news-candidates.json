@@ -7,6 +7,19 @@
     "date": "2026-09-26",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.4",
     "prerelease": false,
+    "featureLines": [
+      "**Window drags phase-snap again on desktop Linux.** The v2.7.3 Linux plug-in was built against an SR SDK that did not have the snap call, so dragged windows never snapped to the weave phase, and nothing logged it. The Linux plug-in now r…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.7.5",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.7.5",
+    "title": "v2.7.5",
+    "date": "2026-09-26",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.5",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -29,6 +42,17 @@
       "feat(vk_native): compose in linear light — true-format sources, private _SRGB target, raw copy to the atlas"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.21.8",
+    "repo": "displayxr-runtime",
+    "tag": "v2.21.8",
+    "title": "v2.21.8",
+    "date": "2026-09-26",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.8",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.4.2",
@@ -73,23 +97,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.21.4",
-    "repo": "displayxr-runtime",
-    "tag": "v2.21.4",
-    "title": "DisplayXR Runtime v2.21.4",
-    "date": "2026-09-25",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.4",
-    "prerelease": false,
-    "featureLines": [
-      "On multi-monitor Windows boxes where the 3D panel is not the Windows primary display, the D3D11 service compositor (browser, shell, forced-IPC apps) and the in-process GL compositor now weave with the active vendor plug-in's display proc…",
-      "feat(weave): XR_DXR_weave v11 bulk grid snap — header + the shared runtime loop (#1723)",
-      "feat(ipc): weave_snap_window_grid — the whole grid in one round trip (#1723)",
-      "feat(weave): xrWeaveSnapWindowGridDXR entry point, in-process and IPC (#1723)",
-      "feat(test_apps): serve the Wayland drag-lattice probe from one grid call (#1723)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.21.5",
@@ -382,21 +389,6 @@
     "prerelease": true,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.7.1",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.7.1",
-    "title": "v2.7.1",
-    "date": "2026-09-23",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.1",
-    "prerelease": false,
-    "featureLines": [
-      "**Linux: the desktop capture now runs only while content is transparent.** A session that can become transparent no longer pays for a full-panel screen capture, compose-under and post-weave alpha-gate on every opaque frame. The plug-in i…",
-      "**Linux: one `.deb` for Ubuntu 22.04, 24.04 and 26.04.** The package is now built on 22.04 with versioned `Depends` and is install-tested on all three releases before it is attached.",
-      "Linux: lazy desktop capture. Capture, compose-under and alpha-gate run only while transparency is enabled *and* the content is transparent. Capture start/stop is serialised on a per-display-processor worker thread, so two ScreenCast sess…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.0.4",
