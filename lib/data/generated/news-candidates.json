@@ -15,6 +15,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-browser@v1.0.7",
+    "repo": "displayxr-browser",
+    "tag": "v1.0.7",
+    "title": "DisplayXR Browser v1.0.7",
+    "date": "2026-09-27",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.7",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.21.9",
     "repo": "displayxr-runtime",
     "tag": "v2.21.9",
@@ -521,17 +532,6 @@
     "title": "DisplayXR v0.9.3",
     "date": "2026-09-17",
     "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.9.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@v1.0.3",
-    "repo": "displayxr-browser",
-    "tag": "v1.0.3",
-    "title": "DisplayXR Browser v1.0.3",
-    "date": "2026-09-16",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.3",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
