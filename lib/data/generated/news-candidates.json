@@ -35,8 +35,10 @@
     "date": "2026-09-27",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.6",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Linux: correct colour in compose-under-capture.** The Vulkan display processor's compose-under-capture pass now blends the runtime's premultiplied atlas per OpenXR §10.6.2 (`Composite = Layer + Composite · (1 − Layer.A)`), in linear li…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.21.10",
