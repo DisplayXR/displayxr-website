@@ -22,6 +22,30 @@
     "date": "2026-09-27",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.7",
     "prerelease": false,
+    "featureLines": [
+      "**The start page tells you about new DisplayXR Browser releases**, even when Chromium didn't change. The browser now names its DisplayXR release in the high-entropy UA-CH `fullVersionList` (brand \"DisplayXR Browser\"). It is only returned…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.7.6",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.7.6",
+    "title": "v2.7.6",
+    "date": "2026-09-27",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.6",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.21.10",
+    "repo": "displayxr-runtime",
+    "tag": "v2.21.10",
+    "title": "v2.21.10",
+    "date": "2026-09-27",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.10",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -139,20 +163,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.21.6",
-    "repo": "displayxr-runtime",
-    "tag": "v2.21.6",
-    "title": "DisplayXR Runtime v2.21.6",
-    "date": "2026-09-25",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.6",
-    "prerelease": false,
-    "featureLines": [
-      "The desktop Linux `XR_DXR_weave` service is now feature-complete for the DisplayXR browser. It hands off frames over dma-buf with no copies, using explicit DRM modifiers and sync-file fences (spec 10). A bulk grid snap (spec 11) keeps wi…",
-      "feat(linux,weave): paint XR_DXR_weave flat regions flat on the service (#1699)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.13.0",
@@ -370,21 +380,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.7.2",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.7.2",
-    "title": "v2.7.2",
-    "date": "2026-09-24",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.2",
-    "prerelease": false,
-    "featureLines": [
-      "**Correct panel geometry after an unattended reboot.** When Windows restarts with the panel asleep, or the SR platform identifies the panel late, the plug-in no longer locks in the wrong panel geometry for the life of the DisplayXR service.",
-      "**Waits for the panel, never latches the fallback.** At startup the plug-in waits up to 20 s for SR to identify the panel (tunable via `DXR_LEIA_SR_READY_TIMEOUT_S`). If that budget runs out, the fallback geometry is used only as a place…",
-      "**Late re-derivation in place.** The moment SR identifies the panel, the plug-in re-derives the real geometry (views, FOV, physical size, nominal viewer, view scale) on the live device, so apps pick it up without a service restart. (#267…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.0.5",
