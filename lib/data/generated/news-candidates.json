@@ -7,6 +7,21 @@
     "date": "2026-09-27",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.6",
     "prerelease": false,
+    "featureLines": [
+      "**MP4 video plays.** H.264 video with AAC audio (and HEVC where the GPU supports it) now plays in the DisplayXR Browser, including inside woven glasses-free 3D players. Decoding goes through the operating system's own decoders: GPU hardw…",
+      "**Pages can tell whether a viewer is tracked.** A new `XRSession.trackingState` (`\"unknown\"` | `\"tracking\"` | `\"searching\"`) and a `trackingstatechange` event are driven by the runtime's own eye-tracking state. The DisplayXR web SDK expo…",
+      "The Android APK now carries its DisplayXR release number (`com.displayxr.BROWSER_VERSION` manifest meta-data), so installers can tell one release from another built on the same Chromium base. (browser-pvt#159, browser-pvt#158)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.21.9",
+    "repo": "displayxr-runtime",
+    "tag": "v2.21.9",
+    "title": "v2.21.9",
+    "date": "2026-09-27",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.9",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -111,19 +126,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.21.5",
-    "repo": "displayxr-runtime",
-    "tag": "v2.21.5",
-    "title": "DisplayXR Runtime v2.21.5",
-    "date": "2026-09-25",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.5",
-    "prerelease": false,
-    "featureLines": [
-      "The Windows runtime installer now uses the Windows Restart Manager to name the programs holding `DisplayXRClient.dll` and offers to close them normally. It also closes Chromium browsers' WebXR helper process, which made bundle 2.4.2 fail…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.21.6",
