@@ -28,6 +28,28 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-avatar@v0.14.0",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.14.0",
+    "title": "v0.14.0",
+    "date": "2026-09-27",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-earthview@v0.10.0",
+    "repo": "displayxr-demo-earthview",
+    "tag": "v0.10.0",
+    "title": "v0.10.0",
+    "date": "2026-09-27",
+    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.10.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.29.0",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.29.0",
@@ -35,8 +57,15 @@
     "date": "2026-09-27",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Linux launch placement matches Windows.** The Linux viewer now honours the undock contract: `--rect` (content rect in desktop px, nudged into the panel when the runtime reports it), `--pose` (opening yaw/pitch/zoom, restored by Space),…",
+      "**`--src=<url>` downloads on Linux.** A `.ply`/`.spz` URL is fetched into `$XDG_CACHE_HOME/displayxr/gaussiansplat` (strict URL policy, `--max-bytes` / `--no-cache` honoured) and framed on arrival; `--title` appends a suffix to the windo…",
+      "**Smoother Linux window dragging** via displayxr-common v2.25.0: Wayland move-sync support, right-button drag ends on release, X11 drag steps land exactly, and double-clicking the X11 header bar maximises.",
+      "feat(linux): honour `--rect`, `--pose`, `--margin` and `--vh` (the undock contract) on X11 and Wayland (#137)",
+      "feat(linux): `--src=<url>` download and `--title`, matching the Windows leg (#137)",
+      "`.deb`: `Recommends: curl` (libcurl is opened at runtime for the fetcher; no new link dependency)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.11.0",
@@ -45,6 +74,23 @@
     "title": "v1.11.0",
     "date": "2026-09-27",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.11.0",
+    "prerelease": false,
+    "featureLines": [
+      "Linux window dragging is smoother and more precise, from the displayxr-common v2.25.0 window fixes:",
+      "**Wayland move-sync support** — when the runtime move-syncs the window, no drag lattice is applied, so the window tracks the pointer directly.",
+      "**Right-button drag ends on release** — a drag started with the right mouse button now finishes when that button is released.",
+      "**X11 drag steps land exactly** — each X11 drag step lands on its intended position.",
+      "**X11 header-bar double-click maximises** the window."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.32.0",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.32.0",
+    "title": "v0.32.0",
+    "date": "2026-09-27",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.32.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -445,48 +491,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-earthview@v0.8.1",
-    "repo": "displayxr-demo-earthview",
-    "tag": "v0.8.1",
-    "title": "v0.8.1",
-    "date": "2026-09-22",
-    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.8.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.30.0",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.30.0",
-    "title": "v0.30.0",
-    "date": "2026-09-22",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.30.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.12.0",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.12.0",
-    "title": "v0.12.0",
-    "date": "2026-09-21",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.12.0",
-    "prerelease": false,
-    "featureLines": [
-      "**The avatar on Linux now behaves as it does on Windows.** Keyboard and mouse input and the hotkeys now match, and dragging the window with the right mouse button snaps to the lens phase through `xrWeaveSnapWindowRectDXR`. The overlay al…",
-      "**Transparency and click-through on Linux.** The avatar renders transparently over the desktop, clicks outside its silhouette go through to the desktop, and the rear depth budget is driven by `XR_DXR_depth_budget` rather than a fixed value.",
-      "**Face-the-viewer and display zones on Linux.** The avatar turns to face the viewer in billboard mode, and the tiger zone matches Windows.",
-      "Linux: Windows-parity input, plus a click-through silhouette that matches the rendered avatar",
-      "Linux: `XR_DXR_depth_budget` wired to the rear depth budget",
-      "Linux: right-mouse-button window drag owned by the client, phase-snapped through `xrWeaveSnapWindowRectDXR`",
-      "Linux: the overlay is kept above other windows (`_NET_WM_STATE_ABOVE`)",
-      "Linux: the billboard mode turns the avatar to face the viewer"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-shell-releases@v2.3.0",
