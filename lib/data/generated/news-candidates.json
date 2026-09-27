@@ -28,6 +28,28 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-gaussiansplat@v1.29.0",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.29.0",
+    "title": "v1.29.0",
+    "date": "2026-09-27",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@v1.11.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.11.0",
+    "title": "v1.11.0",
+    "date": "2026-09-27",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.11.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.7.6",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.7.6",
@@ -44,12 +66,20 @@
     "id": "displayxr-runtime@v2.21.10",
     "repo": "displayxr-runtime",
     "tag": "v2.21.10",
-    "title": "v2.21.10",
+    "title": "DisplayXR Runtime v2.21.10",
     "date": "2026-09-27",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.10",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Native-Wayland window drags are move-synchronised by default: every frame is woven for exactly where it is painted — no phase lattice, no stutter.",
+      "A right-button content drag stops on release (via the GNOME window-geometry extension v9's pointer drag).",
+      "Fixed a swapchain-image leak in the Vulkan compositor (a fill losing its fence-park race) that could hang an app during repaint races.",
+      "The Linux `.deb` ships GNOME extension v9.",
+      "feat(wayland): move-synchronised re-weave during a window drag, on by default (#1748)",
+      "feat(gnome-shell): pointer drag — a right-button content drag that ends on release (extension v9)",
+      "feat(gnome-shell): drag lattice picks the entry closest to the drag line — extension v9 (#1748)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.21.9",
@@ -395,17 +425,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-demo-gaussiansplat@v1.27.2",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.27.2",
-    "title": "v1.27.2",
-    "date": "2026-09-23",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.27.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-installer@android-bundle-20260923",
     "repo": "displayxr-installer",
     "tag": "android-bundle-20260923",
@@ -434,17 +453,6 @@
     "title": "v0.8.1",
     "date": "2026-09-22",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.8.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.9.10",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.9.10",
-    "title": "v1.9.10",
-    "date": "2026-09-22",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.9.10",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
