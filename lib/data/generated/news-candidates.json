@@ -18,8 +18,10 @@
     "date": "2026-09-28",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.9",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Full-resolution WebGL on Android 3D tablets.** On Adreno 6xx–9xx GPUs, WebGL no longer caps textures and canvases at 4096 (Android < 14) or 8192. It now reports the hardware limit (16384 on the Adreno 740), so a full-screen side-by-sid…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.21.11",
