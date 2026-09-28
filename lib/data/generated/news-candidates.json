@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.0.8",
+    "repo": "displayxr-browser",
+    "tag": "v1.0.8",
+    "title": "DisplayXR Browser v1.0.8",
+    "date": "2026-09-28",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.8",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.0.6",
     "repo": "displayxr-browser",
     "tag": "v1.0.6",
@@ -35,8 +46,14 @@
     "date": "2026-09-27",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Linux window dragging is smoother and more precise, from displayxr-common v2.25.0:",
+      "**Wayland move-sync support** — when the runtime move-syncs the window, the app no longer applies its own drag lattice, so the two never fight.",
+      "**Right-button drag ends on release** — releasing the right mouse button now reliably ends a drag.",
+      "**X11 drag steps land exactly** — each drag step lands on its intended position with no drift.",
+      "**X11 header-bar double-click maximises** the window."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-earthview@v0.10.0",
@@ -98,8 +115,16 @@
     "date": "2026-09-27",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.32.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The default look now matches the Khronos glTF Sample Viewer: 0 EV exposure and Khronos PBR Neutral tone mapping (#153).",
+      "Colour textures are filtered in linear light, as glTF 2.0 §3.9.2 requires (#152).",
+      "Linux placement and download flags, matching the Windows leg: `--rect`, `--pose` and `--margin` (the undock contract), plus `--src=<url>` download and `--title` (#151).",
+      "Smoother Linux drags via displayxr-common v2.25.0: support for Wayland move-sync, a drag ends on its button's release, X11 drag steps land exactly, and a double-click on the X11 header bar toggles maximise.",
+      "Linux: honour `--rect`, `--pose` and `--margin` on X11 and Wayland. `--rect` is clamped into the panel when the runtime confirms the desktop rect, `--pose` feeds the load-time framing (Space returns to it), and auto-orbit is held while t…",
+      "Linux: `--src=<url>` downloads into `$XDG_CACHE_HOME/displayxr/modelviewer` (libcurl via dlopen; `.gltf` buffers and images fetched alongside), with `--max-bytes` / `--no-cache` and the launch URL policy. `--title` adds a suffix to the w…",
+      "Repinned displayxr-common v2.24.0 → v2.25.0."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.7.6",
@@ -484,17 +509,6 @@
     "date": "2026-09-23",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-20260923",
     "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@v1.0.4",
-    "repo": "displayxr-browser",
-    "tag": "v1.0.4",
-    "title": "DisplayXR Browser v1.0.4",
-    "date": "2026-09-22",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.4",
-    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
