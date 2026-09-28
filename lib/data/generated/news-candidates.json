@@ -11,15 +11,33 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.21.11",
-    "repo": "displayxr-runtime",
-    "tag": "v2.21.11",
-    "title": "v2.21.11",
+    "id": "displayxr-browser@v1.0.9",
+    "repo": "displayxr-browser",
+    "tag": "v1.0.9",
+    "title": "DisplayXR Browser v1.0.9",
     "date": "2026-09-28",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.11",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.9",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.21.11",
+    "repo": "displayxr-runtime",
+    "tag": "v2.21.11",
+    "title": "DisplayXR Runtime v2.21.11",
+    "date": "2026-09-28",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.11",
+    "prerelease": false,
+    "featureLines": [
+      "**Move sync for present-owners (weave spec v12, #1757).** Two new structs let a present-owner, such as the browser, tag its own Wayland commits so its window drags are move-synchronised:",
+      "`XrWeaveWindowLogicalOriginDXR` (in, chained on the bind): the caller's logical window origin and scale.",
+      "`XrWeaveOutputOriginDXR` (out, per `xrWeaveSubmitDXR`): the origin each woven output buffer was woven for, plus a serial.",
+      "**GNOME Shell extension v10 (#1758).** A move-synced window is now held only while its frame tag is mapped. Windows showing no woven content (for example a browser on a 2D page) drag like plain windows, with no start-of-drag stall. A tag…",
+      "feat(weave): spec v12 — woven origin per output buffer for present-owner move sync (#1756) (#1757)",
+      "feat(gnome-shell): move-sync hold gated on a mapped frame tag — extension v10 (#1758)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.0.6",
@@ -477,17 +495,6 @@
     "title": "DisplayXR v2.4.1",
     "date": "2026-09-24",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@v1.0.5",
-    "repo": "displayxr-browser",
-    "tag": "v1.0.5",
-    "title": "DisplayXR Browser v1.0.5",
-    "date": "2026-09-23",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.5",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
