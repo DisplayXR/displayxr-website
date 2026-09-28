@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.0.10",
+    "repo": "displayxr-browser",
+    "tag": "v1.0.10",
+    "title": "DisplayXR Browser v1.0.10",
+    "date": "2026-09-28",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.10",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.0.8",
     "repo": "displayxr-browser",
     "tag": "v1.0.8",
@@ -38,21 +49,6 @@
       "**GNOME Shell extension v10 (#1758).** A move-synced window is now held only while its frame tag is mapped. Windows showing no woven content (for example a browser on a 2D page) drag like plain windows, with no start-of-drag stall. A tag…",
       "feat(weave): spec v12 — woven origin per output buffer for present-owner move sync (#1756) (#1757)",
       "feat(gnome-shell): move-sync hold gated on a mapped frame tag — extension v10 (#1758)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.0.6",
-    "repo": "displayxr-browser",
-    "tag": "v1.0.6",
-    "title": "DisplayXR Browser v1.0.6",
-    "date": "2026-09-27",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.6",
-    "prerelease": false,
-    "featureLines": [
-      "**MP4 video plays.** H.264 video with AAC audio (and HEVC where the GPU supports it) now plays in the DisplayXR Browser, including inside woven glasses-free 3D players. Decoding goes through the operating system's own decoders: GPU hardw…",
-      "**Pages can tell whether a viewer is tracked.** A new `XRSession.trackingState` (`\"unknown\"` | `\"tracking\"` | `\"searching\"`) and a `trackingstatechange` event are driven by the runtime's own eye-tracking state. The DisplayXR web SDK expo…",
-      "The Android APK now carries its DisplayXR release number (`com.displayxr.BROWSER_VERSION` manifest meta-data), so installers can tell one release from another built on the same Chromium base. (browser-pvt#159, browser-pvt#158)"
     ],
     "looksMechanical": false
   },
