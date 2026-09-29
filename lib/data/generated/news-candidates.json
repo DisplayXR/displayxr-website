@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-gaussiansplat@v1.29.1",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.29.1",
+    "title": "v1.29.1",
+    "date": "2026-09-29",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.0.10",
     "repo": "displayxr-browser",
     "tag": "v1.0.10",
@@ -7,8 +18,17 @@
     "date": "2026-09-28",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.10",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**DisplayXR Browser on desktop Linux.** The first release with a Linux build: `displayxr-browser_1.0.10-1_amd64.deb` for Ubuntu 24.04 and 26.04 (GNOME). Web pages get the same glasses-free inline 3D as on Windows, woven through the Displ…",
+      "**Native Wayland and X11 / XWayland.** Inline 3D runs in native Wayland windows and in X11 or XWayland sessions. Dragging a 3D window keeps the weave aligned: the window's position is phase-snapped to the panel, and on Wayland the move i…",
+      "**Auto-3D, first phase (all desktop platforms).** On supported WebGL pages (three.js, PlayCanvas) the browser can offer to show the scene in 3D. The choice is per site and is controlled from a \"3D view\" icon in the address bar, **Ctrl+Sh…",
+      "Desktop Linux: GPU-process weave through `XR_DXR_weave` spec 12 (the woven origin comes back per frame), dma-buf frame hand-off and the woven draw-back (browser-pvt#163, browser-pvt#180, browser-pvt#167)",
+      "Desktop Linux: inline 3D is offered only on a panel the runtime drives. The page display-mode API, tab-driven panel 2D/3D switching and undocking to the native viewers all work as on Windows (browser-pvt#167)",
+      "Desktop Linux `.deb`: its own app id, profile and icons; no Google apt repository or cron job; a copyright file and third-party notices (browser-pvt#167)",
+      "The browser checks whether a DisplayXR runtime is installed before it starts. With none present, Windows no longer waits up to 8 s for the GPU-process window, and the auto-3D UI stays hidden. Linux uses the OpenXR loader's `active_runtim…",
+      "Auto-3D content settings (`auto-3d` and per-origin tuning), a renderer injector that runs at document start, and the desktop UI described above (browser-pvt#191, browser-pvt#198, browser-pvt#199, browser-pvt#200, browser-pvt#201)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.0.8",
@@ -362,26 +382,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.28.0",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.28.0",
-    "title": "v1.28.0",
-    "date": "2026-09-24",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.28.0",
-    "prerelease": false,
-    "featureLines": [
-      "**One Linux binary for X11 and native Wayland.** The Linux build now uses the shared `displayxr::linux_window` helper from displayxr-common. `auto` picks native Wayland when the compositor is ready and X11 otherwise; `--platform=x11|wayl…",
-      "**Transparency on Linux.** Ctrl+T switches to a transparent background with click-through shaped from the frame's own alpha, and the rear depth budget (`XR_DXR_depth_budget`) with content bounds and a content mask decides how far behind …",
-      "**Correct framing and real 3D from the first frame.** The scene is auto-fitted to the live content rect, and stereo separation is applied before any 2D/3D switch.",
-      "Linux: window and input come from `displayxr::linux_window`; the old invisible 28 px drag strip is now the shared visible header bar, placed above the 3D area so the content is exactly the requested size. F11 goes fullscreen on the 3D pa…",
-      "Linux: Ctrl+T transparent background with click-through (Windows parity); the header bar hides and the window stays on top while transparent; `--transparent` starts transparent (#134)",
-      "Linux: rear depth budget — near/far/cull resolved through the runtime's `XR_DXR_depth_budget`, with content bounds (projected scene AABB) and, while transparent, a content mask chained on `xrEndFrame` (#134)",
-      "Linux: right-drag moves the window from drawn content on both backends, so the window can still be moved while the header bar is hidden (#134)",
-      "Linux: displayxr-common v2.21.0 — native-Wayland drag-lattice follow-ups (#134)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.28.1",
