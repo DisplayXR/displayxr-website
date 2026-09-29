@@ -1,11 +1,55 @@
 [
   {
+    "id": "displayxr-demo-avatar@v0.14.1",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.14.1",
+    "title": "v0.14.1",
+    "date": "2026-09-29",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-earthview@v0.10.1",
+    "repo": "displayxr-demo-earthview",
+    "tag": "v0.10.1",
+    "title": "v0.10.1",
+    "date": "2026-09-29",
+    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.10.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.29.1",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.29.1",
     "title": "v1.29.1",
     "date": "2026-09-29",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@v1.11.1",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.11.1",
+    "title": "v1.11.1",
+    "date": "2026-09-29",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.11.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.32.1",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.32.1",
+    "title": "v0.32.1",
+    "date": "2026-09-29",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.32.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -301,25 +345,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-demo-avatar@v0.13.0",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.13.0",
-    "title": "v0.13.0",
-    "date": "2026-09-24",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.13.0",
-    "prerelease": false,
-    "featureLines": [
-      "**One Linux binary for X11 and native Wayland.** The Linux build now uses the shared `displayxr::linux_window` helper from displayxr-common. `auto` picks native Wayland when the compositor supports fractional scaling, viewporter and the …",
-      "**Transparent overlay and click-through on both backends.** The transparent avatar overlay, Ctrl+T click-through and the silhouette input region now work on native Wayland as well as X11; F11 goes fullscreen on the 3D panel's monitor.",
-      "**A portable `.deb`.** The Linux package is built on Ubuntu 22.04 with versioned dependencies, so one package installs and runs on 22.04, 24.04 and 26.04.",
-      "Linux: window, drag and input region come from `displayxr::linux_window`. Right-drag moves the window (phase-snapped on X11, a compositor move with the drag lattice on native Wayland); every key and mouse binding is kept; B toggles decor…",
-      "Linux: the click-through region is applied through the helper (XShape on X11, the surface input region on Wayland), and any title bar hides while the background is transparent (#107)",
-      "Linux: displayxr-common v2.21.0 — native-Wayland drag-lattice follow-ups (a drag that starts on a fractionally scaled monitor gets a table when it reaches the 3D panel; table requests made early and off the render thread) (#108)",
-      "Linux: displayxr-common v2.22.0 — an opaque window declares an opaque Wayland surface, so the compositor can scan a fullscreen weave out directly (#109)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-demo-avatar@v0.13.1",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.13.1",
@@ -340,26 +365,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-earthview@v0.9.0",
-    "repo": "displayxr-demo-earthview",
-    "tag": "v0.9.0",
-    "title": "v0.9.0",
-    "date": "2026-09-24",
-    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.9.0",
-    "prerelease": false,
-    "featureLines": [
-      "**One Linux binary for X11 and native Wayland.** The Linux build now uses the shared `displayxr::linux_window` helper from displayxr-common: `auto` picks native Wayland when the compositor is ready and X11 otherwise, and `--platform=x11|…",
-      "**Windows navigation on Linux.** Mouse-look, wheel dolly, WASD/QE flight, bookmarks and double-click focus with a POI orbit now work on the Linux build, with the same constants as Windows.",
-      "**A portable `.deb`.** The Linux package is built on Ubuntu 22.04 with versioned dependencies, so one package installs and runs on 22.04, 24.04 and 26.04.",
-      "Linux: window and input come from `displayxr::linux_window`; the content is exactly the requested window size, and title-bar drags are phase-snapped on X11 and run as a compositor move on native Wayland (#69)",
-      "Linux: geo navigation ported from Windows — left-drag look, wheel dolly, W/S/A/D pan, E/Q climb, Space reframes the current bookmark, B cycles bookmarks, C returns to fly, Esc exits; held keys and drags clear on focus loss (#70)",
-      "Linux: double-click focus — a depth pick sets the point of interest, the camera re-aims so it sits on the zero-parallax plane, the view switches to the display rig, left-drag orbits it, the wheel scales the orbit, and a slow turntable st…",
-      "Linux: displayxr-common v2.21.0 — native-Wayland drag-lattice follow-ups (#71)",
-      "Linux: displayxr-common v2.22.0 — an opaque window declares an opaque Wayland surface, so the compositor can scan a fullscreen weave out directly (#72)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-earthview@v0.9.1",
@@ -406,23 +411,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-demo-mediaplayer@v1.10.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.10.0",
-    "title": "v1.10.0",
-    "date": "2026-09-24",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.10.0",
-    "prerelease": false,
-    "featureLines": [
-      "**X11 or native Wayland on Linux.** The platform is now chosen by displayxr-common's shared capability probe (`displayxr::linux_window`): native Wayland when the compositor is ready, X11 otherwise; `--platform=x11|wayland|auto` overrides…",
-      "**sRGB-correct swapchains.** The player now picks an 8-bit `_SRGB` colour swapchain and keeps every write into it matched, so video, images, text and the HUD stay correct on a format-honest runtime.",
-      "Linux: the probe's choice becomes SDL's video driver; the session chains the matching binding (`XR_DXR_xlib_window_binding` or `XR_DXR_wayland_surface_binding` with window geometry republished on resize) (#82)",
-      "Linux: displayxr-common v2.21.0 — native-Wayland drag-lattice follow-ups (#83)",
-      "Linux: displayxr-common v2.22.0 — an opaque window declares an opaque Wayland surface, so the compositor can scan a fullscreen weave out directly (#84)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-demo-mediaplayer@v1.10.1",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.10.1",
@@ -443,26 +431,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.31.0",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.31.0",
-    "title": "v0.31.0",
-    "date": "2026-09-24",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.31.0",
-    "prerelease": false,
-    "featureLines": [
-      "**One Linux binary for X11 and native Wayland.** The Linux build now uses the shared `displayxr::linux_window` helper from displayxr-common. The window system is picked at startup by capability probe (native Wayland when the compositor s…",
-      "**Rear depth budget on Linux.** Transparent models are now clipped at the display plane according to the runtime's `XR_DXR_depth_budget` advice, with content bounds and a content mask, matching the Windows build.",
-      "**A portable `.deb`.** The Linux package is built on Ubuntu 22.04 with versioned dependencies, so one package installs and runs on 22.04, 24.04 and 26.04.",
-      "Linux: window, header bar, phase-snapped drag, close/minimize, F11 and click-through region now come from `displayxr::linux_window`; input and mouse controls are unchanged, and right-drag moves the window (#143)",
-      "Linux: the title bar hides while the background is transparent (Ctrl+T or a transparent start), without moving the content rect (#143)",
-      "Linux: `XR_DXR_depth_budget` rear clip, with v2 content bounds and v3 content mask chained on `xrEndFrame` (#146)",
-      "Linux: header bar drawn by `displayxr::csd` — translucent, rounded corners, 1.5x title metrics (#137, #138)",
-      "Linux: displayxr-common v2.21.0 — native-Wayland drag-lattice client follow-ups (a drag that starts on a fractionally scaled monitor gets a table when it reaches the 3D panel; table requests made early and off the render thread) (#147)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.31.1",
