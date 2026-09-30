@@ -1,14 +1,31 @@
 [
   {
-    "id": "displayxr-runtime@v2.21.12",
-    "repo": "displayxr-runtime",
-    "tag": "v2.21.12",
-    "title": "v2.21.12",
+    "id": "displayxr-demo-mediaplayer@v1.12.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.12.0",
+    "title": "v1.12.0",
     "date": "2026-09-30",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.12",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.12.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.21.12",
+    "repo": "displayxr-runtime",
+    "tag": "v2.21.12",
+    "title": "DisplayXR Runtime v2.21.12",
+    "date": "2026-09-30",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.12",
+    "prerelease": false,
+    "featureLines": [
+      "Three fixes for apps running under the spatial shell on Windows (PR #1763):",
+      "**Zones apps no longer blink beside a projection app.** The display-zones composite now takes the immediate-context mutex. Once #1610 made a projection commit a draw, render_mutex alone no longer ordered the zones composite against anoth…",
+      "**XR_DXR_depth_budget fires one state event per xrLocateViews on IPC sessions.** Previously the IPC pre-fill announced a state that the service then overruled, producing two contradictory events per frame.",
+      "**A zones app no longer goes dark when a second app opens.** The ADR-021 linearize flag (b1) now has explicit owners on both threads: a client's blits set it to zero, and the combine pass re-binds it on every lock hold. A second honest-s…",
+      "Also in this release: ADR-044 (the colour contract, per backend and swapchain format), app-rules and linter updates for INV-4.6 (UNORM is linear, checked per leg), and version bumps for the demos and the browser."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.14.1",
@@ -403,17 +420,6 @@
     "title": "v1.28.2",
     "date": "2026-09-24",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.28.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.10.1",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.10.1",
-    "title": "v1.10.1",
-    "date": "2026-09-24",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.10.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
