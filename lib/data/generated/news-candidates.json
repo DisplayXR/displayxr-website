@@ -18,6 +18,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-modelviewer@v0.32.2",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.32.2",
+    "title": "v0.32.2",
+    "date": "2026-09-30",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.32.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.7.7",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.7.7",
@@ -440,17 +451,6 @@
     "title": "v1.10.2",
     "date": "2026-09-24",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.10.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.31.1",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.31.1",
-    "title": "v0.31.1",
-    "date": "2026-09-24",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.31.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
