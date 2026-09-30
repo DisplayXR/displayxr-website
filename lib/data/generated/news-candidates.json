@@ -44,6 +44,24 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.4.5",
+    "repo": "displayxr-installer",
+    "tag": "v2.4.5",
+    "title": "DisplayXR v2.4.5",
+    "date": "2026-09-30",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.5",
+    "prerelease": false,
+    "featureLines": [
+      "This bundle updates the Windows stack to **runtime v2.21.14** and **shell v2.3.1**. It supersedes v2.4.4, which was built one step too early and still pinned runtime v2.21.13 and shell v2.3.0. The changes below are everything new since b…",
+      "**No more flicker in the spatial shell.** A display-zones app running next to a projection app no longer blinks. (runtime v2.21.12)",
+      "**Colours are right with two apps open in the shell.** A zones app no longer goes dark when a second app opens. The combined image no longer bands in the darks. Window chrome, overlays, the cursor and the HUD are no longer washed out. (r…",
+      "**The recenter toast is back for Vulkan apps in the shell.** The model viewer, Gaussian splat and avatar demos show it again. (runtime v2.21.14)",
+      "**Shell title bars and the file picker have their proper colours again.** On the new runtime they are no longer washed out. (shell v2.3.1)",
+      "**Media player v1.12.0 plays live sources.** It can play a live stereo webcam (`Live…` picker or the `C` key) and network streams: RTSP, RTMP, UDP/RTP, HTTP and HLS (`Stream URL…` or `Ctrl+U`). It also has optional auto-convergence, whic…"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-leia-plugin@v2.7.7",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.7.7",
@@ -90,9 +108,22 @@
     "id": "displayxr-runtime@v2.21.14",
     "repo": "displayxr-runtime",
     "tag": "v2.21.14",
-    "title": "v2.21.14",
+    "title": "DisplayXR Runtime v2.21.14",
     "date": "2026-09-30",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.14",
+    "prerelease": false,
+    "featureLines": [
+      "Vulkan apps running under the spatial shell on Windows (model viewer, gaussian splat, avatar) get their recenter toast back. The Vulkan IPC client was importing the D3D11 service's shared NT texture handles as OPAQUE_WIN32 instead of D3D…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.21.15",
+    "repo": "displayxr-runtime",
+    "tag": "v2.21.15",
+    "title": "v2.21.15",
+    "date": "2026-09-30",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.15",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -107,6 +138,19 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity@v2.20.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.20.0",
+    "title": "DisplayXR v2.20.0",
+    "date": "2026-09-30",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.20.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Linux transparent overlay (#332, PR #333).** A transparent app on a Linux player now floats over the desktop as it does on Windows. `DisplayXRTransparentOverlay.RequestTransparentSession()` now forwards the request on Linux players (it…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.14.1",
@@ -204,24 +248,6 @@
     "prerelease": false,
     "featureLines": [
       "**Full-resolution WebGL on Android 3D tablets.** On Adreno 6xx–9xx GPUs, WebGL no longer caps textures and canvases at 4096 (Android < 14) or 8192. It now reports the hardware limit (16384 on the Adreno 740), so a full-screen side-by-sid…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.21.11",
-    "repo": "displayxr-runtime",
-    "tag": "v2.21.11",
-    "title": "DisplayXR Runtime v2.21.11",
-    "date": "2026-09-28",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.11",
-    "prerelease": false,
-    "featureLines": [
-      "**Move sync for present-owners (weave spec v12, #1757).** Two new structs let a present-owner, such as the browser, tag its own Wayland commits so its window drags are move-synchronised:",
-      "`XrWeaveWindowLogicalOriginDXR` (in, chained on the bind): the caller's logical window origin and scale.",
-      "`XrWeaveOutputOriginDXR` (out, per `xrWeaveSubmitDXR`): the origin each woven output buffer was woven for, plus a serial.",
-      "**GNOME Shell extension v10 (#1758).** A move-synced window is now held only while its frame tag is mapped. Windows showing no woven content (for example a browser on a 2D page) drag like plain windows, with no start-of-drag stall. A tag…",
-      "feat(weave): spec v12 — woven origin per output buffer for present-owner move sync (#1756) (#1757)",
-      "feat(gnome-shell): move-sync hold gated on a mapped frame tag — extension v10 (#1758)"
     ],
     "looksMechanical": false
   },
@@ -485,17 +511,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-installer@v2.4.1",
-    "repo": "displayxr-installer",
-    "tag": "v2.4.1",
-    "title": "DisplayXR v2.4.1",
-    "date": "2026-09-24",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-shell-releases@v2.3.0",
     "repo": "displayxr-shell-releases",
     "tag": "v2.3.0",
@@ -599,17 +614,6 @@
     "title": "DisplayXR v0.9.1",
     "date": "2026-09-11",
     "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.9.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unity@v2.19.1",
-    "repo": "displayxr-unity",
-    "tag": "v2.19.1",
-    "title": "DisplayXR v2.19.1",
-    "date": "2026-09-07",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.19.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
