@@ -33,6 +33,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-installer@v2.4.4",
+    "repo": "displayxr-installer",
+    "tag": "v2.4.4",
+    "title": "DisplayXR v2.4.4",
+    "date": "2026-09-30",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.7.7",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.7.7",
@@ -74,6 +85,28 @@
       "**sRGB chrome, overlay, cursor and HUD are no longer decoded twice (#1765).** The combine pass now samples these _SRGB sources through non-decoding views."
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.21.14",
+    "repo": "displayxr-runtime",
+    "tag": "v2.21.14",
+    "title": "v2.21.14",
+    "date": "2026-09-30",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.14",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-shell-releases@v2.3.1",
+    "repo": "displayxr-shell-releases",
+    "tag": "v2.3.1",
+    "title": "DisplayXR Shell v2.3.1",
+    "date": "2026-09-30",
+    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.3.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-avatar@v0.14.1",
@@ -307,25 +340,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.21.10",
-    "repo": "displayxr-runtime",
-    "tag": "v2.21.10",
-    "title": "DisplayXR Runtime v2.21.10",
-    "date": "2026-09-27",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.10",
-    "prerelease": false,
-    "featureLines": [
-      "Native-Wayland window drags are move-synchronised by default: every frame is woven for exactly where it is painted — no phase lattice, no stutter.",
-      "A right-button content drag stops on release (via the GNOME window-geometry extension v9's pointer drag).",
-      "Fixed a swapchain-image leak in the Vulkan compositor (a fill losing its fence-park race) that could hang an app during repaint races.",
-      "The Linux `.deb` ships GNOME extension v9.",
-      "feat(wayland): move-synchronised re-weave during a window drag, on by default (#1748)",
-      "feat(gnome-shell): pointer drag — a right-button content drag that ends on release (extension v9)",
-      "feat(gnome-shell): drag lattice picks the entry closest to the drag line — extension v9 (#1748)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-leia-plugin@v2.7.4",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.7.4",
@@ -478,17 +492,6 @@
     "date": "2026-09-24",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@android-bundle-20260923",
-    "repo": "displayxr-installer",
-    "tag": "android-bundle-20260923",
-    "title": "Android tablet bundle 2026-09-23",
-    "date": "2026-09-23",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-20260923",
-    "prerelease": true,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -661,26 +664,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-shell-releases@v2.1.0",
-    "repo": "displayxr-shell-releases",
-    "tag": "v2.1.0",
-    "title": "DisplayXR Shell v2.1.0",
-    "date": "2026-08-13",
-    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.1.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Your title bar stays put.** The 3D window title bar could previously disappear for good — closing an app leaked its chrome slot, and a relaunch that reused the same client id inherited a dead, invisible swapchain. Both are fixed.",
-      "**The launcher's \"+\" tile no longer looks like a crash.** Picking an app to add opens the file dialog in front of the compositor instead of behind it, and the shell keeps running while the dialog is up.",
-      "**No more 5-second freeze on launch.** Starting a 2D or unknown-type app used to block the whole workspace while the shell slept and polled; launches are now detected on the regular frame tick, so the workspace stays live.",
-      "**Overlays survive a bad frame.** The taskbar, launcher, toasts, and cursor no longer risk going dark permanently after a transient swapchain error.",
-      "**The shell notices when the runtime goes away.** If the runtime or session dies, the shell now exits cleanly instead of sitting inert against a dead service.",
-      "Runtime/session-loss detection — the shell shuts down cleanly when the runtime or OpenXR session goes away, rather than continuing to run against a dead service (#93)",
-      "`--workspace-action` is implemented per the workspace-controller contract, supporting `show-launcher`, `layout-grid`, and `layout-immersive`; unknown `--flags` are now rejected up front instead of being silently treated as app paths (#92)",
-      "App launching is detected on the per-frame tick instead of a blocking 5-second sleep-poll, so launching a 2D or unknown-type app no longer stalls the workspace (#95)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-shell-releases@v2.1.1",
