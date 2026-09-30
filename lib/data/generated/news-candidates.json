@@ -25,8 +25,12 @@
     "date": "2026-09-30",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.32.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "New `scripts/openpbr_mtlx_to_gltf.py` (developer tool, not included in the installers). It converts OpenUSD + MaterialX OpenPBR scenes, such as the ASWF OpenPBR Shader Playground, to `.glb`. It evaluates each MaterialX input graph per pi…",
+      "Converter: per-tile UDIM materials, the OpenPBR transmission tint baked into `baseColor`, textured `transmission_weight` mapped onto `transmissionTexture`, and `--exclude` for skipping stray prims. (#157)",
+      "Converter output is smaller (85 MB to 50 MB across nine Playground groups). This comes from `--jpeg-quality` for sRGB colour textures, byte-identical texture dedupe, and an opt-in per-material `--decimate`. A NaN guard drops degenerate t…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.7.7",
