@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.21.12",
+    "repo": "displayxr-runtime",
+    "tag": "v2.21.12",
+    "title": "v2.21.12",
+    "date": "2026-09-30",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.12",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-avatar@v0.14.1",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.14.1",
@@ -285,20 +296,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.21.8",
-    "repo": "displayxr-runtime",
-    "tag": "v2.21.8",
-    "title": "DisplayXR Runtime v2.21.8",
-    "date": "2026-09-26",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.8",
-    "prerelease": false,
-    "featureLines": [
-      "**Browser \"0–1 px border\" on woven inline-3D canvases is fixed on every platform.** On Windows the D3D11 batch-weave blit now clamps sampling to the source rect's texel centres; on Android, Linux and macOS the Vulkan weave engines stage …",
-      "Pairs with the Leia plug-in v2.7.5 alpha-gate fix for the black line outside the canvas."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.4.2",
