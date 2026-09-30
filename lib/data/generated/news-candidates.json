@@ -18,6 +18,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-leia-plugin@v2.7.7",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.7.7",
+    "title": "v2.7.7",
+    "date": "2026-09-30",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.7",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.21.12",
     "repo": "displayxr-runtime",
     "tag": "v2.21.12",
@@ -38,12 +49,16 @@
     "id": "displayxr-runtime@v2.21.13",
     "repo": "displayxr-runtime",
     "tag": "v2.21.13",
-    "title": "v2.21.13",
+    "title": "DisplayXR Runtime v2.21.13",
     "date": "2026-09-30",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.13",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Two colour fixes for apps running under the spatial shell on Windows, for the case where two honest-sRGB apps put the compose on ADR-021 Model B (PR #1766):",
+      "**The combined atlas encodes on write under Model B (#1764).** The combined atlas is now typeless with an sRGB render target for Model B, so blending stays linear but the hardware encodes on write and the display processor receives encod…",
+      "**sRGB chrome, overlay, cursor and HUD are no longer decoded twice (#1765).** The combine pass now samples these _SRGB sources through non-decoding views."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.14.1",
@@ -337,17 +352,6 @@
     "title": "DisplayXR v2.4.3",
     "date": "2026-09-25",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.7.3",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.7.3",
-    "title": "v2.7.3",
-    "date": "2026-09-25",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.3",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
