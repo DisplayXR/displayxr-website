@@ -7,8 +7,15 @@
     "date": "2026-09-30",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.12.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Play from a live stereo camera.** Plug in a UVC stereo webcam, such as the Acer SpatialLabs Eyes (3840x2160 at 60 fps, NV12), and watch it live in 3D. Open it from the new `Live…` picker in the top bar (a LIVE pill shows while it plays…",
+      "**Open live network streams.** RTSP, RTMP, UDP/RTP MPEG-TS, HTTP and HLS streams now play from `Stream URL…` in the Live dropdown, `Ctrl+U`, or `--url`, with low-latency options and automatic reconnect. A STREAM pill shows while one plays.",
+      "**Optional auto-convergence.** Press `A` (or use the Auto-conv button) and the player keeps the subject at the display plane, on both camera and stream sources. It is off by default.",
+      "Live camera source through SDL3's camera API: `Live…` picker, LIVE pill, `C` key, `--camera[=name|index]`, `--camera-fps`, `--camera-list`, and the MCP tools `list_cameras` / `open_camera` / `close_camera`. After an unplug, Rescan or `C`…",
+      "Auto-convergence: `A` / Auto-conv button / `--auto-conv[=nearest|sharp|centre]`, `Shift+A` cycles the policy, `Ctrl+click` pins the subject. It uses the NCC disparity estimator ported from displayxr-web's 3D call, and is off by default (…",
+      "Stream URL source: `Stream URL…` in the Live dropdown, `Ctrl+U`, `--url`, MCP `open_url`, low-latency options, automatic reconnect, and a STREAM pill. On Windows the slim FFmpeg build now includes network input and SChannel TLS. The Linu…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.21.12",
@@ -26,6 +33,17 @@
       "Also in this release: ADR-044 (the colour contract, per backend and swapchain format), app-rules and linter updates for INV-4.6 (UNORM is linear, checked per leg), and version bumps for the demos and the browser."
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.21.13",
+    "repo": "displayxr-runtime",
+    "tag": "v2.21.13",
+    "title": "v2.21.13",
+    "date": "2026-09-30",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.13",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-avatar@v0.14.1",
@@ -274,19 +292,6 @@
       "feat(wayland): move-synchronised re-weave during a window drag, on by default (#1748)",
       "feat(gnome-shell): pointer drag — a right-button content drag that ends on release (extension v9)",
       "feat(gnome-shell): drag lattice picks the entry closest to the drag line — extension v9 (#1748)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.21.9",
-    "repo": "displayxr-runtime",
-    "tag": "v2.21.9",
-    "title": "DisplayXR Runtime v2.21.9",
-    "date": "2026-09-27",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.9",
-    "prerelease": false,
-    "featureLines": [
-      "Fixes a v2.21.7 regression on desktop Linux (#1753). #1744 routed **any** session that enabled `XR_DXR_weave` to `displayxr-service`, so window-bound apps that use weave only for drag phase-snap (the Linux demos) became hosted service se…"
     ],
     "looksMechanical": false
   },
