@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-browser@v1.1.0",
+    "repo": "displayxr-browser",
+    "tag": "v1.1.0",
+    "title": "DisplayXR Browser v1.1.0",
+    "date": "2026-10-01",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.1.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.4.7",
+    "repo": "displayxr-installer",
+    "tag": "v2.4.7",
+    "title": "DisplayXR v2.4.7",
+    "date": "2026-10-01",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.7",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@v1.12.0",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.12.0",
@@ -58,6 +80,20 @@
       "**The recenter toast is back for Vulkan apps in the shell.** The model viewer, Gaussian splat and avatar demos show it again. (runtime v2.21.14)",
       "**Shell title bars and the file picker have their proper colours again.** On the new runtime they are no longer washed out. (shell v2.3.1)",
       "**Media player v1.12.0 plays live sources.** It can play a live stereo webcam (`Live…` picker or the `C` key) and network streams: RTSP, RTMP, UDP/RTP, HTTP and HLS (`Stream URL…` or `Ctrl+U`). It also has optional auto-convergence, whic…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-installer@v2.4.6",
+    "repo": "displayxr-installer",
+    "tag": "v2.4.6",
+    "title": "DisplayXR v2.4.6",
+    "date": "2026-09-30",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.6",
+    "prerelease": false,
+    "featureLines": [
+      "This bundle updates the Windows stack to **runtime v2.21.15**. It is the only change since bundle **v2.4.5**; every other component is unchanged.",
+      "**Zoned sRGB apps look right under the spatial shell.** Apps that use display zones with an sRGB swapchain, such as the model viewer, are no longer composed too dark in the shell. They now look the same under the shell as they do standal…"
     ],
     "looksMechanical": false
   },
@@ -121,12 +157,14 @@
     "id": "displayxr-runtime@v2.21.15",
     "repo": "displayxr-runtime",
     "tag": "v2.21.15",
-    "title": "v2.21.15",
+    "title": "DisplayXR Runtime v2.21.15",
     "date": "2026-09-30",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.15",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Apps that use display zones with an sRGB swapchain (for example the model viewer) no longer look too dark under the spatial shell on Windows. The service was sampling the zone through a decoding view with nothing re-encoding it, so a sou…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-shell-releases@v2.3.1",
@@ -252,19 +290,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-browser@v1.0.7",
-    "repo": "displayxr-browser",
-    "tag": "v1.0.7",
-    "title": "DisplayXR Browser v1.0.7",
-    "date": "2026-09-27",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.7",
-    "prerelease": false,
-    "featureLines": [
-      "**The start page tells you about new DisplayXR Browser releases**, even when Chromium didn't change. The browser now names its DisplayXR release in the high-entropy UA-CH `fullVersionList` (brand \"DisplayXR Browser\"). It is only returned…"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-demo-avatar@v0.14.0",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.14.0",
@@ -385,28 +410,6 @@
     "title": "v2.7.5",
     "date": "2026-09-26",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.5",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.4.2",
-    "repo": "displayxr-installer",
-    "tag": "v2.4.2",
-    "title": "DisplayXR v2.4.2",
-    "date": "2026-09-25",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.4.3",
-    "repo": "displayxr-installer",
-    "tag": "v2.4.3",
-    "title": "DisplayXR v2.4.3",
-    "date": "2026-09-25",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.3",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
