@@ -42,6 +42,7 @@
       "displayxr-runtime/docs/adr/ADR-039-one-fill-engine-for-every-tier.md",
       "displayxr-runtime/docs/adr/ADR-040-rear-depth-budget.md",
       "displayxr-runtime/docs/adr/ADR-041-fixed-view-count-with-per-frame-activity.md",
+      "displayxr-runtime/docs/adr/ADR-042-vendor-2d3d-conversion-supersedes-default.md",
       "displayxr-runtime/docs/adr/ADR-043-stereo-camera-source.md",
       "displayxr-runtime/docs/adr/ADR-044-colour-contract-per-backend.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-001-direct-runtime-loading.md",
