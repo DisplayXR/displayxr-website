@@ -7,8 +7,17 @@
     "date": "2026-10-01",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.1.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Auto-3D for Gaussian-splat pages.** Spark.js scenes, including World Labs Marble worlds, now convert to 3D automatically: `sparkjs.dev` and `worldlabs.ai` join threejs.org, PlayCanvas and SuperSplat on the built-in auto-3D list. Spark …",
+      "**Steadier auto-3D conversion.** The built-in auto-3D scripts move from v0.5.0 to v0.5.5. The frame-rate guard now warms up and retries before it gives up on a page, and its floor drops from 24 to 15 fps, so a page that is still loading …",
+      "**\"3D view\" in site settings.** Each site's details page (`chrome://settings/content/siteDetails`) now has a \"3D view\" row with Allow / Block / Ask, and the site also appears in All Sites.",
+      "Auto-3D scripts v0.5.0 -> v0.5.5: frame-rate guard warm-up and retry with a 15 fps floor, a fullscreen offer chip, and a \"no display\" chip state; eye images sized in device pixels; Spark (room-scale) scenes converge on the space ahead ra…",
+      "Auto-3D no longer runs detection after it has stood down on a page, and starts no timers on pages that never create a WebGL context (browser-pvt#211)",
+      "Auto-3D allowlist adds `sparkjs.dev` and `worldlabs.ai` (covers `marble.worldlabs.ai`) (browser-pvt#208)",
+      "Site settings: a per-site \"3D view\" row, shown wherever the auto-3D UI is shown (browser-pvt#206)",
+      "Android groundwork for auto-3D: runtime presence detection, and the display info and rendering-mode list now reach the page on Android. Compiled on the Android lane but not yet verified on a tablet, so auto-3D on Android is not a support…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.4.7",
@@ -17,6 +26,28 @@
     "title": "DisplayXR v2.4.7",
     "date": "2026-10-01",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.7",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.7.8",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.7.8",
+    "title": "v2.7.8",
+    "date": "2026-10-01",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.8",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity@v2.20.1",
+    "repo": "displayxr-unity",
+    "tag": "v2.20.1",
+    "title": "DisplayXR v2.20.1",
+    "date": "2026-10-01",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.20.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -391,19 +422,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-leia-plugin@v2.7.4",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.7.4",
-    "title": "v2.7.4",
-    "date": "2026-09-26",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.4",
-    "prerelease": false,
-    "featureLines": [
-      "**Window drags phase-snap again on desktop Linux.** The v2.7.3 Linux plug-in was built against an SR SDK that did not have the snap call, so dragged windows never snapped to the weave phase, and nothing logged it. The Linux plug-in now r…"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-leia-plugin@v2.7.5",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.7.5",
@@ -584,17 +602,6 @@
     "title": "DisplayXR Unity Samples v2.2.0",
     "date": "2026-09-14",
     "url": "https://github.com/DisplayXR/displayxr-unity-samples/releases/tag/v2.2.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unity@v2.19.2",
-    "repo": "displayxr-unity",
-    "tag": "v2.19.2",
-    "title": "DisplayXR v2.19.2",
-    "date": "2026-09-14",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.19.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
