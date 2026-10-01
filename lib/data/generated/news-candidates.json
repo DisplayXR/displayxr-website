@@ -20,6 +20,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-browser@v1.1.1",
+    "repo": "displayxr-browser",
+    "tag": "v1.1.1",
+    "title": "DisplayXR Browser v1.1.1",
+    "date": "2026-10-01",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.1.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.4.7",
     "repo": "displayxr-installer",
     "tag": "v2.4.7",
@@ -295,17 +306,6 @@
       "Auto-3D content settings (`auto-3d` and per-origin tuning), a renderer injector that runs at document start, and the desktop UI described above (browser-pvt#191, browser-pvt#198, browser-pvt#199, browser-pvt#200, browser-pvt#201)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.0.8",
-    "repo": "displayxr-browser",
-    "tag": "v1.0.8",
-    "title": "DisplayXR Browser v1.0.8",
-    "date": "2026-09-28",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.8",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@v1.0.9",
