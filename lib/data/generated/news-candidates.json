@@ -40,12 +40,34 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-installer@v2.5.1",
+    "repo": "displayxr-installer",
+    "tag": "v2.5.1",
+    "title": "DisplayXR v2.5.1",
+    "date": "2026-10-02",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.8.1",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.8.1",
     "title": "v2.8.1",
     "date": "2026-10-02",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.8.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.22.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.22.1",
+    "title": "v2.22.1",
+    "date": "2026-10-02",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.22.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -187,24 +209,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-installer@v2.4.5",
-    "repo": "displayxr-installer",
-    "tag": "v2.4.5",
-    "title": "DisplayXR v2.4.5",
-    "date": "2026-09-30",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.5",
-    "prerelease": false,
-    "featureLines": [
-      "This bundle updates the Windows stack to **runtime v2.21.14** and **shell v2.3.1**. It supersedes v2.4.4, which was built one step too early and still pinned runtime v2.21.13 and shell v2.3.0. The changes below are everything new since b…",
-      "**No more flicker in the spatial shell.** A display-zones app running next to a projection app no longer blinks. (runtime v2.21.12)",
-      "**Colours are right with two apps open in the shell.** A zones app no longer goes dark when a second app opens. The combined image no longer bands in the darks. Window chrome, overlays, the cursor and the HUD are no longer washed out. (r…",
-      "**The recenter toast is back for Vulkan apps in the shell.** The model viewer, Gaussian splat and avatar demos show it again. (runtime v2.21.14)",
-      "**Shell title bars and the file picker have their proper colours again.** On the new runtime they are no longer washed out. (shell v2.3.1)",
-      "**Media player v1.12.0 plays live sources.** It can play a live stereo webcam (`Live…` picker or the `C` key) and network streams: RTSP, RTMP, UDP/RTP, HTTP and HLS (`Stream URL…` or `Ctrl+U`). It also has optional auto-convergence, whic…"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-installer@v2.4.6",
     "repo": "displayxr-installer",
     "tag": "v2.4.6",
@@ -228,21 +232,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.21.13",
-    "repo": "displayxr-runtime",
-    "tag": "v2.21.13",
-    "title": "DisplayXR Runtime v2.21.13",
-    "date": "2026-09-30",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.13",
-    "prerelease": false,
-    "featureLines": [
-      "Two colour fixes for apps running under the spatial shell on Windows, for the case where two honest-sRGB apps put the compose on ADR-021 Model B (PR #1766):",
-      "**The combined atlas encodes on write under Model B (#1764).** The combined atlas is now typeless with an sRGB render target for Model B, so blending stays linear but the hardware encodes on write and the display processor receives encod…",
-      "**sRGB chrome, overlay, cursor and HUD are no longer decoded twice (#1765).** The combine pass now samples these _SRGB sources through non-decoding views."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.21.14",
