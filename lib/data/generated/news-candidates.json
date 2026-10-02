@@ -65,9 +65,23 @@
     "id": "displayxr-runtime@v2.22.1",
     "repo": "displayxr-runtime",
     "tag": "v2.22.1",
-    "title": "v2.22.1",
+    "title": "DisplayXR Runtime v2.22.1",
     "date": "2026-10-02",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.22.1",
+    "prerelease": false,
+    "featureLines": [
+      "**Native Wayland at integer scales on GNOME 46 / Ubuntu 24.04 now weaves in 3D (#1785).** Mutter's PHYSICAL layout mode (`layout-mode` 2, the default there when fractional scaling is off) reports window geometry in device pixels, and the…",
+      "**GNOME window-geometry extension v11** ships in the `.deb`. Its snapshot adds a top-level `layout_mode` and a `monitor.device_scale` field. Both are additive, so the schema version is unchanged. The drag lattice uses the same stage-to-d…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.22.2",
+    "repo": "displayxr-runtime",
+    "tag": "v2.22.2",
+    "title": "v2.22.2",
+    "date": "2026-10-02",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.22.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -232,19 +246,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.21.14",
-    "repo": "displayxr-runtime",
-    "tag": "v2.21.14",
-    "title": "DisplayXR Runtime v2.21.14",
-    "date": "2026-09-30",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.14",
-    "prerelease": false,
-    "featureLines": [
-      "Vulkan apps running under the spatial shell on Windows (model viewer, gaussian splat, avatar) get their recenter toast back. The Vulkan IPC client was importing the D3D11 service's shared NT texture handles as OPAQUE_WIN32 instead of D3D…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.21.15",
