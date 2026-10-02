@@ -27,6 +27,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-browser@v1.2.2",
+    "repo": "displayxr-browser",
+    "tag": "v1.2.2",
+    "title": "DisplayXR Browser v1.2.2",
+    "date": "2026-10-02",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.2.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-earthview@v0.11.0",
     "repo": "displayxr-demo-earthview",
     "tag": "v0.11.0",
@@ -75,6 +86,17 @@
     "title": "DisplayXR v2.5.1",
     "date": "2026-10-02",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.5.2",
+    "repo": "displayxr-installer",
+    "tag": "v2.5.2",
+    "title": "DisplayXR v2.5.2",
+    "date": "2026-10-02",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -133,22 +155,18 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-browser@v1.1.0",
-    "repo": "displayxr-browser",
-    "tag": "v1.1.0",
-    "title": "DisplayXR Browser v1.1.0",
-    "date": "2026-10-01",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.1.0",
+    "id": "displayxr-unity@v2.21.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.21.0",
+    "title": "DisplayXR v2.21.0",
+    "date": "2026-10-02",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.21.0",
     "prerelease": false,
     "featureLines": [
-      "**Auto-3D for Gaussian-splat pages.** Spark.js scenes, including World Labs Marble worlds, now convert to 3D automatically: `sparkjs.dev` and `worldlabs.ai` join threejs.org, PlayCanvas and SuperSplat on the built-in auto-3D list. Spark …",
-      "**Steadier auto-3D conversion.** The built-in auto-3D scripts move from v0.5.0 to v0.5.5. The frame-rate guard now warms up and retries before it gives up on a page, and its floor drops from 24 to 15 fps, so a page that is still loading …",
-      "**\"3D view\" in site settings.** Each site's details page (`chrome://settings/content/siteDetails`) now has a \"3D view\" row with Allow / Block / Ask, and the site also appears in All Sites.",
-      "Auto-3D scripts v0.5.0 -> v0.5.5: frame-rate guard warm-up and retry with a 15 fps floor, a fullscreen offer chip, and a \"no display\" chip state; eye images sized in device pixels; Spark (room-scale) scenes converge on the space ahead ra…",
-      "Auto-3D no longer runs detection after it has stood down on a page, and starts no timers on pages that never create a WebGL context (browser-pvt#211)",
-      "Auto-3D allowlist adds `sparkjs.dev` and `worldlabs.ai` (covers `marble.worldlabs.ai`) (browser-pvt#208)",
-      "Site settings: a per-site \"3D view\" row, shown wherever the auto-3D UI is shown (browser-pvt#206)",
-      "Android groundwork for auto-3D: runtime presence detection, and the display info and rendering-mode list now reach the page on Android. Compiled on the Android lane but not yet verified on a tablet, so auto-3D on Android is not a support…"
+      "**Linux: transparent-overlay click-through and right-drag move (#332, PR #346).** The Windows click-through exports now exist on Linux as an XShape input region on Unity's window (silhouette mask, AABB, surround rect/mask, plus live HUD …",
+      "**Vulkan: Local2D and window-space UI layers (#336, PRs #337, #339).** Filled through a plugin render event that copies into an external-memory overlay bridge on Unity's command buffer. Includes an `xrEndFrame` guard that disables wsui i…",
+      "**Several window-space UI layers at once (#336, PR #341):** up to four `DisplayXRWindowSpaceUI` slots, composited in slot order. Previously only the last registered one showed.",
+      "**`DisplayXRLocal2D.renderScale` (#340):** render the canvas at the size it is shown."
     ],
     "looksMechanical": false
   },
@@ -265,20 +283,6 @@
       "New `scripts/openpbr_mtlx_to_gltf.py` (developer tool, not included in the installers). It converts OpenUSD + MaterialX OpenPBR scenes, such as the ASWF OpenPBR Shader Playground, to `.glb`. It evaluates each MaterialX input graph per pi…",
       "Converter: per-tile UDIM materials, the OpenPBR transmission tint baked into `baseColor`, textured `transmission_weight` mapped onto `transmissionTexture`, and `--exclude` for skipping stray prims. (#157)",
       "Converter output is smaller (85 MB to 50 MB across nine Playground groups). This comes from `--jpeg-quality` for sRGB colour textures, byte-identical texture dedupe, and an opt-in per-material `--decimate`. A NaN guard drops degenerate t…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.4.6",
-    "repo": "displayxr-installer",
-    "tag": "v2.4.6",
-    "title": "DisplayXR v2.4.6",
-    "date": "2026-09-30",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.6",
-    "prerelease": false,
-    "featureLines": [
-      "This bundle updates the Windows stack to **runtime v2.21.15**. It is the only change since bundle **v2.4.5**; every other component is unchanged.",
-      "**Zoned sRGB apps look right under the spatial shell.** Apps that use display zones with an sRGB swapchain, such as the model viewer, are no longer composed too dark in the shell. They now look the same under the shell as they do standal…"
     ],
     "looksMechanical": false
   },
@@ -588,17 +592,6 @@
     "title": "DisplayXR v0.9.3",
     "date": "2026-09-17",
     "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.9.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unity@v2.19.3",
-    "repo": "displayxr-unity",
-    "tag": "v2.19.3",
-    "title": "DisplayXR v2.19.3",
-    "date": "2026-09-15",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.19.3",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true

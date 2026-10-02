@@ -38,8 +38,8 @@
   {
     "id": "browser",
     "name": "DisplayXR Browser",
-    "version": "v1.2.1",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.2.1",
+    "version": "v1.2.2",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.2.2",
     "releaseDate": "2026-10-02",
     "platforms": "Windows · Android",
     "repoUrl": "https://github.com/DisplayXR/displayxr-browser"
@@ -47,8 +47,8 @@
   {
     "id": "installer",
     "name": "All-in-one Installer",
-    "version": "v2.5.1",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.1",
+    "version": "v2.5.2",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.2",
     "releaseDate": "2026-10-02",
     "platforms": "Windows · macOS",
     "repoUrl": "https://github.com/DisplayXR/displayxr-installer"
