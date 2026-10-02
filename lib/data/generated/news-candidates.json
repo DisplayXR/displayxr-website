@@ -27,6 +27,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-earthview@v0.11.0",
+    "repo": "displayxr-demo-earthview",
+    "tag": "v0.11.0",
+    "title": "v0.11.0",
+    "date": "2026-10-02",
+    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.5.0",
     "repo": "displayxr-installer",
     "tag": "v2.5.0",
@@ -79,12 +90,18 @@
     "id": "displayxr-runtime@v2.22.2",
     "repo": "displayxr-runtime",
     "tag": "v2.22.2",
-    "title": "v2.22.2",
+    "title": "DisplayXR Runtime v2.22.2",
     "date": "2026-10-02",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.22.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Linux: the panel now switches to 2D for a browser's 2D tab** (#1775, fixes #1774). A windowless present-owner's (e.g. the DisplayXR browser's) `xrRequestDisplayModeDXR` never reached the weave engine's display processor: `multi_composi…",
+      "Such requests now go to the weave engine's DP immediately, and a request made before the first submit is applied at engine bring-up.",
+      "The hardware-state event is sent only after the DP confirms.",
+      "Runtime-only: every Linux browser user gets it without a browser update.",
+      "Verified on the DS1 panel: the lens turns off on a 2D tab and back on for a 3D tab."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.1.0",
@@ -456,17 +473,6 @@
     "title": "v0.13.2",
     "date": "2026-09-24",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.13.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-earthview@v0.9.1",
-    "repo": "displayxr-demo-earthview",
-    "tag": "v0.9.1",
-    "title": "v0.9.1",
-    "date": "2026-09-24",
-    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.9.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
