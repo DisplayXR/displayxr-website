@@ -124,6 +124,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-leia-plugin@v2.8.3",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.8.3",
+    "title": "v2.8.3",
+    "date": "2026-10-02",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.8.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.22.1",
     "repo": "displayxr-runtime",
     "tag": "v2.22.1",
@@ -188,17 +199,6 @@
     "title": "DisplayXR v2.4.7",
     "date": "2026-10-01",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.7",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.7.8",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.7.8",
-    "title": "v2.7.8",
-    "date": "2026-10-01",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.8",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
