@@ -7,8 +7,37 @@
     "date": "2026-10-02",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.2.0",
     "prerelease": false,
+    "featureLines": [
+      "**Convert to 3D (Windows).** Right-click an image or a video, including streaming video such as YouTube, and pick **Convert to 3D**. When the DisplayXR runtime carries a vendor 2D-to-3D conversion module (runtime v2.22.0 or later, with a…",
+      "The menu item is not offered where DisplayXR is absent, on DRM-protected video, or on a canvas (in this release). The live video path requires DisplayXR runtime v2.22.0.",
+      "\"Convert to 3D\" context-menu item for images and videos, with live in-place conversion through the runtime's conversion module and a bundled model path for photos. Windows only in this release; the Linux and Android builds do not show th…",
+      "The Windows installer downloads the default Convert-to-3D models into a shared model store (browser-pvt#216)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-browser@v1.2.1",
+    "repo": "displayxr-browser",
+    "tag": "v1.2.1",
+    "title": "DisplayXR Browser v1.2.1",
+    "date": "2026-10-02",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.2.1",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.5.0",
+    "repo": "displayxr-installer",
+    "tag": "v2.5.0",
+    "title": "DisplayXR v2.5.0",
+    "date": "2026-10-02",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.0",
+    "prerelease": false,
+    "featureLines": [
+      "This bundle ships **runtime v2.22.0** and the **vendor display plug-in v2.8.0**, which together add live **2D→3D conversion (\"Convert to 3D\")** for apps that use the new `XR_DXR_lift` extension (runtime-side hook for a vendor conversion …"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.1.0",
@@ -145,17 +174,6 @@
       "Converter output is smaller (85 MB to 50 MB across nine Playground groups). This comes from `--jpeg-quality` for sRGB colour textures, byte-identical texture dedupe, and an opt-in per-material `--decimate`. A NaN guard drops degenerate t…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.4.4",
-    "repo": "displayxr-installer",
-    "tag": "v2.4.4",
-    "title": "DisplayXR v2.4.4",
-    "date": "2026-09-30",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.4.4",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.4.5",
@@ -319,26 +337,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@v1.0.10",
-    "repo": "displayxr-browser",
-    "tag": "v1.0.10",
-    "title": "DisplayXR Browser v1.0.10",
-    "date": "2026-09-28",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.0.10",
-    "prerelease": false,
-    "featureLines": [
-      "**DisplayXR Browser on desktop Linux.** The first release with a Linux build: `displayxr-browser_1.0.10-1_amd64.deb` for Ubuntu 24.04 and 26.04 (GNOME). Web pages get the same glasses-free inline 3D as on Windows, woven through the Displ…",
-      "**Native Wayland and X11 / XWayland.** Inline 3D runs in native Wayland windows and in X11 or XWayland sessions. Dragging a 3D window keeps the weave aligned: the window's position is phase-snapped to the panel, and on Wayland the move i…",
-      "**Auto-3D, first phase (all desktop platforms).** On supported WebGL pages (three.js, PlayCanvas) the browser can offer to show the scene in 3D. The choice is per site and is controlled from a \"3D view\" icon in the address bar, **Ctrl+Sh…",
-      "Desktop Linux: GPU-process weave through `XR_DXR_weave` spec 12 (the woven origin comes back per frame), dma-buf frame hand-off and the woven draw-back (browser-pvt#163, browser-pvt#180, browser-pvt#167)",
-      "Desktop Linux: inline 3D is offered only on a panel the runtime drives. The page display-mode API, tab-driven panel 2D/3D switching and undocking to the native viewers all work as on Windows (browser-pvt#167)",
-      "Desktop Linux `.deb`: its own app id, profile and icons; no Google apt repository or cron job; a copyright file and third-party notices (browser-pvt#167)",
-      "The browser checks whether a DisplayXR runtime is installed before it starts. With none present, Windows no longer waits up to 8 s for the GPU-process window, and the auto-3D UI stays hidden. Linux uses the OpenXR loader's `active_runtim…",
-      "Auto-3D content settings (`auto-3d` and per-origin tuning), a renderer injector that runs at document start, and the desktop UI described above (browser-pvt#191, browser-pvt#198, browser-pvt#199, browser-pvt#200, browser-pvt#201)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.14.0",
