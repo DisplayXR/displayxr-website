@@ -40,6 +40,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-leia-plugin@v2.8.1",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.8.1",
+    "title": "v2.8.1",
+    "date": "2026-10-02",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.8.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.1.0",
     "repo": "displayxr-browser",
     "tag": "v1.1.0",
@@ -423,19 +434,6 @@
       "Linux: honour `--rect`, `--pose` and `--margin` on X11 and Wayland. `--rect` is clamped into the panel when the runtime confirms the desktop rect, `--pose` feeds the load-time framing (Space returns to it), and auto-orbit is held while t…",
       "Linux: `--src=<url>` downloads into `$XDG_CACHE_HOME/displayxr/modelviewer` (libcurl via dlopen; `.gltf` buffers and images fetched alongside), with `--max-bytes` / `--no-cache` and the launch URL policy. `--title` adds a suffix to the w…",
       "Repinned displayxr-common v2.24.0 → v2.25.0."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.7.6",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.7.6",
-    "title": "v2.7.6",
-    "date": "2026-09-27",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.6",
-    "prerelease": false,
-    "featureLines": [
-      "**Linux: correct colour in compose-under-capture.** The Vulkan display processor's compose-under-capture pass now blends the runtime's premultiplied atlas per OpenXR §10.6.2 (`Composite = Layer + Composite · (1 − Layer.A)`), in linear li…"
     ],
     "looksMechanical": false
   },
