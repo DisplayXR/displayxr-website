@@ -38,6 +38,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-mediaplayer@v1.13.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.13.0",
+    "title": "v1.13.0",
+    "date": "2026-10-02",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.13.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.5.0",
     "repo": "displayxr-installer",
     "tag": "v2.5.0",
@@ -506,17 +517,6 @@
     "title": "v1.28.2",
     "date": "2026-09-24",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.28.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.10.2",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.10.2",
-    "title": "v1.10.2",
-    "date": "2026-09-24",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.10.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
