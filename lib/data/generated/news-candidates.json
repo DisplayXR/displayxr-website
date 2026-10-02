@@ -34,8 +34,13 @@
     "date": "2026-10-02",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Linux: Google Map Tiles API-key dialog.** The first launch without a key, or **Ctrl+K** at any time, opens a dialog (zenity, with kdialog as a fallback) with the same flow as Windows and macOS: **Save & Start**, **Get a Key…** and **Re…",
+      "Linux API-key dialog for first run and Ctrl+K (#77)",
+      "The key is stored per user in `$XDG_CONFIG_HOME/displayxr/earthview.ini` (mode 0600). `GOOGLE_MAPS_API_KEY` still overrides it.",
+      "The `.deb` now Recommends `zenity`, and the package build refuses to bundle a key."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.13.0",
@@ -45,8 +50,10 @@
     "date": "2026-10-02",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.13.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Linux: the window now moves like the other demos.** The desktop Linux window gets the shared translucent rounded title bar; drag it by the title bar or with the right mouse button on both Wayland (move-synced) and X11 (phase-snapped). …"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.5.0",
@@ -79,6 +86,17 @@
     "title": "v2.8.1",
     "date": "2026-10-02",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.8.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.8.2",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.8.2",
+    "title": "v2.8.2",
+    "date": "2026-10-02",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.8.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -263,17 +281,6 @@
       "**Zoned sRGB apps look right under the spatial shell.** Apps that use display zones with an sRGB swapchain, such as the model viewer, are no longer composed too dark in the shell. They now look the same under the shell as they do standal…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.7.7",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.7.7",
-    "title": "v2.7.7",
-    "date": "2026-09-30",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.7.7",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-runtime@v2.21.15",
