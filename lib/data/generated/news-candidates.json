@@ -1,5 +1,18 @@
 [
   {
+    "id": "displayxr-installer@v2.5.4",
+    "repo": "displayxr-installer",
+    "tag": "v2.5.4",
+    "title": "DisplayXR v2.5.4",
+    "date": "2026-10-03",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.4",
+    "prerelease": false,
+    "featureLines": [
+      "Colour fix across the stack (ADR-044 §7): HUDs, toasts and window-space UI now composite correctly on the Vulkan path, and on macOS the shell's chrome and overlays do too. This bundle pairs the runtime fix with the matching shell and dem…"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-runtime@v2.23.0",
     "repo": "displayxr-runtime",
     "tag": "v2.23.0",
@@ -13,6 +26,17 @@
       "feat(weave): v13 review follow-ups — one flat-view rule, confirmed-state wording, fast hold test (#1796)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.24.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.24.0",
+    "title": "v2.24.0",
+    "date": "2026-10-03",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.24.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-shell-releases@v2.3.2",
@@ -137,19 +161,6 @@
       "**Open MaterialX OpenPBR USD scenes directly.** USD scenes whose materials are `.mtlx` references (for example the ASWF OpenPBR Shader Playground) now load natively, with no glTF export step. The loader composes subLayers, references, pa…",
       "Native MaterialX OpenPBR USD scene loading: a MaterialX-subset reader, a per-texel node-graph evaluator, and an OpenPBR material bake that mirrors `scripts/openpbr_mtlx_to_gltf.py` (#160, #70)",
       "`scripts/openpbr_mtlx_to_gltf.py`: GeomSubset materials and whole-scene conversion; applies the scene's USD overrides over the `.mtlx` and honours USD `doubleSided` (#70)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.5.0",
-    "repo": "displayxr-installer",
-    "tag": "v2.5.0",
-    "title": "DisplayXR v2.5.0",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.0",
-    "prerelease": false,
-    "featureLines": [
-      "This bundle ships **runtime v2.22.0** and the **vendor display plug-in v2.8.0**, which together add live **2D→3D conversion (\"Convert to 3D\")** for apps that use the new `XR_DXR_lift` extension (runtime-side hook for a vendor conversion …"
     ],
     "looksMechanical": false
   },
@@ -293,26 +304,6 @@
       "Lift tuning knobs readable from `HKLM\\SOFTWARE\\DisplayXR\\Leia\\Lift` (environment still wins), so a respawned service keeps them: `VideoModel` (NeurD 0.4.6 metric video model), `DepthGain` (default 2.0), `Dilate` (default 2) (#283)",
       "Logs which viewpoints each convert used (tracked / explicit / default) (#283)",
       "Windows build pinned to runtime v2.22.0"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.22.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.22.0",
-    "title": "DisplayXR Runtime v2.22.0",
-    "date": "2026-10-01",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.22.0",
-    "prerelease": false,
-    "featureLines": [
-      "New **`XR_DXR_lift`** extension (ADR-042): the runtime now exposes a vendor 2D→3D conversion (\"lift\") module. D3D11 display processors gain appended lift slots (`XRT_DP_D3D11_HAS_LIFT`; plug-in ABI stays **v5**), the D3D11 service runs a…",
-      "Also in this release: the Vulkan native compositor's DP input image now carries `TRANSFER_SRC` (a DP may blit from it), the sim_display D3D11 anaglyph/fake-lift shaders preserve atlas alpha (fixes black surround for present-owner weaves,…",
-      "feat(lift): `XR_DXR_lift` extension header, type-value block 1004999270-279, catalog note (ADR-042)",
-      "feat(lift): `u_lift_mailbox` — latest-wins input mailbox + pinned output ring state machine, with unit tests",
-      "feat(lift): D3D11 DP lift slots (`XRT_DP_D3D11_HAS_LIFT`), lift-only plug-in factory, sim_display FAKE lift",
-      "feat(lift): D3D11 service lift thread + mailbox/ring + IPC + `XR_DXR_lift` entry points",
-      "feat(lift): weave-rect lift chain, per-stream priority scheduling + stats, focal_px",
-      "feat(lift): `displayxr-cli lift caps` / `lift probe`, selftest `lift_caps` check"
     ],
     "looksMechanical": false
   },
