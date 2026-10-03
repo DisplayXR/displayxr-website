@@ -37,6 +37,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-installer@v2.5.7",
+    "repo": "displayxr-installer",
+    "tag": "v2.5.7",
+    "title": "DisplayXR v2.5.7",
+    "date": "2026-10-03",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.7",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.9.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.9.0",
@@ -52,21 +63,6 @@
       "Load without the SR platform, non-blocking probe, platform-state reporting (install-order epic) (#292)",
       "Order-independent install/uninstall via Restart Manager: no runtime gate, `/SD` on every MessageBox, `/NOSTART` honoured, `dxr-rm-close.exe` shipped and signed (#291)",
       "Repinned the Windows runtime to v2.24.0, which adds the platform-state slot and the Restart-Manager service (#293)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.23.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.23.0",
-    "title": "DisplayXR Runtime v2.23.0",
-    "date": "2026-10-03",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.23.0",
-    "prerelease": false,
-    "featureLines": [
-      "HUD / window-space layers on the in-process **Vulkan** compositor now composite in linear light and are sampled as their declared format, matching D3D11, D3D12 and GL (ADR-044 §7, #1795 / #1799). An `_SRGB` HUD now round-trips exactly (p…",
-      "feat(weave): v13 `XrWeaveSubmitMonoIn2DDXR` — one flat view while the panel is held 2D (#1796)",
-      "feat(weave): v13 review follow-ups — one flat-view rule, confirmed-state wording, fast hold test (#1796)"
     ],
     "looksMechanical": false
   },
@@ -106,9 +102,22 @@
     "id": "displayxr-runtime@v2.25.1",
     "repo": "displayxr-runtime",
     "tag": "v2.25.1",
-    "title": "v2.25.1",
+    "title": "DisplayXR Runtime v2.25.1",
     "date": "2026-10-03",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.25.1",
+    "prerelease": false,
+    "featureLines": [
+      "Patch release: the uninstaller no longer deletes the `DisplayProcessors` registry key as a whole, so a vendor plug-in installed alongside the runtime keeps its registration across a runtime uninstall/reinstall."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.25.2",
+    "repo": "displayxr-runtime",
+    "tag": "v2.25.2",
+    "title": "v2.25.2",
+    "date": "2026-10-03",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.25.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -249,17 +258,6 @@
       "`scripts/openpbr_mtlx_to_gltf.py`: GeomSubset materials and whole-scene conversion; applies the scene's USD overrides over the `.mtlx` and honours USD `doubleSided` (#70)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.5.3",
-    "repo": "displayxr-installer",
-    "tag": "v2.5.3",
-    "title": "DisplayXR v2.5.3",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-leia-plugin@v2.8.1",
