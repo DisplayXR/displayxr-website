@@ -20,8 +20,16 @@
     "date": "2026-10-03",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.9.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**No install order, no prerequisites.** The plug-in installs before or after the DisplayXR runtime, and before or after the LeiaSR platform. Uninstall works without the runtime too.",
+      "**The installer no longer kills things blindly.** It uses Windows Restart Manager (new `dxr-rm-close.exe` helper) to close whatever holds the plug-in DLL and restart it afterwards. It only brings the service back if the service was runni…",
+      "**Loads without the LeiaSR platform.** The plug-in reports a platform state with a hint (`PLATFORM_ABSENT` / `PLATFORM_NOT_RUNNING` / `NO_DISPLAY` / `READY`) to runtime ≥ v2.24.0 instead of failing to load. The probe no longer blocks, an…",
+      "**NeurD found when installed later.** If NeurD was absent when the plug-in started, it is detected once it is installed. A refused NeurD is re-checked when its DLL changes.",
+      "Load without the SR platform, non-blocking probe, platform-state reporting (install-order epic) (#292)",
+      "Order-independent install/uninstall via Restart Manager: no runtime gate, `/SD` on every MessageBox, `/NOSTART` honoured, `dxr-rm-close.exe` shipped and signed (#291)",
+      "Repinned the Windows runtime to v2.24.0, which adds the platform-state slot and the Restart-Manager service (#293)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.23.0",
@@ -63,6 +71,17 @@
     "title": "DisplayXR Shell v2.3.2",
     "date": "2026-10-03",
     "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.3.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity-samples@v2.3.0",
+    "repo": "displayxr-unity-samples",
+    "tag": "v2.3.0",
+    "title": "DisplayXR Unity Samples v2.3.0",
+    "date": "2026-10-03",
+    "url": "https://github.com/DisplayXR/displayxr-unity-samples/releases/tag/v2.3.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -717,17 +736,6 @@
       "on the avatar's 3D zone via the plugin's new `SetZoneFeather` API"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity-samples@v2.0.3",
-    "repo": "displayxr-unity-samples",
-    "tag": "v2.0.3",
-    "title": "DisplayXR Unity Samples v2.0.3",
-    "date": "2026-07-29",
-    "url": "https://github.com/DisplayXR/displayxr-unity-samples/releases/tag/v2.0.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-mcp@v0.5.2",

@@ -167,6 +167,13 @@
     "archived": false
   },
   {
+    "name": "displayxr-reference-scenes",
+    "description": "Reference scenes for demonstrating and validating open-standard 3D content (OpenUSD, MaterialX/OpenPBR, glTF) on 3D displays with DisplayXR",
+    "url": "https://github.com/DisplayXR/displayxr-reference-scenes",
+    "topics": [],
+    "archived": false
+  },
+  {
     "name": "displayxr-runtime",
     "description": "Lightweight OpenXR runtime for 3D displays · Windows, macOS, Android",
     "url": "https://github.com/DisplayXR/displayxr-runtime",
