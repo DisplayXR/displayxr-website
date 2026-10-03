@@ -3,9 +3,24 @@
     "id": "displayxr-runtime@v2.23.0",
     "repo": "displayxr-runtime",
     "tag": "v2.23.0",
-    "title": "v2.23.0",
+    "title": "DisplayXR Runtime v2.23.0",
     "date": "2026-10-03",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.23.0",
+    "prerelease": false,
+    "featureLines": [
+      "HUD / window-space layers on the in-process **Vulkan** compositor now composite in linear light and are sampled as their declared format, matching D3D11, D3D12 and GL (ADR-044 §7, #1795 / #1799). An `_SRGB` HUD now round-trips exactly (p…",
+      "feat(weave): v13 `XrWeaveSubmitMonoIn2DDXR` — one flat view while the panel is held 2D (#1796)",
+      "feat(weave): v13 review follow-ups — one flat-view rule, confirmed-state wording, fast hold test (#1796)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-shell-releases@v2.3.2",
+    "repo": "displayxr-shell-releases",
+    "tag": "v2.3.2",
+    "title": "DisplayXR Shell v2.3.2",
+    "date": "2026-10-03",
+    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.3.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -678,17 +693,6 @@
     "title": "v0.5.3",
     "date": "2026-08-14",
     "url": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.5.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-shell-releases@v2.1.1",
-    "repo": "displayxr-shell-releases",
-    "tag": "v2.1.1",
-    "title": "DisplayXR Shell v2.1.1",
-    "date": "2026-08-13",
-    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.1.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
