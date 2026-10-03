@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.23.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.23.0",
+    "title": "v2.23.0",
+    "date": "2026-10-03",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.23.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.2.0",
     "repo": "displayxr-browser",
     "tag": "v1.2.0",
@@ -107,8 +118,12 @@
     "date": "2026-10-02",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.33.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Open MaterialX OpenPBR USD scenes directly.** USD scenes whose materials are `.mtlx` references (for example the ASWF OpenPBR Shader Playground) now load natively, with no glTF export step. The loader composes subLayers, references, pa…",
+      "Native MaterialX OpenPBR USD scene loading: a MaterialX-subset reader, a per-texel node-graph evaluator, and an OpenPBR material bake that mirrors `scripts/openpbr_mtlx_to_gltf.py` (#160, #70)",
+      "`scripts/openpbr_mtlx_to_gltf.py`: GeomSubset materials and whole-scene conversion; applies the scene's USD overrides over the `.mtlx` and honours USD `doubleSided` (#70)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.5.0",
@@ -327,19 +342,6 @@
       "New `scripts/openpbr_mtlx_to_gltf.py` (developer tool, not included in the installers). It converts OpenUSD + MaterialX OpenPBR scenes, such as the ASWF OpenPBR Shader Playground, to `.glb`. It evaluates each MaterialX input graph per pi…",
       "Converter: per-tile UDIM materials, the OpenPBR transmission tint baked into `baseColor`, textured `transmission_weight` mapped onto `transmissionTexture`, and `--exclude` for skipping stray prims. (#157)",
       "Converter output is smaller (85 MB to 50 MB across nine Playground groups). This comes from `--jpeg-quality` for sRGB colour textures, byte-identical texture dedupe, and an opt-in per-material `--decimate`. A NaN guard drops degenerate t…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.21.15",
-    "repo": "displayxr-runtime",
-    "tag": "v2.21.15",
-    "title": "DisplayXR Runtime v2.21.15",
-    "date": "2026-09-30",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.21.15",
-    "prerelease": false,
-    "featureLines": [
-      "Apps that use display zones with an sRGB swapchain (for example the model viewer) no longer look too dark under the spatial shell on Windows. The service was sampling the zone through a decoding view with nothing re-encoding it, so a sou…"
     ],
     "looksMechanical": false
   },
