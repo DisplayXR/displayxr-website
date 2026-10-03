@@ -24,6 +24,19 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.5.6",
+    "repo": "displayxr-installer",
+    "tag": "v2.5.6",
+    "title": "DisplayXR v2.5.6",
+    "date": "2026-10-03",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.6",
+    "prerelease": false,
+    "featureLines": [
+      "**Runtime v2.25.0:** 2D overlay (Local2D) layers now honour their declared colour format on every backend (ADR-044 §7, runtime#1795 / #1809), and IPC/shell clients can now capture their own frame (#1810 / #1811)."
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-leia-plugin@v2.9.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.9.0",
@@ -79,9 +92,23 @@
     "id": "displayxr-runtime@v2.25.0",
     "repo": "displayxr-runtime",
     "tag": "v2.25.0",
-    "title": "v2.25.0",
+    "title": "DisplayXR Runtime v2.25.0",
     "date": "2026-10-03",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.25.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Local2D (2D overlay) layers now honour their declared colour format on every backend** (ADR-044 §7, #1795 / #1809) — D3D11, D3D12, GL and vk_native in-process (including vk_native's output-device split path), plus the D3D11 service's p…",
+      "**IPC / shell clients can now capture their own frame** (#1810 / #1811): per-app MCP `capture_frame`, the per-exe `displayxr_atlas_trigger.<exe>` file trigger, the service `workspace_screenshot_trigger` on client-present presenters, and …"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.25.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.25.1",
+    "title": "v2.25.1",
+    "date": "2026-10-03",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.25.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -224,17 +251,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-installer@v2.5.2",
-    "repo": "displayxr-installer",
-    "tag": "v2.5.2",
-    "title": "DisplayXR v2.5.2",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-installer@v2.5.3",
     "repo": "displayxr-installer",
     "tag": "v2.5.3",
@@ -277,23 +293,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.22.2",
-    "repo": "displayxr-runtime",
-    "tag": "v2.22.2",
-    "title": "DisplayXR Runtime v2.22.2",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.22.2",
-    "prerelease": false,
-    "featureLines": [
-      "**Linux: the panel now switches to 2D for a browser's 2D tab** (#1775, fixes #1774). A windowless present-owner's (e.g. the DisplayXR browser's) `xrRequestDisplayModeDXR` never reached the weave engine's display processor: `multi_composi…",
-      "Such requests now go to the weave engine's DP immediately, and a request made before the first submit is applied at engine bring-up.",
-      "The hardware-state event is sent only after the DP confirms.",
-      "Runtime-only: every Linux browser user gets it without a browser update.",
-      "Verified on the DS1 panel: the lens turns off on a 2D tab and back on for a 3D tab."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.21.0",
