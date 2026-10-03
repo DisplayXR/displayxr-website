@@ -13,6 +13,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-leia-plugin@v2.9.0",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.9.0",
+    "title": "v2.9.0",
+    "date": "2026-10-03",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.9.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.23.0",
     "repo": "displayxr-runtime",
     "tag": "v2.23.0",
@@ -31,12 +42,19 @@
     "id": "displayxr-runtime@v2.24.0",
     "repo": "displayxr-runtime",
     "tag": "v2.24.0",
-    "title": "v2.24.0",
+    "title": "DisplayXR Runtime v2.24.0",
     "date": "2026-10-03",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.24.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Install-order hardening (epic #1803): the runtime, its service and vendor display-processor plug-ins can now be installed, upgraded and removed in any order.",
+      "**Restart-Manager-aware service (#1793).** Third-party installers can close `displayxr-service` via `RmShutdown(RmForceShutdown)`, replace files it holds, and have it restarted non-elevated.",
+      "**Vendor plug-ins are always loadable and report a platform state (ADR-045, #1808).** Each plug-in reports `READY` / `PLATFORM_ABSENT` / `PLATFORM_NOT_RUNNING` / `NO_DISPLAY` plus a hint, surfaced in `displayxr-cli selftest` / `info`, th…",
+      "**The runtime uninstaller no longer cascades into vendor plug-ins** and no longer deletes their registrations (#1807).",
+      "feat(service): Restart Manager support so installers can close and restart the service (#1793)",
+      "feat(plugins): generic platform state + world-event re-probe (install-order epic) (#1808)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-shell-releases@v2.3.2",
@@ -287,25 +305,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.8.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.8.0",
-    "title": "v2.8.0",
-    "date": "2026-10-01",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.8.0",
-    "prerelease": false,
-    "featureLines": [
-      "**2D→3D conversion (\"lift\") on the D3D11 display processor.** The plug-in now implements the runtime's `XR_DXR_lift` display-processor slots, backed by NeurD: five appended, `struct_size`-gated DP slots plus a lift-only DP factory. NeurD…",
-      "**Plug-in ABI stays v5. Minimum runtime is now v2.22.0** (the first runtime release carrying the matching lift slots).",
-      "NeurD-backed 2D→3D lift module for the D3D11 DP, wired into the lift slots, plus a lift-only D3D11 DP factory (#283)",
-      "Runs on NeurD 0.3.11+ (`get_dx_device` optional, with its own bridge-device fallback); opt-in `DXR_LEIA_LIFT_INTERACTIVE_MIN` interactive gate (#283)",
-      "Lift tuning knobs readable from `HKLM\\SOFTWARE\\DisplayXR\\Leia\\Lift` (environment still wins), so a respawned service keeps them: `VideoModel` (NeurD 0.4.6 metric video model), `DepthGain` (default 2.0), `Dilate` (default 2) (#283)",
-      "Logs which viewpoints each convert used (tracked / explicit / default) (#283)",
-      "Windows build pinned to runtime v2.22.0"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.20.1",
