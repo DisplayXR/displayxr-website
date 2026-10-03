@@ -13,6 +13,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-installer@v2.5.5",
+    "repo": "displayxr-installer",
+    "tag": "v2.5.5",
+    "title": "DisplayXR v2.5.5",
+    "date": "2026-10-03",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.9.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.9.0",
@@ -63,6 +74,17 @@
       "feat(plugins): generic platform state + world-event re-probe (install-order epic) (#1808)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.25.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.25.0",
+    "title": "v2.25.0",
+    "date": "2026-10-03",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.25.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-shell-releases@v2.3.2",
@@ -202,17 +224,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-installer@v2.5.1",
-    "repo": "displayxr-installer",
-    "tag": "v2.5.1",
-    "title": "DisplayXR v2.5.1",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-installer@v2.5.2",
     "repo": "displayxr-installer",
     "tag": "v2.5.2",
@@ -266,20 +277,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.22.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.22.1",
-    "title": "DisplayXR Runtime v2.22.1",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.22.1",
-    "prerelease": false,
-    "featureLines": [
-      "**Native Wayland at integer scales on GNOME 46 / Ubuntu 24.04 now weaves in 3D (#1785).** Mutter's PHYSICAL layout mode (`layout-mode` 2, the default there when fractional scaling is off) reports window geometry in device pixels, and the…",
-      "**GNOME window-geometry extension v11** ships in the `.deb`. Its snapshot adds a top-level `layout_mode` and a `monitor.device_scale` field. Both are additive, so the schema version is unchanged. The drag lattice uses the same stage-to-d…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.22.2",
