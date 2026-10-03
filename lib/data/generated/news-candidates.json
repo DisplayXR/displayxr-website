@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-modelviewer@v0.34.0",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.34.0",
+    "title": "v0.34.0",
+    "date": "2026-10-03",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.34.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.5.4",
     "repo": "displayxr-installer",
     "tag": "v2.5.4",
@@ -115,12 +126,16 @@
     "id": "displayxr-runtime@v2.25.2",
     "repo": "displayxr-runtime",
     "tag": "v2.25.2",
-    "title": "v2.25.2",
+    "title": "DisplayXR Runtime v2.25.2",
     "date": "2026-10-03",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.25.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**2D under the lens.** A display processor can now composite the 2D over-layer inside the weave and band-limit it for the lens (new D3D11 DP slot `set_overlay_2d`, ADR-027 Amendment). `XR_DXR_weave` spec v14 adds `XrWeaveSubmitOverlayUnc…",
+      "feat(dp): `set_overlay_2d` — the DP may composite the 2D over-layer inside the weave (46a9b0dc5)",
+      "feat(weave): v14 `XrWeaveSubmitOverlayUnchangedDXR` — reuse the DP's 2D-layer prefilter (ed6db7a2d)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-shell-releases@v2.3.2",
@@ -508,25 +523,6 @@
       "**Right-button drag ends on release** — a drag started with the right mouse button now finishes when that button is released.",
       "**X11 drag steps land exactly** — each X11 drag step lands on its intended position.",
       "**X11 header-bar double-click maximises** the window."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.32.0",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.32.0",
-    "title": "v0.32.0",
-    "date": "2026-09-27",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.32.0",
-    "prerelease": false,
-    "featureLines": [
-      "The default look now matches the Khronos glTF Sample Viewer: 0 EV exposure and Khronos PBR Neutral tone mapping (#153).",
-      "Colour textures are filtered in linear light, as glTF 2.0 §3.9.2 requires (#152).",
-      "Linux placement and download flags, matching the Windows leg: `--rect`, `--pose` and `--margin` (the undock contract), plus `--src=<url>` download and `--title` (#151).",
-      "Smoother Linux drags via displayxr-common v2.25.0: support for Wayland move-sync, a drag ends on its button's release, X11 drag steps land exactly, and a double-click on the X11 header bar toggles maximise.",
-      "Linux: honour `--rect`, `--pose` and `--margin` on X11 and Wayland. `--rect` is clamped into the panel when the runtime confirms the desktop rect, `--pose` feeds the load-time framing (Space returns to it), and auto-orbit is held while t…",
-      "Linux: `--src=<url>` downloads into `$XDG_CACHE_HOME/displayxr/modelviewer` (libcurl via dlopen; `.gltf` buffers and images fetched alongside), with `--max-bytes` / `--no-cache` and the launch URL policy. `--title` adds a suffix to the w…",
-      "Repinned displayxr-common v2.24.0 → v2.25.0."
     ],
     "looksMechanical": false
   },
