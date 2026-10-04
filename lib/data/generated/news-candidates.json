@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.25.3",
+    "repo": "displayxr-runtime",
+    "tag": "v2.25.3",
+    "title": "v2.25.3",
+    "date": "2026-10-04",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.25.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.34.0",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.34.0",
@@ -7,8 +18,16 @@
     "date": "2026-10-03",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.34.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Models are now lit by their own lights.** A USD or glTF file that carries lights opens in the new **Scene** lighting mode, which renders up to 8 of the file's own lights instead of the viewer's built-in key/fill/rim and sky. The enviro…",
+      "**Scene lights cast shadows.** Each light gets a cube shadow map, so a room lit by a lamp, sun or moon no longer leaks light through its walls. Animated models update their shadows every frame.",
+      "Scene lighting mode: UsdLux sphere, rect, disk and distant lights, plus glTF `KHR_lights_punctual`. USD and glTF use one intensity model, so a native `.usd` and its converted `.glb` render the same (#70)",
+      "Scene lights also feed transmission and subsurface scattering, so glass, wax, paper and similar materials are lit correctly (#70)",
+      "USD render cameras are loaded. On macOS, `DXR_MODELVIEWER_CAMERA=<name|index>` starts the view at a file camera (#70)",
+      "The OpenPBR/MaterialX→glTF converter now writes `KHR_lights_punctual` from UsdLux lights (#70)",
+      "Per-light cube shadow maps with skinned and morphed casters. Transmissive materials cast no shadow (#70, L2)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.5.4",
@@ -74,24 +93,6 @@
       "Load without the SR platform, non-blocking probe, platform-state reporting (install-order epic) (#292)",
       "Order-independent install/uninstall via Restart Manager: no runtime gate, `/SD` on every MessageBox, `/NOSTART` honoured, `dxr-rm-close.exe` shipped and signed (#291)",
       "Repinned the Windows runtime to v2.24.0, which adds the platform-state slot and the Restart-Manager service (#293)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.24.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.24.0",
-    "title": "DisplayXR Runtime v2.24.0",
-    "date": "2026-10-03",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.24.0",
-    "prerelease": false,
-    "featureLines": [
-      "Install-order hardening (epic #1803): the runtime, its service and vendor display-processor plug-ins can now be installed, upgraded and removed in any order.",
-      "**Restart-Manager-aware service (#1793).** Third-party installers can close `displayxr-service` via `RmShutdown(RmForceShutdown)`, replace files it holds, and have it restarted non-elevated.",
-      "**Vendor plug-ins are always loadable and report a platform state (ADR-045, #1808).** Each plug-in reports `READY` / `PLATFORM_ABSENT` / `PLATFORM_NOT_RUNNING` / `NO_DISPLAY` plus a hint, surfaced in `displayxr-cli selftest` / `info`, th…",
-      "**The runtime uninstaller no longer cascades into vendor plug-ins** and no longer deletes their registrations (#1807).",
-      "feat(service): Restart Manager support so installers can close and restart the service (#1793)",
-      "feat(plugins): generic platform state + world-event re-probe (install-order epic) (#1808)"
     ],
     "looksMechanical": false
   },
