@@ -45,6 +45,19 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-reference-scenes@v0.2.0",
+    "repo": "displayxr-reference-scenes",
+    "tag": "v0.2.0",
+    "title": "Reference scenes v0.2.0",
+    "date": "2026-10-04",
+    "url": "https://github.com/DisplayXR/displayxr-reference-scenes/releases/tag/v0.2.0",
+    "prerelease": false,
+    "featureLines": [
+      "The first public set of reference scenes for 3D displays, built on open standards: OpenUSD, MaterialX / OpenPBR and glTF. Load any of them in the [DisplayXR model viewer](https://github.com/DisplayXR/displayxr-demo-modelviewer) **v0.35.0…"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-runtime@v2.25.3",
     "repo": "displayxr-runtime",
     "tag": "v2.25.3",
@@ -56,6 +69,17 @@
       "Two fixes; no new features. On macOS, stopping `displayxr-service` with SIGTERM while clients are connected now exits cleanly. Before this fix it hung or aborted in about 4 of 10 attempts. Also, `displayxr-cli lift caps` now has a hard t…"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.25.4",
+    "repo": "displayxr-runtime",
+    "tag": "v2.25.4",
+    "title": "v2.25.4",
+    "date": "2026-10-04",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.25.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-modelviewer@v0.34.0",
@@ -127,20 +151,6 @@
       "Load without the SR platform, non-blocking probe, platform-state reporting (install-order epic) (#292)",
       "Order-independent install/uninstall via Restart Manager: no runtime gate, `/SD` on every MessageBox, `/NOSTART` honoured, `dxr-rm-close.exe` shipped and signed (#291)",
       "Repinned the Windows runtime to v2.24.0, which adds the platform-state slot and the Restart-Manager service (#293)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.25.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.25.0",
-    "title": "DisplayXR Runtime v2.25.0",
-    "date": "2026-10-03",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.25.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Local2D (2D overlay) layers now honour their declared colour format on every backend** (ADR-044 §7, #1795 / #1809) — D3D11, D3D12, GL and vk_native in-process (including vk_native's output-device split path), plus the D3D11 service's p…",
-      "**IPC / shell clients can now capture their own frame** (#1810 / #1811): per-app MCP `capture_frame`, the per-exe `displayxr_atlas_trigger.<exe>` file trigger, the service `workspace_screenshot_trigger` on client-present presenters, and …"
     ],
     "looksMechanical": false
   },
