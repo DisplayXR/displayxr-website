@@ -45,6 +45,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-leia-plugin@v2.9.2",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.9.2",
+    "title": "v2.9.2",
+    "date": "2026-10-04",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.9.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-reference-scenes@v0.2.0",
     "repo": "displayxr-reference-scenes",
     "tag": "v0.2.0",
@@ -74,12 +85,15 @@
     "id": "displayxr-runtime@v2.25.4",
     "repo": "displayxr-runtime",
     "tag": "v2.25.4",
-    "title": "v2.25.4",
+    "title": "DisplayXR Runtime v2.25.4",
     "date": "2026-10-04",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.25.4",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "`XR_DXR_weave` spec v15: an app can now tune the display processor's lens filter of the 2D layer per submit (`XrWeaveSubmitOverlayFilterDXR`, 0 = no filtering .. 1 = full); omitted = the display processor's own default (Leia SR 1.38.0+18…",
+      "feat(weave): v15 `XrWeaveSubmitOverlayFilterDXR` — app-tunable lens-filter strength for the 2D layer (#1822)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.34.0",
@@ -318,17 +332,6 @@
       "`scripts/openpbr_mtlx_to_gltf.py`: GeomSubset materials and whole-scene conversion; applies the scene's USD overrides over the `.mtlx` and honours USD `doubleSided` (#70)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.8.2",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.8.2",
-    "title": "v2.8.2",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.8.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-leia-plugin@v2.8.3",
