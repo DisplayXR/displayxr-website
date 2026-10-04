@@ -1,14 +1,38 @@
 [
   {
-    "id": "displayxr-runtime@v2.25.3",
-    "repo": "displayxr-runtime",
-    "tag": "v2.25.3",
-    "title": "v2.25.3",
+    "id": "displayxr-installer@v2.5.8",
+    "repo": "displayxr-installer",
+    "tag": "v2.5.8",
+    "title": "DisplayXR v2.5.8",
     "date": "2026-10-04",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.25.3",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.8",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.9.1",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.9.1",
+    "title": "v2.9.1",
+    "date": "2026-10-04",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.9.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.25.3",
+    "repo": "displayxr-runtime",
+    "tag": "v2.25.3",
+    "title": "DisplayXR Runtime v2.25.3",
+    "date": "2026-10-04",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.25.3",
+    "prerelease": false,
+    "featureLines": [
+      "Two fixes; no new features. On macOS, stopping `displayxr-service` with SIGTERM while clients are connected now exits cleanly. Before this fix it hung or aborted in about 4 of 10 attempts. Also, `displayxr-cli lift caps` now has a hard t…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.34.0",
@@ -26,19 +50,6 @@
       "USD render cameras are loaded. On macOS, `DXR_MODELVIEWER_CAMERA=<name|index>` starts the view at a file camera (#70)",
       "The OpenPBR/MaterialX→glTF converter now writes `KHR_lights_punctual` from UsdLux lights (#70)",
       "Per-light cube shadow maps with skinned and morphed casters. Transmissive materials cast no shadow (#70, L2)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.5.4",
-    "repo": "displayxr-installer",
-    "tag": "v2.5.4",
-    "title": "DisplayXR v2.5.4",
-    "date": "2026-10-03",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.4",
-    "prerelease": false,
-    "featureLines": [
-      "Colour fix across the stack (ADR-044 §7): HUDs, toasts and window-space UI now composite correctly on the Vulkan path, and on macOS the shell's chrome and overlays do too. This bundle pairs the runtime fix with the matching shell and dem…"
     ],
     "looksMechanical": false
   },
@@ -274,17 +285,6 @@
       "`scripts/openpbr_mtlx_to_gltf.py`: GeomSubset materials and whole-scene conversion; applies the scene's USD overrides over the `.mtlx` and honours USD `doubleSided` (#70)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.8.1",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.8.1",
-    "title": "v2.8.1",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.8.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-leia-plugin@v2.8.2",
