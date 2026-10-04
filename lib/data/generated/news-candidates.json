@@ -17,6 +17,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-browser@v1.3.1",
+    "repo": "displayxr-browser",
+    "tag": "v1.3.1",
+    "title": "DisplayXR Browser v1.3.1",
+    "date": "2026-10-04",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.3.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.35.0",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.35.0",
@@ -239,22 +250,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@v1.2.0",
-    "repo": "displayxr-browser",
-    "tag": "v1.2.0",
-    "title": "DisplayXR Browser v1.2.0",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.2.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Convert to 3D (Windows).** Right-click an image or a video, including streaming video such as YouTube, and pick **Convert to 3D**. When the DisplayXR runtime carries a vendor 2D-to-3D conversion module (runtime v2.22.0 or later, with a…",
-      "The menu item is not offered where DisplayXR is absent, on DRM-protected video, or on a canvas (in this release). The live video path requires DisplayXR runtime v2.22.0.",
-      "\"Convert to 3D\" context-menu item for images and videos, with live in-place conversion through the runtime's conversion module and a bundled model path for photos. Windows only in this release; the Linux and Android builds do not show th…",
-      "The Windows installer downloads the default Convert-to-3D models into a shared model store (browser-pvt#216)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.2.1",
