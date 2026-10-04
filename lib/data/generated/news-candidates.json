@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.3.0",
+    "repo": "displayxr-browser",
+    "tag": "v1.3.0",
+    "title": "DisplayXR Browser v1.3.0",
+    "date": "2026-10-04",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.3.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.35.0",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.35.0",
@@ -52,8 +63,13 @@
     "date": "2026-10-04",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.9.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Apps can now tune the lens filter of 2D content under the lens (`XR_DXR_weave` v15, runtime v2.25.4+). Without a value, the Leia SR runtime's own default applies: 0.6 on SR 1.38.0+1874, the strength picked by eye on the panel.",
+      "D3D11 display processor implements `set_overlay_2d_filter_strength`. The app's strength is forwarded to `srWeaverSetComposeFilterStrength` right before the weave. The forward happens only when the value changes, because the SR setting is…",
+      "SR v2 SDK pin moved to `sr-sdk-v2-1.38.0.1874` (95 slots, append-only), with a new `DXR_LEIA_HAS_SR_COMPOSE_STRENGTH` header gate (#297).",
+      "Windows runtime pin moved to v2.25.4. The installer's `MIN_RUNTIME_VERSION` is now 2.25.4 (#297)."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-reference-scenes@v0.2.0",
@@ -359,17 +375,6 @@
       "**`DisplayXRLocal2D.renderScale` (#340):** render the canvas at the size it is shown."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.1.1",
-    "repo": "displayxr-browser",
-    "tag": "v1.1.1",
-    "title": "DisplayXR Browser v1.1.1",
-    "date": "2026-10-01",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.1.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.20.1",
