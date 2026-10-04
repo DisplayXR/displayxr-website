@@ -7,8 +7,14 @@
     "date": "2026-10-04",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.3.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Windows: the 2D page is now woven under the lens.** In 3D mode the browser hands the whole flat page (text, UI, scrims and frosted cards around and over inline-3D content) to the display processor, which composes it under the lens itse…",
+      "**Requirements:** this needs LeiaSR runtime **1.38.0+1874 or later**. With an earlier SR build, or a DisplayXR runtime that cannot compose the 2D layer, the browser falls back to the previous composite (it paints the page itself), so not…",
+      "Whole-page 2D overlay, **on by default on Windows**. Pages without any inline-3D content are unaffected apart from text anti-aliasing (below). Kill switch: launch with `--disable-inline-3d-dp-overlay-page` to restore the previous behavio…",
+      "The over-plane above inline-3D tiles is handed to the display processor through the same `XR_DXR_weave` overlay channel. (browser-pvt#226, browser-pvt#227)",
+      "Static frames reuse the display processor's cached lens prefilter of the 2D layer (`XR_DXR_weave` v14 \"overlay unchanged\"), so a page that is not changing costs no extra filtering. (browser-pvt#228)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.35.0",
