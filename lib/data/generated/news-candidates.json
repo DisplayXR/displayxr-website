@@ -1,5 +1,22 @@
 [
   {
+    "id": "displayxr-demo-modelviewer@v0.35.0",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.35.0",
+    "title": "v0.35.0",
+    "date": "2026-10-04",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.35.0",
+    "prerelease": false,
+    "featureLines": [
+      "**MaterialX colour spaces are honoured.** Colour inputs authored in sRGB or ACEScg now render in the correct linear Rec.709 working space, from both the native USD loader and the `openpbr_mtlx_to_gltf.py` converter.",
+      "**The full OpenPBR reference set loads natively.** All 83 `open_pbr_*.mtlx` examples (every one is an ACEScg document) now load on the ASWF StandardShaderBall.",
+      "MaterialX colour-space resolution: the nearest authored `colorspace` (input > node > document) is converted into `lin_rec709` — sRGB EOTF for `srgb_tx` / `srgb_texture`, MaterialX's `acescg_to_lin_rec709` for `acescg` / `lin_ap1` (clippe…",
+      "USD loader accepts `..` asset paths, and no longer hands `.mtlx` references to tinyusdz, whose reader rejected the valid `open_pbr_default.mtlx` and failed the whole stage (#165)",
+      "The OpenPBR Shader Playground render is unchanged."
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-installer@v2.5.8",
     "repo": "displayxr-installer",
     "tag": "v2.5.8",
@@ -18,8 +35,14 @@
     "date": "2026-10-04",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.9.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**2D under the lens.** With runtime v2.25.2+ and LeiaSR runtime 1.38.0+1867+, flat 2D content composited over/around woven 3D (page text, labels) is now composited and band-limited *inside* the SR weave instead of painted after it, so it…",
+      "D3D11 DP implements the runtime's `set_overlay_2d` slot and forwards the 2D over-layer to `srWeaverSetComposeInputsDX11`, preferring compose order `2D_OVER_COVERAGE` (exact coverage alpha) with a fallback to `2D_OVER` on older SR runtime…",
+      "`XR_DXR_weave` v14 overlay-unchanged is forwarded to `srWeaverSetComposeLayerUnchanged`, so a static page reuses SR's cached prefilter (#295)",
+      "The alpha gate keeps the in-weave 2D layer instead of punching it out where no view has content (#295)",
+      "GL and Vulkan DPs pass view 0 through unwoven while the platform state is `NO_DISPLAY` and resume weaving on `READY`, matching the D3D11/D3D12 DPs (#296)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.25.3",
@@ -443,17 +466,6 @@
     "title": "v1.11.1",
     "date": "2026-09-29",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.11.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.32.1",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.32.1",
-    "title": "v0.32.1",
-    "date": "2026-09-29",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.32.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
