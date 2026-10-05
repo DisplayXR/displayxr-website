@@ -1,7 +1,12 @@
 import { Button } from "@/components/ui/Button";
 import { DownloadButton } from "@/components/download/DownloadButton";
+import { NewsTicker } from "@/components/home/NewsTicker";
+import { getBannerNews } from "@/lib/data/news";
 
 export function Hero() {
+  // Filtered server-side; renders nothing once the pool ages out.
+  const news = getBannerNews();
+
   return (
     <section className="relative overflow-hidden">
       {/* Hero background animation (ping-pong palindrome loop) */}
@@ -28,12 +33,23 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-[1200px] px-6 md:px-12 pt-28 pb-36 md:pt-36 md:pb-44">
         <div className="max-w-3xl">
+          <NewsTicker items={news} />
           <h1 className="hero-animate text-4xl md:text-6xl lg:text-7xl font-display tracking-tight text-text-primary leading-[1.05] mb-6">
             OpenXR for Spatial Displays
           </h1>
+          {/* What DisplayXR IS, in one breath. "Agent-ready" is the honest form
+              of the agentic claim: an MCP server is built into the runtime
+              (per-app introspection, XR_DXR_mcp_tools) and the shell, opt-in
+              via the MCP Tools installer; the browser is not part of it. */}
           <p className="hero-animate hero-animate-delay-1 text-lg md:text-xl text-text-secondary leading-relaxed mb-10 max-w-2xl">
-            An open-source OpenXR runtime for any spatial display, plus a
-            browser that turns a few lines of JavaScript into shareable 3D.
+            <span className="text-text-primary font-medium">
+              Write once. Run on any spatial display.
+            </span>{" "}
+            DisplayXR is the OpenXR extensions spatial displays need, an
+            open-source reference runtime, Unity and Unreal plug-ins, and a
+            browser for 3D on the web. Portable across engines, graphics APIs
+            and display makers, and agent-ready, with MCP built into the
+            runtime.
           </p>
           <div className="hero-animate hero-animate-delay-2 flex flex-wrap gap-4">
             <DownloadButton />

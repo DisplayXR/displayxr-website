@@ -62,6 +62,9 @@ export default function BrowserPage() {
           className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#050507]/85 via-[#050507]/45 to-transparent"
         />
         <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[#050507]" />
+        {/* Soft right edge: a splat lifted from one photo has ragged borders on wide screens. */}
+        <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 w-[12%] bg-gradient-to-l from-[#050507]/80 to-transparent" />
+        <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 w-[6%] bg-gradient-to-r from-[#050507] to-transparent" />
         <div className="pointer-events-none relative z-10 mx-auto flex min-h-[88vh] max-w-[1200px] items-center px-6 md:px-12 py-24">
           <div className="max-w-xl">
             <Eyebrow>DisplayXR Browser</Eyebrow>
