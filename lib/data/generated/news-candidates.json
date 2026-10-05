@@ -14,12 +14,20 @@
     "id": "displayxr-runtime@v2.26.0",
     "repo": "displayxr-runtime",
     "tag": "v2.26.0",
-    "title": "v2.26.0",
+    "title": "DisplayXR Runtime v2.26.0",
     "date": "2026-10-05",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.26.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Linux: 2D under the lens (#1823).** The Vulkan display-processor interface gains an appended `set_overlay_2d` slot plus `set_overlay_2d_filter_strength` (feature macros `XRT_DP_VK_HAS_OVERLAY_2D` / `XRT_DP_VK_HAS_OVERLAY_2D_FILTER_STRE…",
+      "The Linux weave engine now offers a window-sized 2D over-layer to the DP, so a vendor weaver can composite and lens-filter it inside the weave. If the DP declines, the runtime blends it after the weave as before.",
+      "The v14 \"layer unchanged\" and v15 filter-strength hints now reach the DP on Linux.",
+      "With the Leia plug-in's SR compose path, 2D text over 3D content is legible through the lens instead of fringed (verified on the Acer SpatialLabs DS1).",
+      "**XR_DXR_weave spec v16 (#1825).** The Linux engine now refuses a submit whose overlay it cannot import. It no longer drops the overlay silently and reports success.",
+      "feat(vk dp, weave/linux): `set_overlay_2d` VK slot, giving 2D under the lens on Vulkan (94fc02248, #1823)",
+      "feat(d3d11_service): per-stage weave timing under `DXR_WEAVE_GPU_TIMING` (2D-under-the-lens P0) (#1824)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.3.0",
