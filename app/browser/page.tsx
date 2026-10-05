@@ -25,7 +25,7 @@ import type { ReactNode } from "react";
 export const metadata: Metadata = {
   title: "DisplayXR Browser",
   description:
-    "A Chromium-based browser for spatial displays. 3D products, movies, photos, maps and video calls appear right inside the page, and every other site works exactly as it does today.",
+    "A Chromium-based browser for spatial displays. 3D products, movies, photos and video calls appear right inside the page, and every other site works exactly as it does today.",
 };
 
 // A product page, not a docs page (design spec §1): full-bleed bands, big
@@ -70,7 +70,7 @@ export default function BrowserPage() {
             </h1>
             <p className="mb-10 text-lg md:text-xl leading-relaxed text-white/85 drop-shadow">
               A Chromium-based browser for spatial displays. 3D models, movies,
-              photos, maps and video calls appear right inside the page, and
+              photos and video calls appear right inside the page, and
               every other site works exactly as it does today.
             </p>
             <div className="pointer-events-auto mb-4 flex flex-wrap gap-4">
