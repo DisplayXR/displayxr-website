@@ -17,10 +17,13 @@ import Image from "next/image";
  *     raw side-by-side frame ever shows;
  *  3. the canvas lives in a memoized child React never re-renders over.
  *
- * Interaction: in 2D the mouse position over the hero drives the SDK's eye
- * offset (setViewOffset, a head-parallax analogue), eased, so near content
- * slides against far content without a click; dragging still orbits. In
- * woven 3D the head tracker owns the eyes and the offset draws nothing.
+ * Interaction: in 2D the SDK's eye offset (setViewOffset, a head-parallax
+ * analogue) is driven, eased, by the mouse position over the hero on desktop
+ * and by the phone's tilt on touch devices, so near content slides against
+ * far content. iOS only grants motion access from a user gesture, so the
+ * permission is requested synchronously inside the "Try 3D" tap; if it is
+ * refused (or there is no gyroscope) dragging still orbits. In woven 3D the
+ * head tracker owns the eyes and the offset draws nothing.
  *
  * Performance: the poster is the LCP. The SDK, its engine and the .sog
  * (~10 MB) load only on idle and only with a fine pointer; touch devices keep
@@ -82,6 +85,27 @@ export function HeroSplat() {
   const [phase, setPhase] = useState<Phase>("poster");
   const [supported, setSupported] = useState<boolean | null>(null);
   const [touch, setTouch] = useState(false);
+  // Device-orientation access on touch devices: null until asked.
+  const [tilt, setTilt] = useState<"granted" | "denied" | null>(null);
+  const tiltRef = useRef<Promise<"granted" | "denied"> | null>(null);
+
+  // MUST run synchronously inside the tap: iOS rejects a permission request
+  // made after an await. Android and others need no permission.
+  function requestTilt() {
+    if (tiltRef.current) return;
+    const DOE = (window as Window & {
+      DeviceOrientationEvent?: { requestPermission?: () => Promise<"granted" | "denied"> };
+    }).DeviceOrientationEvent;
+    if (!DOE) tiltRef.current = Promise.resolve("denied");
+    else if (typeof DOE.requestPermission === "function")
+      tiltRef.current = DOE.requestPermission().catch(() => "denied" as const);
+    else tiltRef.current = Promise.resolve("granted");
+  }
+
+  function onTryTap() {
+    requestTilt();
+    void start();
+  }
 
   async function start() {
     if (startedRef.current || !canvasRef.current) return;
@@ -125,7 +149,15 @@ export function HeroSplat() {
       // In the DisplayXR Browser, hold the poster until the first woven frame.
       if (wall.supported && handle.firstWoven) await handle.firstWoven;
       setPhase("live");
-      if (!wall.supported && !calmRef.current) startParallax(handle);
+      if (!wall.supported && !calmRef.current) {
+        if (tiltRef.current) {
+          const t = await tiltRef.current;
+          setTilt(t);
+          if (t === "granted") startTilt(handle);
+        } else {
+          startParallax(handle);
+        }
+      }
     } catch (err) {
       console.warn("[browser-hero] splat unavailable, keeping the poster:", err);
       setPhase("failed");
@@ -188,6 +220,45 @@ export function HeroSplat() {
     };
   }
 
+  // Phone tilt → eye offset. The first reading is the rest pose, and the
+  // rest pose drifts slowly toward however the phone is being held, so the
+  // view re-centres instead of getting stuck at an edge. ±TILT_DEG of tilt
+  // reaches the same comfort-limited offset as the mouse does.
+  function startTilt(handle: SplatHandleLike) {
+    if (!handle.setViewOffset) return;
+    const TILT_DEG = 18;
+    let rest: { a: number; b: number } | null = null;
+    let tx = 0, ty = 0, x = 0, y = 0, raf = 0;
+    const clamp = (v: number) => Math.max(-1, Math.min(1, v));
+    const onOrient = (e: DeviceOrientationEvent) => {
+      if (e.beta == null || e.gamma == null) return;
+      // Map to screen axes for the current orientation: a = left/right, b = toward/away.
+      const angle =
+        (screen.orientation?.angle ?? (window as Window & { orientation?: number }).orientation ?? 0) % 360;
+      const [a, b] =
+        angle === 90 ? [e.beta, -e.gamma] : angle === 270 || angle === -90 ? [-e.beta, e.gamma] : [e.gamma, e.beta];
+      if (!rest) rest = { a, b };
+      rest.a += (a - rest.a) * 0.01;
+      rest.b += (b - rest.b) * 0.01;
+      // Tilting the right edge away moves the eye to the left of the glass,
+      // tilting the top away moves it down: the scene behaves like a window.
+      tx = -clamp((a - rest.a) / TILT_DEG) * MAX_X;
+      ty = -clamp((b - rest.b) / TILT_DEG) * MAX_Y;
+    };
+    const tick = () => {
+      x += (tx - x) * 0.12;
+      y += (ty - y) * 0.12;
+      handle.setViewOffset?.({ x, y });
+      raf = requestAnimationFrame(tick);
+    };
+    window.addEventListener("deviceorientation", onOrient);
+    raf = requestAnimationFrame(tick);
+    stopRef.current = () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("deviceorientation", onOrient);
+    };
+  }
+
   useEffect(
     () => () => {
       stopRef.current?.();
@@ -214,15 +285,20 @@ export function HeroSplat() {
         {phase === "live" && supported && <p>You&apos;re seeing this in 3D.</p>}
         {phase === "live" && supported === false && (
           <p>
-            Move your mouse to look around this scene. Open this page in the
-            DisplayXR Browser on a spatial display and it comes out of the page.
+            {!touch
+              ? "Move your mouse to look around this scene."
+              : tilt === "granted"
+                ? "Tilt your phone to look around this scene."
+                : "Drag to look around this scene."}{" "}
+            Open this page in the DisplayXR Browser on a spatial display and it
+            comes out of the page.
           </p>
         )}
       </div>
       {touch && phase === "poster" && (
         <button
           type="button"
-          onClick={() => void start()}
+          onClick={onTryTap}
           className="absolute bottom-6 right-6 z-10 rounded-full border border-white/40 bg-black/40 px-4 py-2 text-sm text-white backdrop-blur"
         >
           Try 3D
