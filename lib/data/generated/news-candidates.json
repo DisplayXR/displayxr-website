@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-browser@v1.4.0",
+    "repo": "displayxr-browser",
+    "tag": "v1.4.0",
+    "title": "DisplayXR Browser v1.4.0",
+    "date": "2026-10-05",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.4.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.9.3",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.9.3",
@@ -18,8 +29,10 @@
     "date": "2026-10-05",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.9.3",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Optional per-stage weave timing diagnostics: set `DXR_WEAVE_GPU_TIMING=1` to log GPU time per weave stage (D3D11). Off by default, no cost when unset. (#302)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.26.0",
@@ -277,17 +290,6 @@
     "title": "DisplayXR Unity Samples v2.3.0",
     "date": "2026-10-03",
     "url": "https://github.com/DisplayXR/displayxr-unity-samples/releases/tag/v2.3.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@v1.2.2",
-    "repo": "displayxr-browser",
-    "tag": "v1.2.2",
-    "title": "DisplayXR Browser v1.2.2",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.2.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
