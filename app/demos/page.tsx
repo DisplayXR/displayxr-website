@@ -246,7 +246,7 @@ export default function DemosPage() {
           <p className="text-sm text-text-secondary leading-relaxed">
             <strong className="text-text-primary">Building for the browser?</strong>{" "}
             <a
-              href="/web"
+              href="/browser"
               className="text-accent hover:text-accent-hover underline underline-offset-2"
             >
               3D on the web

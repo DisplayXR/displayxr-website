@@ -58,7 +58,7 @@ audience, each opening on that audience's recommended next step:
   Developers; `/architecture`, `/roadmap`, `/governance` → Contribute). Exactly
   one entry highlights as active (first match).
 - `/developers` opens on the web path (recommended) with the inline3d snippet,
-  then native, then engines. `/web` is the DisplayXR Browser's home (it absorbed
+  then native, then engines. `/browser` is the DisplayXR Browser's home (it absorbed
   `/webxr`). `/getting-started` stays live until `/developers/native` replaces it.
 - `/download` is OS-detected client-side over a server render of every
   platform, and shows **two ordered installs**: DisplayXR (the bundle), then the

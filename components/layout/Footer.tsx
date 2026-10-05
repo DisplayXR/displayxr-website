@@ -5,7 +5,7 @@ import { DISCUSSIONS_URL, DOCS_URL, GITHUB_ORG_URL, REPO_URLS } from "@/lib/cons
 const footerLinks = {
   Developers: [
     { label: "Developers", href: "/developers" },
-    { label: "3D on the web", href: "/web" },
+    { label: "3D on the web", href: "/browser" },
     { label: "Download", href: "/download" },
     { label: "Extensions", href: "/extensions" },
     { label: "Demos", href: "/demos" },

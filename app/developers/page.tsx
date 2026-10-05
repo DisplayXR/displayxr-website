@@ -80,7 +80,7 @@ export default function DevelopersPage() {
           </p>
           <CodeSnippet code={HELLO_WORLD} label="index.html" />
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button href="/web">The web, in depth</Button>
+            <Button href="/browser#build">Full guide</Button>
             <Button variant="secondary" href="/download">
               Get the browser
             </Button>

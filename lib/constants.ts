@@ -26,6 +26,9 @@ export const isMenu = (e: NavEntry): e is NavMenu =>
 
 export const NAV: NavEntry[] = [
   { label: "About", href: "/about" },
+  // The DisplayXR Browser has its own always-visible tab, second because it is
+  // the most demo-able thing (David, 2026-10-04; order is his call).
+  { label: "Browser", href: "/browser" },
   {
     label: "Developers",
     href: "/developers",
@@ -37,9 +40,6 @@ export const NAV: NavEntry[] = [
     match: ["/architecture", "/roadmap", "/governance"],
   },
   { label: "Display Vendors", href: "/vendors" },
-  // The DisplayXR Browser has its own always-visible tab (David, 2026-10-04).
-  // Route name pending (/web vs /browser).
-  { label: "Browser", href: "/web" },
 ];
 
 // Deep docs live in the runtime repo; the site summarizes and routes.

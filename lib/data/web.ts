@@ -1,7 +1,7 @@
 // Authored content for the web story: the browser, the @displayxr/inline3d
 // SDK, and the use-case grid. Shared by /web, /developers and the homepage's
 // "3D on the web" section so the three never drift apart.
-import { INLINE3D_VERSION } from "@/lib/constants";
+import { GALLERY_URL, INLINE3D_VERSION, WEB_SAMPLES_URL } from "@/lib/constants";
 import { components, type ComponentDownload } from "@/lib/data/generated";
 
 export const HELLO_WORLD_INSTALL = `npm install @displayxr/inline3d@${INLINE3D_VERSION} playcanvas`;
@@ -41,47 +41,71 @@ export const SDK_MODULES: SdkModule[] = [
 ];
 
 export type UseCase = {
-  id: "shop" | "watch" | "call" | "photos";
+  id: "shop" | "watch" | "call" | "photos" | "explore";
   title: string;
+  /** One-line mainstream pitch. */
+  pitch: string;
   body: string;
   /** SDK entry point that delivers it. */
   module: string;
-  sample: string;
+  href: string;
+  image: string;
 };
 
-// From the browser feature catalog (2026-10-04). Guardrails that shape this
-// copy: model / player / call are preview tier; call depth comes only from a
-// stereo-camera sender (plain webcams stay 2D); 3D movies means self-hosted
-// SBS / top-bottom video (no DRM, so no commercial streaming services); the
-// storefront demo is not linked until it has our own assets.
+const sample = (p: string) => `${WEB_SAMPLES_URL}samples/${p}/`;
+
+// From the browser feature catalog and the /browser design spec (2026-10-04).
+// Guardrails that shape this copy: model / player / call are preview tier;
+// call depth comes only from a stereo-camera sender (plain webcams stay 2D);
+// 3D movies means self-hosted SBS / top-bottom video (no DRM, so no
+// commercial streaming services). "Play" stays out until the Arcade demo is
+// rehosted under the org. Images are concept illustrations until our own
+// stereo captures exist (scripts/make-wiggle.sh turns those into loops).
 export const USE_CASES: UseCase[] = [
   {
     id: "shop",
     title: "Shop",
-    body: "See the product, not a photo of it. A 3D viewer for the glTF models your store already serves, right in the product page.",
+    pitch: "See the product, not a photo of it.",
+    body: "A 3D viewer for the glTF models your store already serves, right in the product page.",
     module: "/model",
-    sample: "samples/model/",
+    href: sample("model"),
+    image: "/art/browser/uc-shop.webp",
   },
   {
     id: "watch",
     title: "Watch",
-    body: "3D movies, right in the page. Side-by-side and top-bottom 3D video plays in 3D, with ordinary player controls.",
+    pitch: "3D movies, right in the page.",
+    body: "Side-by-side and top-bottom 3D video plays in 3D, with ordinary player controls.",
     module: "/player",
-    sample: "samples/player/",
+    href: sample("player"),
+    image: "/art/browser/uc-watch.webp",
   },
   {
     id: "call",
     title: "Call",
-    body: "A video call with real depth. A caller with a stereo camera appears in 3D; everyone else joins in 2D from any browser.",
+    pitch: "Face to face, in depth.",
+    body: "A caller with a stereo camera appears in 3D; everyone else joins in 2D from any browser.",
     module: "/call",
-    sample: "samples/call-embed/",
+    href: sample("call-embed"),
+    image: "/art/browser/uc-call.webp",
   },
   {
     id: "photos",
     title: "Photos",
-    body: "3D photos, the way they were taken. Stereo photos show in 3D in a feed, and as ordinary photos everywhere else.",
+    pitch: "Your 3D photos, the way they were taken.",
+    body: "Stereo photos show in 3D in a feed, and as ordinary photos everywhere else.",
     module: "@displayxr/inline3d",
-    sample: "samples/wall-3d/",
+    href: GALLERY_URL,
+    image: "/art/browser/uc-photos.webp",
+  },
+  {
+    id: "explore",
+    title: "Explore",
+    pitch: "Places and ideas you can look around.",
+    body: "Scenes you move through, from heritage sites to the solar system, with your own renderer.",
+    module: "addScene + /three",
+    href: sample("camera-rig"),
+    image: "/art/browser/uc-explore.webp",
   },
 ];
 
