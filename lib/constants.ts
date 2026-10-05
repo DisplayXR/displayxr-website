@@ -52,7 +52,7 @@ export const DISCUSSIONS_URL = "https://github.com/DisplayXR/displayxr-runtime/d
 export const WEB_SAMPLES_URL = "https://displayxr.github.io/displayxr-web/";
 
 // Pinned SDK version shown in snippets. Bump with the browser's SDK pin policy.
-export const INLINE3D_VERSION = "1.29.0";
+export const INLINE3D_VERSION = "1.30.0";
 
 export const DOWNLOAD_HREF = "/download";
 

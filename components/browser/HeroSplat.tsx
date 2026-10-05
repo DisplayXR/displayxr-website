@@ -83,7 +83,7 @@ export function HeroSplat() {
     try {
       const [{ sharedInline3D }, { addSplat }] = await Promise.all([
         import("@displayxr/inline3d"),
-        import("@displayxr/inline3d/splat"),
+        import("@displayxr/inline3d/splat/playcanvas"),
       ]);
       const wall = await sharedInline3D();
       setSupported(wall.supported);
@@ -124,7 +124,13 @@ export function HeroSplat() {
     const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     setTouch(!fine);
     calmRef.current = calm;
-    if (!fine) return;
+    // Same rule as the homepage video: don't auto-fetch ~10 MB on Save-Data or
+    // a 2g-class link (feature-detected; Safari has no navigator.connection).
+    const conn = (navigator as Navigator & {
+      connection?: { saveData?: boolean; effectiveType?: string };
+    }).connection;
+    const slow = !!conn && (conn.saveData === true || conn.effectiveType === "2g" || conn.effectiveType === "slow-2g");
+    if (!fine || slow) return;
     const ric =
       (window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number })
         .requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1200));
@@ -179,7 +185,7 @@ export function HeroSplat() {
   );
 
   return (
-    <div className="absolute inset-0">
+    <div className="absolute inset-0" data-hero-phase={phase}>
       <SplatCanvas canvasRef={canvasRef} />
       <Image
         src={POSTER}
