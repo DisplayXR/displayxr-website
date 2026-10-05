@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-leia-plugin@v2.9.3",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.9.3",
+    "title": "v2.9.3",
+    "date": "2026-10-05",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.9.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.26.0",
     "repo": "displayxr-runtime",
     "tag": "v2.26.0",
@@ -357,17 +368,6 @@
       "`scripts/openpbr_mtlx_to_gltf.py`: GeomSubset materials and whole-scene conversion; applies the scene's USD overrides over the `.mtlx` and honours USD `doubleSided` (#70)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.8.3",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.8.3",
-    "title": "v2.8.3",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.8.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.21.0",
