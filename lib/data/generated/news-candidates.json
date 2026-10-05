@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.3.2",
+    "repo": "displayxr-browser",
+    "tag": "v1.3.2",
+    "title": "DisplayXR Browser v1.3.2",
+    "date": "2026-10-05",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.3.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.3.0",
     "repo": "displayxr-browser",
     "tag": "v1.3.0",
@@ -24,8 +35,10 @@
     "date": "2026-10-04",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.3.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Windows: the 2D-under-the-lens page from 1.3.0 is now cached while only 3D content animates.** The whole-page 2D layer is reused as long as the flat content around and over inline-3D tiles has not changed, so the display processor re-r…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.35.0",
@@ -247,17 +260,6 @@
     "title": "DisplayXR Unity Samples v2.3.0",
     "date": "2026-10-03",
     "url": "https://github.com/DisplayXR/displayxr-unity-samples/releases/tag/v2.3.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@v1.2.1",
-    "repo": "displayxr-browser",
-    "tag": "v1.2.1",
-    "title": "DisplayXR Browser v1.2.1",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.2.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
