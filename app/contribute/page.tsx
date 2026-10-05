@@ -253,7 +253,7 @@ export default function ContributePage() {
           </h2>
           <p className="mb-6 text-sm text-text-secondary leading-relaxed">
             The deep guides live in the runtime repo; these are the entry
-            points. (Writing a plug-in for a 3D-display panel instead? See the{" "}
+            points. (Writing a plug-in for a spatial-display panel instead? See the{" "}
             <a
               href="/vendors"
               className="text-accent hover:text-accent-hover underline underline-offset-2"

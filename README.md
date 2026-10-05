@@ -26,7 +26,9 @@ npm run start
 - `app/demos/` — demo apps and engine sample scenes
 - `app/compatibility/` — device and platform support matrix
 - `app/roadmap/` — release timeline (data in `lib/data/roadmap.ts`)
-- `app/docs/` — entry point to repo-based docs
+- `app/developers/` — developer hub (web first, then native and engines)
+- `app/browser/` — the DisplayXR Browser and the inline3d SDK
+- `app/about/` — what a spatial display is and why DisplayXR is built this way
 - `lib/data/` — typed content for ecosystem, roadmap, devices, compatibility
 - `lib/constants.ts` — repo URLs and nav
 

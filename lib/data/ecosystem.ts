@@ -22,7 +22,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-extensions",
     repo: "DisplayXR/displayxr-extensions",
     description:
-      "OpenXR extension specs and headers for tracked spatial display capabilities.",
+      "OpenXR extension specs and headers for spatial display capabilities.",
     url: "https://github.com/DisplayXR/displayxr-extensions",
     category: "core",
   },
@@ -66,7 +66,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-demo-modelviewer",
     repo: "DisplayXR/displayxr-demo-modelviewer",
     description:
-      "Glasses-free 3D glTF 2.0 PBR model viewer (OpenXR + Vulkan). Drag-and-drop a .glb / .gltf model. Windows, macOS, Linux, Android.",
+      "3D glTF 2.0 PBR model viewer (OpenXR + Vulkan). Drag-and-drop a .glb / .gltf model. Windows, macOS, Linux, Android.",
     url: "https://github.com/DisplayXR/displayxr-demo-modelviewer",
     category: "demos",
     status: "active",
@@ -93,7 +93,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-demo-earthview",
     repo: "DisplayXR/displayxr-demo-earthview",
     description:
-      "Streaming glasses-free 3D city viewer on Google Photorealistic 3D Tiles (OpenXR + Vulkan). Fly the full-scale world camera-style, or double-click to frame a neighborhood as a tabletop diorama. Requires a Google Map Tiles API key.",
+      "Streaming 3D city viewer on Google Photorealistic 3D Tiles (OpenXR + Vulkan). Fly the full-scale world camera-style, or double-click to frame a neighborhood as a tabletop diorama. Requires a Google Map Tiles API key.",
     url: "https://github.com/DisplayXR/displayxr-demo-earthview",
     category: "demos",
     status: "beta",
@@ -146,7 +146,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-browser",
     repo: "DisplayXR/displayxr-browser",
     description:
-      "DisplayXR Browser — a Chromium that renders the web normally and weaves glasses-free inline 3D on DisplayXR hardware, on Windows and Android. The productization of the inline-3D browser work validated by the CEF host, with a GPU-resident weave (no per-frame CPU readback). Security updates follow Chrome stable: every Chrome stable point release is rebuilt and published automatically when the browser's own code is untouched upstream, and verified on a DisplayXR display first when it is not. Pinned in the org version matrix as `browser`, and installable via the dev orchestrator with `--with browser`; it is deliberately not in the all-in-one bundle, because a full standalone browser is not part of the display stack the default install lays down.",
+      "DisplayXR Browser — a Chromium that renders the web normally and weaves inline 3D on DisplayXR hardware, on Windows, Android and Linux, with macOS coming soon. The productization of the inline-3D browser work validated by the CEF host, with a GPU-resident weave (no per-frame CPU readback). Security updates follow Chrome stable: every Chrome stable point release is rebuilt and published automatically when the browser's own code is untouched upstream, and verified on a DisplayXR display first when it is not. Pinned in the org version matrix as `browser`, and installable via the dev orchestrator with `--with browser`; it is deliberately not in the all-in-one bundle, because a full standalone browser is not part of the display stack the default install lays down.",
     url: "https://github.com/DisplayXR/displayxr-browser",
     category: "apps",
     status: "active",

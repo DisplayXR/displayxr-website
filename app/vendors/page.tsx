@@ -16,7 +16,7 @@ export default function VendorsPage() {
   return (
     <PageLayout
       title="Vendors & Plug-ins"
-      description="DisplayXR is vendor-neutral. Any 3D-display maker can ship a display-processor plug-in from their own repo — and any tracking-hardware maker can ship an input provider. The runtime discovers and loads both at startup. You never fork the runtime."
+      description="DisplayXR is vendor-neutral. Any spatial-display maker can ship a display-processor plug-in from their own repo — and any tracking-hardware maker can ship an input provider. The runtime discovers and loads both at startup. You never fork the runtime."
     >
       <div className="max-w-3xl space-y-12">
         {/* The model */}

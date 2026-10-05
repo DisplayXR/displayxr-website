@@ -17,6 +17,8 @@ const inter = Inter({
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  // Code blocks only, below the fold: don't let it compete with the LCP.
+  preload: false,
 });
 
 const dmSerifDisplay = DM_Serif_Display({
@@ -31,7 +33,7 @@ export const metadata: Metadata = {
     template: "%s | DisplayXR",
   },
   description:
-    "An open platform for spatial displays — OpenXR extension specifications, a reference runtime, and reference implementations for tracked stereo and multiview lightfield 3D displays. Build portable spatial display applications across engines, graphics APIs, and vendor hardware.",
+    "OpenXR for Spatial Displays. An open-source OpenXR runtime for any spatial display, with or without glasses, plus a browser that turns a few lines of JavaScript into shareable 3D. Build once, across engines, graphics APIs and display vendors.",
   alternates: {
     types: {
       "application/rss+xml": [
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "DisplayXR",
     description:
-      "OpenXR for spatial displays. An open platform — extension specifications, a reference runtime, and reference implementations — for tracked stereo and multiview 3D displays.",
+      "OpenXR for Spatial Displays. An open-source OpenXR runtime for any spatial display, plus a browser that turns a few lines of JavaScript into shareable 3D.",
     url: "https://displayxr.org",
     siteName: "DisplayXR",
     type: "website",
@@ -59,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "DisplayXR",
     description:
-      "OpenXR for spatial displays. An open platform — extension specifications, a reference runtime, and reference implementations — for tracked stereo and multiview 3D displays.",
+      "OpenXR for Spatial Displays. An open-source OpenXR runtime for any spatial display, plus a browser that turns a few lines of JavaScript into shareable 3D.",
     images: ["/og-image.jpeg"],
   },
   icons: {

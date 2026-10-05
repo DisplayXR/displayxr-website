@@ -86,7 +86,7 @@ const windowsSteps: Step[] = [
           </li>
         </ul>
         <p className="text-sm text-text-secondary leading-relaxed mt-4">
-          No 3D display? You can still install everything — the runtime ships
+          No spatial display? You can still install everything — the runtime ships
           a simulated display driver (<Mono>sim_display</Mono>) for
           development on a regular monitor with WASD + mouse eye-position
           control.
@@ -614,7 +614,7 @@ const macosFAQs: FAQ[] = [
     ),
   },
   {
-    q: "Can I run real OpenXR apps without a 3D display on macOS?",
+    q: "Can I run real OpenXR apps without a spatial display on macOS?",
     a: (
       <>
         Yes — the <Mono>sim_display</Mono> driver presents a virtual tracked

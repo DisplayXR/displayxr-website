@@ -10,18 +10,23 @@ import {
   NAV,
   GITHUB_ORG_URL,
   DOWNLOAD_HREF,
+  DOCS_URL,
   isMenu,
   type NavLeaf,
   type NavMenu,
 } from "@/lib/constants";
 
-// A nav target is "current" when the path matches it or sits beneath it.
-function hrefActive(pathname: string, href: string, external?: boolean) {
-  if (external) return false;
+// A nav target is "current" when the path matches it or sits beneath it, or
+// matches one of the hub's other routes (`match`).
+function under(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(href + "/");
 }
+function hrefActive(pathname: string, item: NavLeaf) {
+  if (item.external) return false;
+  return [item.href, ...(item.match ?? [])].some((h) => under(pathname, h));
+}
 function menuActive(pathname: string, menu: NavMenu) {
-  return menu.items.some((i) => hrefActive(pathname, i.href, i.external));
+  return menu.items.some((i) => hrefActive(pathname, i));
 }
 
 function LeafLink({
@@ -86,7 +91,7 @@ export function Navbar() {
   // the path — so a page shared across menus (e.g. Platform Support) never
   // lights up two of them at once.
   const activeIndex = NAV.findIndex((e) =>
-    isMenu(e) ? menuActive(pathname, e) : hrefActive(pathname, e.href, e.external)
+    isMenu(e) ? menuActive(pathname, e) : hrefActive(pathname, e)
   );
 
   return (
@@ -174,11 +179,7 @@ export function Navbar() {
                     <div className="absolute left-0 top-full pt-2">
                       <div className="min-w-[200px] rounded-lg border border-border bg-surface p-1.5 shadow-[0_8px_24px_rgba(0,0,0,0.4)]">
                         {entry.items.map((item) => {
-                          const itemActive = hrefActive(
-                            pathname,
-                            item.href,
-                            item.external
-                          );
+                          const itemActive = hrefActive(pathname, item);
                           return (
                             <LeafLink
                               key={item.label}
@@ -202,6 +203,14 @@ export function Navbar() {
 
           {/* Right cluster: Download CTA + GitHub + mobile toggle */}
           <div className="flex items-center gap-2">
+            <a
+              href={DOCS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:inline-flex px-2 py-2 text-sm text-text-secondary hover:text-text-primary transition-colors"
+            >
+              Docs ↗
+            </a>
             <Link
               href={DOWNLOAD_HREF}
               className="hidden sm:inline-flex items-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] active:scale-[0.98]"
@@ -239,7 +248,7 @@ export function Navbar() {
             </Link>
             {NAV.map((entry) => {
               if (!isMenu(entry)) {
-                const active = hrefActive(pathname, entry.href, entry.external);
+                const active = hrefActive(pathname, entry);
                 return (
                   <Link
                     key={entry.label}
@@ -261,11 +270,7 @@ export function Navbar() {
                     {entry.label}
                   </p>
                   {entry.items.map((item) => {
-                    const itemActive = hrefActive(
-                      pathname,
-                      item.href,
-                      item.external
-                    );
+                    const itemActive = hrefActive(pathname, item);
                     return (
                       <LeafLink
                         key={item.label}
@@ -282,6 +287,15 @@ export function Navbar() {
                 </div>
               );
             })}
+            <a
+              href={DOCS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="block px-3 py-2 rounded-md text-sm font-medium text-text-secondary hover:text-accent"
+            >
+              Docs ↗
+            </a>
           </div>
         )}
       </div>

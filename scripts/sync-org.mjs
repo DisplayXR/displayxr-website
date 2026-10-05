@@ -93,6 +93,7 @@ async function latestRelease(repo) {
       releaseUrl: r.html_url,
       releaseDate: (r.published_at || "").slice(0, 10),
       assets: (r.assets || []).map((a) => a.name),
+      assetFiles: (r.assets || []).map((a) => ({ name: a.name, url: a.browser_download_url })),
     };
   } catch {
     return null; // no release yet (e.g. displayxr-unreal-test)
@@ -113,6 +114,7 @@ async function releaseByTag(repo, tag) {
       releaseUrl: r.html_url,
       releaseDate: (r.published_at || "").slice(0, 10),
       assets: (r.assets || []).map((a) => a.name),
+      assetFiles: (r.assets || []).map((a) => ({ name: a.name, url: a.browser_download_url })),
     };
   } catch {
     return null; // tag not published (yet) — caller falls back
@@ -141,7 +143,10 @@ const writeGen = (name, data) => {
 
 // ── config ────────────────────────────────────────────────────────────────────
 // Non-demo bundle components. Version comes from versions.json where present,
-// else the repo's latest release. platforms is editorial-stable, kept here.
+// else the repo's latest release. `platforms` is DERIVED from the release's
+// installable assets (see platformOf); the string here is only the fallback
+// for a release with no recognisable assets. It used to be the source of truth
+// and drifted — the browser read "Windows · Android" while shipping a .deb.
 const COMPONENTS = [
   { id: "runtime", vkey: "runtime", repo: "displayxr-runtime", name: "DisplayXR Runtime", platforms: "Windows · macOS" },
   { id: "shell", vkey: "shell", repo: "displayxr-shell-releases", name: "DisplayXR Shell", platforms: "Windows" },
@@ -192,6 +197,33 @@ const ADR_SOURCES = [
   { repo: "displayxr-unreal", prefix: "Docs/DisplayXR/adr/" },
 ];
 
+// Installable asset → platform, by suffix. Libraries (.aar) and checksums are
+// not installers, so they say nothing about where a user can run the thing.
+const PLATFORM_ORDER = ["Windows", "macOS", "Linux", "Android"];
+function platformOf(name) {
+  const n = name.toLowerCase();
+  if (/\.(exe|msi|msix)$/.test(n)) return "Windows";
+  if (/\.(pkg|dmg)$/.test(n)) return "macOS";
+  if (/\.apk$/.test(n)) return "Android";
+  if (/\.(deb|rpm|appimage)$/.test(n)) return "Linux";
+  if (/\.(tar\.gz|tgz|zip)$/.test(n)) {
+    if (/android/.test(n)) return "Android";
+    if (/linux/.test(n)) return "Linux";
+  }
+  return null;
+}
+
+// One direct download per platform (first matching asset wins, in release
+// order), so the site can offer a one-click button instead of a releases page.
+function downloadsOf(files = []) {
+  const byPlatform = new Map();
+  for (const f of files) {
+    const p = platformOf(f.name);
+    if (p && !byPlatform.has(p)) byPlatform.set(p, { platform: p, file: f.name, url: f.url });
+  }
+  return PLATFORM_ORDER.filter((p) => byPlatform.has(p)).map((p) => byPlatform.get(p));
+}
+
 // ── adapters ──────────────────────────────────────────────────────────────────
 async function buildComponents(versions) {
   const out = [];
@@ -204,13 +236,16 @@ async function buildComponents(versions) {
     const rel = (pinned && (await releaseByTag(c.repo, pinned))) || (await latestRelease(c.repo));
     const version = pinned || rel?.tag || null;
     if (!version) warn(`no version for component ${c.id}`);
+    const downloads = downloadsOf(rel?.assetFiles);
+    if (rel && downloads.length === 0) warn(`${c.repo}: no installable assets — platforms fall back to config`);
     out.push({
       id: c.id,
       name: c.name,
       version,
       releaseUrl: rel?.releaseUrl || `https://github.com/${ORG}/${c.repo}/releases/latest`,
       releaseDate: rel?.releaseDate || null,
-      platforms: c.platforms,
+      platforms: downloads.length ? downloads.map((d) => d.platform).join(" · ") : c.platforms,
+      downloads,
       repoUrl: `https://github.com/${ORG}/${c.repo}`,
     });
   }

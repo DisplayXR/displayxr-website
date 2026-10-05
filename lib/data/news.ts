@@ -113,7 +113,7 @@ export const NEWS: NewsItem[] = [
     tier: "banner",
     headline: "DisplayXR runs natively on Wayland",
     blurb:
-      "Glasses-free 3D windows now run as native Wayland apps on Ubuntu 24.04 and 26.04 with GNOME — the primary Linux target from here on — with a translucent title bar, transparent 3D over the live desktop, and a GNOME Shell extension shipped with the runtime that keeps a window’s 3D locked while you drag it.",
+      "3D windows now run as native Wayland apps on Ubuntu 24.04 and 26.04 with GNOME — the primary Linux target from here on — with a translucent title bar, transparent 3D over the live desktop, and a GNOME Shell extension shipped with the runtime that keeps a window’s 3D locked while you drag it.",
     href: "https://github.com/DisplayXR/displayxr-runtime/blob/main/docs/roadmap/linux-support.md",
   },
   {

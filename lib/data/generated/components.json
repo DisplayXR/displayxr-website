@@ -5,7 +5,29 @@
     "version": "v2.26.0",
     "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.26.0",
     "releaseDate": "2026-10-05",
-    "platforms": "Windows · macOS",
+    "platforms": "Windows · macOS · Linux · Android",
+    "downloads": [
+      {
+        "platform": "Windows",
+        "file": "DisplayXRSetup-2.26.0.exe",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.26.0/DisplayXRSetup-2.26.0.exe"
+      },
+      {
+        "platform": "macOS",
+        "file": "DisplayXR-Installer-2.26.0.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.26.0/DisplayXR-Installer-2.26.0.pkg"
+      },
+      {
+        "platform": "Linux",
+        "file": "displayxr-runtime_2.26.0_amd64.deb",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.26.0/displayxr-runtime_2.26.0_amd64.deb"
+      },
+      {
+        "platform": "Android",
+        "file": "DisplayXR-Runtime-2.26.0-android-arm64.apk",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.26.0/DisplayXR-Runtime-2.26.0-android-arm64.apk"
+      }
+    ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-runtime"
   },
   {
@@ -14,7 +36,19 @@
     "version": "v2.3.2",
     "releaseUrl": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.3.2",
     "releaseDate": "2026-10-03",
-    "platforms": "Windows",
+    "platforms": "Windows · macOS",
+    "downloads": [
+      {
+        "platform": "Windows",
+        "file": "DisplayXRShellSetup-2.3.2.exe",
+        "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/download/v2.3.2/DisplayXRShellSetup-2.3.2.exe"
+      },
+      {
+        "platform": "macOS",
+        "file": "DisplayXRShell-2.3.2.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/download/v2.3.2/DisplayXRShell-2.3.2.pkg"
+      }
+    ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-shell-releases"
   },
   {
@@ -23,7 +57,24 @@
     "version": "v2.9.3",
     "releaseUrl": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.9.3",
     "releaseDate": "2026-10-05",
-    "platforms": "Windows",
+    "platforms": "Windows · Linux · Android",
+    "downloads": [
+      {
+        "platform": "Windows",
+        "file": "DisplayXRLeiaSRSetup-2.9.3.exe",
+        "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.9.3/DisplayXRLeiaSRSetup-2.9.3.exe"
+      },
+      {
+        "platform": "Linux",
+        "file": "displayxr-leia-sr_2.9.3_amd64.deb",
+        "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.9.3/displayxr-leia-sr_2.9.3_amd64.deb"
+      },
+      {
+        "platform": "Android",
+        "file": "displayxr-leia-cnsdk-v2.9.3-android-arm64-v8a.tar.gz",
+        "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.9.3/displayxr-leia-cnsdk-v2.9.3-android-arm64-v8a.tar.gz"
+      }
+    ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-leia-plugin"
   },
   {
@@ -33,6 +84,18 @@
     "releaseUrl": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.5.4",
     "releaseDate": "2026-08-28",
     "platforms": "Windows · macOS",
+    "downloads": [
+      {
+        "platform": "Windows",
+        "file": "DisplayXRMCPSetup-0.5.4.exe",
+        "url": "https://github.com/DisplayXR/displayxr-mcp/releases/download/v0.5.4/DisplayXRMCPSetup-0.5.4.exe"
+      },
+      {
+        "platform": "macOS",
+        "file": "DisplayXRMCP-0.5.4.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-mcp/releases/download/v0.5.4/DisplayXRMCP-0.5.4.pkg"
+      }
+    ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-mcp"
   },
   {
@@ -41,7 +104,24 @@
     "version": "v1.4.0",
     "releaseUrl": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.4.0",
     "releaseDate": "2026-10-05",
-    "platforms": "Windows · Android",
+    "platforms": "Windows · Linux · Android",
+    "downloads": [
+      {
+        "platform": "Windows",
+        "file": "DisplayXR-Browser-Setup-1.4.0.exe",
+        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.4.0/DisplayXR-Browser-Setup-1.4.0.exe"
+      },
+      {
+        "platform": "Linux",
+        "file": "displayxr-browser_1.4.0-1_amd64.deb",
+        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.4.0/displayxr-browser_1.4.0-1_amd64.deb"
+      },
+      {
+        "platform": "Android",
+        "file": "DisplayXR-Browser-1.4.0-android-arm64.apk",
+        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.4.0/DisplayXR-Browser-1.4.0-android-arm64.apk"
+      }
+    ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-browser"
   },
   {
@@ -50,7 +130,29 @@
     "version": "v2.5.8",
     "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.8",
     "releaseDate": "2026-10-04",
-    "platforms": "Windows · macOS",
+    "platforms": "Windows · macOS · Linux · Android",
+    "downloads": [
+      {
+        "platform": "Windows",
+        "file": "DisplayXRBundle-2.5.8.exe",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.5.8/DisplayXRBundle-2.5.8.exe"
+      },
+      {
+        "platform": "macOS",
+        "file": "DisplayXRBundle-2.5.8.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.5.8/DisplayXRBundle-2.5.8.pkg"
+      },
+      {
+        "platform": "Linux",
+        "file": "DisplayXRBundle-2.5.8-linux-amd64.tar.gz",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.5.8/DisplayXRBundle-2.5.8-linux-amd64.tar.gz"
+      },
+      {
+        "platform": "Android",
+        "file": "DisplayXR-Installer-0.4.2.apk",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.5.8/DisplayXR-Installer-0.4.2.apk"
+      }
+    ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-installer"
   }
 ]

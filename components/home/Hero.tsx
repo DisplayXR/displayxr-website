@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
+import { DownloadButton } from "@/components/download/DownloadButton";
 import { NewsTicker } from "@/components/home/NewsTicker";
-import { GITHUB_ORG_URL } from "@/lib/constants";
+import { HeroVideo } from "@/components/home/HeroVideo";
 import { getBannerNews } from "@/lib/data/news";
 
 export function Hero() {
@@ -9,18 +10,7 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden">
-      {/* Hero background animation (ping-pong palindrome loop) */}
-      <video
-        className="absolute inset-0 h-full w-full object-cover opacity-50"
-        src="/videos/hero-loop.mp4"
-        poster="/videos/hero-loop-poster.jpg"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        aria-hidden
-      />
+      <HeroVideo />
 
       {/* Animated grid overlay */}
       <div className="absolute inset-0 hero-grid" />
@@ -37,22 +27,24 @@ export function Hero() {
           <h1 className="hero-animate text-4xl md:text-6xl lg:text-7xl font-display tracking-tight text-text-primary leading-[1.05] mb-6">
             OpenXR for Spatial Displays
           </h1>
+          {/* What DisplayXR IS, in one breath. "Agent-ready" is the honest form
+              of the agentic claim: an MCP server is built into the runtime
+              (per-app introspection, XR_DXR_mcp_tools) and the shell, opt-in
+              via the MCP Tools installer; the browser is not part of it. */}
           <p className="hero-animate hero-animate-delay-1 text-lg md:text-xl text-text-secondary leading-relaxed mb-10 max-w-2xl">
             <span className="text-text-primary font-medium">
               Write once. Run on any spatial display.
             </span>{" "}
-            DisplayXR is an open platform for spatial displays — OpenXR
-            extension specifications, a reference runtime, and reference
-            implementations — for tracked stereo and multiview lightfield
-            3D, portable across engines, graphics APIs, and vendor hardware.
+            DisplayXR is the OpenXR extensions spatial displays need, an
+            open-source reference runtime, Unity and Unreal plug-ins, and a
+            browser for 3D on the web. Portable across engines, graphics APIs
+            and display makers, and agent-ready, with MCP built into the
+            runtime.
           </p>
           <div className="hero-animate hero-animate-delay-2 flex flex-wrap gap-4">
-            <Button href="/getting-started">Get Started</Button>
-            <Button variant="secondary" href="/docs">
-              Read the Docs
-            </Button>
-            <Button variant="secondary" href={GITHUB_ORG_URL}>
-              Explore on GitHub
+            <DownloadButton />
+            <Button variant="secondary" href="/developers">
+              Build something
             </Button>
           </div>
         </div>

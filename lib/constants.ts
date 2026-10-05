@@ -4,12 +4,20 @@ export const GITHUB_ORG_URL = "https://github.com/DisplayXR";
 // the displayxr.org domain before launch; swap if a different address is used.
 export const CONTACT_EMAIL = "partners@displayxr.org";
 
-// Persona-led navigation. The header has one universal front door
-// (Get Started), three audience menus (each a curated journey, not a dump —
-// shared pages may appear in two menus on purpose), and a persistent Download
-// action button (see DOWNLOAD_HREF). A nav entry is either a leaf link or a
-// menu of leaves.
-export type NavLeaf = { label: string; href: string; external?: boolean };
+// Hub navigation. One click per audience: each entry is a single hub page
+// that opens on that audience's recommended next step (no dropdowns), plus a
+// persistent Download action button (see DOWNLOAD_HREF) and a small Docs ↗
+// link for returning developers (DOCS_URL). `match` lists the other routes
+// that belong to a hub, so exactly one entry lights up as current. Menus are
+// still supported by the model (and the Navbar renders them), but the header
+// deliberately uses none; see the IA note in CLAUDE.md.
+export type NavLeaf = {
+  label: string;
+  href: string;
+  external?: boolean;
+  /** Other path prefixes that make this entry the current one. */
+  match?: string[];
+};
 export type NavMenu = { label: string; items: NavLeaf[] };
 export type NavEntry = NavLeaf | NavMenu;
 
@@ -17,51 +25,34 @@ export const isMenu = (e: NavEntry): e is NavMenu =>
   (e as NavMenu).items !== undefined;
 
 export const NAV: NavEntry[] = [
-  { label: "Get Started", href: "/getting-started" },
+  { label: "About", href: "/about" },
+  // The DisplayXR Browser has its own always-visible tab, second because it is
+  // the most demo-able thing (David, 2026-10-04; order is his call).
+  { label: "Browser", href: "/browser" },
   {
-    label: "App Developers",
-    // Same ordering rule as Display Vendors: the persona's job first, cadence
-    // last. "What's New" is still intentionally duplicated across these two
-    // menus — a shared page may appear in two (see the IA note in CLAUDE.md),
-    // and keeping it out of the top level is what preserves the three-persona
-    // story. Contributors deliberately has no equivalent: /news is a product
-    // feed that excludes version bumps and internal changes, so a contributor's
-    // cadence surface is Roadmap and the repos, both already in that menu.
-    items: [
-      { label: "Build apps", href: "/docs" },
-      { label: "Demos", href: "/demos" },
-      { label: "Extensions", href: "/extensions" },
-      { label: "WebXR", href: "/webxr" },
-      { label: "Platform Support", href: "/platform-support" },
-      { label: "What's New", href: "/news" },
-    ],
+    label: "Developers",
+    href: "/developers",
+    match: ["/getting-started", "/extensions", "/demos", "/platform-support"],
   },
   {
-    label: "Contributors",
-    items: [
-      { label: "Contribute", href: "/contribute" },
-      { label: "Architecture", href: "/architecture" },
-      { label: "Roadmap", href: "/roadmap" },
-      { label: "Governance", href: "/governance" },
-      { label: "Source & repos", href: GITHUB_ORG_URL, external: true },
-    ],
+    label: "Contribute",
+    href: "/contribute",
+    match: ["/architecture", "/roadmap", "/governance"],
   },
-  {
-    label: "Display Vendors",
-    // Ordered by the job, not by cadence: a vendor arriving cold wants to know
-    // what a plug-in costs, so the plug-in guide leads and "What's New" sits
-    // last. The hero ticker's "All updates" link already routes to the feed.
-    items: [
-      { label: "Plug-in guide", href: "/vendors" },
-      // Tracking hardware is a second, independent plug-in type (ADR-034) and
-      // had no entry point of its own in the nav. Same page, different socket.
-      { label: "Input providers", href: "/vendors#input-providers" },
-      { label: "Extension: display_info", href: "/extensions" },
-      { label: "Platform Support", href: "/platform-support" },
-      { label: "What's New", href: "/news" },
-    ],
-  },
+  { label: "Display Vendors", href: "/vendors" },
 ];
+
+// Deep docs live in the runtime repo; the site summarizes and routes.
+export const DOCS_URL = "https://github.com/DisplayXR/displayxr-runtime/tree/main/docs";
+
+// Community channel: GitHub Discussions on the runtime repo.
+export const DISCUSSIONS_URL = "https://github.com/DisplayXR/displayxr-runtime/discussions";
+
+// Live inline-3D samples, served from displayxr-web via GitHub Pages.
+export const WEB_SAMPLES_URL = "https://displayxr.github.io/displayxr-web/";
+
+// Pinned SDK version shown in snippets. Bump with the browser's SDK pin policy.
+export const INLINE3D_VERSION = "1.30.0";
 
 export const DOWNLOAD_HREF = "/download";
 

@@ -44,24 +44,51 @@ touching anything under `lib/data/generated/` or `scripts/sync-org.mjs`.
   exists so you (a) don't hand-edit generated data and (b) leave prose drift for
   that skill (or a human) rather than guessing.
 
-## Information architecture (persona-led — don't revert it)
+## Information architecture (hub-led — don't revert it)
 
-The site is organized around three audiences. Keep it that way:
+Since the 2026-10 overhaul the site is organized as **one-click hubs**, one per
+audience, each opening on that audience's recommended next step:
 
-- Nav is **`NAV` in `lib/constants.ts`** — a grouped model (leaf | menu), **not**
-  a flat list. Header = `Get Started` + three persona menus
-  (**App Developers / Contributors / Display Vendors**) + a persistent
-  **Download** button. Exactly one nav entry highlights as active (first match).
+- Nav is **`NAV` in `lib/constants.ts`**: leaves only, **About · Developers ·
+  Contribute · Display Vendors · Browser**, plus a persistent **Download** button and a
+  small **Docs ↗** link to the runtime repo's docs (`DOCS_URL`). The model still
+  supports menus, but the header deliberately uses none.
+- Each leaf's `match` lists the other routes that belong to its hub
+  (`/extensions`, `/demos`, `/platform-support`, `/getting-started` →
+  Developers; `/architecture`, `/roadmap`, `/governance` → Contribute). Exactly
+  one entry highlights as active (first match).
+- `/developers` opens on the web path (recommended) with the inline3d snippet,
+  then native, then engines. `/browser` is the DisplayXR Browser's home (it absorbed
+  `/webxr`). `/getting-started` stays live until `/developers/native` replaces it.
+- `/download` is OS-detected client-side over a server render of every
+  platform, and shows **two ordered installs**: DisplayXR (the bundle), then the
+  DisplayXR Browser. Order matters: the browser chains the runtime but not a
+  display plug-in, so the browser alone shows 2D only.
+- Retired routes 308-redirect in `next.config.ts` (`/webxr`, `/docs`, guessed
+  `/display-vendors/*`). Redirect source matching is case-insensitive.
 - `/platform-support` is the **merged** status + compatibility page (generated
   version dashboard on top, authored support matrix below). `/status` and
-  `/compatibility` 308-redirect there (`next.config.ts`). Don't re-split them.
-- `/contribute` is the **Contributor hub** (repo map renders `ecosystemRepos`;
-  headline-ADR list is hand-curated). `/docs` is kept but intentionally out of
-  the primary nav (footer only).
-- The homepage `AudienceSection` ("Who is this for?") mirrors the same three
-  personas. Keep nav, homepage, and footer telling one story.
+  `/compatibility` 308-redirect there. Don't re-split them.
+- `/contribute` is the Contributor hub (repo map renders `ecosystemRepos`;
+  headline-ADR list is hand-curated).
+- The homepage tells the project's story in five sections: Hero → Why it
+  exists → Pick your path (one card per hub) → Browser teaser band → Proof.
+  The browser gets its own tab and page; on the homepage it is one band. Keep nav, homepage and footer
+  telling one story. `EcosystemMap` now renders on `/about`.
 
 ## Content & positioning rules
+
+- **Terminology:** "spatial display(s)" is canonical (the H1 is "OpenXR for
+  Spatial Displays"); "3D display" is fine in casual body text. DisplayXR is
+  for any spatial display **with or without glasses**: never use
+  "glasses-free" as a scope claim, only where it is literally true of a
+  specific product or demo.
+- **DisplayXR extends OpenXR.** Never "replaces", "alternative to" or "instead
+  of OpenXR". Never call the runtime "conformant": no Khronos submission has
+  been made. Say it "runs the official Khronos conformance suite".
+- Browser and SDK claims follow the platform and feature guardrails in
+  `lib/data/web.ts` (macOS browser coming soon; model / player / call / splat
+  are preview tier; call depth needs a stereo-camera sender).
 
 - **Vendor-neutral on the home page.** DisplayXR is vendor-agnostic; the home
   page must not single out a hardware vendor as "the first integration" or a

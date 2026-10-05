@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "Extensions",
   description:
-    "Custom OpenXR extensions for tracked spatial display capabilities — display info, window bindings, and more.",
+    "The XR_DXR_* extensions OpenXR needs for spatial displays — display info, window bindings, 2D/3D zones, and more.",
 };
 
 /**
@@ -205,7 +205,7 @@ export default function ExtensionsPage() {
   return (
     <PageLayout
       title="Extensions"
-      description="Custom OpenXR extensions that enable tracked spatial display capabilities not covered by the base OpenXR specification."
+      description="The XR_DXR_* extensions that extend OpenXR for spatial display capabilities not covered by the base OpenXR specification."
     >
       <div className="max-w-3xl space-y-12">
         {/* Why extensions */}
@@ -333,7 +333,7 @@ export default function ExtensionsPage() {
                 <strong className="text-text-primary">
                   Vendor-independent
                 </strong>{" "}
-                — designed for any tracked spatial display, not tied to a
+                — designed for any spatial display, not tied to a
                 specific hardware vendor.
               </span>
             </li>
@@ -372,7 +372,7 @@ export default function ExtensionsPage() {
             Where to next
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Card href="/getting-started" title="Build an app">
+            <Card href="/developers" title="Build an app">
               <p className="text-sm text-text-secondary leading-relaxed">
                 Install the runtime and opt into these extensions from your own
                 OpenXR app — no special hardware required.

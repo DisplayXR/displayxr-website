@@ -135,7 +135,7 @@ export default function ArchitecturePage() {
             Desktop <strong className="text-text-primary">Linux</strong>{" "}
             ships, and its primary target is{" "}
             <strong className="text-text-primary">native Wayland</strong>:
-            glasses-free 3D windows run as native Wayland apps on Ubuntu 24.04
+            3D windows run as native Wayland apps on Ubuntu 24.04
             and 26.04 with GNOME. One native Vulkan compositor presents into
             the app&apos;s own surface, handed over through{" "}
             <code className="bg-surface text-accent px-1.5 py-0.5 rounded text-sm font-mono">
@@ -792,7 +792,7 @@ export default function ArchitecturePage() {
                 display-processor interface — no app changes required.
               </p>
             </Card>
-            <Card href="/getting-started" title="Build an app">
+            <Card href="/developers" title="Build an app">
               <p className="text-sm text-text-secondary leading-relaxed">
                 Install the runtime and build a spatial-display app against
                 standard OpenXR — runs in simulation on any monitor.

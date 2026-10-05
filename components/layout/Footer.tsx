@@ -1,29 +1,31 @@
 import Image from "next/image";
-import { GITHUB_ORG_URL, REPO_URLS } from "@/lib/constants";
+import { DISCUSSIONS_URL, DOCS_URL, GITHUB_ORG_URL, REPO_URLS } from "@/lib/constants";
 
+// Mirrors the header hubs, plus the pages that live under each.
 const footerLinks = {
-  "App Developers": [
-    { label: "Get Started", href: "/getting-started" },
+  Developers: [
+    { label: "Developers", href: "/developers" },
+    { label: "3D on the web", href: "/browser" },
     { label: "Download", href: "/download" },
-    { label: "Demos", href: "/demos" },
     { label: "Extensions", href: "/extensions" },
-    { label: "WebXR", href: "/webxr" },
+    { label: "Demos", href: "/demos" },
     { label: "Platform Support", href: "/platform-support" },
+    { label: "Docs ↗", href: DOCS_URL },
   ],
-  Contributors: [
+  Contribute: [
     { label: "Contribute", href: "/contribute" },
     { label: "Architecture", href: "/architecture" },
     { label: "Roadmap", href: "/roadmap" },
     { label: "Governance", href: "/governance" },
-    { label: "Docs", href: "/docs" },
-    { label: "GitHub", href: GITHUB_ORG_URL },
+    { label: "Discussions ↗", href: DISCUSSIONS_URL },
+    { label: "GitHub ↗", href: GITHUB_ORG_URL },
   ],
   "Display Vendors": [
     { label: "Plug-in guide", href: "/vendors" },
     { label: "Input providers", href: "/vendors#input-providers" },
-    { label: "Extensions", href: "/extensions" },
     { label: "Platform Support", href: "/platform-support" },
-    { label: "Common Library", href: REPO_URLS.common },
+    { label: "Common Library ↗", href: REPO_URLS.common },
+    { label: "About DisplayXR", href: "/about" },
   ],
 };
 
@@ -47,7 +49,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm text-text-secondary leading-relaxed">
-              An open platform for spatial displays — extension specs, a reference runtime, and reference implementations.
+              An open-source OpenXR runtime and the extensions OpenXR needs for spatial displays, with or without glasses.
             </p>
             {/* Cross-persona, so it lives here rather than in one audience column. */}
             <a

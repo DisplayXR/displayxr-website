@@ -209,10 +209,10 @@ export default function PlatformSupportPage() {
           </h2>
           <p className="text-sm text-text-secondary leading-relaxed">
             Install the Windows bundle or build from source on macOS — then run a
-            sample in simulation on any monitor, no 3D display required.
+            sample in simulation on any monitor, no spatial display required.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Button href="/getting-started">Get started →</Button>
+            <Button href="/developers">Get started →</Button>
             <Button href="/download" variant="secondary">
               Download
             </Button>
