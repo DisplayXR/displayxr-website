@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { DownloadButton } from "@/components/download/DownloadButton";
 import { NewsTicker } from "@/components/home/NewsTicker";
+import { HeroVideo } from "@/components/home/HeroVideo";
 import { getBannerNews } from "@/lib/data/news";
 
 export function Hero() {
@@ -9,18 +10,7 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden">
-      {/* Hero background animation (ping-pong palindrome loop) */}
-      <video
-        className="absolute inset-0 h-full w-full object-cover opacity-50"
-        src="/videos/hero-loop.mp4"
-        poster="/videos/hero-loop-poster.jpg"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        aria-hidden
-      />
+      <HeroVideo />
 
       {/* Animated grid overlay */}
       <div className="absolute inset-0 hero-grid" />

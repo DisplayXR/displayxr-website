@@ -17,6 +17,8 @@ const inter = Inter({
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  // Code blocks only, below the fold: don't let it compete with the LCP.
+  preload: false,
 });
 
 const dmSerifDisplay = DM_Serif_Display({

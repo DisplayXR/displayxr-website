@@ -187,6 +187,7 @@ export function HeroSplat() {
         fill
         priority
         sizes="100vw"
+        quality={65}
         className={`object-cover transition-opacity duration-700 ${phase === "live" ? "opacity-0" : "opacity-100"}`}
       />
       {/* Caption: switches on wall.supported (design spec S5). */}
