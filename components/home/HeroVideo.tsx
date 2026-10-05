@@ -5,10 +5,12 @@ import Image from "next/image";
 
 /**
  * The homepage hero background. The poster is a priority image (the LCP);
- * the 1.4 MB loop is attached only on wide screens without reduced motion,
- * after the page is idle, and fades in once it actually plays. Phones keep
- * the poster: decoding the video there cost ~1.8 s of main-thread time in
- * Lighthouse's mobile run.
+ * the loop is attached after the page is idle and fades in once it actually
+ * plays, on every device (David: it has always played fine on phones).
+ * Phones get a light 360p encode (~280 kB, vs 1.4 MB at 720p).
+ * The still stays only when motion is unwanted or the connection is genuinely
+ * bad: prefers-reduced-motion, Save-Data, or an effective type of 2g/slow-2g
+ * (feature-detected; Safari has no navigator.connection, so it plays).
  */
 export function HeroVideo() {
   const ref = useRef<HTMLVideoElement>(null);
@@ -17,13 +19,17 @@ export function HeroVideo() {
   useEffect(() => {
     const wide = window.matchMedia("(min-width: 768px)").matches;
     const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const conn = (navigator as Navigator & {
+      connection?: { saveData?: boolean; effectiveType?: string };
+    }).connection;
+    const slow = !!conn && (conn.saveData === true || conn.effectiveType === "2g" || conn.effectiveType === "slow-2g");
     const v = ref.current;
-    if (!wide || calm || !v) return;
+    if (calm || slow || !v) return;
     const ric =
       (window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number })
         .requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 800));
     ric(() => {
-      v.src = "/videos/hero-loop.mp4";
+      v.src = wide ? "/videos/hero-loop.mp4" : "/videos/hero-loop-mobile.mp4";
       void v.play().catch(() => {});
     }, { timeout: 2500 });
   }, []);
