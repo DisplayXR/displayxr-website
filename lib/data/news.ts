@@ -107,6 +107,16 @@ export const NEWS_KIND_LABELS: Record<NewsKind, string> = {
  */
 export const NEWS: NewsItem[] = [
   {
+    id: "github-discussions-open",
+    date: "2026-10-05",
+    kind: "community",
+    tier: "banner",
+    headline: "Ask questions and share builds in Discussions",
+    blurb:
+      "DisplayXR now has a public forum on GitHub Discussions, for questions, ideas and show-and-tell from app developers, contributors and display makers. Bugs still go to the issue tracker of the repo they belong to.",
+    href: "https://github.com/DisplayXR/displayxr-runtime/discussions",
+  },
+  {
     id: "native-wayland",
     date: "2026-09-24",
     kind: "platform",
