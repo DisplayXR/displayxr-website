@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.26.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.26.0",
+    "title": "v2.26.0",
+    "date": "2026-10-05",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.26.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.3.0",
     "repo": "displayxr-browser",
     "tag": "v1.3.0",
@@ -211,19 +222,6 @@
       "Load without the SR platform, non-blocking probe, platform-state reporting (install-order epic) (#292)",
       "Order-independent install/uninstall via Restart Manager: no runtime gate, `/SD` on every MessageBox, `/NOSTART` honoured, `dxr-rm-close.exe` shipped and signed (#291)",
       "Repinned the Windows runtime to v2.24.0, which adds the platform-state slot and the Restart-Manager service (#293)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.25.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.25.1",
-    "title": "DisplayXR Runtime v2.25.1",
-    "date": "2026-10-03",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.25.1",
-    "prerelease": false,
-    "featureLines": [
-      "Patch release: the uninstaller no longer deletes the `DisplayProcessors` registry key as a whole, so a vendor plug-in installed alongside the runtime keeps its registration across a runtime uninstall/reinstall."
     ],
     "looksMechanical": false
   },
