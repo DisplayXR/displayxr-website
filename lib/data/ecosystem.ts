@@ -17,6 +17,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
       "Core OpenXR runtime with native compositors for D3D11, D3D12, Vulkan, Metal, and OpenGL — on Windows, macOS, and Android, plus a Vulkan-only compositor on desktop Linux, native on Wayland (shipping as .deb packages).",
     url: "https://github.com/DisplayXR/displayxr-runtime",
     category: "core",
+    status: "shipping",
   },
   {
     name: "displayxr-extensions",
@@ -25,6 +26,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
       "OpenXR extension specs and headers for spatial display capabilities.",
     url: "https://github.com/DisplayXR/displayxr-extensions",
     category: "core",
+    status: "shipping",
   },
   {
     name: "displayxr-unity",
@@ -33,7 +35,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
       "Unity engine plugin (UPM package) with eye-tracked stereo rendering, sample scenes, and standalone editor preview.",
     url: "https://github.com/DisplayXR/displayxr-unity",
     category: "engines",
-    status: "active",
+    status: "shipping",
   },
   {
     name: "displayxr-unity-samples",
@@ -42,7 +44,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
       "Ready-to-open Unity sample projects — Built-in/URP/HDRP pipeline tests plus a transparent Desktop Avatar showcase — wired to the DisplayXR Unity plugin, with one shared installer. Consolidates the earlier per-feature test repos into a single monorepo.",
     url: "https://github.com/DisplayXR/displayxr-unity-samples",
     category: "engines",
-    status: "active",
+    status: "shipping",
   },
   {
     name: "displayxr-unreal",
@@ -51,7 +53,16 @@ export const ecosystemRepos: EcosystemRepo[] = [
       "Unreal Engine plugin (UE 5.7) with eye-tracked Kooima stereo, camera- and display-centric rigs, Blueprint components, material expression nodes, and zero-copy atlas handoff. Windows, macOS, Android.",
     url: "https://github.com/DisplayXR/displayxr-unreal",
     category: "engines",
-    status: "beta",
+    status: "shipping",
+  },
+  {
+    name: "displayxr-unreal-test",
+    repo: "DisplayXR/displayxr-unreal-test",
+    description:
+      "Unreal test project for the DisplayXR plugin — a sample scene and setup, pinned to a plugin release, used to validate the plugin against new runtime and engine releases.",
+    url: "https://github.com/DisplayXR/displayxr-unreal-test",
+    category: "engines",
+    status: "active",
   },
   {
     name: "displayxr-demo-gaussiansplat",
@@ -60,7 +71,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
       "Real-time 3D Gaussian Splatting viewer (.spz / .ply) for spatial displays. Windows, macOS, Linux, Android.",
     url: "https://github.com/DisplayXR/displayxr-demo-gaussiansplat",
     category: "demos",
-    status: "active",
+    status: "shipping",
   },
   {
     name: "displayxr-demo-modelviewer",
@@ -69,7 +80,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
       "3D glTF 2.0 PBR model viewer (OpenXR + Vulkan). Drag-and-drop a .glb / .gltf model. Windows, macOS, Linux, Android.",
     url: "https://github.com/DisplayXR/displayxr-demo-modelviewer",
     category: "demos",
-    status: "active",
+    status: "shipping",
   },
   {
     name: "displayxr-demo-mediaplayer",
@@ -78,7 +89,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
       "Spatial media player — stereo photos, GPU-decoded video with synchronized audio, and folder slideshows, with playback controllable by AI agents. Windows, macOS, Linux, Android.",
     url: "https://github.com/DisplayXR/displayxr-demo-mediaplayer",
     category: "demos",
-    status: "active",
+    status: "shipping",
   },
   {
     name: "displayxr-demo-avatar",
@@ -87,7 +98,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
       "A transparent, click-through 3D avatar that floats over your desktop (OpenXR + native Vulkan) — weaved in 3D with a flat 2D speech bubble beside it, and clicks passing through to whatever is behind. Showcases the see-through transparency and mixed 2D/3D display-zone path, now with live desktop content composited under the weave on all four platforms.",
     url: "https://github.com/DisplayXR/displayxr-demo-avatar",
     category: "demos",
-    status: "active",
+    status: "shipping",
   },
   {
     name: "displayxr-demo-earthview",
@@ -105,6 +116,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
       "Shared math and common library — off-axis (Kooima) projection, atlas tiling, and window/canvas helpers — including one Linux app window that picks native Wayland or X11 by capability probe, with shared client-side window chrome — consumed by the runtime, engine plugins, and demos from a single source of truth.",
     url: "https://github.com/DisplayXR/displayxr-common",
     category: "tools",
+    status: "shipping",
   },
   {
     name: "displayxr-mcp",
@@ -113,7 +125,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
       "Tiny embeddable Model Context Protocol server framework, plus the DisplayXR MCP Tools installer that end users download to opt in to AI-agent / voice control. The framework lets the runtime, the reference shell, and any third-party workspace controller expose live spatial state and control to AI agents (Claude Code, voice CLIs, custom drivers); the installer writes a registry capability flag the runtime and shell read at startup.",
     url: "https://github.com/DisplayXR/displayxr-mcp",
     category: "tools",
-    status: "active",
+    status: "shipping",
   },
   {
     name: "displayxr-shell-releases",
@@ -122,7 +134,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
       "Reference spatial workspace controller — a 3D window manager with multi-app compositing, 2D window capture, dynamic layouts, and focus-adaptive rendering. Windows, with a macOS build in beta. Ships as a standalone installer; build your own controller for verticals, kiosks, or OEM-branded workspaces using the same extension surface.",
     url: "https://github.com/DisplayXR/displayxr-shell-releases",
     category: "apps",
-    status: "active",
+    status: "shipping",
   },
   {
     name: "displayxr-vendor-template",
@@ -137,7 +149,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-cef-host",
     repo: "DisplayXR/displayxr-cef-host",
     description:
-      "The original proof that XR_DXR_weave works — not a browser to use, which is DisplayXR Browser. A small CEF (Chromium Embedded Framework) offscreen-render app that hands the runtime a stereo texture and a window rect and composites the weaved result; it never weaves itself. Kept as the smallest worked example of driving the weave from your own present-owner without forking Chromium, and because it builds in minutes where the browser fork takes hours. Note that it is pinned to weave spec v1 while the runtime is on v9, so it does not exercise batched submit, the 2D overlay atlas, N-view input, the Android handle kinds, or IPC brokering — treat it as a starting point to read, not a current conformance harness.",
+      "The original proof that XR_DXR_weave works — not a browser to use, which is DisplayXR Browser. A small CEF (Chromium Embedded Framework) offscreen-render app that hands the runtime a stereo texture and a window rect and composites the weaved result; it never weaves itself. Kept as the smallest worked example of driving the weave from your own present-owner without forking Chromium, and because it builds in minutes where the browser fork takes hours. It is pinned to the first revision of the weave spec, far behind the runtime's current one, so it does not exercise batched submit, the 2D overlay atlas, N-view input, the Android handle kinds, or IPC brokering — treat it as a starting point to read, not a current conformance harness.",
     url: "https://github.com/DisplayXR/displayxr-cef-host",
     category: "tools",
     status: "experimental",
@@ -149,15 +161,33 @@ export const ecosystemRepos: EcosystemRepo[] = [
       "DisplayXR Browser — a Chromium that renders the web normally and weaves inline 3D on DisplayXR hardware, on Windows, Android and Linux, with macOS coming soon. The productization of the inline-3D browser work validated by the CEF host, with a GPU-resident weave (no per-frame CPU readback). Security updates follow Chrome stable: every Chrome stable point release is rebuilt and published automatically when the browser's own code is untouched upstream, and verified on a DisplayXR display first when it is not. Pinned in the org version matrix as `browser`, and installable via the dev orchestrator with `--with browser`; it is deliberately not in the all-in-one bundle, because a full standalone browser is not part of the display stack the default install lays down.",
     url: "https://github.com/DisplayXR/displayxr-browser",
     category: "apps",
-    status: "active",
+    status: "shipping",
   },
   {
     name: "displayxr-web",
     repo: "DisplayXR/displayxr-web",
     description:
-      "Inline-3D web samples and the JS helper library for the DisplayXR Browser — the DisplayXR analog of the webxr-samples gallery, served via GitHub Pages.",
+      "The inline-3D JavaScript SDK, published on npm as @displayxr/inline3d — 3D photos, video, models, Gaussian splats, a 3D media player and 3D video calls in a few lines — plus its live samples on GitHub Pages, which double as the DisplayXR Browser's start page. Every page renders as ordinary 2D in other browsers.",
     url: "https://github.com/DisplayXR/displayxr-web",
+    category: "tools",
+    status: "shipping",
+  },
+  {
+    name: "displayxr-models",
+    repo: "DisplayXR/displayxr-models",
+    description:
+      "Content-addressed ONNX depth and inpainting models behind the DisplayXR Browser's Convert to 3D — permissively licensed only, published as permanent release blobs.",
+    url: "https://github.com/DisplayXR/displayxr-models",
+    category: "tools",
+    status: "active",
+  },
+  {
+    name: "displayxr-reference-scenes",
+    repo: "DisplayXR/displayxr-reference-scenes",
+    description:
+      "Reference scenes for showing and validating open-standard 3D content — OpenUSD, MaterialX/OpenPBR and glTF — on spatial displays.",
+    url: "https://github.com/DisplayXR/displayxr-reference-scenes",
     category: "demos",
-    status: "experimental",
+    status: "shipping",
   },
 ];
