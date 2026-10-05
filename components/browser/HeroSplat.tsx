@@ -32,10 +32,17 @@ import Image from "next/image";
  * (2026-10-04).
  */
 
-// Served from Vercel Blob (store displayxr-website-media, public, CORS *,
-// range requests OK): a 10.7 MB binary does not belong in git.
+// A Streamed SOG on Vercel Blob (store displayxr-website-media; public, CORS *,
+// range requests OK, immutable versioned prefix: a rebuild goes to a NEW
+// prefix). Four levels, finest first (100 / 50 / 25 / 12.5 %): the coarsest
+// (~1.8 MB) paints first, finer chunks stream in, and the final state is the
+// full original 1,179,648 gaussians, nothing thinned (David's condition).
 const SOG_URL =
-  "https://fbocp00kywsybakc.public.blob.vercel-storage.com/media/browser-hero-ckZWBaWi5KdOHgvVTOT5PSAfnZLvfT.sog";
+  "https://fbocp00kywsybakc.public.blob.vercel-storage.com/media/browser-hero/streamed-v2/lod-meta.json";
+// Above the finest level's count, so the budget never thins the final state
+// (the SDK's default streamed budget is 600k).
+const SPLAT_BUDGET = 1_250_000;
+
 const POSTER = "/media/browser-hero-poster.webp";
 const MAX_X = 0.18;
 const MAX_Y = 0.12;
@@ -87,8 +94,8 @@ export function HeroSplat() {
       ]);
       const wall = await sharedInline3D();
       setSupported(wall.supported);
-      const bytes = await (await fetch(SOG_URL)).arrayBuffer();
-      const handle = addSplat(wall, canvasRef.current, bytes, {
+      // A Streamed SOG loads by URL (its chunks are relative to lod-meta.json).
+      const handle = addSplat(wall, canvasRef.current, SOG_URL, {
         engine: "playcanvas",
         rig: "auto",
         orbit: true,
@@ -102,8 +109,14 @@ export function HeroSplat() {
         // The Gallery's reveal: every gaussian flies in to assemble the scene.
         // Played once firstWoven settles (at once in 2D), while the poster fades.
         reveal: "assemble",
+        // Coarser levels stand in while finer ones stream; the budget clears
+        // the full count, so the settled frame is the original resolution.
+        perf: { splatBudget: SPLAT_BUDGET, lodUnderfillLimit: 3 },
       }) as unknown as SplatHandleLike;
       handleRef.current = handle;
+      // For tests and curious devs: window.__heroSplatStats() → SDK stats().
+      (window as Window & { __heroSplatStats?: () => unknown }).__heroSplatStats = () =>
+        (handle as unknown as { stats?: () => unknown }).stats?.();
       await handle.ready;
       handle.setPose?.({ zoom: restZoom(canvasRef.current) });
       const onResize = () => handle.setPose?.({ zoom: restZoom(canvasRef.current) });
