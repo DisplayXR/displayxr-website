@@ -32,7 +32,10 @@ import Image from "next/image";
  * (2026-10-04).
  */
 
-const SOG_URL = "/media/browser-hero.sog";
+// Served from Vercel Blob (store displayxr-website-media, public, CORS *,
+// range requests OK): a 10.7 MB binary does not belong in git.
+const SOG_URL =
+  "https://fbocp00kywsybakc.public.blob.vercel-storage.com/media/browser-hero-ckZWBaWi5KdOHgvVTOT5PSAfnZLvfT.sog";
 const POSTER = "/media/browser-hero-poster.webp";
 const MAX_X = 0.18;
 const MAX_Y = 0.12;
