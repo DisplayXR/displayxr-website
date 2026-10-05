@@ -242,7 +242,7 @@ export default function BrowserPage() {
 
       {/* S6 — Build for it: the developer layer. */}
       <Band id="build" className="bg-[#0b0c10]">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.25fr]">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.25fr] [&>*]:min-w-0">
           <div>
             <Eyebrow>Build for it</Eyebrow>
             <H2>The 3D web is already here. Add yours in a few lines.</H2>
