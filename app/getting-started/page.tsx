@@ -24,9 +24,9 @@ export default function GettingStartedPage() {
       {/* No-hardware reassurance — the #1 first-visit developer question */}
       <div className="mb-10 rounded-lg border border-accent/30 bg-accent/10 p-5">
         <p className="text-sm text-text-secondary leading-relaxed">
-          <strong className="text-text-primary">No 3D display? No problem.</strong>{" "}
+          <strong className="text-text-primary">No spatial display? No problem.</strong>{" "}
           The built-in <Mono>sim_display</Mono> backend lets you install, run,
-          and verify everything on any ordinary monitor. When a real 3D display
+          and verify everything on any ordinary monitor. When a real spatial display
           is connected later, the same app automatically uses the hardware
           backend — no code changes.
         </p>
@@ -46,7 +46,7 @@ export default function GettingStartedPage() {
               model, and how 2D + 3D apps share one display.
             </p>
           </Card>
-          <Card href="/extensions" title="Build for 3D displays">
+          <Card href="/extensions" title="Build for spatial displays">
             <p className="text-sm text-text-secondary leading-relaxed">
               The OpenXR extensions DisplayXR adds —{" "}
               <Mono>XR_DXR_display_info</Mono>, window bindings, and the

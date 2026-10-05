@@ -7,6 +7,15 @@ import demosJson from "./generated/demos.json";
 import enginesJson from "./generated/engines.json";
 import extensionsJson from "./generated/extensions.json";
 
+export type Platform = "Windows" | "macOS" | "Linux" | "Android";
+
+/** One direct installer download, derived from a release asset's suffix. */
+export interface ComponentDownload {
+  platform: Platform;
+  file: string;
+  url: string;
+}
+
 export interface ComponentRelease {
   id: string;
   name: string;
@@ -14,6 +23,7 @@ export interface ComponentRelease {
   releaseUrl: string;
   releaseDate: string | null;
   platforms: string;
+  downloads: ComponentDownload[];
   repoUrl: string;
 }
 

@@ -208,7 +208,7 @@ and merges them.
 
 | File | Shape (per entry) | Adapter |
 |---|---|---|
-| `generated/components.json` | `{ id, name, version, releaseUrl, releaseDate, platforms }` | versions.json ∪ GitHub releases |
+| `generated/components.json` | `{ id, name, version, releaseUrl, releaseDate, platforms, downloads[] }` — `platforms` and `downloads` derived from release-asset suffixes (.exe/.msi → Windows, .pkg/.dmg → macOS, .deb/.rpm/linux tarball → Linux, .apk/android tarball → Android) | versions.json ∪ GitHub releases |
 | `generated/demos.json` | `{ id, repo, name, description, category, type, icon, repoUrl, releaseUrl, tag }` | `*.displayxr.json` + 2D icon PNG |
 | `generated/engines.json` | `{ id, name, version, engineVersion, description, repoUrl, testRepoUrl, releaseUrl, logo }` | `.uplugin` / `package.json` + releases |
 | `generated/extensions.json` | `{ name, group }` | `displayxr-extensions` tree |

@@ -1,12 +1,7 @@
 import { Button } from "@/components/ui/Button";
-import { NewsTicker } from "@/components/home/NewsTicker";
-import { GITHUB_ORG_URL } from "@/lib/constants";
-import { getBannerNews } from "@/lib/data/news";
+import { DownloadButton } from "@/components/download/DownloadButton";
 
 export function Hero() {
-  // Filtered server-side; renders nothing once the pool ages out.
-  const news = getBannerNews();
-
   return (
     <section className="relative overflow-hidden">
       {/* Hero background animation (ping-pong palindrome loop) */}
@@ -33,26 +28,17 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-[1200px] px-6 md:px-12 pt-28 pb-36 md:pt-36 md:pb-44">
         <div className="max-w-3xl">
-          <NewsTicker items={news} />
           <h1 className="hero-animate text-4xl md:text-6xl lg:text-7xl font-display tracking-tight text-text-primary leading-[1.05] mb-6">
             OpenXR for Spatial Displays
           </h1>
           <p className="hero-animate hero-animate-delay-1 text-lg md:text-xl text-text-secondary leading-relaxed mb-10 max-w-2xl">
-            <span className="text-text-primary font-medium">
-              Write once. Run on any spatial display.
-            </span>{" "}
-            DisplayXR is an open platform for spatial displays — OpenXR
-            extension specifications, a reference runtime, and reference
-            implementations — for tracked stereo and multiview lightfield
-            3D, portable across engines, graphics APIs, and vendor hardware.
+            An open-source OpenXR runtime for any spatial display, plus a
+            browser that turns a few lines of JavaScript into shareable 3D.
           </p>
           <div className="hero-animate hero-animate-delay-2 flex flex-wrap gap-4">
-            <Button href="/getting-started">Get Started</Button>
-            <Button variant="secondary" href="/docs">
-              Read the Docs
-            </Button>
-            <Button variant="secondary" href={GITHUB_ORG_URL}>
-              Explore on GitHub
+            <DownloadButton />
+            <Button variant="secondary" href="/developers">
+              Build something
             </Button>
           </div>
         </div>

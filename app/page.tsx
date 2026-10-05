@@ -1,24 +1,20 @@
 import { Hero } from "@/components/home/Hero";
-import { ProblemSection } from "@/components/home/ProblemSection";
-import { SolutionSection } from "@/components/home/SolutionSection";
-import { AudienceSection } from "@/components/home/AudienceSection";
-import { EcosystemMap } from "@/components/home/EcosystemMap";
-import { WhyNowSection } from "@/components/home/WhyNowSection";
-import { LatestSection } from "@/components/home/LatestSection";
-import { CTASection } from "@/components/home/CTASection";
+import { WebSection } from "@/components/home/WebSection";
+import { WhySection } from "@/components/home/WhySection";
+import { PathsSection } from "@/components/home/PathsSection";
+import { ProofSection } from "@/components/home/ProofSection";
 
+// Five sections, in the order a first-time visitor needs them: what it is,
+// the easiest thing to try (the web), why it exists, where to go next, and
+// the receipts. Depth lives on the hub pages and in the runtime repo.
 export default function Home() {
   return (
     <>
       <Hero />
-      <ProblemSection />
-      <SolutionSection />
-      <AudienceSection />
-      <EcosystemMap />
-      <WhyNowSection />
-      {/* Proof for the argument above: the cadence is real. */}
-      <LatestSection />
-      <CTASection />
+      <WebSection />
+      <WhySection />
+      <PathsSection />
+      <ProofSection />
     </>
   );
 }

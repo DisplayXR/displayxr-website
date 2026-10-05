@@ -85,7 +85,7 @@ export default function DemosPage() {
               sim_display
             </code>{" "}
             simulation backend. You can build and run them on any standard
-            monitor. When a physical 3D display is connected, the same
+            monitor. When a physical spatial display is connected, the same
             application automatically uses the hardware backend.
           </p>
         </div>
@@ -241,20 +241,19 @@ export default function DemosPage() {
           </div>
         </section>
 
-        {/* WebXR pointer */}
+        {/* Web pointer */}
         <div className="rounded-lg border border-border bg-surface/50 p-5">
           <p className="text-sm text-text-secondary leading-relaxed">
             <strong className="text-text-primary">Building for the browser?</strong>{" "}
-            The{" "}
             <a
-              href="/webxr"
+              href="/web"
               className="text-accent hover:text-accent-hover underline underline-offset-2"
             >
-              WebXR page
+              3D on the web
             </a>{" "}
-            covers both routes: standard WebXR runs on the runtime unmodified,
-            and inline 3D in the DisplayXR Browser is the path for pages authored
-            for a 3D display.
+            covers the DisplayXR Browser and its SDK: 3D products, movies,
+            photos and calls in a few lines of JavaScript, with standard WebXR
+            still working as before.
           </p>
         </div>
 
@@ -271,7 +270,7 @@ export default function DemosPage() {
             backend. Install DisplayXR, launch a demo, and see it in minutes.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Button href="/getting-started">Get started →</Button>
+            <Button href="/developers">Get started →</Button>
             <Button href="/download" variant="secondary">
               Download
             </Button>
