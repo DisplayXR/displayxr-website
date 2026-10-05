@@ -11,7 +11,6 @@ import { OPENXR_GAPS } from "@/lib/data/openxr-gaps";
 export function WhySection() {
   return (
     <section className="mx-auto max-w-[1200px] px-6 md:px-12 py-24">
-      <div className="section-divider mb-24" />
       <AnimateIn>
         <div className="max-w-2xl">
           <h2 className="text-sm font-medium text-accent uppercase tracking-wider mb-4">

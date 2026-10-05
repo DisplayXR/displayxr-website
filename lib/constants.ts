@@ -29,7 +29,7 @@ export const NAV: NavEntry[] = [
   {
     label: "Developers",
     href: "/developers",
-    match: ["/web", "/getting-started", "/extensions", "/demos", "/platform-support"],
+    match: ["/getting-started", "/extensions", "/demos", "/platform-support"],
   },
   {
     label: "Contribute",
@@ -37,6 +37,9 @@ export const NAV: NavEntry[] = [
     match: ["/architecture", "/roadmap", "/governance"],
   },
   { label: "Display Vendors", href: "/vendors" },
+  // The DisplayXR Browser has its own always-visible tab (David, 2026-10-04).
+  // Route name pending (/web vs /browser).
+  { label: "Browser", href: "/web" },
 ];
 
 // Deep docs live in the runtime repo; the site summarizes and routes.

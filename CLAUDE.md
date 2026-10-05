@@ -50,11 +50,11 @@ Since the 2026-10 overhaul the site is organized as **one-click hubs**, one per
 audience, each opening on that audience's recommended next step:
 
 - Nav is **`NAV` in `lib/constants.ts`**: leaves only, **About · Developers ·
-  Contribute · Display Vendors**, plus a persistent **Download** button and a
+  Contribute · Display Vendors · Browser**, plus a persistent **Download** button and a
   small **Docs ↗** link to the runtime repo's docs (`DOCS_URL`). The model still
   supports menus, but the header deliberately uses none.
 - Each leaf's `match` lists the other routes that belong to its hub
-  (`/web`, `/extensions`, `/demos`, `/platform-support`, `/getting-started` →
+  (`/extensions`, `/demos`, `/platform-support`, `/getting-started` →
   Developers; `/architecture`, `/roadmap`, `/governance` → Contribute). Exactly
   one entry highlights as active (first match).
 - `/developers` opens on the web path (recommended) with the inline3d snippet,
@@ -71,8 +71,9 @@ audience, each opening on that audience's recommended next step:
   `/compatibility` 308-redirect there. Don't re-split them.
 - `/contribute` is the Contributor hub (repo map renders `ecosystemRepos`;
   headline-ADR list is hand-curated).
-- The homepage is five sections: Hero → 3D on the web → Why it exists →
-  Pick your path (one card per hub) → Proof. Keep nav, homepage and footer
+- The homepage tells the project's story in five sections: Hero → Why it
+  exists → Pick your path (one card per hub) → Browser teaser band → Proof.
+  The browser gets its own tab and page; on the homepage it is one band. Keep nav, homepage and footer
   telling one story. `EcosystemMap` now renders on `/about`.
 
 ## Content & positioning rules
