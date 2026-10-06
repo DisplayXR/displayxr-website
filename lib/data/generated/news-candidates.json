@@ -38,15 +38,35 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.27.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.27.0",
-    "title": "v2.27.0",
+    "id": "displayxr-leia-plugin@v2.11.0",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.11.0",
+    "title": "v2.11.0",
     "date": "2026-10-06",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.27.0",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.11.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.27.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.27.0",
+    "title": "DisplayXR Runtime v2.27.0",
+    "date": "2026-10-06",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.27.0",
+    "prerelease": false,
+    "featureLines": [
+      "Stereo camera: the new `XR_DXR_stereo_camera` extension exposes a display's built-in stereo camera (the Leia SR tracking camera first) as a rectified side-by-side pair to apps and the DisplayXR Browser — service-side rectification with o…",
+      "feat(stereo-camera): `XR_DXR_stereo_camera` header, type-value block 1004999300-310, catalog note (ADR-043) (2c4567f9c)",
+      "feat(stereo-camera): `u_stereo_camera` — latest-wins pinned ring, decimator, NV12/BGRA/GRAY8 conversion, persistent id, disparity probe (a9cc89e9b)",
+      "feat(stereo-camera): plug-in iface camera slots (`XRT_PLUGIN_IFACE_HAS_STEREO_CAMERA`) + sim_display FAKE stereo camera (a5e45ca62)",
+      "feat(stereo-camera): service camera manager + IPC protocol (`stereo_camera_*` calls) (c3a56e3bf)",
+      "feat(stereo-camera): `displayxr-cli camera list | calib | probe` (3c65c90c5)",
+      "feat(stereo-camera): `XR_DXR_stereo_camera` OpenXR entry points (instance-level, service-only) (a571df136)",
+      "feat(stereo-camera): selftest `stereo_camera_caps` check (210e19a40)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.22.0",
@@ -179,23 +199,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.9.1",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.9.1",
-    "title": "v2.9.1",
-    "date": "2026-10-04",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.9.1",
-    "prerelease": false,
-    "featureLines": [
-      "**2D under the lens.** With runtime v2.25.2+ and LeiaSR runtime 1.38.0+1867+, flat 2D content composited over/around woven 3D (page text, labels) is now composited and band-limited *inside* the SR weave instead of painted after it, so it…",
-      "D3D11 DP implements the runtime's `set_overlay_2d` slot and forwards the 2D over-layer to `srWeaverSetComposeInputsDX11`, preferring compose order `2D_OVER_COVERAGE` (exact coverage alpha) with a fallback to `2D_OVER` on older SR runtime…",
-      "`XR_DXR_weave` v14 overlay-unchanged is forwarded to `srWeaverSetComposeLayerUnchanged`, so a static page reuses SR's cached prefilter (#295)",
-      "The alpha gate keeps the in-weave 2D layer instead of punching it out where no view has content (#295)",
-      "GL and Vulkan DPs pass view 0 through unwoven while the platform state is `NO_DISPLAY` and resume weaving on `READY`, matching the D3D11/D3D12 DPs (#296)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.9.2",
