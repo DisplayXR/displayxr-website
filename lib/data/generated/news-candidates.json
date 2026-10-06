@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.4.1",
+    "repo": "displayxr-browser",
+    "tag": "v1.4.1",
+    "title": "DisplayXR Browser v1.4.1",
+    "date": "2026-10-06",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.4.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.35.1",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.35.1",
@@ -9,6 +20,30 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.10.0",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.10.0",
+    "title": "v2.10.0",
+    "date": "2026-10-06",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.10.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity@v2.22.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.22.0",
+    "title": "DisplayXR v2.22.0",
+    "date": "2026-10-06",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.22.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Linux: move the window onto the 3D panel (#266, PR #352).** `DisplayXRTargetDisplay` / `DisplayXRProvider.MoveWindowToDisplay` now work on Linux (X11/XWayland). On Linux the runtime reports the panel's desktop rect through `XR_DXR_disp…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.3.2",
@@ -72,23 +107,6 @@
       "**XR_DXR_weave spec v16 (#1825).** The Linux engine now refuses a submit whose overlay it cannot import. It no longer drops the overlay silently and reports success.",
       "feat(vk dp, weave/linux): `set_overlay_2d` VK slot, giving 2D under the lens on Vulkan (94fc02248, #1823)",
       "feat(d3d11_service): per-stage weave timing under `DXR_WEAVE_GPU_TIMING` (2D-under-the-lens P0) (#1824)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.3.0",
-    "repo": "displayxr-browser",
-    "tag": "v1.3.0",
-    "title": "DisplayXR Browser v1.3.0",
-    "date": "2026-10-04",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.3.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Windows: the 2D page is now woven under the lens.** In 3D mode the browser hands the whole flat page (text, UI, scrims and frosted cards around and over inline-3D content) to the display processor, which composes it under the lens itse…",
-      "**Requirements:** this needs LeiaSR runtime **1.38.0+1874 or later**. With an earlier SR build, or a DisplayXR runtime that cannot compose the 2D layer, the browser falls back to the previous composite (it paints the page itself), so not…",
-      "Whole-page 2D overlay, **on by default on Windows**. Pages without any inline-3D content are unaffected apart from text anti-aliasing (below). Kill switch: launch with `--disable-inline-3d-dp-overlay-page` to restore the previous behavio…",
-      "The over-plane above inline-3D tiles is handed to the display processor through the same `XR_DXR_weave` overlay channel. (browser-pvt#226, browser-pvt#227)",
-      "Static frames reuse the display processor's cached lens prefilter of the 2D layer (`XR_DXR_weave` v14 \"overlay unchanged\"), so a page that is not changing costs no extra filtering. (browser-pvt#228)"
     ],
     "looksMechanical": false
   },
@@ -248,25 +266,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.9.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.9.0",
-    "title": "v2.9.0",
-    "date": "2026-10-03",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.9.0",
-    "prerelease": false,
-    "featureLines": [
-      "**No install order, no prerequisites.** The plug-in installs before or after the DisplayXR runtime, and before or after the LeiaSR platform. Uninstall works without the runtime too.",
-      "**The installer no longer kills things blindly.** It uses Windows Restart Manager (new `dxr-rm-close.exe` helper) to close whatever holds the plug-in DLL and restart it afterwards. It only brings the service back if the service was runni…",
-      "**Loads without the LeiaSR platform.** The plug-in reports a platform state with a hint (`PLATFORM_ABSENT` / `PLATFORM_NOT_RUNNING` / `NO_DISPLAY` / `READY`) to runtime ≥ v2.24.0 instead of failing to load. The probe no longer blocks, an…",
-      "**NeurD found when installed later.** If NeurD was absent when the plug-in started, it is detected once it is installed. A refused NeurD is re-checked when its DLL changes.",
-      "Load without the SR platform, non-blocking probe, platform-state reporting (install-order epic) (#292)",
-      "Order-independent install/uninstall via Restart Manager: no runtime gate, `/SD` on every MessageBox, `/NOSTART` honoured, `dxr-rm-close.exe` shipped and signed (#291)",
-      "Repinned the Windows runtime to v2.24.0, which adds the platform-state slot and the Restart-Manager service (#293)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.25.2",
@@ -616,17 +615,6 @@
       "so silent installs stay silent (#115, #113)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.19.4",
-    "repo": "displayxr-unity",
-    "tag": "v2.19.4",
-    "title": "DisplayXR v2.19.4",
-    "date": "2026-09-19",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.19.4",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unreal@v0.9.4",
