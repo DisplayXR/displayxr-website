@@ -87,6 +87,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.27.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.27.1",
+    "title": "v2.27.1",
+    "date": "2026-10-06",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.27.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity@v2.22.0",
     "repo": "displayxr-unity",
     "tag": "v2.22.0",
@@ -244,19 +255,6 @@
     "prerelease": false,
     "featureLines": [
       "The first public set of reference scenes for 3D displays, built on open standards: OpenUSD, MaterialX / OpenPBR and glTF. Load any of them in the [DisplayXR model viewer](https://github.com/DisplayXR/displayxr-demo-modelviewer) **v0.35.0…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.25.3",
-    "repo": "displayxr-runtime",
-    "tag": "v2.25.3",
-    "title": "DisplayXR Runtime v2.25.3",
-    "date": "2026-10-04",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.25.3",
-    "prerelease": false,
-    "featureLines": [
-      "Two fixes; no new features. On macOS, stopping `displayxr-service` with SIGTERM while clients are connected now exits cleanly. Before this fix it hung or aborted in about 4 of 10 attempts. Also, `displayxr-cli lift caps` now has a hard t…"
     ],
     "looksMechanical": false
   },
