@@ -1,7 +1,8 @@
 // "Where vanilla OpenXR stops": the four ways a spatial display differs from a
 // headset, and what DisplayXR adds to OpenXR for each. Authored, shared by the
 // homepage "why it exists" section and /about, so both tell one story. The
-// /extensions rewrite (P2) carries the same framing per extension.
+// /extensions groups every extension under the gap whose `extensions` lists
+// it (anything listed nowhere lands in its "Advanced / other" group).
 //
 // Framing rule (David, 2026-10-04): DisplayXR EXTENDS OpenXR toward displays.
 // Never "replaces", "alternative to" or "instead of OpenXR". The headset
@@ -42,6 +43,7 @@ export const OPENXR_GAPS: OpenXRGap[] = [
     extensions: [
       "XR_DXR_win32_window_binding",
       "XR_DXR_cocoa_window_binding",
+      "XR_DXR_xlib_window_binding",
       "XR_DXR_wayland_surface_binding",
       "XR_DXR_android_surface_binding",
     ],
