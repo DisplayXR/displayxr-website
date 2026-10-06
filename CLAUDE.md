@@ -54,18 +54,30 @@ audience, each opening on that audience's recommended next step:
   small **Docs ↗** link to the runtime repo's docs (`DOCS_URL`). The model still
   supports menus, but the header deliberately uses none.
 - Each leaf's `match` lists the other routes that belong to its hub
-  (`/extensions`, `/demos`, `/platform-support`, `/getting-started` →
-  Developers; `/architecture`, `/roadmap`, `/governance` → Contribute). Exactly
+  (`/extensions`, `/demos`, `/platform-support` → Developers; routes beneath
+  a hub's own href, like `/developers/native`, match without a listing; `/architecture`, `/roadmap`, `/governance` → Contribute). Exactly
   one entry highlights as active (first match).
-- `/developers` opens on the web path (recommended) with the inline3d snippet,
-  then native, then engines. `/browser` is the DisplayXR Browser's home (it absorbed
-  `/webxr`). `/getting-started` stays live until `/developers/native` replaces it.
+- `/developers` opens on the web path (recommended) with the inline3d snippet
+  (one snippet, the full guide is `/browser#build`), then the sim-display note,
+  native (API per platform), engines, AI-agent control, links.
+  `/developers/native` is the native quickstart: API matrix, a per-platform
+  five-step quickstart (`lib/data/native.ts`, paths and commands verified
+  against displayxr-runtime), app classes, troubleshooting. It replaced
+  `/getting-started`, which 308-redirects there. `/browser` is the DisplayXR
+  Browser's home (it absorbed `/webxr`).
+- `/extensions` leads with "Where vanilla OpenXR stops" (the four
+  `OPENXR_GAPS`, shared with the homepage and `/about`) and groups each
+  extension under the gap whose `extensions` lists it, else "Advanced /
+  other". Per-extension prose is the `editorial` overlay in
+  `app/extensions/page.tsx` (`vanillaGap` / `adds` / `needIf` / `tier`),
+  keyed by the generated name; the build warns when overlay and
+  `generated/extensions.json` drift apart.
 - `/download` is OS-detected client-side over a server render of every
   platform, and shows **two ordered installs**: DisplayXR (the bundle), then the
   DisplayXR Browser. Order matters: the browser chains the runtime but not a
   display plug-in, so the browser alone shows 2D only.
-- Retired routes 308-redirect in `next.config.ts` (`/webxr`, `/docs`, guessed
-  `/display-vendors/*`). Redirect source matching is case-insensitive.
+- Retired routes 308-redirect in `next.config.ts` (`/webxr`, `/docs`,
+  `/getting-started`, guessed `/display-vendors/*`). Redirect source matching is case-insensitive.
 - `/platform-support` is the **merged** status + compatibility page (generated
   version dashboard on top, authored support matrix below). `/status` and
   `/compatibility` 308-redirect there. Don't re-split them.

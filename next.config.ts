@@ -15,11 +15,12 @@ const nextConfig: NextConfig = {
       },
       // 2026-10 overhaul: the DisplayXR Browser's home is /browser (it absorbed
       // /webxr; /web was its working name and never shipped). The /docs link
-      // list folded into the /developers hub. (/getting-started stays live
-      // until /developers/native replaces it.)
+      // list folded into the /developers hub. The old manual install flow
+      // (/getting-started) became the native quickstart.
       { source: "/webxr", destination: "/browser", permanent: true },
       { source: "/web", destination: "/browser", permanent: true },
       { source: "/docs", destination: "/developers", permanent: true },
+      { source: "/getting-started", destination: "/developers/native", permanent: true },
       // Guessed URLs seen in analytics (a nav label read as a path). Source
       // matching is case-insensitive (verified: /Display-Vendors/… and /WEBXR
       // both redirect), so one lowercase rule covers every casing.

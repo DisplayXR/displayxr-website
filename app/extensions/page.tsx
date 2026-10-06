@@ -1,39 +1,56 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
+import { Table, TableCell, TableRow } from "@/components/ui/Table";
 import { REPO_URLS } from "@/lib/constants";
 import type { Status } from "@/lib/data/compatibility";
-import {
-  extensionsGenerated,
-  type ExtensionGroup,
-} from "@/lib/data/generated";
+import { extensionsGenerated } from "@/lib/data/generated";
+import { OPENXR_GAPS, type OpenXRGap } from "@/lib/data/openxr-gaps";
 
 export const metadata: Metadata = {
   title: "Extensions",
   description:
-    "The XR_DXR_* extensions OpenXR needs for spatial displays — display info, window bindings, 2D/3D zones, and more.",
+    "Where vanilla OpenXR stops on a spatial display, and the XR_DXR_* extension that covers each gap: display geometry, window binding, 2D and 3D in one window, 3D over the desktop.",
 };
 
 /**
- * Editorial prose for the extensions, keyed by extension name.
+ * Editorial overlay for the extensions, keyed by extension name.
  *
- * The LIST itself is NOT maintained here — it comes from
+ * The LIST itself is NOT maintained here: it comes from
  * lib/data/generated/extensions.json, which the runtime generates from its
  * XR_DXR_*.h headers plus its hand-written docs/specs/extensions/index.json and
  * publishes to displayxr-extensions. An extension with no entry below still
  * renders, using the one-line summary from that manifest. That is deliberate:
  * this page used to hand-list the extensions and quietly shipped 15 of 16
  * (XR_DXR_depth_budget was missing for weeks — displayxr-extensions#2).
- * Adding richer prose here is an editorial upgrade, never a prerequisite for
- * appearing on the page.
+ * Adding an entry here is an editorial upgrade, never a prerequisite for
+ * appearing on the page. The build warns about drift both ways (see
+ * `checkOverlay` below).
+ *
+ * Each card reads "Vanilla OpenXR assumes {vanillaGap} / This adds {adds} /
+ * You need it if {needIf}". Every line was checked against the extension's
+ * header and, where one exists, docs/specs/extensions/<name>.md in
+ * displayxr-runtime (2026-10-05). Write from the spec, not the name; when the
+ * spec is ambiguous, write less.
+ *
+ * Grouping follows the gap: an extension sits under the OPENXR_GAPS entry
+ * whose `extensions` lists it (lib/data/openxr-gaps.ts, shared with the
+ * homepage and /about), otherwise under "Advanced / other". `tier` orders the
+ * cards inside a group: `essential` is what an ordinary app on that platform
+ * reaches for; `advanced` is for shells, present-owners and special cases.
  */
 interface Editorial {
   title?: string;
-  description: string;
   status: Status;
-  /** Override the default per-header link. */
+  tier: "essential" | "advanced";
+  /** Completes "Vanilla OpenXR assumes …". */
+  vanillaGap: string;
+  /** Completes "This adds …". */
+  adds: string;
+  /** Completes "You need it if …". */
+  needIf: string;
+  /** Override the default link (the spec, else the header). */
   href?: string;
 }
 
@@ -41,108 +58,213 @@ const editorial: Record<string, Editorial> = {
   "XR_DXR_display_info": {
     title: "Display Info",
     status: "shipping",
-    description:
-      "Provides applications with spatial display geometry, resolution, eye-tracking modes, and the data needed for correct off-axis (Kooima) projection and view configuration. Each rendering mode declares whether it consumes live eye tracking, and apps receive an edge-triggered event on tracking loss and recovery. Spec v16 adds a desktop-position query so a window-owning app can learn where the 3D panel sits in the virtual desktop and open its window there.",
+    tier: "essential",
+    vanillaGap:
+      "a headset, whose optics fix the views. There is no call for a screen's physical size or the viewer's tracked eyes.",
+    adds:
+      "the panel's size in metres and a recommended render scale, its rendering modes (2D, stereo, multiview), eye-tracking modes with an event when tracking is lost, and where the panel sits on the desktop.",
+    needIf:
+      "you render for a spatial display on purpose. Unmodified OpenXR apps still run without it, with a runtime-chosen compromise.",
   },
   "XR_DXR_view_rig": {
     title: "View Rig",
     status: "early",
-    description:
-      "Lets an app drive the runtime's view-rig math instead of re-implementing the off-axis (Kooima) projection from raw eye positions. The app chains a small rig descriptor — virtual display height and ipd/parallax/perspective factors for a display rig, or convergence and vertical FOV for a camera rig — onto xrLocateViews and consumes standard, render-ready XrView{pose, fov}, exactly as on any other OpenXR runtime. A raw-result channel still exposes the untransformed eye and display-plane inputs for aware consumers that keep doing their own math.",
-  },
-  "XR_DXR_local_3d_zone": {
-    title: "Local 3D Zones",
-    status: "beta",
-    description:
-      "Lets an app declare which regions of its window are 3D versus flat 2D via a per-pixel 3D-ness mask, authored as the whole window, a list of rects, or a freeform render target. The runtime composites a flat 2D layer over the weaved 3D output gated by the mask, and a hardware display processor can drive a switchable-lens panel so only the 3D regions weave. Spec v3 adds the 2D side as a first-class post-weave composition layer submitted through the normal frame loop.",
-  },
-  "XR_DXR_display_zones": {
-    title: "Display Zones",
-    status: "beta",
-    description:
-      "Declares a layout of independent 3D zones and flat 2D zones across a single display, each 3D zone carrying its own view rig, plus a wish mask the vendor display processor honors when driving a switchable-lens panel. Powers mixed 2D/3D compositions — a weaved 3D object beside a flat 2D HUD, for example — and underpins the out-of-process display compositing used on Android.",
-  },
-  "XR_DXR_depth_budget": {
-    title: "Rear Depth Budget",
-    status: "early",
-    description:
-      "An advisory limit on how far behind the display plane a transparent app may render, chained onto XrViewState at xrLocateViews. On a 3D display a transparent window composites over whatever is behind it, and content pushed too far back stops fusing against that background; the runtime measures the background\u2019s horizontal-disparity cue and publishes a rear offset the app clamps its geometry to. The runtime owns the policy, the display processor owns the pixels, the app owns the geometry \u2014 see ADR-040.",
+    tier: "essential",
+    vanillaGap:
+      "views come from fixed optics: the app renders the pose and field of view it is handed, with nothing to tune.",
+    adds:
+      "a rig descriptor chained on xrLocateViews (virtual display height and ipd, parallax and perspective factors, or a camera's convergence and vertical FOV). You get back standard XrView pose and FOV; the runtime does the off-axis math.",
+    needIf:
+      "you want to frame the scene's scale and depth without writing the off-axis projection yourself.",
   },
   "XR_DXR_win32_window_binding": {
     title: "Win32 Window Binding",
     status: "shipping",
-    description:
-      "Allows applications to bind an existing Win32 HWND to the DisplayXR session. The runtime composites into the application's own window rather than creating a separate one.",
+    tier: "essential",
+    vanillaGap:
+      "the runtime owns the output. There is no app window to render into.",
+    adds:
+      "your HWND, so the runtime renders into your window: windowed mode, your own keyboard and mouse, several apps on one display. Also offscreen readback and a shared D3D11/D3D12 texture.",
+    needIf: "your Windows app owns its window.",
   },
   "XR_DXR_cocoa_window_binding": {
     title: "Cocoa Window Binding",
     status: "shipping",
-    description:
-      "macOS equivalent of the Win32 window binding. Binds an NSView to the session for compositor output into the application's window.",
+    tier: "essential",
+    vanillaGap:
+      "the runtime owns the output. There is no app window to render into.",
+    adds:
+      "your CAMetalLayer-backed NSView, so the runtime renders into your view: windowed mode, your own input, several apps on one display. Also offscreen readback.",
+    needIf: "your macOS app owns its window.",
   },
   "XR_DXR_xlib_window_binding": {
     title: "Xlib Window Binding",
     status: "beta",
-    description:
-      "Desktop-Linux equivalent of the Win32 and Cocoa window bindings. An app hands the runtime its own X11 window (Display* + Window) so the native Vulkan/XCB compositor renders into the app's window instead of creating its own — enabling windowed (non-fullscreen) rendering and app-owned keyboard and mouse input.",
+    tier: "essential",
+    vanillaGap:
+      "the runtime owns the output. There is no app window to render into.",
+    adds:
+      "your X11 Display* and Window, so the runtime's Vulkan compositor renders into your window: windowed mode, your own keyboard and mouse.",
+    needIf: "your Linux app owns an X11 window.",
   },
   "XR_DXR_wayland_surface_binding": {
     title: "Wayland Surface Binding",
     status: "early",
-    description:
-      "The Wayland sibling of the Xlib binding. An app hands the runtime its own wl_display and wl_surface and keeps ownership of the surface lifecycle — registry, xdg-shell toplevel, configure acks, the event loop — while the runtime builds its Vulkan surface from the pair. Transparency is native here: a Wayland surface composites its premultiplied alpha over whatever is behind it, so a transparent background needs none of the ARGB-visual work X11 requires.",
-  },
-  "XR_DXR_macos_gl_binding": {
-    title: "macOS GL Binding",
-    status: "shipping",
-    description:
-      "macOS-specific OpenGL context binding for the Cocoa window-binding path. Lets GL apps share a CAOpenGLLayer-backed surface with the runtime compositor.",
+    tier: "essential",
+    vanillaGap:
+      "the runtime owns the output. There is no app surface to render into.",
+    adds:
+      "your wl_display and wl_surface, and the surface size, which a Wayland surface does not carry. You keep the surface lifecycle; transparency over the desktop is native.",
+    needIf: "your Linux app owns a Wayland surface.",
   },
   "XR_DXR_android_surface_binding": {
     title: "Android Surface Binding",
     status: "shipping",
-    description:
-      "Android equivalent of the Win32 and Cocoa window bindings. Binds an Android Surface (SurfaceView) to the session so the runtime composites into the app's surface, and carries the surface lifecycle the out-of-process Android compositor follows across rotation, background, and resume.",
+    tier: "essential",
+    vanillaGap:
+      "the runtime owns the output. There is no app surface to render into.",
+    adds:
+      "your Surface, so the runtime composites into it instead of spawning its own, republished across background and resume, with the window's on-panel position each frame.",
+    needIf:
+      "your Android app runs in a window (freeform or split-screen). Without it, the runtime's own surface is fullscreen-only.",
   },
-  "XR_DXR_spatial_workspace": {
-    title: "Spatial Workspace",
-    status: "shipping",
-    description:
-      "Defines how a privileged workspace controller process drives multi-app composition, window pose, hit-test, and capture on the runtime. The contract that lets the DisplayXR Shell — or any OEM, vertical, kiosk, or AI-agent controller — replace the spatial-desktop layer without runtime modifications.",
-  },
-  "XR_DXR_workspace_file_dialog": {
-    title: "Workspace File Dialog",
+  "XR_DXR_local_3d_zone": {
+    title: "Local 3D Zones",
     status: "beta",
-    description:
-      "An async, spatial-native file picker. An app calls for a picker and receives the result through the event queue; the picker is a peer workspace window spawned by the active controller, not a layer inside the app's own window. Workspace-scoped, with graceful fallback to the platform file dialog when no controller advertises support.",
+    tier: "essential",
+    vanillaGap:
+      "the projection layer is the whole picture. Layers describe a world, not which pixels of a window are 3D.",
+    adds:
+      "a per-pixel 3D mask over your window (whole window, rectangles, or freeform) and a flat 2D layer composited after the weave. The same mask drives panels that can switch regions between 2D and 3D.",
+    needIf: "your window mixes 3D with flat UI: toolbars, panels, text.",
   },
-  "XR_DXR_mcp_tools": {
-    title: "App MCP Tools",
-    status: "early",
-    description:
-      "Lets an application register its own Model Context Protocol tools with the runtime's agent surface. AI agents and voice drivers can then invoke app-defined actions — tool calls arrive through the OpenXR event queue, the app answers inline, and tools are namespaced by the app's manifest id.",
-  },
-  "XR_DXR_atlas_capture": {
-    title: "Atlas Capture",
-    status: "early",
-    description:
-      "A vendor-neutral, non-privileged way to snapshot the multi-view atlas the runtime composes for a session to a PNG, at a caller-selected compositor stage. The runtime does the readback from its own atlas image, so apps drop the per-graphics-API staging-texture readbacks they each reimplement today. Any app — handle, texture, hosted, or IPC — can call it.",
+  "XR_DXR_display_zones": {
+    title: "Display Zones",
+    status: "beta",
+    tier: "advanced",
+    vanillaGap:
+      "one set of views per session, framed for the whole display.",
+    adds:
+      "several 3D zones in one window, each framed by its own view rig, plus 2D zones and a mask telling the panel where to switch to 3D. Builds on Local 3D Zones and View Rig.",
+    needIf:
+      "you need more than one 3D region, or a 3D region framed apart from the rest of the window.",
   },
   "XR_DXR_weave": {
     title: "Window Weave Service",
     status: "experimental",
-    description:
-      "A window-bound, synchronous weave service for present-owners — callers that own their OS window and present it themselves, but want the runtime's vendor display processor to weave a sub-rect of that window for them. The caller hands the runtime a pre-weave stereo (side-by-side) texture and a window-relative rect and gets back a weaved shared texture plus a fence to composite and present. The caller never weaves; it is the runtime half of the inline-3D-in-a-browser path.",
+    tier: "advanced",
+    vanillaGap:
+      "the runtime presents the final image, so nothing else needs its weaver.",
+    adds:
+      "a weave service for callers that own and present their own window: hand it side-by-side stereo and window rects, get back a woven texture and a fence. The weave runs in out-of-process sessions only.",
+    needIf:
+      "you present your own window, as a browser does, and want 3D regions in it woven.",
+  },
+  "XR_DXR_depth_budget": {
+    title: "Rear Depth Budget",
+    status: "early",
+    tier: "advanced",
+    vanillaGap:
+      "nothing shows through around the content, so how far back it renders is the app's call alone.",
+    adds:
+      "an advisory budget: the runtime looks at the desktop behind a transparent app and says how far behind the screen it can render and still read correctly. Ignore it and nothing changes.",
+    needIf:
+      "your app is transparent over the desktop and wants content behind the screen plane.",
+  },
+  "XR_DXR_spatial_workspace": {
+    title: "Spatial Workspace",
+    status: "shipping",
+    tier: "advanced",
+    vanillaGap:
+      "each session stands alone. No process arranges the others.",
+    adds:
+      "the contract for a privileged workspace controller: claim the role, then place client windows, route input, hit-test and capture. The DisplayXR Shell is one such controller.",
+    needIf:
+      "you build a shell, launcher, kiosk or OEM workspace. Ordinary apps never do.",
+  },
+  "XR_DXR_workspace_file_dialog": {
+    title: "Workspace File Dialog",
+    status: "beta",
+    tier: "advanced",
+    vanillaGap: "no workspace: an app's dialogs are the OS's business.",
+    adds:
+      "an asynchronous file picker the workspace controller shows as its own window, with the result arriving as an event. When no controller supports it, the call says so and you use the OS dialog.",
+    needIf:
+      "your app runs inside a workspace such as the Shell and opens or saves files.",
+  },
+  "XR_DXR_mcp_tools": {
+    title: "App MCP Tools",
+    status: "early",
+    tier: "advanced",
+    vanillaGap:
+      "input comes from the user's devices. There is no path for an agent to call into the app.",
+    adds:
+      "your own MCP tools on the runtime's per-app MCP server. Calls arrive on the OpenXR event queue and you answer from your frame loop; through the workspace, tools are namespaced by your app id.",
+    needIf:
+      "you want AI agents or voice drivers to operate your app. Inert unless MCP is enabled on the machine.",
+  },
+  "XR_DXR_atlas_capture": {
+    title: "Atlas Capture",
+    status: "early",
+    tier: "advanced",
+    vanillaGap:
+      "the composed frame stays inside the runtime. To capture, you read back your own swapchains, once per graphics API.",
+    adds:
+      "one call that saves the multi-view atlas the runtime composed for your session as a PNG, at a compositor stage you pick. Any app class can call it.",
+    needIf: "you want screenshots, recordings or datasets of your 3D output.",
+  },
+  "XR_DXR_lift": {
+    title: "2D-to-3D Conversion",
+    status: "experimental",
+    tier: "advanced",
+    vanillaGap: "the app renders its own 3D content.",
+    adds:
+      "asynchronous access to a display vendor's 2D-to-3D module (depth, stereo, N-view, or photo to Gaussian splats). It returns pre-weave results and never weaves. Today: out-of-process sessions on the Windows D3D11 service.",
+    needIf:
+      "you show 2D photos or video and want the panel's own conversion rather than shipping a model.",
+  },
+  "XR_DXR_macos_gl_binding": {
+    title: "macOS OpenGL Binding",
+    status: "shipping",
+    tier: "advanced",
+    vanillaGap:
+      "OpenGL bindings for Windows and Linux (Xlib, XCB, Wayland), and none for macOS.",
+    adds:
+      "an OpenGL binding for macOS: pass your CGL context, and the runtime shares IOSurface-backed textures with its Metal compositor.",
+    needIf: "your macOS app renders with OpenGL.",
   },
 };
+
+/**
+ * Build-time drift check, both ways. Runs when the page module is evaluated,
+ * i.e. during `next build` (the page is static) and in dev; the warning lands
+ * in the build log, the page still renders.
+ */
+function checkOverlay() {
+  const generated = new Set(extensionsGenerated.map((e) => e.name));
+  const stale = Object.keys(editorial).filter((k) => !generated.has(k));
+  const missing = [...generated].filter((n) => !(n in editorial));
+  if (stale.length)
+    console.warn(
+      `[extensions] editorial overlay has entries not in generated/extensions.json (renamed or removed?): ${stale.join(", ")}`,
+    );
+  if (missing.length)
+    console.warn(
+      `[extensions] generated extensions with no editorial overlay (rendering the manifest summary): ${missing.join(", ")}`,
+    );
+}
+checkOverlay();
 
 interface Extension {
   name: string;
   title: string;
-  description: string;
   status: Status;
-  group: ExtensionGroup;
+  tier: Editorial["tier"];
+  ed?: Editorial;
+  summary: string;
+  specVersion: number;
   href: string;
+  gap: OpenXRGap["id"] | "other";
 }
 
 const extensions: Extension[] = extensionsGenerated.map((e) => {
@@ -150,210 +272,160 @@ const extensions: Extension[] = extensionsGenerated.map((e) => {
   return {
     name: e.name,
     title: ed?.title ?? e.title,
-    description: ed?.description ?? e.summary,
     status: ed?.status ?? "early",
-    group: e.group,
-    href: ed?.href ?? `${REPO_URLS.extensions}/blob/main/${e.header}`,
+    tier: ed?.tier ?? "advanced",
+    ed,
+    summary: e.summary,
+    specVersion: e.specVersion,
+    href: ed?.href ?? e.specUrl ?? `${REPO_URLS.extensions}/blob/main/${e.header}`,
+    gap: OPENXR_GAPS.find((g) => g.extensions.includes(e.name))?.id ?? "other",
   };
 });
 
-/**
- * Editorial section blurbs, in display order. `key` matches the `group` the
- * runtime's manifest assigns each extension; a group it introduces that has no
- * blurb here still renders (see below) rather than swallowing its extensions.
- */
-const GROUPS: { key: string; label: string; blurb: string }[] = [
-  {
-    key: "display",
-    label: "Display capability",
-    blurb:
-      "What the runtime tells apps about the 3D display they're rendering on.",
-  },
-  {
-    key: "rendering",
-    label: "Rendering & projection",
-    blurb:
-      "How an app drives the runtime's view math and tells it which parts of the window are 3D versus flat 2D — instead of re-implementing the projection or 2D/3D compositing itself.",
-  },
-  {
-    key: "windowing",
-    label: "App window binding",
-    blurb:
-      "How an app hands its native window to the runtime so the compositor can output into it.",
-  },
-  {
-    key: "workspace",
-    label: "Workspace controller surface",
-    blurb:
-      "How a swappable workspace controller (the DisplayXR Shell, or any third-party / OEM / vertical equivalent) drives multi-app composition and the launcher on top of the runtime.",
-  },
-  {
-    key: "agent",
-    label: "Agent control",
-    blurb:
-      "How applications plug into the AI-agent surface — exposing their own actions to agents and voice drivers through the same MCP framework the runtime and workspace controllers use.",
-  },
-  {
-    key: "capture",
-    label: "Capture",
-    blurb:
-      "Getting the composed 3D frame back out of the runtime — for screenshots, recording, and dataset generation.",
-  },
-];
+// Essential first; inside a tier, the gap's own listing order (Windows,
+// macOS, Linux, Android for the bindings), then by name.
+const gapOrder = (e: Extension) => {
+  const i = OPENXR_GAPS.find((g) => g.id === e.gap)?.extensions.indexOf(e.name) ?? -1;
+  return i < 0 ? Number.MAX_SAFE_INTEGER : i;
+};
+const byTier = (a: Extension, b: Extension) =>
+  (a.tier === b.tier ? 0 : a.tier === "essential" ? -1 : 1) ||
+  gapOrder(a) - gapOrder(b) ||
+  a.name.localeCompare(b.name);
+
+const mono = "rounded bg-surface px-1 py-0.5 font-mono text-xs text-accent";
+
+function ExtensionCard({ ext }: { ext: Extension }) {
+  return (
+    <a
+      id={ext.name}
+      href={ext.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="card-interactive block scroll-mt-24 rounded-lg border border-border bg-surface p-6"
+    >
+      <div className="mb-1 flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+        <h3 className="text-lg font-semibold text-text-primary">{ext.title}</h3>
+        <div className="flex items-center gap-2">
+          <span className="text-xs uppercase tracking-wider text-text-secondary">
+            {ext.tier === "essential" ? "Essential" : "Advanced"}
+          </span>
+          <Badge status={ext.status} />
+        </div>
+      </div>
+      <code className="mb-4 block break-all font-mono text-xs text-accent">{ext.name}</code>
+      {ext.ed ? (
+        <dl className="space-y-2 text-sm leading-relaxed text-text-secondary">
+          <div>
+            <dt className="inline text-text-primary">Vanilla OpenXR assumes </dt>
+            <dd className="inline">{ext.ed.vanillaGap}</dd>
+          </div>
+          <div>
+            <dt className="inline text-accent">This adds </dt>
+            <dd className="inline">{ext.ed.adds}</dd>
+          </div>
+          <div>
+            <dt className="inline text-text-primary">You need it if </dt>
+            <dd className="inline">{ext.ed.needIf}</dd>
+          </div>
+        </dl>
+      ) : (
+        <p className="text-sm leading-relaxed text-text-secondary">{ext.summary}</p>
+      )}
+    </a>
+  );
+}
 
 export default function ExtensionsPage() {
+  const other = extensions.filter((e) => e.gap === "other").sort(byTier);
   return (
     <PageLayout
       title="Extensions"
-      description="The XR_DXR_* extensions that extend OpenXR for spatial display capabilities not covered by the base OpenXR specification."
+      description="OpenXR was written for headsets. A display on a desk differs in four ways; DisplayXR extends OpenXR with an XR_DXR_* extension for each."
     >
-      <div className="max-w-3xl space-y-12">
-        {/* Why extensions */}
+      <div className="max-w-3xl space-y-16">
         <section>
-          <h2 className="text-xl font-semibold text-text-primary mb-4">
-            Why custom extensions?
-          </h2>
-          <p className="text-text-secondary leading-relaxed mb-4">
-            Standard OpenXR was designed for headsets and controllers. Tracked
-            spatial displays have different requirements: they need to
-            communicate display geometry, support window-hosted compositing, and
-            provide spatial display models that don&apos;t map to existing OpenXR
-            concepts.
+          <h2 className="mb-4 text-2xl font-semibold text-text-primary">Where vanilla OpenXR stops</h2>
+          <ol className="grid gap-3 sm:grid-cols-2">
+            {OPENXR_GAPS.map((g, i) => (
+              <li key={g.id}>
+                <a
+                  href={`#${g.id}`}
+                  className="card-interactive block h-full rounded-lg border border-border bg-surface p-4"
+                >
+                  <p className="text-xs text-text-secondary">{i + 1}</p>
+                  <p className="font-semibold text-text-primary">{g.title}</p>
+                </a>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-4 text-sm text-text-secondary">
+            Plus <a href="#other" className="text-accent hover:text-accent-hover underline underline-offset-2">advanced extensions</a>{" "}
+            for shells, capture, agents and 2D-to-3D.
           </p>
-          <p className="text-text-secondary leading-relaxed">
-            DisplayXR defines focused extensions to fill these gaps while
-            remaining compatible with the OpenXR architecture and extension
-            model. The goal is practical interoperability, not a competing
-            specification.
-          </p>
-          <p className="text-text-secondary leading-relaxed mt-4">
-            As of runtime <strong className="text-text-primary">v2.0.0</strong>,
-            every DisplayXR extension lives under the project&apos;s own{" "}
-            <code className="bg-surface text-accent px-1 py-0.5 rounded text-xs font-mono">
-              XR_DXR_*
-            </code>{" "}
-            vendor author tag rather than the earlier provisional{" "}
-            <code className="bg-surface text-accent px-1 py-0.5 rounded text-xs font-mono">
-              XR_EXT_*
-            </code>{" "}
-            naming (the DXR author tag is officially registered with Khronos
-            as of July 2026). The rename is a breaking change: apps built against the old
-            names need a runtime older than v2.0.0, or a rebuild against the
-            v2.0.0 headers — the runtime repository ships a one-command
-            migration script (
-            <code className="bg-surface text-accent px-1 py-0.5 rounded text-xs font-mono">
-              scripts/dxr_rename.py
-            </code>
-            ) that rewrites a codebase in place.
-          </p>
-          <div className="mt-6 border border-border rounded-lg overflow-hidden">
-            <Image
-              src="/diagrams/dxr-kooima-frustum.svg"
-              unoptimized
-              alt="Tracked off-axis projection: an asymmetric frustum from the tracked eye position to the corners of the fixed display plane, recomputed every frame as the eye moves, so rendered content reads as depth behind the glass."
-              width={960}
-              height={540}
-              className="w-full h-auto"
-            />
-          </div>
         </section>
 
-        {/* Extension list, grouped */}
-        {[
-          ...GROUPS,
-          // A group the runtime's manifest introduces but this page has no
-          // blurb for still gets a section — same reason the list is derived:
-          // nothing published should be invisible here.
-          ...[...new Set(extensions.map((e) => e.group))]
-            .filter((g) => !GROUPS.some((x) => x.key === g))
-            .map((g) => ({ key: g, label: g, blurb: "" })),
-        ].map((group) => {
-          const items = extensions.filter((e) => e.group === group.key);
-          if (items.length === 0) return null;
+        {OPENXR_GAPS.map((g, i) => {
+          const items = extensions.filter((e) => e.gap === g.id).sort(byTier);
           return (
-            <section key={group.key}>
-              <h2 className="text-xl font-semibold text-text-primary mb-2">
-                {group.label}
-              </h2>
-              <p className="text-sm text-text-secondary mb-6 leading-relaxed">
-                {group.blurb}
-              </p>
+            <section key={g.id} id={g.id} className="scroll-mt-24">
+              <p className="mb-1 text-xs font-medium uppercase tracking-wider text-accent">Gap {i + 1}</p>
+              <h2 className="mb-4 text-2xl font-semibold text-text-primary">{g.title}</h2>
+              <div className="mb-6 grid gap-6 md:grid-cols-[1fr_14rem] md:items-start">
+                <div className="space-y-2 text-sm leading-relaxed text-text-secondary">
+                  <p>
+                    <span className="text-text-primary">OpenXR assumes a headset:</span> {g.headset}
+                  </p>
+                  <p>
+                    <span className="text-text-primary">On a display:</span> {g.display}
+                  </p>
+                </div>
+                <div className="hidden overflow-hidden rounded-lg border border-border bg-surface md:block">
+                  <Image
+                    src={g.image.src}
+                    alt={g.image.alt}
+                    width={448}
+                    height={252}
+                    sizes="224px"
+                    unoptimized={g.image.src.endsWith(".svg")}
+                    className="h-auto w-full"
+                  />
+                </div>
+              </div>
               <div className="space-y-4">
                 {items.map((ext) => (
-                  <Card
-                    key={ext.name}
-                    href={
-                      ext.href ??
-                      `${REPO_URLS.extensions}/blob/main/include/openxr/${ext.name}.h`
-                    }
-                  >
-                    <div className="flex items-start justify-between gap-4 mb-2">
-                      <code className="text-accent font-mono text-sm font-semibold">
-                        {ext.name}
-                      </code>
-                      <Badge status={ext.status} />
-                    </div>
-                    <h3 className="text-lg font-semibold text-text-primary mb-2">
-                      {ext.title}
-                    </h3>
-                    <p className="text-sm text-text-secondary leading-relaxed">
-                      {ext.description}
-                    </p>
-                  </Card>
+                  <ExtensionCard key={ext.name} ext={ext} />
                 ))}
               </div>
             </section>
           );
         })}
 
-        {/* Philosophy */}
-        <section>
-          <h2 className="text-xl font-semibold text-text-primary mb-4">
-            Extension philosophy
-          </h2>
-          <ul className="space-y-3 text-text-secondary leading-relaxed">
-            <li className="flex items-start gap-3">
-              <span className="text-accent mt-1.5 text-xs">&#9679;</span>
-              <span>
-                <strong className="text-text-primary">Minimal scope</strong> —
-                each extension does one thing well. No monolithic specs.
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-accent mt-1.5 text-xs">&#9679;</span>
-              <span>
-                <strong className="text-text-primary">OpenXR-compatible</strong>{" "}
-                — follows the standard extension registration and dispatch
-                model.
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-accent mt-1.5 text-xs">&#9679;</span>
-              <span>
-                <strong className="text-text-primary">
-                  Vendor-independent
-                </strong>{" "}
-                — designed for any spatial display, not tied to a
-                specific hardware vendor.
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-accent mt-1.5 text-xs">&#9679;</span>
-              <span>
-                <strong className="text-text-primary">
-                  Explicitly versioned
-                </strong>{" "}
-                — specs evolve through clear versioning so apps and runtimes can
-                negotiate capabilities.
-              </span>
-            </li>
-          </ul>
-        </section>
+        {other.length > 0 && (
+          <section id="other" className="scroll-mt-24">
+            <h2 className="mb-2 text-2xl font-semibold text-text-primary">Advanced / other</h2>
+            <p className="mb-6 text-sm leading-relaxed text-text-secondary">
+              Capture, agents, 2D-to-3D, workspace dialogs and graphics
+              bindings: useful, and none of them a gap every app hits.
+            </p>
+            <div className="space-y-4">
+              {other.map((ext) => (
+                <ExtensionCard key={ext.name} ext={ext} />
+              ))}
+            </div>
+          </section>
+        )}
 
-        {/* Source */}
-        <div className="pt-8 border-t border-border">
-          <p className="text-text-secondary">
-            All extension specifications and headers are in the{" "}
+        <section>
+          <h2 className="mb-2 text-2xl font-semibold text-text-primary">Catalog</h2>
+          <p className="mb-6 text-sm leading-relaxed text-text-secondary">
+            Generated from the headers. Since runtime v2.0.0 every extension
+            uses the{" "}
+            <code className={mono}>XR_DXR_*</code> author tag, registered with
+            Khronos in July 2026 (before that, provisional{" "}
+            <code className={mono}>XR_EXT_*</code> names);{" "}
+            <code className={mono}>scripts/dxr_rename.py</code> in the runtime
+            repo migrates a codebase in one command. Headers and specs live in{" "}
             <a
               href={REPO_URLS.extensions}
               target="_blank"
@@ -361,41 +433,51 @@ export default function ExtensionsPage() {
               className="text-accent hover:text-accent-hover underline underline-offset-2"
             >
               displayxr-extensions
-            </a>{" "}
-            repository.
+            </a>
+            .
           </p>
-        </div>
+          <Table headers={["Extension", "Spec", "Summary"]}>
+            {[...extensionsGenerated]
+              .sort((a, b) => a.name.localeCompare(b.name))
+              .map((e) => (
+                <TableRow key={e.name}>
+                  <TableCell className="font-mono text-xs text-accent">
+                    <a href={`#${e.name}`} className="break-all hover:underline">{e.name}</a>
+                  </TableCell>
+                  <TableCell className="text-text-secondary">v{e.specVersion}</TableCell>
+                  <TableCell className="text-text-secondary">{e.summary}</TableCell>
+                </TableRow>
+              ))}
+          </Table>
+        </section>
 
-        {/* Where to next */}
-        <section className="pt-12 border-t border-border">
-          <h2 className="text-xl font-semibold text-text-primary mb-4">
-            Where to next
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Card href="/developers" title="Build an app">
-              <p className="text-sm text-text-secondary leading-relaxed">
-                Install the runtime and opt into these extensions from your own
-                OpenXR app — no special hardware required.
+        <section className="border-t border-border pt-12">
+          <h2 className="mb-4 text-xl font-semibold text-text-primary">Where to next</h2>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            <a href="/developers/native" className="card-interactive block rounded-lg border border-border bg-surface p-6">
+              <h3 className="mb-2 text-lg font-semibold text-text-primary">Build an app</h3>
+              <p className="text-sm leading-relaxed text-text-secondary">
+                Start from a reference app and run it on sim-display, no
+                special hardware required.
               </p>
-            </Card>
-            <Card
+            </a>
+            <a
               href={`${REPO_URLS.runtime}/blob/main/docs/guides/implementing-extension.md`}
-              title="Implement an extension"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card-interactive block rounded-lg border border-border bg-surface p-6"
             >
-              <p className="text-sm text-text-secondary leading-relaxed">
-                Add or extend an OpenXR extension in the runtime — the
-                contributor guide walks through the wiring end to end.
+              <h3 className="mb-2 text-lg font-semibold text-text-primary">Implement an extension</h3>
+              <p className="text-sm leading-relaxed text-text-secondary">
+                The contributor guide walks through the runtime wiring end to end.
               </p>
-            </Card>
-            <Card href="/vendors" title="Integrate a display">
-              <p className="text-sm text-text-secondary leading-relaxed">
-                Vendors: ship a display-processor plug-in that consumes{" "}
-                <code className="bg-surface text-accent px-1 py-0.5 rounded text-xs font-mono">
-                  XR_DXR_display_info
-                </code>{" "}
-                and the window bindings.
+            </a>
+            <a href="/vendors" className="card-interactive block rounded-lg border border-border bg-surface p-6">
+              <h3 className="mb-2 text-lg font-semibold text-text-primary">Integrate a display</h3>
+              <p className="text-sm leading-relaxed text-text-secondary">
+                Vendors ship a display plug-in; apps keep using these extensions unchanged.
               </p>
-            </Card>
+            </a>
           </div>
         </section>
       </div>
