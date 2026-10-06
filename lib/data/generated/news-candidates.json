@@ -22,6 +22,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.6.0",
+    "repo": "displayxr-installer",
+    "tag": "v2.6.0",
+    "title": "DisplayXR v2.6.0",
+    "date": "2026-10-06",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.6.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.10.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.10.0",
@@ -45,8 +56,15 @@
     "date": "2026-10-06",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.11.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Stereo camera (L1):** the Leia SR tracking camera is now exposed as a runtime stereo camera (`XR_DXR_stereo_camera`, runtime v2.27.0+) — raw SR camera + calibration parsing, a tracker keep-alive so the eye tracker keeps running while t…",
+      "**Requires DisplayXR runtime v2.27.0 or newer** — the Windows installer's minimum runtime moved from v2.25.4 to v2.27.0.",
+      "Leia SR tracking camera as a runtime stereo camera source — fills the `stereo_camera_*` plug-in slots (runtime ADR-043) (#273)",
+      "Platform-neutral, host-tested parsing of the SR raw-camera frame + calibration (#273)",
+      "Tracker keep-alive counts real eye pairs, reports a measured source rate, 4 ms poll (#273)",
+      "`platformDeviceHint` carries the tracker camera's USB id, so browsers no longer list the raw tracker device next to \"3D Camera (DisplayXR)\" (#273)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.27.0",
@@ -272,19 +290,6 @@
       "USD render cameras are loaded. On macOS, `DXR_MODELVIEWER_CAMERA=<name|index>` starts the view at a file camera (#70)",
       "The OpenPBR/MaterialX→glTF converter now writes `KHR_lights_punctual` from UsdLux lights (#70)",
       "Per-light cube shadow maps with skinned and morphed casters. Transmissive materials cast no shadow (#70, L2)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.5.6",
-    "repo": "displayxr-installer",
-    "tag": "v2.5.6",
-    "title": "DisplayXR v2.5.6",
-    "date": "2026-10-03",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.6",
-    "prerelease": false,
-    "featureLines": [
-      "**Runtime v2.25.0:** 2D overlay (Local2D) layers now honour their declared colour format on every backend (ADR-044 §7, runtime#1795 / #1809), and IPC/shell clients can now capture their own frame (#1810 / #1811)."
     ],
     "looksMechanical": false
   },
