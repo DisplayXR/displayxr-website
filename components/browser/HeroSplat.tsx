@@ -240,10 +240,11 @@ export function HeroSplat() {
       if (!rest) rest = { a, b };
       rest.a += (a - rest.a) * 0.01;
       rest.b += (b - rest.b) * 0.01;
-      // Tilting the right edge away moves the eye to the left of the glass,
-      // tilting the top away moves it down: the scene behaves like a window.
+      // Tilting the right edge away moves the eye to the left of the glass;
+      // tilting the top away moves it up (pitch sign verified on an iPhone by
+      // David, 2026-10-05: the first version had it inverted).
       tx = -clamp((a - rest.a) / TILT_DEG) * MAX_X;
-      ty = -clamp((b - rest.b) / TILT_DEG) * MAX_Y;
+      ty = clamp((b - rest.b) / TILT_DEG) * MAX_Y;
     };
     const tick = () => {
       x += (tx - x) * 0.12;
