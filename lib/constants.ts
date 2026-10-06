@@ -32,7 +32,8 @@ export const NAV: NavEntry[] = [
   {
     label: "Developers",
     href: "/developers",
-    match: ["/getting-started", "/extensions", "/demos", "/platform-support"],
+    // /developers/native sits beneath href, so it matches without a listing.
+    match: ["/extensions", "/demos", "/platform-support"],
   },
   {
     label: "Contribute",
