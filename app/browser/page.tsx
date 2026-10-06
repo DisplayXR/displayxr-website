@@ -55,7 +55,7 @@ export default function BrowserPage() {
           own scene behind the copy, through the SDK this page advertises (in
           depth in the DisplayXR Browser, 2D everywhere else). Camera-shot
           footage of a real display can join it later (spec §5). */}
-      <section className="relative isolate min-h-[88vh] overflow-hidden">
+      <section className="relative min-h-[88vh] overflow-hidden">
         <HeroSplat />
         <div
           aria-hidden
@@ -78,7 +78,7 @@ export default function BrowserPage() {
             </p>
             <div className="pointer-events-auto mb-4 flex flex-wrap gap-4">
               <BrowserDownload browser={browser} />
-              <Button variant="secondary" href="#build" className="bg-black/30 backdrop-blur">
+              <Button variant="secondary" href="#build" className="bg-black/45">
                 Build for it
               </Button>
             </div>

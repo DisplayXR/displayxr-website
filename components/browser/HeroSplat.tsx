@@ -85,6 +85,10 @@ export function HeroSplat() {
   const [phase, setPhase] = useState<Phase>("poster");
   const [supported, setSupported] = useState<boolean | null>(null);
   const [touch, setTouch] = useState(false);
+  // The poster leaves the DOM once the splat is live. Over a woven canvas a
+  // full-size layer must never linger at opacity 0 (woven-canvas rule 8: hide
+  // with display:none), and in 3D the cover is a hard cut, never a fade (rule 11).
+  const [posterGone, setPosterGone] = useState(false);
   // Device-orientation access on touch devices: null until asked.
   const [tilt, setTilt] = useState<"granted" | "denied" | null>(null);
   const tiltRef = useRef<Promise<"granted" | "denied"> | null>(null);
@@ -133,6 +137,9 @@ export function HeroSplat() {
         // The Gallery's reveal: every gaussian flies in to assemble the scene.
         // Played once firstWoven settles (at once in 2D), while the poster fades.
         reveal: "assemble",
+        // Twice the stereo baseline of the photo's own rig: David asked for
+        // double the depth on the panel (2026-10-05). Absolute, not normalised.
+        ipdFactor: 2,
         // Coarser levels stand in while finer ones stream; the budget clears
         // the full count, so the settled frame is the original resolution.
         perf: { splatBudget: SPLAT_BUDGET, lodUnderfillLimit: 3 },
@@ -149,6 +156,14 @@ export function HeroSplat() {
       // In the DisplayXR Browser, hold the poster until the first woven frame.
       if (wall.supported && handle.firstWoven) await handle.firstWoven;
       setPhase("live");
+      if (wall.supported) {
+        setPosterGone(true);
+        // The sticky navbar's backdrop blur would read the interlaced weave
+        // under it (rule 10); globals.css swaps it for a plain tint on this flag.
+        document.documentElement.dataset.inline3d = "woven";
+      } else {
+        window.setTimeout(() => setPosterGone(true), 800);
+      }
       if (!wall.supported && !calmRef.current) {
         if (tiltRef.current) {
           const t = await tiltRef.current;
@@ -264,6 +279,7 @@ export function HeroSplat() {
     () => () => {
       stopRef.current?.();
       resizeOffRef.current?.();
+      delete document.documentElement.dataset.inline3d;
       handleRef.current?.remove?.();
     },
     [],
@@ -272,18 +288,19 @@ export function HeroSplat() {
   return (
     <div className="absolute inset-0" data-hero-phase={phase}>
       <SplatCanvas canvasRef={canvasRef} />
-      <Image
-        src={POSTER}
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        quality={65}
-        className={`object-cover transition-opacity duration-700 ${phase === "live" ? "opacity-0" : "opacity-100"}`}
-      />
-      {/* Caption: switches on wall.supported (design spec S5). */}
+      {!posterGone && (
+        <Image
+          src={POSTER}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          quality={65}
+          className={`pointer-events-none object-cover transition-opacity duration-700 ${phase === "live" ? "opacity-0" : "opacity-100"}`}
+        />
+      )}
+      {/* Caption, 2D only: in the DisplayXR Browser the scene speaks for itself. */}
       <div className="pointer-events-none absolute bottom-6 right-6 z-10 max-w-xs text-right text-xs text-white/80 drop-shadow">
-        {phase === "live" && supported && <p>You&apos;re seeing this in 3D.</p>}
         {phase === "live" && supported === false && (
           <p>
             {!touch
@@ -300,7 +317,7 @@ export function HeroSplat() {
         <button
           type="button"
           onClick={onTryTap}
-          className="absolute bottom-6 right-6 z-10 rounded-full border border-white/40 bg-black/40 px-4 py-2 text-sm text-white backdrop-blur"
+          className="absolute bottom-6 right-6 z-10 rounded-full border border-white/40 bg-black/55 px-4 py-2 text-sm text-white"
         >
           Try 3D
         </button>

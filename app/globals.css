@@ -193,3 +193,13 @@ html {
   z-index: -1;
   border-radius: 16px;
 }
+
+/* A woven inline-3D canvas is on the page (DisplayXR Browser): nothing drawn
+   over the weave may use backdrop-filter, because the blur reads the
+   interlaced pixels (displayxr-web docs/woven-canvas-rules.md, rule 10).
+   The sticky navbar swaps its frosted glass for a plain tint. */
+html[data-inline3d="woven"] nav {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  background-color: rgba(10, 10, 10, 0.92) !important;
+}
