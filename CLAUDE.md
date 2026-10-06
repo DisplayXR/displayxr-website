@@ -113,6 +113,12 @@ audience, each opening on that audience's recommended next step:
   describe it as "ships as a standalone installer," "distributed separately,"
   "register your binary," etc. (The runtime, extensions, MCP framework, engine
   plugins, and demos *are* open source — only the shell is the carve-out.)
+- **The same goes for the DisplayXR Browser.** Its source is private
+  (`displayxr-browser-pvt`); the public `displayxr-browser` repo holds releases,
+  issues and the update feed. Never describe the Shell or the Browser as open
+  source, and never list their public repos as "where the code lives" (the
+  `releasesOnly` flag in `lib/data/ecosystem.ts` keeps them off /contribute's
+  map). No need to say they are closed either: just don't claim they are open.
 - **Depth lives in the runtime repo.** This site **summarizes and routes**; deep
   docs, ADRs, and guides stay in `displayxr-runtime` and are linked, not
   re-hosted. A new ADR is usually internal — don't surface it on the marketing

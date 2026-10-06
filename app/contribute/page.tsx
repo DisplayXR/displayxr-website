@@ -174,7 +174,7 @@ export default function ContributePage() {
           <div className="space-y-8">
             {repoGroups.map((group) => {
               const repos = ecosystemRepos.filter(
-                (r) => r.category === group.key
+                (r) => r.category === group.key && !r.releasesOnly
               );
               if (repos.length === 0) return null;
               return (

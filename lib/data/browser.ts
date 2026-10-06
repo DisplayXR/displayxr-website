@@ -217,7 +217,7 @@ export const FAQ: { q: string; a: string }[] = [
     a: "A spatial display with a DisplayXR plug-in, with or without glasses. Install DisplayXR first, then the browser.",
   },
   {
-    q: "Is it free? Is it open source?",
-    a: "The browser is free. The SDK, the samples and the DisplayXR runtime underneath are open source; the browser itself is distributed as free installers. It is not affiliated with Google and has no Google sign-in or sync.",
+    q: "Is it free?",
+    a: "Yes. The browser is free to download and use. The SDK and samples you build with are open source. It is not affiliated with Google and has no Google sign-in or sync.",
   },
 ];

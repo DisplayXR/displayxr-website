@@ -7,6 +7,12 @@ export interface EcosystemRepo {
   url: string;
   category: "core" | "engines" | "tools" | "demos" | "apps";
   status?: Status;
+  /**
+   * The repo publishes installers/releases and takes issues, but is not where
+   * the product's code is developed. /contribute's "Where the code lives" map
+   * skips these; /about still lists them. Don't describe them as open source.
+   */
+  releasesOnly?: true;
 }
 
 export const ecosystemRepos: EcosystemRepo[] = [
@@ -135,6 +141,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     url: "https://github.com/DisplayXR/displayxr-shell-releases",
     category: "apps",
     status: "shipping",
+    releasesOnly: true,
   },
   {
     name: "displayxr-vendor-template",
@@ -162,6 +169,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     url: "https://github.com/DisplayXR/displayxr-browser",
     category: "apps",
     status: "shipping",
+    releasesOnly: true,
   },
   {
     name: "displayxr-web",
