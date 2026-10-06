@@ -41,7 +41,14 @@ export function Hero() {
             and display makers, and agent-ready, with MCP built into the
             runtime.
           </p>
-          <div className="hero-animate hero-animate-delay-2 flex flex-wrap gap-4">
+          {/* Stacked below sm, side by side above: never flex-wrap. The
+              download label is OS-detected after hydration ("Get DisplayXR"
+              becomes "Get DisplayXR for Android"), and on a phone the longer
+              label wrapped "Build something" onto a second row, growing the
+              hero by 60px after first paint: the homepage's only layout
+              shift (mobile CLS 0.039). A fixed column keeps the height the
+              same whatever the label says. */}
+          <div className="hero-animate hero-animate-delay-2 flex flex-col gap-4 sm:flex-row">
             <DownloadButton />
             <Button variant="secondary" href="/developers">
               Build something
