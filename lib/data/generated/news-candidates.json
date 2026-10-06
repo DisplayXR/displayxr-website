@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-browser@v1.5.0",
+    "repo": "displayxr-browser",
+    "tag": "v1.5.0",
+    "title": "DisplayXR Browser v1.5.0",
+    "date": "2026-10-06",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.5.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.35.1",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.35.1",
@@ -90,12 +101,18 @@
     "id": "displayxr-runtime@v2.27.1",
     "repo": "displayxr-runtime",
     "tag": "v2.27.1",
-    "title": "v2.27.1",
+    "title": "DisplayXR Runtime v2.27.1",
     "date": "2026-10-06",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.27.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Linux / X11: the 3D panel is identified by its connector's hardware mode, not by the size X11 reports** (#1832, fixes #1831). Under GNOME's XWayland scaling, a fractionally scaled panel appears to X11 at `device × ceil(scale) / scale`,…",
+      "The runtime now reads each connector's real mode from mutter DisplayConfig, falling back to `/sys/class/drm`, and matches by connector.",
+      "An X11 window on a fractionally scaled panel is resampled by the compositor. It now presents in 2D and logs one clear WARN that points to running the app natively on Wayland, instead of producing a broken weave.",
+      "Integer scales (e.g. 200 %) keep weaving exactly as before. Native Wayland apps are unaffected.",
+      "Background: `docs/reference/linux-display-scaling.md`."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.22.0",
@@ -185,19 +202,6 @@
       "**XR_DXR_weave spec v16 (#1825).** The Linux engine now refuses a submit whose overlay it cannot import. It no longer drops the overlay silently and reports success.",
       "feat(vk dp, weave/linux): `set_overlay_2d` VK slot, giving 2D under the lens on Vulkan (94fc02248, #1823)",
       "feat(d3d11_service): per-stage weave timing under `DXR_WEAVE_GPU_TIMING` (2D-under-the-lens P0) (#1824)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.3.1",
-    "repo": "displayxr-browser",
-    "tag": "v1.3.1",
-    "title": "DisplayXR Browser v1.3.1",
-    "date": "2026-10-04",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.3.1",
-    "prerelease": false,
-    "featureLines": [
-      "**Windows: the 2D-under-the-lens page from 1.3.0 is now cached while only 3D content animates.** The whole-page 2D layer is reused as long as the flat content around and over inline-3D tiles has not changed, so the display processor re-r…"
     ],
     "looksMechanical": false
   },
