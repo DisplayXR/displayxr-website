@@ -29,6 +29,22 @@
     "date": "2026-10-06",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.10.0",
     "prerelease": false,
+    "featureLines": [
+      "**Linux: 2D under the lens.** The Vulkan display processor now takes the runtime's 2D over-layer (runtime ≥ v2.26.0, `set_overlay_2d`), and the SR weaver composites and lens-filters it inside the weave (`srWeaverSetComposeInputsVulkan`).…",
+      "Switches for A/B comparison and fallback: `DXR_LEIA_SR_COMPOSE=0` turns the compose off, and `DXR_LEIA_SR_COMPOSE_INLINE=1` selects the inline path.",
+      "If the SR compose API is not available, the plug-in falls back to the runtime's post-weave blend.",
+      "Linux: the SR Vulkan weaver composes the runtime's 2D over-layer (\"2D under the lens\") (#301)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.27.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.27.0",
+    "title": "v2.27.0",
+    "date": "2026-10-06",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.27.0",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -42,6 +58,19 @@
     "prerelease": false,
     "featureLines": [
       "**Linux: move the window onto the 3D panel (#266, PR #352).** `DisplayXRTargetDisplay` / `DisplayXRProvider.MoveWindowToDisplay` now work on Linux (X11/XWayland). On Linux the runtime reports the panel's desktop rect through `XR_DXR_disp…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.23.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.23.0",
+    "title": "DisplayXR v2.23.0",
+    "date": "2026-10-06",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.23.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Linux: window size, position, keyboard resize and close request (#332, PR #353).** `displayxr_get_overlay_size`, `displayxr_get_overlay_position` / `displayxr_set_overlay_position`, `displayxr_resize_overlay` and `displayxr_consume_ove…"
     ],
     "looksMechanical": false
   },
@@ -268,21 +297,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.25.2",
-    "repo": "displayxr-runtime",
-    "tag": "v2.25.2",
-    "title": "DisplayXR Runtime v2.25.2",
-    "date": "2026-10-03",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.25.2",
-    "prerelease": false,
-    "featureLines": [
-      "**2D under the lens.** A display processor can now composite the 2D over-layer inside the weave and band-limit it for the lens (new D3D11 DP slot `set_overlay_2d`, ADR-027 Amendment). `XR_DXR_weave` spec v14 adds `XrWeaveSubmitOverlayUnc…",
-      "feat(dp): `set_overlay_2d` — the DP may composite the 2D over-layer inside the weave (46a9b0dc5)",
-      "feat(weave): v14 `XrWeaveSubmitOverlayUnchangedDXR` — reuse the DP's 2D-layer prefilter (ed6db7a2d)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-shell-releases@v2.3.2",
     "repo": "displayxr-shell-releases",
     "tag": "v2.3.2",
@@ -436,19 +450,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unity@v2.20.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.20.0",
-    "title": "DisplayXR v2.20.0",
-    "date": "2026-09-30",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.20.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Linux transparent overlay (#332, PR #333).** A transparent app on a Linux player now floats over the desktop as it does on Windows. `DisplayXRTransparentOverlay.RequestTransparentSession()` now forwards the request on Linux players (it…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.14.1",
