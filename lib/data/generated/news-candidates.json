@@ -57,8 +57,14 @@
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.12.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**2D under the lens on Android.** On the Android (CNSDK) path, the runtime's 2D over-layer — UI, text, cursors drawn over a 3D app — is now composited *inside* the weave instead of on top of it. CNSDK band-limits the 2D layer to the lens…",
+      "**CNSDK v0.10.75** — the Android build moves to CNSDK v0.10.75, which adds the experimental `leia_interlacer_vulkan_set_overlay_2d` entry point and caches the 2D-layer prefilter (LeiaInc/CNSDK#746).",
+      "Android DP implements the runtime's Vulkan DP slots `set_overlay_2d` and `set_overlay_2d_filter_strength` (runtime v2.26.0), forwarding the layer to CNSDK's in-weave compositor (#309).",
+      "Safe fallback: the DP declines — and the runtime keeps today's post-weave composite — when the loaded CNSDK core lacks the API, the layer is not 8-bit encoded, session transparency is on (CNSDK writes opaque alpha), or the previous frame…",
+      "Android header pin bumped v2.16.19 → v2.26.0. Plug-in ABI stays at v5, so this plug-in still loads on older runtimes (they simply never offer the 2D layer) (#309)."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.28.0",
@@ -73,6 +79,17 @@
       "feat(stereo-camera): delegation hardening — signer match, per-user first-use notice, DECLINE_DELEGATION (spec v3) (#1838)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.29.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.29.0",
+    "title": "v2.29.0",
+    "date": "2026-10-07",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.29.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@v1.5.1",
@@ -225,25 +242,6 @@
     "prerelease": false,
     "featureLines": [
       "Optional per-stage weave timing diagnostics: set `DXR_WEAVE_GPU_TIMING=1` to log GPU time per weave stage (D3D11). Off by default, no cost when unset. (#302)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.26.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.26.0",
-    "title": "DisplayXR Runtime v2.26.0",
-    "date": "2026-10-05",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.26.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Linux: 2D under the lens (#1823).** The Vulkan display-processor interface gains an appended `set_overlay_2d` slot plus `set_overlay_2d_filter_strength` (feature macros `XRT_DP_VK_HAS_OVERLAY_2D` / `XRT_DP_VK_HAS_OVERLAY_2D_FILTER_STRE…",
-      "The Linux weave engine now offers a window-sized 2D over-layer to the DP, so a vendor weaver can composite and lens-filter it inside the weave. If the DP declines, the runtime blends it after the weave as before.",
-      "The v14 \"layer unchanged\" and v15 filter-strength hints now reach the DP on Linux.",
-      "With the Leia plug-in's SR compose path, 2D text over 3D content is legible through the lens instead of fringed (verified on the Acer SpatialLabs DS1).",
-      "**XR_DXR_weave spec v16 (#1825).** The Linux engine now refuses a submit whose overlay it cannot import. It no longer drops the overlay silently and reports success.",
-      "feat(vk dp, weave/linux): `set_overlay_2d` VK slot, giving 2D under the lens on Vulkan (94fc02248, #1823)",
-      "feat(d3d11_service): per-stage weave timing under `DXR_WEAVE_GPU_TIMING` (2D-under-the-lens P0) (#1824)"
     ],
     "looksMechanical": false
   },

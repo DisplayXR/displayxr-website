@@ -2,30 +2,30 @@
   {
     "id": "runtime",
     "name": "DisplayXR Runtime",
-    "version": "v2.28.0",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.28.0",
+    "version": "v2.29.0",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.29.0",
     "releaseDate": "2026-10-07",
     "platforms": "Windows · macOS · Linux · Android",
     "downloads": [
       {
         "platform": "Windows",
-        "file": "DisplayXRSetup-2.28.0.exe",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.28.0/DisplayXRSetup-2.28.0.exe"
+        "file": "DisplayXRSetup-2.29.0.exe",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.29.0/DisplayXRSetup-2.29.0.exe"
       },
       {
         "platform": "macOS",
-        "file": "DisplayXR-Installer-2.28.0.pkg",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.28.0/DisplayXR-Installer-2.28.0.pkg"
+        "file": "DisplayXR-Installer-2.29.0.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.29.0/DisplayXR-Installer-2.29.0.pkg"
       },
       {
         "platform": "Linux",
-        "file": "displayxr-runtime_2.28.0_amd64.deb",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.28.0/displayxr-runtime_2.28.0_amd64.deb"
+        "file": "displayxr-runtime_2.29.0_amd64.deb",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.29.0/displayxr-runtime_2.29.0_amd64.deb"
       },
       {
         "platform": "Android",
-        "file": "DisplayXR-Runtime-2.28.0-android-arm64.apk",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.28.0/DisplayXR-Runtime-2.28.0-android-arm64.apk"
+        "file": "DisplayXR-Runtime-2.29.0-android-arm64.apk",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.29.0/DisplayXR-Runtime-2.29.0-android-arm64.apk"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-runtime"
