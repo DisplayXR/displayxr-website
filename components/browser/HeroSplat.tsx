@@ -156,6 +156,20 @@ export function HeroSplat() {
       // relaxes) while horizontal swipes still orbit. The vertical look-around
       // comes from the scroll itself (startTouchLook). Re-asserted once in case
       // the SDK re-attaches its handlers after the first frame.
+      // Wheel: the SDK's zoom peek cancels wheel events on the canvas, so a
+      // hero this tall would stop the page scrolling under the mouse. A
+      // capture-phase listener on the section stops the event before it
+      // reaches the canvas, without preventDefault, so the page scrolls.
+      const sec = canvasRef.current?.closest("section");
+      if (sec) {
+        const passWheel = (e: WheelEvent) => e.stopPropagation();
+        sec.addEventListener("wheel", passWheel, { capture: true, passive: true });
+        const prevOff = resizeOffRef.current;
+        resizeOffRef.current = () => {
+          prevOff?.();
+          sec.removeEventListener("wheel", passWheel, { capture: true });
+        };
+      }
       if (!window.matchMedia("(pointer: fine)").matches && canvasRef.current) {
         const c = canvasRef.current;
         c.style.touchAction = "pan-y";
