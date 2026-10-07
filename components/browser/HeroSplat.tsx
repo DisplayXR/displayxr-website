@@ -150,6 +150,31 @@ export function HeroSplat() {
         (handle as unknown as { stats?: () => unknown }).stats?.();
       await handle.ready;
       handle.setPose?.({ zoom: restZoom(canvasRef.current) });
+      // Touch: the SDK's drag sets touch-action:none on the canvas, so a hero
+      // this tall traps every swipe and the page cannot scroll. pan-y gives
+      // vertical swipes back to the browser (the SDK sees pointercancel and
+      // relaxes) while horizontal swipes still orbit. The vertical look-around
+      // comes from the scroll itself (startTouchLook). Re-asserted once in case
+      // the SDK re-attaches its handlers after the first frame.
+      // Wheel: the SDK's zoom peek cancels wheel events on the canvas, so a
+      // hero this tall would stop the page scrolling under the mouse. A
+      // capture-phase listener on the section stops the event before it
+      // reaches the canvas, without preventDefault, so the page scrolls.
+      const sec = canvasRef.current?.closest("section");
+      if (sec) {
+        const passWheel = (e: WheelEvent) => e.stopPropagation();
+        sec.addEventListener("wheel", passWheel, { capture: true, passive: true });
+        const prevOff = resizeOffRef.current;
+        resizeOffRef.current = () => {
+          prevOff?.();
+          sec.removeEventListener("wheel", passWheel, { capture: true });
+        };
+      }
+      if (!window.matchMedia("(pointer: fine)").matches && canvasRef.current) {
+        const c = canvasRef.current;
+        c.style.touchAction = "pan-y";
+        window.setTimeout(() => { c.style.touchAction = "pan-y"; }, 1000);
+      }
       const onResize = () => handle.setPose?.({ zoom: restZoom(canvasRef.current) });
       window.addEventListener("resize", onResize);
       resizeOffRef.current = () => window.removeEventListener("resize", onResize);
@@ -168,7 +193,7 @@ export function HeroSplat() {
         if (tiltRef.current) {
           const t = await tiltRef.current;
           setTilt(t);
-          if (t === "granted") startTilt(handle);
+          startTouchLook(handle, t === "granted");
         } else {
           startParallax(handle);
         }
@@ -235,16 +260,21 @@ export function HeroSplat() {
     };
   }
 
-  // Phone tilt → eye offset. The first reading is the rest pose, and the
-  // rest pose drifts slowly toward however the phone is being held, so the
-  // view re-centres instead of getting stuck at an edge. ±TILT_DEG of tilt
-  // reaches the same comfort-limited offset as the mouse does.
-  function startTilt(handle: SplatHandleLike) {
+  // Touch look-around: phone tilt (when allowed) plus the page's own scroll
+  // drive the SDK eye offset. Tilt: the first reading is the rest pose, which
+  // drifts slowly toward how the phone is held, and ±TILT_DEG reaches the
+  // comfort-limited offset. Scroll: as the hero scrolls away the eye moves
+  // down past the scene, so a vertical swipe both scrolls the page and looks
+  // around (David, 2026-10-06). Horizontal swipes orbit through the SDK.
+  function startTouchLook(handle: SplatHandleLike, useTilt: boolean) {
     if (!handle.setViewOffset) return;
+    const section = canvasRef.current?.closest("section");
     const TILT_DEG = 18;
+    const SCROLL_Y = MAX_Y * 1.5; // offset when the hero has fully scrolled away
+    const LIMIT_Y = MAX_Y * 1.6;  // tilt + scroll together never tear the splat
     let rest: { a: number; b: number } | null = null;
-    let tx = 0, ty = 0, x = 0, y = 0, raf = 0;
-    const clamp = (v: number) => Math.max(-1, Math.min(1, v));
+    let tx = 0, tyTilt = 0, tyScroll = 0, x = 0, y = 0, raf = 0;
+    const clamp = (v: number, m = 1) => Math.max(-m, Math.min(m, v));
     const onOrient = (e: DeviceOrientationEvent) => {
       if (e.beta == null || e.gamma == null) return;
       // Map to screen axes for the current orientation: a = left/right, b = toward/away.
@@ -259,19 +289,29 @@ export function HeroSplat() {
       // tilting the top away moves it up (pitch sign verified on an iPhone by
       // David, 2026-10-05: the first version had it inverted).
       tx = -clamp((a - rest.a) / TILT_DEG) * MAX_X;
-      ty = clamp((b - rest.b) / TILT_DEG) * MAX_Y;
+      tyTilt = clamp((b - rest.b) / TILT_DEG) * MAX_Y;
+    };
+    const onScroll = () => {
+      if (!section) return;
+      const r = section.getBoundingClientRect();
+      const p = Math.max(0, Math.min(1, -r.top / Math.max(1, r.height)));
+      tyScroll = -p * SCROLL_Y;
     };
     const tick = () => {
+      const ty = clamp(tyTilt + tyScroll, LIMIT_Y);
       x += (tx - x) * 0.12;
       y += (ty - y) * 0.12;
       handle.setViewOffset?.({ x, y });
       raf = requestAnimationFrame(tick);
     };
-    window.addEventListener("deviceorientation", onOrient);
+    if (useTilt) window.addEventListener("deviceorientation", onOrient);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
     raf = requestAnimationFrame(tick);
     stopRef.current = () => {
       cancelAnimationFrame(raf);
       window.removeEventListener("deviceorientation", onOrient);
+      window.removeEventListener("scroll", onScroll);
     };
   }
 
@@ -306,8 +346,8 @@ export function HeroSplat() {
             {!touch
               ? "Move your mouse to look around this scene."
               : tilt === "granted"
-                ? "Tilt your phone to look around this scene."
-                : "Drag to look around this scene."}{" "}
+                ? "Tilt your phone, or scroll, to look around this scene."
+                : "Swipe sideways, or scroll, to look around this scene."}{" "}
             Open this page in the DisplayXR Browser on a spatial display and it
             comes out of the page.
           </p>
