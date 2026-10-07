@@ -11,26 +11,40 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.28.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.28.0",
-    "title": "v2.28.0",
+    "id": "displayxr-browser@v1.5.3",
+    "repo": "displayxr-browser",
+    "tag": "v1.5.3",
+    "title": "DisplayXR Browser v1.5.3",
     "date": "2026-10-07",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.28.0",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.5.3",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
   {
-    "id": "displayxr-browser@v1.4.1",
-    "repo": "displayxr-browser",
-    "tag": "v1.4.1",
-    "title": "DisplayXR Browser v1.4.1",
-    "date": "2026-10-06",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.4.1",
+    "id": "displayxr-installer@v2.6.1",
+    "repo": "displayxr-installer",
+    "tag": "v2.6.1",
+    "title": "DisplayXR v2.6.1",
+    "date": "2026-10-07",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.6.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.28.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.28.0",
+    "title": "DisplayXR Runtime v2.28.0",
+    "date": "2026-10-07",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.28.0",
+    "prerelease": false,
+    "featureLines": [
+      "Stereo-camera consent hardening (`XR_DXR_stereo_camera` spec v3, #1838): a consent-delegating client whose executable lives in a user-writable location must also match a recorded Authenticode signer (`displayxr-cli camera trust --signer`…",
+      "feat(stereo-camera): delegation hardening — signer match, per-user first-use notice, DECLINE_DELEGATION (spec v3) (#1838)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.5.0",
@@ -300,17 +314,6 @@
       "Per-light cube shadow maps with skinned and morphed casters. Transmissive materials cast no shadow (#70, L2)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.5.7",
-    "repo": "displayxr-installer",
-    "tag": "v2.5.7",
-    "title": "DisplayXR v2.5.7",
-    "date": "2026-10-03",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.7",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-shell-releases@v2.3.2",
