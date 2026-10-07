@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.28.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.28.0",
+    "title": "v2.28.0",
+    "date": "2026-10-07",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.28.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.4.1",
     "repo": "displayxr-browser",
     "tag": "v1.4.1",
@@ -268,20 +279,6 @@
     "prerelease": false,
     "featureLines": [
       "The first public set of reference scenes for 3D displays, built on open standards: OpenUSD, MaterialX / OpenPBR and glTF. Load any of them in the [DisplayXR model viewer](https://github.com/DisplayXR/displayxr-demo-modelviewer) **v0.35.0…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.25.4",
-    "repo": "displayxr-runtime",
-    "tag": "v2.25.4",
-    "title": "DisplayXR Runtime v2.25.4",
-    "date": "2026-10-04",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.25.4",
-    "prerelease": false,
-    "featureLines": [
-      "`XR_DXR_weave` spec v15: an app can now tune the display processor's lens filter of the 2D layer per submit (`XrWeaveSubmitOverlayFilterDXR`, 0 = no filtering .. 1 = full); omitted = the display processor's own default (Leia SR 1.38.0+18…",
-      "feat(weave): v15 `XrWeaveSubmitOverlayFilterDXR` — app-tunable lens-filter strength for the 2D layer (#1822)"
     ],
     "looksMechanical": false
   },
