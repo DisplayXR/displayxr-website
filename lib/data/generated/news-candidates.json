@@ -84,12 +84,20 @@
     "id": "displayxr-runtime@v2.29.0",
     "repo": "displayxr-runtime",
     "tag": "v2.29.0",
-    "title": "v2.29.0",
+    "title": "DisplayXR Runtime v2.29.0",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.29.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Android: 2D under the lens.** The Android weave path now hands the `XR_DXR_weave` v4 2D overlay to the display processor, so 2D content is rendered under the lens instead of being composited over the woven image (#1845). `XR_DXR_weave`…",
+      "Also in this release: the new **`XR_DXR_cursor_depth`** extension (ADR-046) for depth-aware cursor placement, including the phase-3a depth-layer source on macOS/Metal.",
+      "**weave/android:** hand the v4 2D overlay to the DP — 2D under the lens (#1845)",
+      "**cursor:** `XR_DXR_cursor_depth` v1 — depth-aware cursor placement (ADR-046)",
+      "**cursor:** `XR_DXR_cursor_depth` v2 header + depth-layer math (ADR-046 phase 3a)",
+      "**cursor:** depth-layer source in the state tracker + Metal compositor (ADR-046 3a)",
+      "**cube_handle_metal_macos:** adopt `XR_DXR_cursor_depth` as the reference app, plus an opt-in depth-layer cursor source (ADR-046 3a)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.5.1",
