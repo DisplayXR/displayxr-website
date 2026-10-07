@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.5.2",
+    "repo": "displayxr-browser",
+    "tag": "v1.5.2",
+    "title": "DisplayXR Browser v1.5.2",
+    "date": "2026-10-07",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.5.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.4.1",
     "repo": "displayxr-browser",
     "tag": "v1.4.1",
@@ -159,17 +170,6 @@
       "**Linux: window size, position, keyboard resize and close request (#332, PR #353).** `displayxr_get_overlay_size`, `displayxr_get_overlay_position` / `displayxr_set_overlay_position`, `displayxr_resize_overlay` and `displayxr_consume_ove…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.4.0",
-    "repo": "displayxr-browser",
-    "tag": "v1.4.0",
-    "title": "DisplayXR Browser v1.4.0",
-    "date": "2026-10-05",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.4.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.5.9",
