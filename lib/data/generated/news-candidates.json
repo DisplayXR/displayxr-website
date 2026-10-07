@@ -18,6 +18,20 @@
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.5.3",
     "prerelease": false,
+    "featureLines": [
+      "**3D Camera consent, hardened.** When the browser runs with an automation or auto-grant switch (`--use-fake-ui-for-media-stream`, `--remote-debugging-port`, `--enable-automation`, `--headless`, …) it now declines the runtime's consent de…",
+      "**The 3D Camera waits for your answer.** Opening the 3D Camera no longer fails with `AbortError: Timeout starting video source` after 10 s while the DisplayXR consent prompt is on screen: the 3D Camera's start timeout is 75 s (longer tha…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-browser@v1.5.4",
+    "repo": "displayxr-browser",
+    "tag": "v1.5.4",
+    "title": "DisplayXR Browser v1.5.4",
+    "date": "2026-10-07",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.5.4",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -43,26 +57,6 @@
     "featureLines": [
       "Stereo-camera consent hardening (`XR_DXR_stereo_camera` spec v3, #1838): a consent-delegating client whose executable lives in a user-writable location must also match a recorded Authenticode signer (`displayxr-cli camera trust --signer`…",
       "feat(stereo-camera): delegation hardening — signer match, per-user first-use notice, DECLINE_DELEGATION (spec v3) (#1838)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.5.0",
-    "repo": "displayxr-browser",
-    "tag": "v1.5.0",
-    "title": "DisplayXR Browser v1.5.0",
-    "date": "2026-10-06",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.5.0",
-    "prerelease": false,
-    "featureLines": [
-      "**3D Camera (stereo camera).** On a DisplayXR display with a built-in stereo camera (Leia SR tracking camera first), web pages can open a \"3D Camera (DisplayXR)\" device through getUserMedia: a rectified side-by-side pair with `MediaTrack…",
-      "**2D lens filter is now opt-in.** On a 3D display the browser no longer smooths the whole window (page text and the address bar) for the lens by default. A page asks for it with `<meta name=\"displayxr-2d-lens-filter\" content=\"on\">` (or a…",
-      "3D Camera as a getUserMedia device (#176)",
-      "2D lens filter opt-in: page meta tag + per-site setting + policy (#243)",
-      "Auto-published from displayxr-browser-pvt @ 3c0312500adabf55ebc140884efe27d0523d1d9d.",
-      "**Security updates follow Chrome stable.** Every Chrome stable point release is rebuilt and published automatically when the browser's own code is untouched upstream, and verified on a DisplayXR display first when it is not. Not affiliat…",
-      "Android APK: release-signed (CN=DisplayXR Browser). If you have any preview up to and including 0.1.24 installed, UNINSTALL it before installing this one - those were debug-key signed and Android refuses an install that changes the signi…",
-      "Linux (.deb, x64): sudo apt install ./displayxr-browser_1.5.0-1_amd64.deb - needs displayxr-runtime (>= 2.23.0) from DisplayXR/displayxr-runtime releases. A newer .deb upgrades in place; there is no apt repository."
     ],
     "looksMechanical": false
   },
