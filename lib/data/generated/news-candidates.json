@@ -7,8 +7,12 @@
     "date": "2026-10-08",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.6.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Android: \"2D under the lens\" for the whole flat page.** A page can now opt in to having its entire flat (non-3D) content composited as a 2D overlay under the lens on Android, exactly as on Windows and Linux. It is off by default and tu…",
+      "Android whole-page 2D overlay behind the per-page opt-in, sharing the Windows/Linux code path.",
+      "The page signature now accepts gradient masks (such as the tab-strip title fade), so the page overlay is reused across frames instead of being rebuilt each time (patch 0387)."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.24.0",
