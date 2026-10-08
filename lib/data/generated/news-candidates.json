@@ -15,6 +15,28 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-installer@android-bundle-2026-10-08",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-2026-10-08",
+    "title": "Android tablet bundle android-bundle-2026-10-08",
+    "date": "2026-10-08",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-08",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.30.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.30.0",
+    "title": "v2.30.0",
+    "date": "2026-10-08",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.30.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity@v2.24.0",
     "repo": "displayxr-unity",
     "tag": "v2.24.0",
@@ -107,7 +129,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — android-bundle-2026-10-07",
+    "title": "Android tablet bundle (latest) — android-bundle-2026-10-08",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
@@ -187,17 +209,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-installer@v2.6.0",
-    "repo": "displayxr-installer",
-    "tag": "v2.6.0",
-    "title": "DisplayXR v2.6.0",
-    "date": "2026-10-06",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.6.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-leia-plugin@v2.10.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.10.0",
@@ -228,26 +239,6 @@
       "Platform-neutral, host-tested parsing of the SR raw-camera frame + calibration (#273)",
       "Tracker keep-alive counts real eye pairs, reports a measured source rate, 4 ms poll (#273)",
       "`platformDeviceHint` carries the tracker camera's USB id, so browsers no longer list the raw tracker device next to \"3D Camera (DisplayXR)\" (#273)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.27.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.27.0",
-    "title": "DisplayXR Runtime v2.27.0",
-    "date": "2026-10-06",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.27.0",
-    "prerelease": false,
-    "featureLines": [
-      "Stereo camera: the new `XR_DXR_stereo_camera` extension exposes a display's built-in stereo camera (the Leia SR tracking camera first) as a rectified side-by-side pair to apps and the DisplayXR Browser — service-side rectification with o…",
-      "feat(stereo-camera): `XR_DXR_stereo_camera` header, type-value block 1004999300-310, catalog note (ADR-043) (2c4567f9c)",
-      "feat(stereo-camera): `u_stereo_camera` — latest-wins pinned ring, decimator, NV12/BGRA/GRAY8 conversion, persistent id, disparity probe (a9cc89e9b)",
-      "feat(stereo-camera): plug-in iface camera slots (`XRT_PLUGIN_IFACE_HAS_STEREO_CAMERA`) + sim_display FAKE stereo camera (a5e45ca62)",
-      "feat(stereo-camera): service camera manager + IPC protocol (`stereo_camera_*` calls) (c3a56e3bf)",
-      "feat(stereo-camera): `displayxr-cli camera list | calib | probe` (3c65c90c5)",
-      "feat(stereo-camera): `XR_DXR_stereo_camera` OpenXR entry points (instance-level, service-only) (a571df136)",
-      "feat(stereo-camera): selftest `stereo_camera_caps` check (210e19a40)"
     ],
     "looksMechanical": false
   },
