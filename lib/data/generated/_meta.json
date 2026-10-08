@@ -47,6 +47,7 @@
       "displayxr-runtime/docs/adr/ADR-044-colour-contract-per-backend.md",
       "displayxr-runtime/docs/adr/ADR-045-plugins-always-loadable-and-report-platform-state.md",
       "displayxr-runtime/docs/adr/ADR-046-depth-aware-cursor.md",
+      "displayxr-runtime/docs/adr/ADR-047-multi-screen-segments-and-per-screen-views.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-001-direct-runtime-loading.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-002-zero-copy-atlas-handoff.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-003-ue-native-off-axis-projection.md"

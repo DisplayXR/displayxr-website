@@ -1,5 +1,55 @@
 [
   {
+    "id": "displayxr-browser@v1.6.0",
+    "repo": "displayxr-browser",
+    "tag": "v1.6.0",
+    "title": "DisplayXR Browser v1.6.0",
+    "date": "2026-10-08",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.6.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity@v2.24.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.24.0",
+    "title": "DisplayXR v2.24.0",
+    "date": "2026-10-08",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.24.0",
+    "prerelease": false,
+    "featureLines": [
+      "Native-Wayland Linux player support (`-force-wayland`) (#354, DisplayXR/displayxr-runtime#1831): weave into a sub-surface of the player's own window via `XR_DXR_wayland_surface_binding` (runtime ≥ 2.28.0), correct 3D at fractional scalin…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.24.1",
+    "repo": "displayxr-unity",
+    "tag": "v2.24.1",
+    "title": "DisplayXR v2.24.1",
+    "date": "2026-10-08",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.24.1",
+    "prerelease": false,
+    "featureLines": [
+      "`displayxr_linux_overlay_position_known()` (Linux): says whether `displayxr_get_overlay_position` returned the current position or the last known one, since (0,0) is a legitimate position."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.25.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.25.0",
+    "title": "DisplayXR v2.25.0",
+    "date": "2026-10-08",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.25.0",
+    "prerelease": false,
+    "featureLines": [
+      "Linux launcher (#356, DisplayXR/displayxr-runtime#1831): a Linux build now writes `<name>.sh` next to the player; point the app's `.desktop` `Exec=` at it. At launch it starts the player as a native Wayland app (`-force-wayland`) when on…"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-browser@v1.5.2",
     "repo": "displayxr-browser",
     "tag": "v1.5.2",
@@ -37,6 +87,28 @@
       "Linux: a page that opts into the 2D lens filter (`<meta name=\"displayxr-2d-lens-filter\">` or the per-site setting) now has its whole flat page handed to the display processor as the 2D layer, composited and lens-filtered inside the weave…"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-installer@android-bundle-2026-10-07",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-2026-10-07",
+    "title": "Android tablet bundle android-bundle-2026-10-07",
+    "date": "2026-10-07",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-07",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@android-bundle-latest",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-latest",
+    "title": "Android tablet bundle (latest) — android-bundle-2026-10-07",
+    "date": "2026-10-07",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.6.1",
@@ -98,17 +170,6 @@
       "**cube_handle_metal_macos:** adopt `XR_DXR_cursor_depth` as the reference app, plus an opt-in depth-layer cursor source (ADR-046 3a)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.5.1",
-    "repo": "displayxr-browser",
-    "tag": "v1.5.1",
-    "title": "DisplayXR Browser v1.5.1",
-    "date": "2026-10-06",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.5.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-modelviewer@v0.35.1",
@@ -204,19 +265,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-unity@v2.22.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.22.0",
-    "title": "DisplayXR v2.22.0",
-    "date": "2026-10-06",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.22.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Linux: move the window onto the 3D panel (#266, PR #352).** `DisplayXRTargetDisplay` / `DisplayXRProvider.MoveWindowToDisplay` now work on Linux (X11/XWayland). On Linux the runtime reports the panel's desktop rect through `XR_DXR_disp…"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-unity@v2.23.0",
     "repo": "displayxr-unity",
     "tag": "v2.23.0",
@@ -228,17 +276,6 @@
       "**Linux: window size, position, keyboard resize and close request (#332, PR #353).** `displayxr_get_overlay_size`, `displayxr_get_overlay_position` / `displayxr_set_overlay_position`, `displayxr_resize_overlay` and `displayxr_consume_ove…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.5.9",
-    "repo": "displayxr-installer",
-    "tag": "v2.5.9",
-    "title": "DisplayXR v2.5.9",
-    "date": "2026-10-05",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.9",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-leia-plugin@v2.9.3",
@@ -269,17 +306,6 @@
       "The OpenPBR Shader Playground render is unchanged."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.5.8",
-    "repo": "displayxr-installer",
-    "tag": "v2.5.8",
-    "title": "DisplayXR v2.5.8",
-    "date": "2026-10-04",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.5.8",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-reference-scenes@v0.2.0",
@@ -411,33 +437,6 @@
       "`scripts/openpbr_mtlx_to_gltf.py`: GeomSubset materials and whole-scene conversion; applies the scene's USD overrides over the `.mtlx` and honours USD `doubleSided` (#70)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.21.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.21.0",
-    "title": "DisplayXR v2.21.0",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.21.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Linux: transparent-overlay click-through and right-drag move (#332, PR #346).** The Windows click-through exports now exist on Linux as an XShape input region on Unity's window (silhouette mask, AABB, surround rect/mask, plus live HUD …",
-      "**Vulkan: Local2D and window-space UI layers (#336, PRs #337, #339).** Filled through a plugin render event that copies into an external-memory overlay bridge on Unity's command buffer. Includes an `xrEndFrame` guard that disables wsui i…",
-      "**Several window-space UI layers at once (#336, PR #341):** up to four `DisplayXRWindowSpaceUI` slots, composited in slot order. Previously only the last registered one showed.",
-      "**`DisplayXRLocal2D.renderScale` (#340):** render the canvas at the size it is shown."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.20.1",
-    "repo": "displayxr-unity",
-    "tag": "v2.20.1",
-    "title": "DisplayXR v2.20.1",
-    "date": "2026-10-01",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.20.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.12.0",
