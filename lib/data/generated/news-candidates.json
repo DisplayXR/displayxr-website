@@ -29,9 +29,29 @@
     "id": "displayxr-runtime@v2.30.0",
     "repo": "displayxr-runtime",
     "tag": "v2.30.0",
-    "title": "v2.30.0",
+    "title": "DisplayXR Runtime v2.30.0",
     "date": "2026-10-08",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.30.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Multi-screen M0–M4 on Linux** (ADR-047): a per-monitor display-processor registry with EDID identity, window **segments** that weave a window spanning several monitors per screen, **per-screen views** for `PRIMARY_MULTIVIEW_DXR` (`XR_D…",
+      "**Windows multi-screen (M6 half 1 + M3):** D3D11 segments weave a monitor-spanning window per segment, with per-segment views on Windows. Two plug-in slots are **appended** (`create_dp_d3d11_for_screen`, D3D11 `set_present_origin`); the …",
+      "**GNOME extension v12:** the move-sync tag decodes against the main surface by its texture, which fixes drag phase sync for libdecor-decorated windows (#1856).",
+      "Multi-screen M1: per-monitor display info slot, per-screen list from the DP registry (in-process and over IPC), `XR_DXR_display_info` v22 (`xrEnumerateDisplaysDXR`, DISPLAY spaces, session display binding); `displayxr-cli` and test apps …",
+      "Linux: enumerate monitors with EDID identity (RandR joined to DRM sysfs); collect display claims from every plug-in, back-compat claim placed on the panel",
+      "Multi-screen M2: `comp_segments` (window segments across screens) + `comp_segments_uncovered`; `create_dp_vk_for_screen` plug-in slot + DP resample-tolerance flag; per-screen VK DPs in sim_display; per-screen segment DPs in vk_native",
+      "Multi-screen M3: `XrViewDisplayBindingsDXR` + segment metric types; per-segment views for `PRIMARY_MULTIVIEW_DXR`; vk_native routes each segment's views to its own DP; extra multiview view sets advertised only where a window can be split…",
+      "Multi-screen M4: `DXR_SCREEN_PLUGIN` pins one monitor to a plug-in (#793 phase 3)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.31.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.31.0",
+    "title": "v2.31.0",
+    "date": "2026-10-08",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.31.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -239,23 +259,6 @@
       "Platform-neutral, host-tested parsing of the SR raw-camera frame + calibration (#273)",
       "Tracker keep-alive counts real eye pairs, reports a measured source rate, 4 ms poll (#273)",
       "`platformDeviceHint` carries the tracker camera's USB id, so browsers no longer list the raw tracker device next to \"3D Camera (DisplayXR)\" (#273)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.27.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.27.1",
-    "title": "DisplayXR Runtime v2.27.1",
-    "date": "2026-10-06",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.27.1",
-    "prerelease": false,
-    "featureLines": [
-      "**Linux / X11: the 3D panel is identified by its connector's hardware mode, not by the size X11 reports** (#1832, fixes #1831). Under GNOME's XWayland scaling, a fractionally scaled panel appears to X11 at `device × ceil(scale) / scale`,…",
-      "The runtime now reads each connector's real mode from mutter DisplayConfig, falling back to `/sys/class/drm`, and matches by connector.",
-      "An X11 window on a fractionally scaled panel is resampled by the compositor. It now presents in 2D and logs one clear WARN that points to running the app natively on Wayland, instead of producing a broken weave.",
-      "Integer scales (e.g. 200 %) keep weaving exactly as before. Native Wayland apps are unaffected.",
-      "Background: `docs/reference/linux-display-scaling.md`."
     ],
     "looksMechanical": false
   },
