@@ -50,6 +50,7 @@
       "displayxr-runtime/docs/adr/ADR-047-multi-screen-segments-and-per-screen-views.md",
       "displayxr-runtime/docs/adr/ADR-048-lift-viewpoint-policy.md",
       "displayxr-runtime/docs/adr/ADR-049-in-process-lift-rides-the-service.md",
+      "displayxr-runtime/docs/adr/ADR-050-macos-runtime-owns-window-placement.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-001-direct-runtime-loading.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-002-zero-copy-atlas-handoff.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-003-ue-native-off-axis-projection.md"

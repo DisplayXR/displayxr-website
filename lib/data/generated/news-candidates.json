@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.7.0",
+    "repo": "displayxr-browser",
+    "tag": "v1.7.0",
+    "title": "DisplayXR Browser v1.7.0",
+    "date": "2026-10-09",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.7.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.13.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.13.0",
@@ -7,8 +18,17 @@
     "date": "2026-10-09",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.13.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Multi-screen on Windows: a window straddling two Leia panels is woven and head-tracked per screen.** With runtime v2.30.0+ and LeiaSR 1.38.0+2141, an in-process D3D11 app spanning two Leia displays gets one display processor per screen…",
+      "**Lift look-around follows the runtime's viewpoint policy.** 2D→3D lift streams now take the runtime's window-relative viewpoint policy: look-around is relative to the lifted rect, with the runtime's IPD/parallax factors, optional vertic…",
+      "Windows: `create_dp_d3d11_for_screen` creates a D3D11 DP bound to one screen's SR display, with a windowless EXTERNAL weaver, display binding, and a fallback order (drop the binding, then the routing) when the SR runtime refuses a weaver…",
+      "Windows: `set_present_origin` forwards the per-screen phase origin to `srWeaverSetPresentOrigin`, and `process_atlas` scissors to the canvas for segment DPs (#315).",
+      "Windows: per-display lens binding (SR D3) and per-display eye tracker (SR D4). A screen-bound DP drives its own panel's 2D/3D lens state, and is tracked by that panel's own camera when the SR service supports it (#315).",
+      "Windows: `get_display_info_for_monitor` reports the SR-calibrated physical size, native resolution and nominal viewer for every claimed Leia panel, so the runtime can compute per-segment views (#315).",
+      "Windows: `probe_displays` joins the runtime's monitor list with `srEnumerateDisplays`. Claims follow SR's confidence (FPC-verified panels report VERIFIED with their FPC serial), and a Leia panel that SR lists is claimed even when the bui…",
+      "Linux: `probe_displays` implemented, giving per-monitor Leia claims from EDID and, where available, SR display enumeration (#311)."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.6.0",
@@ -124,17 +144,6 @@
       "Linux launcher (#356, DisplayXR/displayxr-runtime#1831): a Linux build now writes `<name>.sh` next to the player; point the app's `.desktop` `Exec=` at it. At launch it starts the player as a native Wayland app (`-force-wayland`) when on…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.5.2",
-    "repo": "displayxr-browser",
-    "tag": "v1.5.2",
-    "title": "DisplayXR Browser v1.5.2",
-    "date": "2026-10-07",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.5.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@v1.5.3",

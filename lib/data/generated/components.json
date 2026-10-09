@@ -101,25 +101,25 @@
   {
     "id": "browser",
     "name": "DisplayXR Browser",
-    "version": "v1.6.0",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.6.0",
-    "releaseDate": "2026-10-08",
+    "version": "v1.7.0",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.7.0",
+    "releaseDate": "2026-10-09",
     "platforms": "Windows · Linux · Android",
     "downloads": [
       {
         "platform": "Windows",
-        "file": "DisplayXR-Browser-Setup-1.6.0.exe",
-        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.6.0/DisplayXR-Browser-Setup-1.6.0.exe"
+        "file": "DisplayXR-Browser-Setup-1.7.0.exe",
+        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.7.0/DisplayXR-Browser-Setup-1.7.0.exe"
       },
       {
         "platform": "Linux",
-        "file": "displayxr-browser_1.6.0-1_amd64.deb",
-        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.6.0/displayxr-browser_1.6.0-1_amd64.deb"
+        "file": "displayxr-browser_1.7.0-1_amd64.deb",
+        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.7.0/displayxr-browser_1.7.0-1_amd64.deb"
       },
       {
         "platform": "Android",
-        "file": "DisplayXR-Browser-1.6.0-android-arm64.apk",
-        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.6.0/DisplayXR-Browser-1.6.0-android-arm64.apk"
+        "file": "DisplayXR-Browser-1.7.0-android-arm64.apk",
+        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.7.0/DisplayXR-Browser-1.7.0-android-arm64.apk"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-browser"
