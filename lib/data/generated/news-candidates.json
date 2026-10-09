@@ -7,8 +7,13 @@
     "date": "2026-10-09",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.7.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Now based on Chromium 156** (156.0.8078.12, up from 155.0.8059.26).",
+      "**Auto-3D now works on WebGPU pages.** The bundled auto-3D scripts (v0.6.2) cover WebGPU rendering in both PlayCanvas and three.js, and support PlayCanvas's CameraFrame pipeline.",
+      "Auto-3D scripts updated from v0.5.7 to v0.6.2: WebGPU support for PlayCanvas and three.js, plus PlayCanvas CameraFrame.",
+      "Windows: the installer registers the browser (`chrome.exe`) with the DisplayXR runtime as a 3D-camera consent-delegating client."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.13.0",
