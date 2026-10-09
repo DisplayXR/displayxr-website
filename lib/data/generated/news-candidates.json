@@ -16,6 +16,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-browser@v1.7.1",
+    "repo": "displayxr-browser",
+    "tag": "v1.7.1",
+    "title": "DisplayXR Browser v1.7.1",
+    "date": "2026-10-09",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.7.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.13.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.13.0",
@@ -39,12 +50,21 @@
     "id": "displayxr-runtime@v2.32.0",
     "repo": "displayxr-runtime",
     "tag": "v2.32.0",
-    "title": "v2.32.0",
+    "title": "DisplayXR Runtime v2.32.0",
     "date": "2026-10-09",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.32.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Stereo cameras for `XR_DXR_stereo_camera` (#1846):** a new vendor-neutral UVC side-by-side stereo camera source on Windows (Media Foundation), opt-in via `%LOCALAPPDATA%\\DisplayXR\\stereo-cameras.json`, with hardware MJPEG decode + GPU …",
+      "Also: a **native Metal backend for the macOS weave service** (with `xrWeaveSnapWindowRectDXR` routed to the Metal DP), multi-screen segments on **D3D12** and on the **IPC/service path** (multi-screen M6 + M3), macOS monitor enumeration +…",
+      "feat(stereo-camera): vendor-neutral UVC side-by-side stereo source (Windows MF; V4L2 stub)",
+      "feat(stereo-camera): hardware MJPEG decode path for the UVC source (GPU decode + scale)",
+      "feat(weave): native Metal backend for the macOS weave service",
+      "feat(weave): route xrWeaveSnapWindowRectDXR to the Metal DP on the macOS weave path",
+      "feat(d3d12): weave a window spanning monitors per screen, with per-segment views (multi-screen M6 + M3)",
+      "feat(plugin): append create_dp_d3d12_for_screen + D3D12 set_present_origin (multi-screen M6)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.6.0",
@@ -158,20 +178,6 @@
     "prerelease": false,
     "featureLines": [
       "Linux launcher (#356, DisplayXR/displayxr-runtime#1831): a Linux build now writes `<name>.sh` next to the player; point the app's `.desktop` `Exec=` at it. At launch it starts the player as a native Wayland app (`-force-wayland`) when on…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.5.3",
-    "repo": "displayxr-browser",
-    "tag": "v1.5.3",
-    "title": "DisplayXR Browser v1.5.3",
-    "date": "2026-10-07",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.5.3",
-    "prerelease": false,
-    "featureLines": [
-      "**3D Camera consent, hardened.** When the browser runs with an automation or auto-grant switch (`--use-fake-ui-for-media-stream`, `--remote-debugging-port`, `--enable-automation`, `--headless`, …) it now declines the runtime's consent de…",
-      "**The 3D Camera waits for your answer.** Opening the 3D Camera no longer fails with `AbortError: Timeout starting video source` after 10 s while the DisplayXR consent prompt is on screen: the 3D Camera's start timeout is 75 s (longer tha…"
     ],
     "looksMechanical": false
   },
