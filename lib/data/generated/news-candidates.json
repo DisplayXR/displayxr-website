@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-leia-plugin@v2.13.0",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.13.0",
+    "title": "v2.13.0",
+    "date": "2026-10-09",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.13.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.6.0",
     "repo": "displayxr-browser",
     "tag": "v1.6.0",
@@ -21,6 +32,17 @@
     "title": "Android tablet bundle android-bundle-2026-10-08",
     "date": "2026-10-08",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-08",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@android-bundle-2026-10-08-2",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-2026-10-08-2",
+    "title": "Android tablet bundle android-bundle-2026-10-08-2",
+    "date": "2026-10-08",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-08-2",
     "prerelease": true,
     "featureLines": [],
     "looksMechanical": true
@@ -49,12 +71,20 @@
     "id": "displayxr-runtime@v2.31.0",
     "repo": "displayxr-runtime",
     "tag": "v2.31.0",
-    "title": "v2.31.0",
+    "title": "DisplayXR Runtime v2.31.0",
     "date": "2026-10-08",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.31.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**2D→3D lift gets a viewpoint policy.** `XR_DXR_lift` moves to spec v2 (ADR-048): lifted content is now rendered from viewpoints relative to the lifted window/region rather than the whole display, with per-stream IPD/parallax gains, axis…",
+      "**feat(lift): window-relative viewpoints + lift viewpoint policy (gains, axis mode, ease-back)** (#1864, part of #1858/#1859)",
+      "`XR_DXR_lift` **SPEC_VERSION 2**: new `XrLiftViewControlDXR` (chained on `XrLiftOptionsDXR` or `XrWeaveRectLiftDXR`; `ipdFactor`, `parallaxFactor`, `axisMode` X/XY/XYZ, `maxOffsetMeters`, `recenterMode` OFF/EASE_BACK, hold + time constan…",
+      "Every lift viewpoint is rebased to the centre of the lifted region — the weave rect on the client's window, or the session window for `xrSubmitLiftFrameDXR` (panel centre when there is none). The display processor is told the frame (`vie…",
+      "Tracked viewpoints run through the stream's policy before conversion: IPD and parallax gains, axis mask (X by default), x/y clamp, and a frame-rate-independent ease-back filter (default 1 s hold, 2 s time constant) that resets on stream …",
+      "Plug-in interface: `xrt_dp_lift_params` gains `rect_width_m`, `rect_height_m`, `baseline_m`, `axis_mode`, `max_offset_m`, `viewpoint_frame`, announced by `XRT_DP_LIFT_HAS_VIEWPOINT_POLICY` — append-only per ADR-020, **no plug-in ABI bump**.",
+      "**Behaviour change for existing lifted content:** rect-centred viewpoints and ease-back recentering are now the defaults."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.24.0",
@@ -135,21 +165,10 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-installer@android-bundle-2026-10-07",
-    "repo": "displayxr-installer",
-    "tag": "android-bundle-2026-10-07",
-    "title": "Android tablet bundle android-bundle-2026-10-07",
-    "date": "2026-10-07",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-07",
-    "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — android-bundle-2026-10-08",
+    "title": "Android tablet bundle (latest) — android-bundle-2026-10-08-2",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
@@ -272,19 +291,6 @@
     "prerelease": false,
     "featureLines": [
       "**Linux: window size, position, keyboard resize and close request (#332, PR #353).** `displayxr_get_overlay_size`, `displayxr_get_overlay_position` / `displayxr_set_overlay_position`, `displayxr_resize_overlay` and `displayxr_consume_ove…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.9.3",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.9.3",
-    "title": "v2.9.3",
-    "date": "2026-10-05",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.9.3",
-    "prerelease": false,
-    "featureLines": [
-      "Optional per-stage weave timing diagnostics: set `DXR_WEAVE_GPU_TIMING=1` to log GPU time per weave stage (D3D11). Off by default, no cost when unset. (#302)"
     ],
     "looksMechanical": false
   },
