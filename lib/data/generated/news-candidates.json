@@ -36,6 +36,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.32.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.32.0",
+    "title": "v2.32.0",
+    "date": "2026-10-09",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.32.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.6.0",
     "repo": "displayxr-browser",
     "tag": "v1.6.0",
@@ -214,20 +225,6 @@
       "Android DP implements the runtime's Vulkan DP slots `set_overlay_2d` and `set_overlay_2d_filter_strength` (runtime v2.26.0), forwarding the layer to CNSDK's in-weave compositor (#309).",
       "Safe fallback: the DP declines — and the runtime keeps today's post-weave composite — when the loaded CNSDK core lacks the API, the layer is not 8-bit encoded, session transparency is on (CNSDK writes opaque alpha), or the previous frame…",
       "Android header pin bumped v2.16.19 → v2.26.0. Plug-in ABI stays at v5, so this plug-in still loads on older runtimes (they simply never offer the 2D layer) (#309)."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.28.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.28.0",
-    "title": "DisplayXR Runtime v2.28.0",
-    "date": "2026-10-07",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.28.0",
-    "prerelease": false,
-    "featureLines": [
-      "Stereo-camera consent hardening (`XR_DXR_stereo_camera` spec v3, #1838): a consent-delegating client whose executable lives in a user-writable location must also match a recorded Authenticode signer (`displayxr-cli camera trust --signer`…",
-      "feat(stereo-camera): delegation hardening — signer match, per-user first-use notice, DECLINE_DELEGATION (spec v3) (#1838)"
     ],
     "looksMechanical": false
   },
