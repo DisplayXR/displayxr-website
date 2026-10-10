@@ -23,8 +23,10 @@
     "date": "2026-10-09",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.7.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Pages can now read the compositor's per-layer weave verdict: `XRDisplayLayer.wovenState` (`\"pending\"` / `\"woven\"` / `\"withheld\"`) and `withheldReason` (the reason token while withheld). Lets a page keep its own cover up until its canvas …"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.13.0",
