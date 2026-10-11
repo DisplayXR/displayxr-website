@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@android-bundle-2026-10-11-2",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-2026-10-11-2",
+    "title": "Android tablet bundle android-bundle-2026-10-11-2",
+    "date": "2026-10-11",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-11-2",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.34.0",
     "repo": "displayxr-runtime",
     "tag": "v2.34.0",
@@ -34,12 +45,17 @@
     "id": "displayxr-runtime@v2.35.0",
     "repo": "displayxr-runtime",
     "tag": "v2.35.0",
-    "title": "v2.35.0",
+    "title": "DisplayXR Runtime v2.35.0",
     "date": "2026-10-11",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.35.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Faster Vulkan presents for every app with an sRGB swapchain.** The vk_native compositor now recycles its compose command buffer and waits on a fence for its *own* submit instead of `vkQueueWaitIdle` on the app's queue — the phone model…",
+      "**Desktop Linux — shared spatial surface + workspace on the service (#710, #967):** a `comp_window_linux` service surface target, a shared spatial surface in `comp_multi` with a shared-DP mode channel, workspace handler arms + input capt…",
+      "**FRAME_TICK on macOS + Linux:** the shared-surface render loop now emits per-frame FRAME_TICK events (tracked viewer eye + cursor) to the workspace controller, so the shell's hit-test ray follows the tracked eye as on Windows — fixes mi…",
+      "**Depth-aware cursor — ADR-046 Amendment 2 §A in the runtime (#1847):** front-only (never behind the screen), margin 0.03, a draw threshold, and the hybrid line-of-sight anchor."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.33.0",
@@ -146,17 +162,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-installer@android-bundle-2026-10-08",
-    "repo": "displayxr-installer",
-    "tag": "android-bundle-2026-10-08",
-    "title": "Android tablet bundle android-bundle-2026-10-08",
-    "date": "2026-10-08",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-08",
-    "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-installer@android-bundle-2026-10-08-2",
     "repo": "displayxr-installer",
     "tag": "android-bundle-2026-10-08-2",
@@ -224,7 +229,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — android-bundle-2026-10-11",
+    "title": "Android tablet bundle (latest) — android-bundle-2026-10-11-2",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
