@@ -1,11 +1,42 @@
 [
   {
+    "id": "displayxr-installer@android-bundle-2026-10-11",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-2026-10-11",
+    "title": "Android tablet bundle android-bundle-2026-10-11",
+    "date": "2026-10-11",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-11",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.34.0",
     "repo": "displayxr-runtime",
     "tag": "v2.34.0",
-    "title": "v2.34.0",
+    "title": "DisplayXR Runtime v2.34.0",
     "date": "2026-10-11",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.34.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Android head tracking at panel rate (#1905).** In-process Android apps now refresh the woven view, and the eye position fed to the display plug-in, at the panel's 60 Hz whatever the app's own frame rate. Two pieces do this: the repaint…",
+      "**Both features switch on only when `VK_LAYER_DXR_queue_lock` is live in the app process.** The layer serialises each queue, Chromium-style, which stops an Adreno shared-GSL-context race: an app submit overlapping a runtime submit made t…",
+      "**GPU-clock diagnostics for Android 13 Adreno devices (#1917, #1921).** The ADPF preferred update rate is now logged when the hint session fails. `debug.dxr.sustained_perf` turns on sustained-performance mode (off by default). The build …",
+      "**Multi-screen.** ADR-052 adds a workspace that spans N screens:",
+      "one workspace presenter per claimed 3D screen",
+      "each workspace window rendered from the screen it is on (per-screen views)",
+      "`XR_DXR_spatial_workspace` v25: screen enumeration and per-screen placement",
+      "`XR_DXR_weave` v19 cuts present-owner weave rects per screen, and an element wholly on a second screen gets that screen's views. The in-process OpenGL and Windows Vulkan compositors now weave a window that spans monitors per screen, with…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.35.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.35.0",
+    "title": "v2.35.0",
+    "date": "2026-10-11",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.35.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -137,25 +168,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.31.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.31.0",
-    "title": "DisplayXR Runtime v2.31.0",
-    "date": "2026-10-08",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.31.0",
-    "prerelease": false,
-    "featureLines": [
-      "**2D→3D lift gets a viewpoint policy.** `XR_DXR_lift` moves to spec v2 (ADR-048): lifted content is now rendered from viewpoints relative to the lifted window/region rather than the whole display, with per-stream IPD/parallax gains, axis…",
-      "**feat(lift): window-relative viewpoints + lift viewpoint policy (gains, axis mode, ease-back)** (#1864, part of #1858/#1859)",
-      "`XR_DXR_lift` **SPEC_VERSION 2**: new `XrLiftViewControlDXR` (chained on `XrLiftOptionsDXR` or `XrWeaveRectLiftDXR`; `ipdFactor`, `parallaxFactor`, `axisMode` X/XY/XYZ, `maxOffsetMeters`, `recenterMode` OFF/EASE_BACK, hold + time constan…",
-      "Every lift viewpoint is rebased to the centre of the lifted region — the weave rect on the client's window, or the session window for `xrSubmitLiftFrameDXR` (panel centre when there is none). The display processor is told the frame (`vie…",
-      "Tracked viewpoints run through the stream's policy before conversion: IPD and parallax gains, axis mask (X by default), x/y clamp, and a frame-rate-independent ease-back filter (default 1 s hold, 2 s time constant) that resets on stream …",
-      "Plug-in interface: `xrt_dp_lift_params` gains `rect_width_m`, `rect_height_m`, `baseline_m`, `axis_mode`, `max_offset_m`, `viewpoint_frame`, announced by `XRT_DP_LIFT_HAS_VIEWPOINT_POLICY` — append-only per ADR-020, **no plug-in ABI bump**.",
-      "**Behaviour change for existing lifted content:** rect-centred viewpoints and ease-back recentering are now the defaults."
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-unity@v2.24.0",
     "repo": "displayxr-unity",
     "tag": "v2.24.0",
@@ -212,21 +224,10 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — android-bundle-2026-10-08-2",
+    "title": "Android tablet bundle (latest) — android-bundle-2026-10-11",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.6.1",
-    "repo": "displayxr-installer",
-    "tag": "v2.6.1",
-    "title": "DisplayXR v2.6.1",
-    "date": "2026-10-07",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.6.1",
-    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
