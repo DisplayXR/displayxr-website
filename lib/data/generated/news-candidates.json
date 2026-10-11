@@ -58,6 +58,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.36.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.36.0",
+    "title": "v2.36.0",
+    "date": "2026-10-11",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.36.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.33.0",
     "repo": "displayxr-runtime",
     "tag": "v2.33.0",
@@ -123,26 +134,6 @@
       "Windows: `get_display_info_for_monitor` reports the SR-calibrated physical size, native resolution and nominal viewer for every claimed Leia panel, so the runtime can compute per-segment views (#315).",
       "Windows: `probe_displays` joins the runtime's monitor list with `srEnumerateDisplays`. Claims follow SR's confidence (FPC-verified panels report VERIFIED with their FPC serial), and a Leia panel that SR lists is claimed even when the bui…",
       "Linux: `probe_displays` implemented, giving per-monitor Leia claims from EDID and, where available, SR display enumeration (#311)."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.32.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.32.0",
-    "title": "DisplayXR Runtime v2.32.0",
-    "date": "2026-10-09",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.32.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Stereo cameras for `XR_DXR_stereo_camera` (#1846):** a new vendor-neutral UVC side-by-side stereo camera source on Windows (Media Foundation), opt-in via `%LOCALAPPDATA%\\DisplayXR\\stereo-cameras.json`, with hardware MJPEG decode + GPU …",
-      "Also: a **native Metal backend for the macOS weave service** (with `xrWeaveSnapWindowRectDXR` routed to the Metal DP), multi-screen segments on **D3D12** and on the **IPC/service path** (multi-screen M6 + M3), macOS monitor enumeration +…",
-      "feat(stereo-camera): vendor-neutral UVC side-by-side stereo source (Windows MF; V4L2 stub)",
-      "feat(stereo-camera): hardware MJPEG decode path for the UVC source (GPU decode + scale)",
-      "feat(weave): native Metal backend for the macOS weave service",
-      "feat(weave): route xrWeaveSnapWindowRectDXR to the Metal DP on the macOS weave path",
-      "feat(d3d12): weave a window spanning monitors per screen, with per-segment views (multi-screen M6 + M3)",
-      "feat(plugin): append create_dp_d3d12_for_screen + D3D12 set_present_origin (multi-screen M6)"
     ],
     "looksMechanical": false
   },
