@@ -101,6 +101,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.7.0",
+    "repo": "displayxr-installer",
+    "tag": "v2.7.0",
+    "title": "DisplayXR v2.7.0",
+    "date": "2026-10-11",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.7.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.14.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.14.0",
@@ -127,26 +138,10 @@
     "date": "2026-10-11",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.14.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.34.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.34.0",
-    "title": "DisplayXR Runtime v2.34.0",
-    "date": "2026-10-11",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.34.0",
-    "prerelease": false,
     "featureLines": [
-      "**Android head tracking at panel rate (#1905).** In-process Android apps now refresh the woven view, and the eye position fed to the display plug-in, at the panel's 60 Hz whatever the app's own frame rate. Two pieces do this: the repaint…",
-      "**Both features switch on only when `VK_LAYER_DXR_queue_lock` is live in the app process.** The layer serialises each queue, Chromium-style, which stops an Adreno shared-GSL-context race: an app submit overlapping a runtime submit made t…",
-      "**GPU-clock diagnostics for Android 13 Adreno devices (#1917, #1921).** The ADPF preferred update rate is now logged when the hint session fails. `debug.dxr.sustained_perf` turns on sustained-performance mode (off by default). The build …",
-      "**Multi-screen.** ADR-052 adds a workspace that spans N screens:",
-      "one workspace presenter per claimed 3D screen",
-      "each workspace window rendered from the screen it is on (per-screen views)",
-      "`XR_DXR_spatial_workspace` v25: screen enumeration and per-screen placement",
-      "`XR_DXR_weave` v19 cuts present-owner weave rects per screen, and an element wholly on a second screen gets that screen's views. The in-process OpenGL and Windows Vulkan compositors now weave a window that spans monitors per screen, with…"
+      "**One stereo camera per SR device.** A machine with more than one Leia SR display (for example a laptop's built-in 3D panel plus an external DS1) now exposes a separate stereo camera for each device. Each one is named after its screen (`…",
+      "Tested with two cameras open at once: both ran at about 60 fps, with no cross-feed between them.",
+      "Stereo camera: enumerate one camera per SR device, using LeiaSR's per-device Raw camera sections. Each camera gets per-device calibration and its own bound eye-tracker keep-alive (#342). This needs a LeiaSR build that includes LeiaInc/Le…"
     ],
     "looksMechanical": false
   },
@@ -190,9 +185,23 @@
     "id": "displayxr-runtime@v2.37.0",
     "repo": "displayxr-runtime",
     "tag": "v2.37.0",
-    "title": "v2.37.0",
+    "title": "DisplayXR Runtime v2.37.0",
     "date": "2026-10-11",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.37.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Vulkan apps with sRGB swapchains run up to ~3x faster on Android.** On every platform, `vk_native` now reads an app's sRGB swapchain through its existing UNORM view on the compose fast path, so the per-frame sRGB→UNORM scratch copy is …",
+      "Every Vulkan reference test app (`cube_*_vk_*` on Windows, macOS, Linux and Android, plus the legacy hosted VK cubes and `weave_client_vk_android`) now runs on `dxr::VkFrameRing`: one submit per frame with ≥2 frames in flight, per the IN…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.37.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.37.1",
+    "title": "v2.37.1",
+    "date": "2026-10-11",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.37.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -280,17 +289,6 @@
       "The page signature now accepts gradient masks (such as the tab-strip title fade), so the page overlay is reused across frames instead of being rebuilt each time (patch 0387)."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@android-bundle-2026-10-08-2",
-    "repo": "displayxr-installer",
-    "tag": "android-bundle-2026-10-08-2",
-    "title": "Android tablet bundle android-bundle-2026-10-08-2",
-    "date": "2026-10-08",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-08-2",
-    "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.24.0",
