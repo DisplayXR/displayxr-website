@@ -33,6 +33,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-modelviewer@v0.35.2",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.35.2",
+    "title": "v0.35.2",
+    "date": "2026-10-11",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.35.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@android-bundle-2026-10-11",
     "repo": "displayxr-installer",
     "tag": "android-bundle-2026-10-11",
@@ -488,21 +499,6 @@
     "prerelease": false,
     "featureLines": [
       "**Linux: the window now moves like the other demos.** The desktop Linux window gets the shared translucent rounded title bar; drag it by the title bar or with the right mouse button on both Wayland (move-synced) and X11 (phase-snapped). …"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.33.0",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.33.0",
-    "title": "v0.33.0",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.33.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Open MaterialX OpenPBR USD scenes directly.** USD scenes whose materials are `.mtlx` references (for example the ASWF OpenPBR Shader Playground) now load natively, with no glTF export step. The loader composes subLayers, references, pa…",
-      "Native MaterialX OpenPBR USD scene loading: a MaterialX-subset reader, a per-texel node-graph evaluator, and an OpenPBR material bake that mirrors `scripts/openpbr_mtlx_to_gltf.py` (#160, #70)",
-      "`scripts/openpbr_mtlx_to_gltf.py`: GeomSubset materials and whole-scene conversion; applies the scene's USD overrides over the `.mtlx` and honours USD `doubleSided` (#70)"
     ],
     "looksMechanical": false
   },
