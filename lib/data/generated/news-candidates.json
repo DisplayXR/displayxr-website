@@ -18,8 +18,14 @@
     "date": "2026-10-11",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Much smoother on Android.** The Vulkan tile renderer now submits once per frame with up to 3 frames in flight instead of draining the GPU queue after every eye — phone 30 → 59.6 fps, NP02J tablet 19.8 → 31.8 fps on runtime v2.35.0.",
+      "**Depth-aware cursor.** On a DisplayXR runtime with `XR_DXR_cursor_depth`, the pointer is drawn at the depth of the terrain/buildings under it when content pops out of the glass (macOS, Linux; Windows activates once the D3D compositors d…",
+      "Depth-aware cursor: per-tile BVH ray cast over the streamed 3D tiles feeds the runtime-drawn depth cursor (displayxr-common v2.29.0 `dxr::CursorDepth`) (#81)",
+      "Vulkan frame ring (`dxr::VkFrameRing`, displayxr-common v2.29.0): one submit per frame, 3 frames in flight; tile uploads record into the frame's command buffer and Vulkan objects retire through deferred destruction instead of `vkQueueWai…",
+      "Android: client AAR pinned to v2.34.0, which ships the `VK_LAYER_DXR_queue_lock` layer (60 Hz face refresh, displayxr-runtime#1905) (#79)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.29.3",
@@ -43,8 +49,13 @@
     "date": "2026-10-11",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.13.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The Vulkan player now keeps up to three frames in flight instead of waiting on the GPU after every submit. On macOS that cuts CPU use by about 6 points and tightens frame pacing.",
+      "Android frame rate is **unchanged in this release**: about 30 fps on the phone and about 19 fps on the tablet. The remaining cost is the runtime's sRGB swapchain copy (displayxr-runtime#1935). A fix is in progress there and needs no chan…",
+      "Vulkan frame ring (`dxr::VkFrameRing`, displayxr-common v2.28.0): 3 frames in flight and one submit per frame, with the HUD included in that submit. Decoder images are released only after every frame that samples them has retired, so the…",
+      "Android client AAR pinned to runtime v2.34.0. The APK now ships `VK_LAYER_DXR_queue_lock`, so a runtime at v2.34.0 or later turns on mid-frame fills and the non-blocking hand-off (displayxr-runtime#1905). (#99)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.35.2",
@@ -54,8 +65,13 @@
     "date": "2026-10-11",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.35.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**About 2× faster on Android.** Each frame's tiles now go through one Vulkan submit. With runtime v2.35.0 the Lume phone goes from 13 to 30 fps, and the NP02J tablet from 10 to 20 fps.",
+      "**Depth-aware cursor (pilot).** When the pointer is over content that pops out of the glass, the runtime draws the cursor just in front of it, so the cursor no longer looks buried in the model. The app works out that depth by ray-casting…",
+      "Depth-aware cursor via `XR_DXR_cursor_depth`: per-cluster BVH ray cast that follows node animation and skinning. Turn it off with `DISPLAYXR_CURSOR_DEPTH=0`. displayxr-common moves to v2.29.0 (#171)",
+      "Android: client AAR pinned to v2.34.0, which ships the `VK_LAYER_DXR_queue_lock` layer so face tracking refreshes at panel rate (60 Hz) (#169)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@android-bundle-2026-10-11",
