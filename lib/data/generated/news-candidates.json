@@ -7,8 +7,13 @@
     "date": "2026-10-11",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.3",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Depth-aware cursor** (live on macOS; wired on Windows/Linux, active once the runtime draws in display-zones frames): the runtime draws the pointer just in front of the tiger where it pops out of the glass, using `XR_DXR_cursor_depth` w…",
+      "**Smoother Vulkan frame pacing on every platform.** The renderer now submits once per frame with 3 frames in flight (`dxr::VkFrameRing` from displayxr-common). On the NP02J tablet it goes from 29.5 to 31.9 fps; the phone is capped by vsy…",
+      "Depth-aware cursor (`XR_DXR_cursor_depth` v6, displayxr-common v2.29.0 `dxr::CursorDepth`): a BVH ray cast per rigid cluster that follows node and skin animation. It is wired on Windows/Linux through the zone-scoped rig locate, and stays…",
+      "Android: client AAR pinned to v2.34.0, which ships the `VK_LAYER_DXR_queue_lock` layer (60 Hz face refresh, displayxr-runtime#1905). (#115)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-earthview@v0.11.2",
@@ -115,6 +120,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-leia-plugin@v2.14.1",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.14.1",
+    "title": "v2.14.1",
+    "date": "2026-10-11",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.14.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.34.0",
     "repo": "displayxr-runtime",
     "tag": "v2.34.0",
@@ -171,6 +187,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.37.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.37.0",
+    "title": "v2.37.0",
+    "date": "2026-10-11",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.37.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-shell-releases@v2.4.0",
     "repo": "displayxr-shell-releases",
     "tag": "v2.4.0",
@@ -187,26 +214,6 @@
       "**linux:** `.deb` packaging, workspace-controller manifest and dev registration; CI builds the `.deb` and install-verifies it on Ubuntu 22.04, 24.04 and 26.04.",
       "**linux:** XDG app-manifest dirs, MCP capability marker, and chrome icon + title for registered apps via `/proc/<pid>/exe`.",
       "**linux:** waits on the workspace wakeup eventfd instead of a fixed 16 ms poll; the service-forwarded workspace hotkey dismisses the shell."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.33.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.33.0",
-    "title": "DisplayXR Runtime v2.33.0",
-    "date": "2026-10-10",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.33.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Multi-screen on Windows:** a window spanning two 3D displays is now woven and looked-around per screen — in-process D3D11/D3D12 and the service's direct path, with the HWND following the majority screen and segments under the weave-on-…",
-      "**New DisplayXR Dashboard** (`displayxr-dashboard.exe`, Avalonia, Start-menu shortcut): live display status, per-screen display-processor choice, and workspace-controller launch settings. New CLI: `displayxr-cli status [--watch]`, `dp us…",
-      "feat(plugin): append `get_screen_status` per-screen vendor status slot (ADR-051 D2); sim_display implements it with synthetic values",
-      "feat(status): display status snapshot, headless builder and `displayxr-cli status`",
-      "feat(service): service-side status snapshot builder, per-client compositor facts, Windows native mode",
-      "feat(ipc): three session-free DIAG status RPCs + generation counters",
-      "feat(cli): status over DIAG IPC, `status --watch`; clients gains presenter/lease/window/owner",
-      "feat(mcp): `get_status_snapshot` session-free tool"
     ],
     "looksMechanical": false
   },
@@ -376,24 +383,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.11.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.11.0",
-    "title": "v2.11.0",
-    "date": "2026-10-06",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.11.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Stereo camera (L1):** the Leia SR tracking camera is now exposed as a runtime stereo camera (`XR_DXR_stereo_camera`, runtime v2.27.0+) — raw SR camera + calibration parsing, a tracker keep-alive so the eye tracker keeps running while t…",
-      "**Requires DisplayXR runtime v2.27.0 or newer** — the Windows installer's minimum runtime moved from v2.25.4 to v2.27.0.",
-      "Leia SR tracking camera as a runtime stereo camera source — fills the `stereo_camera_*` plug-in slots (runtime ADR-043) (#273)",
-      "Platform-neutral, host-tested parsing of the SR raw-camera frame + calibration (#273)",
-      "Tracker keep-alive counts real eye pairs, reports a measured source rate, 4 ms poll (#273)",
-      "`platformDeviceHint` carries the tracker camera's USB id, so browsers no longer list the raw tracker device next to \"3D Camera (DisplayXR)\" (#273)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.23.0",
