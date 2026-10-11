@@ -29,8 +29,11 @@
     "date": "2026-10-11",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.3",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Depth-aware cursor.** On a runtime with `XR_DXR_cursor_depth`, the runtime draws the pointer in front of splats that come out of the glass. The demo supplies the depth under the pointer by ray-casting the splats themselves. (#142)",
+      "Depth-aware cursor. `GsSplatRayCaster` finds where the front-to-back alpha composite first reaches 0.5, using the same per-splat evaluation as the rasteriser. It walks an implicit 8-ary BVH over Morton-sorted splats, is built on a worker…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.13.1",
@@ -159,8 +162,17 @@
     "date": "2026-10-11",
     "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.4.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**The workspace spans every 3D screen.** On a runtime that supports multi-screen (`XR_DXR_spatial_workspace` v25+), each window is placed on the screen it mostly sits on. Minimising sends a window to its own screen. With runtime v2.36.0 …",
+      "**Desktop Linux (preview).** The shell now builds natively on Linux. Chrome, cursor, taskbar, launcher and splash are drawn with cairo/pango onto Vulkan overlay swapchains. It ships as a `.deb` with a workspace-controller manifest, and t…",
+      "**workspace:** multi-screen workspace on `XR_DXR_spatial_workspace` v25.",
+      "**workspace:** a taskbar on every screen and the launcher on the pointer's screen (spec v26).",
+      "**linux:** desktop-Linux build: Vulkan controller, cairo/pango chrome title pill, cursor sprites, taskbar overlay, launcher band and empty-workspace splash.",
+      "**linux:** `.deb` packaging, workspace-controller manifest and dev registration; CI builds the `.deb` and install-verifies it on Ubuntu 22.04, 24.04 and 26.04.",
+      "**linux:** XDG app-manifest dirs, MCP capability marker, and chrome icon + title for registered apps via `/proc/<pid>/exe`.",
+      "**linux:** waits on the workspace wakeup eventfd instead of a fixed 16 ms poll; the service-forwarded workspace hotkey dismisses the shell."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.33.0",
