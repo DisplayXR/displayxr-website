@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-earthview@v0.11.2",
+    "repo": "displayxr-demo-earthview",
+    "tag": "v0.11.2",
+    "title": "v0.11.2",
+    "date": "2026-10-11",
+    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.29.3",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.29.3",
@@ -589,23 +600,6 @@
       "**Right-button drag ends on release** — releasing the right mouse button now reliably ends a drag.",
       "**X11 drag steps land exactly** — each drag step lands on its intended position with no drift.",
       "**X11 header-bar double-click maximises** the window."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-earthview@v0.10.0",
-    "repo": "displayxr-demo-earthview",
-    "tag": "v0.10.0",
-    "title": "v0.10.0",
-    "date": "2026-09-27",
-    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.10.0",
-    "prerelease": false,
-    "featureLines": [
-      "Window dragging on Linux is smoother and more precise, from the displayxr-common v2.25.0 repin:",
-      "**Wayland move-sync support**: when the runtime move-syncs the window, the app no longer applies its own drag lattice, so the window tracks the pointer directly.",
-      "**Right-button drag ends on release**: a right-button window drag now stops as soon as the button is released.",
-      "**Exact X11 drag steps**: each drag step on X11 lands exactly where it was computed.",
-      "**X11 header-bar double-click maximise**: double-clicking the header bar on X11 maximises or restores the window."
     ],
     "looksMechanical": false
   },
