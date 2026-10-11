@@ -1,5 +1,38 @@
 [
   {
+    "id": "displayxr-demo-avatar@v0.14.3",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.14.3",
+    "title": "v0.14.3",
+    "date": "2026-10-11",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-gaussiansplat@v1.29.3",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.29.3",
+    "title": "v1.29.3",
+    "date": "2026-10-11",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@v1.13.1",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.13.1",
+    "title": "v1.13.1",
+    "date": "2026-10-11",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.13.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@android-bundle-2026-10-11",
     "repo": "displayxr-installer",
     "tag": "android-bundle-2026-10-11",
@@ -29,8 +62,16 @@
     "date": "2026-10-11",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.14.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Multi-screen on every Windows graphics API.** The plug-in now builds one display processor per Leia screen for D3D12, OpenGL and Vulkan (it already did for D3D11). Each one has its own bound EXTERNAL SR weaver, present origin and nomin…",
+      "**win:** Vulkan per-screen DP for multi-screen M6 (`create_dp_vk_for_screen`).",
+      "**gl:** per-screen GL display processor for multi-screen M6 (`create_dp_gl_for_screen`).",
+      "**win:** one D3D12 DP per screen (`create_dp_d3d12_for_screen` + D3D12 `set_present_origin`), and a per-screen D3D12 SR weaver with a bound EXTERNAL weaver, present origin and nominal viewer (multi-screen M6).",
+      "**win:** passive `get_screen_status` slot (runtime ADR-051 D2).",
+      "**win:** monitors are bound by SR's own monitor join (`srEnumerateMonitors`), with the heuristic as a fallback; SR SDK pin moved to `sr-sdk-v2-1.38.0.2192`.",
+      "**macOS:** Leia SR Metal display-processor arm (`drv_leia_macos`) (#324)."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.34.0",
@@ -87,6 +128,17 @@
       "**components:** shell `.deb` + manifest marker on Linux, real macOS `.pkg` glob."
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-shell-releases@v2.4.0",
+    "repo": "displayxr-shell-releases",
+    "tag": "v2.4.0",
+    "title": "DisplayXR Shell v2.4.0",
+    "date": "2026-10-11",
+    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.4.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-runtime@v2.33.0",
@@ -580,51 +632,12 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-demo-mediaplayer@v1.11.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.11.0",
-    "title": "v1.11.0",
-    "date": "2026-09-27",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.11.0",
-    "prerelease": false,
-    "featureLines": [
-      "Linux window dragging is smoother and more precise, from the displayxr-common v2.25.0 window fixes:",
-      "**Wayland move-sync support** — when the runtime move-syncs the window, no drag lattice is applied, so the window tracks the pointer directly.",
-      "**Right-button drag ends on release** — a drag started with the right mouse button now finishes when that button is released.",
-      "**X11 drag steps land exactly** — each X11 drag step lands on its intended position.",
-      "**X11 header-bar double-click maximises** the window."
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-models@blobs",
     "repo": "displayxr-models",
     "tag": "blobs",
     "title": "Model blobs (content-addressed, permanent)",
     "date": "2026-09-25",
     "url": "https://github.com/DisplayXR/displayxr-models/releases/tag/blobs",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.13.2",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.13.2",
-    "title": "v0.13.2",
-    "date": "2026-09-24",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.13.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.28.2",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.28.2",
-    "title": "v1.28.2",
-    "date": "2026-09-24",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.28.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -725,24 +738,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-shell-releases@v2.2.0",
-    "repo": "displayxr-shell-releases",
-    "tag": "v2.2.0",
-    "title": "DisplayXR Shell v2.2.0",
-    "date": "2026-08-18",
-    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.2.0",
-    "prerelease": false,
-    "featureLines": [
-      "Voice control works again. A missing dependency ceiling let a new major of the",
-      "`mcp` Python package into the shipped voice runtime, where it wedged during",
-      "session initialization — voice appeared to start and then silently did nothing,",
-      "leaving an empty log behind. The runtime is now pinned to the major we test, and",
-      "a wedged voice process says so (in the log, and as a toast) instead of failing",
-      "invisibly. Voice reaches `[realtime] session ready` and push-to-talk arms."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-mcp@v0.5.3",

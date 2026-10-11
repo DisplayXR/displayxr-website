@@ -33,20 +33,25 @@
   {
     "id": "shell",
     "name": "DisplayXR Shell",
-    "version": "v2.3.2",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.3.2",
-    "releaseDate": "2026-10-03",
-    "platforms": "Windows · macOS",
+    "version": "v2.4.0",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.4.0",
+    "releaseDate": "2026-10-11",
+    "platforms": "Windows · macOS · Linux",
     "downloads": [
       {
         "platform": "Windows",
-        "file": "DisplayXRShellSetup-2.3.2.exe",
-        "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/download/v2.3.2/DisplayXRShellSetup-2.3.2.exe"
+        "file": "DisplayXRShellSetup-2.4.0.exe",
+        "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/download/v2.4.0/DisplayXRShellSetup-2.4.0.exe"
       },
       {
         "platform": "macOS",
-        "file": "DisplayXRShell-2.3.2.pkg",
-        "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/download/v2.3.2/DisplayXRShell-2.3.2.pkg"
+        "file": "DisplayXRShell-2.4.0.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/download/v2.4.0/DisplayXRShell-2.4.0.pkg"
+      },
+      {
+        "platform": "Linux",
+        "file": "displayxr-shell_2.4.0+dirty_amd64.deb",
+        "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/download/v2.4.0/displayxr-shell_2.4.0%2Bdirty_amd64.deb"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-shell-releases"
