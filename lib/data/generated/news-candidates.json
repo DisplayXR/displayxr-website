@@ -1,14 +1,31 @@
 [
   {
-    "id": "displayxr-runtime@v2.38.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.38.0",
-    "title": "v2.38.0",
+    "id": "displayxr-demo-gaussiansplat@v1.29.4",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.29.4",
+    "title": "v1.29.4",
     "date": "2026-10-12",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.38.0",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.4",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.38.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.38.0",
+    "title": "DisplayXR Runtime v2.38.0",
+    "date": "2026-10-12",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.38.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Android run-ahead apps no longer pinned at vsync/2 (#1964, fixes #1962).** The non-blocking `xrEndFrame` hand-off's stall-adaptive fallback used to trip on launch warm-up for every app and never recover. It now scores the app's frame i…",
+      "Also: the runtime now draws the depth-aware cursor on D3D11 + D3D12 (ADR-046 Amendment 2 §B), depth swapchains work over IPC, and a macOS GL crash with apps that bind their own `NSOpenGLView` is fixed.",
+      "feat(cursor): the runtime draws the depth cursor — D3D11 + D3D12 (ADR-046 Amendment 2 §B) (#1944)",
+      "feat(ipc): depth swapchains over IPC — service advertises + shares depth formats (#1956) (#1969)",
+      "feat(cube_handle_gl_macos): depth cursor default-on again"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.14.3",
@@ -613,24 +630,6 @@
       "**Right-button drag ends on release** — releasing the right mouse button now reliably ends a drag.",
       "**X11 drag steps land exactly** — each drag step lands on its intended position with no drift.",
       "**X11 header-bar double-click maximises** the window."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.29.0",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.29.0",
-    "title": "v1.29.0",
-    "date": "2026-09-27",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Linux launch placement matches Windows.** The Linux viewer now honours the undock contract: `--rect` (content rect in desktop px, nudged into the panel when the runtime reports it), `--pose` (opening yaw/pitch/zoom, restored by Space),…",
-      "**`--src=<url>` downloads on Linux.** A `.ply`/`.spz` URL is fetched into `$XDG_CACHE_HOME/displayxr/gaussiansplat` (strict URL policy, `--max-bytes` / `--no-cache` honoured) and framed on arrival; `--title` appends a suffix to the windo…",
-      "**Smoother Linux window dragging** via displayxr-common v2.25.0: Wayland move-sync support, right-button drag ends on release, X11 drag steps land exactly, and double-clicking the X11 header bar maximises.",
-      "feat(linux): honour `--rect`, `--pose`, `--margin` and `--vh` (the undock contract) on X11 and Wayland (#137)",
-      "feat(linux): `--src=<url>` download and `--title`, matching the Windows leg (#137)",
-      "`.deb`: `Recommends: curl` (libcurl is opened at runtime for the fetcher; no new link dependency)"
     ],
     "looksMechanical": false
   },
