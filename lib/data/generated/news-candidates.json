@@ -64,6 +64,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.39.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.39.0",
+    "title": "v2.39.0",
+    "date": "2026-10-12",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.39.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-shell-releases@v2.4.1",
     "repo": "displayxr-shell-releases",
     "tag": "v2.4.1",
@@ -217,26 +228,6 @@
       "**One stereo camera per SR device.** A machine with more than one Leia SR display (for example a laptop's built-in 3D panel plus an external DS1) now exposes a separate stereo camera for each device. Each one is named after its screen (`…",
       "Tested with two cameras open at once: both ran at about 60 fps, with no cross-feed between them.",
       "Stereo camera: enumerate one camera per SR device, using LeiaSR's per-device Raw camera sections. Each camera gets per-device calibration and its own bound eye-tracker keep-alive (#342). This needs a LeiaSR build that includes LeiaInc/Le…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.36.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.36.0",
-    "title": "DisplayXR Runtime v2.36.0",
-    "date": "2026-10-11",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.36.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Multi-screen everywhere on Windows.** With this runtime and Leia plug-in v2.14.0, every graphics API weaves per screen: a window spanning two 3D monitors is woven by each screen's own display processor with that screen's views (D3D11, …",
-      "**The runtime draws the depth cursor.** Metal, Vulkan and OpenGL compositors now draw the depth-aware cursor themselves, including in display-zones frames, and lifted (2D→3D) content gets a depth-aware cursor too (`XR_DXR_cursor_depth` v…",
-      "**cursor:** the runtime draws the depth cursor — Metal + cube reference (#1941), Vulkan + GL (#1946), and in display-zones frames (#1949, #1950); `cube_handle_metal_macos` adopts it through `dxr::CursorDepth` (#1943).",
-      "**lift:** depth-aware cursor on lifted content (ADR-046 Phase 3c) (#1908).",
-      "**workspace:** overlays per screen — `XR_DXR_spatial_workspace` v26 (ADR-052 Amendment 2).",
-      "**tracking:** a session is tracked when any screen presenting it is (ADR-047 Amendment 7).",
-      "**Linux service:** workspace orchestrator + launch hotkey; launch-hotkey grammar mapped onto X11 keysyms and GTK accelerators; the launch chord is forwarded to a running controller; GNOME extension v13 (`org.displayxr.WorkspaceHotkey1`, …",
-      "**components:** shell `.deb` + manifest marker on Linux, real macOS `.pkg` glob."
     ],
     "looksMechanical": false
   },
