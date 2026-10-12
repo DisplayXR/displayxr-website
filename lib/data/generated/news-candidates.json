@@ -16,6 +16,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-mediaplayer@v1.14.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.14.0",
+    "title": "v1.14.0",
+    "date": "2026-10-12",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.14.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.35.3",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.35.3",
@@ -67,12 +78,21 @@
     "id": "displayxr-runtime@v2.39.0",
     "repo": "displayxr-runtime",
     "tag": "v2.39.0",
-    "title": "v2.39.0",
+    "title": "DisplayXR Runtime v2.39.0",
     "date": "2026-10-12",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.39.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "This release completes the runtime-drawn depth-aware cursor (ADR-046). The runtime now draws the cursor on all five in-process compositors (Metal, Vulkan, GL, D3D11, D3D12), with crosstalk softening: blur and translucency scale with lift…",
+      "feat(cursor): XR_DXR_cursor_depth v7 measured-disparity source (ADR-046 Amendment 3) (de54d257a)",
+      "feat(cursor): u_cursor_measure, the measured-disparity matcher (ADR-046 Amendment 3) (badad7e3f)",
+      "feat(cursor): soften the lifted cursor against crosstalk (ADR-046 Amendment 2 B.7) (#1975)",
+      "feat(cursor): soften the lifted cursor against crosstalk on Vulkan (ADR-046 B.7) (0bbf43b6a)",
+      "feat(cursor): crosstalk softening on GL (ADR-046 B.7) (a9259a893)",
+      "feat(cursor): crosstalk softening on D3D12 in-process (ADR-046 B.7) (b1c6c9f73)",
+      "feat(stereo-camera): re-enumerate camera sources with stable ids; deliver CamerasChanged (#1961) (#1979)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-shell-releases@v2.4.1",
@@ -607,17 +627,6 @@
     "title": "v1.29.1",
     "date": "2026-09-29",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.11.1",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.11.1",
-    "title": "v1.11.1",
-    "date": "2026-09-29",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.11.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
