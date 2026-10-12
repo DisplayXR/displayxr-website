@@ -68,8 +68,17 @@
     "date": "2026-10-12",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Runtime-owned auto-convergence for lifted video.** When the runtime sets the convergence for a lifted SBS / N-view stream, the plug-in now honours that caller-set value and skips the conversion module's own auto-convergence pass, so th…",
+      "**Metric depth + off-axis camera (NeurD >= 0.4.9).** Each lift conversion can now export its depth as an auxiliary output, and the plug-in adopts NeurD's metric off-axis camera when NeurD 0.4.9 or newer is installed.",
+      "**Depth cursor on lifted content.** The plug-in reports the off-axis relief mapping for each conversion, so the runtime can place its depth cursor correctly inside lifted views.",
+      "**Lift availability reporting.** The plug-in now reports which NeurD version is installed and why lift is or is not available, shown in the DisplayXR dashboard and `displayxr-cli info`.",
+      "Consume the runtime's caller-set auto-convergence for lifted streams (#346)",
+      "Metric depth export and NeurD off-axis camera, requires NeurD >= 0.4.9 (#318)",
+      "Report the off-axis relief mapping for the runtime's depth cursor (#332)",
+      "Report the installed NeurD version and lift availability status (#345)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.38.0",
