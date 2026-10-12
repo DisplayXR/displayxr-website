@@ -23,8 +23,11 @@
     "date": "2026-10-12",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.14.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**3D depth cursor over stereo content.** While playing SBS or dual-track stereo video or photos, the media player now opts into the runtime's measured-disparity depth cursor (`XR_DXR_cursor_depth` v7): the runtime measures the disparity …",
+      "Runtime-measured depth cursor on stereo media (`XR_DXR_cursor_depth` v7). Requests are chained only while stereo media is showing and the pointer is over the canvas (not the transport UI); mono media and the idle logo cost nothing. `MEDI…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.35.3",
@@ -54,6 +57,17 @@
     "date": "2026-10-12",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-12",
     "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.15.0",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.15.0",
+    "title": "v2.15.0",
+    "date": "2026-10-12",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.0",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -93,6 +107,17 @@
       "feat(stereo-camera): re-enumerate camera sources with stable ids; deliver CamerasChanged (#1961) (#1979)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.40.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.40.0",
+    "title": "v2.40.0",
+    "date": "2026-10-12",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.40.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-shell-releases@v2.4.1",
@@ -248,20 +273,6 @@
       "**One stereo camera per SR device.** A machine with more than one Leia SR display (for example a laptop's built-in 3D panel plus an external DS1) now exposes a separate stereo camera for each device. Each one is named after its screen (`…",
       "Tested with two cameras open at once: both ran at about 60 fps, with no cross-feed between them.",
       "Stereo camera: enumerate one camera per SR device, using LeiaSR's per-device Raw camera sections. Each camera gets per-device calibration and its own bound eye-tracker keep-alive (#342). This needs a LeiaSR build that includes LeiaInc/Le…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.37.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.37.0",
-    "title": "DisplayXR Runtime v2.37.0",
-    "date": "2026-10-11",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.37.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Vulkan apps with sRGB swapchains run up to ~3x faster on Android.** On every platform, `vk_native` now reads an app's sRGB swapchain through its existing UNORM view on the compose fast path, so the per-frame sRGB→UNORM scratch copy is …",
-      "Every Vulkan reference test app (`cube_*_vk_*` on Windows, macOS, Linux and Android, plus the legacy hosted VK cubes and `weave_client_vk_android`) now runs on `dxr::VkFrameRing`: one submit per frame with ≥2 frames in flight, per the IN…"
     ],
     "looksMechanical": false
   },
@@ -426,23 +437,6 @@
     "prerelease": true,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.12.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.12.0",
-    "title": "v2.12.0",
-    "date": "2026-10-07",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.12.0",
-    "prerelease": false,
-    "featureLines": [
-      "**2D under the lens on Android.** On the Android (CNSDK) path, the runtime's 2D over-layer — UI, text, cursors drawn over a 3D app — is now composited *inside* the weave instead of on top of it. CNSDK band-limits the 2D layer to the lens…",
-      "**CNSDK v0.10.75** — the Android build moves to CNSDK v0.10.75, which adds the experimental `leia_interlacer_vulkan_set_overlay_2d` entry point and caches the 2D-layer prefilter (LeiaInc/CNSDK#746).",
-      "Android DP implements the runtime's Vulkan DP slots `set_overlay_2d` and `set_overlay_2d_filter_strength` (runtime v2.26.0), forwarding the layer to CNSDK's in-weave compositor (#309).",
-      "Safe fallback: the DP declines — and the runtime keeps today's post-weave composite — when the loaded CNSDK core lacks the API, the layer is not 8-bit encoded, session transparency is on (CNSDK writes opaque alpha), or the previous frame…",
-      "Android header pin bumped v2.16.19 → v2.26.0. Plug-in ABI stays at v5, so this plug-in still loads on older runtimes (they simply never offer the 2D layer) (#309)."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.35.1",

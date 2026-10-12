@@ -53,6 +53,7 @@
       "displayxr-runtime/docs/adr/ADR-050-macos-runtime-owns-window-placement.md",
       "displayxr-runtime/docs/adr/ADR-051-display-status-model-and-dashboard.md",
       "displayxr-runtime/docs/adr/ADR-052-workspace-on-n-screens.md",
+      "displayxr-runtime/docs/adr/ADR-053-conversion-providers.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-001-direct-runtime-loading.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-002-zero-copy-atlas-handoff.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-003-ue-native-off-axis-projection.md"
