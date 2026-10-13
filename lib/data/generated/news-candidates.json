@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.7.2",
+    "repo": "displayxr-browser",
+    "tag": "v1.7.2",
+    "title": "DisplayXR Browser v1.7.2",
+    "date": "2026-10-13",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.7.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.29.4",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.29.4",
@@ -57,6 +68,17 @@
     "date": "2026-10-12",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-12",
     "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.8.0",
+    "repo": "displayxr-installer",
+    "tag": "v2.8.0",
+    "title": "DisplayXR v2.8.0",
+    "date": "2026-10-12",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.8.0",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -121,12 +143,17 @@
     "id": "displayxr-runtime@v2.40.0",
     "repo": "displayxr-runtime",
     "tag": "v2.40.0",
-    "title": "v2.40.0",
+    "title": "DisplayXR Runtime v2.40.0",
     "date": "2026-10-12",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.40.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "sim_display gains opt-in webcam eye tracking with an optional YuNet/ONNX Runtime face estimator (#1855; off by default), so tracked 3D can be exercised without vendor hardware. Also: runtime-owned auto-convergence for lifted video (#1858…",
+      "feat(sim_display): opt-in webcam eye tracking plumbing (#1855)",
+      "feat(sim_display): opt-in YuNet/ONNX Runtime face estimator (#1855)",
+      "feat(lift): runtime-owned auto-convergence for lifted video (#1858) (#1978)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-shell-releases@v2.4.1",
@@ -228,17 +255,6 @@
       "Android: client AAR pinned to v2.34.0, which ships the `VK_LAYER_DXR_queue_lock` layer so face tracking refreshes at panel rate (60 Hz) (#169)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@android-bundle-2026-10-11-3",
-    "repo": "displayxr-installer",
-    "tag": "android-bundle-2026-10-11-3",
-    "title": "Android tablet bundle android-bundle-2026-10-11-3",
-    "date": "2026-10-11",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-11-3",
-    "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.7.0",
@@ -419,20 +435,6 @@
     "prerelease": false,
     "featureLines": [
       "Linux launcher (#356, DisplayXR/displayxr-runtime#1831): a Linux build now writes `<name>.sh` next to the player; point the app's `.desktop` `Exec=` at it. At launch it starts the player as a native Wayland app (`-force-wayland`) when on…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.5.4",
-    "repo": "displayxr-browser",
-    "tag": "v1.5.4",
-    "title": "DisplayXR Browser v1.5.4",
-    "date": "2026-10-07",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.5.4",
-    "prerelease": false,
-    "featureLines": [
-      "On desktop Linux, pages that opt into the 2D lens filter now show crisp, readable flat text over woven 3D content, on par with Windows. The whole flat page is handed to the display processor as the 2D layer and composited inside the weave.",
-      "Linux: a page that opts into the 2D lens filter (`<meta name=\"displayxr-2d-lens-filter\">` or the per-site setting) now has its whole flat page handed to the display processor as the 2D layer, composited and lens-filtered inside the weave…"
     ],
     "looksMechanical": false
   },
