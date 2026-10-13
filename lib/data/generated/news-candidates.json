@@ -61,8 +61,11 @@
     "date": "2026-10-13",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Android: the CNSDK weave now chains on the GPU (`XR_DXR_weave` v20).** The Android CNSDK display processor implements VK DP slot 17 `set_weave_sync`, so it joins the runtime's weave semaphore chain. It waits on the runtime's semaphore …",
+      "Android: prepared for CNSDK 0.10.76's `leia_interlacer_vulkan_initialize_with_queue`. It binds weakly, so it turns on with the runtime APK's CNSDK without a plug-in rebuild, and falls back to the old init against older cores. (#352)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.41.0",
@@ -83,6 +86,17 @@
       "feat(conv): conversion-provider loader — registry / manifest / libdxrc discovery + ABI gate (#1999)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.41.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.41.1",
+    "title": "v2.41.1",
+    "date": "2026-10-13",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.41.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.29.4",
@@ -173,23 +187,6 @@
       "Metric depth export and NeurD off-axis camera, requires NeurD >= 0.4.9 (#318)",
       "Report the off-axis relief mapping for the runtime's depth cursor (#332)",
       "Report the installed NeurD version and lift availability status (#345)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.38.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.38.0",
-    "title": "DisplayXR Runtime v2.38.0",
-    "date": "2026-10-12",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.38.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Android run-ahead apps no longer pinned at vsync/2 (#1964, fixes #1962).** The non-blocking `xrEndFrame` hand-off's stall-adaptive fallback used to trip on launch warm-up for every app and never recover. It now scores the app's frame i…",
-      "Also: the runtime now draws the depth-aware cursor on D3D11 + D3D12 (ADR-046 Amendment 2 §B), depth swapchains work over IPC, and a macOS GL crash with apps that bind their own `NSOpenGLView` is fixed.",
-      "feat(cursor): the runtime draws the depth cursor — D3D11 + D3D12 (ADR-046 Amendment 2 §B) (#1944)",
-      "feat(ipc): depth swapchains over IPC — service advertises + shares depth formats (#1956) (#1969)",
-      "feat(cube_handle_gl_macos): depth cursor default-on again"
     ],
     "looksMechanical": false
   },
