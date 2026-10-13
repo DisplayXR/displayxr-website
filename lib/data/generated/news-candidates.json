@@ -7,6 +7,24 @@
     "date": "2026-10-13",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.7.2",
     "prerelease": false,
+    "featureLines": [
+      "On 2D video converted to 3D by the runtime, the browser now requests the runtime's depth-aware cursor and hides the page's own cursor over the converted area while the runtime draws it. Needs a runtime that reports `XR_DXR_cursor_depth` …",
+      "Based on Chromium 156.0.8078.12 (unchanged from 1.7.1).",
+      "Auto-published from displayxr-browser-pvt @ 6c7e0ed345a67b21169864f2b05edb9e5f304a41.",
+      "**Security updates follow Chrome stable.** Every Chrome stable point release is rebuilt and published automatically when the browser's own code is untouched upstream, and verified on a DisplayXR display first when it is not. Not affiliat…",
+      "Android APK: release-signed (CN=DisplayXR Browser). If you have any preview up to and including 0.1.24 installed, UNINSTALL it before installing this one - those were debug-key signed and Android refuses an install that changes the signi…",
+      "Linux (.deb, x64): sudo apt install ./displayxr-browser_1.7.2-1_amd64.deb - needs displayxr-runtime (>= 2.28.0) from DisplayXR/displayxr-runtime releases. A newer .deb upgrades in place; there is no apt repository."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.15.1",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.15.1",
+    "title": "v2.15.1",
+    "date": "2026-10-13",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.1",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -361,26 +379,6 @@
     "prerelease": false,
     "featureLines": [
       "Pages can now read the compositor's per-layer weave verdict: `XRDisplayLayer.wovenState` (`\"pending\"` / `\"woven\"` / `\"withheld\"`) and `withheldReason` (the reason token while withheld). Lets a page keep its own cover up until its canvas …"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.13.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.13.0",
-    "title": "v2.13.0",
-    "date": "2026-10-09",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.13.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Multi-screen on Windows: a window straddling two Leia panels is woven and head-tracked per screen.** With runtime v2.30.0+ and LeiaSR 1.38.0+2141, an in-process D3D11 app spanning two Leia displays gets one display processor per screen…",
-      "**Lift look-around follows the runtime's viewpoint policy.** 2D→3D lift streams now take the runtime's window-relative viewpoint policy: look-around is relative to the lifted rect, with the runtime's IPD/parallax factors, optional vertic…",
-      "Windows: `create_dp_d3d11_for_screen` creates a D3D11 DP bound to one screen's SR display, with a windowless EXTERNAL weaver, display binding, and a fallback order (drop the binding, then the routing) when the SR runtime refuses a weaver…",
-      "Windows: `set_present_origin` forwards the per-screen phase origin to `srWeaverSetPresentOrigin`, and `process_atlas` scissors to the canvas for segment DPs (#315).",
-      "Windows: per-display lens binding (SR D3) and per-display eye tracker (SR D4). A screen-bound DP drives its own panel's 2D/3D lens state, and is tracked by that panel's own camera when the SR service supports it (#315).",
-      "Windows: `get_display_info_for_monitor` reports the SR-calibrated physical size, native resolution and nominal viewer for every claimed Leia panel, so the runtime can compute per-segment views (#315).",
-      "Windows: `probe_displays` joins the runtime's monitor list with `srEnumerateDisplays`. Claims follow SR's confidence (FPC-verified panels report VERIFIED with their FPC serial), and a Leia panel that SR lists is claimed even when the bui…",
-      "Linux: `probe_displays` implemented, giving per-monitor Leia claims from EDID and, where available, SR display enumeration (#311)."
     ],
     "looksMechanical": false
   },
