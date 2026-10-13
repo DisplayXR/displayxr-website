@@ -46,12 +46,21 @@
     "id": "displayxr-runtime@v2.41.0",
     "repo": "displayxr-runtime",
     "tag": "v2.41.0",
-    "title": "v2.41.0",
+    "title": "DisplayXR Runtime v2.41.0",
     "date": "2026-10-13",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.41.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**XR_DXR_weave v20 (#2013)** brings the v10 sync_file contract to Android: the AHardwareBuffer submit accepts an `XrWeaveSubmitSyncDXR` acquire fence, and a per-frame `XrWeaveOutputSyncDXR.releaseFenceFd` is returned without the runtime'…",
+      "**Conversion-provider core (ADR-053, #1998–#2007):** 2D→3D models become a third plug-in type, alongside display processors and input providers. This release adds the provider ABI (`xrt_conversion_plugin.h`) and wire (`xrt_conv_wire.h`),…",
+      "Also: the Linux workspace session hides or withdraws the app's own X11 window (cube test apps get manifests and icons), `wl_geom` uses the publisher's `buffer_device` painted rect (#1991), sim_display bumps its per-screen change counter …",
+      "feat(weave): XR_DXR_weave v20 — sync_file fences on Android + VK DP slot set_weave_sync (#2013)",
+      "feat(conv): xrt_conversion_plugin.h provider ABI + tests_conversion_abi (#1998)",
+      "feat(conv): xrt_conv_wire.h conv_* wire family + tests_conv_wire (#1998)",
+      "feat(conv): explicit padding in xrt_conv_frame_out / job_out; fold wire design into the draft (#1998)",
+      "feat(conv): conversion-provider loader — registry / manifest / libdxrc discovery + ABI gate (#1999)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.29.4",
