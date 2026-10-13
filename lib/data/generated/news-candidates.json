@@ -29,6 +29,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@android-bundle-2026-10-13",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-2026-10-13",
+    "title": "Android tablet bundle android-bundle-2026-10-13",
+    "date": "2026-10-13",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-13",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.8.1",
     "repo": "displayxr-installer",
     "tag": "v2.8.1",
@@ -91,9 +102,20 @@
     "id": "displayxr-runtime@v2.41.1",
     "repo": "displayxr-runtime",
     "tag": "v2.41.1",
-    "title": "v2.41.1",
+    "title": "DisplayXR Runtime v2.41.1",
     "date": "2026-10-13",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.41.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.42.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.42.0",
+    "title": "v2.42.0",
+    "date": "2026-10-13",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.42.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -149,17 +171,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-installer@android-bundle-2026-10-12",
-    "repo": "displayxr-installer",
-    "tag": "android-bundle-2026-10-12",
-    "title": "Android tablet bundle android-bundle-2026-10-12",
-    "date": "2026-10-12",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-12",
-    "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-installer@v2.8.0",
     "repo": "displayxr-installer",
     "tag": "v2.8.0",
@@ -187,26 +198,6 @@
       "Metric depth export and NeurD off-axis camera, requires NeurD >= 0.4.9 (#318)",
       "Report the off-axis relief mapping for the runtime's depth cursor (#332)",
       "Report the installed NeurD version and lift availability status (#345)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.39.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.39.0",
-    "title": "DisplayXR Runtime v2.39.0",
-    "date": "2026-10-12",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.39.0",
-    "prerelease": false,
-    "featureLines": [
-      "This release completes the runtime-drawn depth-aware cursor (ADR-046). The runtime now draws the cursor on all five in-process compositors (Metal, Vulkan, GL, D3D11, D3D12), with crosstalk softening: blur and translucency scale with lift…",
-      "feat(cursor): XR_DXR_cursor_depth v7 measured-disparity source (ADR-046 Amendment 3) (de54d257a)",
-      "feat(cursor): u_cursor_measure, the measured-disparity matcher (ADR-046 Amendment 3) (badad7e3f)",
-      "feat(cursor): soften the lifted cursor against crosstalk (ADR-046 Amendment 2 B.7) (#1975)",
-      "feat(cursor): soften the lifted cursor against crosstalk on Vulkan (ADR-046 B.7) (0bbf43b6a)",
-      "feat(cursor): crosstalk softening on GL (ADR-046 B.7) (a9259a893)",
-      "feat(cursor): crosstalk softening on D3D12 in-process (ADR-046 B.7) (b1c6c9f73)",
-      "feat(stereo-camera): re-enumerate camera sources with stable ids; deliver CamerasChanged (#1961) (#1979)"
     ],
     "looksMechanical": false
   },
@@ -434,7 +425,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — android-bundle-2026-10-12",
+    "title": "Android tablet bundle (latest) — android-bundle-2026-10-13",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
