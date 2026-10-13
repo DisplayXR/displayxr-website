@@ -18,12 +18,37 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-installer@v2.8.1",
+    "repo": "displayxr-installer",
+    "tag": "v2.8.1",
+    "title": "DisplayXR v2.8.1",
+    "date": "2026-10-13",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.8.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.15.1",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.15.1",
     "title": "v2.15.1",
     "date": "2026-10-13",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.1",
+    "prerelease": false,
+    "featureLines": [
+      "Per-display user presence: on a multi-panel box, each Leia display now reports tracking on its own, driven by LeiaSR event 20. This needs LeiaSR 1.39.0 or newer and engages only when SR reports two or more displays. On single-display set…",
+      "Per-display user presence from SR event 20 drives each screen's `is_tracking` (#351)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.41.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.41.0",
+    "title": "v2.41.0",
+    "date": "2026-10-13",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.41.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -275,17 +300,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-installer@v2.7.0",
-    "repo": "displayxr-installer",
-    "tag": "v2.7.0",
-    "title": "DisplayXR v2.7.0",
-    "date": "2026-10-11",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.7.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-leia-plugin@v2.14.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.14.0",
@@ -316,20 +330,6 @@
       "**One stereo camera per SR device.** A machine with more than one Leia SR display (for example a laptop's built-in 3D panel plus an external DS1) now exposes a separate stereo camera for each device. Each one is named after its screen (`…",
       "Tested with two cameras open at once: both ran at about 60 fps, with no cross-feed between them.",
       "Stereo camera: enumerate one camera per SR device, using LeiaSR's per-device Raw camera sections. Each camera gets per-device calibration and its own bound eye-tracker keep-alive (#342). This needs a LeiaSR build that includes LeiaInc/Le…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.37.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.37.1",
-    "title": "DisplayXR Runtime v2.37.1",
-    "date": "2026-10-11",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.37.1",
-    "prerelease": false,
-    "featureLines": [
-      "Embed verified on the published `DisplayXR-Runtime-Leia-2.37.1-android-arm64.apk`: `lib/arm64-v8a/libdxrp050_leia_cnsdk.so` sha256 = `704624b63fe66dc5d2a715c41b05d3dcb66fd0eaf63fa9a08a59e1e0558e0169`, and the binary carries the `v2.14.1`…",
-      "Windows, macOS and Linux artifacts are functionally identical to v2.37.0."
     ],
     "looksMechanical": false
   },
