@@ -54,6 +54,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-leia-plugin@v2.15.2",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.15.2",
+    "title": "v2.15.2",
+    "date": "2026-10-13",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.41.0",
     "repo": "displayxr-runtime",
     "tag": "v2.41.0",
@@ -316,25 +327,6 @@
       "**Depth-aware cursor (pilot).** When the pointer is over content that pops out of the glass, the runtime draws the cursor just in front of it, so the cursor no longer looks buried in the model. The app works out that depth by ray-casting…",
       "Depth-aware cursor via `XR_DXR_cursor_depth`: per-cluster BVH ray cast that follows node animation and skinning. Turn it off with `DISPLAYXR_CURSOR_DEPTH=0`. displayxr-common moves to v2.29.0 (#171)",
       "Android: client AAR pinned to v2.34.0, which ships the `VK_LAYER_DXR_queue_lock` layer so face tracking refreshes at panel rate (60 Hz) (#169)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.14.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.14.0",
-    "title": "v2.14.0",
-    "date": "2026-10-11",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.14.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Multi-screen on every Windows graphics API.** The plug-in now builds one display processor per Leia screen for D3D12, OpenGL and Vulkan (it already did for D3D11). Each one has its own bound EXTERNAL SR weaver, present origin and nomin…",
-      "**win:** Vulkan per-screen DP for multi-screen M6 (`create_dp_vk_for_screen`).",
-      "**gl:** per-screen GL display processor for multi-screen M6 (`create_dp_gl_for_screen`).",
-      "**win:** one D3D12 DP per screen (`create_dp_d3d12_for_screen` + D3D12 `set_present_origin`), and a per-screen D3D12 SR weaver with a bound EXTERNAL weaver, present origin and nominal viewer (multi-screen M6).",
-      "**win:** passive `get_screen_status` slot (runtime ADR-051 D2).",
-      "**win:** monitors are bound by SR's own monitor join (`srEnumerateMonitors`), with the heuristic as a fallback; SR SDK pin moved to `sr-sdk-v2-1.38.0.2192`.",
-      "**macOS:** Leia SR Metal display-processor arm (`drv_leia_macos`) (#324)."
     ],
     "looksMechanical": false
   },
