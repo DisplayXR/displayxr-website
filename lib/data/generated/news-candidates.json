@@ -1,16 +1,5 @@
 [
   {
-    "id": "displayxr-leia-plugin@v2.15.3",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.15.3",
-    "title": "v2.15.3",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-runtime@v2.43.0",
     "repo": "displayxr-runtime",
     "tag": "v2.43.0",
@@ -89,34 +78,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.15.1",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.15.1",
-    "title": "v2.15.1",
-    "date": "2026-10-13",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.1",
-    "prerelease": false,
-    "featureLines": [
-      "Per-display user presence: on a multi-panel box, each Leia display now reports tracking on its own, driven by LeiaSR event 20. This needs LeiaSR 1.39.0 or newer and engages only when SR reports two or more displays. On single-display set…",
-      "Per-display user presence from SR event 20 drives each screen's `is_tracking` (#351)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.15.2",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.15.2",
-    "title": "v2.15.2",
-    "date": "2026-10-13",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.2",
-    "prerelease": false,
-    "featureLines": [
-      "**Android: the CNSDK weave now chains on the GPU (`XR_DXR_weave` v20).** The Android CNSDK display processor implements VK DP slot 17 `set_weave_sync`, so it joins the runtime's weave semaphore chain. It waits on the runtime's semaphore …",
-      "Android: prepared for CNSDK 0.10.76's `leia_interlacer_vulkan_initialize_with_queue`. It binds weakly, so it turns on with the runtime APK's CNSDK without a plug-in rebuild, and falls back to the old init against older cores. (#352)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.41.1",
@@ -211,37 +172,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-leia-plugin@v2.15.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.15.0",
-    "title": "v2.15.0",
-    "date": "2026-10-12",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Runtime-owned auto-convergence for lifted video.** When the runtime sets the convergence for a lifted SBS / N-view stream, the plug-in now honours that caller-set value and skips the conversion module's own auto-convergence pass, so th…",
-      "**Metric depth + off-axis camera (NeurD >= 0.4.9).** Each lift conversion can now export its depth as an auxiliary output, and the plug-in adopts NeurD's metric off-axis camera when NeurD 0.4.9 or newer is installed.",
-      "**Depth cursor on lifted content.** The plug-in reports the off-axis relief mapping for each conversion, so the runtime can place its depth cursor correctly inside lifted views.",
-      "**Lift availability reporting.** The plug-in now reports which NeurD version is installed and why lift is or is not available, shown in the DisplayXR dashboard and `displayxr-cli info`.",
-      "Consume the runtime's caller-set auto-convergence for lifted streams (#346)",
-      "Metric depth export and NeurD off-axis camera, requires NeurD >= 0.4.9 (#318)",
-      "Report the off-axis relief mapping for the runtime's depth cursor (#332)",
-      "Report the installed NeurD version and lift availability status (#345)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-shell-releases@v2.4.1",
-    "repo": "displayxr-shell-releases",
-    "tag": "v2.4.1",
-    "title": "DisplayXR Shell v2.4.1",
-    "date": "2026-10-12",
-    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.4.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-unity@v2.25.1",
     "repo": "displayxr-unity",
     "tag": "v2.25.1",
@@ -328,26 +258,6 @@
       "**Depth-aware cursor (pilot).** When the pointer is over content that pops out of the glass, the runtime draws the cursor just in front of it, so the cursor no longer looks buried in the model. The app works out that depth by ray-casting…",
       "Depth-aware cursor via `XR_DXR_cursor_depth`: per-cluster BVH ray cast that follows node animation and skinning. Turn it off with `DISPLAYXR_CURSOR_DEPTH=0`. displayxr-common moves to v2.29.0 (#171)",
       "Android: client AAR pinned to v2.34.0, which ships the `VK_LAYER_DXR_queue_lock` layer so face tracking refreshes at panel rate (60 Hz) (#169)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-shell-releases@v2.4.0",
-    "repo": "displayxr-shell-releases",
-    "tag": "v2.4.0",
-    "title": "DisplayXR Shell v2.4.0",
-    "date": "2026-10-11",
-    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.4.0",
-    "prerelease": false,
-    "featureLines": [
-      "**The workspace spans every 3D screen.** On a runtime that supports multi-screen (`XR_DXR_spatial_workspace` v25+), each window is placed on the screen it mostly sits on. Minimising sends a window to its own screen. With runtime v2.36.0 …",
-      "**Desktop Linux (preview).** The shell now builds natively on Linux. Chrome, cursor, taskbar, launcher and splash are drawn with cairo/pango onto Vulkan overlay swapchains. It ships as a `.deb` with a workspace-controller manifest, and t…",
-      "**workspace:** multi-screen workspace on `XR_DXR_spatial_workspace` v25.",
-      "**workspace:** a taskbar on every screen and the launcher on the pointer's screen (spec v26).",
-      "**linux:** desktop-Linux build: Vulkan controller, cairo/pango chrome title pill, cursor sprites, taskbar overlay, launcher band and empty-workspace splash.",
-      "**linux:** `.deb` packaging, workspace-controller manifest and dev registration; CI builds the `.deb` and install-verifies it on Ubuntu 22.04, 24.04 and 26.04.",
-      "**linux:** XDG app-manifest dirs, MCP capability marker, and chrome icon + title for registered apps via `/proc/<pid>/exe`.",
-      "**linux:** waits on the workspace wakeup eventfd instead of a fixed 16 ms poll; the service-forwarded workspace hotkey dismisses the shell."
     ],
     "looksMechanical": false
   },
@@ -472,17 +382,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-shell-releases@v2.3.2",
-    "repo": "displayxr-shell-releases",
-    "tag": "v2.3.2",
-    "title": "DisplayXR Shell v2.3.2",
-    "date": "2026-10-03",
-    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.3.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-unity-samples@v2.3.0",
     "repo": "displayxr-unity-samples",
     "tag": "v2.3.0",
@@ -572,17 +471,6 @@
       "Stream URL source: `Stream URL…` in the Live dropdown, `Ctrl+U`, `--url`, MCP `open_url`, low-latency options, automatic reconnect, and a STREAM pill. On Windows the slim FFmpeg build now includes network input and SChannel TLS. The Linu…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-shell-releases@v2.3.1",
-    "repo": "displayxr-shell-releases",
-    "tag": "v2.3.1",
-    "title": "DisplayXR Shell v2.3.1",
-    "date": "2026-09-30",
-    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.3.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-avatar@v0.14.1",
