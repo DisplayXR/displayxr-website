@@ -44,17 +44,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-leia-plugin@v2.15.3",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.15.3",
-    "title": "v2.15.3",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-leia-plugin@v2.15.4",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.15.4",
@@ -85,6 +74,17 @@
     "title": "v2.15.6",
     "date": "2026-10-14",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.6",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.15.7",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.15.7",
+    "title": "v2.15.7",
+    "date": "2026-10-14",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.7",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -160,6 +160,17 @@
       "Linux CI runs the native unit tests (`ctest`). The first one covers the Wayland placement arithmetic (`native~/displayxr_linux_wayland_place.h`)."
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.25.3",
+    "repo": "displayxr-unity",
+    "tag": "v2.25.3",
+    "title": "DisplayXR v2.25.3",
+    "date": "2026-10-14",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.25.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@v1.7.2",
@@ -387,19 +398,6 @@
     "prerelease": false,
     "featureLines": [
       "Pages can now read the compositor's per-layer weave verdict: `XRDisplayLayer.wovenState` (`\"pending\"` / `\"woven\"` / `\"withheld\"`) and `withheldReason` (the reason token while withheld). Lets a page keep its own cover up until its canvas …"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.24.1",
-    "repo": "displayxr-unity",
-    "tag": "v2.24.1",
-    "title": "DisplayXR v2.24.1",
-    "date": "2026-10-08",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.24.1",
-    "prerelease": false,
-    "featureLines": [
-      "`displayxr_linux_overlay_position_known()` (Linux): says whether `displayxr_get_overlay_position` returned the current position or the last known one, since (0,0) is a legitimate position."
     ],
     "looksMechanical": false
   },
