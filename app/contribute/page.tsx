@@ -62,10 +62,25 @@ const adrs = [
     href: `${RUNTIME}/blob/main/docs/adr/ADR-027-display-zones.md`,
   },
   {
+    id: "ADR-034",
+    title: "Input providers are their own plug-in class",
+    href: `${RUNTIME}/blob/main/docs/adr/ADR-034-input-provider-plugins.md`,
+  },
+  {
     id: "ADR-035",
     title:
       "The service owns arbitration, runs one compositor pipeline, and isolates its satellites",
     href: `${RUNTIME}/blob/main/docs/adr/ADR-035-service-owned-arbitration-single-pipeline-isolated-satellites.md`,
+  },
+  {
+    id: "ADR-053",
+    title: "2D-to-3D conversion providers",
+    href: `${RUNTIME}/blob/main/docs/adr/ADR-053-conversion-providers.md`,
+  },
+  {
+    id: "ADR-054",
+    title: "Component model: a trunk with peer component classes",
+    href: `${RUNTIME}/blob/main/docs/adr/ADR-054-component-model.md`,
   },
 ];
 
@@ -76,9 +91,9 @@ const extendLinks = [
     href: `${RUNTIME}/blob/main/docs/guides/implementing-extension.md`,
   },
   {
-    title: "Write a device driver",
-    desc: "Add input or device support inside the runtime.",
-    href: `${RUNTIME}/blob/main/docs/guides/writing-driver.md`,
+    title: "Write an input provider",
+    desc: "Tracked hands, controllers or navigation devices as a plug-in, outside the runtime.",
+    href: "/components#input-providers",
   },
   {
     title: "Build & CI",
@@ -253,12 +268,12 @@ export default function ContributePage() {
           </h2>
           <p className="mb-6 text-sm text-text-secondary leading-relaxed">
             The deep guides live in the runtime repo; these are the entry
-            points. (Writing a plug-in for a spatial-display panel instead? See the{" "}
+            points. (Writing a display processor or another component instead? See{" "}
             <a
-              href="/vendors"
+              href="/components"
               className="text-accent hover:text-accent-hover underline underline-offset-2"
             >
-              Display Vendors guide
+              Components
             </a>
             .)
           </p>

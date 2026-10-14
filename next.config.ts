@@ -24,7 +24,9 @@ const nextConfig: NextConfig = {
       // Guessed URLs seen in analytics (a nav label read as a path). Source
       // matching is case-insensitive (verified: /Display-Vendors/… and /WEBXR
       // both redirect), so one lowercase rule covers every casing.
-      { source: "/display-vendors/:path*", destination: "/vendors", permanent: true },
+      // 2026-10: the vendor page became the component-model page (ADR-054).
+      { source: "/vendors", destination: "/components", permanent: true },
+      { source: "/display-vendors/:path*", destination: "/components", permanent: true },
       { source: "/README.md", destination: "/", permanent: true },
     ];
   },

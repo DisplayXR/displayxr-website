@@ -3,6 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Card } from "@/components/ui/Card";
 import { REPO_URLS } from "@/lib/constants";
+import { ComponentModelDiagram } from "@/components/components/ComponentModelDiagram";
 
 export const metadata: Metadata = {
   title: "Architecture",
@@ -159,8 +160,8 @@ export default function ArchitecturePage() {
               XR_DXR_xlib_window_binding
             </code>
             , weaving only when the panel is addressed 1:1 at an integer
-            scale. Every component — runtime, vendor plug-in, and all five
-            demos — ships as a{" "}
+            scale. Every package (runtime, display processor, and all five
+            demos) ships as a{" "}
             <code className="bg-background text-accent px-1 py-0.5 rounded text-xs font-mono">
               .deb
             </code>{" "}
@@ -366,26 +367,27 @@ export default function ArchitecturePage() {
               </span>
             </div>
             <div className="flex items-start gap-3">
-              <span className="text-warning font-mono text-sm shrink-0 w-32">Vendor plug-ins</span>
+              <span className="text-warning font-mono text-sm shrink-0 w-32">Components</span>
               <span className="text-text-secondary text-sm">
-                Display-processor DLLs the runtime discovers at startup — the
-                weaving / interlacing for a specific panel. The{" "}
+                Display processors, input providers and conversion providers:
+                libraries the runtime discovers at startup, each with a
+                reference implementation in the runtime. The{" "}
                 <a
                   href={REPO_URLS.leiaPlugin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-accent hover:text-accent-hover underline underline-offset-2"
                 >
-                  Leia SR plug-in
+                  Leia SR display processor
                 </a>{" "}
-                is the reference. See the{" "}
+                is the first vendor one. See{" "}
                 <a
-                  href="/vendors"
+                  href="/components"
                   className="text-accent hover:text-accent-hover underline underline-offset-2"
                 >
-                  Vendors
-                </a>{" "}
-                page.
+                  Components
+                </a>
+                .
               </span>
             </div>
             <div className="flex items-start gap-3">
@@ -693,36 +695,35 @@ export default function ArchitecturePage() {
           </p>
         </section>
 
-        {/* Separation of Concerns */}
-        <section>
+        {/* The trunk and its component classes (ADR-054) */}
+        <section id="component-model" className="scroll-mt-24">
           <h2 className="text-2xl font-semibold tracking-tight text-text-primary mb-4">
-            Separation of Concerns
+            The trunk and its component classes
           </h2>
-          <p className="text-text-secondary leading-relaxed mb-4">
-            DisplayXR draws a clean boundary between two responsibilities:
+          <p className="text-text-secondary leading-relaxed mb-6">
+            The runtime is one trunk: the OpenXR state tracker, a native
+            compositor per graphics API, the service and its IPC, the policy,
+            the CLI and the loaders. Everything hardware- or model-specific is
+            a component that plugs in over a versioned C ABI, with a reference
+            implementation shipped for each class. The full picture is on{" "}
+            <a
+              href="/components"
+              className="text-accent hover:text-accent-hover underline underline-offset-2"
+            >
+              Components
+            </a>
+            ; the decision is{" "}
+            <a
+              href={`${REPO_URLS.runtime}/blob/main/docs/adr/ADR-054-component-model.md`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:text-accent-hover underline underline-offset-2"
+            >
+              ADR-054
+            </a>
+            .
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-surface border border-border rounded-lg p-6">
-              <h3 className="text-sm font-semibold text-accent mb-2">
-                App-Facing Portability
-              </h3>
-              <p className="text-sm text-text-secondary leading-relaxed">
-                Standard OpenXR API, session management, swapchain handling,
-                extension dispatch. Applications write once against this
-                interface.
-              </p>
-            </div>
-            <div className="bg-surface border border-border rounded-lg p-6">
-              <h3 className="text-sm font-semibold text-warning mb-2">
-                Vendor-Specific Processing
-              </h3>
-              <p className="text-sm text-text-secondary leading-relaxed">
-                Weaving, interlacing, calibration, eye tracking integration. This
-                lives in the display processor layer and is owned by the hardware
-                vendor.
-              </p>
-            </div>
-          </div>
+          <ComponentModelDiagram />
         </section>
 
         {/* Simulation Driver */}
@@ -786,10 +787,10 @@ export default function ArchitecturePage() {
                 documented and external contributors PR directly.
               </p>
             </Card>
-            <Card href="/vendors" title="Integrate a display">
+            <Card href="/components" title="Plug in a component">
               <p className="text-sm text-text-secondary leading-relaxed">
-                Plug your panel into the runtime through the vendor
-                display-processor interface — no app changes required.
+                Ship a display processor, an input provider or a conversion
+                provider. No app changes required.
               </p>
             </Card>
             <Card href="/developers" title="Build an app">

@@ -36,7 +36,7 @@ const docs = [
   },
   {
     title: "Architecture",
-    body: "How the runtime, the native compositors and the vendor plug-ins fit together.",
+    body: "How the runtime, the native compositors and the components fit together.",
     href: "/architecture",
     icon: <Layers size={20} />,
   },

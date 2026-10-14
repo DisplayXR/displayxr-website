@@ -20,9 +20,11 @@ const footerLinks = {
     { label: "Discussions ↗", href: DISCUSSIONS_URL },
     { label: "GitHub ↗", href: GITHUB_ORG_URL },
   ],
-  "Display Vendors": [
-    { label: "Plug-in guide", href: "/vendors" },
-    { label: "Input providers", href: "/vendors#input-providers" },
+  Components: [
+    { label: "Component model", href: "/components" },
+    { label: "Display processors", href: "/components#display-processors" },
+    { label: "Input providers", href: "/components#input-providers" },
+    { label: "Conversion providers", href: "/components#conversion-providers" },
     { label: "Platform Support", href: "/platform-support" },
     { label: "Common Library ↗", href: REPO_URLS.common },
     { label: "About DisplayXR", href: "/about" },

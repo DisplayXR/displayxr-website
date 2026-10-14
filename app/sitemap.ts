@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/developers/native",
     "/architecture",
     "/extensions",
-    "/vendors",
+    "/components",
     "/demos",
     "/download",
     "/platform-support",

@@ -17,9 +17,9 @@ const paths = [
     icon: <GitPullRequest size={20} />,
   },
   {
-    title: "Integrate a display",
-    body: "One plug-in, not a runtime: bring your display or tracking hardware and every DisplayXR app runs on it, unchanged.",
-    href: "/vendors",
+    title: "Plug in a component",
+    body: "Ship a display processor, an input provider or a 2D-to-3D conversion provider from your own repo. Every DisplayXR app runs on it, unchanged.",
+    href: "/components",
     icon: <MonitorSpeaker size={20} />,
   },
   {
