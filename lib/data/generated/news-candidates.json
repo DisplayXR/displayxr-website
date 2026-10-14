@@ -73,20 +73,8 @@
     "date": "2026-10-14",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.5",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.43.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.43.1",
-    "title": "DisplayXR Runtime v2.43.1",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.43.1",
-    "prerelease": false,
     "featureLines": [
-      "The ImGui Control Panel is gone — the **DisplayXR Dashboard** is now the only runtime GUI, the tray opens it, and an in-place upgrade removes the old `displayxr-control-panel.exe` and its Start Menu shortcut. The runtime installer now wa…",
-      "feat(vk_native): feedback pacing — enable1 weaves paced on the previous commit's `wp_presentation` feedback (Linux/Wayland, opt-in, #2068) (#2077)"
+      "**Android:** every display-processor submit (the `set_weave_sync` relays, compose-under, the alpha gate, the mono blit and uploads) now goes on the runtime-owned weave queue captured at factory time instead of the live app queue, so the …"
     ],
     "looksMechanical": false
   },
@@ -130,6 +118,17 @@
       "feat(gnome-extension): stay enabled on the lock screen (session-modes), v14 (#2071)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.43.5",
+    "repo": "displayxr-runtime",
+    "tag": "v2.43.5",
+    "title": "v2.43.5",
+    "date": "2026-10-14",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.43.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.25.2",
