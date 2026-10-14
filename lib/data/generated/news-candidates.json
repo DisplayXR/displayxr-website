@@ -90,20 +90,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.43.4",
-    "repo": "displayxr-runtime",
-    "tag": "v2.43.4",
-    "title": "DisplayXR Runtime v2.43.4",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.43.4",
-    "prerelease": false,
-    "featureLines": [
-      "Linux/GNOME lock-screen fix: the DisplayXR window-geometry GNOME Shell extension (now **v14**) declares `session-modes` so it stays enabled on the lock screen instead of being torn down, and the Vulkan compositor's Wayland geometry path …",
-      "feat(gnome-extension): stay enabled on the lock screen (session-modes), v14 (#2071)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.43.5",
     "repo": "displayxr-runtime",
     "tag": "v2.43.5",
@@ -141,9 +127,20 @@
     "id": "displayxr-runtime@v2.44.1",
     "repo": "displayxr-runtime",
     "tag": "v2.44.1",
-    "title": "v2.44.1",
+    "title": "DisplayXR Runtime v2.44.1",
     "date": "2026-10-14",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.44.2",
+    "repo": "displayxr-runtime",
+    "tag": "v2.44.2",
+    "title": "v2.44.2",
+    "date": "2026-10-14",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
