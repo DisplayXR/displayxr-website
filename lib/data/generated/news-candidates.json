@@ -79,6 +79,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-leia-plugin@v2.15.6",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.15.6",
+    "title": "v2.15.6",
+    "date": "2026-10-14",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.6",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.43.3",
     "repo": "displayxr-runtime",
     "tag": "v2.43.3",
@@ -180,20 +191,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.15.2",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.15.2",
-    "title": "v2.15.2",
-    "date": "2026-10-13",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.2",
-    "prerelease": false,
-    "featureLines": [
-      "**Android: the CNSDK weave now chains on the GPU (`XR_DXR_weave` v20).** The Android CNSDK display processor implements VK DP slot 17 `set_weave_sync`, so it joins the runtime's weave semaphore chain. It waits on the runtime's semaphore …",
-      "Android: prepared for CNSDK 0.10.76's `leia_interlacer_vulkan_initialize_with_queue`. It binds weakly, so it turns on with the runtime APK's CNSDK without a plug-in rebuild, and falls back to the old init against older cores. (#352)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.29.4",
