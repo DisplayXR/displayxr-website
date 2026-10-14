@@ -54,6 +54,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.43.3",
+    "repo": "displayxr-runtime",
+    "tag": "v2.43.3",
+    "title": "v2.43.3",
+    "date": "2026-10-14",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.43.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.7.2",
     "repo": "displayxr-browser",
     "tag": "v1.7.2",
@@ -129,26 +140,6 @@
     "featureLines": [
       "**Android: the CNSDK weave now chains on the GPU (`XR_DXR_weave` v20).** The Android CNSDK display processor implements VK DP slot 17 `set_weave_sync`, so it joins the runtime's weave semaphore chain. It waits on the runtime's semaphore …",
       "Android: prepared for CNSDK 0.10.76's `leia_interlacer_vulkan_initialize_with_queue`. It binds weakly, so it turns on with the runtime APK's CNSDK without a plug-in rebuild, and falls back to the old init against older cores. (#352)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.42.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.42.0",
-    "title": "DisplayXR Runtime v2.42.0",
-    "date": "2026-10-13",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.42.0",
-    "prerelease": false,
-    "featureLines": [
-      "The Linux `.deb` and tarball now ship `VK_LAYER_DXR_queue_lock`, so the #868 repaint loop can run for Vulkan apps on single-graphics-queue GPUs (Intel iGPUs); `displayxr-cli info`/`selftest` report whether the layer is reachable, and the…",
-      "feat(cursor): measured-disparity source over IPC - the D3D11 service measures (ADR-046 Amendment 3 point 6) (#2040)",
-      "feat(cli): probe VK_LAYER_DXR_queue_lock on desktop Linux (#2036)",
-      "d3d11_service: lift the workspace cursor onto opted-in content + one-fade rule (ADR-046 Phase 4)",
-      "d3d11_service: draw a direct IPC client's runtime-drawn cursor (ADR-046 Phase 4)",
-      "d3d11_service: B.7 crosstalk softening in svc_draw_cursor_quads (ADR-046 §B.7)",
-      "ipc: carry the runtime-drawn cursor request to the D3D11 service (ADR-046 Phase 4)",
-      "comp_cursor_shaders: DXR_SVC_LINEARIZE output variant for the D3D11 service"
     ],
     "looksMechanical": false
   },
