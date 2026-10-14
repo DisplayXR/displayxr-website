@@ -95,9 +95,11 @@ export default function GovernancePage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <Card title="Open by license" icon={<Scale size={20} />}>
               <p className="text-sm text-text-secondary leading-relaxed">
-                Extension specs, runtime, engine plugins, and demos are
-                permissively licensed open source — the runtime is a
-                Monado-derived codebase under the Boost Software License.
+                Extension specs, runtime, engine plug-ins, and demos are
+                permissively licensed open source. The runtime and its plug-in
+                contract headers are BSL-1.0 (Monado-derived); the{" "}
+                <span className="font-mono">XR_DXR_*</span> headers and the
+                vendor template are Apache-2.0. No copyleft anywhere.
               </p>
             </Card>
             <Card title="Neutral by architecture" icon={<Users size={20} />}>
@@ -253,12 +255,12 @@ export default function GovernancePage() {
             <p className="mb-4 text-sm text-text-secondary leading-relaxed max-w-3xl">
               A second independent vendor plug-in is the milestone at which the
               project intends to move toward shared governance. Display vendors
-              start with the{" "}
+              start with{" "}
               <a
-                href="/vendors"
+                href="/components"
                 className="text-accent hover:text-accent-hover underline underline-offset-2"
               >
-                plug-in guide
+                Components
               </a>
               ; developers and contributors start at{" "}
               <a

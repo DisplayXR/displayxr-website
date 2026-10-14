@@ -28,8 +28,15 @@ export function WhySection() {
             DisplayXR builds on OpenXR rather than starting over. It is an
             open-source OpenXR runtime that runs the official Khronos
             conformance suite, plus the <code className="font-mono text-sm">XR_DXR_*</code>{" "}
-            extensions OpenXR needs for spatial displays. Display vendors plug
-            in underneath; apps never see the difference.
+            extensions OpenXR needs for spatial displays. Displays, trackers
+            and 2D-to-3D models plug in underneath as{" "}
+            <a
+              href="/components"
+              className="text-accent underline underline-offset-2 hover:text-accent-hover"
+            >
+              components
+            </a>
+            ; apps never see the difference.
           </p>
         </div>
         <div className="mt-10 max-w-4xl border border-border rounded-lg overflow-hidden">

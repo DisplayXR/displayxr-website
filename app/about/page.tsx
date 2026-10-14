@@ -126,17 +126,22 @@ export default function AboutPage() {
               Displays differ, and they should: the optics, the eye tracking
               and the calibration are what each display maker does best. So
               DisplayXR draws one line. Apps talk only to OpenXR and the
-              extensions. Each display maker ships a{" "}
-              <span className="text-text-primary">display plug-in</span> that
-              does the display-specific work, and tracking hardware plugs in
-              the same way through a separate{" "}
-              <span className="text-text-primary">input-provider plug-in</span>.
+              extensions. Underneath, the runtime discovers{" "}
+              <a href="/components" className="text-accent underline underline-offset-2 hover:text-accent-hover">
+                components
+              </a>
+              : a <span className="text-text-primary">display processor</span>{" "}
+              for the panel, <span className="text-text-primary">input providers</span>{" "}
+              for hands and controllers, and{" "}
+              <span className="text-text-primary">conversion providers</span> that
+              turn 2D into 3D. Each has its own versioned contract and a
+              reference implementation that ships with the runtime.
             </P>
             <P>
               Apps never touch a vendor, and vendors never touch an app. The
               runtime itself carries no vendor code, and its build checks that.
-              An app written once runs on every display that has a plug-in, and
-              a new display runs every app that already exists.
+              An app written once runs on every display that has a display
+              processor, and a new display runs every app that already exists.
             </P>
             <div className="mt-6 overflow-hidden rounded-lg border border-border">
               <Image

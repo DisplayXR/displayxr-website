@@ -219,7 +219,7 @@ const editorial: Record<string, Editorial> = {
     tier: "advanced",
     vanillaGap: "the app renders its own 3D content.",
     adds:
-      "asynchronous access to a display vendor's 2D-to-3D module (depth, stereo, N-view, or photo to Gaussian splats). It returns pre-weave results and never weaves. Today: out-of-process sessions on the Windows D3D11 service.",
+      "asynchronous access to the machine's 2D-to-3D conversion provider (depth, stereo, N-view, or photo to Gaussian splats). The runtime picks the provider per task; it returns pre-weave results and never weaves. Today the transport is the Windows D3D11 service.",
     needIf:
       "you show 2D photos or video and want the panel's own conversion rather than shipping a model.",
   },
@@ -472,10 +472,10 @@ export default function ExtensionsPage() {
                 The contributor guide walks through the runtime wiring end to end.
               </p>
             </a>
-            <a href="/vendors" className="card-interactive block rounded-lg border border-border bg-surface p-6">
-              <h3 className="mb-2 text-lg font-semibold text-text-primary">Integrate a display</h3>
+            <a href="/components" className="card-interactive block rounded-lg border border-border bg-surface p-6">
+              <h3 className="mb-2 text-lg font-semibold text-text-primary">Plug in a component</h3>
               <p className="text-sm leading-relaxed text-text-secondary">
-                Vendors ship a display plug-in; apps keep using these extensions unchanged.
+                Display makers ship a display processor; apps keep using these extensions unchanged.
               </p>
             </a>
           </div>

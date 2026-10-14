@@ -40,7 +40,7 @@ export const NAV: NavEntry[] = [
     href: "/contribute",
     match: ["/architecture", "/roadmap", "/governance"],
   },
-  { label: "Display Vendors", href: "/vendors" },
+  { label: "Components", href: "/components" },
 ];
 
 // Deep docs live in the runtime repo; the site summarizes and routes.

@@ -43,8 +43,8 @@ export const enginePlugins: EnginePlugin[] = [
 ];
 
 export const hardwareBackends: HardwareBackend[] = [
-  { backend: "Leia SR SDK (LeiaSR displays)", status: "shipping", notes: "Ships as a separate plug-in (Windows installer + Android CNSDK); D3D11/D3D12/Vulkan weavers, eye tracking. On Android the vendor display processor runs out-of-process" },
-  { backend: "sim_display (no hardware)", status: "shipping", notes: "Simulation mode for development" },
+  { backend: "Leia SR display processor (LeiaSR displays)", status: "shipping", notes: "Ships as a separate plug-in (Windows installer + Android CNSDK); D3D11/D3D12/Vulkan weavers, eye tracking. On Android the vendor display processor runs out-of-process" },
+  { backend: "sim_display (reference, no hardware)", status: "shipping", notes: "Reference implementation: renders to an ordinary window for development" },
 ];
 
 export const appClasses: AppClass[] = [

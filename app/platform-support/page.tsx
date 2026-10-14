@@ -156,15 +156,23 @@ export default function PlatformSupportPage() {
           </Table>
         </section>
 
-        {/* Hardware Backends */}
+        {/* Display processors */}
         <section>
           <h2 className="text-xl font-semibold text-text-primary mb-2">
-            Hardware Backends
+            Display Processors
           </h2>
           <p className="text-sm text-text-secondary mb-6">
-            Display processor integrations for vendor hardware.
+            The component that makes each panel show 3D. Input and conversion
+            providers are listed on{" "}
+            <a
+              href="/components"
+              className="text-accent hover:text-accent-hover underline underline-offset-2"
+            >
+              Components
+            </a>
+            .
           </p>
-          <Table headers={["Backend", "Status", "Notes"]}>
+          <Table headers={["Display processor", "Status", "Notes"]}>
             {hardwareBackends.map((row) => (
               <TableRow key={row.backend}>
                 <TableCell className="font-medium text-text-primary">
