@@ -1,5 +1,22 @@
 [
   {
+    "id": "displayxr-installer@v2.9.0",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.0",
+    "title": "DisplayXR v2.9.0",
+    "date": "2026-10-14",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Runtime v2.43.3: the DisplayXR Dashboard replaces the Control Panel.** The new Dashboard (Avalonia, .NET 10) replaces the ImGui Control Panel, and the tray icon now opens it. Upgrading removes the old Control Panel exe and its Start-me…",
+      "**The runtime installer no longer fails when something briefly holds the runtime DLL.** When `DisplayXRClient.dll` is held for a moment (for example while Chrome's WebXR helper respawns), the runtime installer now waits for it to be rele…",
+      "**The bundle tells you which programs hold the runtime DLL.** Before it installs, the bundle checks for programs holding the DLL. If one is holding it during install, the bundle names it and offers **Close them for me / Retry / Cancel** …",
+      "**Security:** the Dashboard's `Tmds.DBus.Protocol` dependency is pinned to 0.21.3 (CVE-2026-39959).",
+      "**Leia SR plug-in v2.15.3.**"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-leia-plugin@v2.15.3",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.15.3",
@@ -11,22 +28,15 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.43.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.43.0",
-    "title": "DisplayXR Runtime v2.43.0",
+    "id": "displayxr-leia-plugin@v2.15.4",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.15.4",
+    "title": "v2.15.4",
     "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.43.0",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.4",
     "prerelease": false,
-    "featureLines": [
-      "The service tray now opens the new **DisplayXR Dashboard** (Avalonia), with the ImGui Control Panel kept only as a fallback (#2078). The dashboard now targets **.NET 10 LTS** (#2080). On desktop Linux, vk_native gains **late weave** (pre…",
-      "feat(service): tray opens the DisplayXR Dashboard, Control Panel only as a fallback (#2078)",
-      "feat(vk_native): late weave on desktop Linux — present_wait tier + wp_presentation/X11 Present grid feeder (#2060, #2062) (#2068)",
-      "feat(vk_layer): implicit opt-in manifest + activation-route query for the queue lock (#886)",
-      "feat(vk_native): log the queue-lock activation route + enable1 serialisation note (#886)",
-      "feat(linux): ship the implicit queue-lock manifest in the .deb/tarball; cli info reports it (#886)"
-    ],
-    "looksMechanical": false
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-runtime@v2.43.1",
@@ -46,23 +56,52 @@
     "id": "displayxr-runtime@v2.43.2",
     "repo": "displayxr-runtime",
     "tag": "v2.43.2",
-    "title": "v2.43.2",
+    "title": "DisplayXR Runtime v2.43.2",
     "date": "2026-10-14",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.43.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Security fix for the DisplayXR Dashboard: `Tmds.DBus.Protocol` is pinned to 0.21.3, which closes CVE-2026-39959 / GHSA-xrw6-gwf8-vvr9. This release also lands the ADR-054 component-model groundwork: a shared component loader (N2), a per-…",
+      "feat(cli): input enable/disable/use/reset verbs (N3a)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.43.3",
     "repo": "displayxr-runtime",
     "tag": "v2.43.3",
-    "title": "v2.43.3",
+    "title": "DisplayXR Runtime v2.43.3",
     "date": "2026-10-14",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.43.3",
     "prerelease": false,
+    "featureLines": [
+      "Android-only re-release. **v2.43.2 shipped without the Leia Android APK** — its tag preceded #2084, so the `Runtime (leia)` job's CNSDK pair guard (bundled loader vs. the leia-plugin's CNSDK) correctly refused the mismatched build. v2.43…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.43.4",
+    "repo": "displayxr-runtime",
+    "tag": "v2.43.4",
+    "title": "v2.43.4",
+    "date": "2026-10-14",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.43.4",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity@v2.25.2",
+    "repo": "displayxr-unity",
+    "tag": "v2.25.2",
+    "title": "DisplayXR v2.25.2",
+    "date": "2026-10-14",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.25.2",
+    "prerelease": false,
+    "featureLines": [
+      "Linux CI runs the native unit tests (`ctest`). The first one covers the Wayland placement arithmetic (`native~/displayxr_linux_wayland_place.h`)."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.7.2",
@@ -190,37 +229,6 @@
       "`debug.dxr.mv.tilestore` / `DXR_MODELVIEWER_TILESTORE` (`0` = store everything, as before)",
       "`debug.dxr.mv.exttex` / `DXR_MODELVIEWER_EXTTEX` (`1` = always sample extension textures)",
       "`debug.dxr.mv.msaa <n>`, the Android mirror of `DXR_MODELVIEWER_MSAA` (#172)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.8.0",
-    "repo": "displayxr-installer",
-    "tag": "v2.8.0",
-    "title": "DisplayXR v2.8.0",
-    "date": "2026-10-12",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.8.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.15.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.15.0",
-    "title": "v2.15.0",
-    "date": "2026-10-12",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Runtime-owned auto-convergence for lifted video.** When the runtime sets the convergence for a lifted SBS / N-view stream, the plug-in now honours that caller-set value and skips the conversion module's own auto-convergence pass, so th…",
-      "**Metric depth + off-axis camera (NeurD >= 0.4.9).** Each lift conversion can now export its depth as an auxiliary output, and the plug-in adopts NeurD's metric off-axis camera when NeurD 0.4.9 or newer is installed.",
-      "**Depth cursor on lifted content.** The plug-in reports the off-axis relief mapping for each conversion, so the runtime can place its depth cursor correctly inside lifted views.",
-      "**Lift availability reporting.** The plug-in now reports which NeurD version is installed and why lift is or is not available, shown in the DisplayXR dashboard and `displayxr-cli info`.",
-      "Consume the runtime's caller-set auto-convergence for lifted streams (#346)",
-      "Metric depth export and NeurD off-axis camera, requires NeurD >= 0.4.9 (#318)",
-      "Report the off-axis relief mapping for the runtime's depth cursor (#332)",
-      "Report the installed NeurD version and lift availability status (#345)"
     ],
     "looksMechanical": false
   },
@@ -371,19 +379,6 @@
     "prerelease": false,
     "featureLines": [
       "Pages can now read the compositor's per-layer weave verdict: `XRDisplayLayer.wovenState` (`\"pending\"` / `\"woven\"` / `\"withheld\"`) and `withheldReason` (the reason token while withheld). Lets a page keep its own cover up until its canvas …"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.24.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.24.0",
-    "title": "DisplayXR v2.24.0",
-    "date": "2026-10-08",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.24.0",
-    "prerelease": false,
-    "featureLines": [
-      "Native-Wayland Linux player support (`-force-wayland`) (#354, DisplayXR/displayxr-runtime#1831): weave into a sub-surface of the player's own window via `XR_DXR_wayland_surface_binding` (runtime ≥ 2.28.0), correct 3D at fractional scalin…"
     ],
     "looksMechanical": false
   },

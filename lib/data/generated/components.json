@@ -5,7 +5,7 @@
     "version": "v2.43.3",
     "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.43.3",
     "releaseDate": "2026-10-14",
-    "platforms": "Windows · macOS · Android",
+    "platforms": "Windows · macOS · Linux · Android",
     "downloads": [
       {
         "platform": "Windows",
@@ -16,6 +16,11 @@
         "platform": "macOS",
         "file": "DisplayXR-Installer-2.43.3.pkg",
         "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.43.3/DisplayXR-Installer-2.43.3.pkg"
+      },
+      {
+        "platform": "Linux",
+        "file": "displayxr-runtime_2.43.3_amd64.deb",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.43.3/displayxr-runtime_2.43.3_amd64.deb"
       },
       {
         "platform": "Android",
@@ -127,30 +132,30 @@
   {
     "id": "installer",
     "name": "All-in-one Installer",
-    "version": "v2.8.1",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.8.1",
-    "releaseDate": "2026-10-13",
+    "version": "v2.9.0",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.0",
+    "releaseDate": "2026-10-14",
     "platforms": "Windows · macOS · Linux · Android",
     "downloads": [
       {
         "platform": "Windows",
-        "file": "DisplayXRBundle-2.8.1.exe",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.8.1/DisplayXRBundle-2.8.1.exe"
+        "file": "DisplayXRBundle-2.9.0.exe",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.0/DisplayXRBundle-2.9.0.exe"
       },
       {
         "platform": "macOS",
-        "file": "DisplayXRBundle-2.8.1.pkg",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.8.1/DisplayXRBundle-2.8.1.pkg"
+        "file": "DisplayXRBundle-2.9.0.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.0/DisplayXRBundle-2.9.0.pkg"
       },
       {
         "platform": "Linux",
-        "file": "DisplayXRBundle-2.8.1-linux-amd64.tar.gz",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.8.1/DisplayXRBundle-2.8.1-linux-amd64.tar.gz"
+        "file": "DisplayXRBundle-2.9.0-linux-amd64.tar.gz",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.0/DisplayXRBundle-2.9.0-linux-amd64.tar.gz"
       },
       {
         "platform": "Android",
         "file": "DisplayXR-Installer-0.4.2.apk",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.8.1/DisplayXR-Installer-0.4.2.apk"
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.0/DisplayXR-Installer-0.4.2.apk"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-installer"
