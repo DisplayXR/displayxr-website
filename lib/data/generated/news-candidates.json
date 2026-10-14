@@ -66,6 +66,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-leia-plugin@v2.15.5",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.15.5",
+    "title": "v2.15.5",
+    "date": "2026-10-14",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.43.1",
     "repo": "displayxr-runtime",
     "tag": "v2.43.1",
@@ -172,20 +183,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.15.1",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.15.1",
-    "title": "v2.15.1",
-    "date": "2026-10-13",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.1",
-    "prerelease": false,
-    "featureLines": [
-      "Per-display user presence: on a multi-panel box, each Leia display now reports tracking on its own, driven by LeiaSR event 20. This needs LeiaSR 1.39.0 or newer and engages only when SR reports two or more displays. On single-display set…",
-      "Per-display user presence from SR event 20 drives each screen's `is_tracking` (#351)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.15.2",
