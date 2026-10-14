@@ -186,4 +186,5 @@ export function statusDetail(c: ComponentClass): string {
 export const COMPONENT_SPECS = {
   displayProcessors: `${SPECS}/plugin-discovery.md`,
   inputProviders: `${SPECS}/input-provider-discovery.md`,
+  conversionProviders: `${SPECS}/conversion-provider-discovery.md`,
 };

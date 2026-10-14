@@ -102,7 +102,7 @@ export default function ComponentsPage() {
             and its own discovery root, and the runtime ships a reference
             implementation for each, so the whole system runs on a laptop with
             no hardware. The runtime owns selection and policy; a component owns
-            one capability. The model is recorded in{" "}
+            one capability. The model is accepted in{" "}
             <A href={tracking.record.href}>ADR-054</A>.
           </p>
 
@@ -189,7 +189,8 @@ export default function ComponentsPage() {
               This opens DisplayXR to model makers who are not display makers: a
               depth or view-synthesis model reaches every panel without a display
               partner. <Code>displayxr-cli conv list</Code> shows the providers and
-              which one serves each task.
+              which one serves each task.{" "}
+              <A href={COMPONENT_SPECS.conversionProviders}>Discovery spec →</A>
             </p>
           </ClassSection>
 
@@ -201,7 +202,7 @@ export default function ComponentsPage() {
               <StatusChip cls={tracking} />
             </div>
             <p className="leading-relaxed text-text-secondary">
-              {tracking.plain} The class is designed in{" "}
+              {tracking.plain} The class is accepted in{" "}
               <A href={tracking.record.href}>ADR-054</A>; its contract and code
               are not on main yet. When a display tracks the viewer itself, its
               own tracker wins.
