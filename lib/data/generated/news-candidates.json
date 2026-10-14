@@ -79,20 +79,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.43.2",
-    "repo": "displayxr-runtime",
-    "tag": "v2.43.2",
-    "title": "DisplayXR Runtime v2.43.2",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.43.2",
-    "prerelease": false,
-    "featureLines": [
-      "Security fix for the DisplayXR Dashboard: `Tmds.DBus.Protocol` is pinned to 0.21.3, which closes CVE-2026-39959 / GHSA-xrw6-gwf8-vvr9. This release also lands the ADR-054 component-model groundwork: a shared component loader (N2), a per-…",
-      "feat(cli): input enable/disable/use/reset verbs (N3a)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.43.3",
     "repo": "displayxr-runtime",
     "tag": "v2.43.3",
@@ -123,9 +109,29 @@
     "id": "displayxr-runtime@v2.43.5",
     "repo": "displayxr-runtime",
     "tag": "v2.43.5",
-    "title": "v2.43.5",
+    "title": "DisplayXR Runtime v2.43.5",
     "date": "2026-10-14",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.43.5",
+    "prerelease": false,
+    "featureLines": [
+      "Android in-process weave synchronisation is now a GPU semaphore chain (ADR-055, #2095): the runtime passes wait/signal semaphores to the display processor via `set_weave_sync`, chains present on the signal, and no longer host-drains the …",
+      "feat(vk_native): in-process weave sync is a GPU semaphore chain — no host drains (#2095, ADR-055)",
+      "feat(cursor): XR_DXR_cursor_depth spec v8 header + spec (ADR-046 Amendment 4)",
+      "feat(cursor): u_cursor_depth weave-rect cursor logic + tests (ADR-046 Amendment 4)",
+      "feat(cursor): v8 weave cursor plumbing — oxr_weave chains, IPC calls, xrt types",
+      "feat(cursor): D3D11 service weave-rect cursor (ADR-046 Amendment 4)",
+      "feat(macos): Developer ID signing + notarization for the runtime .pkg (#280) (#2096)",
+      "feat(perf): DXR_LATE_WEAVE settable from the Dashboard (perf-settings Phase 2B) (#2094)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.44.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.44.0",
+    "title": "v2.44.0",
+    "date": "2026-10-14",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -168,17 +174,6 @@
     "title": "DisplayXR Browser v1.7.3",
     "date": "2026-10-13",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.7.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.8.1",
-    "repo": "displayxr-installer",
-    "tag": "v2.8.1",
-    "title": "DisplayXR v2.8.1",
-    "date": "2026-10-13",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.8.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -422,6 +417,17 @@
       "Linux launcher (#356, DisplayXR/displayxr-runtime#1831): a Linux build now writes `<name>.sh` next to the player; point the app's `.desktop` `Exec=` at it. At launch it starts the player as a native Wayland app (`-force-wayland`) when on…"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-installer@android-bundle-latest",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-latest",
+    "title": "Android tablet bundle (latest) — android-bundle-2026-10-14",
+    "date": "2026-10-07",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-modelviewer@v0.35.1",
