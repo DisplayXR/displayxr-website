@@ -90,19 +90,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.43.3",
-    "repo": "displayxr-runtime",
-    "tag": "v2.43.3",
-    "title": "DisplayXR Runtime v2.43.3",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.43.3",
-    "prerelease": false,
-    "featureLines": [
-      "Android-only re-release. **v2.43.2 shipped without the Leia Android APK** — its tag preceded #2084, so the `Runtime (leia)` job's CNSDK pair guard (bundled loader vs. the leia-plugin's CNSDK) correctly refused the mismatched build. v2.43…"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.43.4",
     "repo": "displayxr-runtime",
     "tag": "v2.43.4",
@@ -149,6 +136,17 @@
       "feat(cursor): desktop Linux draws the user's cursor theme at the real backing scale (#2102) (#2112). Theme/size come from `XCURSOR_THEME` / `XCURSOR_SIZE`, then GNOME's `cursor-theme` / `cursor-size`, then the default theme at 24. vk_nat…"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.44.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.44.1",
+    "title": "v2.44.1",
+    "date": "2026-10-14",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.25.2",
