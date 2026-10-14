@@ -17,6 +17,33 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-installer@v2.9.1",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.1",
+    "title": "DisplayXR v2.9.1",
+    "date": "2026-10-14",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.1",
+    "prerelease": false,
+    "featureLines": [
+      "**Runtime v2.43.4: the GNOME extension stays alive on the lock screen.** On Linux (GNOME Wayland) the DisplayXR window-geometry extension now declares `unlock-dialog` as a session mode, so it is no longer disabled at lock and apps re-syn…",
+      "**Leia SR plug-in v2.15.4: desktop capture re-created after lock or sleep.** GNOME closes every ScreenCast session at lock. The Linux plug-in now reports the lost capture, composes over the last captured frame so a transparent app keeps …"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-installer@v2.9.2",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.2",
+    "title": "DisplayXR v2.9.2",
+    "date": "2026-10-14",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.2",
+    "prerelease": false,
+    "featureLines": [
+      "**Linux bundle: the post-install self-test runs as you, not root.** `install.sh` re-execs under sudo; the self-test it runs at the end used to run as root, which has no user-session socket, so it printed a `Failed to connect to DisplayXR…"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-leia-plugin@v2.15.3",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.15.3",
@@ -83,12 +110,15 @@
     "id": "displayxr-runtime@v2.43.4",
     "repo": "displayxr-runtime",
     "tag": "v2.43.4",
-    "title": "v2.43.4",
+    "title": "DisplayXR Runtime v2.43.4",
     "date": "2026-10-14",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.43.4",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Linux/GNOME lock-screen fix: the DisplayXR window-geometry GNOME Shell extension (now **v14**) declares `session-modes` so it stays enabled on the lock screen instead of being torn down, and the Vulkan compositor's Wayland geometry path …",
+      "feat(gnome-extension): stay enabled on the lock screen (session-modes), v14 (#2071)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.25.2",
@@ -129,17 +159,6 @@
     "date": "2026-10-13",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.7.3",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@android-bundle-2026-10-13",
-    "repo": "displayxr-installer",
-    "tag": "android-bundle-2026-10-13",
-    "title": "Android tablet bundle android-bundle-2026-10-13",
-    "date": "2026-10-13",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-13",
-    "prerelease": true,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -407,17 +426,6 @@
       "Linux launcher (#356, DisplayXR/displayxr-runtime#1831): a Linux build now writes `<name>.sh` next to the player; point the app's `.desktop` `Exec=` at it. At launch it starts the player as a native Wayland app (`-force-wayland`) when on…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@android-bundle-latest",
-    "repo": "displayxr-installer",
-    "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — android-bundle-2026-10-13",
-    "date": "2026-10-07",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
-    "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-modelviewer@v0.35.1",
