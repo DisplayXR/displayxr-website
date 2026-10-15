@@ -41,9 +41,22 @@
     "id": "displayxr-runtime@v2.44.4",
     "repo": "displayxr-runtime",
     "tag": "v2.44.4",
-    "title": "v2.44.4",
+    "title": "DisplayXR Runtime v2.44.4",
     "date": "2026-10-15",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.4",
+    "prerelease": false,
+    "featureLines": [
+      "The desktop platforms (Windows, macOS, Linux) are unchanged in this release."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.26.1",
+    "repo": "displayxr-unity",
+    "tag": "v2.26.1",
+    "title": "DisplayXR v2.26.1",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.26.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -275,17 +288,6 @@
     "title": "DisplayXR Shell v2.4.1",
     "date": "2026-10-12",
     "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.4.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unity@v2.25.1",
-    "repo": "displayxr-unity",
-    "tag": "v2.25.1",
-    "title": "DisplayXR v2.25.1",
-    "date": "2026-10-12",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.25.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
