@@ -62,6 +62,24 @@ export const ecosystemRepos: EcosystemRepo[] = [
     status: "shipping",
   },
   {
+    name: "displayxr-conversion-open",
+    repo: "DisplayXR/displayxr-conversion-open",
+    description:
+      "The open-model conversion provider: depth from images and video on ONNX Runtime (DirectML on Windows, CPU elsewhere), with a default pack of permissively licensed models fetched by the runtime's model store. Plugs into the runtime's 2D-to-3D conversion service, so every box has a converter without a vendor module.",
+    url: "https://github.com/DisplayXR/displayxr-conversion-open",
+    category: "tools",
+    status: "shipping",
+  },
+  {
+    name: "displayxr-conversion-template",
+    repo: "DisplayXR/displayxr-conversion-template",
+    description:
+      "Vendor-neutral starter kit for a 2D-to-3D conversion provider: a CPU-only provider skeleton, a fake host, dev-box registration scripts and CI on Windows, Linux and macOS. Fork it to bring your own model to every DisplayXR app.",
+    url: "https://github.com/DisplayXR/displayxr-conversion-template",
+    category: "tools",
+    status: "active",
+  },
+  {
     name: "displayxr-unreal-test",
     repo: "DisplayXR/displayxr-unreal-test",
     description:

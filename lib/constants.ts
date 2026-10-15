@@ -76,6 +76,8 @@ export const REPO_URLS = {
   mcp: "https://github.com/DisplayXR/displayxr-mcp",
   shell: "https://github.com/DisplayXR/displayxr-shell-releases",
   vendorTemplate: "https://github.com/DisplayXR/displayxr-vendor-template",
+  conversionOpen: "https://github.com/DisplayXR/displayxr-conversion-open",
+  conversionTemplate: "https://github.com/DisplayXR/displayxr-conversion-template",
   cefHost: "https://github.com/DisplayXR/displayxr-cef-host",
   browser: "https://github.com/DisplayXR/displayxr-browser",
   web: "https://github.com/DisplayXR/displayxr-web",
