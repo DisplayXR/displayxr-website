@@ -146,19 +146,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.44.4",
-    "repo": "displayxr-runtime",
-    "tag": "v2.44.4",
-    "title": "DisplayXR Runtime v2.44.4",
-    "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.4",
-    "prerelease": false,
-    "featureLines": [
-      "The desktop platforms (Windows, macOS, Linux) are unchanged in this release."
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.44.5",
     "repo": "displayxr-runtime",
     "tag": "v2.44.5",
@@ -203,6 +190,17 @@
       "**input:** live re-rank of the input arbiter on an `Enabled` / `PreferredPlugin` change; roles and `generation_id` move immediately (#2051)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.45.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.45.0",
+    "title": "v2.45.0",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.45.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.26.1",
