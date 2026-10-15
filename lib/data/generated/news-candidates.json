@@ -1,11 +1,33 @@
 [
   {
+    "id": "displayxr-demo-avatar@v0.14.4",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.14.4",
+    "title": "v0.14.4",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.29.5",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.29.5",
     "title": "v1.29.5",
     "date": "2026-10-15",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@v1.14.1",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.14.1",
+    "title": "v1.14.1",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.14.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -545,24 +567,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-demo-mediaplayer@v1.12.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.12.0",
-    "title": "v1.12.0",
-    "date": "2026-09-30",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.12.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Play from a live stereo camera.** Plug in a UVC stereo webcam, such as the Acer SpatialLabs Eyes (3840x2160 at 60 fps, NV12), and watch it live in 3D. Open it from the new `Live…` picker in the top bar (a LIVE pill shows while it plays…",
-      "**Open live network streams.** RTSP, RTMP, UDP/RTP MPEG-TS, HTTP and HLS streams now play from `Stream URL…` in the Live dropdown, `Ctrl+U`, or `--url`, with low-latency options and automatic reconnect. A STREAM pill shows while one plays.",
-      "**Optional auto-convergence.** Press `A` (or use the Auto-conv button) and the player keeps the subject at the display plane, on both camera and stream sources. It is off by default.",
-      "Live camera source through SDL3's camera API: `Live…` picker, LIVE pill, `C` key, `--camera[=name|index]`, `--camera-fps`, `--camera-list`, and the MCP tools `list_cameras` / `open_camera` / `close_camera`. After an unplug, Rescan or `C`…",
-      "Auto-convergence: `A` / Auto-conv button / `--auto-conv[=nearest|sharp|centre]`, `Shift+A` cycles the policy, `Ctrl+click` pins the subject. It uses the NCC disparity estimator ported from displayxr-web's 3D call, and is off by default (…",
-      "Stream URL source: `Stream URL…` in the Live dropdown, `Ctrl+U`, `--url`, MCP `open_url`, low-latency options, automatic reconnect, and a STREAM pill. On Windows the slim FFmpeg build now includes network input and SChannel TLS. The Linu…"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-shell-releases@v2.3.1",
     "repo": "displayxr-shell-releases",
     "tag": "v2.3.1",
@@ -594,23 +598,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.14.0",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.14.0",
-    "title": "v0.14.0",
-    "date": "2026-09-27",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.0",
-    "prerelease": false,
-    "featureLines": [
-      "Linux window dragging is smoother and more precise, from displayxr-common v2.25.0:",
-      "**Wayland move-sync support** — when the runtime move-syncs the window, the app no longer applies its own drag lattice, so the two never fight.",
-      "**Right-button drag ends on release** — releasing the right mouse button now reliably ends a drag.",
-      "**X11 drag steps land exactly** — each drag step lands on its intended position with no drift.",
-      "**X11 header-bar double-click maximises** the window."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-models@blobs",
