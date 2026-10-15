@@ -126,7 +126,7 @@ export const componentClasses: ComponentClass[] = [
     abi: 1,
     reference: "sim_conversion",
     baseStatus: "core-merged",
-    shippedIn: "v2.42.0",
+    shippedIn: "v2.45.0",
     record: { label: "ADR-053", href: `${ADR}/ADR-053-conversion-providers.md` },
     impls: [
       {
@@ -138,19 +138,20 @@ export const componentClasses: ComponentClass[] = [
       {
         name: "Leia conversion provider",
         role: "vendor",
-        note: "The first vendor conversion provider: depth from images and video, and views from one image, on Leia's NeurD engine. Ships in the Leia SR plug-in installer and runs in its own host process.",
+        note: "The display vendor's own 2D-to-3D module, as a separate DLL that the runtime hosts out of process. Windows.",
         href: REPO_URLS.leiaPlugin,
       },
       {
-        name: "Open Conversion",
-        role: "vendor",
-        note: "DisplayXR's own open-model provider: depth from images and video on ONNX Runtime (DirectML on Windows, CPU elsewhere), so a box without a vendor module still converts.",
+        name: "Open-model provider",
+        role: "reference",
+        note: "Depth models on ONNX Runtime (DirectML on Windows, CPU elsewhere), so every box has a converter without a vendor module. Models come from the runtime's model store.",
         href: REPO_URLS.conversionOpen,
+        chip: { label: "build-verified", title: "First release; the installer is unsigned" },
       },
       {
         name: "Conversion template",
         role: "template",
-        note: "Buildable, ABI-correct starter for a conversion provider: a CPU-only skeleton, a fake host and dev-box registration scripts.",
+        note: "Vendor-neutral starter kit: a CPU-only provider skeleton, a fake host and dev registration scripts.",
         href: REPO_URLS.conversionTemplate,
       },
     ],
