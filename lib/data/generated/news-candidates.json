@@ -140,17 +140,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-leia-plugin@v2.15.8",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.15.8",
-    "title": "v2.15.8",
-    "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.8",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-leia-plugin@v2.15.9",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.15.9",
@@ -168,6 +157,22 @@
     "title": "v2.16.0",
     "date": "2026-10-15",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.16.0",
+    "prerelease": false,
+    "featureLines": [
+      "Leia now ships a 2D-to-3D conversion provider (`DisplayXR-LeiaConversion.dll`) alongside the display-processor plug-in, speaking the runtime's conversion-provider ABI (ADR-053). It is a separate DLL that supersedes the in-DP lift path an…",
+      "conv: the Leia conversion provider DLL (ADR-053 P3) (#360)",
+      "feat(stereo-camera): report each camera's screen (runtime #1961, spec v5) (#391)",
+      "Built against runtime v2.45.0."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.16.1",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.16.1",
+    "title": "v2.16.1",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.16.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
