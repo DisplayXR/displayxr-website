@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-earthview@v0.11.3",
+    "repo": "displayxr-demo-earthview",
+    "tag": "v0.11.3",
+    "title": "v0.11.3",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.29.5",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.29.5",
@@ -584,17 +595,6 @@
     "title": "v0.14.1",
     "date": "2026-09-29",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-earthview@v0.10.1",
-    "repo": "displayxr-demo-earthview",
-    "tag": "v0.10.1",
-    "title": "v0.10.1",
-    "date": "2026-09-29",
-    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.10.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
