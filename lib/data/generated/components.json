@@ -132,30 +132,30 @@
   {
     "id": "installer",
     "name": "All-in-one Installer",
-    "version": "v2.9.3",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.3",
+    "version": "v2.9.4",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.4",
     "releaseDate": "2026-10-15",
     "platforms": "Windows · macOS · Linux · Android",
     "downloads": [
       {
         "platform": "Windows",
-        "file": "DisplayXRBundle-2.9.3.exe",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.3/DisplayXRBundle-2.9.3.exe"
+        "file": "DisplayXRBundle-2.9.4.exe",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.4/DisplayXRBundle-2.9.4.exe"
       },
       {
         "platform": "macOS",
-        "file": "DisplayXRBundle-2.9.3.pkg",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.3/DisplayXRBundle-2.9.3.pkg"
+        "file": "DisplayXRBundle-2.9.4.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.4/DisplayXRBundle-2.9.4.pkg"
       },
       {
         "platform": "Linux",
-        "file": "DisplayXRBundle-2.9.3-linux-amd64.tar.gz",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.3/DisplayXRBundle-2.9.3-linux-amd64.tar.gz"
+        "file": "DisplayXRBundle-2.9.4-linux-amd64.tar.gz",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.4/DisplayXRBundle-2.9.4-linux-amd64.tar.gz"
       },
       {
         "platform": "Android",
         "file": "DisplayXR-Installer-0.4.2.apk",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.3/DisplayXR-Installer-0.4.2.apk"
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.4/DisplayXR-Installer-0.4.2.apk"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-installer"

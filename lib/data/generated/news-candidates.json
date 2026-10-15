@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-demo-gaussiansplat@v1.29.5",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.29.5",
+    "title": "v1.29.5",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.35.4",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.35.4",
+    "title": "v0.35.4",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.35.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.9.3",
     "repo": "displayxr-installer",
     "tag": "v2.9.3",
@@ -11,6 +33,17 @@
       "**Runtime v2.44.3: late weave on Linux no longer caps the frame rate of composited windows.** The in-process Vulkan path's late-weave pacing depth is now governed from measurements (commit-to-glass lag raises it, measured slack lowers it…"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-installer@v2.9.4",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.4",
+    "title": "DisplayXR v2.9.4",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-leia-plugin@v2.15.8",
@@ -60,23 +93,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.9.0",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.0",
-    "title": "DisplayXR v2.9.0",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Runtime v2.43.3: the DisplayXR Dashboard replaces the Control Panel.** The new Dashboard (Avalonia, .NET 10) replaces the ImGui Control Panel, and the tray icon now opens it. Upgrading removes the old Control Panel exe and its Start-me…",
-      "**The runtime installer no longer fails when something briefly holds the runtime DLL.** When `DisplayXRClient.dll` is held for a moment (for example while Chrome's WebXR helper respawns), the runtime installer now waits for it to be rele…",
-      "**The bundle tells you which programs hold the runtime DLL.** Before it installs, the bundle checks for programs holding the DLL. If one is holding it during install, the bundle names it and offers **Close them for me / Retry / Cancel** …",
-      "**Security:** the Dashboard's `Tmds.DBus.Protocol` dependency is pinned to 0.21.3 (CVE-2026-39959).",
-      "**Leia SR plug-in v2.15.3.**"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.9.1",
@@ -432,23 +448,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-demo-modelviewer@v0.35.0",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.35.0",
-    "title": "v0.35.0",
-    "date": "2026-10-04",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.35.0",
-    "prerelease": false,
-    "featureLines": [
-      "**MaterialX colour spaces are honoured.** Colour inputs authored in sRGB or ACEScg now render in the correct linear Rec.709 working space, from both the native USD loader and the `openpbr_mtlx_to_gltf.py` converter.",
-      "**The full OpenPBR reference set loads natively.** All 83 `open_pbr_*.mtlx` examples (every one is an ACEScg document) now load on the ASWF StandardShaderBall.",
-      "MaterialX colour-space resolution: the nearest authored `colorspace` (input > node > document) is converted into `lin_rec709` — sRGB EOTF for `srgb_tx` / `srgb_texture`, MaterialX's `acescg_to_lin_rec709` for `acescg` / `lin_ap1` (clippe…",
-      "USD loader accepts `..` asset paths, and no longer hands `.mtlx` references to tinyusdz, whose reader rejected the valid `open_pbr_default.mtlx` and failed the whole stage (#165)",
-      "The OpenPBR Shader Playground render is unchanged."
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-reference-scenes@v0.2.0",
     "repo": "displayxr-reference-scenes",
     "tag": "v0.2.0",
@@ -592,17 +591,6 @@
     "title": "v0.10.1",
     "date": "2026-09-29",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.10.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.29.1",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.29.1",
-    "title": "v1.29.1",
-    "date": "2026-09-29",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
