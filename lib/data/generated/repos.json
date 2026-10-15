@@ -35,6 +35,20 @@
     "archived": false
   },
   {
+    "name": "displayxr-conversion-open",
+    "description": "The open-model conversion provider for DisplayXR (ADR-053 P4): ONNX Runtime + DirectML, open depth models, schema-2 model packs",
+    "url": "https://github.com/DisplayXR/displayxr-conversion-open",
+    "topics": [],
+    "archived": false
+  },
+  {
+    "name": "displayxr-conversion-template",
+    "description": "Starter kit for a DisplayXR conversion provider plug-in (ADR-053): a CPU-only provider skeleton, a fake host, dev-box registration scripts, CI on Windows/Linux/macOS",
+    "url": "https://github.com/DisplayXR/displayxr-conversion-template",
+    "topics": [],
+    "archived": false
+  },
+  {
     "name": "displayxr-demo-avatar",
     "description": "DisplayXR demo — a transparent, click-through 3D avatar that floats over your desktop (OpenXR + native Vulkan).",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar",

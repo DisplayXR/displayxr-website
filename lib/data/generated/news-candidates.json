@@ -1,5 +1,21 @@
 [
   {
+    "id": "displayxr-conversion-open@v0.1.0",
+    "repo": "displayxr-conversion-open",
+    "tag": "v0.1.0",
+    "title": "v0.1.0",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-conversion-open/releases/tag/v0.1.0",
+    "prerelease": false,
+    "featureLines": [
+      "First release of the DisplayXR open-model conversion provider (`open-conversion`, ProbeOrder 200): depth-from-video and mono depth on ONNX Runtime, so every box gets a conversion provider without a vendor module.",
+      "**Windows**: `DisplayXROpenConversionSetup-0.1.0.exe` (DirectML with CPU fallback). Installs under `Program Files\\DisplayXR\\Plugins\\OpenConversion` and registers `HKLM\\Software\\DisplayXR\\ConversionProviders\\open-conversion`. No model is …",
+      "**Linux**: `displayxr-open-conversion-0.1.0-linux-x86_64.tar.gz` (CPU). `install.sh` installs per user and writes the JSON manifest.",
+      "Both assets are unsigned."
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-demo-avatar@v0.14.4",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.14.4",
@@ -146,6 +162,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-leia-plugin@v2.16.0",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.16.0",
+    "title": "v2.16.0",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.16.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.44.5",
     "repo": "displayxr-runtime",
     "tag": "v2.44.5",
@@ -195,12 +222,21 @@
     "id": "displayxr-runtime@v2.45.0",
     "repo": "displayxr-runtime",
     "tag": "v2.45.0",
-    "title": "v2.45.0",
+    "title": "DisplayXR Runtime v2.45.0",
     "date": "2026-10-15",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.45.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "v2.45.0 lands the ADR-053 conversion-provider architecture: the conversion core behind the lift path (P1a shipped across v2.42-2.44), the lift module split with readiness and diagnostics (P1b), and the supervised out-of-process conversio…",
+      "It also brings XR_DXR_lift spec 4 with the provider update flow and the vendor-provider installer contract (P3), and the runtime-owned model store with DOWNLOADING readiness, `conv models` verbs and the dashboard's model-pack rows (P4).",
+      "Also in this window: the lifted-rect depth-cursor regression fix and the ADR-054 N3c / N4b component-model work.",
+      "feat(conv): POSIX writable XDG root first; fetch --prefetch walks the registered packs (#2108)",
+      "feat(installer): model store root, owner marker and the conversion-models components (#2108)",
+      "feat(dashboard): Conversion models section with per-pack state (#2108)",
+      "feat(cli): conv models list|verify|prune|fetch|init and the snapshot's pack rows (#2108)",
+      "feat(conv): both hosts serve the model store; DOWNLOADING reaches readiness (#2108)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.26.1",
@@ -209,17 +245,6 @@
     "title": "DisplayXR v2.26.1",
     "date": "2026-10-15",
     "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.26.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.15.7",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.15.7",
-    "title": "v2.15.7",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.7",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true

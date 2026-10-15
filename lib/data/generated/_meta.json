@@ -72,6 +72,8 @@
       "displayxr-browser",
       "displayxr-cef-host",
       "displayxr-common",
+      "displayxr-conversion-open",
+      "displayxr-conversion-template",
       "displayxr-demo-avatar",
       "displayxr-demo-earthview",
       "displayxr-demo-gaussiansplat",
