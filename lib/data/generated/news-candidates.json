@@ -179,6 +179,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.44.6",
+    "repo": "displayxr-runtime",
+    "tag": "v2.44.6",
+    "title": "v2.44.6",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.6",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity@v2.26.1",
     "repo": "displayxr-unity",
     "tag": "v2.26.1",
@@ -210,20 +221,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.44.2",
-    "repo": "displayxr-runtime",
-    "tag": "v2.44.2",
-    "title": "DisplayXR Runtime v2.44.2",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.2",
-    "prerelease": false,
-    "featureLines": [
-      "Also in this release: the component loaders gain a **provenance gate in audit mode** (#2110). Every loaded plug-in is classified as signed / allowlisted / platform-trusted / dev-override / unverified and logged; nothing is refused yet. T…",
-      "feat(loaders): provenance gate in audit mode — signed / allowlisted / platform-trusted / dev-override / unverified (ADR-054 N4b, PR A) (#2110)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.25.2",
