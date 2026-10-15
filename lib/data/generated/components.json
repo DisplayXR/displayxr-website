@@ -59,25 +59,25 @@
   {
     "id": "leia_plugin",
     "name": "Leia SR Plug-in",
-    "version": "v2.15.8",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.8",
+    "version": "v2.15.9",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.9",
     "releaseDate": "2026-10-15",
     "platforms": "Windows · Linux · Android",
     "downloads": [
       {
         "platform": "Windows",
-        "file": "DisplayXRLeiaSRSetup-2.15.8.exe",
-        "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.15.8/DisplayXRLeiaSRSetup-2.15.8.exe"
+        "file": "DisplayXRLeiaSRSetup-2.15.9.exe",
+        "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.15.9/DisplayXRLeiaSRSetup-2.15.9.exe"
       },
       {
         "platform": "Linux",
-        "file": "displayxr-leia-sr_2.15.8_amd64.deb",
-        "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.15.8/displayxr-leia-sr_2.15.8_amd64.deb"
+        "file": "displayxr-leia-sr_2.15.9_amd64.deb",
+        "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.15.9/displayxr-leia-sr_2.15.9_amd64.deb"
       },
       {
         "platform": "Android",
-        "file": "displayxr-leia-cnsdk-v2.15.8-android-arm64-v8a.tar.gz",
-        "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.15.8/displayxr-leia-cnsdk-v2.15.8-android-arm64-v8a.tar.gz"
+        "file": "displayxr-leia-cnsdk-v2.15.9-android-arm64-v8a.tar.gz",
+        "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.15.9/displayxr-leia-cnsdk-v2.15.9-android-arm64-v8a.tar.gz"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-leia-plugin"
@@ -132,30 +132,30 @@
   {
     "id": "installer",
     "name": "All-in-one Installer",
-    "version": "v2.9.5",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.5",
+    "version": "v2.9.6",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.6",
     "releaseDate": "2026-10-15",
     "platforms": "Windows · macOS · Linux · Android",
     "downloads": [
       {
         "platform": "Windows",
-        "file": "DisplayXRBundle-2.9.5.exe",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.5/DisplayXRBundle-2.9.5.exe"
+        "file": "DisplayXRBundle-2.9.6.exe",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.6/DisplayXRBundle-2.9.6.exe"
       },
       {
         "platform": "macOS",
-        "file": "DisplayXRBundle-2.9.5.pkg",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.5/DisplayXRBundle-2.9.5.pkg"
+        "file": "DisplayXRBundle-2.9.6.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.6/DisplayXRBundle-2.9.6.pkg"
       },
       {
         "platform": "Linux",
-        "file": "DisplayXRBundle-2.9.5-linux-amd64.tar.gz",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.5/DisplayXRBundle-2.9.5-linux-amd64.tar.gz"
+        "file": "DisplayXRBundle-2.9.6-linux-amd64.tar.gz",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.6/DisplayXRBundle-2.9.6-linux-amd64.tar.gz"
       },
       {
         "platform": "Android",
         "file": "DisplayXR-Installer-0.4.2.apk",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.5/DisplayXR-Installer-0.4.2.apk"
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.6/DisplayXR-Installer-0.4.2.apk"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-installer"
