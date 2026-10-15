@@ -1,14 +1,39 @@
 [
   {
-    "id": "displayxr-runtime@v2.44.3",
-    "repo": "displayxr-runtime",
-    "tag": "v2.44.3",
-    "title": "v2.44.3",
+    "id": "displayxr-installer@v2.9.3",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.3",
+    "title": "DisplayXR v2.9.3",
     "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.3",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.3",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.15.8",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.15.8",
+    "title": "v2.15.8",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.8",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.44.3",
+    "repo": "displayxr-runtime",
+    "tag": "v2.44.3",
+    "title": "DisplayXR Runtime v2.44.3",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.3",
+    "prerelease": false,
+    "featureLines": [
+      "**Linux: the late-weave pacing depth on the in-process Vulkan path is now governed from measurements.** Commit-to-glass lag raises it, measured slack lowers it, and starvation raises it, which fixes the ~30–40 fps cap a Unity player hit …",
+      "Windows and Android are unchanged."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.9.0",
@@ -53,17 +78,6 @@
       "**Linux bundle: the post-install self-test runs as you, not root.** `install.sh` re-execs under sudo; the self-test it runs at the end used to run as root, which has no user-session socket, so it printed a `Failed to connect to DisplayXR…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.15.4",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.15.4",
-    "title": "v2.15.4",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.4",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-leia-plugin@v2.15.5",
@@ -404,17 +418,6 @@
       "Pages can now read the compositor's per-layer weave verdict: `XRDisplayLayer.wovenState` (`\"pending\"` / `\"woven\"` / `\"withheld\"`) and `withheldReason` (the reason token while withheld). Lets a page keep its own cover up until its canvas …"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@android-bundle-latest",
-    "repo": "displayxr-installer",
-    "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — android-bundle-2026-10-14",
-    "date": "2026-10-07",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
-    "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-modelviewer@v0.35.1",
