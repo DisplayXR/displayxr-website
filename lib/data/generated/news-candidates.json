@@ -65,19 +65,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-installer@v2.9.3",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.3",
-    "title": "DisplayXR v2.9.3",
-    "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.3",
-    "prerelease": false,
-    "featureLines": [
-      "**Runtime v2.44.3: late weave on Linux no longer caps the frame rate of composited windows.** The in-process Vulkan path's late-weave pacing depth is now governed from measurements (commit-to-glass lag raises it, measured slack lowers it…"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-installer@v2.9.4",
     "repo": "displayxr-installer",
     "tag": "v2.9.4",
@@ -113,6 +100,28 @@
       "Demo updates: Gauss v1.29.5, Model Viewer v0.35.4, Media Player v1.14.1, Avatar v0.14.4, Earth View v0.11.3."
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-installer@v2.9.7",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.7",
+    "title": "DisplayXR v2.9.7",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.7",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.15.10",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.15.10",
+    "title": "v2.15.10",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.10",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-leia-plugin@v2.15.8",
@@ -181,12 +190,19 @@
     "id": "displayxr-runtime@v2.44.7",
     "repo": "displayxr-runtime",
     "tag": "v2.44.7",
-    "title": "v2.44.7",
+    "title": "DisplayXR Runtime v2.44.7",
     "date": "2026-10-15",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.7",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Faster process start on Windows: the runtime no longer re-applies the AppContainer ACL to the log folder on every launch when it is already in place, which removes a multi-second stall (service, CLI, conversion hosts and every app) on ma…",
+      "**dp:** the display-processor loader honours `Enabled` and a per-user `PreferredPlugin` (ADR-054 N3b, #2049)",
+      "**cli:** `displayxr-cli dp enable|disable|use|reset [--machine]`; `dp list` shows Enabled / Preferred / Provenance; `selftest` reports `skipped_disabled` (#2049)",
+      "**service:** one component-policy watch thread replaces the per-class registry waiters; live re-select for all three classes (display, input, conversion). A conversion `PreferredProvider` / per-user `Enabled` change now actually moves se…",
+      "**ipc:** new DIAG call `system_request_component_reselect` plus stable component class ids; the CLI pokes the running service after a policy write and says whether the change applies now, at the next session, or at the next service start…",
+      "**input:** live re-rank of the input arbiter on an `Enabled` / `PreferredPlugin` change; roles and `generation_id` move immediately (#2051)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.26.1",
@@ -195,17 +211,6 @@
     "title": "DisplayXR v2.26.1",
     "date": "2026-10-15",
     "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.26.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.15.6",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.15.6",
-    "title": "v2.15.6",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.6",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
