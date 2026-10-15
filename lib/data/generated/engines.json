@@ -8,7 +8,7 @@
     "repoUrl": "https://github.com/DisplayXR/displayxr-unity",
     "testRepoUrl": "https://github.com/DisplayXR/displayxr-unity-samples",
     "releaseUrl": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.26.1",
-    "logo": null
+    "logo": "/engines/unity/DisplayXR-test_logo_2d_512x512.png"
   },
   {
     "id": "unreal",

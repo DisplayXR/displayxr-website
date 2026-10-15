@@ -7,19 +7,10 @@
     "date": "2026-10-15",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.4",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-earthview@v0.11.3",
-    "repo": "displayxr-demo-earthview",
-    "tag": "v0.11.3",
-    "title": "v0.11.3",
-    "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Linux: the demo now appears in the DisplayXR Shell launcher (Ctrl+L).** The `.deb` installs a registered shell manifest at `/usr/share/displayxr/apps/`, so the demo shows up in the launcher right after install, with no manual registrat…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.29.5",
@@ -55,8 +46,10 @@
     "date": "2026-10-15",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.35.4",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Linux: the demo now appears in the DisplayXR Shell launcher (Ctrl+L).** The `.deb` installs a registered shell manifest at `/usr/share/displayxr/apps/`, so the demo shows up in the launcher right after install, with no manual registrat…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.9.3",
@@ -78,6 +71,17 @@
     "title": "DisplayXR v2.9.4",
     "date": "2026-10-15",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.9.5",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.5",
+    "title": "DisplayXR v2.9.5",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.5",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -121,6 +125,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.44.5",
+    "repo": "displayxr-runtime",
+    "tag": "v2.44.5",
+    "title": "v2.44.5",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity@v2.26.1",
     "repo": "displayxr-unity",
     "tag": "v2.26.1",
@@ -130,33 +145,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.9.1",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.1",
-    "title": "DisplayXR v2.9.1",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.1",
-    "prerelease": false,
-    "featureLines": [
-      "**Runtime v2.43.4: the GNOME extension stays alive on the lock screen.** On Linux (GNOME Wayland) the DisplayXR window-geometry extension now declares `unlock-dialog` as a session mode, so it is no longer disabled at lock and apps re-syn…",
-      "**Leia SR plug-in v2.15.4: desktop capture re-created after lock or sleep.** GNOME closes every ScreenCast session at lock. The Linux plug-in now reports the lost capture, composes over the last captured frame so a transparent app keeps …"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.9.2",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.2",
-    "title": "DisplayXR v2.9.2",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.2",
-    "prerelease": false,
-    "featureLines": [
-      "**Linux bundle: the post-install self-test runs as you, not root.** `install.sh` re-execs under sudo; the self-test it runs at the end used to run as root, which has no user-session socket, so it printed a `Failed to connect to DisplayXR…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.15.5",
@@ -189,17 +177,6 @@
     "title": "v2.15.7",
     "date": "2026-10-14",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.7",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.44.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.44.1",
-    "title": "DisplayXR Runtime v2.44.1",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -472,6 +449,17 @@
       "Pages can now read the compositor's per-layer weave verdict: `XRDisplayLayer.wovenState` (`\"pending\"` / `\"woven\"` / `\"withheld\"`) and `withheldReason` (the reason token while withheld). Lets a page keep its own cover up until its canvas …"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-installer@android-bundle-latest",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-latest",
+    "title": "Android tablet bundle (latest) — android-bundle-2026-10-14c",
+    "date": "2026-10-07",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-modelviewer@v0.35.1",
