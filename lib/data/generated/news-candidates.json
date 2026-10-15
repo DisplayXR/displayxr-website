@@ -174,21 +174,9 @@
     "date": "2026-10-15",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.16.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.44.5",
-    "repo": "displayxr-runtime",
-    "tag": "v2.44.5",
-    "title": "DisplayXR Runtime v2.44.5",
-    "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.5",
-    "prerelease": false,
     "featureLines": [
-      "**Linux: the panel no longer stays in 2D after a client that asked for 2D has gone.** When a 2D browser tab, a menu over a woven page or a call left, the lens could stay off until `systemctl --user restart displayxr.service`. The service…",
-      "**Linux:** cursor-theme loading is now guarded for two compositors starting at once, and a failed load logs which look it kept (#2123).",
-      "**Windows:** the weave probe window's title is no longer truncated to \"D\" (#2127)."
+      "The installer now allowlists the two DLLs the runtime loads (DisplayXR-LeiaSR.dll, DisplayXR-LeiaConversion.dll) for the runtime's provenance gate (ADR-054 N4b), so the plug-in loads on runtime v2.45.0 whether or not the build is signed.…",
+      "installer: allowlist the shipped DLLs for the runtime's provenance gate (ADR-054 N4b) (#394)"
     ],
     "looksMechanical": false
   },
@@ -242,6 +230,17 @@
       "feat(conv): both hosts serve the model store; DOWNLOADING reaches readiness (#2108)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.45.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.45.1",
+    "title": "v2.45.1",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.45.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.26.1",
