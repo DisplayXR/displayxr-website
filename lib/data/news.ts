@@ -107,6 +107,56 @@ export const NEWS_KIND_LABELS: Record<NewsKind, string> = {
  */
 export const NEWS: NewsItem[] = [
   {
+    id: "conversion-providers",
+    date: "2026-10-15",
+    kind: "capability",
+    tier: "banner",
+    headline: "2D-to-3D conversion, from any model, on any box",
+    blurb:
+      "Conversion is now a plug-in type of its own: a display vendor or a model maker ships a provider, the runtime hosts it in a supervised out-of-process host, and apps ask for depth, views or splats through XR_DXR_lift spec 4 without shipping a model. Models are fetched and verified by a runtime-owned model store.",
+    href: "https://github.com/DisplayXR/displayxr-runtime/blob/main/docs/adr/ADR-053-conversion-providers.md",
+  },
+  {
+    id: "leia-conversion-provider",
+    date: "2026-10-15",
+    kind: "vendor",
+    tier: "list",
+    headline: "Leia ships its 2D-to-3D module as a conversion provider",
+    blurb:
+      "The Leia conversion provider is a separate DLL beside the display-processor plug-in, hosted in the runtime's conversion host and speaking the conversion-provider ABI; it supersedes the lift path inside the display processor. Build-verified; hardware pre-flight is in progress.",
+    href: "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.16.0",
+  },
+  {
+    id: "open-conversion-provider",
+    date: "2026-10-15",
+    kind: "capability",
+    tier: "list",
+    headline: "An open-model converter, so every box can do 2D to 3D",
+    blurb:
+      "The first release of the open-model conversion provider runs depth models on ONNX Runtime (DirectML with CPU fallback on Windows, CPU on Linux) and needs no vendor module; models are fetched by the runtime's model store on first use. First release, and the Windows installer is unsigned.",
+    href: "https://github.com/DisplayXR/displayxr-conversion-open/releases/tag/v0.1.0",
+  },
+  {
+    id: "depth-aware-cursor",
+    date: "2026-10-12",
+    kind: "capability",
+    tier: "list",
+    headline: "A cursor that sits in front of 3D content, not behind it",
+    blurb:
+      "The new opt-in XR_DXR_cursor_depth extension lets an app report the depth under the pointer so the runtime draws the cursor just in front of it; the Unity plug-in, the browser and the model, splat, media, avatar and earth demos have adopted it.",
+    href: "https://github.com/DisplayXR/displayxr-runtime/blob/main/docs/specs/extensions/XR_DXR_cursor_depth.md",
+  },
+  {
+    id: "workspace-every-screen",
+    date: "2026-10-11",
+    kind: "capability",
+    tier: "list",
+    headline: "The workspace spans every 3D screen",
+    blurb:
+      "Each window is placed on the screen it mostly sits on, with a taskbar on every screen and the launcher on the pointer's screen; minimising sends a window to its own screen. Needs a runtime with multi-screen support. The same shell release adds a desktop-Linux preview.",
+    href: "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.4.0",
+  },
+  {
     id: "github-discussions-open",
     date: "2026-10-05",
     kind: "community",

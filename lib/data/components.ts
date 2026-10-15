@@ -126,7 +126,7 @@ export const componentClasses: ComponentClass[] = [
     abi: 1,
     reference: "sim_conversion",
     baseStatus: "core-merged",
-    shippedIn: "v2.42.0",
+    shippedIn: "v2.45.0",
     record: { label: "ADR-053", href: `${ADR}/ADR-053-conversion-providers.md` },
     impls: [
       {
@@ -134,6 +134,26 @@ export const componentClasses: ComponentClass[] = [
         role: "reference",
         note: "CPU-only and deterministic; exercises every task and readiness state.",
         href: `${DRIVERS}/sim_conversion`,
+      },
+      {
+        name: "Leia conversion provider",
+        role: "vendor",
+        note: "The display vendor's own 2D-to-3D module, as a separate DLL that the runtime hosts out of process. Windows.",
+        href: REPO_URLS.leiaPlugin,
+        chip: { label: "build-verified", title: "Hardware pre-flight in progress" },
+      },
+      {
+        name: "Open-model provider",
+        role: "reference",
+        note: "Depth models on ONNX Runtime (DirectML on Windows, CPU elsewhere), so every box has a converter without a vendor module. Models come from the runtime's model store.",
+        href: REPO_URLS.conversionOpen,
+        chip: { label: "build-verified", title: "First release; the installer is unsigned" },
+      },
+      {
+        name: "Conversion template",
+        role: "template",
+        note: "Vendor-neutral starter kit: a CPU-only provider skeleton, a fake host and dev registration scripts.",
+        href: REPO_URLS.conversionTemplate,
       },
     ],
   },

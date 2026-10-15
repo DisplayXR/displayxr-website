@@ -219,9 +219,31 @@ const editorial: Record<string, Editorial> = {
     tier: "advanced",
     vanillaGap: "the app renders its own 3D content.",
     adds:
-      "asynchronous access to the machine's 2D-to-3D conversion provider (depth, stereo, N-view, or photo to Gaussian splats). The runtime picks the provider per task; it returns pre-weave results and never weaves. Today the transport is the Windows D3D11 service.",
+      "asynchronous access to the machine's 2D-to-3D conversion providers (depth, stereo, N-view, or photo to Gaussian splats). You ask by task, can warm a task before you need it, and hand frames in with explicit synchronization. The runtime picks and hosts the provider per task, tells you when it is ready, and never weaves. Reached through the service, from IPC apps and from in-process D3D11 and D3D12 apps on Windows.",
     needIf:
       "you show 2D photos or video and want the panel's own conversion rather than shipping a model.",
+  },
+  "XR_DXR_cursor_depth": {
+    title: "Depth-Aware Cursor",
+    status: "early",
+    tier: "advanced",
+    vanillaGap:
+      "the pointer is drawn flat on the display plane, so over content that pops out of the glass it sits behind what it is hovering.",
+    adds:
+      "an opt-in hint on xrLocateViews: you report the nearest content depth under the pointer, and the runtime hands back where and how large to draw a cursor sprite so it sits just in front, moving the same way in every app.",
+    needIf:
+      "your app shows content in front of the display plane and users point at it, such as model, splat or stereo media viewers.",
+  },
+  "XR_DXR_stereo_camera": {
+    title: "Stereo Camera",
+    status: "early",
+    tier: "advanced",
+    vanillaGap:
+      "a display's stereo camera belongs to whichever process opens it first, so an app and the eye tracker fight over the device.",
+    adds:
+      "a runtime-owned stereo camera source. The service opens the camera once and fans side-by-side frames out to each authorised stream over shared memory, behind a consent, foreground and in-use-indicator gate.",
+    needIf:
+      "you want live stereo video from the display's own camera, for calls, capture or depth, without taking it from the tracker.",
   },
   "XR_DXR_macos_gl_binding": {
     title: "macOS OpenGL Binding",
