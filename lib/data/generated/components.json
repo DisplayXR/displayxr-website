@@ -2,30 +2,25 @@
   {
     "id": "runtime",
     "name": "DisplayXR Runtime",
-    "version": "v2.44.6",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.6",
+    "version": "v2.44.7",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.7",
     "releaseDate": "2026-10-15",
-    "platforms": "Windows · macOS · Linux · Android",
+    "platforms": "Windows · macOS · Android",
     "downloads": [
       {
         "platform": "Windows",
-        "file": "DisplayXRSetup-2.44.6.exe",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.44.6/DisplayXRSetup-2.44.6.exe"
+        "file": "DisplayXRSetup-2.44.7.exe",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.44.7/DisplayXRSetup-2.44.7.exe"
       },
       {
         "platform": "macOS",
-        "file": "DisplayXR-Installer-2.44.6.pkg",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.44.6/DisplayXR-Installer-2.44.6.pkg"
-      },
-      {
-        "platform": "Linux",
-        "file": "displayxr-runtime_2.44.6_amd64.deb",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.44.6/displayxr-runtime_2.44.6_amd64.deb"
+        "file": "DisplayXR-Installer-2.44.7.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.44.7/DisplayXR-Installer-2.44.7.pkg"
       },
       {
         "platform": "Android",
-        "file": "DisplayXR-Runtime-2.44.6-android-arm64.apk",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.44.6/DisplayXR-Runtime-2.44.6-android-arm64.apk"
+        "file": "DisplayXR-Runtime-2.44.7-android-arm64.apk",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.44.7/DisplayXR-Runtime-2.44.7-android-arm64.apk"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-runtime"
