@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.44.3",
+    "repo": "displayxr-runtime",
+    "tag": "v2.44.3",
+    "title": "v2.44.3",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.9.0",
     "repo": "displayxr-installer",
     "tag": "v2.9.0",
@@ -90,26 +101,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.43.5",
-    "repo": "displayxr-runtime",
-    "tag": "v2.43.5",
-    "title": "DisplayXR Runtime v2.43.5",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.43.5",
-    "prerelease": false,
-    "featureLines": [
-      "Android in-process weave synchronisation is now a GPU semaphore chain (ADR-055, #2095): the runtime passes wait/signal semaphores to the display processor via `set_weave_sync`, chains present on the signal, and no longer host-drains the …",
-      "feat(vk_native): in-process weave sync is a GPU semaphore chain — no host drains (#2095, ADR-055)",
-      "feat(cursor): XR_DXR_cursor_depth spec v8 header + spec (ADR-046 Amendment 4)",
-      "feat(cursor): u_cursor_depth weave-rect cursor logic + tests (ADR-046 Amendment 4)",
-      "feat(cursor): v8 weave cursor plumbing — oxr_weave chains, IPC calls, xrt types",
-      "feat(cursor): D3D11 service weave-rect cursor (ADR-046 Amendment 4)",
-      "feat(macos): Developer ID signing + notarization for the runtime .pkg (#280) (#2096)",
-      "feat(perf): DXR_LATE_WEAVE settable from the Dashboard (perf-settings Phase 2B) (#2094)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.44.0",
     "repo": "displayxr-runtime",
     "tag": "v2.44.0",
@@ -138,12 +129,15 @@
     "id": "displayxr-runtime@v2.44.2",
     "repo": "displayxr-runtime",
     "tag": "v2.44.2",
-    "title": "v2.44.2",
+    "title": "DisplayXR Runtime v2.44.2",
     "date": "2026-10-14",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Also in this release: the component loaders gain a **provenance gate in audit mode** (#2110). Every loaded plug-in is classified as signed / allowlisted / platform-trusted / dev-override / unverified and logged; nothing is refused yet. T…",
+      "feat(loaders): provenance gate in audit mode — signed / allowlisted / platform-trusted / dev-override / unverified (ADR-054 N4b, PR A) (#2110)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.25.2",
@@ -168,6 +162,19 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity@v2.26.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.26.0",
+    "title": "DisplayXR v2.26.0",
+    "date": "2026-10-14",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.26.0",
+    "prerelease": false,
+    "featureLines": [
+      "Depth-aware cursor (`XR_DXR_cursor_depth`, DisplayXR/displayxr-runtime ADR-046): opt in with `DisplayXRCursorDepth.Enabled = true` or a **DisplayXR Depth Cursor** component. Over content that pops out of the display, the runtime draws th…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.7.2",
@@ -395,19 +402,6 @@
     "prerelease": false,
     "featureLines": [
       "Pages can now read the compositor's per-layer weave verdict: `XRDisplayLayer.wovenState` (`\"pending\"` / `\"woven\"` / `\"withheld\"`) and `withheldReason` (the reason token while withheld). Lets a page keep its own cover up until its canvas …"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.25.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.25.0",
-    "title": "DisplayXR v2.25.0",
-    "date": "2026-10-08",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.25.0",
-    "prerelease": false,
-    "featureLines": [
-      "Linux launcher (#356, DisplayXR/displayxr-runtime#1831): a Linux build now writes `<name>.sh` next to the player; point the app's `.desktop` `Exec=` at it. At launch it starts the player as a native Wayland app (`-force-wayland`) when on…"
     ],
     "looksMechanical": false
   },
