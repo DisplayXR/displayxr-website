@@ -7,8 +7,10 @@
     "date": "2026-10-15",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.3",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Runtime v2.44.3: late weave on Linux no longer caps the frame rate of composited windows.** The in-process Vulkan path's late-weave pacing depth is now governed from measurements (commit-to-glass lag raises it, measured slack lowers it…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.15.8",
@@ -34,6 +36,17 @@
       "Windows and Android are unchanged."
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.44.4",
+    "repo": "displayxr-runtime",
+    "tag": "v2.44.4",
+    "title": "v2.44.4",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.9.0",
@@ -113,20 +126,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.44.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.44.0",
-    "title": "DisplayXR Runtime v2.44.0",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.0",
-    "prerelease": false,
-    "featureLines": [
-      "On desktop Linux, the runtime-drawn depth cursor now uses the user's own cursor theme (`left_ptr`, loaded via a `dlopen`'d libXcursor) at the real backing scale of the monitor the window is on, instead of a half-size procedural arrow on …",
-      "feat(cursor): desktop Linux draws the user's cursor theme at the real backing scale (#2102) (#2112). Theme/size come from `XCURSOR_THEME` / `XCURSOR_SIZE`, then GNOME's `cursor-theme` / `cursor-size`, then the default theme at 24. vk_nat…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.44.1",
