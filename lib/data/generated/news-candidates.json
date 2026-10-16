@@ -121,6 +121,23 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-unity@v2.26.2",
+    "repo": "displayxr-unity",
+    "tag": "v2.26.2",
+    "title": "DisplayXR v2.26.2",
+    "date": "2026-10-16",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.26.2",
+    "prerelease": false,
+    "featureLines": [
+      "Native-Wayland player: the app can keep its own window above other windows, bring it to the front with focus, and minimize and restore it, through the DisplayXR GNOME extension (version 15+). These are what an app does to its own window …",
+      "New Linux-player exports, with C# P/Invokes in `DisplayXRNative` (Linux player builds only, like the other `displayxr_linux_*` imports): `displayxr_linux_window_state_caps()` (bit 1 keep above, 2 activate, 4 minimize, available now), `di…",
+      "All asynchronous; the result is logged (`[DisplayXR-WL] window keep above on: done|refused`). Activate and minimize are actions: sent now or not at all. Keep-above is window state: remembered (also before the first session, and still app…",
+      "In X11 mode the exports do nothing (`window_state_caps` 0, `window_state` -1): the app's own EWMH calls work there. Windows and macOS are unchanged. `DisplayXRTransparentOverlay.alwaysOnTop` is still Windows-only; it does not turn keep-a…",
+      "The Wayland library and the main plug-in must match again (`DXR_WL_LIB_ABI` 5 -> 6); they always ship together."
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-conversion-open@v0.1.0",
     "repo": "displayxr-conversion-open",
     "tag": "v0.1.0",
@@ -312,19 +329,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unity@v2.25.2",
-    "repo": "displayxr-unity",
-    "tag": "v2.25.2",
-    "title": "DisplayXR v2.25.2",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.25.2",
-    "prerelease": false,
-    "featureLines": [
-      "Linux CI runs the native unit tests (`ctest`). The first one covers the Wayland placement arithmetic (`native~/displayxr_linux_wayland_place.h`)."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.25.3",
