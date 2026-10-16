@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-mediaplayer@v1.14.2",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.14.2",
+    "title": "v1.14.2",
+    "date": "2026-10-16",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.14.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@android-bundle-2026-10-15b",
     "repo": "displayxr-installer",
     "tag": "android-bundle-2026-10-15b",
@@ -14,12 +25,17 @@
     "id": "displayxr-runtime@v2.45.2",
     "repo": "displayxr-runtime",
     "tag": "v2.45.2",
-    "title": "v2.45.2",
+    "title": "DisplayXR Runtime v2.45.2",
     "date": "2026-10-16",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.45.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Two fixes for conversion providers hosted out of process on v2.45.x.",
+      "The service pulled every handle the conversion host announced with DUPLICATE_CLOSE_SOURCE, closing the host's own copies, so an out-of-process provider opened dead handles and failed every convert (E_INVALIDARG). Pulls are now copies, wi…",
+      "The satellite host now reads provider settings through the shared per-user/machine store like the in-service host, so `displayxr-cli conv set <id> KEY value` and live policy changes reach it, and it logs each registered image's handles f…",
+      "Both were found on real hardware during the first live run of a vendor conversion provider."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-conversion-open@v0.1.0",
@@ -603,19 +619,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.13.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.13.0",
-    "title": "v1.13.0",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.13.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Linux: the window now moves like the other demos.** The desktop Linux window gets the shared translucent rounded title bar; drag it by the title bar or with the right mouse button on both Wayland (move-synced) and X11 (phase-snapped). …"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-shell-releases@v2.3.1",
