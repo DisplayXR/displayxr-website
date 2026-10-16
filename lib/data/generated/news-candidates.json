@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-installer@android-bundle-2026-10-15b",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-2026-10-15b",
+    "title": "Android tablet bundle android-bundle-2026-10-15b",
+    "date": "2026-10-16",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-15b",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.45.2",
+    "repo": "displayxr-runtime",
+    "tag": "v2.45.2",
+    "title": "v2.45.2",
+    "date": "2026-10-16",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.45.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-conversion-open@v0.1.0",
     "repo": "displayxr-conversion-open",
     "tag": "v0.1.0",
@@ -81,28 +103,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-installer@v2.9.4",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.4",
-    "title": "DisplayXR v2.9.4",
-    "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.4",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.9.5",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.5",
-    "title": "DisplayXR v2.9.5",
-    "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.5",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-installer@v2.9.6",
     "repo": "displayxr-installer",
     "tag": "v2.9.6",
@@ -181,19 +181,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.44.6",
-    "repo": "displayxr-runtime",
-    "tag": "v2.44.6",
-    "title": "DisplayXR Runtime v2.44.6",
-    "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.6",
-    "prerelease": false,
-    "featureLines": [
-      "**Desktop:** unchanged apart from the fixes below."
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.44.7",
     "repo": "displayxr-runtime",
     "tag": "v2.44.7",
@@ -235,12 +222,15 @@
     "id": "displayxr-runtime@v2.45.1",
     "repo": "displayxr-runtime",
     "tag": "v2.45.1",
-    "title": "v2.45.1",
+    "title": "DisplayXR Runtime v2.45.1",
     "date": "2026-10-15",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.45.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Embeds **leia-plugin v2.16.1** in the Leia Android APK so the tablet bundle carries exactly the pinned plug-in (v2.45.0 embedded v2.15.10). New in the plug-in since then: a Leia conversion provider DLL for Windows (leia-plugin#357), ster…",
+      "feat(stereo-camera): each camera reports the display it belongs to (spec v5, #1961) (#2146)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.26.1",
@@ -507,6 +497,17 @@
       "Pages can now read the compositor's per-layer weave verdict: `XRDisplayLayer.wovenState` (`\"pending\"` / `\"woven\"` / `\"withheld\"`) and `withheldReason` (the reason token while withheld). Lets a page keep its own cover up until its canvas …"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-installer@android-bundle-latest",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-latest",
+    "title": "Android tablet bundle (latest) — android-bundle-2026-10-15b",
+    "date": "2026-10-07",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-modelviewer@v0.35.1",
