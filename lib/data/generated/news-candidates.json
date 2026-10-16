@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-conversion-open@v0.1.1",
+    "repo": "displayxr-conversion-open",
+    "tag": "v0.1.1",
+    "title": "v0.1.1",
+    "date": "2026-10-16",
+    "url": "https://github.com/DisplayXR/displayxr-conversion-open/releases/tag/v0.1.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@pro-v0.1.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.1.0",
+    "title": "Media Player Pro 0.1.0",
+    "date": "2026-10-16",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.1.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@v1.14.2",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.14.2",
@@ -33,6 +55,28 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-leia-plugin@v2.16.2",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.16.2",
+    "title": "v2.16.2",
+    "date": "2026-10-16",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.16.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-mcp@v0.5.5",
+    "repo": "displayxr-mcp",
+    "tag": "v0.5.5",
+    "title": "v0.5.5",
+    "date": "2026-10-16",
+    "url": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.5.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.45.2",
     "repo": "displayxr-runtime",
     "tag": "v2.45.2",
@@ -52,12 +96,14 @@
     "id": "displayxr-runtime@v2.45.3",
     "repo": "displayxr-runtime",
     "tag": "v2.45.3",
-    "title": "v2.45.3",
+    "title": "DisplayXR Runtime v2.45.3",
     "date": "2026-10-16",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.45.3",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Patch release. The macOS `.pkg` no longer ships a `displayxr-conversion-host` linked against Homebrew's `libvulkan` (it failed to launch on Macs without Homebrew); it now resolves `@rpath/libvulkan.1.dylib`, and the `.pkg` build fails ou…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-shell-releases@v2.4.2",
@@ -188,17 +234,6 @@
     "title": "v2.15.10",
     "date": "2026-10-15",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.10",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.15.9",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.15.9",
-    "title": "v2.15.9",
-    "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.15.9",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -449,22 +484,6 @@
     "featureLines": [
       "**Depth-aware cursor.** On a runtime with `XR_DXR_cursor_depth`, the runtime draws the pointer in front of splats that come out of the glass. The demo supplies the depth under the pointer by ray-casting the splats themselves. (#142)",
       "Depth-aware cursor. `GsSplatRayCaster` finds where the front-to-back alpha composite first reaches 0.5, using the same per-splat evaluation as the rasteriser. It walks an implicit 8-ary BVH over Morton-sorted splats, is built on a worker…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.13.1",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.13.1",
-    "title": "v1.13.1",
-    "date": "2026-10-11",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.13.1",
-    "prerelease": false,
-    "featureLines": [
-      "The Vulkan player now keeps up to three frames in flight instead of waiting on the GPU after every submit. On macOS that cuts CPU use by about 6 points and tightens frame pacing.",
-      "Android frame rate is **unchanged in this release**: about 30 fps on the phone and about 19 fps on the tablet. The remaining cost is the runtime's sRGB swapchain copy (displayxr-runtime#1935). A fix is in progress there and needs no chan…",
-      "Vulkan frame ring (`dxr::VkFrameRing`, displayxr-common v2.28.0): 3 frames in flight and one submit per frame, with the HUD included in that submit. Decoder images are released only after every frame that samples them has retired, so the…",
-      "Android client AAR pinned to runtime v2.34.0. The APK now ships `VK_LAYER_DXR_queue_lock`, so a runtime at v2.34.0 or later turns on mid-frame fills and the non-blocking hand-off (displayxr-runtime#1905). (#99)"
     ],
     "looksMechanical": false
   },
@@ -776,17 +795,6 @@
     "title": "v0.5.2",
     "date": "2026-07-18",
     "url": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.5.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-mcp@v0.5.1",
-    "repo": "displayxr-mcp",
-    "tag": "v0.5.1",
-    "title": "v0.5.1",
-    "date": "2026-07-17",
-    "url": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.5.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true

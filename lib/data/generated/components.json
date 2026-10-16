@@ -80,20 +80,20 @@
   {
     "id": "mcp_tools",
     "name": "DisplayXR MCP Tools",
-    "version": "v0.5.4",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.5.4",
-    "releaseDate": "2026-08-28",
+    "version": "v0.5.5",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.5.5",
+    "releaseDate": "2026-10-16",
     "platforms": "Windows · macOS",
     "downloads": [
       {
         "platform": "Windows",
-        "file": "DisplayXRMCPSetup-0.5.4.exe",
-        "url": "https://github.com/DisplayXR/displayxr-mcp/releases/download/v0.5.4/DisplayXRMCPSetup-0.5.4.exe"
+        "file": "DisplayXRMCPSetup-0.5.5.exe",
+        "url": "https://github.com/DisplayXR/displayxr-mcp/releases/download/v0.5.5/DisplayXRMCPSetup-0.5.5.exe"
       },
       {
         "platform": "macOS",
-        "file": "DisplayXRMCP-0.5.4.pkg",
-        "url": "https://github.com/DisplayXR/displayxr-mcp/releases/download/v0.5.4/DisplayXRMCP-0.5.4.pkg"
+        "file": "DisplayXRMCP-0.5.5.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-mcp/releases/download/v0.5.5/DisplayXRMCP-0.5.5.pkg"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-mcp"
