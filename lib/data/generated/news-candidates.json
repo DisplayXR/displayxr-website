@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.7.4",
+    "repo": "displayxr-browser",
+    "tag": "v1.7.4",
+    "title": "DisplayXR Browser v1.7.4",
+    "date": "2026-10-16",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.7.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-conversion-open@v0.1.1",
     "repo": "displayxr-conversion-open",
     "tag": "v0.1.1",
@@ -122,12 +133,16 @@
     "id": "displayxr-runtime@v2.45.4",
     "repo": "displayxr-runtime",
     "tag": "v2.45.4",
-    "title": "v2.45.4",
+    "title": "DisplayXR Runtime v2.45.4",
     "date": "2026-10-16",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.45.4",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Every platform's runtime package now carries a reference implementation for all three component classes: the Windows installer, the `.deb` and the Linux tarball ship the `sim_input` and `sim_conversion` providers next to `sim_display` — …",
+      "feat(installer): ship the sim_input and sim_conversion reference providers on Windows and Linux (ADR-054 §2 clause 3) (#2158)",
+      "feat(gnome-extension): own-window keep-above, activate and minimize, v15 (#2157) (#2159)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-shell-releases@v2.4.2",
@@ -517,22 +532,6 @@
       "**linux:** `.deb` packaging, workspace-controller manifest and dev registration; CI builds the `.deb` and install-verifies it on Ubuntu 22.04, 24.04 and 26.04.",
       "**linux:** XDG app-manifest dirs, MCP capability marker, and chrome icon + title for registered apps via `/proc/<pid>/exe`.",
       "**linux:** waits on the workspace wakeup eventfd instead of a fixed 16 ms poll; the service-forwarded workspace hotkey dismisses the shell."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.7.0",
-    "repo": "displayxr-browser",
-    "tag": "v1.7.0",
-    "title": "DisplayXR Browser v1.7.0",
-    "date": "2026-10-09",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.7.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Now based on Chromium 156** (156.0.8078.12, up from 155.0.8059.26).",
-      "**Auto-3D now works on WebGPU pages.** The bundled auto-3D scripts (v0.6.2) cover WebGPU rendering in both PlayCanvas and three.js, and support PlayCanvas's CameraFrame pipeline.",
-      "Auto-3D scripts updated from v0.5.7 to v0.6.2: WebGPU support for PlayCanvas and three.js, plus PlayCanvas CameraFrame.",
-      "Windows: the installer registers the browser (`chrome.exe`) with the DisplayXR runtime as a 3D-camera consent-delegating client."
     ],
     "looksMechanical": false
   },
