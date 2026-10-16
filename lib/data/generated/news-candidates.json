@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-modelviewer@v0.35.5",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.35.5",
+    "title": "v0.35.5",
+    "date": "2026-10-16",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.35.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@android-bundle-2026-10-15b",
     "repo": "displayxr-installer",
     "tag": "android-bundle-2026-10-15b",
@@ -38,6 +49,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.45.3",
+    "repo": "displayxr-runtime",
+    "tag": "v2.45.3",
+    "title": "v2.45.3",
+    "date": "2026-10-16",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.45.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-shell-releases@v2.4.2",
     "repo": "displayxr-shell-releases",
     "tag": "v2.4.2",
@@ -45,8 +67,12 @@
     "date": "2026-10-16",
     "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.4.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**macOS: installed DisplayXR apps now appear in the shell launcher.** Apps installed from their `.pkg` into `/Applications` or `~/Applications` are discovered automatically and launched through the bundle's own executable, so the demos (…",
+      "macOS launcher scans `/Applications` and `~/Applications` app bundles for `Contents/Resources/displayxr/*.displayxr.json` manifests and launches them via the bundle's `CFBundleExecutable` (falling back to `Contents/MacOS/<name>`); regist…",
+      "Auto-published from displayxr-shell-pvt @ 2ee433e6ec661baa368818e930bc80ecbd2d41c9."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-conversion-open@v0.1.0",
@@ -204,24 +230,6 @@
     "featureLines": [
       "The installer now allowlists the two DLLs the runtime loads (DisplayXR-LeiaSR.dll, DisplayXR-LeiaConversion.dll) for the runtime's provenance gate (ADR-054 N4b), so the plug-in loads on runtime v2.45.0 whether or not the build is signed.…",
       "installer: allowlist the shipped DLLs for the runtime's provenance gate (ADR-054 N4b) (#394)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.44.7",
-    "repo": "displayxr-runtime",
-    "tag": "v2.44.7",
-    "title": "DisplayXR Runtime v2.44.7",
-    "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.44.7",
-    "prerelease": false,
-    "featureLines": [
-      "Faster process start on Windows: the runtime no longer re-applies the AppContainer ACL to the log folder on every launch when it is already in place, which removes a multi-second stall (service, CLI, conversion hosts and every app) on ma…",
-      "**dp:** the display-processor loader honours `Enabled` and a per-user `PreferredPlugin` (ADR-054 N3b, #2049)",
-      "**cli:** `displayxr-cli dp enable|disable|use|reset [--machine]`; `dp list` shows Enabled / Preferred / Provenance; `selftest` reports `skipped_disabled` (#2049)",
-      "**service:** one component-policy watch thread replaces the per-class registry waiters; live re-select for all three classes (display, input, conversion). A conversion `PreferredProvider` / per-user `Enabled` change now actually moves se…",
-      "**ipc:** new DIAG call `system_request_component_reselect` plus stable component class ids; the CLI pokes the running service after a policy write and says whether the change applies now, at the next session, or at the next service start…",
-      "**input:** live re-rank of the input arbiter on an `Enabled` / `PreferredPlugin` change; roles and `generation_id` move immediately (#2051)"
     ],
     "looksMechanical": false
   },
@@ -533,17 +541,6 @@
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.35.1",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.35.1",
-    "title": "v0.35.1",
-    "date": "2026-10-06",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.35.1",
-    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
