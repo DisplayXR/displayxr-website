@@ -7,8 +7,15 @@
     "date": "2026-10-16",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.7.4",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The runtime now draws the web cursor on Windows (ADR-046 Amendment 4): the cursor sits at the right depth over inline 3D content instead of floating on the 2D plane.",
+      "A stereo camera that appears after the page loaded now reaches the page as a `devicechange` event (runtime #1961), so camera pickers update live.",
+      "Linux: `--inline-3d-linux-fences=auto|on|off` — no sync_file hand-off by default on NVIDIA, which avoids a frame stall on that driver.",
+      "patches 0408-0410: the runtime draws the web cursor on Windows (#285)",
+      "patch 0412: a runtime stereo camera that appears later reaches the page as `devicechange` (#290)",
+      "feat(linux): `--inline-3d-linux-fences=auto|on|off` (#284)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-conversion-open@v0.1.1",
@@ -64,6 +71,22 @@
     "prerelease": true,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.9.8",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.8",
+    "title": "DisplayXR v2.9.8",
+    "date": "2026-10-16",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.8",
+    "prerelease": false,
+    "featureLines": [
+      "**Open Conversion is now part of the bundle.** The new *Conversion providers* section installs DisplayXR Open Conversion 0.1.1 — the open-model 2D-to-3D provider (depth from images and video on ONNX Runtime / DirectML) — so every box get…",
+      "**Runtime 2.45.4** ships the `sim_input` and `sim_conversion` reference providers on every platform (registered, gated off by default), so all three component classes have a reference implementation everywhere; plus the out-of-process co…",
+      "**Leia SR 2.16.3**: built against CNSDK 0.10.82 (head-tracking service deadlock fix); requires runtime ≥ 2.45.3 — the Leia conversion provider now runs in the runtime's satellite host on every supported runtime.",
+      "**MCP Tools 0.5.5**: maintenance (vcpkg pthreads overlay fetched from GitHub)."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.16.2",
@@ -254,21 +277,6 @@
     "prerelease": false,
     "featureLines": [
       "**Linux: the demo now appears in the DisplayXR Shell launcher (Ctrl+L).** The `.deb` installs a registered shell manifest at `/usr/share/displayxr/apps/`, so the demo shows up in the launcher right after install, with no manual registrat…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.9.6",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.6",
-    "title": "DisplayXR v2.9.6",
-    "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.6",
-    "prerelease": false,
-    "featureLines": [
-      "**Runtime v2.44.5: Linux no longer leaves the panel in 2D after a 2D client has gone.** Once a client asked the panel for 2D (a 2D browser tab, a menu over a woven page, a call), the next client's 3D request was dropped at its weave-engi…",
-      "Linux cursor-theme loading guarded for two compositors starting at once (runtime#2123); Windows weave-probe title fix (runtime#2127).",
-      "Demo updates: Gauss v1.29.5, Model Viewer v0.35.4, Media Player v1.14.1, Avatar v0.14.4, Earth View v0.11.3."
     ],
     "looksMechanical": false
   },
