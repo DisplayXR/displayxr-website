@@ -179,6 +179,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.46.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.46.0",
+    "title": "v2.46.0",
+    "date": "2026-10-16",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.46.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-shell-releases@v2.4.2",
     "repo": "displayxr-shell-releases",
     "tag": "v2.4.2",
@@ -313,20 +324,6 @@
     "featureLines": [
       "The installer now allowlists the two DLLs the runtime loads (DisplayXR-LeiaSR.dll, DisplayXR-LeiaConversion.dll) for the runtime's provenance gate (ADR-054 N4b), so the plug-in loads on runtime v2.45.0 whether or not the build is signed.…",
       "installer: allowlist the shipped DLLs for the runtime's provenance gate (ADR-054 N4b) (#394)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.45.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.45.1",
-    "title": "DisplayXR Runtime v2.45.1",
-    "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.45.1",
-    "prerelease": false,
-    "featureLines": [
-      "Embeds **leia-plugin v2.16.1** in the Leia Android APK so the tablet bundle carries exactly the pinned plug-in (v2.45.0 embedded v2.15.10). New in the plug-in since then: a Leia conversion provider DLL for Windows (leia-plugin#357), ster…",
-      "feat(stereo-camera): each camera reports the display it belongs to (spec v5, #1961) (#2146)"
     ],
     "looksMechanical": false
   },
