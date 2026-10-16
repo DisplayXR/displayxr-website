@@ -38,6 +38,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-shell-releases@v2.4.2",
+    "repo": "displayxr-shell-releases",
+    "tag": "v2.4.2",
+    "title": "DisplayXR Shell v2.4.2",
+    "date": "2026-10-16",
+    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.4.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-conversion-open@v0.1.0",
     "repo": "displayxr-conversion-open",
     "tag": "v0.1.0",
@@ -616,17 +627,6 @@
     "title": "v1.29.2",
     "date": "2026-10-02",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-shell-releases@v2.3.1",
-    "repo": "displayxr-shell-releases",
-    "tag": "v2.3.1",
-    "title": "DisplayXR Shell v2.3.1",
-    "date": "2026-09-30",
-    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.3.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
