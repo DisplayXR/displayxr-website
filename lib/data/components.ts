@@ -135,6 +135,24 @@ export const componentClasses: ComponentClass[] = [
         note: "CPU-only and deterministic; exercises every task and readiness state.",
         href: `${DRIVERS}/sim_conversion`,
       },
+      {
+        name: "Leia conversion provider",
+        role: "vendor",
+        note: "The first vendor conversion provider: depth from images and video, and views from one image, on Leia's NeurD engine. Ships in the Leia SR plug-in installer and runs in its own host process.",
+        href: REPO_URLS.leiaPlugin,
+      },
+      {
+        name: "Open Conversion",
+        role: "vendor",
+        note: "DisplayXR's own open-model provider: depth from images and video on ONNX Runtime (DirectML on Windows, CPU elsewhere), so a box without a vendor module still converts.",
+        href: REPO_URLS.conversionOpen,
+      },
+      {
+        name: "Conversion template",
+        role: "template",
+        note: "Buildable, ABI-correct starter for a conversion provider: a CPU-only skeleton, a fake host and dev-box registration scripts.",
+        href: REPO_URLS.conversionTemplate,
+      },
     ],
   },
   {
