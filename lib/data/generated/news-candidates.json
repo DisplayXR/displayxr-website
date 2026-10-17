@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.47.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.47.0",
+    "title": "v2.47.0",
+    "date": "2026-10-17",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.47.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity@v2.27.0",
     "repo": "displayxr-unity",
     "tag": "v2.27.0",
@@ -153,19 +164,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.45.3",
-    "repo": "displayxr-runtime",
-    "tag": "v2.45.3",
-    "title": "DisplayXR Runtime v2.45.3",
-    "date": "2026-10-16",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.45.3",
-    "prerelease": false,
-    "featureLines": [
-      "Patch release. The macOS `.pkg` no longer ships a `displayxr-conversion-host` linked against Homebrew's `libvulkan` (it failed to launch on Macs without Homebrew); it now resolves `@rpath/libvulkan.1.dylib`, and the `.pkg` build fails ou…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.45.4",
