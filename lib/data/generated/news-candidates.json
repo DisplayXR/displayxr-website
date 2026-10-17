@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-modelviewer@v0.36.0",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.36.0",
+    "title": "v0.36.0",
+    "date": "2026-10-17",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.36.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.47.0",
     "repo": "displayxr-runtime",
     "tag": "v2.47.0",
@@ -521,22 +532,6 @@
     "featureLines": [
       "**Depth-aware cursor.** On a runtime with `XR_DXR_cursor_depth`, the runtime draws the pointer in front of splats that come out of the glass. The demo supplies the depth under the pointer by ray-casting the splats themselves. (#142)",
       "Depth-aware cursor. `GsSplatRayCaster` finds where the front-to-back alpha composite first reaches 0.5, using the same per-splat evaluation as the rasteriser. It walks an implicit 8-ary BVH over Morton-sorted splats, is built on a worker…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.35.2",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.35.2",
-    "title": "v0.35.2",
-    "date": "2026-10-11",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.35.2",
-    "prerelease": false,
-    "featureLines": [
-      "**About 2× faster on Android.** Each frame's tiles now go through one Vulkan submit. With runtime v2.35.0 the Lume phone goes from 13 to 30 fps, and the NP02J tablet from 10 to 20 fps.",
-      "**Depth-aware cursor (pilot).** When the pointer is over content that pops out of the glass, the runtime draws the cursor just in front of it, so the cursor no longer looks buried in the model. The app works out that depth by ray-casting…",
-      "Depth-aware cursor via `XR_DXR_cursor_depth`: per-cluster BVH ray cast that follows node animation and skinning. Turn it off with `DISPLAYXR_CURSOR_DEPTH=0`. displayxr-common moves to v2.29.0 (#171)",
-      "Android: client AAR pinned to v2.34.0, which ships the `VK_LAYER_DXR_queue_lock` layer so face tracking refreshes at panel rate (60 Hz) (#169)"
     ],
     "looksMechanical": false
   },
