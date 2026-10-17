@@ -3,12 +3,21 @@
     "id": "displayxr-runtime@v2.47.0",
     "repo": "displayxr-runtime",
     "tag": "v2.47.0",
-    "title": "v2.47.0",
+    "title": "DisplayXR Runtime v2.47.0",
     "date": "2026-10-17",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.47.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**New extension: `XR_DXR_desktop_control` (ADR-056, #2170).** An app's AI agent can now operate the desktop through one API on Windows, macOS and GNOME Wayland. It can list windows, find what is under the pointer, read UI text, operate w…",
+      "Every OS gets the same safety layer: a kill switch (`displayxr-cli desktop stop|resume`), per-app deny, the lock screen, an idle wait so the agent never fights the user's typing, target verification before every injection batch, a fail-c…",
+      "**Platform status:** macOS is verified on a real desktop and through Unity. The Windows and GNOME backends are built and reviewed, but **not yet validated on hardware**. Treat them as preview until their test plans (`docs/specs/extension…",
+      "Also in this release: the image→splat conversion contract (ADR-057 S1) and a generic, opt-in remote conversion provider (ADR-057 S2, #2172).",
+      "**`XR_DXR_desktop_control`** (ADR-056, #2170)",
+      "New header `XR_DXR_desktop_control.h`, spec `docs/specs/extensions/XR_DXR_desktop_control.md`, and a test plan for each OS.",
+      "Backends: macOS (AX/CGEvent), Windows (UIA/SendInput), and GNOME Wayland (RemoteDesktop portal + libei + AT-SPI). A fake backend is used for tests.",
+      "Policy layer: kill switch, per-app deny, lock-screen and idle gating, target verification, fail-closed settings store, and an audit log that excludes typed text."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.27.0",
