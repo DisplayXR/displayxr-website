@@ -1,5 +1,25 @@
 [
   {
+    "id": "displayxr-unity@v2.27.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.27.0",
+    "title": "DisplayXR v2.27.0",
+    "date": "2026-10-17",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.27.0",
+    "prerelease": false,
+    "featureLines": [
+      "**App-registered MCP tools for AI agents (`XR_DXR_mcp_tools`).** New `DisplayXRMcp` API: an app registers its own verbs (`RegisterTool(name, description, inputSchemaJson, handler)`, sync or async) and any MCP client — Claude, a voice ass…",
+      "Handlers run on Unity's main thread (drained every `LateUpdate` by the provider driver); throw to fail a call. The runtime fails a call after 5 s, so long work should start and return.",
+      "The app id and tools are stored natively and re-applied on every session (re)start; they may be registered before the session exists.",
+      "All strings cross the native boundary as UTF-8 bytes, so non-ASCII descriptions, arguments and results (e.g. Chinese) survive on Windows, where default `DllImport` marshalling uses the ANSI code page.",
+      "Inert — `DisplayXRMcp.IsAvailable` false, registration stored but not applied — on a runtime without the extension or a machine with the MCP capability off (Windows: the DisplayXR MCP Tools installer; Linux: `~/.config/displayxr/capabili…",
+      "Native: `displayxr_provider_mcp.{h,cpp}` (`dxr_prov_mcp_*` exports) + `native~/tests/mcp_tools_test.cpp`, run in CI against a fake runtime.",
+      "**Desktop control for the app's AI agent (`XR_DXR_desktop_control`, runtime ADR-056).** New `DisplayXRDesktop` API: list windows (`ListWindows`), find what is under the pointer or a point (`TryGetPointer`, `TryPick`), read UI text (`GetT…",
+      "The consent belongs to the app: `Request(reason)` triggers the OS's own prompt for this app (macOS Accessibility, the GNOME RemoteDesktop portal, a DisplayXR dialog on Windows); `State` / `StateChanged` follow it. The runtime's safety la…"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-browser@v1.7.4",
     "repo": "displayxr-browser",
     "tag": "v1.7.4",
@@ -182,12 +202,21 @@
     "id": "displayxr-runtime@v2.46.1",
     "repo": "displayxr-runtime",
     "tag": "v2.46.1",
-    "title": "v2.46.1",
+    "title": "DisplayXR Runtime v2.46.1",
     "date": "2026-10-16",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.46.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Fixes a macOS deadlock that hung every Unity app at XR start (#2173).** Against runtime v2.32.0–v2.46.0, the ADR-050 window-placement code did a `dispatch_sync` to the main thread from Unity's graphics thread while the main thread was …",
+      "Also in this release: the target-time eye query (ADR-054 N6 Part 1, #2144). DPs and compositors can now answer eye positions at the frame's display time, and a DP without `get_eye_positions_at` keeps today's behaviour. There is a new `Em…",
+      "feat(ipc): the service answers eyes at the client's display time (ADR-054 N6 Part 1, #2144)",
+      "feat(comp): in-process compositors answer eyes at a target time; xrLocateViews asks for displayTime (#2144)",
+      "feat(dp): `get_eye_positions_at` — the target-time eye query on every DP vtable + sim_display (#2144)",
+      "feat(util): u_eye_history — the trunk's eye-pair ring sampled at a target time (#2144)",
+      "feat(cli): enabled_source + built_in on conv list, policy.policy_lock on dp|input list (ADR-054 N3e review)",
+      "feat(cli): `input emulated on|off [--machine]`; `input list` / `selftest --json` carry the gate + device list (ADR-054 N7, #2143)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-shell-releases@v2.4.2",
@@ -334,17 +363,6 @@
     "title": "DisplayXR v2.26.1",
     "date": "2026-10-15",
     "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.26.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unity@v2.25.3",
-    "repo": "displayxr-unity",
-    "tag": "v2.25.3",
-    "title": "DisplayXR v2.25.3",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.25.3",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
