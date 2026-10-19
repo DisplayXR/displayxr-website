@@ -186,6 +186,16 @@ export default function ComponentsPage() {
               and never ship a model.
             </p>
             <p>
+              Two providers ship today beyond the reference: the display
+              vendor&apos;s own module, and an{" "}
+              <A href={REPO_URLS.conversionOpen}>open-model provider</A> that gives
+              every box a converter. Providers run in a supervised conversion host
+              process, so a crashing model cannot take the runtime with it, and the
+              runtime&apos;s model store fetches and verifies model packs by
+              checksum. Starting one? Fork the{" "}
+              <A href={REPO_URLS.conversionTemplate}>conversion template</A>.
+            </p>
+            <p>
               This opens DisplayXR to model makers who are not display makers: a
               depth or view-synthesis model reaches every panel without a display
               partner. <Code>displayxr-cli conv list</Code> shows the providers and
