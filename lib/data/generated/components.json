@@ -132,30 +132,30 @@
   {
     "id": "installer",
     "name": "All-in-one Installer",
-    "version": "v2.9.9",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.9",
+    "version": "v2.9.10",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.10",
     "releaseDate": "2026-10-19",
     "platforms": "Windows · macOS · Linux · Android",
     "downloads": [
       {
         "platform": "Windows",
-        "file": "DisplayXRBundle-2.9.9.exe",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.9/DisplayXRBundle-2.9.9.exe"
+        "file": "DisplayXRBundle-2.9.10.exe",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.10/DisplayXRBundle-2.9.10.exe"
       },
       {
         "platform": "macOS",
-        "file": "DisplayXRBundle-2.9.9.pkg",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.9/DisplayXRBundle-2.9.9.pkg"
+        "file": "DisplayXRBundle-2.9.10.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.10/DisplayXRBundle-2.9.10.pkg"
       },
       {
         "platform": "Linux",
-        "file": "DisplayXRBundle-2.9.9-linux-amd64.tar.gz",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.9/DisplayXRBundle-2.9.9-linux-amd64.tar.gz"
+        "file": "DisplayXRBundle-2.9.10-linux-amd64.tar.gz",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.10/DisplayXRBundle-2.9.10-linux-amd64.tar.gz"
       },
       {
         "platform": "Android",
         "file": "DisplayXR-Installer-0.4.2.apk",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.9/DisplayXR-Installer-0.4.2.apk"
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.10/DisplayXR-Installer-0.4.2.apk"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-installer"

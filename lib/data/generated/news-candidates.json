@@ -1,5 +1,47 @@
 [
   {
+    "id": "displayxr-demo-mediaplayer@pro-v0.2.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.2.0",
+    "title": "Media Player Pro 0.2.0",
+    "date": "2026-10-19",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.2.0",
+    "prerelease": false,
+    "featureLines": [
+      "**DeckLink input on Windows, macOS and Linux.** One DeckLink source covers all three platforms. Inputs are paired by RP188 timecode (including 50/60p), or by the card's hardware clock when two inputs share one card. A dark eye shows NO S…",
+      "**Review formats.** EXR, DPX, ProRes and MXF (DNxHD/DNxHR) now open, with the Y'CbCr matrix and transfer carried per frame.",
+      "**Live Resolve panel.** Markers appear as they happen, the station follows Resolve's timecode, and the Station panel shows input thumbnails. Pinned panels are shown flat instead of woven with the picture.",
+      "**Rig checks you can trust.** Vertical error is measured net of roll, eye sync is measured from the picture as a cross-check on timecode, colour match no longer spikes, and depth alerts no longer fire on false far readings.",
+      "**Editor keys.** Left/Right step one frame (Shift = 5), Up/Down move to the previous/next file in the folder, and on a still Left/Right move through the folder.",
+      "DeckLink source on Windows/macOS/Linux behind one COM shim; the SDK's pre-14.3 frame path is kept, and too-old Desktop Video drivers are refused at run time",
+      "Live Resolve panel: markers, timecode follow, station in Resolve",
+      "Input thumbnails in the Station panel; pinned panels drawn flat (Local2D)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-installer@android-bundle-2026-10-17",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-2026-10-17",
+    "title": "Android tablet bundle android-bundle-2026-10-17",
+    "date": "2026-10-19",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-17",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.9.10",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.10",
+    "title": "DisplayXR v2.9.10",
+    "date": "2026-10-19",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.10",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.9.9",
     "repo": "displayxr-installer",
     "tag": "v2.9.9",
@@ -18,8 +60,11 @@
     "date": "2026-10-19",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.16.5",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Prototype panels work on Linux without a table edit.** A panel that the SR runtime drives, with its product folder installed from the FPC, now binds in DisplayXR apps even when the plug-in's frozen EDID table does not list it. The 27in…",
+      "Lift: NeurD 0.4.10 support. The NeurD headers are pinned to media_sdk v0.4.10. The READY and AUTO log lines now name the auto-convergence rule of the loaded NeurD: the stereographer screen-plane rule from 0.4.10 on, saliency mean dispari…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.47.1",
@@ -159,33 +204,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@android-bundle-2026-10-15b",
-    "repo": "displayxr-installer",
-    "tag": "android-bundle-2026-10-15b",
-    "title": "Android tablet bundle android-bundle-2026-10-15b",
-    "date": "2026-10-16",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-15b",
-    "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.9.8",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.8",
-    "title": "DisplayXR v2.9.8",
-    "date": "2026-10-16",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.8",
-    "prerelease": false,
-    "featureLines": [
-      "**Open Conversion is now part of the bundle.** The new *Conversion providers* section installs DisplayXR Open Conversion 0.1.1 — the open-model 2D-to-3D provider (depth from images and video on ONNX Runtime / DirectML) — so every box get…",
-      "**Runtime 2.45.4** ships the `sim_input` and `sim_conversion` reference providers on every platform (registered, gated off by default), so all three component classes have a reference implementation everywhere; plus the out-of-process co…",
-      "**Leia SR 2.16.3**: built against CNSDK 0.10.82 (head-tracking service deadlock fix); requires runtime ≥ 2.45.3 — the Leia conversion provider now runs in the runtime's satellite host on every supported runtime.",
-      "**MCP Tools 0.5.5**: maintenance (vcpkg pthreads overlay fetched from GitHub)."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.16.2",
@@ -452,20 +470,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-demo-mediaplayer@v1.14.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.14.0",
-    "title": "v1.14.0",
-    "date": "2026-10-12",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.14.0",
-    "prerelease": false,
-    "featureLines": [
-      "**3D depth cursor over stereo content.** While playing SBS or dual-track stereo video or photos, the media player now opts into the runtime's measured-disparity depth cursor (`XR_DXR_cursor_depth` v7): the runtime measures the disparity …",
-      "Runtime-measured depth cursor on stereo media (`XR_DXR_cursor_depth` v7). Requests are chained only while stereo media is showing and the pointer is over the canvas (not the transport UI); mono media and the idle logo cost nothing. `MEDI…"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-demo-modelviewer@v0.35.3",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.35.3",
@@ -580,7 +584,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — android-bundle-2026-10-15b",
+    "title": "Android tablet bundle (latest) — android-bundle-2026-10-17",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
