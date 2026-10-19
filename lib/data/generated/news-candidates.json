@@ -1,14 +1,45 @@
 [
   {
-    "id": "displayxr-runtime@v2.47.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.47.1",
-    "title": "v2.47.1",
+    "id": "displayxr-installer@v2.9.9",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.9",
+    "title": "DisplayXR v2.9.9",
     "date": "2026-10-19",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.47.1",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.9",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.16.5",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.16.5",
+    "title": "v2.16.5",
+    "date": "2026-10-19",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.16.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.47.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.47.1",
+    "title": "DisplayXR Runtime v2.47.1",
+    "date": "2026-10-19",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.47.1",
+    "prerelease": false,
+    "featureLines": [
+      "Fixes inverted 3D in the Linux browser (`XR_DXR_weave`) on 3D panels at fractional GNOME scaling: the weave engine now feeds the display processor a panel-relative device-pixel phase origin (#2226, panel-validated on a Samsung Odyssey G9…",
+      "feat(view_rig): rig-scoped hand joint locate — XR_DXR_view_rig spec 4 (#2189)",
+      "feat(conv): the model store downloads over http(s) on POSIX (#2195)",
+      "feat(conv): both conversion hosts answer get_path (#2194)",
+      "feat(weave): lifted weave rects on the macOS Metal weave backend",
+      "feat(conv): vk_conv_weave host clients -- a plan per lifted rect for an engine on another graphics API",
+      "feat(weave): lifted weave rects on the macOS Vulkan weave backend; Metal refuses them for now",
+      "feat(weave): lifted weave rects on the desktop-Linux weave engine (XR_DXR_lift 6)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.36.0",
@@ -348,31 +379,6 @@
     "prerelease": false,
     "featureLines": [
       "**Linux: the demo now appears in the DisplayXR Shell launcher (Ctrl+L).** The `.deb` installs a registered shell manifest at `/usr/share/displayxr/apps/`, so the demo shows up in the launcher right after install, with no manual registrat…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.9.7",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.7",
-    "title": "DisplayXR v2.9.7",
-    "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.7",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.16.1",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.16.1",
-    "title": "v2.16.1",
-    "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.16.1",
-    "prerelease": false,
-    "featureLines": [
-      "The installer now allowlists the two DLLs the runtime loads (DisplayXR-LeiaSR.dll, DisplayXR-LeiaConversion.dll) for the runtime's provenance gate (ADR-054 N4b), so the plug-in loads on runtime v2.45.0 whether or not the build is signed.…",
-      "installer: allowlist the shipped DLLs for the runtime's provenance gate (ADR-054 N4b) (#394)"
     ],
     "looksMechanical": false
   },
