@@ -85,6 +85,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.49.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.49.0",
+    "title": "v2.49.0",
+    "date": "2026-10-20",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.49.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity@v2.28.0",
     "repo": "displayxr-unity",
     "tag": "v2.28.0",
@@ -338,26 +349,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.46.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.46.1",
-    "title": "DisplayXR Runtime v2.46.1",
-    "date": "2026-10-16",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.46.1",
-    "prerelease": false,
-    "featureLines": [
-      "**Fixes a macOS deadlock that hung every Unity app at XR start (#2173).** Against runtime v2.32.0–v2.46.0, the ADR-050 window-placement code did a `dispatch_sync` to the main thread from Unity's graphics thread while the main thread was …",
-      "Also in this release: the target-time eye query (ADR-054 N6 Part 1, #2144). DPs and compositors can now answer eye positions at the frame's display time, and a DP without `get_eye_positions_at` keeps today's behaviour. There is a new `Em…",
-      "feat(ipc): the service answers eyes at the client's display time (ADR-054 N6 Part 1, #2144)",
-      "feat(comp): in-process compositors answer eyes at a target time; xrLocateViews asks for displayTime (#2144)",
-      "feat(dp): `get_eye_positions_at` — the target-time eye query on every DP vtable + sim_display (#2144)",
-      "feat(util): u_eye_history — the trunk's eye-pair ring sampled at a target time (#2144)",
-      "feat(cli): enabled_source + built_in on conv list, policy.policy_lock on dp|input list (ADR-054 N3e review)",
-      "feat(cli): `input emulated on|off [--machine]`; `input list` / `selftest --json` carry the gate + device list (ADR-054 N7, #2143)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-shell-releases@v2.4.2",
