@@ -29,6 +29,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-mediaplayer@v1.14.3",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.14.3",
+    "title": "v1.14.3",
+    "date": "2026-10-20",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.14.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.9.12",
     "repo": "displayxr-installer",
     "tag": "v2.9.12",
@@ -269,17 +280,6 @@
     "title": "v0.1.1",
     "date": "2026-10-16",
     "url": "https://github.com/DisplayXR/displayxr-conversion-open/releases/tag/v0.1.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@pro-v0.1.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.1.0",
-    "title": "Media Player Pro 0.1.0",
-    "date": "2026-10-16",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.1.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
