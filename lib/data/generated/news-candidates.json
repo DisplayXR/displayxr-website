@@ -11,6 +11,35 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-mediaplayer@pro-v0.3.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.3.0",
+    "title": "Media Player Pro 0.3.0",
+    "date": "2026-10-20",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.3.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Framing overlays and burn-ins.** Frame lines (2.39, 1.85, 16:9, 9:16, 4:3, 1:1; `Q` cycles them) with a matte, 93/90 % safe areas, a centre cross, anamorphic desqueeze from 1.3 to 2.0x, and burn-ins for timecode, frame number, clip and…",
+      "**Monitoring tools.** A scopes panel (waveform, vectorscope, histogram, RGB parade) measured after the grade, a pixel probe, false colour and zebras. Scopes are computed off the render thread, so they cost almost nothing at 8K.",
+      "**Wipe and channel isolation.** A split-screen wipe (`8`) compares before and after the grade, or the left eye with the right eye, so a mismatched rig jumps at the line. Channel isolation (`9`) shows R, G, B, alpha or luma alone, and the…",
+      "**User guide.** `docs/PRO-USER-GUIDE.md` is the first end-user guide for Media Player Pro.",
+      "Framing overlays, burn-ins, scopes, pixel probe, false colour and zebras (#120)",
+      "Wipe (before|after grade, left|right eye), channel isolation, gamma trim, user guide; `set_view` takes channel / gamma / wipe / wipe_pos (#122)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-installer@v2.9.12",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.12",
+    "title": "DisplayXR v2.9.12",
+    "date": "2026-10-20",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.12",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-mcp@v0.5.6",
     "repo": "displayxr-mcp",
     "tag": "v0.5.6",
@@ -29,12 +58,20 @@
     "id": "displayxr-runtime@v2.48.0",
     "repo": "displayxr-runtime",
     "tag": "v2.48.0",
-    "title": "v2.48.0",
+    "title": "DisplayXR Runtime v2.48.0",
     "date": "2026-10-20",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.48.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Multi-screen fixes (#2218 series).** A window off the primary screen now composes and splits correctly: zero-copy no longer skips the per-screen weave (#2223), with the Vulkan twin of that gate (#2228); D3D12 segments now work under th…",
+      "feat(conv): POSIX GPU client transport in the service — IOSurface / OPAQUE_FD / dma-buf in, IOSurface / OPAQUE_FD out",
+      "feat(oxr): in-process Vulkan sessions hand in and take out the platform GPU kind (POSIX)",
+      "feat(conv): lifted weave rects snapshot GPU → GPU when the stream's binding takes a GPU kind",
+      "feat(conv): macOS S5 results hand over on an MTLSharedEvent; the Metal weave backend GPU-waits instead of the host",
+      "feat(test_apps): `cube_handle_vk_macos --lift-gpu`, the zero-copy arm of the lift probe",
+      "feat(test_apps): `cube_handle_vk_linux --lift-gpu` — OPAQUE_FD / dma-buf in, OPAQUE_FD out"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@pro-v0.2.0",
@@ -394,19 +431,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-demo-mediaplayer@v1.14.1",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.14.1",
-    "title": "v1.14.1",
-    "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.14.1",
-    "prerelease": false,
-    "featureLines": [
-      "**Linux: the demo now appears in the DisplayXR Shell launcher (Ctrl+L).** The `.deb` installs a registered shell manifest at `/usr/share/displayxr/apps/`, so the demo shows up in the launcher right after install, with no manual registrat…"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-demo-modelviewer@v0.35.4",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.35.4",
@@ -585,17 +609,6 @@
       "**linux:** waits on the workspace wakeup eventfd instead of a fixed 16 ms poll; the service-forwarded workspace hotkey dismisses the shell."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@android-bundle-latest",
-    "repo": "displayxr-installer",
-    "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — android-bundle-2026-10-17",
-    "date": "2026-10-07",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
-    "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-reference-scenes@v0.2.0",
