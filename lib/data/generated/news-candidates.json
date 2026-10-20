@@ -18,6 +18,21 @@
     "date": "2026-10-20",
     "url": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.5.6",
     "prerelease": false,
+    "featureLines": [
+      "**Claude Code and other MCP clients can now connect to the DisplayXR MCP adapter over stdio.** The adapter now speaks newline-delimited JSON, which is MCP's stdio transport; previously Claude Code timed out while connecting. Clients that…",
+      "**Tool errors reach the agent as tool errors.** When a tool handler returns an object with a top-level `\"isError\": true`, `tools/call` now also sets `result.isError = true`, so the client sees a real MCP tool error rather than a successf…",
+      "`tools/call`: a handler result flagged `\"isError\": true` is answered as `result.isError` (#27)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.48.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.48.0",
+    "title": "v2.48.0",
+    "date": "2026-10-20",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.48.0",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -270,22 +285,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.46.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.46.0",
-    "title": "DisplayXR Runtime v2.46.0",
-    "date": "2026-10-16",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.46.0",
-    "prerelease": false,
-    "featureLines": [
-      "The Wayland window-geometry GNOME extension moves to **v16** with read-only pointer and hit-test queries for assistant/agent apps: `GetPointer()` and `GetWindowAt(x, y)` report where the pointer is and what is under it (window, desktop, …",
-      "feat(gnome-extension): read-only pointer and window-at-point (`GetPointer`, `GetWindowAt`), v16 (#2162, #2163)",
-      "feat(gnome-extension): `maximized` and `fullscreen` in window entries, v16 (#2162)",
-      "feat(gnome-extension): `GetAllWindows` with dialogs and utility windows, v16 (#2162)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.46.1",
