@@ -74,6 +74,22 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-unity@v2.28.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.28.0",
+    "title": "DisplayXR v2.28.0",
+    "date": "2026-10-20",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.28.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Name the app's window for portal dialogs (Linux, #384).** New export `displayxr_linux_window_handle` with a C# binding `DisplayXRNative.LinuxWindowHandle()` (Linux player builds only). It returns the app's window in the form an xdg-des…",
+      "On native Wayland the support library exports the player's window with xdg-foreign (`zxdg_exporter_v2`, vendored from wayland-protocols 1.47). It does this itself, right after it sees the window shown again (the weave enters an output, o…",
+      "The handle is `\"\"` when there is none: on Wayland from the moment the compositor drops the export (the window was hidden) until the window is shown again, and on X11 before a session has bound the window.",
+      "The Wayland library and the main plug-in must match again (`DXR_WL_LIB_ABI` 6 -> 7). They always ship together."
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-demo-mediaplayer@pro-v0.2.0",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "pro-v0.2.0",
@@ -453,19 +469,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unity@v2.26.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.26.0",
-    "title": "DisplayXR v2.26.0",
-    "date": "2026-10-14",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.26.0",
-    "prerelease": false,
-    "featureLines": [
-      "Depth-aware cursor (`XR_DXR_cursor_depth`, DisplayXR/displayxr-runtime ADR-046): opt in with `DisplayXRCursorDepth.Enabled = true` or a **DisplayXR Depth Cursor** component. Over content that pops out of the display, the runtime draws th…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.7.2",
