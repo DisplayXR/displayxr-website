@@ -30,12 +30,21 @@
     "id": "displayxr-runtime@v2.51.0",
     "repo": "displayxr-runtime",
     "tag": "v2.51.0",
-    "title": "v2.51.0",
+    "title": "DisplayXR Runtime v2.51.0",
     "date": "2026-10-21",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.51.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**`XR_DXR_desktop_control` spec version 3** (ADR-056 Amendment 3, accepted): an agent can now hold keys and mouse buttons across actions (`KEY_DOWN` / `KEY_UP`, `BUTTON_DOWN` / `BUTTON_UP`), wrap a pointer action in modifiers (Ctrl+click…",
+      "**On GNOME the desktop-control grant survives a restart of the app** (ADR-056 Amendment 2, accepted): the runtime keeps the portal's restore token for the same app in a private file, so the consent dialog is not shown on every launch. Th…",
+      "**GNOME extension v18 — window titles only for an authorised caller.** Other apps' window titles (document names, mail subjects, chat partners) are no longer served to every D-Bus client: a reply carries `title` only to a connection that…",
+      "desktop: spec v3 — held keys and buttons, modifiers around a pointer action (#2271)",
+      "desktop: the shell target — input where no app window is, on explicit request (#2271)",
+      "desktop: clipboard text — `SET` / `GET_CLIPBOARD_TEXT` under CONTROL, ordered with typing (#2271)",
+      "desktop/gnome: keep the portal grant across launches of the same app; the kill switch ends running grants on all OSes (#2269)",
+      "gnome-extension v18: window titles only for an authorised caller; the runtime asks only while granted (#2272, displayxr-unity#389)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.29.0",
@@ -53,6 +62,26 @@
       "On a Linux player the consent dialog is parented to the app's window: the request passes `DisplayXRNative.LinuxWindowHandle()` (`wayland:<handle>` / `x11:<hex>`, read right before each request, verbatim) as the parent window. `Request(re…",
       "Against a runtime that only advertises spec v1, nothing changes: CONTROL is requested exactly as before (no chained structures), `CaptureState` is `Unsupported`, and captures complete with `Unsupported`.",
       "Native: `dxr_prov_desktop_request_scopes`, `_capture_available`, `_get_capture_state`, `_capture`, `_capture_image`; `DxrDesktopEvent` grew to 312 bytes (capture fields appended). `displayxr_extensions.h` mirrors the runtime header at sp…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.30.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.30.0",
+    "title": "DisplayXR v2.30.0",
+    "date": "2026-10-21",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.30.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Blocking screen capture that works from any thread, the main thread included.** `DisplayXRDesktop.CaptureBlocking(RectInt desktopRect, int maxWidth, int maxHeight, int timeoutMs = 5000)`, `CaptureDesktopBlocking(maxWidth, maxHeight, ti…",
+      "`maxWidth` / `maxHeight` have no default: on the main thread the frame stalls for the whole capture plus the copy, so pass what the consumer needs (an agent: at most 1920 x 1080).",
+      "The runtime's limits are unchanged. A second capture while one is in flight, async or blocking, from any thread, fails at once with `XR_ERROR_LIMIT_REACHED`, and captures still start at least 250 ms apart. A session that ends during the …",
+      "**On Unity's main thread the wait is capped at 10 s** (`MaxMainThreadCaptureTimeoutMs`), so a frame cannot freeze for up to a minute: a larger or negative `timeoutMs` there is lowered to 10 s silently (the TimedOut message says \"the main…",
+      "**macOS: never block the main thread on a worker that is in a blocking capture** (`Thread.Join`, `Task.Wait`, `.Result`). Only the main thread may poll the runtime there, so a worker's capture completes through the main thread's per-fram…",
+      "The async API (`CaptureAsync` and siblings) is unchanged.",
+      "Native: `dxr_prov_desktop_capture_waitable`, `dxr_prov_desktop_capture_wait`, `dxr_prov_desktop_capture_abandon`. Unit tests cover the waiter across threads, the waiter's own poll, a completion that arrives before the start returns, time…",
+      "**Read-only desktop info for an app's agent on Linux (GNOME).** New `DisplayXRNative.LinuxMonitors(out LinuxMonitor[])`, `LinuxWindows(out LinuxWindowInfo[])`, `LinuxWindowAt(Vector2Int, out LinuxWindowInfo)`, `LinuxPointer(out Vector2In…"
     ],
     "looksMechanical": false
   },
@@ -383,23 +412,6 @@
       "**macOS: installed DisplayXR apps now appear in the shell launcher.** Apps installed from their `.pkg` into `/Applications` or `~/Applications` are discovered automatically and launched through the bundle's own executable, so the demos (…",
       "macOS launcher scans `/Applications` and `~/Applications` app bundles for `Contents/Resources/displayxr/*.displayxr.json` manifests and launches them via the bundle's `CFBundleExecutable` (falling back to `Contents/MacOS/<name>`); regist…",
       "Auto-published from displayxr-shell-pvt @ 2ee433e6ec661baa368818e930bc80ecbd2d41c9."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.26.2",
-    "repo": "displayxr-unity",
-    "tag": "v2.26.2",
-    "title": "DisplayXR v2.26.2",
-    "date": "2026-10-16",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.26.2",
-    "prerelease": false,
-    "featureLines": [
-      "Native-Wayland player: the app can keep its own window above other windows, bring it to the front with focus, and minimize and restore it, through the DisplayXR GNOME extension (version 15+). These are what an app does to its own window …",
-      "New Linux-player exports, with C# P/Invokes in `DisplayXRNative` (Linux player builds only, like the other `displayxr_linux_*` imports): `displayxr_linux_window_state_caps()` (bit 1 keep above, 2 activate, 4 minimize, available now), `di…",
-      "All asynchronous; the result is logged (`[DisplayXR-WL] window keep above on: done|refused`). Activate and minimize are actions: sent now or not at all. Keep-above is window state: remembered (also before the first session, and still app…",
-      "In X11 mode the exports do nothing (`window_state_caps` 0, `window_state` -1): the app's own EWMH calls work there. Windows and macOS are unchanged. `DisplayXRTransparentOverlay.alwaysOnTop` is still Windows-only; it does not turn keep-a…",
-      "The Wayland library and the main plug-in must match again (`DXR_WL_LIB_ABI` 5 -> 6); they always ship together."
     ],
     "looksMechanical": false
   },
