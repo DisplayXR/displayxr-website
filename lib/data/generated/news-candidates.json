@@ -1,5 +1,35 @@
 [
   {
+    "id": "displayxr-installer@v2.9.13",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.13",
+    "title": "DisplayXR v2.9.13",
+    "date": "2026-10-21",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.13",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity@v2.29.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.29.0",
+    "title": "DisplayXR v2.29.0",
+    "date": "2026-10-21",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.29.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Screen capture for the app's agent (`XR_DXR_desktop_control` spec v2, runtime ADR-056 Amendment 1).** Capture is a second consent scope next to CONTROL; needs a runtime that advertises spec v2 (displayxr-runtime#2259 GNOME, #2260 macOS).",
+      "`DisplayXRDesktop.RequestAccess(DesktopControlScopes scopes, string reason = null, bool askAgain = false)` asks for CONTROL and/or CAPTURE in one prompt. `askAgain` re-shows the prompt for scopes already granted (GNOME: change which scre…",
+      "`DisplayXRDesktop.CaptureState` + `CaptureStateChanged`, `IsCaptureAvailable`, and `DesktopControlCapabilities.Capture`.",
+      "`CaptureAsync(RectInt desktopRect, maxWidth, maxHeight)`, `CaptureDesktopAsync(...)`, `CaptureWindowAsync(windowId, ...)` return a `Task<DesktopCaptureResult>`: status + message on failure; on success the RGBA8 pixels as delivered (sRGB,…",
+      "On a Linux player the consent dialog is parented to the app's window: the request passes `DisplayXRNative.LinuxWindowHandle()` (`wayland:<handle>` / `x11:<hex>`, read right before each request, verbatim) as the parent window. `Request(re…",
+      "Against a runtime that only advertises spec v1, nothing changes: CONTROL is requested exactly as before (no chained structures), `CaptureState` is `Unsupported`, and captures complete with `Unsupported`.",
+      "Native: `dxr_prov_desktop_request_scopes`, `_capture_available`, `_get_capture_state`, `_capture`, `_capture_image`; `DxrDesktopEvent` grew to 312 bytes (capture fields appended). `displayxr_extensions.h` mirrors the runtime header at sp…"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-browser@v1.8.0",
     "repo": "displayxr-browser",
     "tag": "v1.8.0",
@@ -25,6 +55,24 @@
       "**User guide.** `docs/PRO-USER-GUIDE.md` is the first end-user guide for Media Player Pro.",
       "Framing overlays, burn-ins, scopes, pixel probe, false colour and zebras (#120)",
       "Wipe (before|after grade, left|right eye), channel isolation, gamma trim, user guide; `set_view` takes channel / gamma / wipe / wipe_pos (#122)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@pro-v0.4.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.4.0",
+    "title": "Media Player Pro 0.4.0",
+    "date": "2026-10-20",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.4.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Clip A | B wipe.** A fourth wipe mode (`8`) puts the open clip (A) on one side of the line and a second clip (B) on the other, at the same moment. Use it to compare v1 against v2 of a shot, or a graded render against the plate. Load B …",
+      "**Edge (window) violations in the rig check.** The rig check now flags anything in front of the screen that the left or right frame edge cuts off. It shows a *Frame edges* line in the Inspector and a red bar along the affected edge when …",
+      "**Its own icon.** Media Player Pro now has its own icon (frame corners, a play triangle in front of the screen and colour bars behind it), so the 3D icon has real depth. The base player keeps its icon.",
+      "Clip A | B wipe with a synchronised second clip; `set_view` takes `wipe: \"clips\"` (#125)",
+      "Edge violations in the rig check: `edge_pct` in `set_depth_budget`, `edge_left_pct` / `edge_right_pct` in `get_rig_status` and the snapshot note; user guide's rig-check section rewritten (#126)",
+      "Media Player Pro icon for the exe, manifest, installer and macOS bundle (#127)"
     ],
     "looksMechanical": false
   },
@@ -173,17 +221,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-installer@v2.9.9",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.9",
-    "title": "DisplayXR v2.9.9",
-    "date": "2026-10-19",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.9",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-leia-plugin@v2.16.5",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.16.5",
@@ -310,17 +347,6 @@
     "title": "v0.1.1",
     "date": "2026-10-16",
     "url": "https://github.com/DisplayXR/displayxr-conversion-open/releases/tag/v0.1.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.14.2",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.14.2",
-    "title": "v1.14.2",
-    "date": "2026-10-16",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.14.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -457,17 +483,6 @@
       "**Linux: the demo now appears in the DisplayXR Shell launcher (Ctrl+L).** The `.deb` installs a registered shell manifest at `/usr/share/displayxr/apps/`, so the demo shows up in the launcher right after install, with no manual registrat…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.26.1",
-    "repo": "displayxr-unity",
-    "tag": "v2.26.1",
-    "title": "DisplayXR v2.26.1",
-    "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.26.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@v1.7.2",
