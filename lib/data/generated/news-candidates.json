@@ -14,9 +14,25 @@
     "id": "displayxr-runtime@v2.50.0",
     "repo": "displayxr-runtime",
     "tag": "v2.50.0",
-    "title": "v2.50.0",
+    "title": "DisplayXR Runtime v2.50.0",
     "date": "2026-10-21",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.50.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Screen capture for desktop control (XR_DXR_desktop_control spec v2, ADR-056 Amendment 1).** An app can now ask for a second consent scope, CAPTURE, next to CONTROL, and read stills of the desktop, a monitor or a window through `xrCaptu…",
+      "**GNOME / Wayland** (#2259): capture runs over ScreenCast in the same portal session as remote control, so control + capture is **one** consent dialog, and frames come straight from PipeWire. No Screenshot-portal call, so **no white flas…",
+      "**macOS** (#2260): ScreenCaptureKit stills (one-shot SCStream on 12.3–13), with Screen Recording as the CAPTURE scope; ask-again opens System Settings.",
+      "Windows capture is not implemented yet: CAPTURE reports unsupported there."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.51.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.51.0",
+    "title": "v2.51.0",
+    "date": "2026-10-21",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.51.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -255,26 +271,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.47.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.47.1",
-    "title": "DisplayXR Runtime v2.47.1",
-    "date": "2026-10-19",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.47.1",
-    "prerelease": false,
-    "featureLines": [
-      "Fixes inverted 3D in the Linux browser (`XR_DXR_weave`) on 3D panels at fractional GNOME scaling: the weave engine now feeds the display processor a panel-relative device-pixel phase origin (#2226, panel-validated on a Samsung Odyssey G9…",
-      "feat(view_rig): rig-scoped hand joint locate — XR_DXR_view_rig spec 4 (#2189)",
-      "feat(conv): the model store downloads over http(s) on POSIX (#2195)",
-      "feat(conv): both conversion hosts answer get_path (#2194)",
-      "feat(weave): lifted weave rects on the macOS Metal weave backend",
-      "feat(conv): vk_conv_weave host clients -- a plan per lifted rect for an engine on another graphics API",
-      "feat(weave): lifted weave rects on the macOS Vulkan weave backend; Metal refuses them for now",
-      "feat(weave): lifted weave rects on the desktop-Linux weave engine (XR_DXR_lift 6)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.36.0",
