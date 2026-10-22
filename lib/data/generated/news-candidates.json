@@ -35,6 +35,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.52.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.52.0",
+    "title": "v2.52.0",
+    "date": "2026-10-22",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.52.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity@v2.30.1",
     "repo": "displayxr-unity",
     "tag": "v2.30.1",
@@ -105,22 +116,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.50.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.50.0",
-    "title": "DisplayXR Runtime v2.50.0",
-    "date": "2026-10-21",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.50.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Screen capture for desktop control (XR_DXR_desktop_control spec v2, ADR-056 Amendment 1).** An app can now ask for a second consent scope, CAPTURE, next to CONTROL, and read stills of the desktop, a monitor or a window through `xrCaptu…",
-      "**GNOME / Wayland** (#2259): capture runs over ScreenCast in the same portal session as remote control, so control + capture is **one** consent dialog, and frames come straight from PipeWire. No Screenshot-portal call, so **no white flas…",
-      "**macOS** (#2260): ScreenCaptureKit stills (one-shot SCStream on 12.3–13), with Screen Recording as the CAPTURE scope; ask-again opens System Settings.",
-      "Windows capture is not implemented yet: CAPTURE reports unsupported there."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.51.0",
