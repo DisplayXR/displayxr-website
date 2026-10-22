@@ -49,7 +49,7 @@ const installers: Installer[] = [
     id: "leia_plugin",
     name: "Leia SR Plug-in",
     pitch:
-      "Display-processor plug-in for Leia hardware, the reference plug-in. The runtime discovers it at startup.",
+      "Display-processor plug-in for Leia hardware, the first vendor display processor. The runtime discovers it at startup.",
     requirement: "Optional",
     releasesUrl: `${REPO_URLS.leiaPlugin}/releases/latest`,
     icon: <Glasses size={20} />,
