@@ -51,73 +51,18 @@
     "id": "displayxr-runtime@v2.52.0",
     "repo": "displayxr-runtime",
     "tag": "v2.52.0",
-    "title": "v2.52.0",
+    "title": "DisplayXR Runtime v2.52.0",
     "date": "2026-10-22",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.52.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unity@v2.30.1",
-    "repo": "displayxr-unity",
-    "tag": "v2.30.1",
-    "title": "DisplayXR v2.30.1",
-    "date": "2026-10-22",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.30.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unity@v2.30.2",
-    "repo": "displayxr-unity",
-    "tag": "v2.30.2",
-    "title": "DisplayXR v2.30.2",
-    "date": "2026-10-22",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.30.2",
-    "prerelease": false,
     "featureLines": [
-      "**Files dragged onto the app's window, for a native-Wayland player (opt-in).** A Linux player running natively on Wayland can now receive files dragged onto its window from a file manager. Unity's own Wayland drag and drop is out of a pl…",
-      "`DisplayXRNative.displayxr_linux_file_drop_enable(1)` turns it on (`0` turns it off). It returns `1` when on now, `0` when remembered until the DisplayXR session binds the window (it may be called before the first session), and `-1` when…",
-      "Only local files are offered (`text/uri-list` entries with `file://` and an empty, `localhost` or this machine's host name; percent-decoded). A drag without a local file (text only, web links) is refused. A drop is accepted as COPY only,…",
-      "**What turning it on costs: Unity's clipboard reads.** GNOME keeps one data device per app, and the plug-in's replaces SDL's for the rest of the run, so Unity gets no new clipboard offers and `GUIUtility.systemCopyBuffer` cannot be relie…",
-      "X11 / XWayland players: unsupported (`-1`); XDND messages go to the window owner's X connection, which is Unity's. Windows, macOS and the editor: the imports are Linux-player only, like the other `displayxr_linux_*` imports.",
-      "**No behaviour change for apps that do not turn it on**: the Wayland library then only binds the data-device manager global.",
-      "Native: `displayxr_linux_file_drop_enable`, `displayxr_linux_file_drop_next` (`DxrWlDropEvent`, ten int32). `DXR_WL_LIB_ABI` 7 -> 8 (two `DxrWlApi` slots appended); both libraries' NEEDED lists are unchanged. The GNOME extension's window…"
+      "macOS transparency on weaving displays: a transparent app now shows the live desktop (and the windows under it) behind its 3D content, captured by a small ScreenCaptureKit helper the `.pkg` installs (one-time Screen Recording permission)…",
+      "feat(metal): live desktop background for transparent sessions on a weaving DP (#2264)",
+      "feat(installer/macos): ship the desktop-capture helper in the .pkg (#2264)",
+      "feat(metal): rear depth budget for transparent sessions (XR_DXR_depth_budget, #2264)",
+      "feat(lift): ADR-058 phase 1 groundwork — placement module, CPU late synthesis, 4 fps conformance test (#2284)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.31.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.31.0",
-    "title": "DisplayXR v2.31.0",
-    "date": "2026-10-22",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.31.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Linux: a clipboard through the plug-in, for a native-Wayland player with file drops on (#398).** `DisplayXRNative.LinuxClipboardText(out string text, int timeoutMs = 1000)`, `SetLinuxClipboardText(string text)` (`\"\"` empties the clipbo…",
-      "**Side-step for a native-Wayland Linux player (`DisplayXRSideStep`, `DisplayXRWindowSideStep`).** Opt in, and the app's own window steps aside when the window the user is working in covers the app's content, then goes back once its place…",
-      "**What the app learns: only its own window.** The plug-in reads the other windows' frames and the focus from the extension's read-only window list, decides, and moves only the app's own window, all in native code. The app sets `Enabled` …",
-      "**Only while desktop control is granted (#399).** Side-step decides from other windows' frames and focus, what `LinuxWindows` tells about other apps, so it sits behind the same consent gate (#389, runtime ADR-056): it runs only while `Di…",
-      "Rules: covered = the focused window of another app (a normal window, dialog or utility window; never the app's own windows, a minimized one or the desktop-icons window) covers at least `Trigger` (0.15) of the app's content for `Dwell` (0…",
-      "The app's content: `SetContentRect` (window device px, e.g. an avatar's 3D zone), else the transparent overlay's click-through silhouette (the mask the overlay already pushes), else the whole window. A window over the empty band above an…",
-      "Safety: home is only ever where the window stays put after the user, the app (`displayxr_set_overlay_position`) or the start-up placement moved it, never one of side-step's own moves. It holds still while desktop control is not granted, …",
-      "Native: `displayxr_linux_side_step_set`, `displayxr_linux_side_step_set_body_rect`, `displayxr_linux_side_step_status` (records in `native~/displayxr_linux_side_step.h`). The window list and the lock state come over the main plug-in's ow…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.31.1",
-    "repo": "displayxr-unity",
-    "tag": "v2.31.1",
-    "title": "DisplayXR v2.31.1",
-    "date": "2026-10-22",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.31.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.9.13",
@@ -188,12 +133,12 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-demo-earthview@v0.11.3",
-    "repo": "displayxr-demo-earthview",
-    "tag": "v0.11.3",
-    "title": "v0.11.3",
+    "id": "displayxr-demo-avatar@v0.14.4",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.14.4",
+    "title": "v0.14.4",
     "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.3",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.4",
     "prerelease": false,
     "featureLines": [
       "**Linux: the demo now appears in the DisplayXR Shell launcher (Ctrl+L).** The `.deb` installs a registered shell manifest at `/usr/share/displayxr/apps/`, so the demo shows up in the launcher right after install, with no manual registrat…"
@@ -201,19 +146,18 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-demo-earthview@v0.11.2",
-    "repo": "displayxr-demo-earthview",
-    "tag": "v0.11.2",
-    "title": "v0.11.2",
+    "id": "displayxr-demo-avatar@v0.14.3",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.14.3",
+    "title": "v0.14.3",
     "date": "2026-10-11",
-    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.2",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.3",
     "prerelease": false,
     "featureLines": [
-      "**Much smoother on Android.** The Vulkan tile renderer now submits once per frame with up to 3 frames in flight instead of draining the GPU queue after every eye — phone 30 → 59.6 fps, NP02J tablet 19.8 → 31.8 fps on runtime v2.35.0.",
-      "**Depth-aware cursor.** On a DisplayXR runtime with `XR_DXR_cursor_depth`, the pointer is drawn at the depth of the terrain/buildings under it when content pops out of the glass (macOS, Linux; Windows activates once the D3D compositors d…",
-      "Depth-aware cursor: per-tile BVH ray cast over the streamed 3D tiles feeds the runtime-drawn depth cursor (displayxr-common v2.29.0 `dxr::CursorDepth`) (#81)",
-      "Vulkan frame ring (`dxr::VkFrameRing`, displayxr-common v2.29.0): one submit per frame, 3 frames in flight; tile uploads record into the frame's command buffer and Vulkan objects retire through deferred destruction instead of `vkQueueWai…",
-      "Android: client AAR pinned to v2.34.0, which ships the `VK_LAYER_DXR_queue_lock` layer (60 Hz face refresh, displayxr-runtime#1905) (#79)"
+      "**Depth-aware cursor** (live on macOS; wired on Windows/Linux, active once the runtime draws in display-zones frames): the runtime draws the pointer just in front of the tiger where it pops out of the glass, using `XR_DXR_cursor_depth` w…",
+      "**Smoother Vulkan frame pacing on every platform.** The renderer now submits once per frame with 3 frames in flight (`dxr::VkFrameRing` from displayxr-common). On the NP02J tablet it goes from 29.5 to 31.9 fps; the phone is capped by vsy…",
+      "Depth-aware cursor (`XR_DXR_cursor_depth` v6, displayxr-common v2.29.0 `dxr::CursorDepth`): a BVH ray cast per rigid cluster that follows node and skin animation. It is wired on Windows/Linux through the zone-scoped rig locate, and stays…",
+      "Android: client AAR pinned to v2.34.0, which ships the `VK_LAYER_DXR_queue_lock` layer (60 Hz face refresh, displayxr-runtime#1905). (#115)"
     ],
     "looksMechanical": false
   },
@@ -231,28 +175,34 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-demo-earthview@v0.11.0",
-    "repo": "displayxr-demo-earthview",
-    "tag": "v0.11.0",
-    "title": "v0.11.0",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.0",
+    "id": "displayxr-unity-samples@v2.3.0",
+    "repo": "displayxr-unity-samples",
+    "tag": "v2.3.0",
+    "title": "DisplayXR Unity Samples v2.3.0",
+    "date": "2026-10-03",
+    "url": "https://github.com/DisplayXR/displayxr-unity-samples/releases/tag/v2.3.0",
     "prerelease": false,
-    "featureLines": [
-      "**Linux: Google Map Tiles API-key dialog.** The first launch without a key, or **Ctrl+K** at any time, opens a dialog (zenity, with kdialog as a fallback) with the same flow as Windows and macOS: **Save & Start**, **Get a Key…** and **Re…",
-      "Linux API-key dialog for first run and Ctrl+K (#77)",
-      "The key is stored per user in `$XDG_CONFIG_HOME/displayxr/earthview.ini` (mode 0600). `GOOGLE_MAPS_API_KEY` still overrides it.",
-      "The `.deb` now Recommends `zenity`, and the package build refuses to bundle a key."
-    ],
-    "looksMechanical": false
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
-    "id": "displayxr-demo-earthview@v0.11.1",
-    "repo": "displayxr-demo-earthview",
-    "tag": "v0.11.1",
-    "title": "v0.11.1",
+    "id": "displayxr-demo-avatar@v0.14.2",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.14.2",
+    "title": "v0.14.2",
     "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.1",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-avatar@v0.14.1",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.14.1",
+    "title": "v0.14.1",
+    "date": "2026-09-29",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -264,6 +214,17 @@
     "title": "Model blobs (content-addressed, permanent)",
     "date": "2026-09-25",
     "url": "https://github.com/DisplayXR/displayxr-models/releases/tag/blobs",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity-samples@v2.2.0",
+    "repo": "displayxr-unity-samples",
+    "tag": "v2.2.0",
+    "title": "DisplayXR Unity Samples v2.2.0",
+    "date": "2026-09-14",
+    "url": "https://github.com/DisplayXR/displayxr-unity-samples/releases/tag/v2.2.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -300,6 +261,37 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity-samples@v2.1.1",
+    "repo": "displayxr-unity-samples",
+    "tag": "v2.1.1",
+    "title": "DisplayXR Unity Samples v2.1.1",
+    "date": "2026-08-02",
+    "url": "https://github.com/DisplayXR/displayxr-unity-samples/releases/tag/v2.1.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity-samples@v2.1.0",
+    "repo": "displayxr-unity-samples",
+    "tag": "v2.1.0",
+    "title": "DisplayXR Unity Samples v2.1.0",
+    "date": "2026-08-01",
+    "url": "https://github.com/DisplayXR/displayxr-unity-samples/releases/tag/v2.1.0",
+    "prerelease": false,
+    "featureLines": [
+      "**desktop-avatar: `TigerFaceViewer`** (#9) — a head-tracked billboard that turns to",
+      "face the viewer, plus an A/B probe for comparing tracked vs. static framing. Built on",
+      "the plugin's `DisplayXRProvider.TryGetViewerHead` / `TryGetViewerEyes` API",
+      "(displayxr-unity#236), which is the supported way to read the tracked viewer position;",
+      "the earlier `Camera.GetStereoViewMatrix` approach returned the same mono matrix for",
+      "both eyes under the display provider and silently never tracked.",
+      "**desktop-avatar: opt-in 3D-zone edge feather** (#10) — requests a soft composite edge",
+      "on the avatar's 3D zone via the plugin's new `SetZoneFeather` API"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-common@v1.0.0",
