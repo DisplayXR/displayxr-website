@@ -65,6 +65,26 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-unity@v2.31.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.31.0",
+    "title": "DisplayXR v2.31.0",
+    "date": "2026-10-22",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.31.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Linux: a clipboard through the plug-in, for a native-Wayland player with file drops on (#398).** `DisplayXRNative.LinuxClipboardText(out string text, int timeoutMs = 1000)`, `SetLinuxClipboardText(string text)` (`\"\"` empties the clipbo…",
+      "**Side-step for a native-Wayland Linux player (`DisplayXRSideStep`, `DisplayXRWindowSideStep`).** Opt in, and the app's own window steps aside when the window the user is working in covers the app's content, then goes back once its place…",
+      "**What the app learns: only its own window.** The plug-in reads the other windows' frames and the focus from the extension's read-only window list, decides, and moves only the app's own window, all in native code. The app sets `Enabled` …",
+      "**Only while desktop control is granted (#399).** Side-step decides from other windows' frames and focus, what `LinuxWindows` tells about other apps, so it sits behind the same consent gate (#389, runtime ADR-056): it runs only while `Di…",
+      "Rules: covered = the focused window of another app (a normal window, dialog or utility window; never the app's own windows, a minimized one or the desktop-icons window) covers at least `Trigger` (0.15) of the app's content for `Dwell` (0…",
+      "The app's content: `SetContentRect` (window device px, e.g. an avatar's 3D zone), else the transparent overlay's click-through silhouette (the mask the overlay already pushes), else the whole window. A window over the empty band above an…",
+      "Safety: home is only ever where the window stays put after the user, the app (`displayxr_set_overlay_position`) or the start-up placement moved it, never one of side-step's own moves. It holds still while desktop control is not granted, …",
+      "Native: `displayxr_linux_side_step_set`, `displayxr_linux_side_step_set_body_rect`, `displayxr_linux_side_step_status` (records in `native~/displayxr_linux_side_step.h`). The window list and the lock state come over the main plug-in's ow…"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-installer@v2.9.13",
     "repo": "displayxr-installer",
     "tag": "v2.9.13",
@@ -108,25 +128,6 @@
       "desktop: clipboard text — `SET` / `GET_CLIPBOARD_TEXT` under CONTROL, ordered with typing (#2271)",
       "desktop/gnome: keep the portal grant across launches of the same app; the kill switch ends running grants on all OSes (#2269)",
       "gnome-extension v18: window titles only for an authorised caller; the runtime asks only while granted (#2272, displayxr-unity#389)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.29.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.29.0",
-    "title": "DisplayXR v2.29.0",
-    "date": "2026-10-21",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.29.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Screen capture for the app's agent (`XR_DXR_desktop_control` spec v2, runtime ADR-056 Amendment 1).** Capture is a second consent scope next to CONTROL; needs a runtime that advertises spec v2 (displayxr-runtime#2259 GNOME, #2260 macOS).",
-      "`DisplayXRDesktop.RequestAccess(DesktopControlScopes scopes, string reason = null, bool askAgain = false)` asks for CONTROL and/or CAPTURE in one prompt. `askAgain` re-shows the prompt for scopes already granted (GNOME: change which scre…",
-      "`DisplayXRDesktop.CaptureState` + `CaptureStateChanged`, `IsCaptureAvailable`, and `DesktopControlCapabilities.Capture`.",
-      "`CaptureAsync(RectInt desktopRect, maxWidth, maxHeight)`, `CaptureDesktopAsync(...)`, `CaptureWindowAsync(windowId, ...)` return a `Task<DesktopCaptureResult>`: status + message on failure; on success the RGBA8 pixels as delivered (sRGB,…",
-      "On a Linux player the consent dialog is parented to the app's window: the request passes `DisplayXRNative.LinuxWindowHandle()` (`wayland:<handle>` / `x11:<hex>`, read right before each request, verbatim) as the parent window. `Request(re…",
-      "Against a runtime that only advertises spec v1, nothing changes: CONTROL is requested exactly as before (no chained structures), `CaptureState` is `Unsupported`, and captures complete with `Unsupported`.",
-      "Native: `dxr_prov_desktop_request_scopes`, `_capture_available`, `_get_capture_state`, `_capture`, `_capture_image`; `DxrDesktopEvent` grew to 312 bytes (capture fields appended). `displayxr_extensions.h` mirrors the runtime header at sp…"
     ],
     "looksMechanical": false
   },
