@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-runtime@v2.51.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.51.1",
+    "title": "v2.51.1",
+    "date": "2026-10-22",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.51.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity@v2.30.1",
+    "repo": "displayxr-unity",
+    "tag": "v2.30.1",
+    "title": "DisplayXR v2.30.1",
+    "date": "2026-10-22",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.30.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.9.13",
     "repo": "displayxr-installer",
     "tag": "v2.9.13",
@@ -181,25 +203,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.48.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.48.0",
-    "title": "DisplayXR Runtime v2.48.0",
-    "date": "2026-10-20",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.48.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Multi-screen fixes (#2218 series).** A window off the primary screen now composes and splits correctly: zero-copy no longer skips the per-screen weave (#2223), with the Vulkan twin of that gate (#2228); D3D12 segments now work under th…",
-      "feat(conv): POSIX GPU client transport in the service — IOSurface / OPAQUE_FD / dma-buf in, IOSurface / OPAQUE_FD out",
-      "feat(oxr): in-process Vulkan sessions hand in and take out the platform GPU kind (POSIX)",
-      "feat(conv): lifted weave rects snapshot GPU → GPU when the stream's binding takes a GPU kind",
-      "feat(conv): macOS S5 results hand over on an MTLSharedEvent; the Metal weave backend GPU-waits instead of the host",
-      "feat(test_apps): `cube_handle_vk_macos --lift-gpu`, the zero-copy arm of the lift probe",
-      "feat(test_apps): `cube_handle_vk_linux --lift-gpu` — OPAQUE_FD / dma-buf in, OPAQUE_FD out"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.49.0",
     "repo": "displayxr-runtime",
     "tag": "v2.49.0",
@@ -315,26 +318,6 @@
       "**Orbit is now a turntable.** Orbiting turns the model in place while the camera/display rig stays fixed, and the environment around it (sky, image-based lighting, the Sky/Studio/Room lights) stays put. In Scene-lighting mode the asset's…",
       "`XR_EXT_hand_tracking` consumer: translucent hand mesh drawn in every view, pinch-gesture math with a runtime-free self-check, one- and two-hand pinch gestures driving rotate / zoom / roll, and orbit reworked into a model turntable with …",
       "Ghost Hand look (depth prime, glass body, hairline outline) plus a hand-separation guard (#177)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.27.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.27.0",
-    "title": "DisplayXR v2.27.0",
-    "date": "2026-10-17",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.27.0",
-    "prerelease": false,
-    "featureLines": [
-      "**App-registered MCP tools for AI agents (`XR_DXR_mcp_tools`).** New `DisplayXRMcp` API: an app registers its own verbs (`RegisterTool(name, description, inputSchemaJson, handler)`, sync or async) and any MCP client — Claude, a voice ass…",
-      "Handlers run on Unity's main thread (drained every `LateUpdate` by the provider driver); throw to fail a call. The runtime fails a call after 5 s, so long work should start and return.",
-      "The app id and tools are stored natively and re-applied on every session (re)start; they may be registered before the session exists.",
-      "All strings cross the native boundary as UTF-8 bytes, so non-ASCII descriptions, arguments and results (e.g. Chinese) survive on Windows, where default `DllImport` marshalling uses the ANSI code page.",
-      "Inert — `DisplayXRMcp.IsAvailable` false, registration stored but not applied — on a runtime without the extension or a machine with the MCP capability off (Windows: the DisplayXR MCP Tools installer; Linux: `~/.config/displayxr/capabili…",
-      "Native: `displayxr_provider_mcp.{h,cpp}` (`dxr_prov_mcp_*` exports) + `native~/tests/mcp_tools_test.cpp`, run in CI against a fake runtime.",
-      "**Desktop control for the app's AI agent (`XR_DXR_desktop_control`, runtime ADR-056).** New `DisplayXRDesktop` API: list windows (`ListWindows`), find what is under the pointer or a point (`TryGetPointer`, `TryPick`), read UI text (`GetT…",
-      "The consent belongs to the app: `Request(reason)` triggers the OS's own prompt for this app (macOS Accessibility, the GNOME RemoteDesktop portal, a DisplayXR dialog on Windows); `State` / `StateChanged` follow it. The runtime's safety la…"
     ],
     "looksMechanical": false
   },
