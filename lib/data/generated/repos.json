@@ -214,6 +214,13 @@
     "archived": false
   },
   {
+    "name": "displayxr-tracking-open",
+    "description": "Open camera viewer + hand tracking provider for the DisplayXR runtime (ONNX, MediaPipe models)",
+    "url": "https://github.com/DisplayXR/displayxr-tracking-open",
+    "topics": [],
+    "archived": false
+  },
+  {
     "name": "displayxr-unity",
     "description": "Unity plugin for eye-tracked 3D light field displays via OpenXR",
     "url": "https://github.com/DisplayXR/displayxr-unity",
