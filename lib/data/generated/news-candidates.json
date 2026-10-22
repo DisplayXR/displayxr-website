@@ -85,6 +85,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-unity@v2.31.1",
+    "repo": "displayxr-unity",
+    "tag": "v2.31.1",
+    "title": "DisplayXR v2.31.1",
+    "date": "2026-10-22",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.31.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.9.13",
     "repo": "displayxr-installer",
     "tag": "v2.9.13",
@@ -128,26 +139,6 @@
       "desktop: clipboard text — `SET` / `GET_CLIPBOARD_TEXT` under CONTROL, ordered with typing (#2271)",
       "desktop/gnome: keep the portal grant across launches of the same app; the kill switch ends running grants on all OSes (#2269)",
       "gnome-extension v18: window titles only for an authorised caller; the runtime asks only while granted (#2272, displayxr-unity#389)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.30.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.30.0",
-    "title": "DisplayXR v2.30.0",
-    "date": "2026-10-21",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.30.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Blocking screen capture that works from any thread, the main thread included.** `DisplayXRDesktop.CaptureBlocking(RectInt desktopRect, int maxWidth, int maxHeight, int timeoutMs = 5000)`, `CaptureDesktopBlocking(maxWidth, maxHeight, ti…",
-      "`maxWidth` / `maxHeight` have no default: on the main thread the frame stalls for the whole capture plus the copy, so pass what the consumer needs (an agent: at most 1920 x 1080).",
-      "The runtime's limits are unchanged. A second capture while one is in flight, async or blocking, from any thread, fails at once with `XR_ERROR_LIMIT_REACHED`, and captures still start at least 250 ms apart. A session that ends during the …",
-      "**On Unity's main thread the wait is capped at 10 s** (`MaxMainThreadCaptureTimeoutMs`), so a frame cannot freeze for up to a minute: a larger or negative `timeoutMs` there is lowered to 10 s silently (the TimedOut message says \"the main…",
-      "**macOS: never block the main thread on a worker that is in a blocking capture** (`Thread.Join`, `Task.Wait`, `.Result`). Only the main thread may poll the runtime there, so a worker's capture completes through the main thread's per-fram…",
-      "The async API (`CaptureAsync` and siblings) is unchanged.",
-      "Native: `dxr_prov_desktop_capture_waitable`, `dxr_prov_desktop_capture_wait`, `dxr_prov_desktop_capture_abandon`. Unit tests cover the waiter across threads, the waiter's own poll, a completion that arrives before the start returns, time…",
-      "**Read-only desktop info for an app's agent on Linux (GNOME).** New `DisplayXRNative.LinuxMonitors(out LinuxMonitor[])`, `LinuxWindows(out LinuxWindowInfo[])`, `LinuxWindowAt(Vector2Int, out LinuxWindowInfo)`, `LinuxPointer(out Vector2In…"
     ],
     "looksMechanical": false
   },
