@@ -24,6 +24,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.51.2",
+    "repo": "displayxr-runtime",
+    "tag": "v2.51.2",
+    "title": "v2.51.2",
+    "date": "2026-10-22",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.51.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity@v2.30.1",
     "repo": "displayxr-unity",
     "tag": "v2.30.1",
@@ -231,25 +242,6 @@
       "**Claude Code and other MCP clients can now connect to the DisplayXR MCP adapter over stdio.** The adapter now speaks newline-delimited JSON, which is MCP's stdio transport; previously Claude Code timed out while connecting. Clients that…",
       "**Tool errors reach the agent as tool errors.** When a tool handler returns an object with a top-level `\"isError\": true`, `tools/call` now also sets `result.isError = true`, so the client sees a real MCP tool error rather than a successf…",
       "`tools/call`: a handler result flagged `\"isError\": true` is answered as `result.isError` (#27)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.49.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.49.0",
-    "title": "DisplayXR Runtime v2.49.0",
-    "date": "2026-10-20",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.49.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Per-screen display processors on the Linux and macOS service weave engines** (#2248, #2257): a window spanning a two-vendor desktop is now woven by each screen's own DP. Two-vendor acceptance passed on Linux (Leia SR on a ZR + sim-disp…",
-      "feat(multi-screen): the Linux service weaves a present-owner per screen (#2218 item 6) (#2248)",
-      "feat(multi-screen): the macOS service weaves a present-owner per screen (#2218 item 6) (#2257)",
-      "feat(weave): file-trigger capture on the desktop-Linux service weave engine (#2207) (#2219)",
-      "feat(stereo_camera): Linux V4L2 backend for the UVC side-by-side source (ADR-043 Amendment 4) (#2215)",
-      "feat(stereo_camera): hard tracker-camera denylist for the UVC source (ADR-043 Amendment 5) (#2215)",
-      "feat(gnome-extension): ActivateWindow takes focus only from the app itself, v17 (#2157) (#2227)"
     ],
     "looksMechanical": false
   },
