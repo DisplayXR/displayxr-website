@@ -1,11 +1,39 @@
 [
   {
+    "id": "displayxr-installer@v2.9.16",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.16",
+    "title": "DisplayXR v2.9.16",
+    "date": "2026-10-23",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.16",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.17.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.17.0",
     "title": "v2.17.0",
     "date": "2026-10-23",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.17.0",
+    "prerelease": false,
+    "featureLines": [
+      "**macOS transparent weave**: transparent apps on macOS now weave correctly over the desktop. The plug-in composes the app under the runtime's desktop background and applies the post-weave alpha gate, the same model Windows uses.",
+      "**macOS Release build and `.pkg` installer**: the macOS plug-in now has a Release build configuration and a `DisplayXRLeiaSRPlugin-<version>.pkg` installer.",
+      "**Deep (10-bit / 16F) atlases on Windows D3D11**: a 10-bit or half-float atlas now weaves with correct colour and no longer crashes.",
+      "macOS: transparent weave. Composes under the runtime's desktop background and applies an alpha gate (#418, #419)",
+      "macOS: Release build + `.pkg` installer for the macOS plug-in (#424)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.17.1",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.17.1",
+    "title": "v2.17.1",
+    "date": "2026-10-23",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.17.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -249,17 +277,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-installer@v2.9.12",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.12",
-    "title": "DisplayXR v2.9.12",
-    "date": "2026-10-20",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.12",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-leia-plugin@v2.16.7",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.16.7",
@@ -282,20 +299,6 @@
       "**Claude Code and other MCP clients can now connect to the DisplayXR MCP adapter over stdio.** The adapter now speaks newline-delimited JSON, which is MCP's stdio transport; previously Claude Code timed out while connecting. Clients that…",
       "**Tool errors reach the agent as tool errors.** When a tool handler returns an object with a top-level `\"isError\": true`, `tools/call` now also sets `result.isError = true`, so the client sees a real MCP tool error rather than a successf…",
       "`tools/call`: a handler result flagged `\"isError\": true` is answered as `result.isError` (#27)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.16.5",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.16.5",
-    "title": "v2.16.5",
-    "date": "2026-10-19",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.16.5",
-    "prerelease": false,
-    "featureLines": [
-      "**Prototype panels work on Linux without a table edit.** A panel that the SR runtime drives, with its product folder installed from the FPC, now binds in DisplayXR apps even when the plug-in's frozen EDID table does not list it. The 27in…",
-      "Lift: NeurD 0.4.10 support. The NeurD headers are pinned to media_sdk v0.4.10. The READY and AUTO log lines now name the auto-convergence rule of the loaded NeurD: the stereographer screen-plane rule from 0.4.10 on, saliency mean dispari…"
     ],
     "looksMechanical": false
   },
