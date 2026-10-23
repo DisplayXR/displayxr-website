@@ -39,6 +39,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.53.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.53.0",
+    "title": "v2.53.0",
+    "date": "2026-10-23",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.53.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity@v2.32.0",
     "repo": "displayxr-unity",
     "tag": "v2.32.0",
@@ -219,26 +230,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.51.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.51.0",
-    "title": "DisplayXR Runtime v2.51.0",
-    "date": "2026-10-21",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.51.0",
-    "prerelease": false,
-    "featureLines": [
-      "**`XR_DXR_desktop_control` spec version 3** (ADR-056 Amendment 3, accepted): an agent can now hold keys and mouse buttons across actions (`KEY_DOWN` / `KEY_UP`, `BUTTON_DOWN` / `BUTTON_UP`), wrap a pointer action in modifiers (Ctrl+click…",
-      "**On GNOME the desktop-control grant survives a restart of the app** (ADR-056 Amendment 2, accepted): the runtime keeps the portal's restore token for the same app in a private file, so the consent dialog is not shown on every launch. Th…",
-      "**GNOME extension v18 — window titles only for an authorised caller.** Other apps' window titles (document names, mail subjects, chat partners) are no longer served to every D-Bus client: a reply carries `title` only to a connection that…",
-      "desktop: spec v3 — held keys and buttons, modifiers around a pointer action (#2271)",
-      "desktop: the shell target — input where no app window is, on explicit request (#2271)",
-      "desktop: clipboard text — `SET` / `GET_CLIPBOARD_TEXT` under CONTROL, ordered with typing (#2271)",
-      "desktop/gnome: keep the portal grant across launches of the same app; the kill switch ends running grants on all OSes (#2269)",
-      "gnome-extension v18: window titles only for an authorised caller; the runtime asks only while granted (#2272, displayxr-unity#389)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.8.0",
