@@ -1,5 +1,57 @@
 [
   {
+    "id": "displayxr-leia-plugin@v2.17.0",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.17.0",
+    "title": "v2.17.0",
+    "date": "2026-10-23",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.17.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@pro-v0.5.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.5.0",
+    "title": "Media Player Pro 0.5.0",
+    "date": "2026-10-22",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.5.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Top-bottom (over-under) stereo.** TB-full and TB-half layouts, left eye on top. They're picked from the `L` cycle, MCP `set_layout tb_full|tb_half`, filenames (`*_1x2`, `*_half_1x2`, or a whole-word `TB` / `OU` / `TAB` / `H-OU`) or top…",
+      "Top-bottom stereo layouts TB-full / TB-half; the eye rectangles and per-eye aspect are shared by playback, the Pro QC views, the eye wipe and pan/zoom (#130)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@v1.14.4",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.14.4",
+    "title": "v1.14.4",
+    "date": "2026-10-22",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.14.4",
+    "prerelease": false,
+    "featureLines": [
+      "**Top-bottom (over-under) stereo video now plays.** Both full and half top-bottom layouts are supported, left eye on top. They are detected from file names (`*_1x2`, `*_half_1x2`, and whole-word `TB` / `OU` / `TAB` / `H-OU` tokens) and f…",
+      "Top-bottom stereo layouts TB-full / TB-half: the layout cycle, MCP, the environment override, file-name hints and container metadata (#130, part of #128)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.36.1",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.36.1",
+    "title": "v0.36.1",
+    "date": "2026-10-22",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.36.1",
+    "prerelease": false,
+    "featureLines": [
+      "Tracked and simulated hands are now drawn in the right place around the model. On runtimes that advertise `XR_DXR_view_rig` spec 4 or later, the viewer asks the runtime for hand joints in the view rig's own frame and renders them directl…"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-installer@v2.9.14",
     "repo": "displayxr-installer",
     "tag": "v2.9.14",
@@ -65,6 +117,67 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-unity@v2.30.1",
+    "repo": "displayxr-unity",
+    "tag": "v2.30.1",
+    "title": "DisplayXR v2.30.1",
+    "date": "2026-10-22",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.30.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity@v2.30.2",
+    "repo": "displayxr-unity",
+    "tag": "v2.30.2",
+    "title": "DisplayXR v2.30.2",
+    "date": "2026-10-22",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.30.2",
+    "prerelease": false,
+    "featureLines": [
+      "**Files dragged onto the app's window, for a native-Wayland player (opt-in).** A Linux player running natively on Wayland can now receive files dragged onto its window from a file manager. Unity's own Wayland drag and drop is out of a pl…",
+      "`DisplayXRNative.displayxr_linux_file_drop_enable(1)` turns it on (`0` turns it off). It returns `1` when on now, `0` when remembered until the DisplayXR session binds the window (it may be called before the first session), and `-1` when…",
+      "Only local files are offered (`text/uri-list` entries with `file://` and an empty, `localhost` or this machine's host name; percent-decoded). A drag without a local file (text only, web links) is refused. A drop is accepted as COPY only,…",
+      "**What turning it on costs: Unity's clipboard reads.** GNOME keeps one data device per app, and the plug-in's replaces SDL's for the rest of the run, so Unity gets no new clipboard offers and `GUIUtility.systemCopyBuffer` cannot be relie…",
+      "X11 / XWayland players: unsupported (`-1`); XDND messages go to the window owner's X connection, which is Unity's. Windows, macOS and the editor: the imports are Linux-player only, like the other `displayxr_linux_*` imports.",
+      "**No behaviour change for apps that do not turn it on**: the Wayland library then only binds the data-device manager global.",
+      "Native: `displayxr_linux_file_drop_enable`, `displayxr_linux_file_drop_next` (`DxrWlDropEvent`, ten int32). `DXR_WL_LIB_ABI` 7 -> 8 (two `DxrWlApi` slots appended); both libraries' NEEDED lists are unchanged. The GNOME extension's window…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.31.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.31.0",
+    "title": "DisplayXR v2.31.0",
+    "date": "2026-10-22",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.31.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Linux: a clipboard through the plug-in, for a native-Wayland player with file drops on (#398).** `DisplayXRNative.LinuxClipboardText(out string text, int timeoutMs = 1000)`, `SetLinuxClipboardText(string text)` (`\"\"` empties the clipbo…",
+      "**Side-step for a native-Wayland Linux player (`DisplayXRSideStep`, `DisplayXRWindowSideStep`).** Opt in, and the app's own window steps aside when the window the user is working in covers the app's content, then goes back once its place…",
+      "**What the app learns: only its own window.** The plug-in reads the other windows' frames and the focus from the extension's read-only window list, decides, and moves only the app's own window, all in native code. The app sets `Enabled` …",
+      "**Only while desktop control is granted (#399).** Side-step decides from other windows' frames and focus, what `LinuxWindows` tells about other apps, so it sits behind the same consent gate (#389, runtime ADR-056): it runs only while `Di…",
+      "Rules: covered = the focused window of another app (a normal window, dialog or utility window; never the app's own windows, a minimized one or the desktop-icons window) covers at least `Trigger` (0.15) of the app's content for `Dwell` (0…",
+      "The app's content: `SetContentRect` (window device px, e.g. an avatar's 3D zone), else the transparent overlay's click-through silhouette (the mask the overlay already pushes), else the whole window. A window over the empty band above an…",
+      "Safety: home is only ever where the window stays put after the user, the app (`displayxr_set_overlay_position`) or the start-up placement moved it, never one of side-step's own moves. It holds still while desktop control is not granted, …",
+      "Native: `displayxr_linux_side_step_set`, `displayxr_linux_side_step_set_body_rect`, `displayxr_linux_side_step_status` (records in `native~/displayxr_linux_side_step.h`). The window list and the lock state come over the main plug-in's ow…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-unity@v2.31.1",
+    "repo": "displayxr-unity",
+    "tag": "v2.31.1",
+    "title": "DisplayXR v2.31.1",
+    "date": "2026-10-22",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.31.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.9.13",
     "repo": "displayxr-installer",
     "tag": "v2.9.13",
@@ -96,12 +209,63 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-browser@v1.8.0",
+    "repo": "displayxr-browser",
+    "tag": "v1.8.0",
+    "title": "DisplayXR Browser v1.8.0",
+    "date": "2026-10-20",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.8.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@pro-v0.4.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.4.0",
+    "title": "Media Player Pro 0.4.0",
+    "date": "2026-10-20",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.4.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Clip A | B wipe.** A fourth wipe mode (`8`) puts the open clip (A) on one side of the line and a second clip (B) on the other, at the same moment. Use it to compare v1 against v2 of a shot, or a graded render against the plate. Load B …",
+      "**Edge (window) violations in the rig check.** The rig check now flags anything in front of the screen that the left or right frame edge cuts off. It shows a *Frame edges* line in the Inspector and a red bar along the affected edge when …",
+      "**Its own icon.** Media Player Pro now has its own icon (frame corners, a play triangle in front of the screen and colour bars behind it), so the 3D icon has real depth. The base player keeps its icon.",
+      "Clip A | B wipe with a synchronised second clip; `set_view` takes `wipe: \"clips\"` (#125)",
+      "Edge violations in the rig check: `edge_pct` in `set_depth_budget`, `edge_left_pct` / `edge_right_pct` in `get_rig_status` and the snapshot note; user guide's rig-check section rewritten (#126)",
+      "Media Player Pro icon for the exe, manifest, installer and macOS bundle (#127)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@v1.14.3",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.14.3",
+    "title": "v1.14.3",
+    "date": "2026-10-20",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.14.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.9.12",
     "repo": "displayxr-installer",
     "tag": "v2.9.12",
     "title": "DisplayXR v2.9.12",
     "date": "2026-10-20",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.12",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.16.7",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.16.7",
+    "title": "v2.16.7",
+    "date": "2026-10-20",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.16.7",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -122,6 +286,88 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-leia-plugin@v2.16.5",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.16.5",
+    "title": "v2.16.5",
+    "date": "2026-10-19",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.16.5",
+    "prerelease": false,
+    "featureLines": [
+      "**Prototype panels work on Linux without a table edit.** A panel that the SR runtime drives, with its product folder installed from the FPC, now binds in DisplayXR apps even when the plug-in's frozen EDID table does not list it. The 27in…",
+      "Lift: NeurD 0.4.10 support. The NeurD headers are pinned to media_sdk v0.4.10. The READY and AUTO log lines now name the auto-convergence rule of the loaded NeurD: the stereographer screen-plane rule from 0.4.10 on, saliency mean dispari…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.16.6",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.16.6",
+    "title": "v2.16.6",
+    "date": "2026-10-19",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.16.6",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.36.0",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.36.0",
+    "title": "v0.36.0",
+    "date": "2026-10-17",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.36.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Hands in the model viewer.** With a hand-tracking provider active, your hands show up as translucent \"ghost\" hands (glass body, hairline outline, depth-primed so they occlude correctly) in every view of the display.",
+      "**Pinch gestures.** Pinch with one hand to rotate the model; pinch with both hands to zoom and roll it.",
+      "**Orbit is now a turntable.** Orbiting turns the model in place while the camera/display rig stays fixed, and the environment around it (sky, image-based lighting, the Sky/Studio/Room lights) stays put. In Scene-lighting mode the asset's…",
+      "`XR_EXT_hand_tracking` consumer: translucent hand mesh drawn in every view, pinch-gesture math with a runtime-free self-check, one- and two-hand pinch gestures driving rotate / zoom / roll, and orbit reworked into a model turntable with …",
+      "Ghost Hand look (depth prime, glass body, hairline outline) plus a hand-separation guard (#177)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-browser@v1.7.4",
+    "repo": "displayxr-browser",
+    "tag": "v1.7.4",
+    "title": "DisplayXR Browser v1.7.4",
+    "date": "2026-10-16",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.7.4",
+    "prerelease": false,
+    "featureLines": [
+      "The runtime now draws the web cursor on Windows (ADR-046 Amendment 4): the cursor sits at the right depth over inline 3D content instead of floating on the 2D plane.",
+      "A stereo camera that appears after the page loaded now reaches the page as a `devicechange` event (runtime #1961), so camera pickers update live.",
+      "Linux: `--inline-3d-linux-fences=auto|on|off` — no sync_file hand-off by default on NVIDIA, which avoids a frame stall on that driver.",
+      "patches 0408-0410: the runtime draws the web cursor on Windows (#285)",
+      "patch 0412: a runtime stereo camera that appears later reaches the page as `devicechange` (#290)",
+      "feat(linux): `--inline-3d-linux-fences=auto|on|off` (#284)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-conversion-open@v0.1.1",
+    "repo": "displayxr-conversion-open",
+    "tag": "v0.1.1",
+    "title": "v0.1.1",
+    "date": "2026-10-16",
+    "url": "https://github.com/DisplayXR/displayxr-conversion-open/releases/tag/v0.1.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.35.5",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.35.5",
+    "title": "v0.35.5",
+    "date": "2026-10-16",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.35.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-mcp@v0.5.5",
     "repo": "displayxr-mcp",
     "tag": "v0.5.5",
@@ -131,6 +377,37 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-shell-releases@v2.4.2",
+    "repo": "displayxr-shell-releases",
+    "tag": "v2.4.2",
+    "title": "DisplayXR Shell v2.4.2",
+    "date": "2026-10-16",
+    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.4.2",
+    "prerelease": false,
+    "featureLines": [
+      "**macOS: installed DisplayXR apps now appear in the shell launcher.** Apps installed from their `.pkg` into `/Applications` or `~/Applications` are discovered automatically and launched through the bundle's own executable, so the demos (…",
+      "macOS launcher scans `/Applications` and `~/Applications` app bundles for `Contents/Resources/displayxr/*.displayxr.json` manifests and launches them via the bundle's `CFBundleExecutable` (falling back to `Contents/MacOS/<name>`); regist…",
+      "Auto-published from displayxr-shell-pvt @ 2ee433e6ec661baa368818e930bc80ecbd2d41c9."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-conversion-open@v0.1.0",
+    "repo": "displayxr-conversion-open",
+    "tag": "v0.1.0",
+    "title": "v0.1.0",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-conversion-open/releases/tag/v0.1.0",
+    "prerelease": false,
+    "featureLines": [
+      "First release of the DisplayXR open-model conversion provider (`open-conversion`, ProbeOrder 200): depth-from-video and mono depth on ONNX Runtime, so every box gets a conversion provider without a vendor module.",
+      "**Windows**: `DisplayXROpenConversionSetup-0.1.0.exe` (DirectML with CPU fallback). Installs under `Program Files\\DisplayXR\\Plugins\\OpenConversion` and registers `HKLM\\Software\\DisplayXR\\ConversionProviders\\open-conversion`. No model is …",
+      "**Linux**: `displayxr-open-conversion-0.1.0-linux-x86_64.tar.gz` (CPU). `install.sh` installs per user and writes the JSON manifest.",
+      "Both assets are unsigned."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-avatar@v0.14.4",
@@ -144,6 +421,101 @@
       "**Linux: the demo now appears in the DisplayXR Shell launcher (Ctrl+L).** The `.deb` installs a registered shell manifest at `/usr/share/displayxr/apps/`, so the demo shows up in the launcher right after install, with no manual registrat…"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-earthview@v0.11.3",
+    "repo": "displayxr-demo-earthview",
+    "tag": "v0.11.3",
+    "title": "v0.11.3",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.3",
+    "prerelease": false,
+    "featureLines": [
+      "**Linux: the demo now appears in the DisplayXR Shell launcher (Ctrl+L).** The `.deb` installs a registered shell manifest at `/usr/share/displayxr/apps/`, so the demo shows up in the launcher right after install, with no manual registrat…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-gaussiansplat@v1.29.5",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.29.5",
+    "title": "v1.29.5",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.5",
+    "prerelease": false,
+    "featureLines": [
+      "**Linux: the demo now appears in the DisplayXR Shell launcher (Ctrl+L).** The `.deb` installs a registered shell manifest at `/usr/share/displayxr/apps/`, so the demo shows up in the launcher right after install, with no manual registrat…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.35.4",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.35.4",
+    "title": "v0.35.4",
+    "date": "2026-10-15",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.35.4",
+    "prerelease": false,
+    "featureLines": [
+      "**Linux: the demo now appears in the DisplayXR Shell launcher (Ctrl+L).** The `.deb` installs a registered shell manifest at `/usr/share/displayxr/apps/`, so the demo shows up in the launcher right after install, with no manual registrat…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-browser@v1.7.2",
+    "repo": "displayxr-browser",
+    "tag": "v1.7.2",
+    "title": "DisplayXR Browser v1.7.2",
+    "date": "2026-10-13",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.7.2",
+    "prerelease": false,
+    "featureLines": [
+      "On 2D video converted to 3D by the runtime, the browser now requests the runtime's depth-aware cursor and hides the page's own cursor over the converted area while the runtime draws it. Needs a runtime that reports `XR_DXR_cursor_depth` …",
+      "Based on Chromium 156.0.8078.12 (unchanged from 1.7.1).",
+      "Auto-published from displayxr-browser-pvt @ 6c7e0ed345a67b21169864f2b05edb9e5f304a41.",
+      "**Security updates follow Chrome stable.** Every Chrome stable point release is rebuilt and published automatically when the browser's own code is untouched upstream, and verified on a DisplayXR display first when it is not. Not affiliat…",
+      "Android APK: release-signed (CN=DisplayXR Browser). If you have any preview up to and including 0.1.24 installed, UNINSTALL it before installing this one - those were debug-key signed and Android refuses an install that changes the signi…",
+      "Linux (.deb, x64): sudo apt install ./displayxr-browser_1.7.2-1_amd64.deb - needs displayxr-runtime (>= 2.28.0) from DisplayXR/displayxr-runtime releases. A newer .deb upgrades in place; there is no apt repository."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-browser@v1.7.3",
+    "repo": "displayxr-browser",
+    "tag": "v1.7.3",
+    "title": "DisplayXR Browser v1.7.3",
+    "date": "2026-10-13",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.7.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-gaussiansplat@v1.29.4",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.29.4",
+    "title": "v1.29.4",
+    "date": "2026-10-12",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.4",
+    "prerelease": false,
+    "featureLines": [
+      "**Much cheaper rendering on Android, Apple Silicon and Linux.** The per-frame `vkCmdCopyImage` into the sRGB swapchain — where the Adreno driver allocated and zeroed GPU memory every frame, ~90% of the render thread's CPU — is replaced b…",
+      "**With runtime v2.38.0 or newer** (its hand-off scorer fix, displayxr-runtime#1964): NP02J tablet **29 → 46 fps**, Lume phone **49 → 55 fps**.",
+      "`GsAdrenoRenderer` present pass: a fullscreen-triangle draw replaces blit → scratch → copy. Swapchains on the Android, macOS and Linux legs are now requested with `XR_SWAPCHAIN_USAGE_MUTABLE_FORMAT_BIT`. Also cheaper on the GPU: the pres…",
+      "Kill switch `debug.dxr.gs.present_pass` / `DXR_GS_PRESENT_PASS` (default `1`; `0` = the old blit + copy path). One log line per session says which path is in use. (#144)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-shell-releases@v2.4.1",
+    "repo": "displayxr-shell-releases",
+    "tag": "v2.4.1",
+    "title": "DisplayXR Shell v2.4.1",
+    "date": "2026-10-12",
+    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.4.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-avatar@v0.14.3",
@@ -162,6 +534,57 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-earthview@v0.11.2",
+    "repo": "displayxr-demo-earthview",
+    "tag": "v0.11.2",
+    "title": "v0.11.2",
+    "date": "2026-10-11",
+    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.2",
+    "prerelease": false,
+    "featureLines": [
+      "**Much smoother on Android.** The Vulkan tile renderer now submits once per frame with up to 3 frames in flight instead of draining the GPU queue after every eye — phone 30 → 59.6 fps, NP02J tablet 19.8 → 31.8 fps on runtime v2.35.0.",
+      "**Depth-aware cursor.** On a DisplayXR runtime with `XR_DXR_cursor_depth`, the pointer is drawn at the depth of the terrain/buildings under it when content pops out of the glass (macOS, Linux; Windows activates once the D3D compositors d…",
+      "Depth-aware cursor: per-tile BVH ray cast over the streamed 3D tiles feeds the runtime-drawn depth cursor (displayxr-common v2.29.0 `dxr::CursorDepth`) (#81)",
+      "Vulkan frame ring (`dxr::VkFrameRing`, displayxr-common v2.29.0): one submit per frame, 3 frames in flight; tile uploads record into the frame's command buffer and Vulkan objects retire through deferred destruction instead of `vkQueueWai…",
+      "Android: client AAR pinned to v2.34.0, which ships the `VK_LAYER_DXR_queue_lock` layer (60 Hz face refresh, displayxr-runtime#1905) (#79)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-gaussiansplat@v1.29.3",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.29.3",
+    "title": "v1.29.3",
+    "date": "2026-10-11",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.3",
+    "prerelease": false,
+    "featureLines": [
+      "**Depth-aware cursor.** On a runtime with `XR_DXR_cursor_depth`, the runtime draws the pointer in front of splats that come out of the glass. The demo supplies the depth under the pointer by ray-casting the splats themselves. (#142)",
+      "Depth-aware cursor. `GsSplatRayCaster` finds where the front-to-back alpha composite first reaches 0.5, using the same per-splat evaluation as the rasteriser. It walks an implicit 8-ary BVH over Morton-sorted splats, is built on a worker…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-shell-releases@v2.4.0",
+    "repo": "displayxr-shell-releases",
+    "tag": "v2.4.0",
+    "title": "DisplayXR Shell v2.4.0",
+    "date": "2026-10-11",
+    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.4.0",
+    "prerelease": false,
+    "featureLines": [
+      "**The workspace spans every 3D screen.** On a runtime that supports multi-screen (`XR_DXR_spatial_workspace` v25+), each window is placed on the screen it mostly sits on. Minimising sends a window to its own screen. With runtime v2.36.0 …",
+      "**Desktop Linux (preview).** The shell now builds natively on Linux. Chrome, cursor, taskbar, launcher and splash are drawn with cairo/pango onto Vulkan overlay swapchains. It ships as a `.deb` with a workspace-controller manifest, and t…",
+      "**workspace:** multi-screen workspace on `XR_DXR_spatial_workspace` v25.",
+      "**workspace:** a taskbar on every screen and the launcher on the pointer's screen (spec v26).",
+      "**linux:** desktop-Linux build: Vulkan controller, cairo/pango chrome title pill, cursor sprites, taskbar overlay, launcher band and empty-workspace splash.",
+      "**linux:** `.deb` packaging, workspace-controller manifest and dev registration; CI builds the `.deb` and install-verifies it on Ubuntu 22.04, 24.04 and 26.04.",
+      "**linux:** XDG app-manifest dirs, MCP capability marker, and chrome icon + title for registered apps via `/proc/<pid>/exe`.",
+      "**linux:** waits on the workspace wakeup eventfd instead of a fixed 16 ms poll; the service-forwarded workspace hotkey dismisses the shell."
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-reference-scenes@v0.2.0",
     "repo": "displayxr-reference-scenes",
     "tag": "v0.2.0",
@@ -173,6 +596,17 @@
       "The first public set of reference scenes for 3D displays, built on open standards: OpenUSD, MaterialX / OpenPBR and glTF. Load any of them in the [DisplayXR model viewer](https://github.com/DisplayXR/displayxr-demo-modelviewer) **v0.35.0…"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-shell-releases@v2.3.2",
+    "repo": "displayxr-shell-releases",
+    "tag": "v2.3.2",
+    "title": "DisplayXR Shell v2.3.2",
+    "date": "2026-10-03",
+    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.3.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-unity-samples@v2.3.0",
@@ -192,6 +626,44 @@
     "title": "v0.14.2",
     "date": "2026-10-02",
     "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-earthview@v0.11.0",
+    "repo": "displayxr-demo-earthview",
+    "tag": "v0.11.0",
+    "title": "v0.11.0",
+    "date": "2026-10-02",
+    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Linux: Google Map Tiles API-key dialog.** The first launch without a key, or **Ctrl+K** at any time, opens a dialog (zenity, with kdialog as a fallback) with the same flow as Windows and macOS: **Save & Start**, **Get a Key…** and **Re…",
+      "Linux API-key dialog for first run and Ctrl+K (#77)",
+      "The key is stored per user in `$XDG_CONFIG_HOME/displayxr/earthview.ini` (mode 0600). `GOOGLE_MAPS_API_KEY` still overrides it.",
+      "The `.deb` now Recommends `zenity`, and the package build refuses to bundle a key."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-earthview@v0.11.1",
+    "repo": "displayxr-demo-earthview",
+    "tag": "v0.11.1",
+    "title": "v0.11.1",
+    "date": "2026-10-02",
+    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-gaussiansplat@v1.29.2",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.29.2",
+    "title": "v1.29.2",
+    "date": "2026-10-02",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -219,12 +691,56 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-unreal@v0.9.4",
+    "repo": "displayxr-unreal",
+    "tag": "v0.9.4",
+    "title": "DisplayXR v0.9.4",
+    "date": "2026-09-19",
+    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.9.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unreal@v0.9.3",
+    "repo": "displayxr-unreal",
+    "tag": "v0.9.3",
+    "title": "DisplayXR v0.9.3",
+    "date": "2026-09-17",
+    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.9.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity-samples@v2.2.0",
     "repo": "displayxr-unity-samples",
     "tag": "v2.2.0",
     "title": "DisplayXR Unity Samples v2.2.0",
     "date": "2026-09-14",
     "url": "https://github.com/DisplayXR/displayxr-unity-samples/releases/tag/v2.2.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unreal@v0.9.2",
+    "repo": "displayxr-unreal",
+    "tag": "v0.9.2",
+    "title": "DisplayXR v0.9.2",
+    "date": "2026-09-14",
+    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.9.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unreal@v0.9.1",
+    "repo": "displayxr-unreal",
+    "tag": "v0.9.1",
+    "title": "DisplayXR v0.9.1",
+    "date": "2026-09-11",
+    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.9.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
