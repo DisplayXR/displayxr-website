@@ -59,6 +59,7 @@
       "displayxr-runtime/docs/adr/ADR-056-desktop-control-runs-in-the-app.md",
       "displayxr-runtime/docs/adr/ADR-057-image-to-splat-providers.md",
       "displayxr-runtime/docs/adr/ADR-058-late-view-synthesis-and-depth-reprojection.md",
+      "displayxr-runtime/docs/adr/ADR-059-d3d11-hub-compositor-windows.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-001-direct-runtime-loading.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-002-zero-copy-atlas-handoff.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-003-ue-native-off-axis-projection.md"

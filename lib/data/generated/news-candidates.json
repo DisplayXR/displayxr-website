@@ -1,11 +1,35 @@
 [
   {
+    "id": "displayxr-demo-mediaplayer@pro-v0.5.1",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.5.1",
+    "title": "Media Player Pro 0.5.1",
+    "date": "2026-10-24",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.5.1",
+    "prerelease": false,
+    "featureLines": [
+      "**Changing a look no longer stalls playback.** Loading a LUT (`.cube`) or baking an OCIO look now runs on a worker thread instead of the render thread. The render thread only uploads the finished texture, so the picture keeps playing whi…"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-installer@v2.9.16",
     "repo": "displayxr-installer",
     "tag": "v2.9.16",
     "title": "DisplayXR v2.9.16",
     "date": "2026-10-23",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.16",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.9.17",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.17",
+    "title": "DisplayXR v2.9.17",
+    "date": "2026-10-23",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.17",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -46,8 +70,12 @@
     "date": "2026-10-23",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.18.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**HDR10 / PQ weaving on D3D11.** When the runtime hands the D3D11 display processor a PQ (SMPTE ST 2084) atlas, the plug-in now weaves it in linear light and re-encodes on write: HDR10 output on a `R10G10B10A2_UNORM` target, scRGB on a `…",
+      "The PQ path needs an SR runtime that provides the weaver colour-encoding control; on an older SR runtime the plug-in declines PQ atlases and the existing SDR path is unchanged.",
+      "D3D11: weave a PQ (HDR10) atlas in linear light via the SR colour-encoding control, gated on the runtime's `accepts_atlas_encoding` display-processor slot (#437)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.53.0",
@@ -233,17 +261,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-installer@v2.9.13",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.13",
-    "title": "DisplayXR v2.9.13",
-    "date": "2026-10-21",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.13",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-browser@v1.8.0",
     "repo": "displayxr-browser",
     "tag": "v1.8.0",
@@ -253,24 +270,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@pro-v0.4.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.4.0",
-    "title": "Media Player Pro 0.4.0",
-    "date": "2026-10-20",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.4.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Clip A | B wipe.** A fourth wipe mode (`8`) puts the open clip (A) on one side of the line and a second clip (B) on the other, at the same moment. Use it to compare v1 against v2 of a shot, or a graded render against the plate. Load B …",
-      "**Edge (window) violations in the rig check.** The rig check now flags anything in front of the screen that the left or right frame edge cuts off. It shows a *Frame edges* line in the Inspector and a red bar along the affected edge when …",
-      "**Its own icon.** Media Player Pro now has its own icon (frame corners, a play triangle in front of the screen and colour bars behind it), so the 3D icon has real depth. The base player keeps its icon.",
-      "Clip A | B wipe with a synchronised second clip; `set_view` takes `wipe: \"clips\"` (#125)",
-      "Edge violations in the rig check: `edge_pct` in `set_depth_budget`, `edge_left_pct` / `edge_right_pct` in `get_rig_status` and the snapshot note; user guide's rig-check section rewritten (#126)",
-      "Media Player Pro icon for the exe, manifest, installer and macOS bundle (#127)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.14.3",
