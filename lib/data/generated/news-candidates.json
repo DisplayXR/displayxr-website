@@ -31,6 +31,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.54.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.54.0",
+    "title": "v2.54.0",
+    "date": "2026-10-25",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.54.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity-samples@v2.4.0",
     "repo": "displayxr-unity-samples",
     "tag": "v2.4.0",
@@ -247,19 +258,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.51.2",
-    "repo": "displayxr-runtime",
-    "tag": "v2.51.2",
-    "title": "DisplayXR Runtime v2.51.2",
-    "date": "2026-10-22",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.51.2",
-    "prerelease": false,
-    "featureLines": [
-      "**The spatial shell no longer freezes when opened with no apps.** Since v2.51.x the service's idle quiesce counted only app sessions, so a workspace controller running with nothing open looked idle: about 5 s after launch the display pro…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.52.0",
