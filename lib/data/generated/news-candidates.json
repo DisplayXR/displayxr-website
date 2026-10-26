@@ -11,6 +11,28 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.54.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.54.1",
+    "title": "v2.54.1",
+    "date": "2026-10-26",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.54.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.55.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.55.0",
+    "title": "v2.55.0",
+    "date": "2026-10-26",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.55.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.18.1",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.18.1",
@@ -153,26 +175,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.53.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.53.0",
-    "title": "DisplayXR Runtime v2.53.0",
-    "date": "2026-10-23",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.53.0",
-    "prerelease": false,
-    "featureLines": [
-      "**PQ / HDR10 atlas encoding (experimental)** — the D3D11 compositor can hand the display processor a PQ-encoded atlas, negotiated through a new appended D3D11 display-processor query slot, `accepts_atlas_encoding`. Opt-in with `DXR_ATLAS…",
-      "**Deep atlas through the Vulkan weave-on-scanout split** — the split's deposit now carries a 10-bit / 16F atlas (`DXR_ATLAS_FORMAT`) instead of quantising to 8-bit, matching the D3D11 split (#2298, #2291).",
-      "**Depth cursor stays visible under hidden OS cursors** — a blank OS cursor (e.g. SDL's hidden cursor) is now treated as hidden rather than mirrored as a transparent shape (#2309).",
-      "Also: viewer tracking becomes a service-hosted provider class with per-screen routing, an out-of-process tracking host, camera-pose calibration and a webcam tracking source (ADR-054 N6).",
-      "feat(d3d11): PQ atlas encoding behind an appended DP query slot (#2273) (#2294)",
-      "feat(tracking): out-of-process viewer-tracking hosting — displayxr-tracking-host + the N8 viewer pose page (#2312)",
-      "feat(tracking): the service hosts the viewer-tracking provider + per-screen routing through each screen's DP (ADR-054 N6, #2144) (#2302)",
-      "feat(tracking): viewer-tracking provider class + DP viewer-policy slot + composed advertisement + sim_tracking (ADR-054 N6 Part 2, #2144) (#2292)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-unity@v2.32.0",
     "repo": "displayxr-unity",
     "tag": "v2.32.0",
@@ -260,23 +262,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.52.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.52.0",
-    "title": "DisplayXR Runtime v2.52.0",
-    "date": "2026-10-22",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.52.0",
-    "prerelease": false,
-    "featureLines": [
-      "macOS transparency on weaving displays: a transparent app now shows the live desktop (and the windows under it) behind its 3D content, captured by a small ScreenCaptureKit helper the `.pkg` installs (one-time Screen Recording permission)…",
-      "feat(metal): live desktop background for transparent sessions on a weaving DP (#2264)",
-      "feat(installer/macos): ship the desktop-capture helper in the .pkg (#2264)",
-      "feat(metal): rear depth budget for transparent sessions (XR_DXR_depth_budget, #2264)",
-      "feat(lift): ADR-058 phase 1 groundwork — placement module, CPU late synthesis, 4 fps conformance test (#2284)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.31.1",
