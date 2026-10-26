@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-leia-plugin@v2.18.2",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.18.2",
+    "title": "v2.18.2",
+    "date": "2026-10-26",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.18.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.18.1",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.18.1",
@@ -34,12 +45,20 @@
     "id": "displayxr-runtime@v2.54.0",
     "repo": "displayxr-runtime",
     "tag": "v2.54.0",
-    "title": "v2.54.0",
+    "title": "DisplayXR Runtime v2.54.0",
     "date": "2026-10-25",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.54.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "On hybrid iGPU+dGPU laptops, the D3D12 route (Unity, Unreal and other D3D12 apps) now goes through the single D3D11 hub compositor by default (#2381, epic #2317, ADR-059). Every graphics API on those machines now shares one presenter, on…",
+      "Also in this release: the hub's `[RENDER]` diagnostic no longer overflows its period counter (it logged every ~1.4 s instead of every 10 s, #2398), and the Vulkan compositor can now encode the atlas as PQ through a new, appended Vulkan d…",
+      "feat(d3d12): the hybrid reroute onto the D3D11 hub is the default; one hub, one kill switch (#2375) (#2381)",
+      "feat(vk_native): PQ atlas encoding behind an appended Vulkan DP query slot (#2341)",
+      "feat(d3d12): the hybrid reroute onto the D3D11 hub engages at any frame divisor (#2317) (#2374)",
+      "feat(extensions): ABI snapshot test + one shared guard for the window-space layer",
+      "feat(hub): P3 — OpenGL shim onto the D3D11 hub (GL deposit via GL_EXT_memory_object_win32 / WGL_NV_DX_interop2, named fallbacks) (#2317) (#2366)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity-samples@v2.4.0",
@@ -106,23 +125,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.17.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.17.0",
-    "title": "v2.17.0",
-    "date": "2026-10-23",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.17.0",
-    "prerelease": false,
-    "featureLines": [
-      "**macOS transparent weave**: transparent apps on macOS now weave correctly over the desktop. The plug-in composes the app under the runtime's desktop background and applies the post-weave alpha gate, the same model Windows uses.",
-      "**macOS Release build and `.pkg` installer**: the macOS plug-in now has a Release build configuration and a `DisplayXRLeiaSRPlugin-<version>.pkg` installer.",
-      "**Deep (10-bit / 16F) atlases on Windows D3D11**: a 10-bit or half-float atlas now weaves with correct colour and no longer crashes.",
-      "macOS: transparent weave. Composes under the runtime's desktop background and applies an alpha gate (#418, #419)",
-      "macOS: Release build + `.pkg` installer for the macOS plug-in (#424)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.17.1",
