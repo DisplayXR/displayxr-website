@@ -1,5 +1,29 @@
 [
   {
+    "id": "displayxr-installer@android-bundle-2026-10-26",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-2026-10-26",
+    "title": "Android tablet bundle android-bundle-2026-10-26",
+    "date": "2026-10-26",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-26",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.9.18",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.18",
+    "title": "DisplayXR v2.9.18",
+    "date": "2026-10-26",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.18",
+    "prerelease": false,
+    "featureLines": [
+      "This bundle carries **runtime v2.55.0** (ADR-060 texture-target binding and windowless weaving, plus the anchor-fallback sub-rect phase fix) and **Leia plug-in v2.18.3** (windowless-phase support; requires LeiaSR 1.39.0 or later, otherwi…"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-leia-plugin@v2.18.2",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.18.2",
@@ -18,19 +42,12 @@
     "date": "2026-10-26",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.18.3",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.54.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.54.1",
-    "title": "v2.54.1",
-    "date": "2026-10-26",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.54.1",
-    "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Windows plug-in support for the runtime's ADR-060 texture-target windowless weaving. With runtime v2.55.0 or later, texture-class sessions (DCC and editor viewports) now weave without an anchor window, phased from the target's present or…",
+      "Windowless phasing needs LeiaSR 1.39.0 or later. On earlier LeiaSR versions the plug-in falls back cleanly to the windowed anchor path, which runtime v2.55.0 (#2406 in displayxr-runtime) phases correctly for sub-rect canvases.",
+      "Windows: hint windowless phase support on the display claim and declare the D3D11 phase-from-present-origin scanout capability, so the runtime can weave a texture-target session or a present-owner without an anchor window, phased from th…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.55.0",
@@ -147,17 +164,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-installer@v2.9.16",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.16",
-    "title": "DisplayXR v2.9.16",
-    "date": "2026-10-23",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.16",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-installer@v2.9.17",
     "repo": "displayxr-installer",
     "tag": "v2.9.17",
@@ -180,6 +186,26 @@
       "**HDR10 / PQ weaving on D3D11.** When the runtime hands the D3D11 display processor a PQ (SMPTE ST 2084) atlas, the plug-in now weaves it in linear light and re-encodes on write: HDR10 output on a `R10G10B10A2_UNORM` target, scRGB on a `…",
       "The PQ path needs an SR runtime that provides the weaver colour-encoding control; on an older SR runtime the plug-in declines PQ atlases and the existing SDR path is unchanged.",
       "D3D11: weave a PQ (HDR10) atlas in linear light via the SR colour-encoding control, gated on the runtime's `accepts_atlas_encoding` display-processor slot (#437)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.53.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.53.0",
+    "title": "DisplayXR Runtime v2.53.0",
+    "date": "2026-10-23",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.53.0",
+    "prerelease": false,
+    "featureLines": [
+      "**PQ / HDR10 atlas encoding (experimental)** — the D3D11 compositor can hand the display processor a PQ-encoded atlas, negotiated through a new appended D3D11 display-processor query slot, `accepts_atlas_encoding`. Opt-in with `DXR_ATLAS…",
+      "**Deep atlas through the Vulkan weave-on-scanout split** — the split's deposit now carries a 10-bit / 16F atlas (`DXR_ATLAS_FORMAT`) instead of quantising to 8-bit, matching the D3D11 split (#2298, #2291).",
+      "**Depth cursor stays visible under hidden OS cursors** — a blank OS cursor (e.g. SDL's hidden cursor) is now treated as hidden rather than mirrored as a transparent shape (#2309).",
+      "Also: viewer tracking becomes a service-hosted provider class with per-screen routing, an out-of-process tracking host, camera-pose calibration and a webcam tracking source (ADR-054 N6).",
+      "feat(d3d11): PQ atlas encoding behind an appended DP query slot (#2273) (#2294)",
+      "feat(tracking): out-of-process viewer-tracking hosting — displayxr-tracking-host + the N8 viewer pose page (#2312)",
+      "feat(tracking): the service hosts the viewer-tracking provider + per-screen routing through each screen's DP (ADR-054 N6, #2144) (#2302)",
+      "feat(tracking): viewer-tracking provider class + DP viewer-policy slot + composed advertisement + sim_tracking (ADR-054 N6 Part 2, #2144) (#2292)"
     ],
     "looksMechanical": false
   },
@@ -249,28 +275,6 @@
       "Tracked and simulated hands are now drawn in the right place around the model. On runtimes that advertise `XR_DXR_view_rig` spec 4 or later, the viewer asks the runtime for hand joints in the view rig's own frame and renders them directl…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.9.14",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.14",
-    "title": "DisplayXR v2.9.14",
-    "date": "2026-10-22",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.14",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.9.15",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.15",
-    "title": "DisplayXR v2.9.15",
-    "date": "2026-10-22",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.15",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.31.1",
@@ -593,6 +597,17 @@
       "**linux:** waits on the workspace wakeup eventfd instead of a fixed 16 ms poll; the service-forwarded workspace hotkey dismisses the shell."
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-installer@android-bundle-latest",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-latest",
+    "title": "Android tablet bundle (latest) — android-bundle-2026-10-26",
+    "date": "2026-10-07",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-reference-scenes@v0.2.0",
