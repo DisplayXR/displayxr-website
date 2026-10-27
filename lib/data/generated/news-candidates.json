@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.56.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.56.0",
+    "title": "v2.56.0",
+    "date": "2026-10-27",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.56.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@android-bundle-2026-10-26",
     "repo": "displayxr-installer",
     "tag": "android-bundle-2026-10-26",
@@ -186,26 +197,6 @@
       "**HDR10 / PQ weaving on D3D11.** When the runtime hands the D3D11 display processor a PQ (SMPTE ST 2084) atlas, the plug-in now weaves it in linear light and re-encodes on write: HDR10 output on a `R10G10B10A2_UNORM` target, scRGB on a `…",
       "The PQ path needs an SR runtime that provides the weaver colour-encoding control; on an older SR runtime the plug-in declines PQ atlases and the existing SDR path is unchanged.",
       "D3D11: weave a PQ (HDR10) atlas in linear light via the SR colour-encoding control, gated on the runtime's `accepts_atlas_encoding` display-processor slot (#437)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.53.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.53.0",
-    "title": "DisplayXR Runtime v2.53.0",
-    "date": "2026-10-23",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.53.0",
-    "prerelease": false,
-    "featureLines": [
-      "**PQ / HDR10 atlas encoding (experimental)** — the D3D11 compositor can hand the display processor a PQ-encoded atlas, negotiated through a new appended D3D11 display-processor query slot, `accepts_atlas_encoding`. Opt-in with `DXR_ATLAS…",
-      "**Deep atlas through the Vulkan weave-on-scanout split** — the split's deposit now carries a 10-bit / 16F atlas (`DXR_ATLAS_FORMAT`) instead of quantising to 8-bit, matching the D3D11 split (#2298, #2291).",
-      "**Depth cursor stays visible under hidden OS cursors** — a blank OS cursor (e.g. SDL's hidden cursor) is now treated as hidden rather than mirrored as a transparent shape (#2309).",
-      "Also: viewer tracking becomes a service-hosted provider class with per-screen routing, an out-of-process tracking host, camera-pose calibration and a webcam tracking source (ADR-054 N6).",
-      "feat(d3d11): PQ atlas encoding behind an appended DP query slot (#2273) (#2294)",
-      "feat(tracking): out-of-process viewer-tracking hosting — displayxr-tracking-host + the N8 viewer pose page (#2312)",
-      "feat(tracking): the service hosts the viewer-tracking provider + per-screen routing through each screen's DP (ADR-054 N6, #2144) (#2302)",
-      "feat(tracking): viewer-tracking provider class + DP viewer-policy slot + composed advertisement + sim_tracking (ADR-054 N6 Part 2, #2144) (#2292)"
     ],
     "looksMechanical": false
   },
