@@ -107,6 +107,16 @@ export const NEWS_KIND_LABELS: Record<NewsKind, string> = {
  */
 export const NEWS: NewsItem[] = [
   {
+    id: "texture-target",
+    date: "2026-10-26",
+    kind: "capability",
+    tier: "banner",
+    headline: "3D inside an app's own viewport, no overlay window",
+    blurb:
+      "With XR_DXR_win32_window_binding v9 (ADR-060), an app hands the runtime a texture and the rect where it draws it; the display processor weaves into that texture and the app presents it in its own viewport, so its menus, gizmos and input stay its own. Integrations for desktop apps such as Blender, 3D Slicer and ParaView are in development.",
+    href: "/platform-support#desktop-apps",
+  },
+  {
     id: "conversion-providers",
     date: "2026-10-15",
     kind: "capability",

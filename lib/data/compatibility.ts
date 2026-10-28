@@ -52,3 +52,43 @@ export const appClasses: AppClass[] = [
   { className: "Texture", description: "App provides offscreen textures", status: "shipping" },
   { className: "Hosted", description: "Runtime hosts everything (standard OpenXR / WebXR)", status: "shipping" },
 ];
+
+// Desktop-app integrations on the ADR-060 texture target (runtime v2.55.0).
+// None is released yet, so these chips never say "Supported": they record
+// what has been verified, and each row links the public proposal it came
+// from. Checked against the posts on 2026-10-29 (index: discussion #2442).
+// Names follow each owner's trademark wording; text only, no logos.
+export type AppVerification = "seated-verified" | "sim-verified" | "proposed";
+
+export type AppIntegration = "own-viewport" | "dedicated-window" | "browser-page";
+
+export interface DesktopApp {
+  app: string;
+  /** Version the verification was done on; omitted when the post gives none. */
+  version?: string;
+  integration: AppIntegration;
+  verification: AppVerification;
+  /** GitHub Discussions number of the public proposal. */
+  proposal: number;
+}
+
+export const APP_DISCUSSIONS_URL = "https://github.com/orgs/DisplayXR/discussions";
+export const APP_INTEGRATIONS_INDEX = 2442;
+
+export const desktopApps: DesktopApp[] = [
+  { app: "Blender", version: "5.2", integration: "own-viewport", verification: "seated-verified", proposal: 2397 },
+  { app: "NVIDIA Omniverse™ USD Composer", version: "Kit 110", integration: "own-viewport", verification: "seated-verified", proposal: 2331 },
+  { app: "Autodesk® Maya®", version: "2027", integration: "own-viewport", verification: "seated-verified", proposal: 2390 },
+  { app: "Autodesk® MotionBuilder®", integration: "own-viewport", verification: "seated-verified", proposal: 2423 },
+  { app: "Foundry Nuke", version: "17.1", integration: "own-viewport", verification: "seated-verified", proposal: 2433 },
+  { app: "3D Slicer", version: "5.12", integration: "own-viewport", verification: "sim-verified", proposal: 2352 },
+  { app: "ParaView", version: "6.2", integration: "own-viewport", verification: "sim-verified", proposal: 2360 },
+  { app: "Adobe® Substance 3D Designer", integration: "own-viewport", verification: "proposed", proposal: 2439 },
+  { app: "SideFX® Houdini®", integration: "dedicated-window", verification: "proposed", proposal: 2432 },
+  { app: "Autodesk® VRED™", integration: "dedicated-window", verification: "proposed", proposal: 2383 },
+  { app: "Twinmotion", integration: "dedicated-window", verification: "proposed", proposal: 2389 },
+  { app: "Adobe® Substance 3D Modeler", integration: "dedicated-window", verification: "proposed", proposal: 2394 },
+  { app: "Adobe® Substance 3D Painter", integration: "dedicated-window", verification: "proposed", proposal: 2437 },
+  { app: "Adobe® Substance 3D Sampler", integration: "dedicated-window", verification: "proposed", proposal: 2438 },
+  { app: "CLO", integration: "browser-page", verification: "proposed", proposal: 2434 },
+];

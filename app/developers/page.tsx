@@ -9,7 +9,7 @@ import { NATIVE_DOCS, NATIVE_PLATFORMS } from "@/lib/data/native";
 import { engines } from "@/lib/data/generated";
 import { enginePlugins } from "@/lib/data/compatibility";
 import { DISCUSSIONS_URL, DOCS_URL, REPO_URLS } from "@/lib/constants";
-import { FileCode2, HelpCircle, Layers, LifeBuoy, MessagesSquare } from "lucide-react";
+import { AppWindow, FileCode2, HelpCircle, Layers, LifeBuoy, MessagesSquare } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Developers",
@@ -51,6 +51,12 @@ const docs = [
     body: "Start with displayxr-cli selftest, then symptom, cause, fix.",
     href: NATIVE_DOCS.troubleshooting,
     icon: <LifeBuoy size={20} />,
+  },
+  {
+    title: "Desktop apps",
+    body: "3D inside Blender, 3D Slicer, ParaView and other tools' own viewports: what each needs from the shared host library.",
+    href: "https://github.com/orgs/DisplayXR/discussions/2442",
+    icon: <AppWindow size={20} />,
   },
   {
     title: "Ask the community",
