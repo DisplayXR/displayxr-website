@@ -7,8 +7,13 @@
     "date": "2026-10-28",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.14.5",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**The player now tells you which display mode you are in.** Press **V** (or the transport's **Mode** button) to cycle through the rendering modes your 3D display offers. Each change shows a short on-screen chip naming the new mode, for e…",
+      "The chip also appears once at launch for the starting mode, and whenever the mode changes for any other reason, such as auto-3D, Convert to 3D, or a change made outside the player.",
+      "If V has nothing to switch to (the display offers a single mode, or no mode control), the chip says so instead of silently doing nothing.",
+      "Mode chip: name the display mode on every mode change and at launch (#145)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.9.19",
