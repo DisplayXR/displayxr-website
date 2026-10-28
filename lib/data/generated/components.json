@@ -132,30 +132,30 @@
   {
     "id": "installer",
     "name": "All-in-one Installer",
-    "version": "v2.9.18",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.18",
-    "releaseDate": "2026-10-26",
+    "version": "v2.9.19",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.19",
+    "releaseDate": "2026-10-28",
     "platforms": "Windows · macOS · Linux · Android",
     "downloads": [
       {
         "platform": "Windows",
-        "file": "DisplayXRBundle-2.9.18.exe",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.18/DisplayXRBundle-2.9.18.exe"
+        "file": "DisplayXRBundle-2.9.19.exe",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.19/DisplayXRBundle-2.9.19.exe"
       },
       {
         "platform": "macOS",
-        "file": "DisplayXRBundle-2.9.18.pkg",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.18/DisplayXRBundle-2.9.18.pkg"
+        "file": "DisplayXRBundle-2.9.19.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.19/DisplayXRBundle-2.9.19.pkg"
       },
       {
         "platform": "Linux",
-        "file": "DisplayXRBundle-2.9.18-linux-amd64.tar.gz",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.18/DisplayXRBundle-2.9.18-linux-amd64.tar.gz"
+        "file": "DisplayXRBundle-2.9.19-linux-amd64.tar.gz",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.19/DisplayXRBundle-2.9.19-linux-amd64.tar.gz"
       },
       {
         "platform": "Android",
         "file": "DisplayXR-Installer-0.4.2.apk",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.18/DisplayXR-Installer-0.4.2.apk"
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.19/DisplayXR-Installer-0.4.2.apk"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-installer"

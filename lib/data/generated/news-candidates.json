@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-demo-mediaplayer@v1.14.5",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.14.5",
+    "title": "v1.14.5",
+    "date": "2026-10-28",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.14.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.9.19",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.19",
+    "title": "DisplayXR v2.9.19",
+    "date": "2026-10-28",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.19",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.18.4",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.18.4",
@@ -11,6 +33,17 @@
       "Vulkan display processor answers the runtime's atlas-encoding query (`accepts_atlas_encoding`): encoded atlases are accepted, and PQ (HDR10) gets an explicit no, since the SR Vulkan weaver has no PQ path yet. The runtime can now fall bac…"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.19.0",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.19.0",
+    "title": "v2.19.0",
+    "date": "2026-10-28",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.19.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-runtime@v2.57.0",
@@ -115,17 +148,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-leia-plugin@v2.18.1",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.18.1",
-    "title": "v2.18.1",
-    "date": "2026-10-25",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.18.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-runtime@v2.54.0",
     "repo": "displayxr-runtime",
     "tag": "v2.54.0",
@@ -187,17 +209,6 @@
       "**Changing a look no longer stalls playback.** Loading a LUT (`.cube`) or baking an OCIO look now runs on a worker thread instead of the render thread. The render thread only uploads the finished texture, so the picture keeps playing whi…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.9.17",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.17",
-    "title": "DisplayXR v2.9.17",
-    "date": "2026-10-23",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.17",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.32.0",
@@ -284,17 +295,6 @@
     "title": "DisplayXR Browser v1.8.0",
     "date": "2026-10-20",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.8.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.14.3",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.14.3",
-    "title": "v1.14.3",
-    "date": "2026-10-20",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.14.3",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
