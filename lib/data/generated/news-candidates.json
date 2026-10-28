@@ -1,14 +1,31 @@
 [
   {
+    "id": "displayxr-leia-plugin@v2.18.4",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.18.4",
+    "title": "v2.18.4",
+    "date": "2026-10-28",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.18.4",
+    "prerelease": false,
+    "featureLines": [
+      "Vulkan display processor answers the runtime's atlas-encoding query (`accepts_atlas_encoding`): encoded atlases are accepted, and PQ (HDR10) gets an explicit no, since the SR Vulkan weaver has no PQ path yet. The runtime can now fall bac…"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-runtime@v2.57.0",
     "repo": "displayxr-runtime",
     "tag": "v2.57.0",
-    "title": "v2.57.0",
+    "title": "DisplayXR Runtime v2.57.0",
     "date": "2026-10-28",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.57.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "New OpenXR extension **`XR_DXR_swapchain_color_encoding`**: an app can declare a UNORM swapchain *display-encoded*, so the runtime reads it the way it reads an `_SRGB` one. The in-process D3D11 and D3D12 compositors now also list `R10G10…",
+      "feat(color): XR_DXR_swapchain_color_encoding - declare a UNORM swapchain display-encoded (D3D11) (#2456)",
+      "feat(color): XR_DXR_swapchain_color_encoding on the in-process D3D12 compositor (#2459)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.56.0",
@@ -181,21 +198,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.18.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.18.0",
-    "title": "v2.18.0",
-    "date": "2026-10-23",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.18.0",
-    "prerelease": false,
-    "featureLines": [
-      "**HDR10 / PQ weaving on D3D11.** When the runtime hands the D3D11 display processor a PQ (SMPTE ST 2084) atlas, the plug-in now weaves it in linear light and re-encodes on write: HDR10 output on a `R10G10B10A2_UNORM` target, scRGB on a `…",
-      "The PQ path needs an SR runtime that provides the weaver colour-encoding control; on an older SR runtime the plug-in declines PQ atlases and the existing SDR path is unchanged.",
-      "D3D11: weave a PQ (HDR10) atlas in linear light via the SR colour-encoding control, gated on the runtime's `accepts_atlas_encoding` display-processor slot (#437)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.32.0",
