@@ -54,8 +54,8 @@ const docs = [
   },
   {
     title: "Desktop apps",
-    body: "3D inside Blender, 3D Slicer, ParaView and other tools' own viewports: what each needs from the shared host library.",
-    href: "https://github.com/orgs/DisplayXR/discussions/2442",
+    body: "3D inside Blender, 3D Slicer, ParaView and other tools' own viewports: where each integration stands.",
+    href: "/platform-support#desktop-apps",
     icon: <AppWindow size={20} />,
   },
   {
@@ -161,6 +161,9 @@ export default function DevelopersPage() {
           </div>
           <p className="mt-6 text-sm text-text-secondary">
             See them running in the <a href="/demos" className={link}>demos</a>.
+            Building into a desktop app such as Blender or ParaView instead? See{" "}
+            <a href="/platform-support#desktop-apps" className={link}>desktop apps</a>{" "}
+            on Platform Support.
           </p>
         </section>
 
