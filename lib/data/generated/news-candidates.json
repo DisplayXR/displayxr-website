@@ -1,14 +1,31 @@
 [
   {
-    "id": "displayxr-runtime@v2.56.0",
+    "id": "displayxr-runtime@v2.57.0",
     "repo": "displayxr-runtime",
-    "tag": "v2.56.0",
-    "title": "v2.56.0",
-    "date": "2026-10-27",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.56.0",
+    "tag": "v2.57.0",
+    "title": "v2.57.0",
+    "date": "2026-10-28",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.57.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.56.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.56.0",
+    "title": "DisplayXR Runtime v2.56.0",
+    "date": "2026-10-27",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.56.0",
+    "prerelease": false,
+    "featureLines": [
+      "**The workspace launch hotkey is now Ctrl+Shift+Space** (was Ctrl+Space): plain Ctrl+Space now passes through to apps; re-bind with `displayxr-cli workspace set <id> --hotkey ...`. Displays can now be hot-plugged and re-probed in-process…",
+      "Depth swapchains are fixed on two fronts: D3D runtimes list `D32_FLOAT` first (fixes hello_xr D3D12 device loss, #2430), and the native GL compositor now advertises depth formats (Godot 4). D3D11 `xrWaitFrame` paces frames that did not p…",
+      "feat(service): default workspace launch hotkey is Ctrl+Shift+Space (#2418)",
+      "feat(hotplug): in-process display re-probe on Windows and desktop Linux (#2305)",
+      "feat(test_apps): --hands joint markers in cube_handle_metal_macos"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@android-bundle-2026-10-26",
@@ -90,26 +107,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.53.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.53.1",
-    "title": "DisplayXR Runtime v2.53.1",
-    "date": "2026-10-25",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.53.1",
-    "prerelease": false,
-    "featureLines": [
-      "**Android: window-space UI no longer halves the frame rate.** A Unity/Vulkan app showing a window-space UI panel (e.g. the URP sample with its settings panel open) now runs at the full 60 fps instead of 30 on the Nubia Pad 2. Window-spac…",
-      "**Windows: the in-process D3D11 leg now weaves through the D3D11 hub by default on cross-adapter (hybrid iGPU/dGPU) boxes** — Local2D, zones, masks and the 2D-under backdrop all carry through the hub, with one shared repaint pacer, admis…",
-      "**D3D12:** the hub's D3D12 ingest now GPU-waits an app-published release fence (#2362), and IPC D3D12 clients' commit semaphores are honoured with a bounded wait (#2320).",
-      "**Tracking:** a runtime-owned camera calibration store shared by every provider class through `get_camera_pose`, with a two-distance, full-rotation calibration flow in the Dashboard (#2313).",
-      "feat(hub): the in-process D3D11 leg weaves through the hub by default on cross-adapter boxes; `DXR_HUB=0` is the kill switch (#2317, #2363)",
-      "feat(d3d12): the hub's D3D12 ingest GPU-waits an app-published release fence (#2362, #2364)",
-      "feat(hub): carry Local2D, zones, masks and the 2D-under backdrop through the hub for the D3D11 leg — no more plane retire (#2317 P2b, #2335)",
-      "feat(hub): DIRECT ingress for the D3D12 #1264 reroute and the Vulkan deposit on a single adapter (#2317 P2a); opt-in via `DXR_HUB_INGRESS=direct` until the single-GPU desktop gate passes"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.54.0",

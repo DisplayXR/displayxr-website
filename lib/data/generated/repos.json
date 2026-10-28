@@ -7,6 +7,13 @@
     "archived": false
   },
   {
+    "name": "3DGameBridgeProjects",
+    "description": "",
+    "url": "https://github.com/DisplayXR/3DGameBridgeProjects",
+    "topics": [],
+    "archived": false
+  },
+  {
     "name": "displayxr-browser",
     "description": "DisplayXR Browser — Chromium that renders the web normally and weaves glasses-free inline-3D on DisplayXR hardware. Releases and user-facing issues; security updates follow Chrome stable.",
     "url": "https://github.com/DisplayXR/displayxr-browser",

@@ -74,6 +74,7 @@
     ],
     "repos": [
       ".github",
+      "3DGameBridgeProjects",
       "displayxr-browser",
       "displayxr-cef-host",
       "displayxr-common",
