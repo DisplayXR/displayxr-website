@@ -27,6 +27,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.9.20",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.20",
+    "title": "DisplayXR v2.9.20",
+    "date": "2026-10-28",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.20",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.18.4",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.18.4",
@@ -47,8 +58,14 @@
     "date": "2026-10-28",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.19.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "New **\"LeiaSR multi-viewer\"** rendering mode: when the installed LeiaSR runtime can weave for several viewers at once, apps see an extra rendering mode that weaves every tracked viewer, on D3D11 and Vulkan. Apps select it through the sta…",
+      "The existing **LeiaSR** mode now follows the system's multi-viewer setting.",
+      "\"LeiaSR multi-viewer\" rendering mode (mode 2): same two-view, 2x1 tiling and view scale as the LeiaSR mode, with multi-viewer weaving switched on. Listed only when the LeiaSR runtime reports multi-viewer weave support, so older LeiaSR ru…",
+      "On D3D12 and OpenGL, or with a LeiaSR runtime that does not support the switch, the mode logs a single warning per weaver and weaves the primary viewer. (#467)",
+      "Late display-geometry updates now refresh the view scale of every 3D mode. (#467)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.57.0",
@@ -66,6 +83,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.57.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.57.1",
+    "title": "v2.57.1",
+    "date": "2026-10-28",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.57.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.56.0",
     "repo": "displayxr-runtime",
     "tag": "v2.56.0",
@@ -81,17 +109,6 @@
       "feat(test_apps): --hands joint markers in cube_handle_metal_macos"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@android-bundle-2026-10-26",
-    "repo": "displayxr-installer",
-    "tag": "android-bundle-2026-10-26",
-    "title": "Android tablet bundle android-bundle-2026-10-26",
-    "date": "2026-10-26",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-26",
-    "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.9.18",
@@ -149,25 +166,6 @@
       "Known non-blocking follow-up: #2407 — re-query the scanout capabilities once the display processor is ready, and fall back to the anchor if the windowless prediction was wrong.",
       "feat(d3d11,oxr): texture target binding — XR_DXR_win32_window_binding v9 (ADR-060 R1, #697) (#2373)",
       "feat(service): windowless weave DP for present-owners, phased from the window's origin (ADR-060 R2 + R3) (#2379)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.54.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.54.0",
-    "title": "DisplayXR Runtime v2.54.0",
-    "date": "2026-10-25",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.54.0",
-    "prerelease": false,
-    "featureLines": [
-      "On hybrid iGPU+dGPU laptops, the D3D12 route (Unity, Unreal and other D3D12 apps) now goes through the single D3D11 hub compositor by default (#2381, epic #2317, ADR-059). Every graphics API on those machines now shares one presenter, on…",
-      "Also in this release: the hub's `[RENDER]` diagnostic no longer overflows its period counter (it logged every ~1.4 s instead of every 10 s, #2398), and the Vulkan compositor can now encode the atlas as PQ through a new, appended Vulkan d…",
-      "feat(d3d12): the hybrid reroute onto the D3D11 hub is the default; one hub, one kill switch (#2375) (#2381)",
-      "feat(vk_native): PQ atlas encoding behind an appended Vulkan DP query slot (#2341)",
-      "feat(d3d12): the hybrid reroute onto the D3D11 hub engages at any frame divisor (#2317) (#2374)",
-      "feat(extensions): ABI snapshot test + one shared guard for the window-space layer",
-      "feat(hub): P3 — OpenGL shim onto the D3D11 hub (GL deposit via GL_EXT_memory_object_win32 / WGL_NV_DX_interop2, named fallbacks) (#2317) (#2366)"
     ],
     "looksMechanical": false
   },
