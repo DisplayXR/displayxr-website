@@ -22,6 +22,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.57.2",
+    "repo": "displayxr-runtime",
+    "tag": "v2.57.2",
+    "title": "v2.57.2",
+    "date": "2026-10-29",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.57.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity@v2.34.0",
     "repo": "displayxr-unity",
     "tag": "v2.34.0",
@@ -170,26 +181,6 @@
       "feat(service): default workspace launch hotkey is Ctrl+Shift+Space (#2418)",
       "feat(hotplug): in-process display re-probe on Windows and desktop Linux (#2305)",
       "feat(test_apps): --hands joint markers in cube_handle_metal_macos"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.55.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.55.0",
-    "title": "DisplayXR Runtime v2.55.0",
-    "date": "2026-10-26",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.55.0",
-    "prerelease": false,
-    "featureLines": [
-      "**ADR-060 texture target.** `XR_DXR_win32_window_binding` v9 lets a shared-texture (texture-class) session name where its texture is drawn, as a reference window plus a rect (#2373). Texture-class sessions now weave windowlessly through …",
-      "Also in this release:",
-      "**D3D12 2D→3D fix:** on hybrid-GPU machines the rerouted D3D12 path answered the display-mode request inverted, so a switch to 3D never reached the lens. Fixed (#2412).",
-      "**xbridge:** an extent/format refusal of a single frame is no longer treated as a stall and no longer latches the session into DEGRADED (#2408).",
-      "**vk_native:** single weave-thread ownership by default for apps on the shared-queue repaint path (#2393).",
-      "Known non-blocking follow-up: #2407 — re-query the scanout capabilities once the display processor is ready, and fall back to the anchor if the windowless prediction was wrong.",
-      "feat(d3d11,oxr): texture target binding — XR_DXR_win32_window_binding v9 (ADR-060 R1, #697) (#2373)",
-      "feat(service): windowless weave DP for present-owners, phased from the window's origin (ADR-060 R2 + R3) (#2379)"
     ],
     "looksMechanical": false
   },
