@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-installer@v2.9.22",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.22",
+    "title": "DisplayXR v2.9.22",
+    "date": "2026-10-29",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.22",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.19.2",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.19.2",
@@ -18,8 +29,12 @@
     "date": "2026-10-29",
     "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.34.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Linux (native Wayland):** a player now opens its window on the 3D panel by default, keeping the size it opened with, and centred for the size it gets there (#266). Opt out with `DisplayXRTargetDisplay.PlaceOnPanelAtStart = false`, a `D…",
+      "**Windows editor:** fixes the editor crash on a second docked Play after a Stop (#428) and the editor not exiting after File > Exit (#429). A docked fixed-aspect Game view (e.g. 16:9 with bars) weaves with the right phase again (#420).",
+      "**Windows player:** `DisplayXRTargetDisplay` fits the window to the panel after a move to a higher-scale panel, and a full-screen window covers the panel (#266). On the transparent overlay, a drag ends where you release it and keeps foll…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.14.5",
@@ -155,19 +170,6 @@
       "feat(service): default workspace launch hotkey is Ctrl+Shift+Space (#2418)",
       "feat(hotplug): in-process display re-probe on Windows and desktop Linux (#2305)",
       "feat(test_apps): --hands joint markers in cube_handle_metal_macos"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.9.18",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.18",
-    "title": "DisplayXR v2.9.18",
-    "date": "2026-10-26",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.18",
-    "prerelease": false,
-    "featureLines": [
-      "This bundle carries **runtime v2.55.0** (ADR-060 texture-target binding and windowless weaving, plus the anchor-fallback sub-rect phase fix) and **Leia plug-in v2.18.3** (windowless-phase support; requires LeiaSR 1.39.0 or later, otherwi…"
     ],
     "looksMechanical": false
   },
