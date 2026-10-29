@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-unity@v2.34.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.34.0",
+    "title": "DisplayXR v2.34.0",
+    "date": "2026-10-29",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.34.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@v1.14.5",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.14.5",
@@ -290,17 +301,6 @@
       "Tracked and simulated hands are now drawn in the right place around the model. On runtimes that advertise `XR_DXR_view_rig` spec 4 or later, the viewer asks the runtime for hand joints in the view rig's own frame and renders them directl…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.31.1",
-    "repo": "displayxr-unity",
-    "tag": "v2.31.1",
-    "title": "DisplayXR v2.31.1",
-    "date": "2026-10-22",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.31.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@v1.8.0",
