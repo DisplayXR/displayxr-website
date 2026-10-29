@@ -26,11 +26,10 @@ const INTEGRATION_LABELS: Record<AppIntegration, string> = {
   "browser-page": "DisplayXR Browser page",
 };
 
-const VERIFICATION_ORDER: AppVerification[] = [
-  "seated-verified",
-  "sim-verified",
-  "proposed",
-];
+// The legend lists only the statuses some row carries.
+const VERIFICATION_ORDER = (
+  ["seated-verified", "sim-verified", "proposed"] as AppVerification[]
+).filter((s) => desktopApps.some((a) => a.verification === s));
 
 const link = "text-accent hover:text-accent-hover underline underline-offset-2";
 import { oems, devices } from "@/lib/data/devices";
