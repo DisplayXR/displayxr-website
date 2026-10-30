@@ -59,25 +59,25 @@
   {
     "id": "leia_plugin",
     "name": "Leia SR Plug-in",
-    "version": "v2.19.2",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.19.2",
-    "releaseDate": "2026-10-29",
+    "version": "v2.19.3",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.19.3",
+    "releaseDate": "2026-10-30",
     "platforms": "Windows · Linux · Android",
     "downloads": [
       {
         "platform": "Windows",
-        "file": "DisplayXRLeiaSRSetup-2.19.2.exe",
-        "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.19.2/DisplayXRLeiaSRSetup-2.19.2.exe"
+        "file": "DisplayXRLeiaSRSetup-2.19.3.exe",
+        "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.19.3/DisplayXRLeiaSRSetup-2.19.3.exe"
       },
       {
         "platform": "Linux",
-        "file": "displayxr-leia-sr_2.19.2_amd64.deb",
-        "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.19.2/displayxr-leia-sr_2.19.2_amd64.deb"
+        "file": "displayxr-leia-sr_2.19.3_amd64.deb",
+        "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.19.3/displayxr-leia-sr_2.19.3_amd64.deb"
       },
       {
         "platform": "Android",
-        "file": "displayxr-leia-cnsdk-v2.19.2-android-arm64-v8a.tar.gz",
-        "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.19.2/displayxr-leia-cnsdk-v2.19.2-android-arm64-v8a.tar.gz"
+        "file": "displayxr-leia-cnsdk-v2.19.3-android-arm64-v8a.tar.gz",
+        "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.19.3/displayxr-leia-cnsdk-v2.19.3-android-arm64-v8a.tar.gz"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-leia-plugin"

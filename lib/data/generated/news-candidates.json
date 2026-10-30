@@ -1,14 +1,27 @@
 [
   {
-    "id": "displayxr-runtime@v2.57.3",
-    "repo": "displayxr-runtime",
-    "tag": "v2.57.3",
-    "title": "v2.57.3",
+    "id": "displayxr-leia-plugin@v2.19.3",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.19.3",
+    "title": "v2.19.3",
     "date": "2026-10-30",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.57.3",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.19.3",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.57.3",
+    "repo": "displayxr-runtime",
+    "tag": "v2.57.3",
+    "title": "DisplayXR Runtime v2.57.3",
+    "date": "2026-10-30",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.57.3",
+    "prerelease": false,
+    "featureLines": [
+      "The Android runtime app's dashboard self-test no longer reports a false FAIL when the touch input provider is enabled on a healthy device. `displayxr-cli selftest` now checks only the hands an input provider actually supplies; a hand the…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.9.22",
@@ -111,19 +124,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.18.4",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.18.4",
-    "title": "v2.18.4",
-    "date": "2026-10-28",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.18.4",
-    "prerelease": false,
-    "featureLines": [
-      "Vulkan display processor answers the runtime's atlas-encoding query (`accepts_atlas_encoding`): encoded atlases are accepted, and PQ (HDR10) gets an explicit no, since the SR Vulkan weaver has no PQ path yet. The runtime can now fall bac…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.19.0",
