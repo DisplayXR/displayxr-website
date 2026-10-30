@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-installer@android-bundle-2026-10-30",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-2026-10-30",
+    "title": "Android tablet bundle android-bundle-2026-10-30",
+    "date": "2026-10-30",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-30",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.19.3",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.19.3",
@@ -27,12 +38,14 @@
     "id": "displayxr-runtime@v2.57.4",
     "repo": "displayxr-runtime",
     "tag": "v2.57.4",
-    "title": "v2.57.4",
+    "title": "DisplayXR Runtime v2.57.4",
     "date": "2026-10-30",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.57.4",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The Android Leia APK now bundles CNSDK v0.10.87, paired with the Leia plug-in v2.19.3. The display service sends lens commands one at a time, at least 100 ms apart. Before this, a panel could stay physically in 3D after a display-service…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.9.22",
@@ -102,28 +115,6 @@
       "Mode chip: name the display mode on every mode change and at launch (#145)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.9.19",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.19",
-    "title": "DisplayXR v2.9.19",
-    "date": "2026-10-28",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.19",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.9.20",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.20",
-    "title": "DisplayXR v2.9.20",
-    "date": "2026-10-28",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.20",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.9.21",
@@ -589,6 +580,17 @@
       "**linux:** waits on the workspace wakeup eventfd instead of a fixed 16 ms poll; the service-forwarded workspace hotkey dismisses the shell."
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-installer@android-bundle-latest",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-latest",
+    "title": "Android tablet bundle (latest) — android-bundle-2026-10-30",
+    "date": "2026-10-07",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-reference-scenes@v0.2.0",
