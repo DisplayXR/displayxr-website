@@ -1,11 +1,38 @@
 [
   {
+    "id": "displayxr-demo-mediaplayer@v1.15.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.15.0",
+    "title": "v1.15.0",
+    "date": "2026-10-31",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.15.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.58.0",
     "repo": "displayxr-runtime",
     "tag": "v2.58.0",
-    "title": "v2.58.0",
+    "title": "DisplayXR Runtime v2.58.0",
     "date": "2026-10-31",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.58.0",
+    "prerelease": false,
+    "featureLines": [
+      "**A permanent macOS install flow for camera-based tracking.** `displayxr-tracking-host` now embeds an Info.plist that carries `NSCameraUsageDescription` and the camera entitlements. The service spawns it with responsibility disclaimed, s…",
+      "feat(installer/macos): ship displayxr-cli; camera entitlements; flag a disallowed service agent (63fad86f6)",
+      "feat(tracking-host): embed an Info.plist with NSCameraUsageDescription on macOS (ac48dd9f7)",
+      "feat(android): runtime CAMERA permission + XR_DXR_stereo_camera consumer probe (`camera_probe_android`) (35dcc90a7)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-tracking-open@v0.1.0",
+    "repo": "displayxr-tracking-open",
+    "tag": "v0.1.0",
+    "title": "DisplayXR Open Tracking v0.1.0",
+    "date": "2026-10-31",
+    "url": "https://github.com/DisplayXR/displayxr-tracking-open/releases/tag/v0.1.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -237,20 +264,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@pro-v0.5.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.5.0",
-    "title": "Media Player Pro 0.5.0",
-    "date": "2026-10-22",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.5.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Top-bottom (over-under) stereo.** TB-full and TB-half layouts, left eye on top. They're picked from the `L` cycle, MCP `set_layout tb_full|tb_half`, filenames (`*_1x2`, `*_half_1x2`, or a whole-word `TB` / `OU` / `TAB` / `H-OU`) or top…",
-      "Top-bottom stereo layouts TB-full / TB-half; the eye rectangles and per-eye aspect are shared by playback, the Pro QC views, the eye wipe and pan/zoom (#130)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.14.4",
