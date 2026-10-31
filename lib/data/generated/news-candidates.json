@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.58.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.58.0",
+    "title": "v2.58.0",
+    "date": "2026-10-31",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.58.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@android-bundle-2026-10-30",
     "repo": "displayxr-installer",
     "tag": "android-bundle-2026-10-30",
@@ -154,19 +165,6 @@
     "prerelease": false,
     "featureLines": [
       "Windows: GL and D3D12 runtime-owned (hosted) windows now land phase-snapped after a title-bar drag, as D3D11 windows already did — the plug-in fills the `snap_window_rect` slot runtime#2405 adds to the GL and D3D12 display-processor vtab…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.57.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.57.1",
-    "title": "DisplayXR Runtime v2.57.1",
-    "date": "2026-10-28",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.57.1",
-    "prerelease": false,
-    "featureLines": [
-      "Hosted (runtime-owned window) sessions on the GL, D3D12 and Vulkan compositors now phase-snap the window while it is dragged, as D3D11 already did, so a dragged window no longer lands at an arbitrary interlace phase. To support this, the…"
     ],
     "looksMechanical": false
   },
