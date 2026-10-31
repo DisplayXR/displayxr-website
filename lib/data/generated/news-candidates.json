@@ -1,5 +1,21 @@
 [
   {
+    "id": "displayxr-demo-mediaplayer@pro-v0.6.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.6.0",
+    "title": "Media Player Pro 0.6.0",
+    "date": "2026-10-31",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.6.0",
+    "prerelease": false,
+    "featureLines": [
+      "**QC report export.** \"Export QC report\" in the Station panel (or the `export_qc_report` agent tool) writes this session's alerts and snapshots to `Pictures/DisplayXR/qc_<time>/`: a self-contained `report.html` with both eyes of every sn…",
+      "**10-bit to the panel (opt-in).** `--10bit` (or `MEDIAPLAYER_PRO_10BIT=1`, or the new **Media Player Pro (10-bit)** Start-menu shortcut) asks the runtime for an R10G10B10A2 atlas. Requires DisplayXR runtime 2.53+ and the Leia plug-in 2.1…",
+      "**Signed and notarized macOS installer.** The Pro `.pkg` is Developer ID signed, notarized and stapled, so it installs without a Gatekeeper warning (#146).",
+      "**Auto-convergence on files and top-bottom layouts**, inherited from the base player: `A` now converges SBS and TB clips and stills, not only live input (#153)."
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-demo-mediaplayer@v1.15.0",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.15.0",
@@ -7,8 +23,13 @@
     "date": "2026-10-31",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.15.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Auto-convergence now works on file playback, not just live input.** Videos, image sequences, SBS stills, MPO and LIF files can now set their screen plane automatically. Top-bottom layouts (TB-full / TB-half) work too. It is still **off…",
+      "**The macOS `.pkg` is now Developer ID signed, notarized and stapled** in CI on release tags, so Gatekeeper accepts it with no override (#146).",
+      "Auto-convergence for file playback and top-bottom layouts (#153)",
+      "Media Player Pro: `--10bit` panel atlas switch + 10-bit docs (#149); export the session's QC report as HTML + a Resolve marker EDL + CSV (#150). Pro ships on its own `pro-v*` release track."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.58.0",
@@ -264,20 +285,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.14.4",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.14.4",
-    "title": "v1.14.4",
-    "date": "2026-10-22",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.14.4",
-    "prerelease": false,
-    "featureLines": [
-      "**Top-bottom (over-under) stereo video now plays.** Both full and half top-bottom layouts are supported, left eye on top. They are detected from file names (`*_1x2`, `*_half_1x2`, and whole-word `TB` / `OU` / `TAB` / `H-OU` tokens) and f…",
-      "Top-bottom stereo layouts TB-full / TB-half: the layout cycle, MCP, the environment override, file-name hints and container metadata (#130, part of #128)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.36.1",
