@@ -15,6 +15,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-leia-plugin@v2.19.5",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.19.5",
+    "title": "v2.19.5",
+    "date": "2026-11-01",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.19.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.58.1",
     "repo": "displayxr-runtime",
     "tag": "v2.58.1",
@@ -33,12 +44,16 @@
     "id": "displayxr-runtime@v2.59.0",
     "repo": "displayxr-runtime",
     "tag": "v2.59.0",
-    "title": "v2.59.0",
+    "title": "DisplayXR Runtime v2.59.0",
     "date": "2026-11-01",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.59.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "3D calling in the DisplayXR Browser on Android no longer needs a developer setting. The stereo camera now has an official consent model on Android: the trusted browser is allowed by package and signing certificate, other apps get a conse…",
+      "feat(stereo-camera): Android consent + privacy (A2) (6bbc8209c, #2479)",
+      "feat(oxr): auto hardware 2D while a stereo session submits one flat picture (#2488) (870a8d92e)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-tracking-open@v0.1.1",
@@ -58,6 +73,17 @@
     "title": "DisplayXR 3D Photos for WordPress v0.1.0",
     "date": "2026-11-01",
     "url": "https://github.com/DisplayXR/displayxr-web/releases/tag/wordpress-v0.1.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-web@wordpress-v0.1.1",
+    "repo": "displayxr-web",
+    "tag": "wordpress-v0.1.1",
+    "title": "WordPress plugin: DisplayXR 3D Photos 0.1.1",
+    "date": "2026-11-01",
+    "url": "https://github.com/DisplayXR/displayxr-web/releases/tag/wordpress-v0.1.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -219,19 +245,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.19.1",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.19.1",
-    "title": "v2.19.1",
-    "date": "2026-10-28",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.19.1",
-    "prerelease": false,
-    "featureLines": [
-      "Windows: GL and D3D12 runtime-owned (hosted) windows now land phase-snapped after a title-bar drag, as D3D11 windows already did — the plug-in fills the `snap_window_rect` slot runtime#2405 adds to the GL and D3D12 display-processor vtab…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unity-samples@v2.4.0",
