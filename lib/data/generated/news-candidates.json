@@ -56,6 +56,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.59.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.59.1",
+    "title": "v2.59.1",
+    "date": "2026-11-01",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.59.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-tracking-open@v0.1.1",
     "repo": "displayxr-tracking-open",
     "tag": "v0.1.1",
@@ -168,19 +179,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.57.4",
-    "repo": "displayxr-runtime",
-    "tag": "v2.57.4",
-    "title": "DisplayXR Runtime v2.57.4",
-    "date": "2026-10-30",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.57.4",
-    "prerelease": false,
-    "featureLines": [
-      "The Android Leia APK now bundles CNSDK v0.10.87, paired with the Leia plug-in v2.19.3. The display service sends lens commands one at a time, at least 100 ms apart. Before this, a panel could stay physically in 3D after a display-service…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.9.22",
