@@ -1,14 +1,29 @@
 [
   {
-    "id": "displayxr-runtime@v2.58.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.58.1",
-    "title": "v2.58.1",
+    "id": "displayxr-leia-plugin@v2.19.4",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.19.4",
+    "title": "v2.19.4",
     "date": "2026-11-01",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.58.1",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.19.4",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.58.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.58.1",
+    "title": "DisplayXR Runtime v2.58.1",
+    "date": "2026-11-01",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.58.1",
+    "prerelease": false,
+    "featureLines": [
+      "The viewer-tracking host now shuts down when nothing needs a viewer pose. On macOS the camera used to stay on after the last app closed; the tracking host now stops about 10 s after the last viewer demand (with a 3 s grace period), so th…",
+      "feat(stereo-camera): report the published frame's orientation (XR_DXR_stereo_camera v7, R1) (#2482)",
+      "feat(stereo-camera): XR_STEREO_CAMERA_RECTIFIABLE_BIT_DXR (spec v7) (#2481)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-tracking-open@v0.1.1",
@@ -202,23 +217,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.19.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.19.0",
-    "title": "v2.19.0",
-    "date": "2026-10-28",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.19.0",
-    "prerelease": false,
-    "featureLines": [
-      "New **\"LeiaSR multi-viewer\"** rendering mode: when the installed LeiaSR runtime can weave for several viewers at once, apps see an extra rendering mode that weaves every tracked viewer, on D3D11 and Vulkan. Apps select it through the sta…",
-      "The existing **LeiaSR** mode now follows the system's multi-viewer setting.",
-      "\"LeiaSR multi-viewer\" rendering mode (mode 2): same two-view, 2x1 tiling and view scale as the LeiaSR mode, with multi-viewer weaving switched on. Listed only when the LeiaSR runtime reports multi-viewer weave support, so older LeiaSR ru…",
-      "On D3D12 and OpenGL, or with a LeiaSR runtime that does not support the switch, the mode logs a single warning per weaver and weaves the primary viewer. (#467)",
-      "Late display-geometry updates now refresh the view scale of every 3D mode. (#467)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.19.1",
