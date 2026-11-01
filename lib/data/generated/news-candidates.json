@@ -7,8 +7,12 @@
     "date": "2026-11-01",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.19.4",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Android: stereo camera source for `XR_DXR_stereo_camera` — front and rear stereo pairs, with in-app tracking hand-over (#485)",
+      "Android: each stereo pair now reports its frame orientation (runtime `XR_DXR_stereo_camera` v7) (#487)",
+      "Android: stereo pair rotation taken from the Leia calibration app's user calibration; the last accepted calibration is cached, and an unreachable calibration provider is backed off (#488)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.58.1",
@@ -24,6 +28,17 @@
       "feat(stereo-camera): XR_STEREO_CAMERA_RECTIFIABLE_BIT_DXR (spec v7) (#2481)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.59.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.59.0",
+    "title": "v2.59.0",
+    "date": "2026-11-01",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.59.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-tracking-open@v0.1.1",
@@ -127,19 +142,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.57.3",
-    "repo": "displayxr-runtime",
-    "tag": "v2.57.3",
-    "title": "DisplayXR Runtime v2.57.3",
-    "date": "2026-10-30",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.57.3",
-    "prerelease": false,
-    "featureLines": [
-      "The Android runtime app's dashboard self-test no longer reports a false FAIL when the touch input provider is enabled on a healthy device. `displayxr-cli selftest` now checks only the hands an input provider actually supplies; a hand the…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.57.4",
