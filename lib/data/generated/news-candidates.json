@@ -44,6 +44,39 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-paraview@v0.1.0",
+    "repo": "displayxr-paraview",
+    "tag": "v0.1.0",
+    "title": "v0.1.0 (preview)",
+    "date": "2026-11-02",
+    "url": "https://github.com/DisplayXR/displayxr-paraview/releases/tag/v0.1.0",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.59.2",
+    "repo": "displayxr-runtime",
+    "tag": "v2.59.2",
+    "title": "v2.59.2",
+    "date": "2026-11-02",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.59.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-slicer@v0.1.0",
+    "repo": "displayxr-slicer",
+    "tag": "v0.1.0",
+    "title": "v0.1.0 (preview)",
+    "date": "2026-11-02",
+    "url": "https://github.com/DisplayXR/displayxr-slicer/releases/tag/v0.1.0",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity@v2.35.0",
     "repo": "displayxr-unity",
     "tag": "v2.35.0",
@@ -188,22 +221,6 @@
       "**The macOS `.pkg` is now Developer ID signed, notarized and stapled** in CI on release tags, so Gatekeeper accepts it with no override (#146).",
       "Auto-convergence for file playback and top-bottom layouts (#153)",
       "Media Player Pro: `--10bit` panel atlas switch + 10-bit docs (#149); export the session's QC report as HTML + a Resolve marker EDL + CSV (#150). Pro ships on its own `pro-v*` release track."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.58.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.58.0",
-    "title": "DisplayXR Runtime v2.58.0",
-    "date": "2026-10-31",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.58.0",
-    "prerelease": false,
-    "featureLines": [
-      "**A permanent macOS install flow for camera-based tracking.** `displayxr-tracking-host` now embeds an Info.plist that carries `NSCameraUsageDescription` and the camera entitlements. The service spawns it with responsibility disclaimed, s…",
-      "feat(installer/macos): ship displayxr-cli; camera entitlements; flag a disallowed service agent (63fad86f6)",
-      "feat(tracking-host): embed an Info.plist with NSCameraUsageDescription on macOS (ac48dd9f7)",
-      "feat(android): runtime CAMERA permission + XR_DXR_stereo_camera consumer probe (`camera_probe_android`) (35dcc90a7)"
     ],
     "looksMechanical": false
   },

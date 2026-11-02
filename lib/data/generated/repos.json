@@ -188,6 +188,17 @@
     "archived": false
   },
   {
+    "name": "displayxr-paraview",
+    "description": "DisplayXR for ParaView: glasses-free 3D in ParaView's own render view (preview, research use only)",
+    "url": "https://github.com/DisplayXR/displayxr-paraview",
+    "topics": [
+      "displayxr",
+      "glasses-free-3d",
+      "openxr"
+    ],
+    "archived": false
+  },
+  {
     "name": "displayxr-reference-scenes",
     "description": "Reference scenes for demonstrating and validating open-standard 3D content (OpenUSD, MaterialX/OpenPBR, glTF) on 3D displays with DisplayXR",
     "url": "https://github.com/DisplayXR/displayxr-reference-scenes",
@@ -217,6 +228,17 @@
       "openxr",
       "spatial-computing",
       "window-manager"
+    ],
+    "archived": false
+  },
+  {
+    "name": "displayxr-slicer",
+    "description": "DisplayXR for 3D Slicer: glasses-free 3D in Slicer's own 3D view (preview, research use only)",
+    "url": "https://github.com/DisplayXR/displayxr-slicer",
+    "topics": [
+      "displayxr",
+      "glasses-free-3d",
+      "openxr"
     ],
     "archived": false
   },
