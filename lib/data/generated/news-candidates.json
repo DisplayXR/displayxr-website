@@ -33,6 +33,33 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-leia-plugin@v2.19.7",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.19.7",
+    "title": "v2.19.7",
+    "date": "2026-11-02",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.19.7",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity@v2.35.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.35.0",
+    "title": "DisplayXR v2.35.0",
+    "date": "2026-11-02",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.35.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Hand tracking — an XR Hands subsystem over the runtime's `XR_EXT_hand_tracking`.** The DisplayXR runtime serves 26-joint hands from its input-provider plug-ins (the Ultraleap provider; runtime ADR-034, #825 Tier 2), and the plugin now …",
+      "**Origin and scale.** Joint poses are relative to the **rig camera's transform** (the display plane) in the rig's world units: the runtime's metres are scaled by the active rig's virtual-display-height / physical-height ratio (`DisplayXR…",
+      "**Sample \"Hand Tracking (XR Hands)\"** — `DisplayXRGhostHand` renders each tracked hand as a transparent **Ghost Hand**: Ultraleap's GenericHand model with its HDR fresnel rim and hairline outline (Apache-2.0; attributed in `THIRD-PARTY-N…",
+      "**Opt-out:** `DisplayXRHandTracking.Enabled = false` before XR init, or `DISPLAYXR_HANDS=0`. Controller-style input (`IUnityXRInput`) is deliberately out of scope — tracked as a follow-up issue."
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-leia-plugin@v2.19.4",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.19.4",
@@ -203,17 +230,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-leia-plugin@v2.19.3",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.19.3",
-    "title": "v2.19.3",
-    "date": "2026-10-30",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.19.3",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-installer@v2.9.22",
     "repo": "displayxr-installer",
     "tag": "v2.9.22",
@@ -296,21 +312,6 @@
     "prerelease": false,
     "featureLines": [
       "**Changing a look no longer stalls playback.** Loading a LUT (`.cube`) or baking an OCIO look now runs on a worker thread instead of the render thread. The render thread only uploads the finished texture, so the picture keeps playing whi…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.32.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.32.0",
-    "title": "DisplayXR v2.32.0",
-    "date": "2026-10-23",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.32.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Linux: input fields whose copy, cut and paste are safe with file drops on (#394): `DisplayXRClipboardInputField` (TextMeshPro) and `DisplayXRClipboardLegacyInputField` (UGUI's legacy `InputField`).** Opt-in subclasses of `TMP_InputFiel…",
-      "New assemblies, compiled only when the project has the base field: `com.displayxr.unity.tmp` (`com.unity.ugui` 2.0+, or `com.unity.textmeshpro` 3.0+) and `com.displayxr.unity.ugui` (`com.unity.ugui`), each with an editor assembly for the…",
-      "**Linux: an `ime` SDL fixup and `displayxr_linux_ime_*` exports (#415).** The main plug-in's SDL fixups module (#410) wraps the six `zwp_text_input_v3` handlers of the SDL2 snapshot in Unity 6000.4.6f1's `UnityPlayer.so` and records the …"
     ],
     "looksMechanical": false
   },
