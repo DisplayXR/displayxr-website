@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-browser@v1.9.0",
+    "repo": "displayxr-browser",
+    "tag": "v1.9.0",
+    "title": "DisplayXR Browser v1.9.0",
+    "date": "2026-11-02",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.9.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.9.23",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.23",
+    "title": "DisplayXR v2.9.23",
+    "date": "2026-11-02",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.23",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.19.4",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.19.4",
@@ -232,17 +254,6 @@
       "Mode chip: name the display mode on every mode change and at launch (#145)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.9.21",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.21",
-    "title": "DisplayXR v2.9.21",
-    "date": "2026-10-28",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.21",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unity-samples@v2.4.0",
@@ -501,24 +512,6 @@
     "prerelease": false,
     "featureLines": [
       "**Linux: the demo now appears in the DisplayXR Shell launcher (Ctrl+L).** The `.deb` installs a registered shell manifest at `/usr/share/displayxr/apps/`, so the demo shows up in the launcher right after install, with no manual registrat…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.7.2",
-    "repo": "displayxr-browser",
-    "tag": "v1.7.2",
-    "title": "DisplayXR Browser v1.7.2",
-    "date": "2026-10-13",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.7.2",
-    "prerelease": false,
-    "featureLines": [
-      "On 2D video converted to 3D by the runtime, the browser now requests the runtime's depth-aware cursor and hides the page's own cursor over the converted area while the runtime draws it. Needs a runtime that reports `XR_DXR_cursor_depth` …",
-      "Based on Chromium 156.0.8078.12 (unchanged from 1.7.1).",
-      "Auto-published from displayxr-browser-pvt @ 6c7e0ed345a67b21169864f2b05edb9e5f304a41.",
-      "**Security updates follow Chrome stable.** Every Chrome stable point release is rebuilt and published automatically when the browser's own code is untouched upstream, and verified on a DisplayXR display first when it is not. Not affiliat…",
-      "Android APK: release-signed (CN=DisplayXR Browser). If you have any preview up to and including 0.1.24 installed, UNINSTALL it before installing this one - those were debug-key signed and Android refuses an install that changes the signi…",
-      "Linux (.deb, x64): sudo apt install ./displayxr-browser_1.7.2-1_amd64.deb - needs displayxr-runtime (>= 2.28.0) from DisplayXR/displayxr-runtime releases. A newer .deb upgrades in place; there is no apt repository."
     ],
     "looksMechanical": false
   },
