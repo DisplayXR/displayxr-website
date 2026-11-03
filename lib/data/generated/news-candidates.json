@@ -40,6 +40,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.9.25",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.25",
+    "title": "DisplayXR v2.9.25",
+    "date": "2026-11-03",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.25",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.60.0",
     "repo": "displayxr-runtime",
     "tag": "v2.60.0",
@@ -79,17 +90,6 @@
     "date": "2026-11-02",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.9.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@android-bundle-2026-11-03",
-    "repo": "displayxr-installer",
-    "tag": "android-bundle-2026-11-03",
-    "title": "Android tablet bundle android-bundle-2026-11-03",
-    "date": "2026-11-02",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-11-03",
-    "prerelease": true,
     "featureLines": [],
     "looksMechanical": true
   },

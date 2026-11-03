@@ -137,30 +137,30 @@
   {
     "id": "installer",
     "name": "All-in-one Installer",
-    "version": "v2.9.24",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.24",
+    "version": "v2.9.25",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.25",
     "releaseDate": "2026-11-03",
     "platforms": "Windows · macOS · Linux · Android",
     "downloads": [
       {
         "platform": "Windows",
-        "file": "DisplayXRBundle-2.9.24.exe",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.24/DisplayXRBundle-2.9.24.exe"
+        "file": "DisplayXRBundle-2.9.25.exe",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.25/DisplayXRBundle-2.9.25.exe"
       },
       {
         "platform": "macOS",
-        "file": "DisplayXRBundle-2.9.24.pkg",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.24/DisplayXRBundle-2.9.24.pkg"
+        "file": "DisplayXRBundle-2.9.25.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.25/DisplayXRBundle-2.9.25.pkg"
       },
       {
         "platform": "Linux",
-        "file": "DisplayXRBundle-2.9.24-linux-amd64.tar.gz",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.24/DisplayXRBundle-2.9.24-linux-amd64.tar.gz"
+        "file": "DisplayXRBundle-2.9.25-linux-amd64.tar.gz",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.25/DisplayXRBundle-2.9.25-linux-amd64.tar.gz"
       },
       {
         "platform": "Android",
         "file": "DisplayXR-Installer-0.4.2.apk",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.24/DisplayXR-Installer-0.4.2.apk"
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.25/DisplayXR-Installer-0.4.2.apk"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-installer"
