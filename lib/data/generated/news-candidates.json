@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-demo-modelviewer@v0.37.0",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.37.0",
+    "title": "v0.37.0",
+    "date": "2026-11-03",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.37.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.60.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.60.0",
+    "title": "v2.60.0",
+    "date": "2026-11-03",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.60.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.9.0",
     "repo": "displayxr-browser",
     "tag": "v1.9.0",
@@ -7,6 +29,17 @@
     "date": "2026-11-02",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.9.0",
     "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@android-bundle-2026-11-03",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-2026-11-03",
+    "title": "Android tablet bundle android-bundle-2026-11-03",
+    "date": "2026-11-02",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-11-03",
+    "prerelease": true,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -58,12 +91,15 @@
     "id": "displayxr-runtime@v2.59.2",
     "repo": "displayxr-runtime",
     "tag": "v2.59.2",
-    "title": "v2.59.2",
+    "title": "DisplayXR Runtime v2.59.2",
     "date": "2026-11-02",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.59.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The Android Leia APK now bundles CNSDK v0.10.95 together with Leia plug-in v2.19.7, so the bundled loader and the plug-in it carries are built against the same CNSDK again. Plug-in v2.19.7 brings the stereo-camera fixes from leia-plugin …",
+      "input: the display's shared stereo camera can serve as a hands source. Four slots on the input host iface (`XRT_INPUT_PLUGIN_HOST_HAS_SHARED_CAMERA`, ABI unchanged), in-process consumers of the stereo camera manager, consent step 4a for …"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-slicer@v0.1.0",
@@ -117,21 +153,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.58.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.58.1",
-    "title": "DisplayXR Runtime v2.58.1",
-    "date": "2026-11-01",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.58.1",
-    "prerelease": false,
-    "featureLines": [
-      "The viewer-tracking host now shuts down when nothing needs a viewer pose. On macOS the camera used to stay on after the last app closed; the tracking host now stops about 10 s after the last viewer demand (with a 3 s grace period), so th…",
-      "feat(stereo-camera): report the published frame's orientation (XR_DXR_stereo_camera v7, R1) (#2482)",
-      "feat(stereo-camera): XR_STEREO_CAMERA_RECTIFIABLE_BIT_DXR (spec v7) (#2481)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.59.0",
@@ -243,17 +264,6 @@
     "date": "2026-10-30",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-30",
     "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.9.22",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.22",
-    "title": "DisplayXR v2.9.22",
-    "date": "2026-10-29",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.22",
-    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -521,19 +531,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-demo-modelviewer@v0.35.4",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.35.4",
-    "title": "v0.35.4",
-    "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.35.4",
-    "prerelease": false,
-    "featureLines": [
-      "**Linux: the demo now appears in the DisplayXR Shell launcher (Ctrl+L).** The `.deb` installs a registered shell manifest at `/usr/share/displayxr/apps/`, so the demo shows up in the launcher right after install, with no manual registrat…"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-browser@v1.7.3",
     "repo": "displayxr-browser",
     "tag": "v1.7.3",
@@ -642,7 +639,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — android-bundle-2026-10-30",
+    "title": "Android tablet bundle (latest) — android-bundle-2026-11-03",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
