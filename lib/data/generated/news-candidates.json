@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-browser@v1.9.2",
+    "repo": "displayxr-browser",
+    "tag": "v1.9.2",
+    "title": "DisplayXR Browser v1.9.2",
+    "date": "2026-11-03",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.9.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.37.0",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.37.0",
@@ -46,6 +57,17 @@
     "title": "DisplayXR v2.9.25",
     "date": "2026-11-03",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.25",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-installer@v2.9.26",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.26",
+    "title": "DisplayXR v2.9.26",
+    "date": "2026-11-03",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.26",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -89,17 +111,6 @@
     "title": "DisplayXR Browser v1.9.0",
     "date": "2026-11-02",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.9.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.9.23",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.23",
-    "title": "DisplayXR v2.9.23",
-    "date": "2026-11-02",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.23",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -434,24 +445,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-browser@v1.7.4",
-    "repo": "displayxr-browser",
-    "tag": "v1.7.4",
-    "title": "DisplayXR Browser v1.7.4",
-    "date": "2026-10-16",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.7.4",
-    "prerelease": false,
-    "featureLines": [
-      "The runtime now draws the web cursor on Windows (ADR-046 Amendment 4): the cursor sits at the right depth over inline 3D content instead of floating on the 2D plane.",
-      "A stereo camera that appears after the page loaded now reaches the page as a `devicechange` event (runtime #1961), so camera pickers update live.",
-      "Linux: `--inline-3d-linux-fences=auto|on|off` — no sync_file hand-off by default on NVIDIA, which avoids a frame stall on that driver.",
-      "patches 0408-0410: the runtime draws the web cursor on Windows (#285)",
-      "patch 0412: a runtime stereo camera that appears later reaches the page as `devicechange` (#290)",
-      "feat(linux): `--inline-3d-linux-fences=auto|on|off` (#284)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-conversion-open@v0.1.1",
     "repo": "displayxr-conversion-open",
     "tag": "v0.1.1",
@@ -652,7 +645,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — android-bundle-2026-11-03",
+    "title": "Android tablet bundle (latest) — v2.9.26",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
