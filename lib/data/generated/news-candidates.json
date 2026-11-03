@@ -18,12 +18,40 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-installer@v2.9.24",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.24",
+    "title": "DisplayXR v2.9.24",
+    "date": "2026-11-03",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.24",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.60.0",
     "repo": "displayxr-runtime",
     "tag": "v2.60.0",
-    "title": "v2.60.0",
+    "title": "DisplayXR Runtime v2.60.0",
     "date": "2026-11-03",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.60.0",
+    "prerelease": false,
+    "featureLines": [
+      "Tracked hands and controllers in `RIG_LOCAL` now follow the app's canvas (ADR-034 Amendment 7), so rig-scoped input stays registered to the window an app renders into. This release also fixes an `xrCreateSession` hang on the D3D11 IPC pa…",
+      "feat(oxr): `RIG_LOCAL` hands and controllers follow the app's canvas — ADR-034 Amendment 7 (#2512)",
+      "feat(math): canvas-relative `RIG_LOCAL` placement in the view rig point core",
+      "`cube_handle_d3d11_win`: rig-scoped hand joints (`XR_DXR_view_rig` spec 4)",
+      "feat(android): file-trigger capture on the `XR_DXR_weave` engine (#2501, #2511)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.61.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.61.0",
+    "title": "v2.61.0",
+    "date": "2026-11-03",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.61.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -162,21 +190,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.59.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.59.0",
-    "title": "DisplayXR Runtime v2.59.0",
-    "date": "2026-11-01",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.59.0",
-    "prerelease": false,
-    "featureLines": [
-      "3D calling in the DisplayXR Browser on Android no longer needs a developer setting. The stereo camera now has an official consent model on Android: the trusted browser is allowed by package and signing certificate, other apps get a conse…",
-      "feat(stereo-camera): Android consent + privacy (A2) (6bbc8209c, #2479)",
-      "feat(oxr): auto hardware 2D while a stereo session submits one flat picture (#2488) (870a8d92e)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.59.1",
     "repo": "displayxr-runtime",
     "tag": "v2.59.1",
@@ -260,17 +273,6 @@
     "date": "2026-10-31",
     "url": "https://github.com/DisplayXR/displayxr-tracking-open/releases/tag/v0.1.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@android-bundle-2026-10-30",
-    "repo": "displayxr-installer",
-    "tag": "android-bundle-2026-10-30",
-    "title": "Android tablet bundle android-bundle-2026-10-30",
-    "date": "2026-10-30",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-10-30",
-    "prerelease": true,
     "featureLines": [],
     "looksMechanical": true
   },
