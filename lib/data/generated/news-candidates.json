@@ -7,8 +7,15 @@
     "date": "2026-11-03",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.37.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Hands look like hands.** Each tracked hand is now drawn as one continuous, translucent skinned surface instead of a set of capsules. Set `DXR_MODELVIEWER_HANDS_LOOK=capsules` to get the old look back.",
+      "**Pinch works the same at any hand scale.** The pinch thresholds follow the tracked palm length, so a hand mapped with a gain, or scaled to the window, pinches at the same finger posture.",
+      "**Pinch-drag turns the model by the same amount in any window size.** Drag distance is measured in full-display metres, so a drag across a small window turns the model as far as the same drag across the whole screen.",
+      "**macOS transparent background.** Ctrl/Cmd+T switches to a see-through background with click-through (clicks outside the model reach the desktop) and keeps the window above others, as on Windows and Linux.",
+      "Hands: the rigged GenericHand mesh from the Ultraleap Unity plug-in (Apache-2.0), embedded as an asset and CPU-skinned from the 26 OpenXR hand-tracking joints; capsules stay available via `DXR_MODELVIEWER_HANDS_LOOK=capsules` (#183).",
+      "macOS: transparent background (Ctrl/Cmd+T, `MODEL_TRANSPARENT=1` / `--transparent`), alpha-coverage click-through, keep-above while transparent, and `XR_DXR_depth_budget` clip-plane support (#181, #182)."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.60.0",
