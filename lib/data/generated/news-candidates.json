@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.62.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.62.0",
+    "title": "v2.62.0",
+    "date": "2026-11-04",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.62.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.9.1",
     "repo": "displayxr-browser",
     "tag": "v1.9.1",
@@ -211,17 +222,6 @@
     "title": "v2.19.5",
     "date": "2026-11-01",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.19.5",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.59.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.59.1",
-    "title": "v2.59.1",
-    "date": "2026-11-01",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.59.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
