@@ -3,12 +3,21 @@
     "id": "displayxr-runtime@v2.62.0",
     "repo": "displayxr-runtime",
     "tag": "v2.62.0",
-    "title": "v2.62.0",
+    "title": "DisplayXR Runtime v2.62.0",
     "date": "2026-11-04",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.62.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**3D screen share v1 (ADR-061, Windows).** A service-composited app's pre-weave views can now be shared as a stereo-camera source of the new kind **app**, exposed through `XR_DXR_app_share`. The D3D11 service compositor taps the frame an…",
+      "Also in this release: hand-tracking display-plane (RIG_LOCAL) hands, a warning about a hand-tracking SDK's implicit OpenXR layer, a fix for a Linux service hang on exit, and the D3D12 hub reroute taking DIRECT ingress by default on a sin…",
+      "feat(app-share): tray share prompt and \"Sharing <app>\" indicator on Windows (ADR-061)",
+      "feat(app-share): the D3D11 service compositor's share tap (ADR-061)",
+      "feat(app-share): share consent policy, share.* settings, synthetic source (ADR-061)",
+      "feat(stereo-camera): app-share source kind in the manager, IPC and state tracker (ADR-061)",
+      "feat(cli): `displayxr-cli share list|probe|settings`; camera list tags app entries (ADR-061)",
+      "feat(input): warn about a hand-tracking SDK's implicit OpenXR layer; settings follow the provider's registration row (#2504, #2508)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.9.1",
