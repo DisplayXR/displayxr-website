@@ -18,8 +18,10 @@
     "date": "2026-11-05",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.19.8",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "A 3D-camera call on a Leia Android tablet now weaves with the correct phase: the in-app head tracker is fed at the full camera rate instead of stalling."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.63.0",
