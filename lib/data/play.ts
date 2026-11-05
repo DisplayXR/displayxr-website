@@ -60,7 +60,9 @@ export const SYSTEMS: PlaySystem[] = [
       "Install the launcher and drop in the mod folder.",
       "Companion app: Turn 3D On. Launcher: Launch.",
     ],
-    primary: { label: "Download v0.6.4", href: PLAY_ANDROID_RELEASES },
+    // The page swaps this for the companion app's direct link and the lane
+    // version from lib/data/generated/play.json (synced from the repo's releases).
+    primary: { label: "Get the companion app", href: PLAY_ANDROID_RELEASES },
     secondary: { label: "Install guide", href: PLAY_ANDROID_REPO },
     note: "First game: Minecraft Bedrock. 45 fps on a tablet, 22 fps on a phone with head tracking.",
   },
@@ -85,6 +87,8 @@ export type GameStatus = "plays" | "partial" | "refused";
 
 export interface GameRow {
   game: string;
+  /** Matches the `<slug>-mod-<version>.zip` asset in the Android lane's release. */
+  slug?: string;
   unnamed?: boolean;
   systems: string;
   route: string;
@@ -97,6 +101,7 @@ export interface GameRow {
 export const GAMES: GameRow[] = [
   {
     game: "Minecraft Bedrock 1.26",
+    slug: "minecraft-bedrock",
     systems: "Android",
     route: "Native mod via launcher",
     status: "plays",

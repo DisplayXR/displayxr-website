@@ -6,6 +6,7 @@ import componentsJson from "./generated/components.json";
 import demosJson from "./generated/demos.json";
 import enginesJson from "./generated/engines.json";
 import extensionsJson from "./generated/extensions.json";
+import playJson from "./generated/play.json";
 
 export type Platform = "Windows" | "macOS" | "Linux" | "Android";
 
@@ -83,7 +84,27 @@ export interface ExtensionEntry {
   specUrl: string | null;
 }
 
+/** DisplayXR Play, Android lane: one release per lane version, one zip per game. */
+export interface PlayGameAsset {
+  slug: string;
+  version: string;
+  file: string;
+  url: string;
+}
+export interface PlayAndroidRelease {
+  version: string | null;
+  releaseUrl: string;
+  releaseDate: string | null;
+  repoUrl: string;
+  companion: { file: string; url: string } | null;
+  games: PlayGameAsset[];
+}
+export interface PlayGenerated {
+  android: PlayAndroidRelease;
+}
+
 export const components = componentsJson as ComponentRelease[];
 export const demos = demosJson as DemoEntry[];
 export const engines = enginesJson as EngineEntry[];
 export const extensionsGenerated = extensionsJson as ExtensionEntry[];
+export const play = playJson as PlayGenerated;
