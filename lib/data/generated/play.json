@@ -1,0 +1,20 @@
+{
+  "android": {
+    "version": "v0.6.4",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-play-android/releases/tag/v0.6.4",
+    "releaseDate": "2026-11-05",
+    "repoUrl": "https://github.com/DisplayXR/displayxr-play-android",
+    "companion": {
+      "file": "displayxr-3d-bridge-0.6.4.apk",
+      "url": "https://github.com/DisplayXR/displayxr-play-android/releases/download/v0.6.4/displayxr-3d-bridge-0.6.4.apk"
+    },
+    "games": [
+      {
+        "slug": "minecraft-bedrock",
+        "version": "0.6.4",
+        "file": "minecraft-bedrock-mod-0.6.4.zip",
+        "url": "https://github.com/DisplayXR/displayxr-play-android/releases/download/v0.6.4/minecraft-bedrock-mod-0.6.4.zip"
+      }
+    ]
+  }
+}

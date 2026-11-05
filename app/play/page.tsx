@@ -13,7 +13,14 @@ import {
   SYSTEMS,
 } from "@/lib/data/play";
 import { DISCUSSIONS_URL, DOWNLOAD_HREF } from "@/lib/constants";
+import { play } from "@/lib/data/generated";
 import type { ReactNode } from "react";
+
+// Versions and download links come from the synced release record; status,
+// cost and notes per game are authored in lib/data/play.ts (the site's
+// generated-vs-authored split).
+const android = play.android;
+const gameAsset = (slug?: string) => (slug ? android.games.find((g) => g.slug === slug) : undefined);
 
 export const metadata: Metadata = {
   title: "DisplayXR Play",
@@ -158,7 +165,9 @@ export default function PlayPage() {
                 >
                   <div className="flex items-center justify-between gap-3">
                     <h3 className="text-xl font-semibold text-text-primary">{s.name}</h3>
-                    <Chip tone={live ? "green" : "yellow"}>{live ? "Available" : "Preview"}</Chip>
+                    <Chip tone={live ? "green" : "yellow"}>
+                      {live ? (android.version ? `Available · ${android.version}` : "Available") : "Preview"}
+                    </Chip>
                   </div>
                   <p className="text-sm text-text-secondary">{s.how}</p>
                   <ol className="flex list-decimal flex-col gap-1.5 pl-5 text-sm text-text-primary/90">
@@ -167,7 +176,10 @@ export default function PlayPage() {
                     ))}
                   </ol>
                   <div className="mt-auto flex flex-wrap gap-2.5 pt-2">
-                    <Button href={s.primary.href} variant={live ? "primary" : "secondary"}>
+                    <Button
+                      href={s.id === "android" && android.companion ? android.companion.url : s.primary.href}
+                      variant={live ? "primary" : "secondary"}
+                    >
                       {s.primary.label}
                     </Button>
                     {s.secondary && (
@@ -250,6 +262,19 @@ export default function PlayPage() {
                     <td className="px-4 py-4 font-medium text-text-primary">
                       {g.game}
                       {g.unnamed && <span className="font-normal text-text-secondary"> (named at release)</span>}
+                      {(() => {
+                        const a = gameAsset(g.slug);
+                        return a ? (
+                          <a
+                            href={a.url}
+                            className="mt-1 block text-xs font-normal text-accent hover:text-accent-hover"
+                            data-umami-event="play-mod-download"
+                            data-umami-event-game={a.slug}
+                          >
+                            Download mod {a.version}
+                          </a>
+                        ) : null;
+                      })()}
                     </td>
                     <td className="px-4 py-4 text-text-primary/90">{g.systems}</td>
                     <td className="px-4 py-4 text-text-primary/90">{g.route}</td>
@@ -361,7 +386,9 @@ export default function PlayPage() {
                       <span className="block font-mono text-sm text-text-primary">{r.name}</span>
                       <span className="block text-[13px] text-text-secondary">{r.text}</span>
                     </span>
-                    <Chip tone={r.status === "live" ? "green" : "yellow"}>{r.label}</Chip>
+                    <Chip tone={r.status === "live" ? "green" : "yellow"}>
+                      {r.status === "live" && android.version ? android.version : r.label}
+                    </Chip>
                   </>
                 );
                 const cls =
