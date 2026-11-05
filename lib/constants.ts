@@ -29,6 +29,9 @@ export const NAV: NavEntry[] = [
   // The DisplayXR Browser has its own always-visible tab, second because it is
   // the most demo-able thing (David, 2026-10-04; order is his call).
   { label: "Browser", href: "/browser" },
+  // DisplayXR Play: the games program (Nov 2026). Its own tab next to the
+  // Browser; drop it from NAV if the header gets crowded (David's call).
+  { label: "Play", href: "/play" },
   {
     label: "Developers",
     href: "/developers",

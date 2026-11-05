@@ -6,6 +6,7 @@ const footerLinks = {
   Developers: [
     { label: "Developers", href: "/developers" },
     { label: "3D on the web", href: "/browser" },
+    { label: "Games in 3D", href: "/play" },
     { label: "Download", href: "/download" },
     { label: "Extensions", href: "/extensions" },
     { label: "Demos", href: "/demos" },
