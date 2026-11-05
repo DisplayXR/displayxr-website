@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.9.3",
+    "repo": "displayxr-browser",
+    "tag": "v1.9.3",
+    "title": "DisplayXR Browser v1.9.3",
+    "date": "2026-11-05",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.9.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@pro-v0.7.1",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "pro-v0.7.1",
@@ -11,6 +22,22 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-mediaplayer@pro-v0.8.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.8.0",
+    "title": "Media Player Pro 0.8.0",
+    "date": "2026-11-05",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.8.0",
+    "prerelease": false,
+    "featureLines": [
+      "**5.1 output.** When the source has 6 or more channels and the default output device does too, Pro now outputs 5.1. Otherwise it outputs stereo. A 7.1 source folds to 5.1 (#175).",
+      "**Audible change: 5.1 sources downmixed to stereo play up to about 7.6 dB quieter**, because the fold-down no longer overloads. Stereo sources are unaffected. Audio failures now log the reason, and `MEDIAPLAYER_AUDIO_CHANNELS=2|6` forces…",
+      "**Use runtime v2.63.0 or later on Windows.** It fixes a drop to about 9 fps with a tracked viewer on 3D content (DisplayXR/displayxr-runtime#2541). Measured on an RTX 3080. It was caused by the runtime, not by the player. **A seated-view…",
+      "**Runtime 2.61 is now the floor.** Below 2.61, calibration is not keyed by the display's stable key. The Windows installer warns, and the `.deb` declares `Depends: displayxr-runtime (>= 2.61.0)` (#178)."
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-demo-mediaplayer@v1.16.0",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.16.0",
@@ -18,8 +45,17 @@
     "date": "2026-11-05",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.16.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**5.1 output.** When the source has 6 or more channels and the default output device does too, the player now outputs 5.1. Otherwise it outputs stereo. A 7.1 source folds to 5.1 (#175).",
+      "**Audible change: 5.1 sources downmixed to stereo play up to about 7.6 dB quieter**, because the fold-down no longer overloads. A loud mix could reach about 2.4x full scale before. Stereo sources are unaffected (#175).",
+      "**Phone spatial capture plays in 3D.** MV-HEVC stereo video (`.mov` / `.mp4`) and stereo HEIC photos are detected automatically on Windows, macOS and the Linux `.deb` (#156).",
+      "**VR180 and stereo VR360 viewer.** These files play as a window into the scene: drag to pan and tilt, wheel to zoom, double-click or `R` to re-centre, `P` to cycle the projection. The stereo pair stays rectified at every view (#161).",
+      "**Windows Vulkan players: run with runtime v2.63.0 or later.** It fixes a drop to about 9 fps with a tracked viewer on 3D content (DisplayXR/displayxr-runtime#2541). Measured on an RTX 3080. It was caused by the runtime, not by the playe…",
+      "5.1 audio output, with overload protection on the stereo fold-down (#175)",
+      "MV-HEVC stereo video and stereo HEIC photos (#156)",
+      "VR180 and stereo VR360 viewer, with `get_view` / `set_view` MCP tools (#161)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.19.8",
@@ -311,22 +347,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-demo-mediaplayer@v1.15.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.15.0",
-    "title": "v1.15.0",
-    "date": "2026-10-31",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.15.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Auto-convergence now works on file playback, not just live input.** Videos, image sequences, SBS stills, MPO and LIF files can now set their screen plane automatically. Top-bottom layouts (TB-full / TB-half) work too. It is still **off…",
-      "**The macOS `.pkg` is now Developer ID signed, notarized and stapled** in CI on release tags, so Gatekeeper accepts it with no override (#146).",
-      "Auto-convergence for file playback and top-bottom layouts (#153)",
-      "Media Player Pro: `--10bit` panel atlas switch + 10-bit docs (#149); export the session's QC report as HTML + a Resolve marker EDL + CSV (#150). Pro ships on its own `pro-v*` release track."
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-tracking-open@v0.1.0",
     "repo": "displayxr-tracking-open",
     "tag": "v0.1.0",
@@ -406,17 +426,6 @@
       "Tracked and simulated hands are now drawn in the right place around the model. On runtimes that advertise `XR_DXR_view_rig` spec 4 or later, the viewer asks the runtime for hand joints in the view rig's own frame and renders them directl…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.8.0",
-    "repo": "displayxr-browser",
-    "tag": "v1.8.0",
-    "title": "DisplayXR Browser v1.8.0",
-    "date": "2026-10-20",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.8.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-mcp@v0.5.6",
