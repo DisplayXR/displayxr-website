@@ -199,6 +199,13 @@
     "archived": false
   },
   {
+    "name": "displayxr-play-android",
+    "description": "DisplayXR Play, Android lane: real two-eye stereo mods for native Android games, woven by the DisplayXR runtime. First game: Minecraft Bedrock.",
+    "url": "https://github.com/DisplayXR/displayxr-play-android",
+    "topics": [],
+    "archived": false
+  },
+  {
     "name": "displayxr-reference-scenes",
     "description": "Reference scenes for demonstrating and validating open-standard 3D content (OpenUSD, MaterialX/OpenPBR, glTF) on 3D displays with DisplayXR",
     "url": "https://github.com/DisplayXR/displayxr-reference-scenes",
