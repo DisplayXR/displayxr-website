@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-mediaplayer@v1.16.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.16.0",
+    "title": "v1.16.0",
+    "date": "2026-11-05",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.16.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.19.8",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.19.8",
@@ -27,12 +38,18 @@
     "id": "displayxr-runtime@v2.63.0",
     "repo": "displayxr-runtime",
     "tag": "v2.63.0",
-    "title": "v2.63.0",
+    "title": "DisplayXR Runtime v2.63.0",
     "date": "2026-11-05",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.63.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Dragging the DisplayXR Browser's window on Windows no longer judders in 3D: the drag is now phase-snapped on the display processor that actually weaves the window (a regression since v2.55.0's windowless weave). On Android, a weave prese…",
+      "feat(camera-profile): pitchDegrees — the legacy camera's starting tilt",
+      "feat(camera-profile): pullbackMeters — where the legacy camera starts",
+      "feat(ipc): one in-process service link {lift, share} + the share-link protocol + APP_LINK source arm",
+      "feat(xbridge): the in-process share tap hook surface (ADR-061 arm 2)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@pro-v0.7.0",
@@ -292,22 +309,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@pro-v0.6.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.6.0",
-    "title": "Media Player Pro 0.6.0",
-    "date": "2026-10-31",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.6.0",
-    "prerelease": false,
-    "featureLines": [
-      "**QC report export.** \"Export QC report\" in the Station panel (or the `export_qc_report` agent tool) writes this session's alerts and snapshots to `Pictures/DisplayXR/qc_<time>/`: a self-contained `report.html` with both eyes of every sn…",
-      "**10-bit to the panel (opt-in).** `--10bit` (or `MEDIAPLAYER_PRO_10BIT=1`, or the new **Media Player Pro (10-bit)** Start-menu shortcut) asks the runtime for an R10G10B10A2 atlas. Requires DisplayXR runtime 2.53+ and the Leia plug-in 2.1…",
-      "**Signed and notarized macOS installer.** The Pro `.pkg` is Developer ID signed, notarized and stapled, so it installs without a Gatekeeper warning (#146).",
-      "**Auto-convergence on files and top-bottom layouts**, inherited from the base player: `A` now converges SBS and TB clips and stills, not only live input (#153)."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.15.0",
