@@ -1,5 +1,45 @@
 [
   {
+    "id": "displayxr-browser@v1.10.0",
+    "repo": "displayxr-browser",
+    "tag": "v1.10.0",
+    "title": "DisplayXR Browser v1.10.0",
+    "date": "2026-11-06",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@pro-v0.8.1",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.8.1",
+    "title": "Media Player Pro 0.8.1",
+    "date": "2026-11-06",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.8.1",
+    "prerelease": false,
+    "featureLines": [
+      "**Panels stay until you hide them.** Tab, the transport's new **Panels** button, or \"Show panels\" shows or hides the full UI: top bar, Station and Inspector panels, and transport. It stays up until you hide it. There is no timer and no c…",
+      "**Mouse movement shows a slim strip.** With the panels hidden, moving the mouse shows only a transport strip on the bottom edge (play/pause, time and frame number, scrubber, mute, loop, Panels) and the pointer. They go after 2.5 s withou…",
+      "**Keys, the wheel and Ctrl+click never show or hide UI.**",
+      "**Shift+Tab is a clean feed:** no strip, panels, toasts or pointer. Leaving it restores the panels.",
+      "**The pointer hides with the UI**, and so does the runtime's depth cursor, except while the pixel probe is on.",
+      "Full screen still hides the panels and restores them when you leave it."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-installer@v2.9.28",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.28",
+    "title": "DisplayXR v2.9.28",
+    "date": "2026-11-06",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.28",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.63.1",
     "repo": "displayxr-runtime",
     "tag": "v2.63.1",
@@ -17,12 +57,14 @@
     "id": "displayxr-runtime@v2.63.2",
     "repo": "displayxr-runtime",
     "tag": "v2.63.2",
-    "title": "v2.63.2",
+    "title": "DisplayXR Runtime v2.63.2",
     "date": "2026-11-06",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.63.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Same runtime as v2.63.1 (incl. the #2546 2D-weave tile-edge fix), now with the macOS installer: macOS CI moved to macos-15 (#2550). v2.63.1 shipped without `DisplayXR-Installer-*.pkg` because GitHub retired the macos-14 runner and its ma…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.9.3",
@@ -139,25 +181,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-demo-mediaplayer@pro-v0.7.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.7.0",
-    "title": "Media Player Pro 0.7.0",
-    "date": "2026-11-04",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.7.0",
-    "prerelease": false,
-    "featureLines": [
-      "**DeckLink input in every Pro build.** The Blackmagic DeckLink SDK headers are now vendored, so the Windows, macOS and Linux Pro builds all have DeckLink capture. The DeckLink library is loaded at run time from Blackmagic Desktop Video, …",
-      "**HDR sources on the SDR panel.** HLG and PQ video is tone-mapped to the panel (BT.2390 roll-off, 203-nit reference white, `tone_map` auto / on / off / raw), and EXR keeps its values above 1.0. Standard-range video renders exactly as bef…",
-      "**Station acceptance kit, shipped in the installer.** Scripted checks plus a by-eye checklist, under `C:\\Program Files\\DisplayXR\\Apps\\MediaPlayerPro\\tools\\acceptance\\`. The soak test logs a row every 2 s, and the version check requires r…",
-      "**Per-panel display calibration.** A calibration LUT per panel, keyed by the monitor's EDID and loaded automatically, applied after the grade and separate from it (#133, #158).",
-      "**Target-screen depth model.** Judge depth for the screen the picture is made for (Cinema, Home TV, Monitor, Tablet or Custom), with a preview on the panel and alerts. Off by default (#135, #159).",
-      "**Pro on Linux.** A separate `displayxr-mediaplayer-pro` `.deb` that installs side by side with the Media Player, including DeckLink when Desktop Video is installed. No OpenColorIO in this build; `.cube` LUTs and ASC CDLs work (#139, #163).",
-      "From the base player: **VR180 / stereo VR360** as a mouse-steered window with a rectified pair (#155, #161), and **MV-HEVC stereo video and stereo HEIC photos** play in 3D (#154, #156)."
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-installer@v2.9.27",
     "repo": "displayxr-installer",
     "tag": "v2.9.27",
@@ -189,17 +212,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-browser@v1.9.1",
-    "repo": "displayxr-browser",
-    "tag": "v1.9.1",
-    "title": "DisplayXR Browser v1.9.1",
-    "date": "2026-11-03",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.9.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-browser@v1.9.2",
     "repo": "displayxr-browser",
     "tag": "v1.9.2",
@@ -227,17 +239,6 @@
       "macOS: transparent background (Ctrl/Cmd+T, `MODEL_TRANSPARENT=1` / `--transparent`), alpha-coverage click-through, keep-above while transparent, and `XR_DXR_depth_budget` clip-plane support (#181, #182)."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.9.25",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.25",
-    "title": "DisplayXR v2.9.25",
-    "date": "2026-11-03",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.25",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.9.26",
@@ -668,7 +669,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — v2.9.27",
+    "title": "Android tablet bundle (latest) — v2.9.28",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
