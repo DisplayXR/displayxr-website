@@ -72,12 +72,15 @@
     "id": "displayxr-runtime@v2.64.0",
     "repo": "displayxr-runtime",
     "tag": "v2.64.0",
-    "title": "v2.64.0",
+    "title": "DisplayXR Runtime v2.64.0",
     "date": "2026-11-06",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.64.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The Linux `.deb` and tarball now ship the qwerty driver, so legacy and hosted apps get a properly placed head (no more floor-level viewpoint) and the legacy camera rig works on Linux. The desktop-Linux Vulkan compositor also gains an Xli…",
+      "**vk_native:** Xlib-surface fallback plus an adopt-own-window hosted child for hosted Windows apps under a translation layer (#2346). When the app's Vulkan instance lacks `VK_KHR_xcb_surface`, the surface is built with `vkCreateXlibSurfa…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.9.3",
