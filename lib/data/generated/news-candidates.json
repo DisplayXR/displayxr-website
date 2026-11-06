@@ -3,9 +3,23 @@
     "id": "displayxr-runtime@v2.63.1",
     "repo": "displayxr-runtime",
     "tag": "v2.63.1",
-    "title": "v2.63.1",
+    "title": "DisplayXR Runtime v2.63.1",
     "date": "2026-11-06",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.63.1",
+    "prerelease": false,
+    "featureLines": [
+      "A windowed 3D tile on a page woven through `XR_DXR_weave` (the DisplayXR Browser) no longer has a dark line around its edge when a viewer is tracked: the runtime now fills the hole edge under the softened 2D layer with the tile's own col…",
+      "feat(app-share): in-process apps can be shared on Windows (ADR-061 arm 2) (#2547). The D3D11, D3D12 and Vulkan hub producers and the D3D11 own-legs path copy pre-weave views into an NT-shared ring the service converts to NV12 (GL decline…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.63.2",
+    "repo": "displayxr-runtime",
+    "tag": "v2.63.2",
+    "title": "v2.63.2",
+    "date": "2026-11-06",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.63.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -235,21 +249,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.61.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.61.0",
-    "title": "DisplayXR Runtime v2.61.0",
-    "date": "2026-11-03",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.61.0",
-    "prerelease": false,
-    "featureLines": [
-      "Apps can now read a stable per-display key through `XrDisplayStableKeyDXR` (`XR_DXR_display_info` v24), for storing per-panel data such as calibration. Windows now reads the EDID serial, a vendor serial takes priority over an EDID serial…",
-      "**Note for users:** on Windows, the screen key changes for monitors with an EDID serial and no vendor serial, and it no longer follows the port.",
-      "feat(display_info): report a stable per-display key to apps, read the EDID serial on Windows (#2510)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.19.6",
