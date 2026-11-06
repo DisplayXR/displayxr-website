@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.63.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.63.1",
+    "title": "v2.63.1",
+    "date": "2026-11-06",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.63.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.9.3",
     "repo": "displayxr-browser",
     "tag": "v1.9.3",
@@ -18,8 +29,12 @@
     "date": "2026-11-05",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.9.4",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Share a tab in 3D.** Sharing a tab that shows inline 3D content now works. A normal tab share shows each 3D element as a flat picture instead of an empty hole, and anything drawn over a 3D element stays visible on the sharer's own disp…",
+      "**Opt-in stereo tab capture for web apps.** A page can ask for both eyes of a shared tab: `navigator.mediaDevices.getDisplayMedia({video: true, displayxrStereo: true})`. For a tab pick, the track then carries a half-width side-by-side fr…",
+      "Windows: a UVC stereo webcam that the DisplayXR runtime can rectify now appears in the camera list as a 3D camera."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@pro-v0.7.1",
@@ -220,23 +235,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.60.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.60.0",
-    "title": "DisplayXR Runtime v2.60.0",
-    "date": "2026-11-03",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.60.0",
-    "prerelease": false,
-    "featureLines": [
-      "Tracked hands and controllers in `RIG_LOCAL` now follow the app's canvas (ADR-034 Amendment 7), so rig-scoped input stays registered to the window an app renders into. This release also fixes an `xrCreateSession` hang on the D3D11 IPC pa…",
-      "feat(oxr): `RIG_LOCAL` hands and controllers follow the app's canvas — ADR-034 Amendment 7 (#2512)",
-      "feat(math): canvas-relative `RIG_LOCAL` placement in the view rig point core",
-      "`cube_handle_d3d11_win`: rig-scoped hand joints (`XR_DXR_view_rig` spec 4)",
-      "feat(android): file-trigger capture on the `XR_DXR_weave` engine (#2501, #2511)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.61.0",
