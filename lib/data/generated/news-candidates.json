@@ -78,20 +78,9 @@
     "date": "2026-11-07",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.20.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.66.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.66.0",
-    "title": "DisplayXR Runtime v2.66.0",
-    "date": "2026-11-07",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.0",
-    "prerelease": false,
     "featureLines": [
-      "Convert to 3D works again on Windows. With this release the runtime selects NeurD automatically when you have installed it under its own licence, and falls back to Open Conversion when you have not. Converted video also has look-around a…",
-      "feat(conv): a model the user installed passes the licence gate (`XRT_CONV_CAP_LICENSED_LOCAL_INSTALL`) (#2562)"
+      "**Steadier convergence on lifted 2D→3D video.** When the installed conversion module runs its own auto-convergence (NeurD 0.4.6 or newer), the Leia conversion provider now says so to the runtime. A runtime that honours the flag (the next…",
+      "Conversion provider declares `XRT_CONV_CAP_AUTO_CONVERGENCE` on its mono-to-views capability whenever the loaded module has its own auto-convergence; before the module is ready the answer is taken provisionally from the module file's ver…"
     ],
     "looksMechanical": false
   },
@@ -133,6 +122,17 @@
       "Extends v2.66.2's late-weave stutter fix (#2564) to the D3D12 tier's own chain and the workspace service: no more stranded frame-latency token after a governor depth change, and no stage-2 scanout wait on DWM-composed D3D12 windows (#2568)."
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.66.4",
+    "repo": "displayxr-runtime",
+    "tag": "v2.66.4",
+    "title": "v2.66.4",
+    "date": "2026-11-07",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@v1.10.0",
