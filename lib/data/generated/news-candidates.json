@@ -22,15 +22,30 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.65.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.65.0",
-    "title": "v2.65.0",
+    "id": "displayxr-installer@v2.9.29",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.29",
+    "title": "DisplayXR v2.9.29",
     "date": "2026-11-07",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.65.0",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.29",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.65.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.65.0",
+    "title": "DisplayXR Runtime v2.65.0",
+    "date": "2026-11-07",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.65.0",
+    "prerelease": false,
+    "featureLines": [
+      "2D planes over the #918 bridge now stay smooth at 8K. A half-rate 2D (Local2D) layer no longer steps back in time or blinks. On a single GPU the bandwidth gate is off entirely (`DXR_XBRIDGE_GATE_SAME_ADAPTER=1` turns it back on), and a l…",
+      "**xbridge:** no bandwidth gate when producer and consumer share one adapter, plus a latch that can release at 8K (#2559). On one GPU the \"transport\" is a copy inside the same GPU's memory, so halving a plane bought nothing and cost the 2…",
+      "**oxr:** `XR_DXR_stereo_comfort` v1, the comfort zone for the current viewer (#2549). When the app chains `XrStereoComfortDXR` on `XrViewState`, `xrLocateViews` reports front/behind diopters and the matching on-glass disparity at the tra…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.10.0",
@@ -224,17 +239,6 @@
       "macOS: transparent background (Ctrl/Cmd+T, `MODEL_TRANSPARENT=1` / `--transparent`), alpha-coverage click-through, keep-above while transparent, and `XR_DXR_depth_budget` clip-plane support (#181, #182)."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.9.26",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.26",
-    "title": "DisplayXR v2.9.26",
-    "date": "2026-11-03",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.26",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-leia-plugin@v2.19.6",
@@ -654,7 +658,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — v2.9.28",
+    "title": "Android tablet bundle (latest) — v2.9.29",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
