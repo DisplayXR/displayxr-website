@@ -33,6 +33,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-leia-plugin@v2.20.0",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.20.0",
+    "title": "v2.20.0",
+    "date": "2026-11-07",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.20.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.65.0",
     "repo": "displayxr-runtime",
     "tag": "v2.65.0",
@@ -46,6 +57,17 @@
       "**oxr:** `XR_DXR_stereo_comfort` v1, the comfort zone for the current viewer (#2549). When the app chains `XrStereoComfortDXR` on `XrViewState`, `xrLocateViews` reports front/behind diopters and the matching on-glass disparity at the tra…"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.66.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.66.0",
+    "title": "v2.66.0",
+    "date": "2026-11-07",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@v1.10.0",
@@ -99,20 +121,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.63.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.63.1",
-    "title": "DisplayXR Runtime v2.63.1",
-    "date": "2026-11-06",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.63.1",
-    "prerelease": false,
-    "featureLines": [
-      "A windowed 3D tile on a page woven through `XR_DXR_weave` (the DisplayXR Browser) no longer has a dark line around its edge when a viewer is tracked: the runtime now fills the hole edge under the softened 2D layer with the tile's own col…",
-      "feat(app-share): in-process apps can be shared on Windows (ADR-061 arm 2) (#2547). The D3D11, D3D12 and Vulkan hub producers and the D3D11 own-legs path copy pre-weave views into an NT-shared ring the service converts to NV12 (GL decline…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.63.2",
@@ -299,17 +307,6 @@
       "**Opt-out:** `DisplayXRHandTracking.Enabled = false` before XR init, or `DISPLAYXR_HANDS=0`. Controller-style input (`IUnityXRInput`) is deliberately out of scope — tracked as a follow-up issue."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.19.5",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.19.5",
-    "title": "v2.19.5",
-    "date": "2026-11-01",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.19.5",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-tracking-open@v0.1.1",
