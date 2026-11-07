@@ -11,6 +11,28 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-mediaplayer@pro-v0.8.3",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.8.3",
+    "title": "Media Player Pro 0.8.3",
+    "date": "2026-11-07",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.8.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.65.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.65.0",
+    "title": "v2.65.0",
+    "date": "2026-11-07",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.65.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.10.0",
     "repo": "displayxr-browser",
     "tag": "v1.10.0",
@@ -131,22 +153,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-demo-mediaplayer@pro-v0.8.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.8.0",
-    "title": "Media Player Pro 0.8.0",
-    "date": "2026-11-05",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.8.0",
-    "prerelease": false,
-    "featureLines": [
-      "**5.1 output.** When the source has 6 or more channels and the default output device does too, Pro now outputs 5.1. Otherwise it outputs stereo. A 7.1 source folds to 5.1 (#175).",
-      "**Audible change: 5.1 sources downmixed to stereo play up to about 7.6 dB quieter**, because the fold-down no longer overloads. Stereo sources are unaffected. Audio failures now log the reason, and `MEDIAPLAYER_AUDIO_CHANNELS=2|6` forces…",
-      "**Use runtime v2.63.0 or later on Windows.** It fixes a drop to about 9 fps with a tracked viewer on 3D content (DisplayXR/displayxr-runtime#2541). Measured on an RTX 3080. It was caused by the runtime, not by the player. **A seated-view…",
-      "**Runtime 2.61 is now the floor.** Below 2.61, calibration is not keyed by the display's stable key. The Windows installer warns, and the `.deb` declares `Depends: displayxr-runtime (>= 2.61.0)` (#178)."
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-demo-mediaplayer@v1.16.0",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.16.0",
@@ -189,23 +195,6 @@
     "prerelease": true,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.63.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.63.0",
-    "title": "DisplayXR Runtime v2.63.0",
-    "date": "2026-11-05",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.63.0",
-    "prerelease": false,
-    "featureLines": [
-      "Dragging the DisplayXR Browser's window on Windows no longer judders in 3D: the drag is now phase-snapped on the display processor that actually weaves the window (a regression since v2.55.0's windowless weave). On Android, a weave prese…",
-      "feat(camera-profile): pitchDegrees — the legacy camera's starting tilt",
-      "feat(camera-profile): pullbackMeters — where the legacy camera starts",
-      "feat(ipc): one in-process service link {lift, share} + the share-link protocol + APP_LINK source arm",
-      "feat(xbridge): the in-process share tap hook surface (ADR-061 arm 2)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.9.27",
