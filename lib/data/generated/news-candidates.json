@@ -67,9 +67,23 @@
     "id": "displayxr-runtime@v2.66.0",
     "repo": "displayxr-runtime",
     "tag": "v2.66.0",
-    "title": "v2.66.0",
+    "title": "DisplayXR Runtime v2.66.0",
     "date": "2026-11-07",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.0",
+    "prerelease": false,
+    "featureLines": [
+      "Convert to 3D works again on Windows. With this release the runtime selects NeurD automatically when you have installed it under its own licence, and falls back to Open Conversion when you have not. Converted video also has look-around a…",
+      "feat(conv): a model the user installed passes the licence gate (`XRT_CONV_CAP_LICENSED_LOCAL_INSTALL`) (#2562)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.66.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.66.1",
+    "title": "v2.66.1",
+    "date": "2026-11-07",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -126,19 +140,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.63.2",
-    "repo": "displayxr-runtime",
-    "tag": "v2.63.2",
-    "title": "DisplayXR Runtime v2.63.2",
-    "date": "2026-11-06",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.63.2",
-    "prerelease": false,
-    "featureLines": [
-      "Same runtime as v2.63.1 (incl. the #2546 2D-weave tile-edge fix), now with the macOS installer: macOS CI moved to macos-15 (#2550). v2.63.1 shipped without `DisplayXR-Installer-*.pkg` because GitHub retired the macos-14 runner and its ma…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.64.0",
