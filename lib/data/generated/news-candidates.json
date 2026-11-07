@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.10.1",
+    "repo": "displayxr-browser",
+    "tag": "v1.10.1",
+    "title": "DisplayXR Browser v1.10.1",
+    "date": "2026-11-07",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.10.0",
     "repo": "displayxr-browser",
     "tag": "v1.10.0",
@@ -29,6 +40,17 @@
       "Full screen still hides the panels and restores them when you leave it."
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@pro-v0.8.2",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.8.2",
+    "title": "Media Player Pro 0.8.2",
+    "date": "2026-11-06",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.8.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.9.28",
@@ -107,17 +129,6 @@
       "Windows: a UVC stereo webcam that the DisplayXR runtime can rectify now appears in the camera list as a 3D camera."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@pro-v0.7.1",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.7.1",
-    "title": "Media Player Pro 0.7.1",
-    "date": "2026-11-05",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.7.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-mediaplayer@pro-v0.8.0",
@@ -203,17 +214,6 @@
     "title": "DisplayXR v2.9.27",
     "date": "2026-11-04",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.27",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@v1.9.2",
-    "repo": "displayxr-browser",
-    "tag": "v1.9.2",
-    "title": "DisplayXR Browser v1.9.2",
-    "date": "2026-11-03",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.9.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
