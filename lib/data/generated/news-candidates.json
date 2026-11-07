@@ -33,6 +33,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.9.30",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.30",
+    "title": "DisplayXR v2.9.30",
+    "date": "2026-11-07",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.30",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.20.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.20.0",
@@ -81,12 +92,14 @@
     "id": "displayxr-runtime@v2.66.1",
     "repo": "displayxr-runtime",
     "tag": "v2.66.1",
-    "title": "v2.66.1",
+    "title": "DisplayXR Runtime v2.66.1",
     "date": "2026-11-07",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Vulkan apps on a single GPU now read frames in place (DIRECT ingress) instead of copying them through the bridge every frame. On an 8K RTX A4000 station with Media Player Pro's panels up this took 40 fps to 60 and the GPU copy engine fro…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.10.0",
@@ -222,17 +235,6 @@
     "date": "2026-11-05",
     "url": "https://github.com/DisplayXR/displayxr-play-android/releases/tag/v0.6.4",
     "prerelease": true,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.9.27",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.27",
-    "title": "DisplayXR v2.9.27",
-    "date": "2026-11-04",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.27",
-    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
