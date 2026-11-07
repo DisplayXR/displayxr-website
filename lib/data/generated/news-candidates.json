@@ -40,8 +40,13 @@
     "date": "2026-11-07",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.20.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Convert to 3D uses NeurD automatically when it is installed.** On runtime **v2.66.0 or later**, if the NeurD runtime is installed and usable on the machine, Convert to 3D picks NeurD with no research-only opt-in. If NeurD is missing, t…",
+      "**Requires runtime v2.66.0.** Older runtimes ignore the new flag, so NeurD stays behind the research-only opt-in there, the same as before this release.",
+      "The NeurD conversion provider declares `XRT_CONV_CAP_LICENSED_LOCAL_INSTALL` while the user's NeurD install is present and usable. It re-describes its capabilities when that changes. Pairs with DisplayXR/displayxr-runtime#2562. (#510)",
+      "Plug-in ABI is unchanged (plugin_api 5)."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.65.0",
