@@ -660,7 +660,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — v2.9.30",
+    "title": "Android tablet bundle (latest) — v2.9.31",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
