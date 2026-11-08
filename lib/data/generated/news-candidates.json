@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-mediaplayer@v1.17.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.17.0",
+    "title": "v1.17.0",
+    "date": "2026-11-08",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.17.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.10.1",
     "repo": "displayxr-browser",
     "tag": "v1.10.1",
@@ -127,12 +138,15 @@
     "id": "displayxr-runtime@v2.66.4",
     "repo": "displayxr-runtime",
     "tag": "v2.66.4",
-    "title": "v2.66.4",
+    "title": "DisplayXR Runtime v2.66.4",
     "date": "2026-11-07",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.4",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "One convergence owner per lifted 2D→3D stream (#2570). A conversion provider that declares the new append-only capability `XRT_CONV_CAP_AUTO_CONVERGENCE` now owns convergence whenever the app leaves it AUTO — the runtime no longer choose…",
+      "feat(oxr): `DXR_HOSTED_RAW_VIEWS` opt-in — RAW (display-relative) views for an in-process hosted session of an `XR_DXR_display_info` app, for display-aware apps that cannot hand over a native window (off by default; legacy, bridge-relay …"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.10.0",
@@ -199,26 +213,6 @@
       "**Share a tab in 3D.** Sharing a tab that shows inline 3D content now works. A normal tab share shows each 3D element as a flat picture instead of an empty hole, and anything drawn over a 3D element stays visible on the sharer's own disp…",
       "**Opt-in stereo tab capture for web apps.** A page can ask for both eyes of a shared tab: `navigator.mediaDevices.getDisplayMedia({video: true, displayxrStereo: true})`. For a tab pick, the track then carries a half-width side-by-side fr…",
       "Windows: a UVC stereo webcam that the DisplayXR runtime can rectify now appears in the camera list as a 3D camera."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.16.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.16.0",
-    "title": "v1.16.0",
-    "date": "2026-11-05",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.16.0",
-    "prerelease": false,
-    "featureLines": [
-      "**5.1 output.** When the source has 6 or more channels and the default output device does too, the player now outputs 5.1. Otherwise it outputs stereo. A 7.1 source folds to 5.1 (#175).",
-      "**Audible change: 5.1 sources downmixed to stereo play up to about 7.6 dB quieter**, because the fold-down no longer overloads. A loud mix could reach about 2.4x full scale before. Stereo sources are unaffected (#175).",
-      "**Phone spatial capture plays in 3D.** MV-HEVC stereo video (`.mov` / `.mp4`) and stereo HEIC photos are detected automatically on Windows, macOS and the Linux `.deb` (#156).",
-      "**VR180 and stereo VR360 viewer.** These files play as a window into the scene: drag to pan and tilt, wheel to zoom, double-click or `R` to re-centre, `P` to cycle the projection. The stereo pair stays rectified at every view (#161).",
-      "**Windows Vulkan players: run with runtime v2.63.0 or later.** It fixes a drop to about 9 fps with a tracked viewer on 3D content (DisplayXR/displayxr-runtime#2541). Measured on an RTX 3080. It was caused by the runtime, not by the playe…",
-      "5.1 audio output, with overload protection on the stereo fold-down (#175)",
-      "MV-HEVC stereo video and stereo HEIC photos (#156)",
-      "VR180 and stereo VR360 viewer, with `get_view` / `set_view` MCP tools (#161)"
     ],
     "looksMechanical": false
   },
