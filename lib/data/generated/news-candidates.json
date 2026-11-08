@@ -51,6 +51,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.66.5",
+    "repo": "displayxr-runtime",
+    "tag": "v2.66.5",
+    "title": "v2.66.5",
+    "date": "2026-11-08",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.10.1",
     "repo": "displayxr-browser",
     "tag": "v1.10.1",
@@ -132,19 +143,6 @@
     "featureLines": [
       "**Steadier convergence on lifted 2D→3D video.** When the installed conversion module runs its own auto-convergence (NeurD 0.4.6 or newer), the Leia conversion provider now says so to the runtime. A runtime that honours the flag (the next…",
       "Conversion provider declares `XRT_CONV_CAP_AUTO_CONVERGENCE` on its mono-to-views capability whenever the loaded module has its own auto-convergence; before the module is ready the answer is taken provisionally from the module file's ver…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.66.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.66.1",
-    "title": "DisplayXR Runtime v2.66.1",
-    "date": "2026-11-07",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.1",
-    "prerelease": false,
-    "featureLines": [
-      "Vulkan apps on a single GPU now read frames in place (DIRECT ingress) instead of copying them through the bridge every frame. On an 8K RTX A4000 station with Media Player Pro's panels up this took 40 fps to 60 and the GPU copy engine fro…"
     ],
     "looksMechanical": false
   },
