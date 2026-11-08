@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import {
@@ -29,8 +30,10 @@ export const metadata: Metadata = {
 };
 
 // A product page in the Browser page's mold: full-bleed bands, big type, one
-// idea per screen. Copy approved in the Nov 5, 2026 design pass; the hero
-// visual is a schematic two-eye pair until camera footage of a panel exists.
+// idea per screen. Copy approved in the Nov 5, 2026 design pass. The hero is a
+// real eye pair captured Nov 8, 2026 from the UE4 title through the D3D11 stereo
+// layer on Steam for Linux (hub repo, docs/evidence/hero, moment 2); the title
+// is not named until a public release carries it (site rule).
 const Band = ({ children, className = "", id }: { children: ReactNode; className?: string; id?: string }) => (
   <section id={id} className={`scroll-mt-20 px-6 md:px-12 py-24 md:py-28 ${className}`}>
     <div className="mx-auto max-w-[1200px]">{children}</div>
@@ -65,29 +68,32 @@ const Chip = ({ children, tone }: { children: ReactNode; tone: "green" | "yellow
 );
 
 function EyePair() {
-  // Two schematic viewpoints of the same scene: the house sits 5 % further
-  // left in the right eye. Replace with camera footage of a real panel.
-  const Eye = ({ label, shift }: { label: string; shift: number }) => (
-    <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-[linear-gradient(160deg,#1b2a4a_0%,#0c1222_55%,#06080f_100%)]">
-      <div
-        className="absolute top-[38%] h-[44%] w-[30%] rounded-t-md bg-[#2f3b57] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]"
-        style={{ left: `${34 - shift}%` }}
+  // The two views the stereo layer rendered for one frame: the runtime's
+  // captured eye atlas split in two, 1440x900 per eye, nothing retouched.
+  const Eye = ({ label, src }: { label: string; src: string }) => (
+    <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-[#0c1222]">
+      <Image
+        src={src}
+        alt={`${label} view of the same game frame, rendered by the stereo layer`}
+        fill
+        sizes="(min-width: 1024px) 30vw, 50vw"
+        priority
+        className="object-cover"
       />
-      <div
-        className="absolute top-[26%] h-0 w-0 border-x-[60px] border-b-[56px] border-x-transparent border-b-[#3a4a6b]"
-        style={{ left: `${44 - shift}%` }}
-      />
-      <div className="absolute bottom-2.5 left-3 text-[11px] uppercase tracking-wider text-white/60">{label}</div>
+      <div className="absolute bottom-2.5 left-3 rounded bg-black/55 px-1.5 py-0.5 text-[11px] uppercase tracking-wider text-white/80">
+        {label}
+      </div>
     </div>
   );
   return (
     <div className="flex flex-col gap-3">
       <div className="grid grid-cols-2 gap-2.5">
-        <Eye label="Left eye" shift={0} />
-        <Eye label="Right eye" shift={5} />
+        <Eye label="Left eye" src="/art/play/hero-left.webp" />
+        <Eye label="Right eye" src="/art/play/hero-right.webp" />
       </div>
       <p className="text-sm text-text-secondary">
-        Two rendered viewpoints of the same frame, woven by the runtime for your display.
+        One frame of a UE4 title, rendered twice by the stereo layer on Steam for Linux and woven by the
+        runtime for your display. Integrated GPU at 50 % render scale: 17.8 fps in stereo, 36.6 in 2D.
       </p>
     </div>
   );
