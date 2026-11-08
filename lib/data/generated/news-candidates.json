@@ -1,5 +1,25 @@
 [
   {
+    "id": "displayxr-demo-mediaplayer@pro-v0.9.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.9.0",
+    "title": "Media Player Pro 0.9.0",
+    "date": "2026-11-08",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Live sources:** MPEG-DASH (`.mpd`) and SRT (`srt://`, caller/listener, passphrase + latency) inputs, now on Windows, macOS and Linux.",
+      "**HLS / DASH play at real time:** segmented streams no longer fast-forward or burst (#197).",
+      "**Adaptive bitrate** for HLS / DASH, with a manual override (MCP `set_stream_quality`). Known limit: a sudden large bandwidth drop on HLS can cause one long stall before it settles on a lower rendition.",
+      "**macOS uses the bundled slim FFmpeg:** no Homebrew FFmpeg in the `.pkg` (about 42% smaller). Wider codec coverage on all platforms: big-endian PCM / ALAC audio in QuickTime files is no longer silent, plus DTS, TrueHD, VC-1, JPEG 2000, C…",
+      "**No head-tracking camera during playback** on runtimes with `XR_DXR_display_info` v25+.",
+      "File playback (ProRes, DNxHR, HEVC 10-bit, MXF, EXR/DPX/TIFF sequences) was A/B-checked against 0.8.3 with no change in decode path, seeking, frame-stepping or A/V sync.",
+      "The Windows installer is code-signed and includes OpenColorIO (ACES).",
+      "The cubemap / EAC 360 viewer below applies to the base player; Pro keeps the VR viewer off."
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-demo-mediaplayer@v1.17.0",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.17.0",
@@ -7,8 +27,17 @@
     "date": "2026-11-08",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.17.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Streaming grows up:** MPEG-DASH (`.mpd`, VOD and live) and SRT (`srt://`) input, plus adaptive bitrate for HLS and DASH — the player picks the best decodable rendition at open and switches at segment boundaries without a gap.",
+      "**Segmented streams play at real time:** HLS / DASH no longer fast-forward (VOD) or play in bursts (live).",
+      "**360 formats:** cubemap and EAC projections in the VR viewer, mono and stereo.",
+      "**Slimmer, broader macOS build:** the `.pkg` now carries the player's own LGPL FFmpeg (about half the size, no Homebrew FFmpeg), bringing DASH and SRT to macOS.",
+      "MPEG-DASH (`.mpd`) playback, VOD and live; the highest-quality decodable rendition is chosen for HLS/DASH at open (#196).",
+      "SRT input (`srt://`), caller and listener modes, passphrase + latency options; passphrases are redacted from logs (#199).",
+      "Adaptive bitrate for HLS and DASH: rendition switches at segment boundaries without a gap. MCP `set_stream_quality` (`'auto'` | index | e.g. `'1080p'`), `stream_*` fields in `get_status`, and the `MEDIAPLAYER_STREAM_QUALITY` environment …",
+      "Known limit: on a sudden large bandwidth drop, HLS can take one long stall before settling on the lower rendition."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.10.1",
@@ -158,24 +187,6 @@
     "prerelease": false,
     "featureLines": [
       "**Now on Chromium 158.** The browser moves from Chromium 157.0.8103.39 to 158.0.8127.18 and picks up the upstream fixes and security updates of the 158 line. The DisplayXR features carry over: inline 3D weaving, depth, Ctrl+Shift+3, auto…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@pro-v0.8.1",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.8.1",
-    "title": "Media Player Pro 0.8.1",
-    "date": "2026-11-06",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.8.1",
-    "prerelease": false,
-    "featureLines": [
-      "**Panels stay until you hide them.** Tab, the transport's new **Panels** button, or \"Show panels\" shows or hides the full UI: top bar, Station and Inspector panels, and transport. It stays up until you hide it. There is no timer and no c…",
-      "**Mouse movement shows a slim strip.** With the panels hidden, moving the mouse shows only a transport strip on the bottom edge (play/pause, time and frame number, scrubber, mute, loop, Panels) and the pointer. They go after 2.5 s withou…",
-      "**Keys, the wheel and Ctrl+click never show or hide UI.**",
-      "**Shift+Tab is a clean feed:** no strip, panels, toasts or pointer. Leaving it restores the panels.",
-      "**The pointer hides with the UI**, and so does the runtime's depth cursor, except while the pixel probe is on.",
-      "Full screen still hides the panels and restores them when you leave it."
     ],
     "looksMechanical": false
   },
