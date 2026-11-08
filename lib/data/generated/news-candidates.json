@@ -40,6 +40,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-leia-plugin@v2.20.2",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.20.2",
+    "title": "v2.20.2",
+    "date": "2026-11-08",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.20.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.10.1",
     "repo": "displayxr-browser",
     "tag": "v1.10.1",
@@ -268,17 +279,6 @@
       "macOS: transparent background (Ctrl/Cmd+T, `MODEL_TRANSPARENT=1` / `--transparent`), alpha-coverage click-through, keep-above while transparent, and `XR_DXR_depth_budget` clip-plane support (#181, #182)."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.19.7",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.19.7",
-    "title": "v2.19.7",
-    "date": "2026-11-02",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.19.7",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-paraview@v0.1.0",
