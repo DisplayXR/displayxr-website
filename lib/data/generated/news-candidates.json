@@ -22,9 +22,22 @@
     "id": "displayxr-runtime@v2.66.6",
     "repo": "displayxr-runtime",
     "tag": "v2.66.6",
-    "title": "v2.66.6",
+    "title": "DisplayXR Runtime v2.66.6",
     "date": "2026-11-09",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.6",
+    "prerelease": false,
+    "featureLines": [
+      "Ships the Android Leia plug-in **v2.20.3** inside the Leia runtime APK (`DisplayXR-Runtime-Leia-2.66.6-android-arm64.apk`, CNSDK 0.10.98). It fixes the head-tracking camera staying on behind a backgrounded DisplayXR Browser: face trackin…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.66.7",
+    "repo": "displayxr-runtime",
+    "tag": "v2.66.7",
+    "title": "v2.66.7",
+    "date": "2026-11-09",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.7",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -171,19 +184,6 @@
     "featureLines": [
       "**Steadier convergence on lifted 2D→3D video.** When the installed conversion module runs its own auto-convergence (NeurD 0.4.6 or newer), the Leia conversion provider now says so to the runtime. A runtime that honours the flag (the next…",
       "Conversion provider declares `XRT_CONV_CAP_AUTO_CONVERGENCE` on its mono-to-views capability whenever the loaded module has its own auto-convergence; before the module is ready the answer is taken provisionally from the module file's ver…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.66.3",
-    "repo": "displayxr-runtime",
-    "tag": "v2.66.3",
-    "title": "DisplayXR Runtime v2.66.3",
-    "date": "2026-11-07",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.3",
-    "prerelease": false,
-    "featureLines": [
-      "Extends v2.66.2's late-weave stutter fix (#2564) to the D3D12 tier's own chain and the workspace service: no more stranded frame-latency token after a governor depth change, and no stage-2 scanout wait on DWM-composed D3D12 windows (#2568)."
     ],
     "looksMechanical": false
   },
