@@ -7,8 +7,16 @@
     "date": "2026-11-09",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.20.4",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The SR tracker-rest gate (#517) ships for the first time in this release. v2.20.3 already carried the code, but it was built on an SR SDK where it compiled out; v2.20.4 is built on SR SDK v2 1.39.0.3296 (#519), so it is now live:",
+      "**The camera stays off for surfaces that start in 2D.** A new weaver starts with tracking off and only turns it on with its first 3D request, so an app that launches into 2D (for example the DisplayXR Browser on a 2D page) never lights t…",
+      "**A rested weaver reads as \"no viewer\".** When the SR weaver reports that tracking is at rest, the plug-in reports no tracked viewer even if another client keeps the shared camera streaming, so apps no longer see a collapsed eye pair as …",
+      "**New `DXR_LEIA_TRACKING_POLICY=auto|always_on|off`** sets the tracking policy applied to each new weaver (`auto` restores SR's default behaviour).",
+      "Rested weaver means no viewer; weavers start with tracking off until their first 3D request; `DXR_LEIA_TRACKING_POLICY` (#517)",
+      "Windows SR v2 SDK repinned to 1.39.0.3296 (multi-viewer + per-weaver tracking policy), which enables the above and keeps the multi-viewer weave enabled (#519)",
+      "**Compatibility:** needs a LeiaSR runtime that provides the per-weaver tracking API (LeiaSR q4, build 3284 or later; 3296 recommended). On an older SR runtime the call answers `SR_ERROR_FUNCTION_UNSUPPORTED`, the plug-in logs one WARN an…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.66.6",
