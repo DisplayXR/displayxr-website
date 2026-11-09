@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-installer@android-bundle-2026-11-09",
+    "repo": "displayxr-installer",
+    "tag": "android-bundle-2026-11-09",
+    "title": "Android tablet bundle android-bundle-2026-11-09",
+    "date": "2026-11-09",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-11-09",
+    "prerelease": true,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.20.4",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.20.4",
@@ -35,9 +46,20 @@
     "id": "displayxr-runtime@v2.66.7",
     "repo": "displayxr-runtime",
     "tag": "v2.66.7",
-    "title": "v2.66.7",
+    "title": "DisplayXR Runtime v2.66.7",
     "date": "2026-11-09",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.7",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.66.8",
+    "repo": "displayxr-runtime",
+    "tag": "v2.66.8",
+    "title": "v2.66.8",
+    "date": "2026-11-09",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.8",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -141,17 +163,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-installer@v2.9.29",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.29",
-    "title": "DisplayXR v2.9.29",
-    "date": "2026-11-07",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.29",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-installer@v2.9.30",
     "repo": "displayxr-installer",
     "tag": "v2.9.30",
@@ -184,20 +195,6 @@
     "featureLines": [
       "**Steadier convergence on lifted 2D→3D video.** When the installed conversion module runs its own auto-convergence (NeurD 0.4.6 or newer), the Leia conversion provider now says so to the runtime. A runtime that honours the flag (the next…",
       "Conversion provider declares `XRT_CONV_CAP_AUTO_CONVERGENCE` on its mono-to-views capability whenever the loaded module has its own auto-convergence; before the module is ready the answer is taken provisionally from the module file's ver…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.66.4",
-    "repo": "displayxr-runtime",
-    "tag": "v2.66.4",
-    "title": "DisplayXR Runtime v2.66.4",
-    "date": "2026-11-07",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.4",
-    "prerelease": false,
-    "featureLines": [
-      "One convergence owner per lifted 2D→3D stream (#2570). A conversion provider that declares the new append-only capability `XRT_CONV_CAP_AUTO_CONVERGENCE` now owns convergence whenever the app leaves it AUTO — the runtime no longer choose…",
-      "feat(oxr): `DXR_HOSTED_RAW_VIEWS` opt-in — RAW (display-relative) views for an in-process hosted session of an `XR_DXR_display_info` app, for display-aware apps that cannot hand over a native window (off by default; legacy, bridge-relay …"
     ],
     "looksMechanical": false
   },
@@ -665,7 +662,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — v2.9.31",
+    "title": "Android tablet bundle (latest) — android-bundle-2026-11-09",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
