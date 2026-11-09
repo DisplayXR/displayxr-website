@@ -30,6 +30,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-leia-plugin@v2.20.5",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.20.5",
+    "title": "v2.20.5",
+    "date": "2026-11-09",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.20.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.66.6",
     "repo": "displayxr-runtime",
     "tag": "v2.66.6",
@@ -57,12 +68,15 @@
     "id": "displayxr-runtime@v2.66.8",
     "repo": "displayxr-runtime",
     "tag": "v2.66.8",
-    "title": "v2.66.8",
+    "title": "DisplayXR Runtime v2.66.8",
     "date": "2026-11-09",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.8",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Plug-ins can now vouch for a (0, 0) panel origin (`XRT_PLUGIN_DISPLAY_FLAG_SCREEN_ORIGIN_VALID`, no ABI bump), so a 3D panel that is the monitor at the desktop origin resolves as the head screen by position (#2577 follow-up); the service…",
+      "feat(plugin-iface): an origin-valid bit lets a plug-in vouch for a (0, 0) panel origin (#2577 follow-up)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@pro-v0.9.0",
@@ -183,20 +197,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.20.1",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.20.1",
-    "title": "v2.20.1",
-    "date": "2026-11-07",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.20.1",
-    "prerelease": false,
-    "featureLines": [
-      "**Steadier convergence on lifted 2D→3D video.** When the installed conversion module runs its own auto-convergence (NeurD 0.4.6 or newer), the Leia conversion provider now says so to the runtime. A runtime that honours the flag (the next…",
-      "Conversion provider declares `XRT_CONV_CAP_AUTO_CONVERGENCE` on its mono-to-views capability whenever the loaded module has its own auto-convergence; before the module is ready the answer is taken provisionally from the module file's ver…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.10.0",
