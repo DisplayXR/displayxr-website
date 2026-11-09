@@ -37,8 +37,24 @@
     "date": "2026-11-09",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.20.5",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The plug-in now marks its reported panel position as real (`XRT_PLUGIN_DISPLAY_FLAG_SCREEN_ORIGIN_VALID`), so with two Leia panels and the primary at the desktop origin the runtime resolves the head screen by position (runtime#2577 follo…",
+      "display-info: vouch for the reported panel origin via `XRT_PLUGIN_DISPLAY_FLAG_SCREEN_ORIGIN_VALID` (displayxr-runtime#2577 follow-up) (#520)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.20.6",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.20.6",
+    "title": "v2.20.6",
+    "date": "2026-11-09",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.20.6",
+    "prerelease": false,
+    "featureLines": [
+      "Android: the head-tracking listener now reads the face position correctly again. Since CNSDK 0.10.76 the Android face detector never fills posePosition, so every detected face arrived at (0,0,0) and the plug-in rejected every frame (~90/…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.66.6",
@@ -117,17 +133,6 @@
       "Known limit: on a sudden large bandwidth drop, HLS can take one long stall before settling on the lower rendition."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.20.2",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.20.2",
-    "title": "v2.20.2",
-    "date": "2026-11-08",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.20.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-leia-plugin@v2.20.3",
