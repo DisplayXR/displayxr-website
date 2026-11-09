@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-leia-plugin@v2.20.4",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.20.4",
+    "title": "v2.20.4",
+    "date": "2026-11-09",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.20.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.66.6",
+    "repo": "displayxr-runtime",
+    "tag": "v2.66.6",
+    "title": "v2.66.6",
+    "date": "2026-11-09",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.6",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@pro-v0.9.0",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "pro-v0.9.0",
@@ -131,22 +153,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-leia-plugin@v2.20.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.20.0",
-    "title": "v2.20.0",
-    "date": "2026-11-07",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.20.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Convert to 3D uses NeurD automatically when it is installed.** On runtime **v2.66.0 or later**, if the NeurD runtime is installed and usable on the machine, Convert to 3D picks NeurD with no research-only opt-in. If NeurD is missing, t…",
-      "**Requires runtime v2.66.0.** Older runtimes ignore the new flag, so NeurD stays behind the research-only opt-in there, the same as before this release.",
-      "The NeurD conversion provider declares `XRT_CONV_CAP_LICENSED_LOCAL_INSTALL` while the user's NeurD install is present and usable. It re-describes its capabilities when that changes. Pairs with DisplayXR/displayxr-runtime#2562. (#510)",
-      "Plug-in ABI is unchanged (plugin_api 5)."
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-leia-plugin@v2.20.1",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.20.1",
@@ -157,19 +163,6 @@
     "featureLines": [
       "**Steadier convergence on lifted 2D→3D video.** When the installed conversion module runs its own auto-convergence (NeurD 0.4.6 or newer), the Leia conversion provider now says so to the runtime. A runtime that honours the flag (the next…",
       "Conversion provider declares `XRT_CONV_CAP_AUTO_CONVERGENCE` on its mono-to-views capability whenever the loaded module has its own auto-convergence; before the module is ready the answer is taken provisionally from the module file's ver…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.66.2",
-    "repo": "displayxr-runtime",
-    "tag": "v2.66.2",
-    "title": "DisplayXR Runtime v2.66.2",
-    "date": "2026-11-07",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.2",
-    "prerelease": false,
-    "featureLines": [
-      "Single-GPU D3D11 apps now weave through the hub with zero-copy DIRECT ingress by default (#2565). Fixes 3D stutter and crosstalk when resizing windows and on late-weave depth changes: the weave-to-scanout time now stays constant, ~33 ms …"
     ],
     "looksMechanical": false
   },
