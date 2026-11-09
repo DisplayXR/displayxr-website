@@ -68,17 +68,15 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.66.6",
+    "id": "displayxr-runtime@v2.66.10",
     "repo": "displayxr-runtime",
-    "tag": "v2.66.6",
-    "title": "DisplayXR Runtime v2.66.6",
+    "tag": "v2.66.10",
+    "title": "v2.66.10",
     "date": "2026-11-09",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.6",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.10",
     "prerelease": false,
-    "featureLines": [
-      "Ships the Android Leia plug-in **v2.20.3** inside the Leia runtime APK (`DisplayXR-Runtime-Leia-2.66.6-android-arm64.apk`, CNSDK 0.10.98). It fixes the head-tracking camera staying on behind a backgrounded DisplayXR Browser: face trackin…"
-    ],
-    "looksMechanical": false
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-runtime@v2.66.7",
