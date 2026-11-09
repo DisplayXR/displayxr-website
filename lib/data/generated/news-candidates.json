@@ -95,6 +95,19 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.66.9",
+    "repo": "displayxr-runtime",
+    "tag": "v2.66.9",
+    "title": "DisplayXR Runtime v2.66.9",
+    "date": "2026-11-09",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.9",
+    "prerelease": false,
+    "featureLines": [
+      "Android Leia APK now embeds plug-in v2.20.6 (head-tracking listener face position fix, leia-plugin #521)."
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-demo-mediaplayer@pro-v0.9.0",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "pro-v0.9.0",
@@ -144,20 +157,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.66.5",
-    "repo": "displayxr-runtime",
-    "tag": "v2.66.5",
-    "title": "DisplayXR Runtime v2.66.5",
-    "date": "2026-11-08",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.5",
-    "prerelease": false,
-    "featureLines": [
-      "The Android runtime APK now bundles **CNSDK 0.10.98** and the **Leia plug-in v2.20.2**, so a 3D-camera call on a tablet keeps a full 30 Hz tracking feed and the correct weave phase (on the NP02J: 3.9 → 30.2 fed/s, 19 → 0 engine stalls). …",
-      "feat(display_info): `XrViewLocateFixedViewerDXR` — a locate that asks for no viewer (spec v25) (#2522)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.10.1",
