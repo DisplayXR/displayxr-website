@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.10.2",
+    "repo": "displayxr-browser",
+    "tag": "v1.10.2",
+    "title": "DisplayXR Browser v1.10.2",
+    "date": "2026-11-09",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@android-bundle-2026-11-09",
     "repo": "displayxr-installer",
     "tag": "android-bundle-2026-11-09",
@@ -222,17 +233,6 @@
     "title": "Media Player Pro 0.8.2",
     "date": "2026-11-06",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.8.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@v1.9.3",
-    "repo": "displayxr-browser",
-    "tag": "v1.9.3",
-    "title": "DisplayXR Browser v1.9.3",
-    "date": "2026-11-05",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.9.3",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
