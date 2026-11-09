@@ -71,20 +71,22 @@
     "id": "displayxr-runtime@v2.66.10",
     "repo": "displayxr-runtime",
     "tag": "v2.66.10",
-    "title": "v2.66.10",
+    "title": "DisplayXR Runtime v2.66.10",
     "date": "2026-11-09",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.10",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The eye-tracking camera now turns off when the DisplayXR Browser leaves a 3D page for a 2D site. After a weave present-owner (such as the browser) stops weaving for 5 s, the D3D11 service releases the display processors, and that release…"
+    ],
+    "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.66.7",
+    "id": "displayxr-runtime@v2.66.11",
     "repo": "displayxr-runtime",
-    "tag": "v2.66.7",
-    "title": "DisplayXR Runtime v2.66.7",
+    "tag": "v2.66.11",
+    "title": "v2.66.11",
     "date": "2026-11-09",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.7",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.11",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
