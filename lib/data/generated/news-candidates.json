@@ -51,15 +51,29 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.66.5",
-    "repo": "displayxr-runtime",
-    "tag": "v2.66.5",
-    "title": "v2.66.5",
+    "id": "displayxr-leia-plugin@v2.20.3",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.20.3",
+    "title": "v2.20.3",
     "date": "2026-11-08",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.5",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.20.3",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.66.5",
+    "repo": "displayxr-runtime",
+    "tag": "v2.66.5",
+    "title": "DisplayXR Runtime v2.66.5",
+    "date": "2026-11-08",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.5",
+    "prerelease": false,
+    "featureLines": [
+      "The Android runtime APK now bundles **CNSDK 0.10.98** and the **Leia plug-in v2.20.2**, so a 3D-camera call on a tablet keeps a full 30 Hz tracking feed and the correct weave phase (on the NP02J: 3.9 → 30.2 fed/s, 19 → 0 engine stalls). …",
+      "feat(display_info): `XrViewLocateFixedViewerDXR` — a locate that asks for no viewer (spec v25) (#2522)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.10.1",
@@ -233,19 +247,6 @@
       "**Share a tab in 3D.** Sharing a tab that shows inline 3D content now works. A normal tab share shows each 3D element as a flat picture instead of an empty hole, and anything drawn over a 3D element stays visible on the sharer's own disp…",
       "**Opt-in stereo tab capture for web apps.** A page can ask for both eyes of a shared tab: `navigator.mediaDevices.getDisplayMedia({video: true, displayxrStereo: true})`. For a tab pick, the track then carries a half-width side-by-side fr…",
       "Windows: a UVC stereo webcam that the DisplayXR runtime can rectify now appears in the camera list as a 3D camera."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.19.8",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.19.8",
-    "title": "v2.19.8",
-    "date": "2026-11-05",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.19.8",
-    "prerelease": false,
-    "featureLines": [
-      "A 3D-camera call on a Leia Android tablet now weaves with the correct phase: the in-app head tracker is fed at the full camera rate instead of stalling."
     ],
     "looksMechanical": false
   },
