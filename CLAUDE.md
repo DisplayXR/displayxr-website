@@ -49,14 +49,24 @@ touching anything under `lib/data/generated/` or `scripts/sync-org.mjs`.
 Since the 2026-10 overhaul the site is organized as **one-click hubs**, one per
 audience, each opening on that audience's recommended next step:
 
-- Nav is **`NAV` in `lib/constants.ts`**: leaves only, **About · Developers ·
-  Contribute · Display Vendors · Browser**, plus a persistent **Download** button and a
-  small **Docs ↗** link to the runtime repo's docs (`DOCS_URL`). The model still
-  supports menus, but the header deliberately uses none.
+- Nav is **`NAV` in `lib/constants.ts`**: leaves only, **About · Browser ·
+  Play · Developers · Contribute · Components**. The header
+  (`components/layout/Navbar.tsx`) adds a small **Docs ↗** link to the
+  runtime repo's docs (`DOCS_URL`) and a persistent **Download** button
+  (`DOWNLOAD_HREF` = `/download`), which the mobile menu pins on top. The model
+  still supports menus, but the header deliberately uses none.
 - Each leaf's `match` lists the other routes that belong to its hub
   (`/extensions`, `/demos`, `/platform-support` → Developers; routes beneath
   a hub's own href, like `/developers/native`, match without a listing; `/architecture`, `/roadmap`, `/governance` → Contribute). Exactly
   one entry highlights as active (first match).
+- `/components` is the component-model page (display processors, input,
+  conversion and viewer-tracking providers). `/vendors` and
+  `/display-vendors/*` 308-redirect there.
+- `/play` is DisplayXR Play, the games program. Its release facts read
+  `lib/data/generated/play.json` (synced from `displayxr-play-android`); the
+  prose is `lib/data/play.ts`. No PC game title is named before a public
+  release carries it; no company or OEM names; no performance numbers (fps,
+  GPU usage) on the page.
 - `/developers` opens on the web path (recommended) with the inline3d snippet
   (one snippet, the full guide is `/browser#build`), then the sim-display note,
   native (API per platform), engines, AI-agent control, links.
@@ -76,8 +86,9 @@ audience, each opening on that audience's recommended next step:
   platform, and shows **two ordered installs**: DisplayXR (the bundle), then the
   DisplayXR Browser. Order matters: the browser chains the runtime but not a
   display plug-in, so the browser alone shows 2D only.
-- Retired routes 308-redirect in `next.config.ts` (`/webxr`, `/docs`,
-  `/getting-started`, guessed `/display-vendors/*`). Redirect source matching is case-insensitive.
+- Retired routes 308-redirect in `next.config.ts` (`/webxr`, `/web`, `/docs`,
+  `/getting-started`, `/vendors`, `/display-vendors/*`, `/status`,
+  `/compatibility`). Redirect source matching is case-insensitive.
 - `/platform-support` is the **merged** status + compatibility page (generated
   version dashboard on top, authored support matrix below). `/status` and
   `/compatibility` 308-redirect there. Don't re-split them.
@@ -99,14 +110,21 @@ audience, each opening on that audience's recommended next step:
   of OpenXR". Never call the runtime "conformant": no Khronos submission has
   been made. Say it "runs the official Khronos conformance suite".
 - Browser and SDK claims follow the platform and feature guardrails in
-  `lib/data/web.ts` (macOS browser coming soon; model / player / call / splat
-  are preview tier; call depth needs a stereo-camera sender).
+  `lib/data/web.ts` (`SDK_MODULES` carries each subpath's preview flag; call
+  depth needs a stereo-camera sender).
+- **No performance figures in marketing copy** (David, 2026-11-10): no fps,
+  GPU or CPU usage, or frame-rate ratios, on any page.
+- **Android** is a sideload flow for developers and testers (the tablet
+  bundle over adb, or the runtime APKs on each release), not a store listing.
+  Name only the supported devices in `lib/data/devices.ts`; never a phone-class
+  or prototype device.
 
 - **Vendor-neutral on the home page.** DisplayXR is vendor-agnostic; the home
   page must not single out a hardware vendor as "the first integration" or a
   "privileged path." **Leia** mentions are fine — and expected — on `/download`
-  (you download the actual Leia SR installer), `/vendors` (the reference plug-in
-  to fork), and `/architecture` (technical detail); keep them off the homepage.
+  (you download the actual Leia SR installer), `/components` (the reference
+  plug-in to fork), `/platform-support` (devices and display tech) and
+  `/architecture` (technical detail); keep them off the homepage.
 - **The Shell source is private.** Shell source lives in `displayxr-shell-pvt`
   (private); only **binaries / the installer** ship in the public
   `displayxr-shell-releases`. Never imply the shell *source* is open or shared —
