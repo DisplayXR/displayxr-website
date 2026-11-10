@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import {
   CONTROLS,
+  DISPLAY_MAKERS,
   FAQ,
   GAMES,
   PIPELINE,
@@ -12,6 +13,8 @@ import {
   REPOS,
   RULES,
   SYSTEMS,
+  TIMELINE,
+  VENDOR_GUIDE,
 } from "@/lib/data/play";
 import { DISCUSSIONS_URL, DOWNLOAD_HREF } from "@/lib/constants";
 import { play } from "@/lib/data/generated";
@@ -124,6 +127,9 @@ export default function PlayPage() {
               <Button variant="secondary" href="#games" className="bg-black/45">
                 What plays today
               </Button>
+              <Button variant="secondary" href="#display-makers" className="bg-black/45">
+                For display makers
+              </Button>
             </div>
             <p className="mb-6 text-sm text-white/75">
               Install{" "}
@@ -235,8 +241,66 @@ export default function PlayPage() {
         </AnimateIn>
       </Band>
 
+      {/* S3b — For display makers */}
+      <Band id="display-makers" className="bg-[#0b0c10]">
+        <AnimateIn>
+          <Eyebrow>For display makers</Eyebrow>
+          <H2>Ship one plug-in. Get every game.</H2>
+          <p className="mb-12 max-w-2xl text-lg leading-relaxed text-text-secondary">
+            Play never weaves or tracks. Your display&apos;s plug-in does, once, through the
+            DisplayXR runtime, and the same plug-in serves the Browser, the demos and every
+            OpenXR app. There is no per-title work on your side and nothing to re-test when a
+            game updates.
+          </p>
+          <div className="grid gap-5 md:grid-cols-3">
+            {DISPLAY_MAKERS.map((m) => (
+              <div
+                key={m.who}
+                className={`rounded-2xl border p-7 ${
+                  m.highlight ? "border-accent bg-[#121826]" : "border-border bg-surface"
+                }`}
+              >
+                <p className="mb-2 text-xs font-medium uppercase tracking-wider text-accent">{m.who}</p>
+                <h3 className="mb-2 text-xl font-semibold text-text-primary">{m.title}</h3>
+                <p className="text-sm text-text-secondary">{m.text}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-14 flex flex-wrap gap-14">
+            <div className="min-w-0 flex-[1_1_440px]">
+              <h3 className="mb-5 text-2xl font-display tracking-tight text-text-primary">Where it stands</h3>
+              <ol className="flex flex-col gap-3">
+                {TIMELINE.map((t) => (
+                  <li key={t.when} className="flex gap-4 rounded-xl border border-border bg-[#0f0f12] p-4.5">
+                    <span className="flex items-center gap-2 whitespace-nowrap pt-0.5 font-mono text-xs text-text-primary">
+                      <Dot color={t.status === "live" ? "green" : t.status === "next" ? "yellow" : "gray"} />
+                      {t.when}
+                    </span>
+                    <p className="text-sm text-text-secondary">{t.what}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            <div className="min-w-0 flex-[1_1_440px]">
+              <h3 className="mb-5 text-2xl font-display tracking-tight text-text-primary">Bringing a display</h3>
+              <p className="mb-6 text-text-secondary">
+                The vendor onboarding guide walks through the plug-in interface and the test
+                scenes; the Components page lists what already ships with DisplayXR. Display and
+                PC makers who want to run Play on a panel before the December release: start a
+                thread in Discussions and we take it from there.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Button href={DISCUSSIONS_URL}>Display makers: talk to us</Button>
+                <Button variant="secondary" href={VENDOR_GUIDE}>Vendor onboarding guide</Button>
+                <Button variant="secondary" href="/components">Components</Button>
+              </div>
+            </div>
+          </div>
+        </AnimateIn>
+      </Band>
+
       {/* S4 — Compatibility */}
-      <Band id="games" className="bg-[#0b0c10]">
+      <Band id="games">
         <AnimateIn>
           <Eyebrow>What plays today</Eyebrow>
           <H2>The list, with the cost next to each game.</H2>
@@ -309,7 +373,7 @@ export default function PlayPage() {
       </Band>
 
       {/* S5 — Settings */}
-      <Band id="profiles">
+      <Band id="profiles" className="bg-[#0b0c10]">
         <AnimateIn>
           <div className="flex flex-wrap items-start gap-14">
             <div className="min-w-0 flex-[1_1_440px]">
@@ -352,7 +416,7 @@ export default function PlayPage() {
       </Band>
 
       {/* S6 — Rules */}
-      <Band className="bg-[#0b0c10]">
+      <Band>
         <AnimateIn>
           <Eyebrow>The rules</Eyebrow>
           <H2>Four things we will not do.</H2>
@@ -368,7 +432,7 @@ export default function PlayPage() {
       </Band>
 
       {/* S7 — Build with us */}
-      <Band>
+      <Band className="bg-[#0b0c10]">
         <AnimateIn>
           <div className="flex flex-wrap gap-14">
             <div className="min-w-0 flex-[1_1_440px]">
@@ -415,7 +479,7 @@ export default function PlayPage() {
       </Band>
 
       {/* S8 — FAQ */}
-      <Band className="bg-[#0b0c10]">
+      <Band>
         <Eyebrow>Questions</Eyebrow>
         <div className="mt-6 divide-y divide-border">
           {FAQ.map((f) => (

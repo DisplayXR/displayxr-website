@@ -68,6 +68,62 @@ export const SYSTEMS: PlaySystem[] = [
   },
 ];
 
+export const VENDOR_GUIDE =
+  "https://github.com/DisplayXR/displayxr-runtime/blob/main/docs/guides/vendor-plugin-onboarding.md";
+
+// For display and PC makers: who does what. Play never weaves or tracks; the
+// vendor's plug-in does, once, for every game. No company or device is named
+// on this page (site rule); partners are named in conversation, not here.
+export interface MakerRole {
+  who: string;
+  title: string;
+  text: string;
+  highlight?: boolean;
+}
+
+export const DISPLAY_MAKERS: MakerRole[] = [
+  {
+    who: "You ship",
+    title: "The display plug-in",
+    text: "One plug-in for your display processor: weave, tracking, geometry. The same plug-in that serves every DisplayXR app. No per-title work, no game SDK, nothing to re-test when a game updates.",
+    highlight: true,
+  },
+  {
+    who: "DisplayXR runtime",
+    title: "Tracked views and the weave call",
+    text: "Takes the two eyes from the game, applies the tracked eye positions and off-axis projection, calls your plug-in at display rate, and drops to 2D on flat menus.",
+  },
+  {
+    who: "Play",
+    title: "The games",
+    text: "Stereo layers, detector, per-game profiles and installers, maintained in the open. A title verified on one display plays on every display with a plug-in.",
+  },
+];
+
+export interface Milestone {
+  when: string;
+  what: string;
+  status: "live" | "next" | "later";
+}
+
+export const TIMELINE: Milestone[] = [
+  {
+    when: "Now",
+    what: "Android lane available: the native mod core, the first game's mod, the companion app.",
+    status: "live",
+  },
+  {
+    when: "December 12, 2026",
+    what: "Public PC release: the Steam compatibility tool for Linux, the Windows installer, the stereo D3D11 and D3D12 layers, and profiles for the titles of the December run.",
+    status: "next",
+  },
+  {
+    when: "2027",
+    what: "More engines, more routes, more games. Each milestone gets a date here once it is scheduled.",
+    status: "later",
+  },
+];
+
 export interface PipelineStage {
   n: string;
   title: string;
