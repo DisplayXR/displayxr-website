@@ -66,12 +66,14 @@
     "id": "displayxr-runtime@v2.66.13",
     "repo": "displayxr-runtime",
     "tag": "v2.66.13",
-    "title": "v2.66.13",
+    "title": "DisplayXR Runtime v2.66.13",
     "date": "2026-11-10",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.13",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Two platform-neutral fixes to the 2D→3D conversion core: Convert to 3D no longer hangs after the conversion host's 10-minute idle exit (a v3 lift query now re-warms the idle-evicted provider), and a newly installed conversion platform (e…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.10.2",
