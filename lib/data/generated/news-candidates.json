@@ -1,5 +1,22 @@
 [
   {
+    "id": "displayxr-demo-mediaplayer@pro-v0.9.1",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.9.1",
+    "title": "Media Player Pro 0.9.1",
+    "date": "2026-11-10",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.1",
+    "prerelease": false,
+    "featureLines": [
+      "**Burn-ins hold still:** the top-right `TC … / F …` label no longer wiggles as the timecode runs. Digits are drawn at a fixed width, and the frame number reserves six digits, so the label keeps its size. The same fix covers the status li…",
+      "**Seeks move the audio too:** a Resolve-link follow or an A-B loop seek now re-syncs audio with the picture (#209).",
+      "**Soak / stress harness:** file playback now reports frame counters (shown, dropped, late), and a soak script runs Pro for a set time with UI, seek and pause churn, then judges crash, hang, memory, playback rate and frame drops (#210).",
+      "Checked on an 8K Leia panel with runtime v2.66.12 + Leia plug-in 2.20.7: a 15-minute soak, panel hotplug (it recovers without a restart), windowed resize, and full screen on LeiaSR 1.39.0.",
+      "The Windows installer is code-signed."
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-installer@v2.9.32",
     "repo": "displayxr-installer",
     "tag": "v2.9.32",
@@ -44,6 +61,17 @@
       "**HWND swapchains use DXGI_SCALING_NONE so a resize drag can't stretch the weave (#2592).** On Leia panels, the 3D stuttered and broke up while you resize-dragged a window. This hit D3D12 and Vulkan apps and any app that renders on its o…"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.66.13",
+    "repo": "displayxr-runtime",
+    "tag": "v2.66.13",
+    "title": "v2.66.13",
+    "date": "2026-11-10",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.13",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@v1.10.2",
@@ -140,19 +168,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.66.9",
-    "repo": "displayxr-runtime",
-    "tag": "v2.66.9",
-    "title": "DisplayXR Runtime v2.66.9",
-    "date": "2026-11-09",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.9",
-    "prerelease": false,
-    "featureLines": [
-      "Android Leia APK now embeds plug-in v2.20.6 (head-tracking listener face position fix, leia-plugin #521)."
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-demo-mediaplayer@pro-v0.9.0",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "pro-v0.9.0",
@@ -237,17 +252,6 @@
       "**Now on Chromium 158.** The browser moves from Chromium 157.0.8103.39 to 158.0.8127.18 and picks up the upstream fixes and security updates of the 158 line. The DisplayXR features carry over: inline 3D weaving, depth, Ctrl+Shift+3, auto…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@pro-v0.8.2",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.8.2",
-    "title": "Media Player Pro 0.8.2",
-    "date": "2026-11-06",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.8.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@v1.9.4",
@@ -678,7 +682,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — android-bundle-2026-11-09",
+    "title": "Android tablet bundle (latest) — v2.9.32",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,

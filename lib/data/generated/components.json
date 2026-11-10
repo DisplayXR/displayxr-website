@@ -2,30 +2,30 @@
   {
     "id": "runtime",
     "name": "DisplayXR Runtime",
-    "version": "v2.66.12",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.12",
+    "version": "v2.66.13",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.13",
     "releaseDate": "2026-11-10",
     "platforms": "Windows · macOS · Linux · Android",
     "downloads": [
       {
         "platform": "Windows",
-        "file": "DisplayXRSetup-2.66.12.exe",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.66.12/DisplayXRSetup-2.66.12.exe"
+        "file": "DisplayXRSetup-2.66.13.exe",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.66.13/DisplayXRSetup-2.66.13.exe"
       },
       {
         "platform": "macOS",
-        "file": "DisplayXR-Installer-2.66.12.pkg",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.66.12/DisplayXR-Installer-2.66.12.pkg"
+        "file": "DisplayXR-Installer-2.66.13.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.66.13/DisplayXR-Installer-2.66.13.pkg"
       },
       {
         "platform": "Linux",
-        "file": "displayxr-runtime_2.66.12_amd64.deb",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.66.12/displayxr-runtime_2.66.12_amd64.deb"
+        "file": "displayxr-runtime_2.66.13_amd64.deb",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.66.13/displayxr-runtime_2.66.13_amd64.deb"
       },
       {
         "platform": "Android",
-        "file": "DisplayXR-Runtime-2.66.12-android-arm64.apk",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.66.12/DisplayXR-Runtime-2.66.12-android-arm64.apk"
+        "file": "DisplayXR-Runtime-2.66.13-android-arm64.apk",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.66.13/DisplayXR-Runtime-2.66.13-android-arm64.apk"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-runtime"
