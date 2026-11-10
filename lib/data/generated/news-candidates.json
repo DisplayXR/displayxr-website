@@ -90,9 +90,22 @@
     "id": "displayxr-runtime@v2.66.14",
     "repo": "displayxr-runtime",
     "tag": "v2.66.14",
-    "title": "v2.66.14",
+    "title": "DisplayXR Runtime v2.66.14",
     "date": "2026-11-10",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.14",
+    "prerelease": false,
+    "featureLines": [
+      "Fixes an in-process handle leak (one Section handle + mapped view every 5 s) when the installed DisplayXR service's version differs from the runtime's; the in-process service link now retries a version-skewed service every 60 s instead o…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.66.15",
+    "repo": "displayxr-runtime",
+    "tag": "v2.66.15",
+    "title": "v2.66.15",
+    "date": "2026-11-10",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.15",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -162,19 +175,6 @@
     "prerelease": false,
     "featureLines": [
       "Android: the head-tracking listener now reads the face position correctly again. Since CNSDK 0.10.76 the Android face detector never fills posePosition, so every detected face arrived at (0,0,0) and the plug-in rejected every frame (~90/…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.66.11",
-    "repo": "displayxr-runtime",
-    "tag": "v2.66.11",
-    "title": "DisplayXR Runtime v2.66.11",
-    "date": "2026-11-09",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.11",
-    "prerelease": false,
-    "featureLines": [
-      "Maintenance patch. A plug-in's rescan request (display hot-plug) now reaches the service's re-probe (#2589). Re-enabling a satellite-hosted conversion provider takes effect without restarting the service (#2573), and a declined opt-in co…"
     ],
     "looksMechanical": false
   },
