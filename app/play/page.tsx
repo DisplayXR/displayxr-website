@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { AnimateIn } from "@/components/ui/AnimateIn";
+import { WovenEyePair } from "@/components/play/WovenEyePair";
 import {
   CONTROLS,
   DISPLAY_MAKERS,
@@ -151,7 +152,10 @@ export default function PlayPage() {
             </div>
           </div>
           <div className="min-w-0 flex-[1_1_420px]">
-            <EyePair />
+            {/* Woven in the DisplayXR Browser; the flat pair everywhere else. */}
+            <WovenEyePair left="/art/play/hero-left.webp" right="/art/play/hero-right.webp">
+              <EyePair />
+            </WovenEyePair>
           </div>
         </div>
       </section>

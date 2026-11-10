@@ -5,7 +5,9 @@
 import { GALLERY_URL, INLINE3D_VERSION, WEB_SAMPLES_URL } from "@/lib/constants";
 
 export type Flagship = {
-  id: "gallery" | "shop" | "ride";
+  // Shop is off the site pending a licensing decision (David, 2026-11-10);
+  // the full app list lives in lib/data/apps.ts (/apps).
+  id: "gallery" | "ride";
   name: string;
   url: string;
   story: string;
@@ -30,17 +32,6 @@ export const FLAGSHIPS: Flagship[] = [
     image: "/art/browser/uc-photos.webp",
     status: "pending",
     pendingNote: "Media: use only cleared feed content in captures.",
-  },
-  {
-    id: "shop",
-    name: "DisplayXR Shop",
-    url: "https://displayxr-shop.vercel.app",
-    story: "A full storefront where you look around a product before you buy it, plus a demo studio that makes a 3D item from one photo.",
-    uses: ["addModel", "addSplat", "2D page over 3D"],
-    image: "/art/browser/flagship-shop.webp",
-    // Cleared by David 2026-10-04 as-is (third-party hero captures included).
-    // The photo→3D studio runs on research-licensed models: always "demo".
-    status: "cleared",
   },
   {
     id: "ride",
