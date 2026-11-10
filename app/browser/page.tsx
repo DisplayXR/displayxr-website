@@ -369,7 +369,7 @@ export default function BrowserPage() {
             See the web in depth.
           </h2>
           <p className="mx-auto mb-8 max-w-xl text-text-secondary">
-            Free for Windows, Android and Linux. macOS is coming soon.
+            Free for Windows, macOS, Android and Linux.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <BrowserDownload browser={browser} />

@@ -188,7 +188,7 @@ await scene.ready;`,
 // or not verified": never claim a cell the release notes don't support.
 export type Cell = "yes" | "no" | "soon";
 export const MATRIX: { feature: string; cells: [Cell, Cell, Cell, Cell]; note?: string }[] = [
-  { feature: "3D content in pages built with the SDK", cells: ["yes", "yes", "yes", "soon"] },
+  { feature: "3D content in pages built with the SDK", cells: ["yes", "yes", "yes", "yes"] },
   { feature: "2D page chrome correctly over 3D", cells: ["yes", "yes", "yes", "soon"] },
   { feature: "Display follows the tab (3D page in front → 3D)", cells: ["yes", "no", "yes", "soon"] },
   { feature: "Existing three.js / PlayCanvas / Spark pages in 3D", cells: ["yes", "no", "yes", "soon"] },

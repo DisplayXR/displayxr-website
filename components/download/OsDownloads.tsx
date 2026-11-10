@@ -31,7 +31,7 @@ function stepsFor(os: Platform, bundle?: ComponentRelease, browser?: ComponentRe
       title: "DisplayXR Browser",
       body:
         os === "macOS"
-          ? "A preview build for Apple silicon Macs. Full macOS support is coming soon; the browser runs on Windows, Linux and Android today."
+          ? "A Chromium-based browser that shows 3D web content in depth on your spatial display. For Apple silicon Macs. Install it after step 1."
           : os === "Android"
             ? "Sideload the Android APK after step 1."
             : "A Chromium-based browser that shows 3D web content in depth on your spatial display. Install it after step 1.",

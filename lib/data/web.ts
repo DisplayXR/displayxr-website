@@ -131,7 +131,8 @@ export function browserAvailability(): BrowserAvailability[] {
   const shipped = (p: ComponentDownload["platform"]): BrowserAvailability =>
     dl(p)
       ? { os: p, state: "available", download: dl(p) }
-      : // macOS: code exists, no released asset yet (David, 2026-10-04).
+      : // A platform with no released asset; macOS ships since browser v1.10
+        // (panel-validated by David, 2026-11-10).
         { os: p, state: p === "macOS" ? "coming-soon" : "unavailable" };
   return [
     shipped("Windows"),
