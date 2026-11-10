@@ -22,6 +22,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.66.12",
+    "repo": "displayxr-runtime",
+    "tag": "v2.66.12",
+    "title": "v2.66.12",
+    "date": "2026-11-10",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.12",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.10.2",
     "repo": "displayxr-browser",
     "tag": "v1.10.2",
@@ -112,20 +123,6 @@
     "prerelease": false,
     "featureLines": [
       "Maintenance patch. A plug-in's rescan request (display hot-plug) now reaches the service's re-probe (#2589). Re-enabling a satellite-hosted conversion provider takes effect without restarting the service (#2573), and a declined opt-in co…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.66.8",
-    "repo": "displayxr-runtime",
-    "tag": "v2.66.8",
-    "title": "DisplayXR Runtime v2.66.8",
-    "date": "2026-11-09",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.8",
-    "prerelease": false,
-    "featureLines": [
-      "Plug-ins can now vouch for a (0, 0) panel origin (`XRT_PLUGIN_DISPLAY_FLAG_SCREEN_ORIGIN_VALID`, no ABI bump), so a 3D panel that is the monitor at the desktop origin resolves as the head screen by position (#2577 follow-up); the service…",
-      "feat(plugin-iface): an origin-valid bit lets a plug-in vouch for a (0, 0) panel origin (#2577 follow-up)"
     ],
     "looksMechanical": false
   },
