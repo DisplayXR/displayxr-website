@@ -39,6 +39,11 @@ export const oems: OEM[] = [
     description: "Nubia and Red Magic Android 3D devices",
   },
   {
+    id: "leia",
+    name: "Leia",
+    description: "Lume Pad Android 3D tablets",
+  },
+  {
     id: "barco",
     name: "Barco",
     description: "Medical-grade 3D displays",
@@ -119,6 +124,15 @@ export const devices: Device[] = [
     status: "shipping",
     displayTech: "Leia SR",
     url: "https://www.redmagic.gg/",
+  },
+
+  // Leia (Android 3D)
+  {
+    name: "Lume Pad 2",
+    oemId: "leia",
+    formFactor: "tablet",
+    status: "shipping",
+    displayTech: "Leia SR",
   },
 
   // Barco
