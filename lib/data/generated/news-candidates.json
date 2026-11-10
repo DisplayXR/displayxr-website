@@ -17,6 +17,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-mediaplayer@pro-v0.9.2",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.9.2",
+    "title": "Media Player Pro 0.9.2",
+    "date": "2026-11-10",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.9.32",
     "repo": "displayxr-installer",
     "tag": "v2.9.32",
@@ -74,6 +85,17 @@
       "Two platform-neutral fixes to the 2D→3D conversion core: Convert to 3D no longer hangs after the conversion host's 10-minute idle exit (a v3 lift query now re-warms the idle-evicted provider), and a newly installed conversion platform (e…"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.66.14",
+    "repo": "displayxr-runtime",
+    "tag": "v2.66.14",
+    "title": "v2.66.14",
+    "date": "2026-11-10",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.14",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@v1.10.2",
@@ -144,19 +166,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.66.10",
-    "repo": "displayxr-runtime",
-    "tag": "v2.66.10",
-    "title": "DisplayXR Runtime v2.66.10",
-    "date": "2026-11-09",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.10",
-    "prerelease": false,
-    "featureLines": [
-      "The eye-tracking camera now turns off when the DisplayXR Browser leaves a 3D page for a 2D site. After a weave present-owner (such as the browser) stops weaving for 5 s, the D3D11 service releases the display processors, and that release…"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.66.11",
     "repo": "displayxr-runtime",
     "tag": "v2.66.11",
@@ -216,17 +225,6 @@
     "title": "DisplayXR Browser v1.10.1",
     "date": "2026-11-07",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@pro-v0.8.3",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.8.3",
-    "title": "Media Player Pro 0.8.3",
-    "date": "2026-11-07",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.8.3",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
