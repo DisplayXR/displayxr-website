@@ -94,7 +94,7 @@ export const roadmapSections: RoadmapSection[] = [
       {
         title: "Multi-compositor performance pass",
         description:
-          "Cross-process D3D11 fence to move sync off the render thread, capture-thread as the sole workspace-render driver (3.2× per-cube fps), and vendor 3D-state poll caching (37→59 fps per cube to hit 60Hz P0)",
+          "Cross-process D3D11 fence to move sync off the render thread, capture-thread as the sole workspace-render driver, and vendor 3D-state poll caching",
       },
       {
         title: "Standalone demo apps",
@@ -109,7 +109,7 @@ export const roadmapSections: RoadmapSection[] = [
       {
         title: "Android runtime",
         description:
-          "The same OpenXR runtime now ships on Android, driving integrated 3D tablets and handhelds (ZTE Nubia Pad 2, Red Magic Explorer 3D) through the native Vulkan compositor. The vendor display processor runs out-of-process with a zero-copy buffer handoff, rendering is orientation-aware across portrait and landscape, and mixed 2D/3D display zones, per-mode eye tracking, and see-through transparency all carry over from the desktop. Model-viewer and media-player demos ship Android builds",
+          "The same OpenXR runtime now ships on Android, driving integrated 3D tablets and handhelds (Lume Pad 2, ZTE Nubia Pad 2, Red Magic Explorer 3D) through the native Vulkan compositor. The vendor display processor runs out-of-process with a zero-copy buffer handoff, rendering is orientation-aware across portrait and landscape, and mixed 2D/3D display zones, per-mode eye tracking, and see-through transparency all carry over from the desktop. Model-viewer and media-player demos ship Android builds",
       },
       {
         title: "Extensions under the DXR vendor author tag",
@@ -125,6 +125,16 @@ export const roadmapSections: RoadmapSection[] = [
         title: "Linux runtime — native Wayland",
         description:
           "Linux is a shipping platform, and native Wayland is its primary target: 3D windows run as native Wayland apps on Ubuntu 24.04 and 26.04 with GNOME, through a native Vulkan compositor and XR_DXR_wayland_surface_binding. Windows carry a translucent, rounded client-side title bar that sits outside the weave; a GNOME Shell extension shipped with the runtime tells it where each window is and keeps every step of a drag on the lens's phase lattice at any output scale, so the 3D stays locked while a window moves; and a window spanning the 3D panel and another display weaves only the part on the panel. Transparent apps float 3D over the live desktop, captured with the app's own window excluded and only while the content is actually transparent, and an opaque window declares an opaque surface so GNOME can scan a fullscreen weave out directly. All five demos ship one binary per app that picks native Wayland automatically by capability probe. X11 and XWayland remain supported as the legacy path (XR_DXR_xlib_window_binding), weaving only when the panel is addressed 1:1 at an integer scale. Every component ships a .deb built on the oldest supported release, and the meta-bundle installs runtime, vendor display-processor plug-in and all five demos with one command. Ubuntu 22.04 is supported with an X11 session recommended, but not yet hardware-validated. The out-of-process service path on Linux remains on the roadmap",
+      },
+      {
+        title: "Component model: conversion and viewer-tracking providers",
+        description:
+          "Beside display processors and input providers, the DisplayXR runtime now hosts two more provider classes, each a plug-in discovered and ABI-checked the same way. Conversion providers turn 2D into 3D (depth, views or Gaussian splats) in a supervised host process, so apps ask through XR_DXR_lift without shipping a model; an open-model provider means every machine can convert. Viewer-tracking providers feed the viewer's head and eye positions on displays that do not track by themselves; the open camera provider does it from an ordinary camera, starting on macOS. A display that tracks the viewer itself always takes precedence",
+      },
+      {
+        title: "Share 3D",
+        description:
+          "A running DisplayXR app can be shared in a video call in 3D: it appears as a camera named “DisplayXR: <app> (3D)”, and every share asks for consent first (XR_DXR_app_share, ADR-061). Windows, with the DisplayXR runtime 2.62.0 or later and the DisplayXR Browser 1.9.2 or later; in-process OpenGL apps are not shared. Web pages can also share a browser tab in 3D through the SDK's call module",
       },
     ],
   },
@@ -146,6 +156,11 @@ export const roadmapSections: RoadmapSection[] = [
         title: "DisplayXR Browser",
         description:
           "A Chromium-based browser that renders the web normally and weaves inline 3D on DisplayXR hardware, built on the runtime's window-bound weave service. The weave is GPU-resident — no per-frame CPU readback — and inline-3D web samples plus a JS helper library ship alongside it. 1.0 release channel: security updates follow Chrome stable",
+      },
+      {
+        title: "DisplayXR Play",
+        description:
+          "Existing games on spatial displays, rendered from two eyes. The Android lane is available now; the public PC release, for Steam on Linux and SteamOS and for Windows, is due December 12, 2026",
       },
       {
         title: "Expand demos and engine integrations",
