@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/developers",
     "/browser",
+    "/play",
     "/developers/native",
     "/architecture",
     "/extensions",

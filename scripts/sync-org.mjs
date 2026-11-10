@@ -252,6 +252,41 @@ async function buildComponents(versions) {
   return out;
 }
 
+// DisplayXR Play, Android lane: assets are per GAME, not per platform. The
+// release scheme (see that repo's README) fixes the names: one
+// `<game>-mod-<version>.zip` per game plus the companion app apk once. The
+// newest non-draft release counts, prereleases included (the lane ships as
+// prereleases until M2), which is why this does not use /releases/latest.
+const PLAY_ANDROID_REPO = "displayxr-play-android";
+async function buildPlay() {
+  let rel = null;
+  try {
+    const list = await api(`/repos/${ORG}/${PLAY_ANDROID_REPO}/releases?per_page=10`);
+    rel = (list || []).find((r) => !r.draft) || null;
+  } catch (e) {
+    warn(`${PLAY_ANDROID_REPO}: releases — ${e.message}`);
+  }
+  const files = (rel?.assets || []).map((a) => ({ name: a.name, url: a.browser_download_url }));
+  const games = [];
+  let companion = null;
+  for (const f of files) {
+    const m = f.name.match(/^(.+?)-mod-(\d+\.\d+\.\d+)\.zip$/i);
+    if (m) games.push({ slug: m[1], version: m[2], file: f.name, url: f.url });
+    else if (/\.apk$/i.test(f.name) && !companion) companion = { file: f.name, url: f.url };
+  }
+  if (rel && games.length === 0) warn(`${PLAY_ANDROID_REPO}: no <game>-mod-<version>.zip asset`);
+  return {
+    android: {
+      version: rel?.tag_name || null,
+      releaseUrl: rel?.html_url || `https://github.com/${ORG}/${PLAY_ANDROID_REPO}/releases`,
+      releaseDate: (rel?.published_at || "").slice(0, 10) || null,
+      repoUrl: `https://github.com/${ORG}/${PLAY_ANDROID_REPO}`,
+      companion,
+      games,
+    },
+  };
+}
+
 async function buildDemos(demoRepos) {
   const out = [];
   for (const repo of demoRepos) {
@@ -542,7 +577,7 @@ async function main() {
     .sort();
   console.log(`  discovered ${demoRepos.length} demo repos: ${demoRepos.join(", ")}`);
 
-  const [components, demos, engines, extensions, repos, signals, newsCandidates] =
+  const [components, demos, engines, extensions, repos, signals, newsCandidates, play] =
     await Promise.all([
       buildComponents(versions),
       buildDemos(demoRepos),
@@ -551,6 +586,7 @@ async function main() {
       buildRepos(allRepos),
       buildSignals(allRepos),
       buildNewsCandidates(allRepos),
+      buildPlay(),
     ]);
 
   writeGen("components.json", components);
@@ -559,6 +595,7 @@ async function main() {
   writeGen("extensions.json", extensions);
   writeGen("repos.json", repos);
   writeGen("news-candidates.json", newsCandidates);
+  writeGen("play.json", play);
   writeGen("_meta.json", { signals });
 
   const unreviewed = newsCandidates.filter((c) => !c.looksMechanical).length;
