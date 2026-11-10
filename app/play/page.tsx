@@ -21,7 +21,7 @@ import { play } from "@/lib/data/generated";
 import type { ReactNode } from "react";
 
 // Versions and download links come from the synced release record; status,
-// cost and notes per game are authored in lib/data/play.ts (the site's
+// notes per game are authored in lib/data/play.ts (the site's
 // generated-vs-authored split).
 const android = play.android;
 const gameAsset = (slug?: string) => (slug ? android.games.find((g) => g.slug === slug) : undefined);
@@ -96,7 +96,7 @@ function EyePair() {
       </div>
       <p className="text-sm text-text-secondary">
         One frame of a UE4 title, rendered twice by the stereo layer on Steam for Linux and woven by the
-        runtime for your display. Integrated GPU at 50 % render scale: 17.8 fps in stereo, 36.6 in 2D.
+        runtime for your display.
       </p>
     </div>
   );
@@ -303,10 +303,9 @@ export default function PlayPage() {
       <Band id="games">
         <AnimateIn>
           <Eyebrow>What plays today</Eyebrow>
-          <H2>The list, with the cost next to each game.</H2>
+          <H2>What plays, and how.</H2>
           <p className="mb-9 max-w-2xl text-lg leading-relaxed text-text-secondary">
-            Every row is a game a person played in stereo on a 3D display, with the frame-rate
-            ratio measured. A title is named only once a release carries it. Games with anti-cheat
+            Every row is a game a person played in stereo on a 3D display. A title is named only once a release carries it. Games with anti-cheat
             or that need a headset are refused by the detector and listed as such.
           </p>
           <div className="mb-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] text-text-primary/90">
@@ -319,7 +318,7 @@ export default function PlayPage() {
             <table className="w-full min-w-[900px] text-sm">
               <thead>
                 <tr className="text-left text-xs uppercase tracking-wider text-text-secondary">
-                  {["Game", "System", "Route", "Status", "Stereo vs 2D", "Notes"].map((h) => (
+                  {["Game", "System", "Route", "Status", "Notes"].map((h) => (
                     <th key={h} className="border-b border-border px-4 py-3.5 font-medium">
                       {h}
                     </th>
@@ -354,7 +353,6 @@ export default function PlayPage() {
                         {g.statusLabel}
                       </span>
                     </td>
-                    <td className="px-4 py-4 font-mono text-text-primary/90">{g.cost}</td>
                     <td className="px-4 py-4 text-text-secondary">{g.notes}</td>
                   </tr>
                 ))}

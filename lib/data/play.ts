@@ -64,7 +64,7 @@ export const SYSTEMS: PlaySystem[] = [
     // version from lib/data/generated/play.json (synced from the repo's releases).
     primary: { label: "Get the companion app", href: PLAY_ANDROID_RELEASES },
     secondary: { label: "Install guide", href: PLAY_ANDROID_REPO },
-    note: "First game: Minecraft Bedrock. 45 fps on a tablet, 22 fps on a phone with head tracking.",
+    note: "First game: Minecraft Bedrock.",
   },
 ];
 
@@ -150,7 +150,6 @@ export interface GameRow {
   route: string;
   status: GameStatus;
   statusLabel: string;
-  cost: string;
   notes: string;
 }
 
@@ -162,8 +161,7 @@ export const GAMES: GameRow[] = [
     route: "Native mod via launcher",
     status: "plays",
     statusLabel: "Plays",
-    cost: "45 fps tablet · 22 fps phone",
-    notes: "Shadows, fog, sky, hand and HUD correct in both eyes. Head tracking costs frame rate on phones.",
+    notes: "Shadows, fog, sky, hand and HUD correct in both eyes.",
   },
   {
     game: "Unreal 4 action title",
@@ -172,8 +170,7 @@ export const GAMES: GameRow[] = [
     route: "D3D11 stereo layer, in-process XR",
     status: "plays",
     statusLabel: "Plays (preview)",
-    cost: "0.43× · 1.0× at 50 % render scale",
-    notes: "D3D12 also works. Engine render scale recovers the frame rate.",
+    notes: "D3D12 also works.",
   },
   {
     game: "Unity 2019 exploration title",
@@ -182,7 +179,6 @@ export const GAMES: GameRow[] = [
     route: "D3D11 stereo layer",
     status: "partial",
     statusLabel: "Partial",
-    cost: "0.46×",
     notes: "Clean on D3D11. The D3D12 route breaks geometry on this engine version; the detector routes around it.",
   },
   {
@@ -192,7 +188,6 @@ export const GAMES: GameRow[] = [
     route: "none",
     status: "refused",
     statusLabel: "Refused",
-    cost: "n/a",
     notes: "Needs a headset; the detector reads the store flag and turns 3D off.",
   },
 ];
@@ -218,7 +213,7 @@ export const CONTROLS = [
 export const PROFILE_SNIPPET = `# store app id, never a trademark
 [game]
 route        = "d3d11"        # d3d11 | d3d12 | ue-mod | native
-render_scale = 0.5            # engine scale that keeps 2D frame rate
+render_scale = 0.5            # engine render scale for this title
 
 [stereo]
 depth        = 100            # % of eye distance, F1 in game
@@ -253,10 +248,6 @@ export const FAQ = [
   {
     q: "Is this like the depth-based 3D shaders?",
     a: "No. Those guess a second view from one picture and a depth buffer. Play renders the second view. Objects have real sides, reflections and shadows match per eye, and nothing smears at edges.",
-  },
-  {
-    q: "What does it cost in frame rate?",
-    a: "About half, since every geometry pass runs twice. Dropping the engine’s render scale to 50 % gets the 2D frame rate back on the titles measured, and most 3D displays weave at less than full resolution anyway.",
   },
   {
     q: "Does it work with my ReShade setup?",
