@@ -245,6 +245,61 @@ const editorial: Record<string, Editorial> = {
     needIf:
       "you want live stereo video from the display's own camera, for calls, capture or depth, without taking it from the tracker.",
   },
+  "XR_DXR_app_share": {
+    title: "3D App Share",
+    status: "early",
+    tier: "advanced",
+    vanillaGap:
+      "an app's frames end at its own display. Nothing outside the DisplayXR runtime can receive them.",
+    adds:
+      "a running app as one more stereo camera source: its left and right views, before the weave, as one side-by-side stream with per-frame content details. Every share starts behind a runtime prompt, and an app can opt out of ever being listed. No new entry points; it builds on Stereo Camera. Windows today, and in-process OpenGL apps are not shared.",
+    needIf:
+      "you build a call or capture client that sends a running 3D app to others in 3D, as the DisplayXR Browser does, or your app must never be shared.",
+  },
+  "XR_DXR_desktop_control": {
+    title: "Desktop Control",
+    status: "experimental",
+    tier: "advanced",
+    vanillaGap:
+      "an app sees only its own session. It has no view of the rest of the desktop.",
+    adds:
+      "one API for an app's agent to observe and operate the desktop (windows, UI text, typing, clicks) and, as a separate consent scope, capture screen stills. It runs inside the calling app through the OS's own consent, so the permission belongs to the app, never to DisplayXR. In development: OS backends are landing one by one, and an OS without one reports the feature as unsupported.",
+    needIf:
+      "your app's AI agent needs to see or act on other windows on the desktop.",
+  },
+  "XR_DXR_input_providers": {
+    title: "Input Providers",
+    status: "early",
+    tier: "advanced",
+    vanillaGap:
+      "input devices sit behind interaction profiles. An app cannot tell which source drives its controllers or hands.",
+    adds:
+      "a list of the resident input providers (each provider's own name, the families it supplies, whether its hardware is there, which one serves this app), and a request for one per family, optionally saved as the user's per-app choice.",
+    needIf:
+      "you want to show which device drives the hands or controllers, or let the user pick one, without naming a vendor in your code.",
+  },
+  "XR_DXR_stereo_comfort": {
+    title: "Stereo Comfort Zone",
+    status: "early",
+    tier: "advanced",
+    vanillaGap:
+      "optics fix the views, so how much depth is comfortable is not the app's question.",
+    adds:
+      "an opt-in report on xrLocateViews: the comfort zone for the current viewer, as depth bounds in front of and behind the glass with the matching on-glass disparity, at the tracked or nominal viewing distance and with the user's depth preference applied.",
+    needIf:
+      "you set your own eye separation and want it right on every display size and viewing distance, instead of a hard-coded percentage.",
+  },
+  "XR_DXR_swapchain_color_encoding": {
+    title: "Swapchain Color Encoding",
+    status: "early",
+    tier: "advanced",
+    vanillaGap:
+      "every non-sRGB format holds linear values, so the runtime encodes a UNORM swapchain on its way to the panel.",
+    adds:
+      "a declaration that a UNORM swapchain already holds display-encoded (sRGB) values, so the DisplayXR runtime reads it like an _SRGB one and a 10-bit back buffer goes through without conversion. Windows, in-process D3D11 and D3D12 only; other paths refuse the declaration.",
+    needIf:
+      "you submit pixels that are already display-referred, such as a game's back buffer, a decoded video frame or a desktop capture.",
+  },
   "XR_DXR_macos_gl_binding": {
     title: "macOS OpenGL Binding",
     status: "shipping",
