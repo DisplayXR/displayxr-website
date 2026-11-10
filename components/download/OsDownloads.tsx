@@ -16,17 +16,14 @@ type Step = {
 const ORDER: Platform[] = ["Windows", "macOS", "Linux", "Android"];
 
 function stepsFor(os: Platform, bundle?: ComponentRelease, browser?: ComponentRelease): Step[] {
-  // Android: the tablet bundle zip (sideloaded over adb), not the bundle release's APK.
-  const b: ComponentDownload | undefined =
-    os === "Android"
-      ? { platform: "Android", file: ANDROID_BUNDLE.file, url: ANDROID_BUNDLE.url }
-      : bundle?.downloads.find((d) => d.platform === os);
+  // Android: the bundle release's on-device installer app; the adb tablet bundle is in AndroidNote.
+  const b = bundle?.downloads.find((d) => d.platform === os);
   const w = browser?.downloads.find((d) => d.platform === os);
   const bundleBody: Record<Platform, string> = {
     Windows: "The runtime and the display plug-in in one installer, with pinned, compatible versions. Start here.",
     macOS: "The runtime in one installer package. Start here.",
     Linux: "Unpack and run install.sh: it installs the runtime, the display plug-in and the demos as .deb packages and checks itself. Ubuntu 24.04 or 26.04 recommended.",
-    Android: "The tablet bundle: the DisplayXR runtime with the display plug-in built in, the DisplayXR Browser and the demos. Unzip it and run install-from-computer.sh to sideload everything over adb. For developers and testers; there is no store listing.",
+    Android: "The DisplayXR installer app for Android spatial displays: it installs the DisplayXR runtime with the display plug-in built in. Start here. There is no store listing; sideload the APK.",
   };
   return [
     { title: "DisplayXR", body: bundleBody[os], download: b, missing: b ? undefined : "unavailable" },
@@ -34,9 +31,9 @@ function stepsFor(os: Platform, bundle?: ComponentRelease, browser?: ComponentRe
       title: "DisplayXR Browser",
       body:
         os === "macOS"
-          ? "The browser for 3D on the web is coming to macOS. It runs on Windows, Linux and Android today."
+          ? "A preview build for Apple silicon Macs. Full macOS support is coming soon; the browser runs on Windows, Linux and Android today."
           : os === "Android"
-            ? "Already in the tablet bundle. To install or update it on its own, sideload the Android APK after step 1."
+            ? "Sideload the Android APK after step 1."
             : "A Chromium-based browser that shows 3D web content in depth on your spatial display. Install it after step 1.",
       download: w,
       missing: w ? undefined : os === "macOS" ? "coming-soon" : "unavailable",
@@ -82,6 +79,13 @@ function AndroidNote() {
       <p>
         <strong className="text-text-primary">Supported devices:</strong> Lume Pad 2, Nubia Pad 2 and
         Red Magic Explorer 3D.
+      </p>
+      <p>
+        <strong className="text-text-primary">Developers and testers:</strong> the{" "}
+        <a href={ANDROID_BUNDLE.url} className={noteLink}>tablet bundle</a> carries the DisplayXR
+        runtime, the DisplayXR Browser and the demos in one zip. Unzip it and run{" "}
+        <code className="font-mono text-xs">install-from-computer.sh</code> to sideload everything over
+        adb.
       </p>
       <p>
         <strong className="text-text-primary">Runtime APKs:</strong> every DisplayXR runtime release

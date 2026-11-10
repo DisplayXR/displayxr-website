@@ -30,15 +30,13 @@ export type SdkModule = {
 
 // Subpath exports of @displayxr/inline3d, checked against the published
 // package's `exports` (1.51.1). Modules marked preview can change their
-// options in a minor release (SDK docs/sdk-stability.md). /call carries no
-// label by David's call (2026-11-10), although the SDK's own docs still file
-// it under the preview tier.
+// options in a minor release (SDK docs/sdk-stability.md); tiers follow that doc.
 export const SDK_MODULES: SdkModule[] = [
   { path: "@displayxr/inline3d", what: "The core: 3D photos (addImage), 3D video (addVideo) and live WebGL scenes (addScene). Dependency-free." },
   { path: "/three", what: "three.js glue: an off-axis eye camera, edge feathering, display and camera rigs." },
   { path: "/model", what: "A glTF / GLB viewer: auto-framed, idle turntable, drag to orbit. Draco, meshopt and KTX2 load too.", preview: true },
   { path: "/player", what: "A 3D movie player with transport controls: side-by-side, top-bottom or mono.", preview: true },
-  { path: "/call", what: "A drop-in video-call element for up to four people, with no accounts. openTabShare() shares a browser tab in 3D." },
+  { path: "/call", what: "A drop-in video-call element for up to four people, with no accounts. openTabShare() shares a browser tab in 3D.", preview: true },
   { path: "/camera", what: "The stereo camera as a primitive: open the 3D camera, show it in a tile, capture side-by-side photos and video.", preview: true },
   { path: "/splat", what: "Gaussian splats: captured places and objects as a 3D tile.", preview: true },
   { path: "/viewer", what: "Framing, orbit and idle turntable for scene viewers.", preview: true },
