@@ -261,6 +261,10 @@ export default function BrowserPage() {
               WebRTC.
             </p>
             <p className="mt-4 text-sm text-text-secondary">
+              In display space, <code className="font-mono">+z</code> points
+              out of the glass, toward the viewer.
+            </p>
+            <p className="mt-4 text-sm text-text-secondary">
               <a href={`${REPO_URLS.web}/blob/main/docs/authoring-inline-3d.md`} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent-hover underline underline-offset-2">
                 Authoring guide
               </a>{" "}
@@ -292,8 +296,8 @@ export default function BrowserPage() {
               </table>
             </div>
             <p className="mt-3 text-xs text-text-secondary">
-              The core and <code className="font-mono">/three</code> are stable;
-              preview modules can change their options in a minor release.
+              Modules marked preview can change their options in a minor
+              release.
             </p>
           </div>
         </div>

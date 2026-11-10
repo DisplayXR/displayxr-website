@@ -28,16 +28,24 @@ export type SdkModule = {
   preview?: boolean;
 };
 
-// Subpath exports of @displayxr/inline3d. Only the core and /three are
-// semver-frozen; everything else is preview tier and is labelled so.
+// Subpath exports of @displayxr/inline3d, checked against the published
+// package's `exports` (1.51.1). Modules marked preview can change their
+// options in a minor release (SDK docs/sdk-stability.md). /call carries no
+// label by David's call (2026-11-10), although the SDK's own docs still file
+// it under the preview tier.
 export const SDK_MODULES: SdkModule[] = [
   { path: "@displayxr/inline3d", what: "The core: 3D photos (addImage), 3D video (addVideo) and live WebGL scenes (addScene). Dependency-free." },
   { path: "/three", what: "three.js glue: an off-axis eye camera, edge feathering, display and camera rigs." },
   { path: "/model", what: "A glTF / GLB viewer: auto-framed, idle turntable, drag to orbit. Draco, meshopt and KTX2 load too.", preview: true },
   { path: "/player", what: "A 3D movie player with transport controls: side-by-side, top-bottom or mono.", preview: true },
-  { path: "/call", what: "A drop-in video-call element for up to four people, with no accounts.", preview: true },
+  { path: "/call", what: "A drop-in video-call element for up to four people, with no accounts. openTabShare() shares a browser tab in 3D." },
+  { path: "/camera", what: "The stereo camera as a primitive: open the 3D camera, show it in a tile, capture side-by-side photos and video.", preview: true },
   { path: "/splat", what: "Gaussian splats: captured places and objects as a 3D tile.", preview: true },
   { path: "/viewer", what: "Framing, orbit and idle turntable for scene viewers.", preview: true },
+  { path: "/hands", what: "Tracked hands, and pinch to orbit in the model, splat and scene viewers.", preview: true },
+  { path: "/depth", what: "Depth measurements: how far a subject sits in front of or behind the glass, in units that hold on any panel." },
+  { path: "/cursor-depth", what: "The depth-aware cursor's placement maths, so a pointer sits just in front of the 3D content it hovers." },
+  { path: "/undock", what: "Lift a window's model or splat into a floating viewer over the desktop." },
 ];
 
 export type UseCase = {
@@ -55,7 +63,7 @@ export type UseCase = {
 const sample = (p: string) => `${WEB_SAMPLES_URL}samples/${p}/`;
 
 // From the browser feature catalog and the /browser design spec (2026-10-04).
-// Guardrails that shape this copy: model / player / call are preview tier;
+// Guardrails that shape this copy: model / player / splat are preview tier;
 // call depth comes only from a stereo-camera sender (plain webcams stay 2D);
 // 3D movies means self-hosted SBS / top-bottom video (no DRM, so no
 // commercial streaming services). "Play" stays out until the Arcade demo is
