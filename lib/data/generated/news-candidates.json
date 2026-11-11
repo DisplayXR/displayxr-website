@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-demo-mediaplayer@v1.18.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.18.0",
+    "title": "v1.18.0",
+    "date": "2026-11-11",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.18.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.20.8",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.20.8",
+    "title": "v2.20.8",
+    "date": "2026-11-11",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.20.8",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@pro-v0.9.1",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "pro-v0.9.1",
@@ -103,12 +125,15 @@
     "id": "displayxr-runtime@v2.66.15",
     "repo": "displayxr-runtime",
     "tag": "v2.66.15",
-    "title": "v2.66.15",
+    "title": "DisplayXR Runtime v2.66.15",
     "date": "2026-11-10",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.15",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "A lost GPU device on a D3D11 hub output (for example `DXGI_ERROR_DEVICE_REMOVED` after a panel hotplug, or a reset or hung device) is now handled cleanly instead of leaving a black panel. The runtime detects the loss once and logs its `G…",
+      "**Behaviour change:** apps that exit on `XR_SESSION_STATE_LOSS_PENDING` will now close when the device is lost, where before they kept running against a black panel."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.10.2",
@@ -131,25 +156,6 @@
     "prerelease": true,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.20.4",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.20.4",
-    "title": "v2.20.4",
-    "date": "2026-11-09",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.20.4",
-    "prerelease": false,
-    "featureLines": [
-      "The SR tracker-rest gate (#517) ships for the first time in this release. v2.20.3 already carried the code, but it was built on an SR SDK where it compiled out; v2.20.4 is built on SR SDK v2 1.39.0.3296 (#519), so it is now live:",
-      "**The camera stays off for surfaces that start in 2D.** A new weaver starts with tracking off and only turns it on with its first 3D request, so an app that launches into 2D (for example the DisplayXR Browser on a 2D page) never lights t…",
-      "**A rested weaver reads as \"no viewer\".** When the SR weaver reports that tracking is at rest, the plug-in reports no tracked viewer even if another client keeps the shared camera streaming, so apps no longer see a collapsed eye pair as …",
-      "**New `DXR_LEIA_TRACKING_POLICY=auto|always_on|off`** sets the tracking policy applied to each new weaver (`auto` restores SR's default behaviour).",
-      "Rested weaver means no viewer; weavers start with tracking off until their first 3D request; `DXR_LEIA_TRACKING_POLICY` (#517)",
-      "Windows SR v2 SDK repinned to 1.39.0.3296 (multi-viewer + per-weaver tracking policy), which enables the above and keeps the multi-viewer weave enabled (#519)",
-      "**Compatibility:** needs a LeiaSR runtime that provides the per-weaver tracking API (LeiaSR q4, build 3284 or later; 3296 recommended). On an older SR runtime the call answers `SR_ERROR_FUNCTION_UNSUPPORTED`, the plug-in logs one WARN an…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.20.5",
@@ -175,26 +181,6 @@
     "prerelease": false,
     "featureLines": [
       "Android: the head-tracking listener now reads the face position correctly again. Since CNSDK 0.10.76 the Android face detector never fills posePosition, so every detected face arrived at (0,0,0) and the plug-in rejected every frame (~90/…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@pro-v0.9.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.9.0",
-    "title": "Media Player Pro 0.9.0",
-    "date": "2026-11-08",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Live sources:** MPEG-DASH (`.mpd`) and SRT (`srt://`, caller/listener, passphrase + latency) inputs, now on Windows, macOS and Linux.",
-      "**HLS / DASH play at real time:** segmented streams no longer fast-forward or burst (#197).",
-      "**Adaptive bitrate** for HLS / DASH, with a manual override (MCP `set_stream_quality`). Known limit: a sudden large bandwidth drop on HLS can cause one long stall before it settles on a lower rendition.",
-      "**macOS uses the bundled slim FFmpeg:** no Homebrew FFmpeg in the `.pkg` (about 42% smaller). Wider codec coverage on all platforms: big-endian PCM / ALAC audio in QuickTime files is no longer silent, plus DTS, TrueHD, VC-1, JPEG 2000, C…",
-      "**No head-tracking camera during playback** on runtimes with `XR_DXR_display_info` v25+.",
-      "File playback (ProRes, DNxHR, HEVC 10-bit, MXF, EXR/DPX/TIFF sequences) was A/B-checked against 0.8.3 with no change in decode path, seeking, frame-stepping or A/V sync.",
-      "The Windows installer is code-signed and includes OpenColorIO (ACES).",
-      "The cubemap / EAC 360 viewer below applies to the base player; Pro keeps the VR viewer off."
     ],
     "looksMechanical": false
   },
