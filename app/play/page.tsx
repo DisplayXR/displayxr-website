@@ -6,7 +6,7 @@ import { WovenEyePair } from "@/components/play/WovenEyePair";
 import {
   CONTROLS,
   DISPLAY_MAKERS,
-  FAQ,
+  FAQ_GROUPS,
   GAMES,
   PIPELINE,
   PLAY_PORTING_GUIDE,
@@ -480,21 +480,30 @@ export default function PlayPage() {
         </AnimateIn>
       </Band>
 
-      {/* S8 — FAQ */}
-      <Band>
+      {/* S8 — FAQ, grouped by who asks */}
+      <Band id="faq">
         <Eyebrow>Questions</Eyebrow>
-        <div className="mt-6 divide-y divide-border">
-          {FAQ.map((f) => (
-            <details key={f.q} className="group py-5">
-              <summary className="cursor-pointer list-none text-lg font-medium text-text-primary">
-                {f.q}
-              </summary>
-              <p className="mt-3 max-w-3xl text-text-secondary">{f.a}</p>
-            </details>
+        <H2>What people ask before they install.</H2>
+        <div className="mt-10 flex flex-col gap-12">
+          {FAQ_GROUPS.map((g) => (
+            <div key={g.group}>
+              <h3 className="mb-2 text-sm font-medium uppercase tracking-wider text-text-secondary">{g.group}</h3>
+              <div className="divide-y divide-border">
+                {g.items.map((f) => (
+                  <details key={f.q} className="group py-5">
+                    <summary className="cursor-pointer list-none text-lg font-medium text-text-primary">
+                      {f.q}
+                    </summary>
+                    <p className="mt-3 max-w-3xl text-text-secondary">{f.a}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
         <p className="mt-10 text-sm text-text-secondary">
-          Game names appear here only to say which game a release supports.
+          Game names appear here only to say which game a release supports. A question that is not
+          here goes to Discussions.
         </p>
       </Band>
     </div>
