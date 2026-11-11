@@ -67,7 +67,7 @@ const installers: Installer[] = [
     id: "browser",
     name: "DisplayXR Browser",
     pitch:
-      "A Chromium-based browser that renders the web normally and shows 3D web content in depth on a spatial display. Security updates follow Chrome stable. Not affiliated with Google; no Google account sign-in or sync. macOS coming soon.",
+      "A Chromium-based browser that renders the web normally and shows 3D web content in depth on a spatial display. Security updates follow Chrome stable. Not affiliated with Google; no Google account sign-in or sync.",
     requirement: "Optional",
     releasesUrl: `${REPO_URLS.browser}/releases/latest`,
     icon: <Globe size={20} />,

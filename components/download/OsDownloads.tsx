@@ -3,6 +3,7 @@
 import { Download, Clock, Ban } from "lucide-react";
 import { useVisitorOS, type VisitorOS } from "@/lib/visitor-os";
 import type { ComponentDownload, ComponentRelease, Platform } from "@/lib/data/generated";
+import { ANDROID_BUNDLE, ANDROID_INSTALL_GUIDE } from "@/lib/constants";
 
 type Step = {
   title: string;
@@ -15,13 +16,14 @@ type Step = {
 const ORDER: Platform[] = ["Windows", "macOS", "Linux", "Android"];
 
 function stepsFor(os: Platform, bundle?: ComponentRelease, browser?: ComponentRelease): Step[] {
+  // Android: the bundle release's on-device installer app; the adb tablet bundle is in AndroidNote.
   const b = bundle?.downloads.find((d) => d.platform === os);
   const w = browser?.downloads.find((d) => d.platform === os);
   const bundleBody: Record<Platform, string> = {
     Windows: "The runtime and the display plug-in in one installer, with pinned, compatible versions. Start here.",
     macOS: "The runtime in one installer package. Start here.",
     Linux: "Unpack and run install.sh: it installs the runtime, the display plug-in and the demos as .deb packages and checks itself. Ubuntu 24.04 or 26.04 recommended.",
-    Android: "The DisplayXR installer app for Android spatial displays. Start here.",
+    Android: "The DisplayXR installer app for Android spatial displays: it installs the DisplayXR runtime with the display plug-in built in. Start here. There is no store listing; sideload the APK.",
   };
   return [
     { title: "DisplayXR", body: bundleBody[os], download: b, missing: b ? undefined : "unavailable" },
@@ -29,8 +31,10 @@ function stepsFor(os: Platform, bundle?: ComponentRelease, browser?: ComponentRe
       title: "DisplayXR Browser",
       body:
         os === "macOS"
-          ? "The browser for 3D on the web is coming to macOS. It runs on Windows, Linux and Android today."
-          : "A Chromium-based browser that shows 3D web content in depth on your spatial display. Install it after step 1.",
+          ? "A Chromium-based browser that shows 3D web content in depth on your spatial display. For Apple silicon Macs. Install it after step 1."
+          : os === "Android"
+            ? "Sideload the Android APK after step 1."
+            : "A Chromium-based browser that shows 3D web content in depth on your spatial display. Install it after step 1.",
       download: w,
       missing: w ? undefined : os === "macOS" ? "coming-soon" : "unavailable",
     },
@@ -66,6 +70,38 @@ function StepCard({ n, step }: { n: number; step: Step }) {
   );
 }
 
+const noteLink = "text-accent hover:text-accent-hover underline underline-offset-2";
+
+/** Android specifics: supported devices, and the runtime APKs with their two variants. */
+function AndroidNote() {
+  return (
+    <div className="mt-4 space-y-2 text-sm leading-relaxed text-text-secondary">
+      <p>
+        <strong className="text-text-primary">Supported devices:</strong> Lume Pad 2, Nubia Pad 2 and
+        Red Magic Explorer 3D.
+      </p>
+      <p>
+        <strong className="text-text-primary">Developers and testers:</strong> the{" "}
+        <a href={ANDROID_BUNDLE.url} className={noteLink}>tablet bundle</a> carries the DisplayXR
+        runtime, the DisplayXR Browser and the demos in one zip. Unzip it and run{" "}
+        <code className="font-mono text-xs">install-from-computer.sh</code> to sideload everything over
+        adb.
+      </p>
+      <p>
+        <strong className="text-text-primary">Runtime APKs:</strong> every DisplayXR runtime release
+        also carries two Android APKs. Only{" "}
+        <code className="font-mono text-xs">DisplayXR-Runtime-Leia-*</code>, the display-vendor
+        variant, shows real 3D on these devices;{" "}
+        <code className="font-mono text-xs">DisplayXR-Runtime-*</code> is the generic variant and
+        runs in simulation only.{" "}
+        <a href={ANDROID_INSTALL_GUIDE} target="_blank" rel="noopener noreferrer" className={noteLink}>
+          Installing from released artifacts ↗
+        </a>
+      </p>
+    </div>
+  );
+}
+
 function PlatformBlock({ os, mine, bundle, browser }: { os: Platform; mine: boolean; bundle?: ComponentRelease; browser?: ComponentRelease }) {
   const steps = stepsFor(os, bundle, browser);
   return (
@@ -84,6 +120,7 @@ function PlatformBlock({ os, mine, bundle, browser }: { os: Platform; mine: bool
           <StepCard key={s.title} n={i + 1} step={s} />
         ))}
       </div>
+      {os === "Android" && <AndroidNote />}
     </section>
   );
 }

@@ -56,9 +56,20 @@ export const DISCUSSIONS_URL = "https://github.com/DisplayXR/displayxr-runtime/d
 export const WEB_SAMPLES_URL = "https://displayxr.github.io/displayxr-web/";
 
 // Pinned SDK version shown in snippets. Bump with the browser's SDK pin policy.
-export const INLINE3D_VERSION = "1.30.0";
+export const INLINE3D_VERSION = "1.51.1";
 
 export const DOWNLOAD_HREF = "/download";
+
+// Android is a sideload flow for developers and testers, not a store listing:
+// a tablet bundle zip (install-from-computer.sh over adb, always the newest
+// bundle at this stable URL) or the runtime APKs on each runtime release.
+export const ANDROID_BUNDLE = {
+  file: "displayxr-tablet-bundle.zip",
+  url: "https://github.com/DisplayXR/displayxr-installer/releases/download/android-bundle-latest/displayxr-tablet-bundle.zip",
+  releaseUrl: "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
+} as const;
+export const ANDROID_INSTALL_GUIDE =
+  "https://github.com/DisplayXR/displayxr-runtime/blob/main/docs/getting-started/android-build-guide.md#installing-from-released-artifacts";
 
 export const REPO_URLS = {
   runtime: "https://github.com/DisplayXR/displayxr-runtime",

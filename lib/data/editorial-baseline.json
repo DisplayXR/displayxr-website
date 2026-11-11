@@ -137,6 +137,7 @@
     "displayxr-demo-modelviewer@v0.35.2",
     "displayxr-demo-modelviewer@v0.35.3",
     "displayxr-demo-modelviewer@v0.35.4",
+    "displayxr-installer@android-bundle-2026-11-09",
     "displayxr-installer@android-bundle-20260923",
     "displayxr-installer@v2.0.13",
     "displayxr-installer@v2.0.14",
@@ -173,6 +174,8 @@
     "displayxr-mcp@v0.5.3",
     "displayxr-mcp@v0.5.4",
     "displayxr-models@blobs",
+    "displayxr-paraview@v0.1.0",
+    "displayxr-play-android@v0.6.4",
     "displayxr-reference-scenes@v0.2.0",
     "displayxr-runtime@v2.2.4",
     "displayxr-runtime@v2.20.0",
@@ -199,6 +202,9 @@
     "displayxr-shell-releases@v2.3.2",
     "displayxr-shell-releases@v2.4.0",
     "displayxr-shell-releases@v2.4.1",
+    "displayxr-slicer@v0.1.0",
+    "displayxr-tracking-open@v0.1.0",
+    "displayxr-tracking-open@v0.1.1",
     "displayxr-unity-samples@v2.0.2",
     "displayxr-unity-samples@v2.0.3",
     "displayxr-unity-samples@v2.1.0",
@@ -223,6 +229,8 @@
     "displayxr-unreal@v0.9.1",
     "displayxr-unreal@v0.9.2",
     "displayxr-unreal@v0.9.3",
-    "displayxr-unreal@v0.9.4"
+    "displayxr-unreal@v0.9.4",
+    "displayxr-web@wordpress-v0.1.0",
+    "displayxr-web@wordpress-v0.1.1"
   ]
 }

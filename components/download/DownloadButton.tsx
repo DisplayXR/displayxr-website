@@ -7,7 +7,7 @@ import { DOWNLOAD_HREF } from "@/lib/constants";
 /**
  * The primary "Get DisplayXR" action. It names the visitor's OS once known,
  * and always lands on /download, which carries the honest per-OS states
- * (the order of the two installs, macOS coming soon, nothing for iOS).
+ * (the order of the two installs, nothing for iOS).
  */
 export function DownloadButton({ variant = "primary" }: { variant?: "primary" | "secondary" }) {
   const os = useVisitorOS();

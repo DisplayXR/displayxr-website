@@ -33,6 +33,7 @@ const VERIFICATION_ORDER = (
 
 const link = "text-accent hover:text-accent-hover underline underline-offset-2";
 import { oems, devices } from "@/lib/data/devices";
+import { ANDROID_BUNDLE, ANDROID_INSTALL_GUIDE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Platform Support",
@@ -129,6 +130,52 @@ export default function PlatformSupportPage() {
           </div>
         </section>
 
+        {/* Android: how it is distributed */}
+        <section id="android" className="scroll-mt-24">
+          <h2 className="text-xl font-semibold text-text-primary mb-2">
+            Android
+          </h2>
+          <div className="space-y-3 text-sm text-text-secondary leading-relaxed max-w-2xl">
+            <p>
+              DisplayXR on Android is a sideload flow for developers and
+              testers, not a store listing. Supported devices: Lume Pad 2,
+              Nubia Pad 2 and Red Magic Explorer 3D.
+            </p>
+            <ul className="list-disc space-y-2 pl-5">
+              <li>
+                <strong className="text-text-primary">Tablet bundle.</strong>{" "}
+                One zip with the DisplayXR runtime (display plug-in built in),
+                the DisplayXR Browser and the demos. Run{" "}
+                <code className="font-mono text-xs">install-from-computer.sh</code>{" "}
+                to install it over adb.{" "}
+                <a href={ANDROID_BUNDLE.releaseUrl} target="_blank" rel="noopener noreferrer" className={link}>
+                  Latest bundle ↗
+                </a>
+              </li>
+              <li>
+                <strong className="text-text-primary">Runtime APKs.</strong>{" "}
+                Every DisplayXR runtime release carries two. Only the
+                display-vendor variant,{" "}
+                <code className="font-mono text-xs">DisplayXR-Runtime-Leia-*</code>,
+                shows real 3D; the generic{" "}
+                <code className="font-mono text-xs">DisplayXR-Runtime-*</code>{" "}
+                runs in simulation only.
+              </li>
+              <li>
+                <strong className="text-text-primary">DisplayXR Browser.</strong>{" "}
+                Ships an Android APK with each release, and is included in the
+                bundle.
+              </li>
+            </ul>
+            <p>
+              Step by step:{" "}
+              <a href={ANDROID_INSTALL_GUIDE} target="_blank" rel="noopener noreferrer" className={link}>
+                Installing from released artifacts ↗
+              </a>
+            </p>
+          </div>
+        </section>
+
         {/* Runtime Compositors */}
         <section>
           <h2 className="text-xl font-semibold text-text-primary mb-2">
@@ -189,9 +236,17 @@ export default function PlatformSupportPage() {
             <a href="/extensions#XR_DXR_win32_window_binding" className={link}>
               <span className="font-mono">XR_DXR_win32_window_binding</span>
             </a>{" "}
-            and its menus, gizmos and input stay its own. These integrations are
-            in development and none is released yet; each row links its public
-            proposal.
+            and its menus, gizmos and input stay its own. 3D Slicer and ParaView
+            have preview releases (
+            <a href="https://github.com/DisplayXR/displayxr-slicer/releases" target="_blank" rel="noopener noreferrer" className={link}>
+              3D Slicer
+            </a>
+            ,{" "}
+            <a href="https://github.com/DisplayXR/displayxr-paraview/releases" target="_blank" rel="noopener noreferrer" className={link}>
+              ParaView
+            </a>
+            ; research use only). The others are in development. Each row
+            links its public proposal.
           </p>
           {/* Phone: a stacked list, so the status and proposal stay in view */}
           <ul className="sm:hidden divide-y divide-border rounded-lg border border-border">
@@ -343,8 +398,8 @@ export default function PlatformSupportPage() {
             Ready to try it on your platform?
           </h2>
           <p className="text-sm text-text-secondary leading-relaxed">
-            Install the Windows bundle or build from source on macOS — then run
-            a sample in simulation on any monitor, no spatial display required.
+            Install DisplayXR for Windows, macOS, Linux or Android, then run a
+            sample in simulation on any monitor, no spatial display required.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Button href="/developers">Get started →</Button>

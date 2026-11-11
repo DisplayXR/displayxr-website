@@ -107,6 +107,76 @@ export const NEWS_KIND_LABELS: Record<NewsKind, string> = {
  */
 export const NEWS: NewsItem[] = [
   {
+    id: "displayxr-play",
+    date: "2026-11-10",
+    kind: "product",
+    tier: "banner",
+    headline: "DisplayXR Play: existing games in real stereo",
+    blurb:
+      "DisplayXR Play brings existing games to spatial displays, rendered from two eyes. The Android lane is available now; a public PC release, for Steam on Linux and SteamOS and for Windows, is due December 12, 2026.",
+    href: "/play",
+  },
+  {
+    id: "android-tablet-bundle",
+    date: "2026-11-09",
+    kind: "platform",
+    tier: "list",
+    headline: "One zip installs DisplayXR on an Android 3D tablet",
+    blurb:
+      "The Android tablet bundle carries the DisplayXR runtime with the display plug-in built in, the DisplayXR Browser and the five demos. Unzip it and run install-from-computer.sh to sideload everything over adb. It is for developers and testers, not a store listing.",
+    href: "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-2026-11-09",
+  },
+  {
+    id: "sdk-tab-share",
+    date: "2026-11-08",
+    kind: "capability",
+    tier: "list",
+    headline: "Share a browser tab in 3D from a web page",
+    blurb:
+      "@displayxr/inline3d 1.51 adds openTabShare() to ./call: the page opens the tab picker and sends the picked tab into a call. In a DisplayXR Browser with stereo tab capture the tab arrives as side-by-side 3D, so receivers need nothing new; anywhere else it is shared flat.",
+    href: "https://github.com/DisplayXR/displayxr-web/blob/main/docs/call.md",
+  },
+  {
+    id: "share-3d",
+    date: "2026-11-04",
+    kind: "capability",
+    tier: "banner",
+    headline: "Share a running 3D app in a video call, in 3D",
+    blurb:
+      "With XR_DXR_app_share (ADR-061), a running DisplayXR app appears in a call as a camera named “DisplayXR: <app> (3D)”, and every share asks for consent first. A receiver with a spatial display sees it in 3D. Windows, with the DisplayXR runtime 2.62.0 or later and the DisplayXR Browser 1.9.2 or later; in-process OpenGL apps are not shared.",
+    href: "https://github.com/DisplayXR/displayxr-runtime/blob/main/docs/adr/ADR-061-3d-screen-share.md",
+  },
+  {
+    id: "slicer-paraview-previews",
+    date: "2026-11-02",
+    kind: "capability",
+    tier: "banner",
+    headline: "3D Slicer and ParaView show 3D in their own views",
+    blurb:
+      "First preview releases of the 3D Slicer and ParaView integrations: 3D inside the app's own 3D view through the DisplayXR texture target, with no separate OpenXR window. The 3D Slicer module adds organ segmentation in 3D; the ParaView one adds live depth and screen-plane controls and gamepad navigation. Research use only, not for diagnosis or treatment.",
+    href: "/platform-support#desktop-apps",
+  },
+  {
+    id: "wordpress-3d-photos",
+    date: "2026-11-01",
+    kind: "product",
+    tier: "list",
+    headline: "Show 3D photos on a WordPress site",
+    blurb:
+      "The DisplayXR 3D Photos plugin adds a shortcode and a 3D Photo block. Stereo photos show in 3D in the DisplayXR Browser on a spatial display, and as a normal photo in every other browser. Side-by-side pictures and separate left and right files both work.",
+    href: "https://github.com/DisplayXR/displayxr-web/releases/tag/wordpress-v0.1.1",
+  },
+  {
+    id: "open-tracking-provider",
+    date: "2026-10-31",
+    kind: "capability",
+    tier: "banner",
+    headline: "Head tracking from an ordinary camera",
+    blurb:
+      "The open camera tracking provider is the first viewer-tracking provider: open face models turn a built-in camera into head and eye tracking, so a display with no tracker of its own still gets head-coupled parallax. It ships first for macOS on Apple silicon, as an installer, and needs the DisplayXR runtime 2.58.0 or later. A display that tracks the viewer itself always takes precedence.",
+    href: "https://github.com/DisplayXR/displayxr-tracking-open/releases/tag/v0.1.0",
+  },
+  {
     id: "texture-target",
     date: "2026-10-26",
     kind: "capability",
@@ -263,7 +333,7 @@ export const NEWS: NewsItem[] = [
     tier: "banner",
     headline: "Eye-position latency down to one display refresh",
     blurb:
-      "Late-weave presentation pacing is default-on across every in-process present path — measured 62→17 ms on D3D12 and 96→17 ms on Vulkan — and Vulkan apps get it with no app-side code.",
+      "Late-weave presentation pacing is default-on across every in-process present path, and Vulkan apps get it with no app-side code.",
     href: "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.4.0",
   },
   {

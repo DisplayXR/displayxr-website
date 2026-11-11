@@ -80,6 +80,42 @@ export const ecosystemRepos: EcosystemRepo[] = [
     status: "active",
   },
   {
+    name: "displayxr-tracking-open",
+    repo: "DisplayXR/displayxr-tracking-open",
+    description:
+      "The open camera tracking provider: head and eye positions from an ordinary camera with open models, for displays that do not track the viewer themselves. A viewer-tracking provider for the DisplayXR runtime; macOS first, with an installer. A display that tracks the viewer itself always takes precedence.",
+    url: "https://github.com/DisplayXR/displayxr-tracking-open",
+    category: "tools",
+    status: "early",
+  },
+  {
+    name: "displayxr-slicer",
+    repo: "DisplayXR/displayxr-slicer",
+    description:
+      "DisplayXR for 3D Slicer: 3D inside Slicer's own 3D view through the DisplayXR texture target, with no separate OpenXR window, plus organ segmentation in 3D. Preview, research use only.",
+    url: "https://github.com/DisplayXR/displayxr-slicer",
+    category: "tools",
+    status: "early",
+  },
+  {
+    name: "displayxr-paraview",
+    repo: "DisplayXR/displayxr-paraview",
+    description:
+      "DisplayXR for ParaView: 3D inside ParaView's own render view through the DisplayXR texture target, with live depth and screen-plane controls and gamepad navigation. Preview, research use only.",
+    url: "https://github.com/DisplayXR/displayxr-paraview",
+    category: "tools",
+    status: "early",
+  },
+  {
+    name: "displayxr-play-android",
+    repo: "DisplayXR/displayxr-play-android",
+    description:
+      "DisplayXR Play's Android lane: two-eye stereo mods for native Android games, a shared mod core and a companion app that brokers the connection to the DisplayXR runtime.",
+    url: "https://github.com/DisplayXR/displayxr-play-android",
+    category: "apps",
+    status: "early",
+  },
+  {
     name: "displayxr-unreal-test",
     repo: "DisplayXR/displayxr-unreal-test",
     description:
@@ -183,7 +219,7 @@ export const ecosystemRepos: EcosystemRepo[] = [
     name: "displayxr-browser",
     repo: "DisplayXR/displayxr-browser",
     description:
-      "DisplayXR Browser — a Chromium that renders the web normally and weaves inline 3D on DisplayXR hardware, on Windows, Android and Linux, with macOS coming soon. The productization of the inline-3D browser work validated by the CEF host, with a GPU-resident weave (no per-frame CPU readback). Security updates follow Chrome stable: every Chrome stable point release is rebuilt and published automatically when the browser's own code is untouched upstream, and verified on a DisplayXR display first when it is not. Pinned in the org version matrix as `browser`, and installable via the dev orchestrator with `--with browser`; it is deliberately not in the all-in-one bundle, because a full standalone browser is not part of the display stack the default install lays down.",
+      "DisplayXR Browser — a Chromium that renders the web normally and weaves inline 3D on DisplayXR hardware, on Windows, macOS, Android and Linux. The productization of the inline-3D browser work validated by the CEF host, with a GPU-resident weave (no per-frame CPU readback). Security updates follow Chrome stable: every Chrome stable point release is rebuilt and published automatically when the browser's own code is untouched upstream, and verified on a DisplayXR display first when it is not. Pinned in the org version matrix as `browser`, and installable via the dev orchestrator with `--with browser`; it is deliberately not in the all-in-one bundle, because a full standalone browser is not part of the display stack the default install lays down.",
     url: "https://github.com/DisplayXR/displayxr-browser",
     category: "apps",
     status: "shipping",
