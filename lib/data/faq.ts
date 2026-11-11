@@ -252,7 +252,11 @@ export const FAQ_GROUPS: FaqGroup[] = [
     items: [
       {
         q: "Which distributions are supported?",
-        a: "Ubuntu 22.04, 24.04 and 26.04 on amd64, as .deb packages, a user-level tarball and an all-in-one bundle. Packages are built on the oldest supported release and installed on all three in CI.",
+        a: "Ubuntu 24.04 and 26.04 on amd64 are the hardware-validated releases, and 22.04 is supported too. DisplayXR ships as .deb packages, a user-level tarball and an all-in-one bundle, built on the oldest supported release and installed on all three in CI.",
+      },
+      {
+        q: "Wayland or X11?",
+        a: "Native Wayland on GNOME is the primary target, validated on Ubuntu 24.04 and 26.04, with windowed 3D at any display scale. X11 and XWayland work as a legacy path, in 3D when the panel runs at an integer scale. On 22.04, use an X11 session.",
       },
       {
         q: "Which GPUs work on Linux?",
