@@ -37,15 +37,6 @@ const installers: Installer[] = [
     icon: <Package size={20} />,
   },
   {
-    id: "shell",
-    name: "DisplayXR Shell",
-    pitch:
-      "Reference spatial-workspace UX — 3D window manager with multi-app compositing and dynamic layouts.",
-    requirement: "Optional",
-    releasesUrl: `${REPO_URLS.shell}/releases/latest`,
-    icon: <LayoutGrid size={20} />,
-  },
-  {
     id: "leia_plugin",
     name: "Leia SR Plug-in",
     pitch:
@@ -67,7 +58,7 @@ const installers: Installer[] = [
     id: "browser",
     name: "DisplayXR Browser",
     pitch:
-      "A Chromium-based browser that renders the web normally and shows 3D web content in depth on a spatial display. Security updates follow Chrome stable. Not affiliated with Google; no Google account sign-in or sync.",
+      "A Chromium-based browser that renders the web normally and shows 3D web content in depth on a spatial display. Security updates follow Chrome stable on Windows, Android and Linux, with macOS to follow. Not affiliated with Google; no Google account sign-in or sync.",
     requirement: "Optional",
     releasesUrl: `${REPO_URLS.browser}/releases/latest`,
     icon: <Globe size={20} />,
@@ -75,6 +66,15 @@ const installers: Installer[] = [
       { label: "See it live", href: WEB_SAMPLES_URL },
       { label: "Build inline-3D apps (SDK)", href: REPO_URLS.web },
     ],
+  },
+  {
+    id: "shell",
+    name: "DisplayXR Shell (reference workspace, preview)",
+    pitch:
+      "A reference implementation of the workspace layer: several apps in 3D windows, 2D and 3D together. A preview to try the workspace contract, not a product.",
+    requirement: "Optional",
+    releasesUrl: `${REPO_URLS.shell}/releases/latest`,
+    icon: <LayoutGrid size={20} />,
   },
 ];
 

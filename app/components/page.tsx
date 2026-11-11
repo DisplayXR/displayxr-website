@@ -230,8 +230,9 @@ export default function ComponentsPage() {
             <p className="text-sm leading-relaxed text-text-secondary">
               The runtime and the plug-in contract headers are BSL-1.0; the{" "}
               <span className="font-mono">XR_DXR_*</span> extension headers and the
-              vendor template are Apache-2.0. There is no copyleft anywhere, so a
-              closed-source component owes an attribution notice and nothing else.
+              vendor template are Apache-2.0. There is no copyleft in the plug-in
+              contract, so a closed-source component owes an attribution notice and
+              nothing else.
             </p>
           </section>
 
