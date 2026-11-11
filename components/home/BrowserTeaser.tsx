@@ -41,7 +41,10 @@ export function BrowserTeaser() {
               </div>
             ))}
           </div>
-          <Button href="/browser">Meet the DisplayXR Browser →</Button>
+          <div className="flex flex-wrap gap-3">
+            <Button href="/browser">Meet the DisplayXR Browser →</Button>
+            <Button variant="secondary" href="/apps">See apps built on DisplayXR</Button>
+          </div>
         </div>
       </AnimateIn>
     </section>

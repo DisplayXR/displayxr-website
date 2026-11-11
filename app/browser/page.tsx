@@ -123,14 +123,18 @@ export default function BrowserPage() {
       <Band>
         <AnimateIn>
           <Eyebrow>Built with the DisplayXR Browser</Eyebrow>
-          <H2>Three sites you can open right now.</H2>
+          <H2>Sites you can open right now.</H2>
           <p className="mb-12 max-w-2xl text-lg leading-relaxed text-text-secondary">
             Each one is an ordinary website. Open it in any browser to look
             around; open it in the DisplayXR Browser on a spatial display to see
-            it in depth.
+            it in depth. More, including 3D video chat, are on the{" "}
+            <a href="/apps" className="text-accent hover:text-accent-hover underline underline-offset-2">
+              Apps
+            </a>{" "}
+            page.
           </p>
         </AnimateIn>
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {FLAGSHIPS.map((f, i) => (
             <AnimateIn key={f.id} delay={i * 80}>
               <a
@@ -162,6 +166,9 @@ export default function BrowserPage() {
               </a>
             </AnimateIn>
           ))}
+        </div>
+        <div className="mt-8">
+          <Button variant="secondary" href="/apps">See all apps built on DisplayXR →</Button>
         </div>
       </Band>
 
