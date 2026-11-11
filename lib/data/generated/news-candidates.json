@@ -34,12 +34,14 @@
     "id": "displayxr-runtime@v2.66.16",
     "repo": "displayxr-runtime",
     "tag": "v2.66.16",
-    "title": "v2.66.16",
+    "title": "DisplayXR Runtime v2.66.16",
     "date": "2026-11-11",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.16",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Picks up Leia plug-in v2.20.8 in the runtime's Android APK (the bundle's Android gate requires the runtime APK to carry the pinned plug-in; v2.66.15 was built before v2.20.8 existed). Also hardens the Windows D3D11 hub: the scanout Prese…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@pro-v0.9.1",
