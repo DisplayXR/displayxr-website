@@ -177,9 +177,10 @@ export default function DownloadPage() {
               <a href={`${REPO_URLS.installer}/releases/latest`} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent-hover underline underline-offset-2">
                 DisplayXR installer
               </a>{" "}
-              pins compatible versions of every component. Installers ship
-              unsigned for now, so your OS may warn on first launch. On macOS,
-              installing the package from Terminal with{" "}
+              pins compatible versions of every component. The official Windows
+              installers are code-signed and the macOS packages are signed and
+              notarized, except the macOS all-in-one bundle package, which may
+              show a warning. For that one, installing from Terminal with{" "}
               <code className="text-xs bg-background px-1.5 py-0.5 rounded border border-border font-mono">sudo installer</code>{" "}
               avoids the Gatekeeper warning.
             </p>
