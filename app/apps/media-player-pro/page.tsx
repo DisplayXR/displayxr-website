@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { Band, Eyebrow, FeatureGrid, H2, Lead, StatusChip, socialMeta } from "@/components/apps/Product";
-import { CapturePlaceholder } from "@/components/apps/CapturePlaceholder";
+import Image from "next/image";
 import {
   MEDIA_PLAYER_PRO_ALL_RELEASES,
   MEDIA_PLAYER_PRO_RELEASE,
@@ -66,7 +66,20 @@ export default function MediaPlayerProPage() {
             </p>
           </div>
           <div className="min-w-0 flex-[1_1_420px]">
-            <CapturePlaceholder label="A 3D capture of the station is on its way." />
+            <figure>
+              <Image
+                src="/media/mppro-station.webp"
+                alt="Media Player Pro showing its built-in stereo test signal, with the Station panel on the left, the Inspector on the right and the depth and vertical-offset timeline below the picture."
+                width={1512}
+                height={765}
+                priority
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="w-full rounded-2xl border border-border"
+              />
+              <figcaption className="mt-2 text-xs text-white/60">
+                The station on its built-in test signal. One eye shown.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
