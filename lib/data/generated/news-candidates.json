@@ -44,6 +44,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-unity@v2.36.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.36.0",
+    "title": "DisplayXR v2.36.0",
+    "date": "2026-11-11",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.36.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@pro-v0.9.1",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "pro-v0.9.1",
@@ -419,17 +430,6 @@
       "Setup: README § *Android (arm64, Vulkan)*; internals: `docs~/architecture/xr-display-provider.md` § *Android*."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.32.1",
-    "repo": "displayxr-unity",
-    "tag": "v2.32.1",
-    "title": "DisplayXR v2.32.1",
-    "date": "2026-10-23",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.32.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-modelviewer@v0.36.1",
