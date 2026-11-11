@@ -7,8 +7,17 @@
     "date": "2026-11-11",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.18.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**One-view LIF photos now open in 3D** on every platform: the player generates the stereo pair from the photo's depth map.",
+      "**Stereo stills open comfortably converged**: LIF, MPO and stereo HEIC files that carry no convergence value are auto-converged by default.",
+      "**Android gets a proper media browser and a 2D/3D switch**: the browser opens on launch, shows Downloads sub-folders as folders, and supports select and delete; the player has an in-app 2D/3D toggle.",
+      "One-view LIFs open in 3D: the pair is generated from the depth map (DepthWarp) (#215)",
+      "Auto-convergence by default for stereo stills without a convergence value (LIF, MPO, stereo HEIC) (#215)",
+      "Android: 2D/3D switch in the player (#215)",
+      "Android: media browser opens on launch, Downloads sub-folders appear as folders, select and delete (#215)",
+      "Two-view stills (LIF, MPO, stereo HEIC) decode both views in parallel, so large stills load faster (#215)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.20.8",
