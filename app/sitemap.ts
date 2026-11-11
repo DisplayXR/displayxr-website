@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contribute",
     "/roadmap",
     "/governance",
+    "/faq",
     "/news",
   ];
 

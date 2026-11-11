@@ -29,7 +29,7 @@ const lifecycle = [
   },
   {
     step: "Spec + implementation",
-    desc: "No spec lands without a working implementation in a conformant runtime. Both are reviewed together — the OpenXR working group's own rule.",
+    desc: "No spec lands without a working implementation in a runtime that runs the conformance suite. Both are reviewed together — the OpenXR working group's own rule.",
   },
   {
     step: "Experimental",
