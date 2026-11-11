@@ -167,14 +167,11 @@ export default function AboutPage() {
           </section>
 
           <section>
-            <H2>The direction: one framework</H2>
+            <H2>Built on OpenXR</H2>
             <P>
-              Today a headset and a spatial display are different device
-              classes with a common contract. Where this is heading is one
-              framework for spatial content on both: the same content and the
-              same API, whether you wear the display or put it on your desk.
-              That is why DisplayXR extends OpenXR rather than standing apart
-              from it.
+              Built on OpenXR, the standard headsets use, so engines and apps
+              can treat a spatial display as another XR device. That is why
+              DisplayXR extends OpenXR rather than standing apart from it.
             </P>
           </section>
 
@@ -182,7 +179,8 @@ export default function AboutPage() {
             <H2>Open, neutral, and how to reach us</H2>
             <P>
               The runtime, the extensions, the engine plug-ins and the demos are
-              open source. DisplayXR is vendor-neutral: any display maker can
+              open source; the DisplayXR Browser is a free app distributed by
+              the DisplayXR project. DisplayXR is vendor-neutral: any display maker can
               write a plug-in, free of charge and without permission. How
               decisions are made is on the{" "}
               <a href="/governance" className="text-accent hover:text-accent-hover underline underline-offset-2">
