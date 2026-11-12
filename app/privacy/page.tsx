@@ -37,8 +37,11 @@ export default function PrivacyPage() {
           camera tracker. The open tracker processes camera images in memory and never saves or sends
           them; only eye positions come out of it, and the DisplayXR runtime keeps them on your device.
           Apps receive the views they need to draw in 3D, which are based on where your eyes are, and
-          an app can also ask for the eye positions themselves. An app can use a display&apos;s 3D
-          camera only after you allow it; browsers ask per website.
+          an app can also ask for the eye positions themselves.
+        </P>
+        <P>
+          Some displays have a built-in 3D camera. An app can use it only after you allow it, and
+          browsers ask per website.
         </P>
 
         <H2>Plug-ins and devices</H2>
@@ -63,6 +66,7 @@ export default function PrivacyPage() {
           it. Rooms exist only in memory and disappear after the call. There are no accounts,
           recordings or analytics, and your display name goes only to the other people in the call.
           Share 3D sends an app&apos;s 3D view the same way as your camera, after you approve it.
+          Our hosting and relay providers keep standard connection logs for a limited time.
         </P>
         <P>DisplayXR Gallery is a separate website with its own sign-in and policy.</P>
 
