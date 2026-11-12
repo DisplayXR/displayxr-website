@@ -78,8 +78,8 @@ export const APPS: AppCard[] = [
     page: "/apps/media-player-pro",
     url: MEDIA_PLAYER_PRO_RELEASE,
     urlLabel: "Download",
-    gradient:
-      "bg-[radial-gradient(600px_300px_at_20%_30%,rgba(59,130,246,0.35),rgba(5,5,7,0)_70%),radial-gradient(500px_260px_at_85%_80%,rgba(16,185,129,0.22),rgba(5,5,7,0)_70%)]",
+    image: "/media/mppro-station.webp",
+    imageNote: "Test signal",
   },
   {
     id: "gallery",

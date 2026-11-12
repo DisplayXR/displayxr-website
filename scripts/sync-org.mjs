@@ -363,7 +363,10 @@ async function buildEngines() {
       out.push({
         id: e.id,
         name: e.name,
-        version: version || rel?.tag || null,
+        // Show the released tag when there is one, so the version and its
+        // release link always agree; the manifest on main runs ahead of the
+        // last release (Unreal showed v0.10.0 next to a v0.9.4 link).
+        version: rel?.tag || version || null,
         engineVersion,
         description: repoMeta.description || "",
         repoUrl: `https://github.com/${ORG}/${e.repo}`,

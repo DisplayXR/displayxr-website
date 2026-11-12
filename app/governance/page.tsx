@@ -29,7 +29,7 @@ const lifecycle = [
   },
   {
     step: "Spec + implementation",
-    desc: "No spec lands without a working implementation in a conformant runtime. Both are reviewed together — the OpenXR working group's own rule.",
+    desc: "No spec lands without a working implementation in a runtime that runs the conformance suite. Both are reviewed together — the OpenXR working group's own rule.",
   },
   {
     step: "Experimental",
@@ -95,11 +95,14 @@ export default function GovernancePage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <Card title="Open by license" icon={<Scale size={20} />}>
               <p className="text-sm text-text-secondary leading-relaxed">
-                Extension specs, runtime, engine plug-ins, and demos are
-                permissively licensed open source. The runtime and its plug-in
-                contract headers are BSL-1.0 (Monado-derived); the{" "}
-                <span className="font-mono">XR_DXR_*</span> headers and the
-                vendor template are Apache-2.0. No copyleft anywhere.
+                The runtime and its plug-in contract headers are BSL-1.0
+                (Monado-derived); the{" "}
+                <span className="font-mono">XR_DXR_*</span> headers, the vendor
+                template, original components and reference apps are Apache-2.0.
+                Layers derived from third-party code keep their upstream
+                licenses (Play includes LGPL components). The DisplayXR Browser,
+                with Chat, is a free app distributed by the DisplayXR project
+                under its own binary terms.
               </p>
             </Card>
             <Card title="Neutral by architecture" icon={<Users size={20} />}>
@@ -139,9 +142,9 @@ export default function GovernancePage() {
               Fattal, is also an employee of Leia Inc. — the vendor whose
               plug-in is the first integration of the plug-in boundary. Two
               commitments hold neutrality in place: <strong className="text-text-primary">Leia
-              has no privileged position</strong> — no privileged code path
-              (the runtime ships zero vendor identifiers, CI-asserted), no
-              privileged review authority, and no reserved governance seat — and
+              has no privileged say in the interface</strong> — no privileged code path
+              (the runtime ships zero vendor identifiers, CI-asserted) and no
+              privileged review authority — and
               the project intends to move its identity (domain, organization,
               name, signing keys, reference builds) to a small{" "}
               <strong className="text-text-primary">independent steward outside any single
@@ -166,8 +169,9 @@ export default function GovernancePage() {
           </h2>
           <p className="mb-6 text-sm text-text-secondary leading-relaxed max-w-3xl">
             The lifecycle is modeled on the OpenXR working group&apos;s own
-            process. Extension identifiers are provisional until registered
-            with Khronos through the official process.
+            process. The <span className="font-mono">XR_DXR_*</span> author tag
+            has been registered with Khronos since July 2026; an extension moves
+            toward EXT and KHR through the working group&apos;s own process.
           </p>
           <div className="mb-6 max-w-3xl border border-border rounded-lg overflow-hidden">
             <Image

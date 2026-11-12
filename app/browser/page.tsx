@@ -313,7 +313,7 @@ export default function BrowserPage() {
       {/* S8 — Platform matrix. */}
       <Band>
         <Eyebrow>Where it runs</Eyebrow>
-        <H2>Windows, Android and Linux today. macOS is coming.</H2>
+        <H2>Windows, macOS, Android and Linux. A few features are still coming to macOS.</H2>
         <div className="mt-10 overflow-x-auto rounded-lg border border-border">
           <table className="w-full min-w-[560px] text-sm">
             <thead>
