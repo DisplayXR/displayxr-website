@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-mediaplayer@v1.19.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.19.0",
+    "title": "v1.19.0",
+    "date": "2026-11-12",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.19.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.9.33",
     "repo": "displayxr-installer",
     "tag": "v2.9.33",
@@ -212,26 +223,6 @@
     "prerelease": false,
     "featureLines": [
       "Android: the head-tracking listener now reads the face position correctly again. Since CNSDK 0.10.76 the Android face detector never fills posePosition, so every detected face arrived at (0,0,0) and the plug-in rejected every frame (~90/…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.17.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.17.0",
-    "title": "v1.17.0",
-    "date": "2026-11-08",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.17.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Streaming grows up:** MPEG-DASH (`.mpd`, VOD and live) and SRT (`srt://`) input, plus adaptive bitrate for HLS and DASH — the player picks the best decodable rendition at open and switches at segment boundaries without a gap.",
-      "**Segmented streams play at real time:** HLS / DASH no longer fast-forward (VOD) or play in bursts (live).",
-      "**360 formats:** cubemap and EAC projections in the VR viewer, mono and stereo.",
-      "**Slimmer, broader macOS build:** the `.pkg` now carries the player's own LGPL FFmpeg (about half the size, no Homebrew FFmpeg), bringing DASH and SRT to macOS.",
-      "MPEG-DASH (`.mpd`) playback, VOD and live; the highest-quality decodable rendition is chosen for HLS/DASH at open (#196).",
-      "SRT input (`srt://`), caller and listener modes, passphrase + latency options; passphrases are redacted from logs (#199).",
-      "Adaptive bitrate for HLS and DASH: rendition switches at segment boundaries without a gap. MCP `set_stream_quality` (`'auto'` | index | e.g. `'1080p'`), `stream_*` fields in `get_status`, and the `MEDIAPLAYER_STREAM_QUALITY` environment …",
-      "Known limit: on a sudden large bandwidth drop, HLS can take one long stall before settling on the lower rendition."
     ],
     "looksMechanical": false
   },
@@ -677,7 +668,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — v2.9.32",
+    "title": "Android tablet bundle (latest) — v2.9.33",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
