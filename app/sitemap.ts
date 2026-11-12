@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/roadmap",
     "/governance",
     "/faq",
+    "/privacy",
     "/news",
   ];
 

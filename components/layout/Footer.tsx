@@ -20,6 +20,7 @@ const footerLinks = {
     { label: "Roadmap", href: "/roadmap" },
     { label: "Governance", href: "/governance" },
     { label: "FAQ", href: "/faq" },
+    { label: "Privacy", href: "/privacy" },
     { label: "Discussions ↗", href: DISCUSSIONS_URL },
     { label: "GitHub ↗", href: GITHUB_ORG_URL },
   ],
