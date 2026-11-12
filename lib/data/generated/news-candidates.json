@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-installer@v2.9.33",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.33",
+    "title": "DisplayXR v2.9.33",
+    "date": "2026-11-12",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.33",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@v1.18.0",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.18.0",
@@ -231,17 +242,6 @@
     "title": "DisplayXR Browser v1.10.1",
     "date": "2026-11-07",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.9.31",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.31",
-    "title": "DisplayXR v2.9.31",
-    "date": "2026-11-07",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.31",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
