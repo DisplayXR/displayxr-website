@@ -7,8 +7,17 @@
     "date": "2026-11-12",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.19.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**A cleaner Android player**: tap the picture to show or hide the controls, a restyled 2D/3D switch, and a tighter view-options menu.",
+      "**The Android media browser shows only what the player can open**: unsupported files are hidden unless you turn on \"Show unsupported files\" in view options, and a gallery icon replaces the \"Open\" button.",
+      "**Android system bars behave**: the status and navigation bars show in the browser and alongside the player's controls, and the UI lays out clear of them.",
+      "Android: a gallery icon replaces \"Open\" (#222)",
+      "Android: unsupported files are hidden in the browser unless \"Show unsupported files\" is on in view options (#222)",
+      "Android: a tighter view-options menu and a restyled 2D/3D switch (#222)",
+      "Android: a tap on the picture shows or hides the player controls (#222)",
+      "Android: the status and navigation bars show in the browser and with the player's controls, and the UI lays out clear of them (#222)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.9.33",
@@ -20,6 +29,22 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unreal@v0.11.0",
+    "repo": "displayxr-unreal",
+    "tag": "v0.11.0",
+    "title": "DisplayXR v0.11.0",
+    "date": "2026-11-12",
+    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.11.0",
+    "prerelease": false,
+    "featureLines": [
+      "**`DisplayXR.Hands.Debug 1` draws the tracked hand joints in both views (refs #70).** One sphere per joint at its radius, both hands (left cyan, right orange, grey while a hand holds its last pose), drawn from the world's post-actor tick…",
+      "**The plug-in publishes a release fence for the runtime to wait on (#62).** At every `xrReleaseSwapchainImage` that follows UE work it signals a fence from UE's main queue through UE's own RHI (`RHISignalManualFence`, enqueued after the …",
+      "**Hand tracking (Ultraleap / Leap Motion and any other source the runtime serves) through standard OpenXR `XR_EXT_hand_tracking`, exposed as Unreal's `IHandTracker` modular feature (device type `\"DisplayXR\"`).** The session probes and en…",
+      "`Scripts/tests/pose_math_test.cpp` + a `pose-math-test` lint job: the OpenXR <-> UE pose conversion and the `XrPosef` helpers now live in a UE-free header (`Source/DisplayXRCore/Private/Native/dxr_pose_math.h`) and are checked with a bar…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@v1.18.0",
@@ -821,17 +846,6 @@
     "title": "DisplayXR v0.9.2",
     "date": "2026-09-14",
     "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.9.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unreal@v0.9.1",
-    "repo": "displayxr-unreal",
-    "tag": "v0.9.1",
-    "title": "DisplayXR v0.9.1",
-    "date": "2026-09-11",
-    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.9.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
