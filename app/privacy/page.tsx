@@ -52,9 +52,12 @@ export default function PrivacyPage() {
 
         <H2>DisplayXR Browser</H2>
         <P>
-          The DisplayXR Browser is built on Chromium. It has no Google account sign-in or sync. Its
-          start page checks updates.displayxr.org for a newer version with a plain request that
-          carries no identifier, and nothing installs by itself.
+          The DisplayXR Browser is built on Chromium. It has no account, no sync and no usage or crash
+          reporting. Its start page, hosted on GitHub Pages, checks updates.displayxr.org for a newer
+          version with a plain request that carries no identifier, and nothing installs by itself.
+          Like any Chromium-based browser, it still contacts Google for Safe Browsing,
+          certificate-revocation and component updates, and for search suggestions if Google is your
+          search engine.
         </P>
 
         <H2>DisplayXR Chat</H2>
