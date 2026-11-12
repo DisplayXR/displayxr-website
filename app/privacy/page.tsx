@@ -59,13 +59,16 @@ export default function PrivacyPage() {
 
         <H2>DisplayXR Chat</H2>
         <P>
-          Calls go directly between browsers, encrypted. The signaling server only passes
-          connection-setup messages between them: it sees your IP address, your browser type and a
-          scrambled form of the room code, never your audio, video or shared 3D content. When a direct
-          connection is impossible, a relay forwards the encrypted media without being able to read
-          it. Rooms exist only in memory and disappear after the call. There are no accounts,
-          recordings or analytics, and your display name goes only to the other people in the call.
-          Share 3D sends an app&apos;s 3D view the same way as your camera, after you approve it.
+          Calls go directly between browsers, encrypted. The signaling server sees your IP address,
+          your browser type and the page you connected from. It receives the room code only to admit
+          you to the room, keeps it in memory and never logs it, and it relays the connection
+          handshake between participants without storing it. It never sees your audio, video or
+          shared 3D content. When a direct connection is impossible, a relay forwards the encrypted
+          media; it sees IP addresses and the amount of data, but cannot read the media. Rooms exist
+          only in memory and disappear when the call ends or after two hours. There are no accounts,
+          no recordings and no tracking; the only record kept is a monthly usage total per API key,
+          and the Chat app uses no key. Your display name goes only to the other people in the call,
+          and Share 3D sends an app&apos;s 3D view the same way as your camera, after you approve it.
           Our hosting and relay providers keep standard connection logs for a limited time.
         </P>
         <P>DisplayXR Gallery is a separate website with its own sign-in and policy.</P>
