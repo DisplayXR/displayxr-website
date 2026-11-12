@@ -1,5 +1,38 @@
 [
   {
+    "id": "displayxr-demo-mediaplayer@pro-v0.9.3",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.9.3",
+    "title": "Media Player Pro 0.9.3",
+    "date": "2026-11-12",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@pro-v0.9.4",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.9.4",
+    "title": "Media Player Pro 0.9.4",
+    "date": "2026-11-12",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@pro-v0.9.5",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.9.5",
+    "title": "Media Player Pro 0.9.5",
+    "date": "2026-11-12",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@v1.19.0",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.19.0",
@@ -31,6 +64,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.66.17",
+    "repo": "displayxr-runtime",
+    "tag": "v2.66.17",
+    "title": "v2.66.17",
+    "date": "2026-11-12",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.17",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unreal@v0.11.0",
     "repo": "displayxr-unreal",
     "tag": "v0.11.0",
@@ -43,26 +87,6 @@
       "**The plug-in publishes a release fence for the runtime to wait on (#62).** At every `xrReleaseSwapchainImage` that follows UE work it signals a fence from UE's main queue through UE's own RHI (`RHISignalManualFence`, enqueued after the …",
       "**Hand tracking (Ultraleap / Leap Motion and any other source the runtime serves) through standard OpenXR `XR_EXT_hand_tracking`, exposed as Unreal's `IHandTracker` modular feature (device type `\"DisplayXR\"`).** The session probes and en…",
       "`Scripts/tests/pose_math_test.cpp` + a `pose-math-test` lint job: the OpenXR <-> UE pose conversion and the `XrPosef` helpers now live in a UE-free header (`Source/DisplayXRCore/Private/Native/dxr_pose_math.h`) and are checked with a bar…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.18.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.18.0",
-    "title": "v1.18.0",
-    "date": "2026-11-11",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.18.0",
-    "prerelease": false,
-    "featureLines": [
-      "**One-view LIF photos now open in 3D** on every platform: the player generates the stereo pair from the photo's depth map.",
-      "**Stereo stills open comfortably converged**: LIF, MPO and stereo HEIC files that carry no convergence value are auto-converged by default.",
-      "**Android gets a proper media browser and a 2D/3D switch**: the browser opens on launch, shows Downloads sub-folders as folders, and supports select and delete; the player has an in-app 2D/3D toggle.",
-      "One-view LIFs open in 3D: the pair is generated from the depth map (DepthWarp) (#215)",
-      "Auto-convergence by default for stereo stills without a convergence value (LIF, MPO, stereo HEIC) (#215)",
-      "Android: 2D/3D switch in the player (#215)",
-      "Android: media browser opens on launch, Downloads sub-folders appear as folders, select and delete (#215)",
-      "Two-view stills (LIF, MPO, stereo HEIC) decode both views in parallel, so large stills load faster (#215)"
     ],
     "looksMechanical": false
   },
@@ -102,34 +126,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-demo-mediaplayer@pro-v0.9.1",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.9.1",
-    "title": "Media Player Pro 0.9.1",
-    "date": "2026-11-10",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.1",
-    "prerelease": false,
-    "featureLines": [
-      "**Burn-ins hold still:** the top-right `TC … / F …` label no longer wiggles as the timecode runs. Digits are drawn at a fixed width, and the frame number reserves six digits, so the label keeps its size. The same fix covers the status li…",
-      "**Seeks move the audio too:** a Resolve-link follow or an A-B loop seek now re-syncs audio with the picture (#209).",
-      "**Soak / stress harness:** file playback now reports frame counters (shown, dropped, late), and a soak script runs Pro for a set time with UI, seek and pause churn, then judges crash, hang, memory, playback rate and frame drops (#210).",
-      "Checked on an 8K Leia panel with runtime v2.66.12 + Leia plug-in 2.20.7: a 15-minute soak, panel hotplug (it recovers without a restart), windowed resize, and full screen on LeiaSR 1.39.0.",
-      "The Windows installer is code-signed."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@pro-v0.9.2",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.9.2",
-    "title": "Media Player Pro 0.9.2",
-    "date": "2026-11-10",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-installer@v2.9.32",
     "repo": "displayxr-installer",
     "tag": "v2.9.32",
@@ -161,19 +157,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.66.13",
-    "repo": "displayxr-runtime",
-    "tag": "v2.66.13",
-    "title": "DisplayXR Runtime v2.66.13",
-    "date": "2026-11-10",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.13",
-    "prerelease": false,
-    "featureLines": [
-      "Two platform-neutral fixes to the 2D→3D conversion core: Convert to 3D no longer hangs after the conversion host's 10-minute idle exit (a v3 lift query now re-warms the idle-evicted provider), and a newly installed conversion platform (e…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.66.14",
