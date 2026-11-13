@@ -1,33 +1,33 @@
 [
   {
-    "id": "displayxr-demo-mediaplayer@pro-v0.9.3",
+    "id": "displayxr-demo-mediaplayer@pro-v0.9.7",
     "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.9.3",
-    "title": "Media Player Pro 0.9.3",
-    "date": "2026-11-12",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.3",
+    "tag": "pro-v0.9.7",
+    "title": "Media Player Pro 0.9.7",
+    "date": "2026-11-13",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.7",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
   {
-    "id": "displayxr-demo-mediaplayer@pro-v0.9.4",
+    "id": "displayxr-demo-mediaplayer@pro-v0.9.8",
     "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.9.4",
-    "title": "Media Player Pro 0.9.4",
-    "date": "2026-11-12",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.4",
+    "tag": "pro-v0.9.8",
+    "title": "Media Player Pro 0.9.8",
+    "date": "2026-11-13",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.8",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
   {
-    "id": "displayxr-demo-mediaplayer@pro-v0.9.5",
+    "id": "displayxr-demo-mediaplayer@pro-v0.9.6",
     "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.9.5",
-    "title": "Media Player Pro 0.9.5",
+    "tag": "pro-v0.9.6",
+    "title": "Media Player Pro 0.9.6",
     "date": "2026-11-12",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.5",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.6",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -67,12 +67,14 @@
     "id": "displayxr-runtime@v2.66.17",
     "repo": "displayxr-runtime",
     "tag": "v2.66.17",
-    "title": "v2.66.17",
+    "title": "DisplayXR Runtime v2.66.17",
     "date": "2026-11-12",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.17",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Opt-in fix for in-process Vulkan apps presenting through the D3D11 hub on a single GPU: with `DXR_VK_HUB_DEFER_COMPOSE_WAIT=1`, `xrEndFrame` no longer CPU-waits the compose fence each frame (the wait is retired a frame later; `xrWaitSwap…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unreal@v0.11.0",
