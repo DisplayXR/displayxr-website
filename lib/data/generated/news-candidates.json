@@ -7,6 +7,25 @@
     "date": "2026-11-15",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.3",
     "prerelease": false,
+    "featureLines": [
+      "**Android: lower motion-to-photon latency for inline 3D.** While weaving inline 3D, the browser now detects a standing backlog in its present queue and drains it, so woven frames reach the display sooner after they are rendered.",
+      "**Android: measured present times for head-tracked prediction.** With a runtime that implements `XR_DXR_weave` v21, the browser reports each woven frame's actual present time back to the runtime, so head-tracked prediction uses a measure…",
+      "**Desktop Linux: Convert to 3D for video.** The Convert to 3D context-menu item is now offered for `<video>` elements on desktop Linux.",
+      "Android: drain a standing backlog out of the present queue while weaving inline 3D. Turn off with `--disable-inline-3d-android-present-drain`.",
+      "Android: `XR_DXR_weave` v21 present feedback, reporting actual present times to runtimes that support it (automatic fallback on older runtimes). Turn off with `--disable-inline-3d-android-present-feedback`.",
+      "Desktop Linux: offer Convert to 3D for `<video>` (#355). Images and canvas are unchanged.",
+      "Auto-3D scripts updated v0.7.2 → v0.7.3: three.js `WebGPURenderer` support is now gated on the hooks the converter uses rather than a revision ceiling, so pages on three.js r187 convert again (#352)."
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.67.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.67.0",
+    "title": "v2.67.0",
+    "date": "2026-11-15",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.67.0",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -170,19 +189,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.66.14",
-    "repo": "displayxr-runtime",
-    "tag": "v2.66.14",
-    "title": "DisplayXR Runtime v2.66.14",
-    "date": "2026-11-10",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.14",
-    "prerelease": false,
-    "featureLines": [
-      "Fixes an in-process handle leak (one Section handle + mapped view every 5 s) when the installed DisplayXR service's version differs from the runtime's; the in-process service link now retries a version-skewed service every 60 s instead o…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.66.15",
