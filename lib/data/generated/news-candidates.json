@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.10.3",
+    "repo": "displayxr-browser",
+    "tag": "v1.10.3",
+    "title": "DisplayXR Browser v1.10.3",
+    "date": "2026-11-15",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@pro-v0.9.7",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "pro-v0.9.7",
@@ -257,21 +268,6 @@
     "prerelease": false,
     "featureLines": [
       "**Now on Chromium 158.** The browser moves from Chromium 157.0.8103.39 to 158.0.8127.18 and picks up the upstream fixes and security updates of the 158 line. The DisplayXR features carry over: inline 3D weaving, depth, Ctrl+Shift+3, auto…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.9.4",
-    "repo": "displayxr-browser",
-    "tag": "v1.9.4",
-    "title": "DisplayXR Browser v1.9.4",
-    "date": "2026-11-05",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.9.4",
-    "prerelease": false,
-    "featureLines": [
-      "**Share a tab in 3D.** Sharing a tab that shows inline 3D content now works. A normal tab share shows each 3D element as a flat picture instead of an empty hole, and anything drawn over a 3D element stays visible on the sharer's own disp…",
-      "**Opt-in stereo tab capture for web apps.** A page can ask for both eyes of a shared tab: `navigator.mediaDevices.getDisplayMedia({video: true, displayxrStereo: true})`. For a tab pick, the track then carries a half-width side-by-side fr…",
-      "Windows: a UVC stereo webcam that the DisplayXR runtime can rectify now appears in the camera list as a 3D camera."
     ],
     "looksMechanical": false
   },
