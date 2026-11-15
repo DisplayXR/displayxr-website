@@ -19,6 +19,7 @@ const footerLinks = {
     { label: "Architecture", href: "/architecture" },
     { label: "Roadmap", href: "/roadmap" },
     { label: "Governance", href: "/governance" },
+    { label: "Charter", href: "/charter" },
     { label: "FAQ", href: "/faq" },
     { label: "Privacy", href: "/privacy" },
     { label: "Discussions ↗", href: DISCUSSIONS_URL },

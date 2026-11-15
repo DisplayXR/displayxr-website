@@ -8,11 +8,13 @@
 // bare "the runtime"; never "conformant" or "certified" as a claim; no
 // performance or adoption numbers; no OEM, partner or customer names; no
 // health claims of our own. Page-specific questions stay on their pages
-// (/play, /browser, /apps/*). Do not link a charter until it is published.
+// (/play, /browser, /apps/*). The charter is at /charter.
 
 export interface FaqItem {
   q: string;
   a: string;
+  /** Optional on-site link shown under the answer. */
+  link?: { label: string; href: string };
 }
 
 export interface FaqGroup {
@@ -215,6 +217,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         q: "The founder works for the first plug-in's vendor. How is this not one company's SDK?",
         a: "Fair question: the founder works at Leia, and Leia incubates the project today, which is why neutrality is built into the structure instead of promised. The DisplayXR runtime ships no vendor code, checked in CI; any vendor writes a plug-in from a template that needs no vendor SDK; vendors' weaving, calibration and tracking stay in their own binaries; and all development is public. Judge it by the code, and by whether the second vendor finds the door open.",
+        link: { label: "Read the project charter", href: "/charter" },
       },
       {
         q: "What happens when other display makers join?",

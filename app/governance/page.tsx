@@ -89,8 +89,13 @@ export default function GovernancePage() {
           </h2>
           <p className="mb-6 text-sm text-text-secondary leading-relaxed max-w-3xl">
             DisplayXR is in its incubation phase, stewarded by its founder and
-            lead maintainer, David Fattal. During this phase, vendor neutrality
-            rests on three structural guarantees:
+            lead maintainer, David Fattal. The project&apos;s commitments are set
+            out in its{" "}
+            <a href="/charter" className="text-accent hover:text-accent-hover underline underline-offset-2">
+              charter
+            </a>
+            . During this phase, vendor neutrality rests on three structural
+            guarantees:
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <Card title="Open by license" icon={<Scale size={20} />}>
