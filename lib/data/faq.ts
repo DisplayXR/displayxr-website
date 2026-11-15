@@ -221,7 +221,8 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: "What happens when other display makers join?",
-        a: "Today the only shipping plug-in comes from the founding vendor. When a second display maker ships a plug-in for a product, or a Khronos filing needs a submitter other than Leia, the name, domain, GitHub organization, signing and the Khronos seat move to a small independent steward, and a technical steering committee follows as more vendors take part.",
+        a: "Today the only shipping plug-in comes from the founding vendor. As other display makers adopt DisplayXR, the project moves to shared governance: an independent steward holds the project's name, domain and repositories, and a technical steering committee is drawn from the participating organizations.",
+        link: { label: "Read the project charter", href: "/charter" },
       },
       {
         q: "Is DisplayXR a conformant OpenXR runtime?",
