@@ -11,7 +11,7 @@
 // A class with `shippedIn` flips to "shipped" by itself once the generated
 // runtime version reaches that tag, so nobody edits prose on release day.
 import { components as releases } from "@/lib/data/generated";
-import { REPO_URLS } from "@/lib/constants";
+import { INPUT_TEMPLATE_PUBLISHED, REPO_URLS } from "@/lib/constants";
 
 export type ComponentStatus = "shipped" | "core-merged" | "designed" | "planned";
 
@@ -89,8 +89,8 @@ export const componentClasses: ComponentClass[] = [
   {
     id: "input-providers",
     name: "Input providers",
-    plain: "Brings hands, controllers and navigation devices into the standard OpenXR action system.",
-    owns: "hands · controllers · navigation",
+    plain: "Brings hands, controllers, styluses and navigation devices into the standard OpenXR action system.",
+    owns: "hands · controllers · styluses · navigation",
     symbol: "xrtInputPluginNegotiate",
     abi: 1,
     reference: "sim_input",
@@ -114,6 +114,14 @@ export const componentClasses: ComponentClass[] = [
         note: "The first third-party input provider. Builds where the Ultraleap SDK is installed.",
         href: `${DRIVERS}/ultraleap`,
         chip: { label: "build-verified", title: "Not yet hardware-tested" },
+      },
+      {
+        name: "Input-provider template",
+        role: "template",
+        note: "Vendor-neutral starter kit with no vendor SDK: a stylus provider, a headless smoke test and an installer that registers it.",
+        ...(INPUT_TEMPLATE_PUBLISHED
+          ? { href: REPO_URLS.inputTemplate }
+          : { chip: { label: "coming soon", title: "Not published yet" } }),
       },
     ],
   },
