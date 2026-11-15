@@ -1,4 +1,5 @@
-import { auth, signOut } from "@/lib/auth";
+import { redirect } from "next/navigation";
+import { auth, isAllowed, signOut } from "@/lib/auth";
 import { getOrgDashboard } from "@/lib/github";
 import { getAnalytics, type MetricItem } from "@/lib/umami";
 import { GitHubIcon } from "@/components/ui/GitHubIcon";
@@ -93,6 +94,9 @@ function SectionNote({ children }: { children: React.ReactNode }) {
 
 export default async function AdminPage() {
   const session = await auth();
+  // Defense in depth behind middleware.ts: never render the dashboard for a
+  // missing or no-longer-allowlisted session.
+  if (!isAllowed(session?.user?.login)) redirect("/admin/signin");
   const [gh, analytics] = await Promise.all([
     getOrgDashboard(),
     getAnalytics(30),

@@ -15,7 +15,7 @@ const ADMIN_LOGINS = (process.env.ADMIN_LOGINS ?? "")
   .map((s) => s.trim().toLowerCase())
   .filter(Boolean);
 
-function isAllowed(login?: string | null): boolean {
+export function isAllowed(login?: string | null): boolean {
   if (!login) return false;
   return ADMIN_LOGINS.includes(login.toLowerCase());
 }
@@ -28,11 +28,19 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       return isAllowed(profile?.login as string | undefined);
     },
     // Carry the GitHub login + avatar onto the token so the UI can show "who".
+    //
+    // This callback also runs on EVERY session read (middleware, auth() in a
+    // page or server action), not only at sign-in, so it is where a login
+    // removed from ADMIN_LOGINS loses access: returning null makes Auth.js
+    // clear the session cookie and report no session. Without it the JWT,
+    // which is re-signed with a fresh expiry on each request, would keep a
+    // removed admin signed in indefinitely.
     jwt({ token, profile }) {
       if (profile) {
         token.login = profile.login as string;
         token.avatarUrl = profile.avatar_url as string;
       }
+      if (!isAllowed(token.login as string | undefined)) return null;
       return token;
     },
     session({ session, token }) {
@@ -40,8 +48,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       session.user.avatarUrl = token.avatarUrl as string | undefined;
       return session;
     },
-    // Defense in depth: re-check the allowlist on every authorized() call
-    // (middleware) so revoking access takes effect on the next request.
+    // Only consulted by the bare `export default auth` middleware form. When
+    // middleware passes its own handler to auth() (as middleware.ts does), a
+    // `false` here is ignored, so the jwt() check above and the explicit
+    // check in middleware.ts are what enforce the allowlist.
     authorized({ auth }) {
       return isAllowed(auth?.user?.login);
     },
