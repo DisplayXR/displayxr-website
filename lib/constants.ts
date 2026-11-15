@@ -74,6 +74,7 @@ export const ANDROID_BUNDLE = {
 /** TODO: set to true once REPO_URLS.inputTemplate is a published repo; until then
  *  the site names the template without linking it. */
 export const INPUT_TEMPLATE_PUBLISHED = false;
+
 export const ANDROID_INSTALL_GUIDE =
   "https://github.com/DisplayXR/displayxr-runtime/blob/main/docs/getting-started/android-build-guide.md#installing-from-released-artifacts";
 
@@ -98,7 +99,7 @@ export const REPO_URLS = {
   vendorTemplate: "https://github.com/DisplayXR/displayxr-vendor-template",
   conversionTemplate: "https://github.com/DisplayXR/displayxr-conversion-template",
   // TODO: the input-provider template is not published yet. Flip
-  // INPUT_TEMPLATE_PUBLISHED below once this URL resolves.
+  // INPUT_TEMPLATE_PUBLISHED (above) once this URL resolves.
   inputTemplate: "https://github.com/DisplayXR/displayxr-input-template",
   conversionOpen: "https://github.com/DisplayXR/displayxr-conversion-open",
   cefHost: "https://github.com/DisplayXR/displayxr-cef-host",
