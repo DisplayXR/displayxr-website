@@ -37,6 +37,11 @@ export default function FaqPage() {
                 <details key={f.q} className="group py-5">
                   <summary className="cursor-pointer list-none text-lg font-medium text-text-primary">{f.q}</summary>
                   <p className="mt-3 text-text-secondary leading-relaxed">{f.a}</p>
+                  {f.link && (
+                    <a href={f.link.href} className="mt-2 inline-block text-sm text-accent hover:text-accent-hover underline underline-offset-2">
+                      {f.link.label}
+                    </a>
+                  )}
                 </details>
               ))}
             </div>
