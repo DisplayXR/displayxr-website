@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-mediaplayer@pro-v0.9.9",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.9.9",
+    "title": "Media Player Pro 0.9.9",
+    "date": "2026-11-16",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.9",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@v1.20.0",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.20.0",
@@ -8,7 +19,7 @@
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.20.0",
     "prerelease": false,
     "featureLines": [
-      "**Android: a real 3D grid.** The browser's 3D-only grid now shows stereo 3D thumbnails, and photos that were converted from 2D to 3D (one-view LIFs) get a generated 3D pair too, kept on disk so the grid is instant on the next launch.",
+      "**Android: a real 3D grid.** The browser's 3D-only grid now shows stereo 3D thumbnails, and photos that were converted from 2D to 3D (one-view LIFs) get a generated 3D pair too, kept on disk between launches.",
       "**Android: a refreshed look.** The player chrome, browser layout, type scale and icons were reworked in a full design review.",
       "**Desktop browser: sharper thumbnails** with the black bars removed and a 3D badge in the top-left corner.",
       "Android: stereo 3D thumbnails in the browser's 3D-only grid (#224, #242)",
@@ -17,6 +28,17 @@
       "Desktop browser: sharper thumbnails, black bars off, 3D badge top left (#223); larger thumbnails for videos, photos keep their cached one (#226)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.21.0",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.21.0",
+    "title": "v2.21.0",
+    "date": "2026-11-16",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.21.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@v1.10.3",
@@ -78,26 +100,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.19.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.19.0",
-    "title": "v1.19.0",
-    "date": "2026-11-12",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.19.0",
-    "prerelease": false,
-    "featureLines": [
-      "**A cleaner Android player**: tap the picture to show or hide the controls, a restyled 2D/3D switch, and a tighter view-options menu.",
-      "**The Android media browser shows only what the player can open**: unsupported files are hidden unless you turn on \"Show unsupported files\" in view options, and a gallery icon replaces the \"Open\" button.",
-      "**Android system bars behave**: the status and navigation bars show in the browser and alongside the player's controls, and the UI lays out clear of them.",
-      "Android: a gallery icon replaces \"Open\" (#222)",
-      "Android: unsupported files are hidden in the browser unless \"Show unsupported files\" is on in view options (#222)",
-      "Android: a tighter view-options menu and a restyled 2D/3D switch (#222)",
-      "Android: a tap on the picture shows or hides the player controls (#222)",
-      "Android: the status and navigation bars show in the browser and with the player's controls, and the UI lays out clear of them (#222)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.9.33",
@@ -242,20 +244,6 @@
     "prerelease": true,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.20.5",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.20.5",
-    "title": "v2.20.5",
-    "date": "2026-11-09",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.20.5",
-    "prerelease": false,
-    "featureLines": [
-      "The plug-in now marks its reported panel position as real (`XRT_PLUGIN_DISPLAY_FLAG_SCREEN_ORIGIN_VALID`), so with two Leia panels and the primary at the desktop origin the runtime resolves the head screen by position (runtime#2577 follo…",
-      "display-info: vouch for the reported panel origin via `XRT_PLUGIN_DISPLAY_FLAG_SCREEN_ORIGIN_VALID` (displayxr-runtime#2577 follow-up) (#520)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-leia-plugin@v2.20.6",
