@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { ComponentModelDiagram } from "@/components/components/ComponentModelDiagram";
 import { NoteChip, StatusChip } from "@/components/components/StatusChip";
-import { REPO_URLS, GITHUB_ORG_URL } from "@/lib/constants";
+import { REPO_URLS, GITHUB_ORG_URL, INPUT_TEMPLATE_PUBLISHED } from "@/lib/constants";
 import {
   componentClasses,
   COMPONENT_SPECS,
@@ -166,10 +166,27 @@ export default function ComponentsPage() {
               probe order and ABI gating mirror display processors.
             </p>
             <p>
-              There is no input-provider template yet: start from the
-              display-processor template&apos;s build scaffolding and the{" "}
-              <A href={COMPONENT_SPECS.inputProviders}>discovery spec</A>.{" "}
-              <Code>displayxr-cli input list</Code> shows what loaded.
+              First-class 6-DoF stylus support is in development: the runtime
+              serves the standard stylus interaction profile of the public{" "}
+              <span className="font-mono">XR_LOGITECH_mx_ink_stylus_interaction</span>{" "}
+              extension for any vendor&apos;s pen, puts a single pen on the
+              user&apos;s dominant hand, and registers the tip to the physical
+              glass, so a pen touching the panel lands where the app draws that
+              point.
+            </p>
+            <p>
+              Shipping a controller, stylus or tracker? Follow the{" "}
+              <A href={`${DOCS_BASE}/guides/input-provider-onboarding.md`}>
+                input-provider onboarding guide
+              </A>{" "}
+              and start from the{" "}
+              {INPUT_TEMPLATE_PUBLISHED ? (
+                <A href={REPO_URLS.inputTemplate}>input-provider template</A>
+              ) : (
+                <>input-provider template (coming soon)</>
+              )}
+              . <Code>displayxr-cli input list</Code> shows what loaded.{" "}
+              <A href={COMPONENT_SPECS.inputProviders}>Discovery spec →</A>
             </p>
           </ClassSection>
 

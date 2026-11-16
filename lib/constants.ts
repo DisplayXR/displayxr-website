@@ -70,6 +70,10 @@ export const ANDROID_BUNDLE = {
   url: "https://github.com/DisplayXR/displayxr-installer/releases/download/android-bundle-latest/displayxr-tablet-bundle.zip",
   releaseUrl: "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
 } as const;
+
+/** Whether REPO_URLS.inputTemplate is a published repo (the site links it when true). */
+export const INPUT_TEMPLATE_PUBLISHED = true;
+
 export const ANDROID_INSTALL_GUIDE =
   "https://github.com/DisplayXR/displayxr-runtime/blob/main/docs/getting-started/android-build-guide.md#installing-from-released-artifacts";
 
@@ -93,6 +97,7 @@ export const REPO_URLS = {
   shell: "https://github.com/DisplayXR/displayxr-shell-releases",
   vendorTemplate: "https://github.com/DisplayXR/displayxr-vendor-template",
   conversionTemplate: "https://github.com/DisplayXR/displayxr-conversion-template",
+  inputTemplate: "https://github.com/DisplayXR/displayxr-input-template",
   conversionOpen: "https://github.com/DisplayXR/displayxr-conversion-open",
   cefHost: "https://github.com/DisplayXR/displayxr-cef-host",
   browser: "https://github.com/DisplayXR/displayxr-browser",
