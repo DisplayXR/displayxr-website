@@ -141,6 +141,13 @@
     "archived": false
   },
   {
+    "name": "displayxr-input-template",
+    "description": "Vendor-neutral, SDK-free starter kit for a DisplayXR input-provider plug-in (6-DoF stylus reference)",
+    "url": "https://github.com/DisplayXR/displayxr-input-template",
+    "topics": [],
+    "archived": false
+  },
+  {
     "name": "displayxr-installer",
     "description": "One-click installer for DisplayXR — a single .exe / .pkg that sets up the runtime, Shell, and Leia SR plug-in.",
     "url": "https://github.com/DisplayXR/displayxr-installer",
