@@ -37,8 +37,14 @@
     "date": "2026-11-16",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.21.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**MANUAL eye tracking on Windows and Linux.** Apps can now select `XR_EYE_TRACKING_MODE_MANUAL_DXR` on every Leia display processor (D3D11, D3D12, OpenGL, Vulkan, and Linux). In MANUAL the display does no ease, no collapse and no 2D/3D l…",
+      "MANUAL needs an SR runtime that answers the tracking-loss probe (**SR 1.39.0.3493 or later**); the plug-in now builds against SR SDK `sr-sdk-v2-1.39.0.3493`. On an older SR runtime the plug-in keeps advertising MANAGED only, exactly as b…",
+      "**Leia conversion provider on desktop Linux.** `DisplayXR-LeiaConversion.so` now ships in the Linux `.deb`, so 2D→3D conversion (e.g. Convert to 3D in the browser) can use the Leia provider with look-around on Linux, falling back to Open…",
+      "MANUAL eye tracking via the SR tracking-loss mode, Windows + Linux (#534)",
+      "Leia conversion provider on desktop Linux, shipped in the `.deb` (#515)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.10.3",
