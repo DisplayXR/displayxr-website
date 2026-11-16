@@ -58,6 +58,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.68.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.68.0",
+    "title": "v2.68.0",
+    "date": "2026-11-16",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.68.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unreal@v0.12.0",
     "repo": "displayxr-unreal",
     "tag": "v0.12.0",
@@ -238,20 +249,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.66.15",
-    "repo": "displayxr-runtime",
-    "tag": "v2.66.15",
-    "title": "DisplayXR Runtime v2.66.15",
-    "date": "2026-11-10",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.15",
-    "prerelease": false,
-    "featureLines": [
-      "A lost GPU device on a D3D11 hub output (for example `DXGI_ERROR_DEVICE_REMOVED` after a panel hotplug, or a reset or hung device) is now handled cleanly instead of leaving a black panel. The runtime detects the loss once and logs its `G…",
-      "**Behaviour change:** apps that exit on `XR_SESSION_STATE_LOSS_PENDING` will now close when the device is lost, where before they kept running against a black panel."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.10.2",
