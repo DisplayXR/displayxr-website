@@ -29,8 +29,11 @@
     "date": "2026-11-17",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.21.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Transparent Vulkan apps on Windows-on-ARM.** On GPUs whose Vulkan driver cannot import D3D11 shared handles (Adreno / Snapdragon), the desktop behind a transparent Vulkan app now shows through its see-through areas. Before, the app was…",
+      "Linux: the plug-in's manifest (`050-leia-sr.json`) now declares what it needs inside a container (SR paths, `SR_RUNTIME_PATH`, host `libGLEW`), so container hosts such as Proton / Steam Linux Runtime no longer hard-code them (#535)."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.68.1",
