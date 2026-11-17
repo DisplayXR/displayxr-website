@@ -22,6 +22,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.9.35",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.35",
+    "title": "DisplayXR v2.9.35",
+    "date": "2026-11-17",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.35",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.21.2",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.21.2",
@@ -53,7 +64,7 @@
     "id": "displayxr-runtime@v2.68.2",
     "repo": "displayxr-runtime",
     "tag": "v2.68.2",
-    "title": "v2.68.2",
+    "title": "DisplayXR Runtime v2.68.2",
     "date": "2026-11-17",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.68.2",
     "prerelease": false,
@@ -244,17 +255,6 @@
     "title": "DisplayXR v2.36.0",
     "date": "2026-11-11",
     "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.36.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.9.32",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.32",
-    "title": "DisplayXR v2.9.32",
-    "date": "2026-11-10",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.32",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -708,7 +708,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — v2.9.34",
+    "title": "Android tablet bundle (latest) — v2.9.35",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
