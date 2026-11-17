@@ -39,9 +39,23 @@
     "id": "displayxr-runtime@v2.68.1",
     "repo": "displayxr-runtime",
     "tag": "v2.68.1",
-    "title": "v2.68.1",
+    "title": "DisplayXR Runtime v2.68.1",
     "date": "2026-11-17",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.68.1",
+    "prerelease": false,
+    "featureLines": [
+      "**True transparency for Vulkan apps on Windows-on-ARM.** On Adreno and other GPUs that can't import D3D11 shared handles, transparent Vulkan apps now present with real per-pixel alpha through a pipelined CPU-readback DComp bridge. It mea…",
+      "**vk_native: CPU-readback transparency route for the DComp bridge (#2708, #2709).** When D3D↔VK interop is unavailable (no `VK_KHR_external_memory_win32`, or the first import fails, as on Adreno X2), the bridge keeps its premultiplied DC…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.68.2",
+    "repo": "displayxr-runtime",
+    "tag": "v2.68.2",
+    "title": "v2.68.2",
+    "date": "2026-11-17",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.68.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -195,19 +209,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.66.17",
-    "repo": "displayxr-runtime",
-    "tag": "v2.66.17",
-    "title": "DisplayXR Runtime v2.66.17",
-    "date": "2026-11-12",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.66.17",
-    "prerelease": false,
-    "featureLines": [
-      "Opt-in fix for in-process Vulkan apps presenting through the D3D11 hub on a single GPU: with `DXR_VK_HUB_DEFER_COMPOSE_WAIT=1`, `xrEndFrame` no longer CPU-waits the compose fence each frame (the wait is retired a frame later; `xrWaitSwap…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unreal@v0.11.0",
