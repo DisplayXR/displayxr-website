@@ -5,11 +5,13 @@ import type { ReactNode } from "react";
 export const metadata: Metadata = {
   title: "Privacy",
   description:
-    "What DisplayXR's own software does with your data: the DisplayXR runtime, eye tracking, the DisplayXR Browser and DisplayXR Chat.",
+    "What DisplayXR's own software does with your data: the DisplayXR runtime, eye tracking, the DisplayXR Browser, DisplayXR Chat and the DisplayXR plugin for Claude Code.",
 };
 
-const H2 = ({ children }: { children: ReactNode }) => (
-  <h2 className="mb-3 mt-12 text-xl font-semibold text-text-primary first:mt-0">{children}</h2>
+const H2 = ({ children, id }: { children: ReactNode; id?: string }) => (
+  <h2 id={id} className="mb-3 mt-12 scroll-mt-24 text-xl font-semibold text-text-primary first:mt-0">
+    {children}
+  </h2>
 );
 const P = ({ children }: { children: ReactNode }) => (
   <p className="mb-4 text-text-secondary leading-relaxed">{children}</p>
@@ -75,6 +77,26 @@ export default function PrivacyPage() {
           Our hosting and relay providers keep standard connection logs for a limited time.
         </P>
         <P>DisplayXR Gallery is a separate website with its own sign-in and policy.</P>
+
+        <H2 id="claude-code-plugin">DisplayXR plugin for Claude Code</H2>
+        <P>
+          The displayxr-inline3d plugin helps a coding agent in Claude Code build and check 3D web
+          pages. It sends nothing to DisplayXR: no telemetry, no accounts, and nothing runs in the
+          background.
+        </P>
+        <P>
+          Its page checker runs on your computer, in a headless Chrome and a local server on
+          127.0.0.1. The page under test loads what it normally loads, such as its scripts from a CDN,
+          and nothing else leaves your machine. When the agent optimizes a 3D model, it downloads a
+          pinned open-source tool from the npm registry.
+        </P>
+        <P>
+          Generating 3D assets is optional and paid. It sends your prompt or image link, with your own
+          API key, directly to the provider you pick (Meshy, Tripo or OpenAI), and only after you
+          approve that call and its estimated cost. That provider&apos;s privacy policy and terms
+          apply. The plugin reads your keys from your environment and never prints, stores or sends
+          them anywhere else.
+        </P>
 
         <H2>Questions</H2>
         <P>Open an issue on the DisplayXR runtime repository on GitHub.</P>
