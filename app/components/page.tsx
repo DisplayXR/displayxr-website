@@ -166,13 +166,16 @@ export default function ComponentsPage() {
               probe order and ABI gating mirror display processors.
             </p>
             <p>
-              First-class 6-DoF stylus support is in development: the runtime
-              serves the standard stylus interaction profile of the public{" "}
+              Since runtime 2.68.0 an input provider can expose a 6-DoF
+              stylus: the runtime serves the standard stylus interaction
+              profile of the public{" "}
               <span className="font-mono">XR_LOGITECH_mx_ink_stylus_interaction</span>{" "}
               extension for any vendor&apos;s pen, puts a single pen on the
               user&apos;s dominant hand, and registers the tip to the physical
               glass, so a pen touching the panel lands where the app draws that
-              point.
+              point. The <Code>sim_stylus</Code> reference provider stands in
+              for a pen, and with <Code>MODE=mouse</Code> it draws on the panel
+              with the desktop mouse.
             </p>
             <p>
               Shipping a controller, stylus or tracker? Follow the{" "}
