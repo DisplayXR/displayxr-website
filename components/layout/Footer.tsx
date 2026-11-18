@@ -22,6 +22,7 @@ const footerLinks = {
     { label: "Charter", href: "/charter" },
     { label: "FAQ", href: "/faq" },
     { label: "Privacy", href: "/privacy" },
+    { label: "Terms", href: "/terms" },
     { label: "Discussions ↗", href: DISCUSSIONS_URL },
     { label: "GitHub ↗", href: GITHUB_ORG_URL },
   ],
