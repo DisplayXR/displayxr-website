@@ -1,14 +1,31 @@
 [
   {
-    "id": "displayxr-runtime@v2.68.3",
-    "repo": "displayxr-runtime",
-    "tag": "v2.68.3",
-    "title": "v2.68.3",
+    "id": "displayxr-browser@v1.10.4",
+    "repo": "displayxr-browser",
+    "tag": "v1.10.4",
+    "title": "DisplayXR Browser v1.10.4",
     "date": "2026-11-18",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.68.3",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.4",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.68.3",
+    "repo": "displayxr-runtime",
+    "tag": "v2.68.3",
+    "title": "DisplayXR Runtime v2.68.3",
+    "date": "2026-11-18",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.68.3",
+    "prerelease": false,
+    "featureLines": [
+      "**`dxr-get.exe`** — a new signed fetcher that installs DisplayXR components (runtime, Leia plug-in, browser) on demand from the signed component catalog at `updates.displayxr.org` (`catalog/v1/stable.json`), verifying hash + Authenticode…",
+      "feat(get): dxr-get fetch/verify/install tool + ActiveRuntime upgrade rule (#2704, #2705) (#2707)",
+      "feat(catalog): signed component catalog generator + publisher (#2703) (#2706)",
+      "feat(compositor): lens follows native-Wayland 3D-window visibility via the GNOME extension (#2689) (#2691)",
+      "feat(gnome-ext): v20 — per-window \"hidden\" for the lens-visibility policy (#2689) (#2690)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@pro-v0.9.10",
@@ -282,19 +299,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@v1.10.0",
-    "repo": "displayxr-browser",
-    "tag": "v1.10.0",
-    "title": "DisplayXR Browser v1.10.0",
-    "date": "2026-11-06",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Now on Chromium 158.** The browser moves from Chromium 157.0.8103.39 to 158.0.8127.18 and picks up the upstream fixes and security updates of the 158 line. The DisplayXR features carry over: inline 3D weaving, depth, Ctrl+Shift+3, auto…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-play-android@v0.6.4",
