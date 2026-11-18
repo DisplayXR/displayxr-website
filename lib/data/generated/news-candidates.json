@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.68.3",
+    "repo": "displayxr-runtime",
+    "tag": "v2.68.3",
+    "title": "v2.68.3",
+    "date": "2026-11-18",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.68.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@pro-v0.9.10",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "pro-v0.9.10",
@@ -176,26 +187,6 @@
       "Android: `XR_DXR_weave` v21 present feedback, reporting actual present times to runtimes that support it (automatic fallback on older runtimes). Turn off with `--disable-inline-3d-android-present-feedback`.",
       "Desktop Linux: offer Convert to 3D for `<video>` (#355). Images and canvas are unchanged.",
       "Auto-3D scripts updated v0.7.2 → v0.7.3: three.js `WebGPURenderer` support is now gated on the hooks the converter uses rather than a revision ceiling, so pages on three.js r187 convert again (#352)."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.67.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.67.0",
-    "title": "DisplayXR Runtime v2.67.0",
-    "date": "2026-11-15",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.67.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Android, in-process Vulkan apps:** the present queue is now drained after a refresh-rate drop and paced on the measured display grid, removing frames that used to sit queued between the weave and scan-out (#2629 / #2630). Kill switches…",
-      "**`XR_DXR_weave` spec v21, present feedback:** a present-owner client (the DisplayXR Browser 1.10.3+ on Android) reports its actual present times back, so the display processor gets a measured prediction horizon on that route (#2633). Ki…",
-      "**Lens visibility and zone wishes:** the lens wish follows 3D-window visibility on Windows and now on GL/Vulkan, with zone wishes and per-screen segment display processors (#2671 / #2676); the hub-route zone wish advances its generation …",
-      "**Legacy apps:** automatic 2D and automatic re-convergence on the D3D11 hub (#2639, #2640); hosted D3D11/D3D12 sessions adopt the app's own top-level window instead of opening a second full-screen one (#2637).",
-      "**Stability sweep:** macOS GL/Metal/Vulkan resource-release fixes (#2621–#2625), D3D11/D3D12 present and fence robustness (#2614, #2620, #2635), IPC and service lifetime fixes, and a batch of OpenXR state-tracker input-validation fixes.",
-      "feat(weave): XR_DXR_weave v21 present feedback — a measured horizon on the Android present-owner route (#2633)",
-      "feat(compositor): lens visibility on GL/Vulkan, zone wishes and per-screen segment DPs (#2671) (#2676)",
-      "feat(compositor): lens wish follows 3D-window visibility on Windows (#2671)"
     ],
     "looksMechanical": false
   },
