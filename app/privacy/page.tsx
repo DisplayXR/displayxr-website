@@ -78,11 +78,11 @@ export default function PrivacyPage() {
         </P>
         <P>DisplayXR Gallery is a separate website with its own sign-in and policy.</P>
 
-        <H2 id="claude-code-plugin">DisplayXR plugin for Claude Code</H2>
+        <H2 id="claude-code-plugin">DisplayXR plugins for Claude Code and Codex</H2>
         <P>
-          The displayxr-inline3d plugin helps a coding agent in Claude Code build and check 3D web
-          pages. It sends nothing to DisplayXR: no telemetry, no accounts, and nothing runs in the
-          background.
+          The displayxr-inline3d plugins help a coding agent in Claude Code or Codex build and check 3D
+          web pages. Both run on your computer and send nothing to DisplayXR: no telemetry, no
+          accounts, and nothing runs in the background.
         </P>
         <P>
           Its page checker runs on your computer, in a headless Chrome and a local server on
@@ -96,6 +96,35 @@ export default function PrivacyPage() {
           approve that call and its estimated cost. That provider&apos;s privacy policy and terms
           apply. The plugin reads your keys from your environment and never prints, stores or sends
           them anywhere else.
+        </P>
+
+        <H2 id="hosted-checker">Hosted page checker (Claude and ChatGPT connectors)</H2>
+        <P>
+          The DisplayXR connector for Claude and ChatGPT, at mcp.displayxr.org, checks 3D web pages for
+          an AI assistant. It receives only what the assistant sends to its tools: a public page URL, a
+          public .glb or .gltf model URL, or the page&apos;s own HTML, JavaScript and CSS files. It does
+          not receive your chat history or account data, and nothing that identifies you except the IP
+          address the request comes from.
+        </P>
+        <P>
+          Page files are written to a temporary folder on the checker machine, served only to that
+          machine&apos;s headless browser, and deleted when the check ends. Downloaded model files are
+          deleted after the check. No pages, files, URLs, screenshots or reports are stored. The
+          checker loads the page in a headless browser, so the page&apos;s own requests, such as
+          scripts from a CDN, come from our servers. It refuses private, loopback and cloud-metadata
+          addresses.
+        </P>
+        <P>
+          Your IP address is used only to limit how often the checker can be called. It is stored as
+          a salted hash in a counter that expires within a day. Request logs are kept for at most
+          seven days, and we keep usage totals to plan the service&apos;s budget. There is no sign-in,
+          no analytics and no cookies. A cloud hosting provider runs the connector, a cloud GPU
+          provider runs the checker, and a managed database holds the counters. Use of the connector
+          is covered by our{" "}
+          <a href="/terms" className="text-accent hover:text-accent-hover underline underline-offset-2">
+            terms
+          </a>
+          .
         </P>
 
         <H2>Questions</H2>
