@@ -7,6 +7,22 @@
     "date": "2026-11-18",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.4",
     "prerelease": false,
+    "featureLines": [
+      "**The Windows installer now sets up DisplayXR for you.** If the DisplayXR runtime is missing or too old, the installer installs it itself (plus the Leia SR plug-in on Leia displays), fetched and verified from the signed DisplayXR compone…",
+      "**Convert to 3D now works for pictures on desktop Linux**, over the runtime's lift service.",
+      "Installer: fetch a missing or too-old runtime through an embedded, Leia-signed `dxr-get`. It plans first (one consent prompt), then runs `ensure-for browser`. Silent installs (`/S`) fetch directly. Falls back to the bundle download link …",
+      "Desktop Linux: Convert to 3D for `<img>` over XR_DXR_lift's CPU transport (#354, #356)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.21.3",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.21.3",
+    "title": "v2.21.3",
+    "date": "2026-11-18",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.21.3",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -244,17 +260,6 @@
       "`Scripts/tests/pose_math_test.cpp` + a `pose-math-test` lint job: the OpenXR <-> UE pose conversion and the `XrPosef` helpers now live in a UE-free header (`Source/DisplayXRCore/Private/Native/dxr_pose_math.h`) and are checked with a bar…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.20.8",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.20.8",
-    "title": "v2.20.8",
-    "date": "2026-11-11",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.20.8",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.36.0",
