@@ -23,8 +23,12 @@
     "date": "2026-11-18",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.21.3",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Leia 2D mode now reports head tracking on every platform, so an app in 2D that still shows head-tracked look-around no longer says \"face lost\" (#546).",
+      "macOS gains MANUAL eye tracking, and MANAGED face loss now comes from the weaver's own tracking state instead of eye-pair freshness (#544).",
+      "macOS: MANUAL eye-tracking mode (when the SR runtime supports the tracking-loss mode) and MANAGED `is_tracking` from `srWeaverGetTrackingState` (#544)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.68.3",
