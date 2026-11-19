@@ -2,30 +2,30 @@
   {
     "id": "runtime",
     "name": "DisplayXR Runtime",
-    "version": "v2.68.4",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.68.4",
+    "version": "v2.69.0",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.69.0",
     "releaseDate": "2026-11-19",
     "platforms": "Windows · macOS · Linux · Android",
     "downloads": [
       {
         "platform": "Windows",
-        "file": "DisplayXRSetup-2.68.4.exe",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.68.4/DisplayXRSetup-2.68.4.exe"
+        "file": "DisplayXRSetup-2.69.0.exe",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.69.0/DisplayXRSetup-2.69.0.exe"
       },
       {
         "platform": "macOS",
-        "file": "DisplayXR-Installer-2.68.4.pkg",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.68.4/DisplayXR-Installer-2.68.4.pkg"
+        "file": "DisplayXR-Installer-2.69.0.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.69.0/DisplayXR-Installer-2.69.0.pkg"
       },
       {
         "platform": "Linux",
-        "file": "displayxr-runtime_2.68.4_amd64.deb",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.68.4/displayxr-runtime_2.68.4_amd64.deb"
+        "file": "displayxr-runtime_2.69.0_amd64.deb",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.69.0/displayxr-runtime_2.69.0_amd64.deb"
       },
       {
         "platform": "Android",
-        "file": "DisplayXR-Runtime-2.68.4-android-arm64.apk",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.68.4/DisplayXR-Runtime-2.68.4-android-arm64.apk"
+        "file": "DisplayXR-Runtime-2.69.0-android-arm64.apk",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.69.0/DisplayXR-Runtime-2.69.0-android-arm64.apk"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-runtime"
@@ -62,12 +62,17 @@
     "version": "v2.22.0",
     "releaseUrl": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.22.0",
     "releaseDate": "2026-11-19",
-    "platforms": "Windows · Android",
+    "platforms": "Windows · Linux · Android",
     "downloads": [
       {
         "platform": "Windows",
         "file": "DisplayXRLeiaSRSetup-2.22.0.exe",
         "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.22.0/DisplayXRLeiaSRSetup-2.22.0.exe"
+      },
+      {
+        "platform": "Linux",
+        "file": "displayxr-leia-sr_2.22.0_amd64.deb",
+        "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.22.0/displayxr-leia-sr_2.22.0_amd64.deb"
       },
       {
         "platform": "Android",
