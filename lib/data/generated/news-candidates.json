@@ -1,14 +1,27 @@
 [
   {
-    "id": "displayxr-runtime@v2.68.4",
-    "repo": "displayxr-runtime",
-    "tag": "v2.68.4",
-    "title": "v2.68.4",
+    "id": "displayxr-installer@v2.9.36",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.36",
+    "title": "DisplayXR v2.9.36",
     "date": "2026-11-19",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.68.4",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.36",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.68.4",
+    "repo": "displayxr-runtime",
+    "tag": "v2.68.4",
+    "title": "DisplayXR Runtime v2.68.4",
+    "date": "2026-11-19",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.68.4",
+    "prerelease": false,
+    "featureLines": [
+      "Metal sessions on macOS now honour window visibility: a minimized Metal app is demoted to SYNCHRONIZED, gets `XrEventDataWindowVisibilityChangedDXR`, and a 3D request while hidden is denied with `WINDOW_HIDDEN` (#2718). The test cubes re…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.10.4",
@@ -227,17 +240,6 @@
     "title": "Media Player Pro 0.9.8",
     "date": "2026-11-13",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.8",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.9.33",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.33",
-    "title": "DisplayXR v2.9.33",
-    "date": "2026-11-12",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.33",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
