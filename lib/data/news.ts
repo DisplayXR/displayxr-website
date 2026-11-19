@@ -107,6 +107,16 @@ export const NEWS_KIND_LABELS: Record<NewsKind, string> = {
  */
 export const NEWS: NewsItem[] = [
   {
+    id: "inline3d-ai-assistants",
+    date: "2026-11-19",
+    kind: "product",
+    tier: "banner",
+    headline: "Claude can now build and check your 3D web pages",
+    blurb:
+      "The DisplayXR inline 3D connector is in Claude's connector directory: it gives Claude an authoring guide, a starter template and a checker that runs a page in a simulated 3D browser. It is coming to ChatGPT and Codex, and local plugins for Claude Code and Codex are available now. Free, read-only, no sign-in.",
+    href: "/developers#ai-assistants",
+  },
+  {
     id: "displayxr-play",
     date: "2026-11-10",
     kind: "product",

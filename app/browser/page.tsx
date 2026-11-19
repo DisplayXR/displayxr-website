@@ -284,6 +284,14 @@ export default function BrowserPage() {
                 Developers
               </a>
             </p>
+            <p className="mt-4 text-sm text-text-secondary">
+              Building with Claude, ChatGPT or Codex? Give it the authoring
+              guide and a page checker:{" "}
+              <a href="/developers#ai-assistants" className="text-accent hover:text-accent-hover underline underline-offset-2">
+                use it with your AI assistant
+              </a>
+              .
+            </p>
           </div>
           <div>
             <CodeTabs tabs={CODE_TABS} />
