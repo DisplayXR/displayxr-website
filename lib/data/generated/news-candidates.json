@@ -77,9 +77,26 @@
     "id": "displayxr-runtime@v2.69.0",
     "repo": "displayxr-runtime",
     "tag": "v2.69.0",
-    "title": "v2.69.0",
+    "title": "DisplayXR Runtime v2.69.0",
     "date": "2026-11-19",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.69.0",
+    "prerelease": false,
+    "featureLines": [
+      "The `XR_DXR_win32_window_binding` v9 texture target is now honoured on the D3D12, Vulkan and OpenGL tiers, not just D3D11 (ADR-060 Amendments 1 and 2; #2382, #2721). A windowless texture-target session phases its weave from the target's …",
+      "feat(d3d12,oxr): texture target binding on the D3D12 tier — XR_DXR_win32_window_binding v9 (ADR-060, #2382)",
+      "feat(util): windowless Vulkan and GL display-processor rule for ADR-060 (#2721)",
+      "feat(vk,gl,oxr): texture target binding on the Vulkan and GL tiers — XR_DXR_win32_window_binding v9 (ADR-060, #2721)",
+      "feat(sim_display): screen-bound Vulkan and GL DPs declare PHASE_FROM_PRESENT_ORIGIN (ADR-060, #2721)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.69.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.69.1",
+    "title": "v2.69.1",
+    "date": "2026-11-19",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.69.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -198,17 +215,6 @@
       "Linux: the plug-in's manifest (`050-leia-sr.json`) now declares what it needs inside a container (SR paths, `SR_RUNTIME_PATH`, host `libGLEW`), so container hosts such as Proton / Steam Linux Runtime no longer hard-code them (#535)."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.68.2",
-    "repo": "displayxr-runtime",
-    "tag": "v2.68.2",
-    "title": "DisplayXR Runtime v2.68.2",
-    "date": "2026-11-17",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.68.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-mediaplayer@pro-v0.9.9",
