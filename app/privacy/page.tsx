@@ -127,6 +127,14 @@ export default function PrivacyPage() {
           .
         </P>
 
+        <H2 id="embedded-video">Videos on this website</H2>
+        <P>
+          The DisplayXR film on this website plays from YouTube, through its privacy-enhanced
+          youtube-nocookie.com player. Nothing loads from YouTube until you press play. Once you do,
+          YouTube receives your IP address and may store data in your browser, and YouTube&apos;s
+          privacy policy applies.
+        </P>
+
         <H2>Questions</H2>
         <P>Open an issue on the DisplayXR runtime repository on GitHub.</P>
       </div>

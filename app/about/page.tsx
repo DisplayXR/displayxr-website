@@ -3,6 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FlatVsSpatial } from "@/components/about/FlatVsSpatial";
 import { EcosystemMap } from "@/components/home/EcosystemMap";
+import { FilmPlayer } from "@/components/video/FilmPlayer";
 import { OPENXR_GAPS } from "@/lib/data/openxr-gaps";
 import { CONTACT_EMAIL, DISCUSSIONS_URL } from "@/lib/constants";
 import type { ReactNode } from "react";
@@ -32,6 +33,18 @@ export default function AboutPage() {
         description="An open-source OpenXR runtime and the extensions OpenXR needs for spatial displays: one way to build spatial content for every display, from every vendor."
       >
         <div className="max-w-3xl space-y-20">
+          <section>
+            <H2>The story in two minutes</H2>
+            <P>
+              Spatial displays are coming, each with its own software kit.
+              The film shows what DisplayXR changes: write your app once, and
+              it runs on all of them.
+            </P>
+            <div className="mt-6">
+              <FilmPlayer />
+            </div>
+          </section>
+
           <section>
             <H2>What is a spatial display?</H2>
             <P>

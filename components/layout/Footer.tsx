@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { DISCUSSIONS_URL, DOCS_URL, GITHUB_ORG_URL, REPO_URLS } from "@/lib/constants";
+import { DISCUSSIONS_URL, DOCS_URL, GITHUB_ORG_URL, REPO_URLS, YOUTUBE_URL } from "@/lib/constants";
 
 // Mirrors the header hubs, plus the pages that live under each.
 const footerLinks = {
@@ -25,6 +25,7 @@ const footerLinks = {
     { label: "Terms", href: "/terms" },
     { label: "Discussions ↗", href: DISCUSSIONS_URL },
     { label: "GitHub ↗", href: GITHUB_ORG_URL },
+    { label: "YouTube ↗", href: YOUTUBE_URL },
   ],
   Components: [
     { label: "Component model", href: "/components" },

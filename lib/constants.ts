@@ -1,5 +1,15 @@
 export const GITHUB_ORG_URL = "https://github.com/DisplayXR";
 
+// The DisplayXR YouTube channel and the launch film (public 2026-11-19).
+export const YOUTUBE_URL = "https://www.youtube.com/@DisplayXR";
+export const LAUNCH_FILM = {
+  id: "yqWqZ0uwLVk",
+  url: "https://youtu.be/yqWqZ0uwLVk",
+  title: "DisplayXR: OpenXR for Spatial Displays",
+  length: "2 min",
+  poster: "/media/film/launch-film-poster.jpg",
+} as const;
+
 // Partner / vendor contact. TODO(david): confirm this inbox is provisioned on
 // the displayxr.org domain before launch; swap if a different address is used.
 export const CONTACT_EMAIL = "partners@displayxr.org";
