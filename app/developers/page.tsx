@@ -8,8 +8,8 @@ import { HELLO_WORLD } from "@/lib/data/web";
 import { NATIVE_DOCS, NATIVE_PLATFORMS } from "@/lib/data/native";
 import { engines } from "@/lib/data/generated";
 import { enginePlugins } from "@/lib/data/compatibility";
-import { DISCUSSIONS_URL, DOCS_URL, REPO_URLS } from "@/lib/constants";
-import { AppWindow, FileCode2, HelpCircle, Layers, LifeBuoy, MessagesSquare } from "lucide-react";
+import { DISCUSSIONS_URL, DOCS_URL, INLINE3D_DEMO_URL, REPO_URLS } from "@/lib/constants";
+import { AppWindow, FileCode2, HelpCircle, Layers, LifeBuoy, MessagesSquare, Play } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Developers",
@@ -113,6 +113,15 @@ export default function DevelopersPage() {
             browser, then reports pass, warn or fail for each rule. Check a page
             by URL, or send its files: nothing is hosted or kept.
           </p>
+          <a
+            href={INLINE3D_DEMO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-4 inline-flex items-center gap-2 text-sm text-accent hover:text-accent-hover"
+          >
+            <Play className="h-4 w-4" aria-hidden="true" />
+            Watch the 2-minute demo: one prompt in ChatGPT, from build to published page
+          </a>
           <p className="mb-8 max-w-2xl text-sm text-text-secondary leading-relaxed">
             A pass means the page works in a simulated 3D browser. Look at it
             on a Spatial Display before you ship it.

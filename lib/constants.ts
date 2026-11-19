@@ -10,6 +10,9 @@ export const LAUNCH_FILM = {
   poster: "/media/film/launch-film-poster.jpg",
 } as const;
 
+// Screen recording of the inline 3D connector in ChatGPT (public 2026-11-19).
+export const INLINE3D_DEMO_URL = "https://youtu.be/hFOdYtiMjEA";
+
 // Partner / vendor contact. TODO(david): confirm this inbox is provisioned on
 // the displayxr.org domain before launch; swap if a different address is used.
 export const CONTACT_EMAIL = "partners@displayxr.org";
