@@ -124,8 +124,8 @@ export default function DevelopersPage() {
               <p className="mb-4 text-xs text-text-secondary">claude.ai · Claude Desktop · mobile · Claude Code</p>
               <p className="mb-6 text-sm leading-relaxed text-text-secondary">
                 In Claude&apos;s connector directory. Open the DisplayXR inline
-                3D listing and choose <strong className="text-text-primary">Connect</strong>.
-                No account or sign-in needed.
+                3D listing and choose <strong className="text-text-primary">Connect</strong>;
+                the connector itself needs no sign-in.
               </p>
               <Button href="https://claude.ai/directory/connectors/displayxr-inline-3d">
                 Open in Claude
