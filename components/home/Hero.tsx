@@ -3,6 +3,8 @@ import { DownloadButton } from "@/components/download/DownloadButton";
 import { NewsTicker } from "@/components/home/NewsTicker";
 import { HeroVideo } from "@/components/home/HeroVideo";
 import { getBannerNews } from "@/lib/data/news";
+import { LAUNCH_FILM_URL } from "@/lib/constants";
+import { Play } from "lucide-react";
 
 export function Hero() {
   // Filtered server-side; renders nothing once the pool ages out.
@@ -54,6 +56,18 @@ export function Hero() {
               Build something
             </Button>
           </div>
+          {/* The launch film, as a quiet text link under the CTAs rather than
+              a third button: the hero loop stays the motion piece (decided
+              2026-07-02), and a fixed single line adds no layout shift. */}
+          <a
+            href={LAUNCH_FILM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-animate hero-animate-delay-2 mt-6 inline-flex items-center gap-2 text-sm text-text-secondary hover:text-text-primary transition-colors"
+          >
+            <Play className="h-4 w-4" aria-hidden="true" />
+            Watch the 2-minute film
+          </a>
         </div>
       </div>
     </section>
