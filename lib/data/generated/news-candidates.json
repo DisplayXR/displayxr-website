@@ -7,8 +7,30 @@
     "date": "2026-11-19",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.5",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Auto-3D scripts updated to v0.7.6: support for PlayCanvas 2.24's CameraFrame and older PlayCanvas engines, with per-eye fog and scene depth (#365)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@v1.21.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.21.0",
+    "title": "v1.21.0",
+    "date": "2026-11-19",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.21.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Browse your media without leaving the player (Windows).** A new in-app media browser shows Pictures, Videos, Downloads, your media folders and pinned places as a 2D grid; a 2D|3D switch on the transport bar replaces Convert-to-3D, and …",
+      "**Play a whole folder as a slideshow** straight from the browser: from a folder, the place you are looking at, or a single file (#262).",
+      "**Open menu** with Open folder and a Recent list (#253).",
+      "**Pro: DeckLink embedded audio.** Optional audio capture (off by default) with per-channel meters, a volume slider, an audio/video sync offset, and click-a-meter to solo a channel (#257, #258, #259, #260).",
+      "In-app media browser on Windows: 2D grid of Pictures / Videos / Downloads / Media folders / pinned places, 2D|3D transport switch replacing Convert-to-3D, single instance, ease-back recenter, and a 2D/3D switch on Android (#256)",
+      "Play a folder as a slideshow from the media browser (#262)",
+      "Media folders leave out software's own images: git checkouts, game libraries, asset folders and pictures sitting beside a program (#263)",
+      "Open menu with Open folder and a Recent list (#253)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.9.36",
@@ -243,17 +265,6 @@
       "Auto-3D scripts updated v0.7.2 → v0.7.3: three.js `WebGPURenderer` support is now gated on the hooks the converter uses rather than a revision ceiling, so pages on three.js r187 convert again (#352)."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@pro-v0.9.8",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.9.8",
-    "title": "Media Player Pro 0.9.8",
-    "date": "2026-11-13",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.8",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unreal@v0.11.0",
