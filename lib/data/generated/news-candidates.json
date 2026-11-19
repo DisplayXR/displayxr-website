@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.10.5",
+    "repo": "displayxr-browser",
+    "tag": "v1.10.5",
+    "title": "DisplayXR Browser v1.10.5",
+    "date": "2026-11-19",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.9.36",
     "repo": "displayxr-installer",
     "tag": "v2.9.36",
@@ -289,17 +300,6 @@
     "title": "DisplayXR Browser v1.10.2",
     "date": "2026-11-09",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@v1.10.1",
-    "repo": "displayxr-browser",
-    "tag": "v1.10.1",
-    "title": "DisplayXR Browser v1.10.1",
-    "date": "2026-11-07",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -707,7 +707,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — v2.9.35",
+    "title": "Android tablet bundle (latest) — v2.9.36",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
