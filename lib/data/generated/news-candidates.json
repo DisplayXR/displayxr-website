@@ -44,6 +44,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.9.37",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.37",
+    "title": "DisplayXR v2.9.37",
+    "date": "2026-11-19",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.37",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.22.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.22.0",
@@ -94,12 +105,14 @@
     "id": "displayxr-runtime@v2.69.1",
     "repo": "displayxr-runtime",
     "tag": "v2.69.1",
-    "title": "v2.69.1",
+    "title": "DisplayXR Runtime v2.69.1",
     "date": "2026-11-19",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.69.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Android: the Leia APK now bundles leia-plugin v2.22.0 (v2.69.0's was built against v2.21.3). No runtime code changes since v2.69.0."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.37.0",
@@ -176,17 +189,6 @@
     "title": "Media Player Pro 0.9.10",
     "date": "2026-11-17",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.10",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.9.34",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.34",
-    "title": "DisplayXR v2.9.34",
-    "date": "2026-11-17",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.34",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
