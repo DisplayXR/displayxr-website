@@ -44,6 +44,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-leia-plugin@v2.22.0",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.22.0",
+    "title": "v2.22.0",
+    "date": "2026-11-19",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.22.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.68.4",
     "repo": "displayxr-runtime",
     "tag": "v2.68.4",
@@ -53,6 +64,37 @@
     "prerelease": false,
     "featureLines": [
       "Metal sessions on macOS now honour window visibility: a minimized Metal app is demoted to SYNCHRONIZED, gets `XrEventDataWindowVisibilityChangedDXR`, and a 3D request while hidden is denied with `WINDOW_HIDDEN` (#2718). The test cubes re…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.69.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.69.0",
+    "title": "v2.69.0",
+    "date": "2026-11-19",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.69.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity@v2.37.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.37.0",
+    "title": "DisplayXR v2.37.0",
+    "date": "2026-11-19",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.37.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Controllers and styluses from any DisplayXR input provider, as Unity `InputDevice`s.** The display provider owns the OpenXR session, so until now no Unity app could see a provider's controllers. A new `IUnityXRInput` provider, `\"Displa…",
+      "**Stereo-correct picking: `DisplayXRPicking` (#460).** `Camera.ScreenPointToRay` uses the camera's symmetric projection, so a click misses under an off-axis stereo frustum. The new public API maps a screen point to a ray / world point th…",
+      "**Auto-convergence for the camera-centric rig: `DisplayXRAutoConvergence` (#461).** Drives `DisplayXRCamera.invConvergenceDistance` (optionally `ipdFactor`) each frame from scene depth, rays or a target (`Auto` uses depth where the pipel…",
+      "**Project Validation window and rig creation menu (#462).** `DisplayXR > Project Validation` checks the project against what the package requires for the active build target (loader, graphics API, native binary, Android / Linux settings,…",
+      "**Stereo media: `DisplayXRStereoMedia` (#463).** Shows a side-by-side / top-bottom (or swapped, or mono) texture or `VideoPlayer` so each eye sees its half, as a quad on the zero-parallax plane or full screen, with Fit / Fill / Stretch a…",
+      "**Editor Game view: 1:1 diagnostic and main-view targeting (#459).** In the docked texture mode a `GameView 1:1:` log line reports whether Unity draws the woven texture texel for pixel on each axis, with one warning per kind when it does…",
+      "**Editor Game view: the image position is measured on screen (#459).** Windows editor, docked texture mode, D3D12: once the layout has settled, a short position-coded marker is drawn through the mirror blit and read back from the screen,…",
+      "**Editor texture mode: the runtime's texture target binding (`XR_DXR_win32_window_binding` spec 9, #471).** In the docked texture mode the provider tells the runtime where the woven texture is drawn (the binding at session create, the re…"
     ],
     "looksMechanical": false
   },
@@ -152,20 +194,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.68.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.68.1",
-    "title": "DisplayXR Runtime v2.68.1",
-    "date": "2026-11-17",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.68.1",
-    "prerelease": false,
-    "featureLines": [
-      "**True transparency for Vulkan apps on Windows-on-ARM.** On Adreno and other GPUs that can't import D3D11 shared handles, transparent Vulkan apps now present with real per-pixel alpha through a pipelined CPU-readback DComp bridge. It mea…",
-      "**vk_native: CPU-readback transparency route for the DComp bridge (#2708, #2709).** When D3D↔VK interop is unavailable (no `VK_KHR_external_memory_win32`, or the first import fails, as on Adreno X2), the bridge keeps its premultiplied DC…"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.68.2",
     "repo": "displayxr-runtime",
     "tag": "v2.68.2",
@@ -203,23 +231,6 @@
       "Android: 3D grid pairs for 2D→3D converted one-view LIFs, cached on disk between launches (#243, #180)",
       "Android: UI design review — player chrome, browser layout, type scale, one icon set (#225)",
       "Desktop browser: sharper thumbnails, black bars off, 3D badge top left (#223); larger thumbnails for videos, photos keep their cached one (#226)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.21.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.21.0",
-    "title": "v2.21.0",
-    "date": "2026-11-16",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.21.0",
-    "prerelease": false,
-    "featureLines": [
-      "**MANUAL eye tracking on Windows.** Apps can now select `XR_EYE_TRACKING_MODE_MANUAL_DXR` on every Windows Leia display processor (D3D11, D3D12, OpenGL, Vulkan). In MANUAL the display does no ease, no collapse and no 2D/3D lens switch wh…",
-      "MANUAL needs an SR runtime that answers the tracking-loss probe (**SR 1.39.0.3493 or later**); the plug-in now builds against SR SDK `sr-sdk-v2-1.39.0.3493`. On an older SR runtime the plug-in keeps advertising MANAGED only, exactly as b…",
-      "**Leia conversion provider on desktop Linux.** `DisplayXR-LeiaConversion.so` now ships in the Linux `.deb`, so 2D→3D conversion (e.g. Convert to 3D in the browser) can use the Leia provider with look-around on Linux, falling back to Open…",
-      "MANUAL eye tracking via the SR tracking-loss mode on Windows (#534; the Linux code is in, but compiled out of this release's `.deb`)",
-      "Leia conversion provider on desktop Linux, shipped in the `.deb` (#515)"
     ],
     "looksMechanical": false
   },
@@ -451,26 +462,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unity@v2.33.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.33.0",
-    "title": "DisplayXR v2.33.0",
-    "date": "2026-10-25",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.33.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Android arm64 (Vulkan) (#418).** The display provider now runs in an Android player against the DisplayXR runtime APK (v2.47.0+, tested v2.53.0). Tested on a Nubia Pad 2: correct stereo, 60 fps unpinned (the same as the runtime's bare …",
-      "It reuses the Linux Vulkan own-device + bridge model, with an Android-only GPU-ordered bridge copy (Unity's queue → `SYNC_FD` semaphore → one batched copy).",
-      "It loads the runtime through the Khronos Android loader (1.1.63).",
-      "The provider draws into its own `SurfaceView`, bound with `XR_DXR_android_surface_binding`.",
-      "Touch goes to Unity, and a copy goes to the runtime (`xrSubmitAndroidInputEventDXR`). The samples' input controller gets touch gestures.",
-      "The package ships the runtime-discovery manifest entries (`DisplayXR.androidlib`), the loader, and the runtime's `VK_LAYER_DXR_queue_lock` layer. It adds R8 keep rules for minified builds and turns off Unity's stock splash on Android.",
-      "Built by CI (`build-android` job, `native~/build-android.sh`); the `.so` files ship on the `upm` branch.",
-      "Setup: README § *Android (arm64, Vulkan)*; internals: `docs~/architecture/xr-display-provider.md` § *Android*."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.36.1",
