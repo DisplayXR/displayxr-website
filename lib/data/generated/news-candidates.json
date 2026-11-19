@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.68.4",
+    "repo": "displayxr-runtime",
+    "tag": "v2.68.4",
+    "title": "v2.68.4",
+    "date": "2026-11-19",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.68.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.10.4",
     "repo": "displayxr-browser",
     "tag": "v1.10.4",
@@ -176,24 +187,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.68.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.68.0",
-    "title": "DisplayXR Runtime v2.68.0",
-    "date": "2026-11-16",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.68.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Window visibility now drives the lens, the weave and the session state** (ADR-062, tiers 1–3): a hidden or covered 3D window releases the lens on Windows, Linux X11 and macOS, the new `XR_DXR_window_visibility` extension tells apps wha…",
-      "Verified by CI on Windows, macOS, Linux and Android; this release has not been tested on a panel.",
-      "**ADR-062 window visibility**: tier-1 detection fixes, observability and tier 2 (#2680); ADR-062 itself (#2678); lens wish follows 3D-window visibility on Linux X11 and macOS, plus the macOS GL path (#2671); tier-3 getters on the window-…",
-      "**Stylus input**: 6-DoF stylus support for input providers (ADR-034 Amendment 8, #2681); `sim_stylus` reference stylus provider + cube `--stylus` (#2685); `sim_stylus` `MODE=mouse` on Windows (#2688); `--stylus` on every handle/hosted cu…",
-      "**Plug-in discovery**: optional `plugin.sandbox` manifest field for container hosts (POSIX) (#2674)",
-      "**Test apps**: MANUAL tracking-loss demo in the Windows cube_handle apps (#2694) and in cube_handle_vk_linux; T toggles MANAGED/MANUAL eye tracking in cube_handle_vk_linux"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unreal@v0.12.0",
