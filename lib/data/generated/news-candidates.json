@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-leia-plugin@v2.23.0",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.23.0",
+    "title": "v2.23.0",
+    "date": "2026-11-20",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.23.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.10.5",
     "repo": "displayxr-browser",
     "tag": "v1.10.5",
@@ -247,17 +258,6 @@
       "Desktop browser: sharper thumbnails, black bars off, 3D badge top left (#223); larger thumbnails for videos, photos keep their cached one (#226)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.21.1",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.21.1",
-    "title": "v2.21.1",
-    "date": "2026-11-16",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.21.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unreal@v0.12.0",
