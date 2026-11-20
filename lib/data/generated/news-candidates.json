@@ -7,8 +7,36 @@
     "date": "2026-11-20",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.23.0",
     "prerelease": false,
+    "featureLines": [
+      "Windowless Vulkan texture targets now stay in 3D while their window is being dragged. The Vulkan display processor fills the drag phase-snap slot, which DisplayXR/displayxr-runtime#2726 uses. Hosted Vulkan windows get the snap as well.",
+      "Vulkan display processor: implement `snap_window_rect` (drag phase-snap) on Windows, matching D3D11, D3D12 and OpenGL (#554)"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.69.2",
+    "repo": "displayxr-runtime",
+    "tag": "v2.69.2",
+    "title": "v2.69.2",
+    "date": "2026-11-20",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.69.2",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity@v2.38.0",
+    "repo": "displayxr-unity",
+    "tag": "v2.38.0",
+    "title": "DisplayXR v2.38.0",
+    "date": "2026-11-20",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.38.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Native log diagnostics for the editor Game-view mirror (#459, #480, #483).** The native log now says which mirror blit is used for the active graphics API and why one is not offered, why the blit did not draw on a given frame, which co…",
+      "**Editor Game view: a D3D11 native mirror blit (#483).** The docked Game view on URP + D3D11 now shows the woven image through a native blit on D3D11, as it already did on D3D12. It draws no calibration marker, so the image position on D…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.10.5",
@@ -173,23 +201,6 @@
       "Leia 2D mode now reports head tracking on every platform, so an app in 2D that still shows head-tracked look-around no longer says \"face lost\" (#546).",
       "macOS gains MANUAL eye tracking, and MANAGED face loss now comes from the weaver's own tracking state instead of eye-pair freshness (#544).",
       "macOS: MANUAL eye-tracking mode (when the SR runtime supports the tracking-loss mode) and MANAGED `is_tracking` from `srWeaverGetTrackingState` (#544)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.68.3",
-    "repo": "displayxr-runtime",
-    "tag": "v2.68.3",
-    "title": "DisplayXR Runtime v2.68.3",
-    "date": "2026-11-18",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.68.3",
-    "prerelease": false,
-    "featureLines": [
-      "**`dxr-get.exe`** — a new signed fetcher that installs DisplayXR components (runtime, Leia plug-in, browser) on demand from the signed component catalog at `updates.displayxr.org` (`catalog/v1/stable.json`), verifying hash + Authenticode…",
-      "feat(get): dxr-get fetch/verify/install tool + ActiveRuntime upgrade rule (#2704, #2705) (#2707)",
-      "feat(catalog): signed component catalog generator + publisher (#2703) (#2706)",
-      "feat(compositor): lens follows native-Wayland 3D-window visibility via the GNOME extension (#2689) (#2691)",
-      "feat(gnome-ext): v20 — per-window \"hidden\" for the lens-visibility policy (#2689) (#2690)"
     ],
     "looksMechanical": false
   },
@@ -450,21 +461,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unity@v2.34.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.34.0",
-    "title": "DisplayXR v2.34.0",
-    "date": "2026-10-29",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.34.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Linux (native Wayland):** a player now opens its window on the 3D panel by default, keeping the size it opened with, and centred for the size it gets there (#266). Opt out with `DisplayXRTargetDisplay.PlaceOnPanelAtStart = false`, a `D…",
-      "**Windows editor:** fixes the editor crash on a second docked Play after a Stop (#428) and the editor not exiting after File > Exit (#429). A docked fixed-aspect Game view (e.g. 16:9 with bars) weaves with the right phase again (#420).",
-      "**Windows player:** `DisplayXRTargetDisplay` fits the window to the panel after a move to a higher-scale panel, and a full-screen window covers the panel (#266). On the transparent overlay, a drag ends where you release it and keeps foll…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unity-samples@v2.4.0",
