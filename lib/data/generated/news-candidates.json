@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-installer@v2.9.38",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.38",
+    "title": "DisplayXR v2.9.38",
+    "date": "2026-11-20",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.38",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.23.0",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.23.0",
@@ -17,12 +28,15 @@
     "id": "displayxr-runtime@v2.69.2",
     "repo": "displayxr-runtime",
     "tag": "v2.69.2",
-    "title": "v2.69.2",
+    "title": "DisplayXR Runtime v2.69.2",
     "date": "2026-11-20",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.69.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "A windowless ADR-060 texture target now holds 3D while its reference window is dragged: user drags are phase-snapped through the display processor, on D3D11, D3D12, OpenGL and Vulkan (Vulkan needs a display processor that implements the …",
+      "`XR_DXR_cursor_depth` spec v9: opt-in depth range, front only (default, unchanged behaviour) or both sides of the glass, so a scene that lives behind the display plane can get a cursor that sits in front of its content (ADR-046 Amendment…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.38.0",
@@ -211,17 +225,6 @@
     "title": "Media Player Pro 0.9.10",
     "date": "2026-11-17",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.10",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.9.35",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.35",
-    "title": "DisplayXR v2.9.35",
-    "date": "2026-11-17",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.35",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
