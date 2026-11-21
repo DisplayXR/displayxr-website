@@ -8,6 +8,7 @@ import { REPO_URLS } from "@/lib/constants";
 import { demos, engines } from "@/lib/data/generated";
 import type { ReactNode } from "react";
 import type { Status } from "@/lib/data/compatibility";
+import { demoEditorial } from "@/lib/data/demos";
 
 export const metadata: Metadata = {
   title: "Demos",
@@ -17,15 +18,7 @@ export const metadata: Metadata = {
 
 // Editorial overlay merged by id onto the generated demo/engine data. The
 // generator owns name/description/icon/version; status + tags stay authored.
-// A missing entry falls back to sensible defaults so a new demo still renders.
-const demoEditorial: Record<string, { status: Status; tags: string[] }> = {
-  modelviewer: { status: "active", tags: ["Windows", "macOS", "Linux", "Android", "Vulkan"] },
-  mediaplayer: { status: "active", tags: ["Windows", "macOS", "Linux", "Android", "Vulkan"] },
-  gaussiansplat: { status: "shipping", tags: ["Windows", "macOS", "Linux", "Android", "Vulkan"] },
-  avatar: { status: "active", tags: ["Windows", "macOS", "Linux", "Android", "Vulkan"] },
-  earthview: { status: "beta", tags: ["Windows", "macOS", "Linux", "Android", "Vulkan"] },
-};
-
+// The demo overlay lives in lib/data/demos.ts (the Catalog reads its platforms).
 const engineEditorial: Record<string, { status: Status; tags: string[] }> = {
   unity: { status: "active", tags: ["UPM", "Sample scene"] },
   unreal: { status: "beta", tags: ["Blueprint", "Sample scene"] },
