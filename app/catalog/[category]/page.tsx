@@ -8,8 +8,8 @@ import { categoryById, CONVERTER_LADDER, itemsIn, LISTED_CATEGORIES } from "@/li
 import { DOWNLOAD_HREF } from "@/lib/constants";
 
 // One page per category that has at least one item (lib/data/catalog.ts).
-// An empty category gets no page; the landing sends it to the publisher
-// invitation instead. /catalog/games is its own route, not a category.
+// A category gets its page with its first item; until then the landing sends
+// it to the publisher invitation. /catalog/games is its own route, not a category.
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -37,7 +37,7 @@ function WhichConverterRuns() {
     <div className={sideBox}>
       <h2 className="mb-3 text-base font-semibold text-text-primary">Which converter runs</h2>
       <p className="mb-2 text-sm leading-relaxed text-text-secondary">
-        You can install several. For each kind of job, one runs:
+        Install as many as you like. For each kind of job, DisplayXR picks one:
       </p>
       <ol className="ml-[11px]">
         {CONVERTER_LADDER.map((l, i) => (
@@ -57,8 +57,8 @@ function WhichConverterRuns() {
         ))}
       </ol>
       <p className="mt-4 text-sm leading-relaxed text-text-secondary">
-        A converter that is not ready steps aside for the next. Nothing breaks. This line shows the converters on
-        your machine and which one serves each job:
+        Apps keep converting whichever one runs. This line shows the converters on your machine and which one
+        serves each job:
       </p>
       <div className="mt-3">
         <CopyLine command="displayxr-cli conv list" />
@@ -106,13 +106,12 @@ export default async function CategoryPage({ params }: Props) {
           <aside className="space-y-4">
             {cat.id === "2d-to-3d" && <WhichConverterRuns />}
             <div className={sideBox}>
-              <h2 className="mb-2 text-base font-semibold text-text-primary">Install DisplayXR first</h2>
+              <h2 className="mb-2 text-base font-semibold text-text-primary">Start with DisplayXR</h2>
               <p className="mb-4 text-sm leading-relaxed text-text-secondary">
-                Everything here runs on the DisplayXR runtime. Each item&rsquo;s page says where its own release
-                lives. No account.
+                One install, and everything here plugs into it. No account, no sign-in.
               </p>
               <Button href={DOWNLOAD_HREF} className="w-full">
-                Download
+                Get DisplayXR
               </Button>
             </div>
           </aside>

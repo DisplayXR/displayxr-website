@@ -41,7 +41,7 @@ export default function CatalogGamesPage() {
         <div className="mx-auto flex max-w-[1200px] flex-wrap items-center gap-x-3.5 gap-y-2 py-2.5">
           <Chip tone="games-inside">Runs inside the game</Chip>
           <span className="text-text-secondary">
-            Games are not DisplayXR components. This shelf follows different rules from the rest of the Catalog.
+            Play works inside the game itself, so this shelf has rules of its own.
           </span>
         </div>
       </div>
