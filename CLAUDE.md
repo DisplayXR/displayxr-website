@@ -50,7 +50,7 @@ Since the 2026-10 overhaul the site is organized as **one-click hubs**, one per
 audience, each opening on that audience's recommended next step:
 
 - Nav is **`NAV` in `lib/constants.ts`**: leaves only, **About · Browser ·
-  Play · Developers · Contribute · Components**. The header
+  Play · Catalog · Developers · Contribute · Components**. The header
   (`components/layout/Navbar.tsx`) adds a small **Docs ↗** link to the
   runtime repo's docs (`DOCS_URL`) and a persistent **Download** button
   (`DOWNLOAD_HREF` = `/download`), which the mobile menu pins on top. The model
@@ -67,6 +67,17 @@ audience, each opening on that audience's recommended next step:
   prose is `lib/data/play.ts`. No PC game title is named before a public
   release carries it; no company or OEM names; no performance numbers (fps,
   GPU usage) on the page.
+- `/catalog` is the Catalog: one list of everything that plugs into
+  DisplayXR. Items and categories are `lib/data/catalog.ts`, which reads
+  versions and platforms from the generated data and names from
+  `components.ts` / `apps.ts`: never type a version, platform or trust status
+  into it. "Verified" (signed and conformance-tested) is set on no item until
+  the site can assert it; nothing is labelled "Community", rated, counted or
+  priced. A category gets a page only when it has an item. `/catalog/games`
+  is the Games shelf: it renders `SYSTEMS` and `GAMES` from `lib/data/play.ts`
+  (no second list), follows `/play`'s rules, and never says "verified".
+  `displayxr-cli install <id>` is not shipped: install goes through
+  `/download` or the item's own release.
 - `/developers` opens on the web path (recommended) with the inline3d snippet
   (one snippet, the full guide is `/browser#build`), then the sim-display note,
   native (API per platform), engines, AI-agent control, links.
