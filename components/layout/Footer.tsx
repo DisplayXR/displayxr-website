@@ -28,6 +28,7 @@ const footerLinks = {
     { label: "YouTube ↗", href: YOUTUBE_URL },
   ],
   Components: [
+    { label: "Catalog", href: "/catalog" },
     { label: "Component model", href: "/components" },
     { label: "Display processors", href: "/components#display-processors" },
     { label: "Input providers", href: "/components#input-providers" },

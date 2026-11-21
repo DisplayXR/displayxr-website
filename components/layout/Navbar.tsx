@@ -119,8 +119,10 @@ export function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-1">
+          {/* Desktop nav. Seven tabs need about 870px beside the logo and the
+              Download button, so the tabs appear from 900px (not md) and the
+              menu button covers everything narrower. */}
+          <div className="hidden min-[900px]:flex items-center gap-1">
             {NAV.map((entry, idx) => {
               if (!isMenu(entry)) {
                 const active = idx === activeIndex;
@@ -227,7 +229,7 @@ export function Navbar() {
               <GitHubIcon size={20} />
             </a>
             <button
-              className="md:hidden p-2 text-text-secondary hover:text-text-primary"
+              className="min-[900px]:hidden p-2 text-text-secondary hover:text-text-primary"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
@@ -238,7 +240,7 @@ export function Navbar() {
 
         {/* Mobile nav — Download pinned on top, then each entry (menus as sections) */}
         {mobileOpen && (
-          <div className="md:hidden pb-4 border-t border-border mt-2 pt-4 space-y-1">
+          <div className="min-[900px]:hidden pb-4 border-t border-border mt-2 pt-4 space-y-1">
             <Link
               href={DOWNLOAD_HREF}
               onClick={() => setMobileOpen(false)}
