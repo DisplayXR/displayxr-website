@@ -7,6 +7,7 @@
 // others with the SDK. Shop and Show stay off this page until their licensing
 // is decided.
 import { FLAGSHIPS } from "@/lib/data/browser";
+import releaseCandidates from "@/lib/data/generated/news-candidates.json";
 
 const flagship = (id: "gallery" | "ride") => {
   const f = FLAGSHIPS.find((x) => x.id === id);
@@ -14,12 +15,31 @@ const flagship = (id: "gallery" | "ride") => {
   return f;
 };
 
-// --- Media Player Pro release pin -------------------------------------------
-// Hand constant: pro-v* releases are not tracked by scripts/sync-org.mjs (the
-// generated demo record follows the base Media Player's v* tags), so bump
-// this when a new pro-v* release ships. Latest checked 2026-11-10 with
-// `gh release list -R DisplayXR/displayxr-demo-mediaplayer`.
-export const MEDIA_PLAYER_PRO_VERSION = "0.9.2";
+// --- Media Player Pro release --------------------------------------------------
+// The version follows the org sync: scripts/sync-org.mjs scans every repo's
+// recent releases into generated/news-candidates.json (newest first), and the
+// newest full `pro-vX.Y.Z` release there is the one the site offers. The
+// generated demo record cannot carry it (it follows the base Media Player's
+// v* tags, which share the repo). MEDIA_PLAYER_PRO_FLOOR only covers the case
+// where base releases push every pro-v* tag out of the scan's per-repo window;
+// it was verified against the real release (three installers: .exe, .pkg,
+// .deb) on 2026-11-20 with `gh release view pro-v0.9.10`.
+const MEDIA_PLAYER_PRO_FLOOR = "0.9.10";
+
+const semverKey = (v: string) => v.split(".").map((n) => parseInt(n, 10) || 0);
+const newer = (a: string, b: string) => {
+  const [x, y] = [semverKey(a), semverKey(b)];
+  for (let i = 0; i < 3; i++) if ((x[i] ?? 0) !== (y[i] ?? 0)) return (x[i] ?? 0) > (y[i] ?? 0);
+  return false;
+};
+
+export const MEDIA_PLAYER_PRO_VERSION = (
+  releaseCandidates as { repo: string; tag: string; prerelease: boolean }[]
+)
+  .filter((c) => c.repo === "displayxr-demo-mediaplayer" && !c.prerelease)
+  .map((c) => /^pro-v(\d+\.\d+\.\d+)$/.exec(c.tag)?.[1])
+  .filter((v): v is string => !!v)
+  .reduce((best, v) => (newer(v, best) ? v : best), MEDIA_PLAYER_PRO_FLOOR);
 export const MEDIA_PLAYER_REPO = "https://github.com/DisplayXR/displayxr-demo-mediaplayer";
 export const MEDIA_PLAYER_PRO_RELEASE = `${MEDIA_PLAYER_REPO}/releases/tag/pro-v${MEDIA_PLAYER_PRO_VERSION}`;
 export const MEDIA_PLAYER_PRO_ALL_RELEASES = `${MEDIA_PLAYER_REPO}/releases?q=pro-v&expanded=true`;
