@@ -40,7 +40,7 @@ export const SYSTEMS: PlaySystem[] = [
     name: "Play for Windows",
     tagline: "Steam, Epic, GOG",
     status: "preview",
-    how: "An installer places the stereo D3D11 or D3D12 layer next to each game and writes its profile. Unreal titles can also go through their VR mod, which speaks OpenXR to DisplayXR directly.",
+    how: "An installer places Play's graphics layer next to each game's executable and writes its profile. Unreal Engine 4 and 5 titles can take engine stereo instead, where the engine draws both eyes itself.",
     steps: [
       "Install DisplayXR for Windows.",
       "Run the Play installer, pick your games.",
@@ -54,7 +54,7 @@ export const SYSTEMS: PlaySystem[] = [
     name: "Play for Android",
     tagline: "Tablets and phones",
     status: "available",
-    how: "Native games get an in-process mod loaded by a community launcher; PC games run in a Wine container with the stereo layer inside. A small companion app holds the camera grant and brokers the weave.",
+    how: "Native games get an in-process mod loaded by a community launcher; PC games run in a Wine container with graphics-layer stereo inside. A small companion app holds the camera grant and brokers the weave.",
     steps: [
       "Install DisplayXR for Android and the companion app.",
       "Install the launcher and drop in the mod folder.",
@@ -96,7 +96,7 @@ export const DISPLAY_MAKERS: MakerRole[] = [
   {
     who: "Play",
     title: "The games",
-    text: "Stereo layers, detector, per-game profiles and installers, maintained in the open. A title verified on one display plays on every display with a plug-in.",
+    text: "Graphics-layer and engine stereo, the detector, per-game profiles and installers, maintained in the open. A title verified on one display plays on every display with a plug-in.",
   },
 ];
 
@@ -114,13 +114,40 @@ export const TIMELINE: Milestone[] = [
   },
   {
     when: "December 12, 2026",
-    what: "Public PC release: the Steam compatibility tool for Linux, the Windows installer, the stereo D3D11 and D3D12 layers, and profiles for the titles of the December run.",
+    what: "Public PC release: the Steam compatibility tool for Linux, the Windows installer, graphics-layer stereo for Direct3D 11 and 12, and profiles for the titles of the December run.",
     status: "next",
   },
   {
     when: "2027",
     what: "More engines, more routes, more games. Each milestone gets a date here once it is scheduled.",
     status: "later",
+  },
+];
+
+// The three routes to two eyes. Public names decided by David, Nov 20, 2026;
+// the slugs are the profile's `route` values. Never lead a name with an API or
+// engine name, never "conversion" (that is the 2D-to-3D component class).
+export interface PlayRoute {
+  name: string;
+  slug: "layer" | "engine" | "native";
+  text: string;
+}
+
+export const ROUTES: PlayRoute[] = [
+  {
+    name: "Graphics-layer stereo",
+    slug: "layer",
+    text: "Our versions of DXVK and vkd3d-proton sit next to the game's executable and render each draw again for the second eye. Works with Direct3D 11 and 12 games on any engine; lighting and screen effects can be wrong in the second eye, and each title needs a profile.",
+  },
+  {
+    name: "Engine stereo",
+    slug: "engine",
+    text: "A small DisplayXR library drives the stereo mode built into the game engine, so the engine draws both eyes with its own lighting at close to native cost. Unreal Engine 4 and 5 titles only today.",
+  },
+  {
+    name: "Native mod",
+    slug: "native",
+    text: "On Android, a hook library loaded by a community mod launcher renders the second eye inside the game. One title today.",
   },
 ];
 
@@ -132,7 +159,7 @@ export interface PipelineStage {
 }
 
 export const PIPELINE: PipelineStage[] = [
-  { n: "01", title: "Your game", text: "D3D11 and D3D12 titles from any store. Native Android games. Unreal and Unity titles with VR mods." },
+  { n: "01", title: "Your game", text: "Direct3D 11 and 12 titles from any store. Unreal Engine 4 and 5 titles. Native Android games." },
   { n: "02", title: "Stereo producer", text: "Every geometry pass rendered from two eye positions; screen-space effects carried per eye. Not a depth reprojection." },
   { n: "03", title: "Hand-off", text: "An OpenXR session on the game’s own device, a side-by-side bridge, or the companion app on Android." },
   { n: "04", title: "DisplayXR runtime", text: "Tracked eyes, off-axis views, late weave at display rate, automatic 2D on flat menus.", highlight: true },
@@ -167,7 +194,7 @@ export const GAMES: GameRow[] = [
     game: "Unreal 4 action title",
     unnamed: true,
     systems: "Steam on Linux · Windows",
-    route: "D3D11 stereo layer, in-process XR",
+    route: "Graphics-layer stereo, Direct3D 11, in-process OpenXR",
     status: "plays",
     statusLabel: "Plays (preview)",
     notes: "D3D12 also works.",
@@ -176,10 +203,10 @@ export const GAMES: GameRow[] = [
     game: "Unity 2019 exploration title",
     unnamed: true,
     systems: "Steam on Linux",
-    route: "D3D11 stereo layer",
+    route: "Graphics-layer stereo, Direct3D 11",
     status: "partial",
     statusLabel: "Partial",
-    notes: "Clean on D3D11. The D3D12 route breaks geometry on this engine version; the detector routes around it.",
+    notes: "Clean on Direct3D 11. Direct3D 12 breaks geometry on this engine version, so the detector picks Direct3D 11.",
   },
   {
     game: "VR-only edition of the Unreal title",
@@ -212,7 +239,8 @@ export const CONTROLS = [
 
 export const PROFILE_SNIPPET = `# store app id, never a trademark
 [game]
-route        = "d3d11"        # d3d11 | d3d12 | ue-mod | native
+route        = "layer"        # layer | engine | native
+api          = "d3d11"        # d3d11 | d3d12 (graphics-layer stereo)
 render_scale = 0.5            # engine render scale for this title
 
 [stereo]
@@ -241,7 +269,7 @@ export interface PlayRepo {
 export const REPOS: PlayRepo[] = [
   { name: "displayxr-play-android", text: "Native mod core, the first game’s mod, the companion app", href: PLAY_ANDROID_REPO, status: "live", label: "v0.6.4" },
   { name: "displayxr-play", text: "Compatibility tool, detector, bridge, profiles, Windows installer", status: "december", label: "December" },
-  { name: "displayxr-dxvk · displayxr-vkd3d-proton", text: "The stereo D3D11 and D3D12 layers", status: "december", label: "December" },
+  { name: "displayxr-dxvk · displayxr-vkd3d-proton", text: "Graphics-layer stereo for Direct3D 11 and 12", status: "december", label: "December" },
 ];
 
 // FAQ, grouped by who asks. Built Nov 11, 2026 from four persona question
@@ -264,10 +292,10 @@ export const FAQ_GROUPS: FaqGroup[] = [
     items: [
       {
         q: "Is my DirectX game now running on Vulkan?",
-        a: "Yes. The stereo layer is a fork of DXVK and vkd3d-proton, the open-source layers that implement Direct3D 11 and 12 on top of Vulkan and that Proton uses on Linux. On Windows the installer puts the layer's DLLs next to the game's executable; the game keeps calling Direct3D and the layer runs it through your GPU's Vulkan driver. That is where the second eye is rendered, and it is why the same layer works on Windows, on Linux and inside the Android container.",
+        a: "Yes, with graphics-layer stereo. It uses our versions of DXVK and vkd3d-proton, the open-source layers that implement Direct3D 11 and 12 on top of Vulkan and that Proton uses on Linux. On Windows the installer puts their DLLs next to the game's executable; the game keeps calling Direct3D and the layer runs it through your GPU's Vulkan driver. That is where the second eye is rendered, and it is why the same layer works on Windows, on Linux and inside the Android container.",
       },
       {
-        q: "Why a Direct3D-on-Vulkan layer instead of hooking Direct3D like the old 3D injectors?",
+        q: "Why a Direct3D-on-Vulkan layer instead of hooking Direct3D?",
         a: "Because the layer sees everything the game submits: every draw, render target, constant buffer and depth buffer. It renders each geometry pass once per eye, gives each eye its own camera so anti-aliasing, motion vectors, reflections and lighting match, reads the depth buffer to set the screen distance, and opens the OpenXR session to the DisplayXR runtime on the same GPU device. What is left per game is a small text profile, not hand-written shader fixes.",
       },
       {
@@ -288,11 +316,11 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: "Does a game that is not in the table work?",
-        a: "Usually the detector can route it: Direct3D 11 and 12 titles get the stereo layer with default settings, Unreal titles can take the VR-mod route, and anything on another graphics API or with anti-cheat is turned off. Whether the result looks right is what the table records, so try it and report; a report with a captured eye pair becomes a community-verified row.",
+        a: "Usually the detector can route it: Direct3D 11 and 12 titles get graphics-layer stereo with default settings, Unreal Engine 4 and 5 titles can take engine stereo, and anything on another graphics API or with anti-cheat is turned off. Whether the result looks right is what the table records, so try it and report; a report with a captured eye pair becomes a community-verified row.",
       },
       {
         q: "Does 3D break when the game updates?",
-        a: "Rarely. The layer carries no per-game shader fixes that a patch could break; what it recognizes is the engine's camera data, which changes with engine versions, not game patches. Your profile keeps its depth and screen-distance settings across updates. A new engine version can need a new recognition rule, which lands in the layer once for every game on that engine.",
+        a: "Rarely. The layer carries no per-game shader fixes that a patch could break; what it recognizes is the engine's camera data, which changes with engine versions, not game patches. Your profile keeps its depth and screen-distance settings across updates. A new engine version can need a new recognition rule, which lands in the layer once for all titles on that engine.",
       },
       {
         q: "Can I turn it off or down while playing?",
@@ -336,7 +364,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
         a: "The layer is standard Vulkan and runs wherever DXVK and vkd3d-proton run. The preview was measured on an Intel integrated GPU; a handheld-class AMD box is the December target; NVIDIA on Linux is untested.",
       },
       {
-        q: "Do the forks track upstream?",
+        q: "Do your versions of DXVK and vkd3d-proton track upstream?",
         a: "Yes. The stereo work sits on top of the upstream layers, and upstream changes are pulled in as they land. Upstream DXVK declined a stereo mode, so the stereo code stays a maintained fork rather than a patch set waiting to be merged.",
       },
       {
@@ -354,10 +382,10 @@ export const FAQ_GROUPS: FaqGroup[] = [
     items: [
       {
         q: "Which licenses, and may we bundle it?",
-        a: "The DisplayXR runtime and the Android lane are under the Boost Software License 1.0. The stereo layers keep their upstream licenses: zlib for the Direct3D 11 layer and LGPL-2.1 for the Direct3D 12 layer. All of them permit bundling and preinstallation; the LGPL layer ships with its source offer.",
+        a: "The DisplayXR runtime and the Android lane are under the Boost Software License 1.0. Our versions of DXVK and vkd3d-proton keep their upstream licenses: zlib for DXVK (Direct3D 11) and LGPL-2.1 for vkd3d-proton (Direct3D 12). All of them permit bundling and preinstallation; the LGPL layer ships with its source offer.",
       },
       {
-        q: "Who maintains the stereo layers, and what if the project stops?",
+        q: "Who maintains graphics-layer stereo, and what if the project stops?",
         a: "The DisplayXR project maintains them in the open, as it does the runtime. Everything is open source under permissive licenses, so a display maker can carry them on without asking anyone.",
       },
       {
