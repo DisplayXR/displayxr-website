@@ -161,6 +161,13 @@
     "archived": false
   },
   {
+    "name": "displayxr-leia-conversion",
+    "description": "The Leia 2D-to-3D conversion provider for DisplayXR",
+    "url": "https://github.com/DisplayXR/displayxr-leia-conversion",
+    "topics": [],
+    "archived": false
+  },
+  {
     "name": "displayxr-leia-plugin",
     "description": "DisplayXR Leia SR display-processor plug-in",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin",
@@ -260,6 +267,13 @@
     "name": "displayxr-tracking-open",
     "description": "Open camera viewer + hand tracking provider for the DisplayXR runtime (ONNX, MediaPipe models)",
     "url": "https://github.com/DisplayXR/displayxr-tracking-open",
+    "topics": [],
+    "archived": false
+  },
+  {
+    "name": "displayxr-ultraleap",
+    "description": "Ultraleap hand-tracking input provider for DisplayXR",
+    "url": "https://github.com/DisplayXR/displayxr-ultraleap",
     "topics": [],
     "archived": false
   },

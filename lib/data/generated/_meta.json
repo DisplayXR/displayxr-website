@@ -64,6 +64,7 @@
       "displayxr-runtime/docs/adr/ADR-061-3d-screen-share.md",
       "displayxr-runtime/docs/adr/ADR-062-window-visibility-drives-lens-weave-and-session-state.md",
       "displayxr-runtime/docs/adr/ADR-063-input-provider-device-abi-hardening.md",
+      "displayxr-runtime/docs/adr/ADR-064-component-catalog-and-third-party-trust.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-001-direct-runtime-loading.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-002-zero-copy-atlas-handoff.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-003-ue-native-off-axis-projection.md"
@@ -91,6 +92,7 @@
       "displayxr-extensions",
       "displayxr-input-template",
       "displayxr-installer",
+      "displayxr-leia-conversion",
       "displayxr-leia-plugin",
       "displayxr-mcp",
       "displayxr-models",
@@ -101,6 +103,7 @@
       "displayxr-shell-releases",
       "displayxr-slicer",
       "displayxr-tracking-open",
+      "displayxr-ultraleap",
       "displayxr-unity",
       "displayxr-unity-samples",
       "displayxr-unreal",
