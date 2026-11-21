@@ -40,7 +40,7 @@ export const SYSTEMS: PlaySystem[] = [
     name: "Play for Windows",
     tagline: "Steam, Epic, GOG",
     status: "preview",
-    how: "An installer places Play's graphics layer next to each game's executable and writes its profile. Unreal Engine 4 and 5 titles can take engine stereo instead, where the engine draws both eyes itself.",
+    how: "An installer places Play's graphics layer next to each game's executable and writes its profile. Unreal Engine 4 and 5 titles: engine stereo is planned, Windows first.",
     steps: [
       "Install DisplayXR for Windows.",
       "Run the Play installer, pick your games.",
@@ -96,7 +96,7 @@ export const DISPLAY_MAKERS: MakerRole[] = [
   {
     who: "Play",
     title: "The games",
-    text: "Graphics-layer and engine stereo, the detector, per-game profiles and installers, maintained in the open. A title verified on one display plays on every display with a plug-in.",
+    text: "Graphics-layer stereo, the detector, per-game profiles and installers, maintained in the open. A title verified on one display plays on every display with a plug-in.",
   },
 ];
 
@@ -140,9 +140,9 @@ export const ROUTES: PlayRoute[] = [
     text: "Our versions of DXVK and vkd3d-proton sit next to the game's executable and render each draw again for the second eye. Works with Direct3D 11 and 12 games on any engine; lighting and screen effects can be wrong in the second eye, and each title needs a profile.",
   },
   {
-    name: "Engine stereo",
+    name: "Engine stereo (planned)",
     slug: "engine",
-    text: "A small DisplayXR library drives the stereo mode built into the game engine, so the engine draws both eyes with its own lighting at close to native cost. Unreal Engine 4 and 5 titles only today.",
+    text: "A small DisplayXR library drives the stereo mode built into the game engine, so the engine draws both eyes with its own lighting at close to native cost. For Unreal Engine 4 and 5 titles, Windows first; not in a release yet.",
   },
   {
     name: "Native mod",
@@ -316,7 +316,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: "Does a game that is not in the table work?",
-        a: "Usually the detector can route it: Direct3D 11 and 12 titles get graphics-layer stereo with default settings, Unreal Engine 4 and 5 titles can take engine stereo, and anything on another graphics API or with anti-cheat is turned off. Whether the result looks right is what the table records, so try it and report; a report with a captured eye pair becomes a community-verified row.",
+        a: "Usually the detector can route it: Direct3D 11 and 12 titles get graphics-layer stereo with default settings (engine stereo for Unreal Engine 4 and 5 titles is planned, Windows first), and anything on another graphics API or with anti-cheat is turned off. Whether the result looks right is what the table records, so try it and report; a report with a captured eye pair becomes a community-verified row.",
       },
       {
         q: "Does 3D break when the game updates?",
