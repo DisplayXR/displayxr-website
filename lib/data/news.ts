@@ -117,6 +117,16 @@ export const NEWS: NewsItem[] = [
     href: "/developers#ai-assistants",
   },
   {
+    id: "stylus-input-providers",
+    date: "2026-11-16",
+    kind: "capability",
+    tier: "banner",
+    headline: "Draw on the glass with any vendor's 6-DoF stylus",
+    blurb:
+      "Input providers can now expose a 6-DoF stylus (ADR-034 Amendment 8). The runtime serves the standard stylus profile of the public XR_LOGITECH_mx_ink_stylus_interaction extension for any vendor's pen, puts one pen on the user's dominant hand and registers the tip to the physical glass, so a pen touching the panel lands where the app draws that point. The sim_stylus reference provider draws with the desktop mouse for testing without a pen, and the DisplayXR Unreal plug-in 0.12.0 reads the pen as Unreal keys, motion sources and haptics; Unity support follows in its next release. Needs the DisplayXR runtime 2.68.0 or later; so far it has been tested with the simulator, not a hardware pen.",
+    href: "https://github.com/DisplayXR/displayxr-runtime/blob/main/docs/guides/input-provider-onboarding.md",
+  },
+  {
     id: "displayxr-play",
     date: "2026-11-10",
     kind: "product",

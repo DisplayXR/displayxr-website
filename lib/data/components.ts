@@ -109,6 +109,12 @@ export const componentClasses: ComponentClass[] = [
         href: `${DRIVERS}/net_input`,
       },
       {
+        name: "sim_stylus",
+        role: "reference",
+        note: "A 6-DoF stylus without hardware: scripted, or drawn with the desktop mouse.",
+        href: `${DRIVERS}/sim_stylus`,
+      },
+      {
         name: "Ultraleap hand tracking",
         role: "vendor",
         note: "The first third-party input provider. Builds where the Ultraleap SDK is installed.",
