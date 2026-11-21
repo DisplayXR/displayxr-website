@@ -1,25 +1,14 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Fragment, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Lead, socialMeta } from "@/components/apps/Product";
 import { Button } from "@/components/ui/Button";
-import {
-  Block,
-  CatalogHero,
-  Chip,
-  Crumbs,
-  ItemChips,
-  LicenceBlocks,
-  LicenceNote,
-  Ticks,
-  VERIFIED_DEFINITION,
-} from "@/components/catalog/parts";
+import { Block, CatalogHero, Crumbs, ItemChips, Ticks } from "@/components/catalog/parts";
 import { categoryById, FOR_DEVELOPERS_NOTE, itemById, ITEMS, type CatalogItem } from "@/lib/data/catalog";
 
-// One page per item in lib/data/catalog.ts. The same layout serves a free item
-// and a vendor-licensed one: the licence note, the licence blocks and the
-// second action appear when the record carries `licence`. No listed item does
-// yet (the labelled example on /catalog exercises those blocks).
+// One page per item in lib/data/catalog.ts: what it is, what you get, and a
+// sticky facts panel with a direct "Get it" action. The panel shows only the
+// facts the data has.
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -92,7 +81,7 @@ function Facts({ item }: { item: CatalogItem }) {
             <Out href={`/catalog/${cat.id}`}>{cat.label}</Out>
           </Fact>
         )}
-        {item.licence && <Fact label="Licence">From {item.licence.vendor}</Fact>}
+        {item.comesWith && <Fact label="Comes with">{item.comesWith}</Fact>}
         {item.runs && <Fact label="Runs">{item.runs}</Fact>}
         {item.needs && <Fact label="Needs">{item.needs}</Fact>}
         {item.hostedBy && (
@@ -102,39 +91,6 @@ function Facts({ item }: { item: CatalogItem }) {
         )}
       </dl>
     </aside>
-  );
-}
-
-function Trust({ item }: { item: CatalogItem }) {
-  return (
-    <Block title="Trust">
-      {item.verified ? (
-        <p>
-          <Chip tone="verified">Verified</Chip>
-          <span className="ml-2">{VERIFIED_DEFINITION}</span>
-        </p>
-      ) : (
-        <p>
-          Listed, not yet tested. This item has not been through the signed-and-conformance-tested check, so it
-          carries no label. <Out href="/catalog#listing">How listing works</Out>
-        </p>
-      )}
-      {item.trustNotes?.map((n) => <p key={n}>{n}</p>)}
-      {(item.chips ?? [])
-        .filter((c) => c.title)
-        .map((c) => (
-          <p key={c.label}>
-            <Chip>{c.label}</Chip>
-            <span className="ml-2">{c.title}</span>
-          </p>
-        ))}
-      {item.forDevelopers && (
-        <p>
-          <Chip>For developers</Chip>
-          <span className="ml-2">{FOR_DEVELOPERS_NOTE}</span>
-        </p>
-      )}
-    </Block>
   );
 }
 
@@ -163,25 +119,18 @@ export default async function ItemPage({ params }: Props) {
           </h1>
           <Lead className="mt-7">{item.lead ?? item.blurb}</Lead>
 
-          {item.licence && (
-            <div className="mt-7">
-              <LicenceNote item={item} />
-            </div>
-          )}
-
           <div className="mt-12">
-            {(item.sections ?? []).map((s, i) => (
-              <Fragment key={s.title}>
-                <Block title={s.title}>
-                  {s.paragraphs?.map((p) => <p key={p}>{p}</p>)}
-                  {s.bullets && <Ticks items={s.bullets} />}
-                </Block>
-                {/* The licence blocks follow "What it does", as in the mockup. */}
-                {i === 0 && <LicenceBlocks item={item} />}
-              </Fragment>
+            {(item.sections ?? []).map((s) => (
+              <Block key={s.title} title={s.title}>
+                {s.paragraphs?.map((p) => <p key={p}>{p}</p>)}
+                {s.bullets && <Ticks items={s.bullets} />}
+              </Block>
             ))}
-            {!item.sections?.length && <LicenceBlocks item={item} />}
-            <Trust item={item} />
+            {item.forDevelopers && (
+              <Block title="For developers">
+                <p>{FOR_DEVELOPERS_NOTE}</p>
+              </Block>
+            )}
           </div>
         </div>
         <Facts item={item} />

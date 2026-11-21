@@ -17,7 +17,6 @@ import {
   categoryById,
   FOR_DEVELOPERS_NOTE,
   itemHref,
-  LICENCE_ACTIVATION,
   LICENCE_STATES,
   type CatalogItem,
   type CategoryIcon,
@@ -54,11 +53,11 @@ export function Glyph({ icon }: { icon: CategoryIcon }) {
   );
 }
 
-type ChipTone = "plain" | "verified" | "paid" | "games" | "games-inside";
+type ChipTone = "plain" | "first" | "paid" | "games" | "games-inside";
 
 const chipTones: Record<ChipTone, string> = {
   plain: "border-border text-text-secondary",
-  verified: "border-success/30 bg-success/[0.13] text-success",
+  first: "border-accent/30 bg-accent/[0.13] text-accent",
   paid: "border-accent/30 bg-accent/[0.13] text-accent",
   games: "border-games/40 bg-games/15 text-games",
   "games-inside": "border-games text-text-primary",
@@ -70,7 +69,6 @@ export function Chip({ tone = "plain", title, children }: { tone?: ChipTone; tit
       title={title}
       className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border px-2.5 py-0.5 text-xs font-medium leading-normal ${chipTones[tone]}`}
     >
-      {tone === "verified" && <Check size={12} aria-hidden />}
       {tone === "games-inside" && (
         <span
           aria-hidden
@@ -83,30 +81,21 @@ export function Chip({ tone = "plain", title, children }: { tone?: ChipTone; tit
   );
 }
 
-export const VERIFIED_DEFINITION =
-  "Signed by its publisher, and passed the conformance run for its component class on the current runtime.";
-
 /**
- * The chips an item carries, from data. "Verified" appears only where the
- * record sets it; an item without it simply shows no trust chip.
+ * The chips an item carries, from data: who publishes it, then what is true
+ * of it (open source, for developers, its own chips).
  */
 export function ItemChips({ item, withCategory = false }: { item: CatalogItem; withCategory?: boolean }) {
   const chips: ReactNode[] = [];
-  if (item.verified) {
+  if (item.publisher) {
     chips.push(
-      <Chip key="verified" tone="verified" title={VERIFIED_DEFINITION}>
-        Verified
+      <Chip key="by" tone={item.publisher === "DisplayXR" ? "first" : "plain"}>
+        By {item.publisher}
       </Chip>,
     );
   }
   if (withCategory) chips.push(<Chip key="cat">{categoryById(item.category)?.label}</Chip>);
-  if (item.licence) {
-    chips.push(
-      <Chip key="licence" tone="paid">
-        Licence from vendor
-      </Chip>,
-    );
-  }
+  if (item.openSource) chips.push(<Chip key="oss">Open source</Chip>);
   if (item.forDevelopers) {
     chips.push(
       <Chip key="dev" title={FOR_DEVELOPERS_NOTE}>
@@ -121,12 +110,10 @@ export function ItemChips({ item, withCategory = false }: { item: CatalogItem; w
       </Chip>,
     );
   }
-  if (withCategory && item.openSource) chips.push(<Chip key="oss">Open source</Chip>);
   if (chips.length === 0) return null;
   return <div className="flex flex-wrap items-center gap-2">{chips}</div>;
 }
 
-const byline = (item: CatalogItem) => [item.publisher, item.platforms].filter(Boolean).join(" · ");
 
 /** A starter-set card on the landing page. */
 export function ItemCard({ item }: { item: CatalogItem }) {
@@ -138,11 +125,10 @@ export function ItemCard({ item }: { item: CatalogItem }) {
     >
       <div className="flex items-start justify-between gap-3">
         <Glyph icon={cat?.icon ?? "plug"} />
-        <ItemChips item={item} />
+        <span className="pt-1 font-mono text-xs text-text-secondary">{cat?.label}</span>
       </div>
-      <span className="font-mono text-xs text-text-secondary">{cat?.label}</span>
       <h3 className="text-xl font-semibold leading-snug tracking-tight text-text-primary">{item.name}</h3>
-      {item.publisher && <span className="text-[13px] text-text-secondary">{item.publisher}</span>}
+      <ItemChips item={item} />
       <p className="text-sm leading-relaxed text-text-secondary">{item.blurb}</p>
       {(item.platforms || item.version) && (
         <div className="mt-auto flex items-center justify-between gap-2 pt-3 font-mono text-xs text-text-secondary">
@@ -157,25 +143,23 @@ export function ItemCard({ item }: { item: CatalogItem }) {
 /** One row of a category list. */
 export function ItemRow({ item }: { item: CatalogItem }) {
   const cat = categoryById(item.category);
-  const by = byline(item);
   return (
     <Link
       href={itemHref(item)}
-      className="grid grid-cols-[40px_minmax(0,1fr)] gap-x-4 gap-y-2.5 border-b border-border p-5 transition-colors last:border-b-0 hover:bg-surface-hover md:grid-cols-[40px_minmax(0,1fr)_auto]"
+      className="grid grid-cols-[40px_minmax(0,1fr)] gap-x-4 border-b border-border p-5 transition-colors last:border-b-0 hover:bg-surface-hover"
     >
       <Glyph icon={cat?.icon ?? "plug"} />
       <div className="min-w-0">
-        <div className="text-[17px] font-semibold text-text-primary">{item.name}</div>
-        {by && <div className="text-[13px] text-text-secondary">{by}</div>}
-        <p className="mt-1 text-sm leading-relaxed text-text-secondary">{item.blurb}</p>
-        {(item.detail || item.version) && (
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+          <span className="text-[17px] font-semibold text-text-primary">{item.name}</span>
+          <ItemChips item={item} />
+        </div>
+        <p className="mt-2 text-sm leading-relaxed text-text-secondary">{item.blurb}</p>
+        {(item.platforms || item.version || item.detail) && (
           <p className="mt-3 font-mono text-xs text-text-secondary">
-            {[item.detail, item.version].filter(Boolean).join(" · ")}
+            {[item.platforms, item.detail, item.version].filter(Boolean).join("  ·  ")}
           </p>
         )}
-      </div>
-      <div className="col-start-2 md:col-start-3 md:row-start-1 md:flex md:flex-col md:items-end md:justify-center md:[&>div]:flex-col md:[&>div]:items-end">
-        <ItemChips item={item} />
       </div>
     </Link>
   );
@@ -277,105 +261,58 @@ export function Ticks({ items }: { items: ReactNode[] }) {
   );
 }
 
-// --- the vendor-licence layout ----------------------------------------------
-// Rendered for any item that carries `licence`. Today that is only the
-// labelled example on /catalog; no licensed item has a page.
+// --- "How paid components work" ---------------------------------------------
+// An explainer for vendors (see lib/data/catalog.ts), captioned "Illustration".
 
 const dotTone = { blue: "bg-accent", green: "bg-success", yellow: "bg-warning", gray: "bg-text-secondary" } as const;
 
-/** Installing is free; the vendor sells and activates the licence. */
-export function LicenceNote({ item }: { item: CatalogItem }) {
-  if (!item.licence) return null;
+/** What a customer sees next to a licensed converter: one of four states. */
+export function LicenceStates() {
   return (
-    <div className="rounded-xl border border-accent/30 bg-accent/[0.09] px-5 py-4 text-sm leading-relaxed text-text-secondary">
-      <strong className="font-semibold text-text-primary">Installing is free and anonymous.</strong> DisplayXR does not
-      ask who you are and takes no payment. The licence is sold by {item.licence.vendor} on its own site and activated
-      on your machine.
-    </div>
-  );
-}
-
-/** The four states a licensed item can be in, as a small panel. */
-export function LicenceStates({ item }: { item: CatalogItem }) {
-  if (!item.licence) return null;
-  const { vendor } = item.licence;
-  return (
-    <div className="overflow-hidden rounded-[14px] border border-border bg-[#050507]">
-      <div className="flex items-center gap-2 border-b border-border bg-surface px-3.5 py-2.5 text-xs text-text-secondary">
-        <span aria-hidden className="h-[9px] w-[9px] rounded-full bg-border" />
-        <span aria-hidden className="h-[9px] w-[9px] rounded-full bg-border" />
-        <span aria-hidden className="h-[9px] w-[9px] rounded-full bg-border" />
-        <span className="ml-1.5">DisplayXR · {item.name}</span>
+    <figure>
+      <div className="overflow-hidden rounded-[14px] border border-border bg-[#050507]">
+        <div className="flex items-center gap-2 border-b border-border bg-surface px-3.5 py-2.5 text-xs text-text-secondary">
+          <span aria-hidden className="h-[9px] w-[9px] rounded-full bg-border" />
+          <span aria-hidden className="h-[9px] w-[9px] rounded-full bg-border" />
+          <span aria-hidden className="h-[9px] w-[9px] rounded-full bg-border" />
+          <span className="ml-1.5">Your converter, as your customer sees it</span>
+        </div>
+        <ul>
+          {LICENCE_STATES.map((s) => (
+            <li
+              key={s.state}
+              className="grid grid-cols-1 gap-x-4 gap-y-1.5 border-b border-border px-[18px] py-4 last:border-b-0 sm:grid-cols-[120px_minmax(0,1fr)_auto] sm:items-center"
+            >
+              <span className="flex items-center gap-2.5 text-[15px] font-semibold text-text-primary">
+                <span aria-hidden className={`h-2 w-2 shrink-0 rounded-full ${dotTone[s.tone]}`} />
+                {s.state}
+              </span>
+              <span className="text-sm text-text-secondary">{s.what}</span>
+              <span className={`text-[13px] font-medium ${s.tone === "gray" ? "text-text-secondary" : "text-accent"}`}>
+                {s.action}
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
-      <ul>
-        {LICENCE_STATES.map((s) => (
-          <li
-            key={s.state}
-            className="grid grid-cols-1 gap-x-4 gap-y-1.5 border-b border-border px-[18px] py-4 last:border-b-0 sm:grid-cols-[130px_minmax(0,1fr)_auto] sm:items-center"
-          >
-            <span className="flex items-center gap-2.5 text-[15px] font-semibold text-text-primary">
-              <span aria-hidden className={`h-2 w-2 shrink-0 rounded-full ${dotTone[s.tone]}`} />
-              {s.state}
-            </span>
-            <span className="text-sm text-text-secondary">{s.what}</span>
-            <span className={`text-[13px] font-medium ${s.tone === "gray" ? "text-text-secondary" : "text-accent"}`}>
-              {s.action(vendor)}
-            </span>
-          </li>
-        ))}
-      </ul>
-    </div>
+      <figcaption className="mt-2.5 text-xs text-text-secondary">Illustration</figcaption>
+    </figure>
   );
 }
 
-/** An unlicensed item steps aside and the next one takes over. */
-export function StepsAside({ item }: { item: CatalogItem }) {
-  if (!item.licence) return null;
+/** Without a licence a converter steps aside and the next one takes over. */
+export function StepsAside() {
   return (
     <div className="grid gap-2.5 sm:grid-cols-[1fr_auto_1fr] sm:items-stretch">
-      <div className="rounded-xl border border-dashed border-border bg-surface p-4 text-sm opacity-75">
-        <b className="mb-0.5 block font-semibold text-text-primary">{item.name}</b>
-        <span className="text-text-secondary">Expired or unlicensed: steps aside</span>
+      <div className="rounded-xl border border-dashed border-border bg-surface p-4 text-sm">
+        <b className="mb-0.5 block font-semibold text-text-primary">Your converter</b>
+        <span className="text-text-secondary">Waiting for a licence: steps aside</span>
       </div>
       <div className="grid place-items-center px-1 text-center text-[13px] text-text-secondary">then →</div>
       <div className="rounded-xl border border-success/45 bg-surface p-4 text-sm">
-        <b className="mb-0.5 block font-semibold text-text-primary">{item.licence.fallbackName}</b>
+        <b className="mb-0.5 block font-semibold text-text-primary">Open-model converter</b>
         <span className="text-text-secondary">Takes over. Apps keep converting.</span>
       </div>
     </div>
-  );
-}
-
-export function LicenceActivation({ item }: { item: CatalogItem }) {
-  if (!item.licence) return null;
-  const { vendor } = item.licence;
-  return (
-    <Ticks
-      items={LICENCE_ACTIVATION.map((a) => (
-        <>
-          <b className="font-medium text-text-primary">{a.title}</b> {a.text(vendor)}
-        </>
-      ))}
-    />
-  );
-}
-
-/** The licence blocks of an item page, in order. */
-export function LicenceBlocks({ item }: { item: CatalogItem }) {
-  if (!item.licence) return null;
-  return (
-    <>
-      <Block title="Licence states">
-        <p>One of four states is shown next to the item, so you always know whether it is the one doing the work.</p>
-        <LicenceStates item={item} />
-      </Block>
-      <Block title="If it is not licensed">
-        <p>If it is not licensed it steps aside and the next one on your machine takes over. Nothing breaks.</p>
-        <StepsAside item={item} />
-      </Block>
-      <Block title="Activating a licence">
-        <LicenceActivation item={item} />
-      </Block>
-    </>
   );
 }

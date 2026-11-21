@@ -5,32 +5,28 @@ import { AnimateIn } from "@/components/ui/AnimateIn";
 import { Button } from "@/components/ui/Button";
 import { Band, Eyebrow, H2, Lead, socialMeta } from "@/components/apps/Product";
 import { Doors, type Door } from "@/components/catalog/Doors";
-import { CopyLine } from "@/components/catalog/CopyLine";
 import {
   CatalogHero,
   CategoryGlyph,
-  Chip,
   ItemCard,
-  LicenceActivation,
-  LicenceNote,
   LicenceStates,
   Slot,
   StepsAside,
-  VERIFIED_DEFINITION,
 } from "@/components/catalog/parts";
 import {
   CATALOG_PUBLISH_URL,
   CATEGORIES,
   categoryById,
+  HOW_IT_WORKS,
   itemsIn,
-  LICENCE_EXAMPLE,
+  PAID_POINTS,
   PUBLISHER_SLOTS,
   starterItems,
 } from "@/lib/data/catalog";
 import { DOWNLOAD_HREF } from "@/lib/constants";
 
 const DESCRIPTION =
-  "Everything that plugs into DisplayXR, in one list: display plug-ins, trackers, 2D-to-3D converters, workspaces, apps, SDKs and games. Publishers host their own software. No account, no payment, no cut.";
+  "Everything that plugs into DisplayXR, in one list: display plug-ins, trackers, 2D-to-3D converters, workspaces, apps, SDKs and games. More displays, more ways to interact, more 3D from what you already have.";
 
 export const metadata: Metadata = {
   title: "Catalog",
@@ -40,14 +36,15 @@ export const metadata: Metadata = {
 
 // The Catalog landing. Items and categories come from lib/data/catalog.ts;
 // this file only arranges them. Visual source: the approved Catalog mockup
-// (Nov 2026). The doors are the one loud element on the page.
+// (Nov 2026). The doors are the one loud element on the page. Voice: say what
+// things are and what you get; see the header of lib/data/catalog.ts.
 
 const ICON = { size: 34, strokeWidth: 1.5 } as const;
 
 const DOORS: Door[] = [
   {
     say: "I have a spatial display",
-    text: "See what works with it: workspaces, converters, tracking, apps. Pick what you want and get it from its own release.",
+    text: "See what works with it: workspaces, converters, tracking, apps. Pick what you want and add it to your display.",
     go: "What works with my display",
     href: "#start",
     icon: <Monitor {...ICON} />,
@@ -82,8 +79,8 @@ export default function CatalogPage() {
           Everything that plugs into DisplayXR.
         </h1>
         <Lead className="mt-7">
-          Displays, trackers, converters, workspaces, apps and games, in one list. DisplayXR lists them and points
-          you at each release. Publishers host their own software. No account, no payment, no cut.
+          More displays, more ways to interact, more 3D from what you already have. Display plug-ins, trackers,
+          converters, workspaces, apps and games, in one list. No account, no payment, no cut.
         </Lead>
         <Doors doors={DOORS} />
       </CatalogHero>
@@ -108,7 +105,7 @@ export default function CatalogPage() {
               return (
                 <Link
                   key={c.id}
-                  // An empty shelf has no page yet: it opens the publisher invitation.
+                  // A shelf waiting for its first item opens the publisher invitation.
                   href={listed ? `/catalog/${c.id}` : "#publish"}
                   className={`group ${tile}`}
                 >
@@ -116,7 +113,7 @@ export default function CatalogPage() {
                     <CategoryGlyph icon={c.icon} />
                   </span>
                   {c.label}
-                  {!listed && <span className="text-xs font-normal text-text-secondary">Open for the first one</span>}
+                  {!listed && <span className="text-xs font-normal text-accent">Be the first</span>}
                 </Link>
               );
             })}
@@ -130,77 +127,38 @@ export default function CatalogPage() {
         </AnimateIn>
       </Band>
 
-      {/* How listing works */}
-      <Band id="listing" className="bg-[#0b0c10]">
+      {/* How it works */}
+      <Band id="how" className="bg-[#0b0c10]">
         <AnimateIn>
-          <Eyebrow>How listing works</Eyebrow>
-          <H2>One label and one rule about money.</H2>
+          <Eyebrow>How it works</Eyebrow>
+          <H2>Install it once. Every app gets it.</H2>
           <Lead className="mb-10">
-            The label says how far an item has been checked. Nothing here is ranked, rated or sold by DisplayXR.
+            DisplayXR is the one layer your apps talk to. Add a display, a tracker or a converter to it, and
+            everything you run picks it up.
           </Lead>
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-5">
-            <div className="rounded-2xl border border-success/35 bg-surface p-7">
-              <Chip tone="verified">Verified</Chip>
-              <h3 className="mb-2 mt-3.5 text-xl font-semibold tracking-tight text-text-primary">
-                Signed and conformance-tested
+          <ol className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-5">
+            {HOW_IT_WORKS.map((s) => (
+              <li key={s.n} className="rounded-2xl border border-border bg-surface p-7">
+                <span className="font-mono text-xs text-accent">{s.n}</span>
+                <h3 className="mb-2 mt-3 text-xl font-semibold tracking-tight text-text-primary">{s.title}</h3>
+                <p className="text-sm leading-relaxed text-text-secondary">{s.text}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-5 flex flex-col gap-4 rounded-2xl border border-accent/30 bg-accent/[0.09] p-7 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h3 className="text-xl font-semibold tracking-tight text-text-primary">
+                You keep your customers. No fee, no cut.
               </h3>
-              <p className="text-sm leading-relaxed text-text-secondary">
-                {VERIFIED_DEFINITION} No item carries the label yet.
+              <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-text-secondary">
+                Publishers host their own software and reach every spatial display with one component. Listing is
+                free.
               </p>
             </div>
-            <div className="rounded-2xl border border-dashed border-border bg-surface p-7">
-              <Chip>No label</Chip>
-              <h3 className="mb-2 mt-3.5 text-xl font-semibold tracking-tight text-text-primary">
-                Listed, not yet tested
-              </h3>
-              <p className="text-sm leading-relaxed text-text-secondary">
-                The item is real and its page says where it comes from. It has not been through that check, so it
-                shows no label. The label appears once it has.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border bg-surface p-7">
-              <Chip tone="paid">Licence from vendor</Chip>
-              <h3 className="mb-2 mt-3.5 text-xl font-semibold tracking-tight text-text-primary">
-                Paid items: install is free
-              </h3>
-              <p className="text-sm leading-relaxed text-text-secondary">
-                Installing is always free. Where a licence is needed, the vendor sells and activates it on its own
-                site. DisplayXR takes no payment and no cut.
-              </p>
-            </div>
+            <Link href="#publish" className="shrink-0 text-sm font-medium text-accent hover:text-accent-hover">
+              List your component →
+            </Link>
           </div>
-
-          {/* The vendor-licence layout, exercised by a labelled example: no
-              paid item is listed yet, so none has a page (lib/data/catalog.ts). */}
-          <details className="group mt-6 rounded-2xl border border-border bg-surface">
-            <summary className="flex cursor-pointer list-none flex-wrap items-center gap-3 p-6 text-base font-semibold text-text-primary">
-              How a licensed item will read
-              <Chip>Example, not a real item</Chip>
-              <span className="text-sm font-normal text-text-secondary group-open:hidden">(show)</span>
-            </summary>
-            <div className="space-y-8 px-6 pb-7">
-              <p className="max-w-2xl text-sm leading-relaxed text-text-secondary">
-                No licensed item is listed yet. When the first one is, its page will carry these three blocks. The
-                example is a converter; the vendor and the item are placeholders.
-              </p>
-              <LicenceNote item={LICENCE_EXAMPLE} />
-              <div>
-                <h3 className="mb-3 text-base font-semibold text-text-primary">Licence states</h3>
-                <LicenceStates item={LICENCE_EXAMPLE} />
-              </div>
-              <div>
-                <h3 className="mb-3 text-base font-semibold text-text-primary">If it is not licensed</h3>
-                <p className="mb-4 text-sm leading-relaxed text-text-secondary">
-                  It steps aside and the next converter on the machine takes over. Nothing breaks.
-                </p>
-                <StepsAside item={LICENCE_EXAMPLE} />
-              </div>
-              <div>
-                <h3 className="mb-3 text-base font-semibold text-text-primary">Activating a licence</h3>
-                <LicenceActivation item={LICENCE_EXAMPLE} />
-              </div>
-            </div>
-          </details>
         </AnimateIn>
       </Band>
 
@@ -208,9 +166,10 @@ export default function CatalogPage() {
       <Band id="publish">
         <AnimateIn>
           <Eyebrow>Open for publishers</Eyebrow>
-          <H2>Some shelves are still empty. Yours could be the first item on one.</H2>
+          <H2>Build one component. Reach every spatial display.</H2>
           <Lead className="mb-10">
-            You host the files and keep your customers. The Catalog points at your release. Listing costs nothing.
+            Some shelves are waiting for their first item, and yours could be it. You host the files and keep your
+            customers. The Catalog sends people to your release. Listing costs nothing.
           </Lead>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {PUBLISHER_SLOTS.map((s) => (
@@ -230,27 +189,47 @@ export default function CatalogPage() {
               Read the component model
             </Button>
           </div>
+
+          {/* How paid components work: an explainer for vendors. */}
+          <div id="paid" className="mt-16 scroll-mt-24 rounded-2xl border border-border bg-surface p-7 md:p-9">
+            <h3 className="font-display text-3xl leading-[1.12] tracking-tight text-text-primary md:text-4xl">
+              How paid components work
+            </h3>
+            <p className="mt-3 max-w-2xl leading-relaxed text-text-secondary">
+              Sell your converter your way. People install it free, you sell the licence on your own site, and
+              DisplayXR stays out of the transaction.
+            </p>
+            <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-12">
+              <ul className="grid content-start gap-5">
+                {PAID_POINTS.map((p) => (
+                  <li key={p.title}>
+                    <h4 className="text-base font-semibold text-text-primary">{p.title}</h4>
+                    <p className="mt-1 text-sm leading-relaxed text-text-secondary">{p.text}</p>
+                  </li>
+                ))}
+              </ul>
+              <div className="min-w-0 space-y-5">
+                <LicenceStates />
+                <StepsAside />
+              </div>
+            </div>
+          </div>
         </AnimateIn>
       </Band>
 
-      {/* Install strip */}
+      {/* Get DisplayXR */}
       <Band className="bg-[#0b0c10] !py-12 md:!py-16">
-        <div className="grid items-center gap-5 rounded-2xl border border-border bg-surface p-7 lg:grid-cols-[1.1fr_1fr_auto] lg:gap-7 lg:p-8">
+        <div className="flex flex-col gap-5 rounded-2xl border border-border bg-surface p-7 sm:flex-row sm:items-center sm:justify-between lg:p-8">
           <div>
-            <h2 className="text-xl font-semibold tracking-tight text-text-primary">Install from Download</h2>
-            <p className="mt-1 text-sm leading-relaxed text-text-secondary">
-              DisplayXR and the DisplayXR Browser install from the Download page. Everything else links to its own
-              release from its item page. No account, no sign-in.
+            <h2 className="text-xl font-semibold tracking-tight text-text-primary">Start with DisplayXR</h2>
+            <p className="mt-1 max-w-2xl text-sm leading-relaxed text-text-secondary">
+              One install puts DisplayXR on your machine, and everything in the Catalog plugs into it. No account,
+              no sign-in.
             </p>
           </div>
-          <div className="min-w-0">
-            <div className="mb-2 flex items-center gap-2">
-              <Chip>Coming</Chip>
-              <span className="text-xs text-text-secondary">Install by id from the command line. Not in a release yet.</span>
-            </div>
-            <CopyLine command="displayxr-cli install <id>" copy={false} />
-          </div>
-          <Button href={DOWNLOAD_HREF}>Download</Button>
+          <Button href={DOWNLOAD_HREF} className="shrink-0">
+            Get DisplayXR
+          </Button>
         </div>
       </Band>
     </>

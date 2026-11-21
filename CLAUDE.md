@@ -68,16 +68,21 @@ audience, each opening on that audience's recommended next step:
   release carries it; no company or OEM names; no performance numbers (fps,
   GPU usage) on the page.
 - `/catalog` is the Catalog: one list of everything that plugs into
-  DisplayXR. Items and categories are `lib/data/catalog.ts`, which reads
-  versions and platforms from the generated data and names from
-  `components.ts` / `apps.ts`: never type a version, platform or trust status
-  into it. "Verified" (signed and conformance-tested) is set on no item until
-  the site can assert it; nothing is labelled "Community", rated, counted or
-  priced. A category gets a page only when it has an item. `/catalog/games`
-  is the Games shelf: it renders `SYSTEMS` and `GAMES` from `lib/data/play.ts`
-  (no second list), follows `/play`'s rules, and never says "verified".
-  `displayxr-cli install <id>` is not shipped: install goes through
-  `/download` or the item's own release.
+  DisplayXR, and a marketing surface. Items and categories are
+  `lib/data/catalog.ts`, which reads versions and platforms from the
+  generated data (`news-candidates.json` gives the newest release of repos
+  the component dashboard does not track), `lib/data/demos.ts`,
+  `components.ts` and `apps.ts`: never type a version or platform into it.
+  It is truthful **by omission, never by disclaimer** (David, 2026-11-20):
+  say what a thing is and what the user gets; if something is not true yet,
+  leave it out, with no "coming", "not yet" or "example" labels. No trust
+  label ("Verified") until an item can carry one; chips are "By DisplayXR",
+  "By <publisher>", "Open source", "For developers". Nothing is rated,
+  counted or priced. A category gets a page with its first item.
+  `/catalog/games` is the Games shelf: it renders `SYSTEMS` and `GAMES` from
+  `lib/data/play.ts` (no second list), follows `/play`'s rules, and never
+  says "verified". "Get it" goes to the item's release or `/download`; there
+  is no CLI install line until that verb ships.
 - `/developers` opens on the web path (recommended) with the inline3d snippet
   (one snippet, the full guide is `/browser#build`), then the sim-display note,
   native (API per platform), engines, AI-agent control, links.
