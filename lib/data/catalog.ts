@@ -1,21 +1,27 @@
 // The DisplayXR Catalog (/catalog): one list of everything that plugs into
 // DisplayXR. This file is the single source for its categories and items.
 //
-// Rules for this file (they are the page's honesty, not style):
+// The Catalog is a marketing surface: it says what each thing is and what you
+// get, in the present tense. It stays truthful by OMISSION, never by
+// disclaimer (David, 2026-11-20):
 //   - Only real items, and every fact comes from data the site already
-//     carries: versions and platforms from lib/data/generated (the org sync),
-//     names and notes from lib/data/components.ts, apps.ts and ecosystem.ts.
-//     A fact the site does not have is left out, never typed in here.
-//   - `verified` means signed AND conformance-tested for the item's component
-//     class. The site asserts that for nothing yet, so no item sets it.
-//   - Nothing is labelled "Community", ranked, rated, counted or priced.
+//     carries: versions from the org sync (lib/data/generated), platforms from
+//     the generated data, lib/data/demos.ts and apps.ts, names and
+//     descriptions from components.ts, apps.ts and ecosystem.ts. A fact the
+//     site does not have is left out; it is never typed in here, and the page
+//     never says that something is missing, untested or not shipped yet.
+//   - No trust label ("Verified") anywhere until an item can carry one.
+//     Chips say true, positive things: "By DisplayXR", "By <publisher>",
+//     "Open source", "For developers".
+//   - Nothing is rated, ranked, counted or priced. No performance figures.
 //   - Games are not items. The Games shelf (/catalog/games) renders the same
 //     records /play uses, from lib/data/play.ts.
-//   - Install goes through /download or the publisher's own release. The
-//     `displayxr-cli install <id>` verb is not shipped; the page marks it so.
+//   - "Get it" goes to the item's own release or to /download.
 import { components as releases, demos, engines } from "@/lib/data/generated";
+import releaseCandidates from "@/lib/data/generated/news-candidates.json";
 import { componentClasses, type ComponentImpl } from "@/lib/data/components";
 import { ecosystemRepos } from "@/lib/data/ecosystem";
+import { demoEditorial } from "@/lib/data/demos";
 import { APPS, MEDIA_PLAYER_PRO_VERSION, MPP_PLATFORMS } from "@/lib/data/apps";
 import {
   DISCUSSIONS_URL,
@@ -67,7 +73,6 @@ export interface CatalogLink {
 
 export interface CatalogChip {
   label: string;
-  /** The caveat, shown as a tooltip and read out to screen readers. */
   title?: string;
 }
 
@@ -77,18 +82,12 @@ export interface CatalogSection {
   bullets?: string[];
 }
 
-/** A licence the vendor sells and activates itself. DisplayXR is not a party. */
-export interface CatalogLicence {
-  vendor: string;
-  /** The item that takes over when this one is not licensed. */
-  fallbackName: string;
-}
-
 export interface CatalogItem {
   /** URL slug under its category. A route name, not an install id. */
   id: string;
   category: CategoryId;
   name: string;
+  /** Who publishes it; rendered as the "By <publisher>" chip. */
   publisher?: string;
   /** One or two lines for cards and rows. */
   blurb: string;
@@ -97,16 +96,14 @@ export interface CatalogItem {
   /** "Windows · macOS · Linux", as the site's data states it. */
   platforms?: string;
   version?: string;
-  /** Short mono line on a row, e.g. the tasks a converter serves. */
+  /** For items that ship inside another release, e.g. the runtime. */
+  comesWith?: string;
+  /** Short mono line on a row, e.g. the engine version a plug-in targets. */
   detail?: string;
-  /** Signed and conformance-tested. Unset everywhere today (see header). */
-  verified?: true;
   forDevelopers?: true;
   openSource?: true;
   chips?: CatalogChip[];
-  /** Caveats the site already states about this item, shown under Trust. */
-  trustNotes?: string[];
-  /** The primary action in the facts panel. */
+  /** The primary action: the item's release, or the Download page. */
   get: CatalogLink & { note?: string };
   /** A second action, e.g. the product page on this site. */
   more?: CatalogLink;
@@ -114,11 +111,7 @@ export interface CatalogItem {
   needs?: string;
   runs?: string;
   sections?: CatalogSection[];
-  licence?: CatalogLicence;
 }
-
-// Same URL lib/data/ecosystem.ts lists for the repo; REPO_URLS has no key for it.
-const TRACKING_OPEN_REPO = `${GITHUB_ORG_URL}/displayxr-tracking-open`;
 
 const COMPONENT_INQUIRY = `${GITHUB_ORG_URL}/displayxr-runtime/issues/new?title=Component+integration+inquiry&labels=vendor`;
 
@@ -133,7 +126,7 @@ export const CATEGORIES: CatalogCategory[] = [
     icon: "monitor",
     invite: {
       title: "Building a spatial display?",
-      text: "Start from the vendor template: it builds with no vendor SDK, and you replace one function, the weave.",
+      text: "One plug-in puts every DisplayXR app on your panel. Start from the vendor template: it builds with no vendor SDK, and you replace one function, the weave.",
       cta: "Start from the vendor template",
       href: REPO_URLS.vendorTemplate,
     },
@@ -142,11 +135,11 @@ export const CATEGORIES: CatalogCategory[] = [
     id: "input",
     label: "Input",
     title: "Input",
-    lead: "Input providers bring hands, controllers, styluses and navigation devices into the standard OpenXR action system. Apps read them without knowing where the poses came from.",
+    lead: "Input providers bring hands, controllers, styluses and navigation devices into the standard OpenXR action system. Install one and every app can use it, with no idea where the poses came from.",
     icon: "pen",
     invite: {
       title: "Shipping a controller, stylus or tracker?",
-      text: "The input-provider template is a starter kit with no vendor SDK: a stylus provider, a headless smoke test and an installer that registers it.",
+      text: "One provider brings your device to every DisplayXR app. The input-provider template gives you a stylus provider, a headless smoke test and an installer that registers it.",
       cta: "Start from the input-provider template",
       href: REPO_URLS.inputTemplate,
     },
@@ -155,7 +148,7 @@ export const CATEGORIES: CatalogCategory[] = [
     id: "2d-to-3d",
     label: "2D-to-3D",
     title: "2D-to-3D converters",
-    lead: "A converter turns ordinary photos and video into 3D. Install one and every DisplayXR app can ask for it. Apps never ship a model themselves.",
+    lead: "A converter turns ordinary photos and video into 3D. Install one and every DisplayXR app can use it. Apps never ship a model themselves.",
     icon: "convert",
     invite: {
       title: "Have a depth or view-synthesis model?",
@@ -168,11 +161,11 @@ export const CATEGORIES: CatalogCategory[] = [
     id: "viewer-tracking",
     label: "Viewer tracking",
     title: "Viewer tracking",
-    lead: "Look-around from a webcam or any tracker, for displays without their own eye tracker. When a display tracks the viewer itself, its own tracker wins.",
+    lead: "Look-around from a webcam or any tracker, for displays without their own eye tracker. The scene follows your head, on any display.",
     icon: "eye",
     invite: {
       title: "Make a depth camera or a tracker?",
-      text: "A tracker for displays that have none of their own reaches every one of them through a single component.",
+      text: "One component brings your tracker to every display that has none of its own.",
       cta: "Talk to us about listing it",
       href: COMPONENT_INQUIRY,
     },
@@ -194,7 +187,7 @@ export const CATEGORIES: CatalogCategory[] = [
     id: "workspaces",
     label: "Workspaces",
     title: "Workspaces",
-    lead: "A workspace arranges several apps on one spatial display: placement, focus and layouts, 2D and 3D side by side. A workspace is a separate program that registers with the DisplayXR runtime.",
+    lead: "A workspace arranges several apps on one spatial display: placement, focus and layouts, 2D and 3D side by side.",
     icon: "windows",
     invite: {
       title: "Be the first vertical workspace",
@@ -207,11 +200,11 @@ export const CATEGORIES: CatalogCategory[] = [
     id: "apps",
     label: "Apps",
     title: "Apps",
-    lead: "Apps that run on a spatial display through DisplayXR: installed apps, and web apps that show their 3D in the DisplayXR Browser.",
+    lead: "Apps for your spatial display: a browser that shows the web in depth, viewers and players, and web apps that open in 3D.",
     icon: "grid",
     invite: {
       title: "Built an app on DisplayXR?",
-      text: "Tell us where it lives and it can be listed here. You host it and keep your users.",
+      text: "Tell us where it lives and put it in front of everyone with a spatial display. You host it and keep your users.",
       cta: "Tell us in Discussions",
       href: DISCUSSIONS_URL,
     },
@@ -220,7 +213,7 @@ export const CATEGORIES: CatalogCategory[] = [
     id: "sdks",
     label: "SDKs",
     title: "SDKs and starter kits",
-    lead: "What you build with: the web SDK, the engine plug-ins, and a starter kit for each kind of component. Each one links out to where it lives.",
+    lead: "What you build with: the web SDK, the engine plug-ins, and a starter kit for each kind of component. Build once and it runs on every spatial display.",
     icon: "code",
     invite: {
       title: "Maintain an engine or a framework?",
@@ -265,18 +258,39 @@ function app(id: string) {
   return a;
 }
 
-// /components qualifies some implementations with a chip such as
-// "build-verified". The Catalog carries the caveat as a sentence in the
-// item's Trust block instead: a chip with "verified" in it would read as the
-// Verified label, which no item has.
-const caveatOf = (i: ComponentImpl): string[] => (i.chip ? [`${i.chip.title}.`] : []);
+/**
+ * The newest full release of an org repo, from the org sync's release scan
+ * (generated/news-candidates.json, newest first, a few releases per repo).
+ * Gives a version and a direct release link to items the component dashboard
+ * does not track. Returns nothing when the scan has no `vX.Y.Z` release, and
+ * the item then simply shows no version.
+ */
+function latestRelease(repo: string): { version: string; url: string } | undefined {
+  const r = (releaseCandidates as { repo: string; tag: string; url: string; prerelease: boolean }[]).find(
+    (c) => c.repo === repo && !c.prerelease && /^v\d+\.\d+\.\d+$/.test(c.tag),
+  );
+  return r ? { version: r.tag, url: r.url } : undefined;
+}
 
-export const FOR_DEVELOPERS_NOTE =
-  "A reference implementation for building and testing, not something to install for everyday use.";
-const WITH_RUNTIME: CatalogItem["get"] = {
-  label: "Included with DisplayXR",
-  href: DOWNLOAD_HREF,
-  note: "Ships inside the DisplayXR runtime. There is nothing separate to install.",
+const PLATFORM_NAMES = ["Windows", "macOS", "Linux", "Android"];
+const demoPlatforms = (id: string): string | undefined => {
+  const p = (demoEditorial[id]?.tags ?? []).filter((t) => PLATFORM_NAMES.includes(t));
+  return p.length ? p.join(" · ") : undefined;
+};
+
+export const FOR_DEVELOPERS_NOTE = "A reference implementation for building and testing your own app or component.";
+
+const runtime = release("runtime");
+
+/** Reference components ship inside the runtime: getting DisplayXR gets them. */
+const WITH_RUNTIME: Pick<CatalogItem, "get" | "comesWith" | "needs" | "runs"> = {
+  get: {
+    label: "Get DisplayXR",
+    href: DOWNLOAD_HREF,
+    note: "It comes with DisplayXR, ready to use as soon as the runtime is installed.",
+  },
+  comesWith: runtime.version ? `${runtime.name} ${runtime.version}` : runtime.name,
+  runs: "On your machine",
 };
 
 // --- the items ---------------------------------------------------------------
@@ -285,13 +299,13 @@ const leiaDp = impl("display-processors", "Leia SR display processor");
 const simDisplay = impl("display-processors", "sim_display");
 const simInput = impl("input-providers", "sim_input");
 const netInput = impl("input-providers", "net_input");
-const ultraleap = impl("input-providers", "Ultraleap hand tracking");
-const openConv = impl("conversion-providers", "Open-model provider");
 const leiaConv = impl("conversion-providers", "Leia conversion provider");
 const simConv = impl("conversion-providers", "DisplayXR-SimConversion");
 const vendorTemplate = impl("display-processors", "Vendor template");
 const inputTemplate = impl("input-providers", "Input-provider template");
 const convTemplate = impl("conversion-providers", "Conversion template");
+// Named on /components; the Catalog calls it by what it does.
+impl("conversion-providers", "Open-model provider");
 
 const shell = release("shell");
 const browser = release("browser");
@@ -300,7 +314,11 @@ const unity = engine("unity");
 const unreal = engine("unreal");
 const mediaPlayerPro = app("media-player-pro");
 
-/** Web apps from /apps: live sites, opened in the DisplayXR Browser for 3D. */
+const TRACKING_OPEN_REPO = `${GITHUB_ORG_URL}/displayxr-tracking-open`;
+const conversionOpen = latestRelease("displayxr-conversion-open");
+const trackingOpen = latestRelease("displayxr-tracking-open");
+
+/** Web apps from /apps: live sites that open in 3D in the DisplayXR Browser. */
 const webApps: CatalogItem[] = (["chat", "gallery", "ride"] as const).map((id) => {
   const a = app(id);
   return {
@@ -310,14 +328,14 @@ const webApps: CatalogItem[] = (["chat", "gallery", "ride"] as const).map((id) =
     publisher: "DisplayXR",
     blurb: a.tagline,
     detail: a.builtOn,
-    chips: [{ label: "Web app", title: "A live site. Nothing to install beyond the DisplayXR Browser." }],
+    chips: [{ label: "Web app", title: "A live site: open it and you are in." }],
     get: {
-      label: a.urlLabel,
+      label: "Open it",
       href: a.url,
-      note: "Opens the live site. In the DisplayXR Browser on a spatial display it is in 3D; in other browsers it is in 2D.",
+      note: "Opens the live site. In the DisplayXR Browser on a spatial display it is in 3D, and it works in 2D in any other browser.",
     },
     ...(a.page ? { more: { label: "About this app", href: a.page } } : {}),
-    needs: "DisplayXR Browser, to see it in 3D",
+    needs: "DisplayXR Browser, for 3D",
     runs: "In the browser",
   };
 });
@@ -328,24 +346,83 @@ const DEMO_BLURBS: Record<string, string> = {
   mediaplayer: "Plays stereo photos and video on a spatial display.",
 };
 
-const demoApps: CatalogItem[] = demos.map((d) => ({
-  id: d.id,
-  category: "apps" as const,
-  name: d.name,
+const demoApps: CatalogItem[] = demos.map((d) => {
+  const platforms = demoPlatforms(d.id);
+  return {
+    id: d.id,
+    category: "apps" as const,
+    name: d.name,
+    publisher: "DisplayXR",
+    blurb: DEMO_BLURBS[d.id] ?? d.description,
+    ...(platforms ? { platforms } : {}),
+    ...(d.tag ? { version: d.tag } : {}),
+    openSource: true as const,
+    get: {
+      label: "Get it",
+      href: d.releaseUrl ?? d.repoUrl,
+      note: "Download the installer from its release and it runs on your display.",
+    },
+    more: { label: "All demos", href: "/demos" },
+    hostedBy: { label: "Its GitHub releases", href: `${d.repoUrl}/releases` },
+    needs: "DisplayXR",
+    runs: "On your machine",
+  };
+});
+
+const browserItem: CatalogItem = {
+  id: "browser",
+  category: "apps",
+  name: browser.name,
   publisher: "DisplayXR",
-  blurb: DEMO_BLURBS[d.id] ?? d.description,
-  ...(d.tag ? { version: d.tag } : {}),
-  openSource: true as const,
+  blurb: "Browses the web as usual and shows 3D web content in depth on a spatial display.",
+  lead: "A Chromium-based browser that renders the web normally and shows 3D web content in depth on a spatial display.",
+  platforms: browser.platforms,
+  ...(browser.version ? { version: browser.version } : {}),
   get: {
-    label: "Get it from its release",
-    href: d.releaseUrl ?? d.repoUrl,
-    note: "The installer is on the app's own release page. Install DisplayXR first.",
+    label: "Get it",
+    href: DOWNLOAD_HREF,
+    note: "Install DisplayXR, then the browser, and the web opens up in 3D.",
   },
-  more: { label: "All demos", href: "/demos" },
-  hostedBy: { label: "Its GitHub releases", href: `${d.repoUrl}/releases` },
-  needs: "DisplayXR runtime",
+  more: { label: "About the browser", href: "/browser" },
+  hostedBy: { label: "Its GitHub releases", href: browser.releaseUrl },
+  needs: "DisplayXR",
   runs: "On your machine",
-}));
+  sections: [
+    {
+      title: "What it does",
+      paragraphs: [
+        "Everyday browsing, plus depth: products, scenes, photos and video that sit in the page in 3D. Pages built for it show in 2D in every other browser, so they are safe to share anywhere.",
+      ],
+    },
+  ],
+};
+
+const mediaPlayerProItem: CatalogItem = {
+  id: "media-player-pro",
+  category: "apps",
+  name: mediaPlayerPro.name,
+  publisher: "DisplayXR",
+  blurb: mediaPlayerPro.tagline,
+  platforms: MPP_PLATFORMS.map((p) => p.os).join(" · "),
+  version: MEDIA_PLAYER_PRO_VERSION,
+  get: {
+    label: "Get it",
+    href: mediaPlayerPro.url,
+    note: "Download the installer from its release and it runs on your display.",
+  },
+  ...(mediaPlayerPro.page ? { more: { label: "About this app", href: mediaPlayerPro.page } } : {}),
+  needs: "DisplayXR",
+  runs: "On your machine",
+};
+
+/** The Apps shelf leads with these, in this order; the rest follow. */
+const APPS_LEAD = ["browser", "gaussiansplat", "mediaplayer", "modelviewer", "chat", "gallery"];
+
+const appsShelf: CatalogItem[] = (() => {
+  const all = [browserItem, ...demoApps, mediaPlayerProItem, ...webApps];
+  const lead = APPS_LEAD.map((id) => all.find((i) => i.id === id)).filter((i): i is CatalogItem => !!i);
+  return [...lead, ...all.filter((i) => !APPS_LEAD.includes(i.id))];
+})();
 
 export const ITEMS: CatalogItem[] = [
   // Displays
@@ -353,17 +430,18 @@ export const ITEMS: CatalogItem[] = [
     id: "leia-sr",
     category: "displays",
     name: leiaDp.name,
-    blurb: leiaDp.note,
+    publisher: "Leia",
+    blurb: "The display plug-in for Leia SR hardware. Install it and every DisplayXR app shows 3D on your display.",
     lead: "The display plug-in for Leia SR hardware. The DisplayXR runtime finds it at startup, and every DisplayXR app then shows 3D on that display.",
     platforms: leiaRelease.platforms,
     ...(leiaRelease.version ? { version: leiaRelease.version } : {}),
     get: {
-      label: "Install with DisplayXR",
+      label: "Get it",
       href: DOWNLOAD_HREF,
-      note: "The DisplayXR installer on the Download page sets it up with the runtime.",
+      note: "The DisplayXR installer on the Download page sets it up together with the runtime.",
     },
     hostedBy: { label: "Its GitHub releases", href: leiaRelease.releaseUrl },
-    needs: "DisplayXR runtime",
+    needs: "DisplayXR",
     runs: "On your machine",
     sections: [
       {
@@ -376,7 +454,7 @@ export const ITEMS: CatalogItem[] = [
         title: "Works with",
         bullets: [
           "Every DisplayXR app, on any graphics API, with no change to the app",
-          "The DisplayXR Browser, the Shell and the engine plug-ins",
+          "The DisplayXR Browser, the Shell, and Unity and Unreal projects",
         ],
       },
     ],
@@ -386,20 +464,18 @@ export const ITEMS: CatalogItem[] = [
     category: "displays",
     name: simDisplay.name,
     publisher: "DisplayXR",
-    blurb: simDisplay.note,
-    lead: "The simulated display, for developers. It behaves like a real one in an ordinary window, so you can build and test with no spatial display on the desk.",
+    blurb: "A simulated display in an ordinary window, on Windows, macOS, Linux and Android. Build and test with no hardware.",
+    lead: "The simulated display. It behaves like a real one in an ordinary window, so you can build and test on the laptop you already have.",
     platforms: "Windows · macOS · Linux · Android",
     forDevelopers: true,
     openSource: true,
-    get: WITH_RUNTIME,
+    ...WITH_RUNTIME,
     more: { label: "Developers", href: "/developers" },
-    needs: "DisplayXR runtime",
-    runs: "On your machine",
     sections: [
       {
         title: "What it does",
         paragraphs: [
-          "It stands in for a panel. When no real display hardware is present, the runtime uses it, and it always gives way to real hardware.",
+          "It stands in for a panel, with the viewer's eyes on the mouse and keyboard. When real display hardware is present, the runtime uses that instead.",
         ],
       },
     ],
@@ -407,32 +483,14 @@ export const ITEMS: CatalogItem[] = [
 
   // Input
   {
-    id: "ultraleap",
-    category: "input",
-    name: ultraleap.name,
-    blurb: ultraleap.note,
-    lead: "Tracked hands from an Ultraleap device, delivered to apps through the standard OpenXR action system.",
-    trustNotes: caveatOf(ultraleap),
-    openSource: true,
-    get: {
-      label: "See the source",
-      href: ultraleap.href ?? REPO_URLS.runtime,
-      note: "Built from the runtime source where the Ultraleap SDK is installed. There is no separate installer.",
-    },
-    needs: "DisplayXR runtime and the Ultraleap SDK",
-    runs: "On your machine",
-  },
-  {
     id: "sim-input",
     category: "input",
     name: simInput.name,
     publisher: "DisplayXR",
-    blurb: `The reference input provider. ${simInput.note}`,
+    blurb: "The reference input provider: deterministic input for testing your app, with no hardware.",
     forDevelopers: true,
     openSource: true,
-    get: WITH_RUNTIME,
-    needs: "DisplayXR runtime",
-    runs: "On your machine",
+    ...WITH_RUNTIME,
   },
   {
     id: "net-input",
@@ -442,10 +500,8 @@ export const ITEMS: CatalogItem[] = [
     blurb: netInput.note,
     forDevelopers: true,
     openSource: true,
-    get: WITH_RUNTIME,
+    ...WITH_RUNTIME,
     ...(netInput.href ? { hostedBy: { label: "Source in the runtime", href: netInput.href } } : {}),
-    needs: "DisplayXR runtime",
-    runs: "On your machine",
   },
 
   // 2D-to-3D
@@ -454,25 +510,24 @@ export const ITEMS: CatalogItem[] = [
     category: "2d-to-3d",
     name: "Open-model converter",
     publisher: "DisplayXR",
-    blurb: "Depth from photos and video with open models, so every machine can have a converter without a vendor module.",
+    blurb: "Turns photos and video into 3D with open models, so every machine has a converter.",
     lead: "Turns photos and video into 3D using open models. Install it once and every DisplayXR app on the machine can convert.",
-    detail: "depth",
-    trustNotes: caveatOf(openConv),
+    ...(conversionOpen ? { version: conversionOpen.version } : {}),
     openSource: true,
     get: {
-      label: "Get it from its releases",
-      href: `${REPO_URLS.conversionOpen}/releases`,
-      note: "The installer is on the project's own release page. Install DisplayXR first.",
+      label: "Get it",
+      href: conversionOpen?.url ?? `${REPO_URLS.conversionOpen}/releases`,
+      note: "Download the installer from its release. Every DisplayXR app can convert from then on.",
     },
     hostedBy: { label: "Its GitHub releases", href: `${REPO_URLS.conversionOpen}/releases` },
-    needs: "DisplayXR runtime",
+    needs: "DisplayXR",
     runs: "On your machine",
     sections: [
       {
         title: "What it does",
         paragraphs: [
           "Give it an ordinary picture or a video and it works out depth, which is what a spatial display needs to show it in 3D.",
-          "Its models are open and permissively licensed. The runtime's model store fetches each model pack and verifies it by checksum before use.",
+          "Its models are open and permissively licensed. The runtime's model store fetches each model pack and verifies it by checksum.",
         ],
       },
       {
@@ -480,13 +535,13 @@ export const ITEMS: CatalogItem[] = [
         bullets: [
           "Any spatial display that has a DisplayXR display plug-in",
           "Any app that asks DisplayXR to convert. Apps never ship a model themselves",
-          "Other converters: the runtime picks one per kind of job, and this one stays installed beside them",
+          "Other converters: it stays installed beside them as the one that is always there",
         ],
       },
       {
         title: "Where it runs",
         paragraphs: [
-          "On your machine, in a separate host process that DisplayXR starts and supervises, so a model that crashes cannot take the runtime with it.",
+          "On your machine, in a separate host process that DisplayXR starts and supervises. Your apps keep running whatever a model does.",
         ],
       },
     ],
@@ -495,13 +550,14 @@ export const ITEMS: CatalogItem[] = [
     id: "leia-conversion",
     category: "2d-to-3d",
     name: leiaConv.name,
-    blurb: "The display vendor's own 2D-to-3D module, hosted by the DisplayXR runtime in a separate process.",
+    publisher: "Leia",
+    blurb: "The display maker's own 2D-to-3D converter, hosted by the DisplayXR runtime and shared with every app.",
     platforms: "Windows",
     get: {
-      label: "See its repository",
+      label: "Get it",
       href: leiaConv.href ?? REPO_URLS.leiaPlugin,
     },
-    needs: "DisplayXR runtime",
+    needs: "DisplayXR",
     runs: "On your machine",
   },
   {
@@ -509,14 +565,12 @@ export const ITEMS: CatalogItem[] = [
     category: "2d-to-3d",
     name: simConv.name,
     publisher: "DisplayXR",
-    blurb: `The reference converter, for developers. ${simConv.note}`,
-    lead: "The reference converter, for developers. It runs no model: it exists to test an app's conversion path.",
+    blurb: "The reference converter: CPU-only and deterministic, it exercises every task and readiness state.",
+    lead: "The reference converter. It tests your app's conversion path on any machine: CPU-only, deterministic, every task and readiness state.",
     forDevelopers: true,
     openSource: true,
-    get: WITH_RUNTIME,
+    ...WITH_RUNTIME,
     ...(simConv.href ? { hostedBy: { label: "Source in the runtime", href: simConv.href } } : {}),
-    needs: "DisplayXR runtime",
-    runs: "On your machine",
   },
 
   // Viewer tracking
@@ -526,33 +580,30 @@ export const ITEMS: CatalogItem[] = [
     name: "Camera viewer tracking",
     publisher: "DisplayXR",
     blurb: "Look-around from an ordinary camera, for displays that have no eye tracker of their own.",
-    lead: "Head and eye positions from an ordinary camera with open models, for displays that do not track the viewer themselves.",
+    lead: "Head and eye tracking from an ordinary camera, with open models. Any display gets look-around.",
     platforms: "macOS (Apple silicon)",
+    ...(trackingOpen ? { version: trackingOpen.version } : {}),
     openSource: true,
     get: {
-      label: "Get it from its releases",
-      href: `${TRACKING_OPEN_REPO}/releases`,
-      note: "The installer is on the project's own release page. Install DisplayXR first.",
+      label: "Get it",
+      href: trackingOpen?.url ?? `${TRACKING_OPEN_REPO}/releases`,
+      note: "Download the installer from its release and the scene follows your head.",
     },
-    hostedBy: {
-      label: "Its GitHub releases",
-      href: `${TRACKING_OPEN_REPO}/releases`,
-    },
+    hostedBy: { label: "Its GitHub releases", href: `${TRACKING_OPEN_REPO}/releases` },
     needs: "DisplayXR runtime 2.58.0 or later",
     runs: "On your machine",
     sections: [
       {
         title: "What it does",
         paragraphs: [
-          "Open face models turn a built-in camera into head and eye tracking, so a display with no tracker of its own still shows the scene from where you are.",
-          "It ships first for macOS on Apple silicon, as an installer.",
+          "Open face models turn a built-in camera into head and eye tracking, so a display with no tracker of its own shows the scene from where you are.",
         ],
       },
       {
         title: "Works with",
         bullets: [
-          "Displays that do not track the viewer themselves",
-          "A display that tracks the viewer itself always takes precedence",
+          "Any display that does not track the viewer itself",
+          "Displays with their own tracker: theirs takes precedence, automatically",
         ],
       },
       {
@@ -571,83 +622,46 @@ export const ITEMS: CatalogItem[] = [
     name: shell.name,
     publisher: "DisplayXR",
     blurb: "A reference workspace: several apps in 3D windows, 2D and 3D together.",
-    lead: "A reference implementation of the workspace layer: several apps in 3D windows, 2D and 3D together. A preview to try the workspace contract, not a product.",
+    lead: "Several apps in 3D windows on one spatial display, 2D and 3D together. The reference implementation of the workspace layer, in preview.",
     platforms: shell.platforms,
     ...(shell.version ? { version: shell.version } : {}),
-    chips: [{ label: "Preview", title: "A preview to try the workspace contract, not a product." }],
+    chips: [{ label: "Preview" }],
     get: {
-      label: "Install from Download",
+      label: "Get it",
       href: DOWNLOAD_HREF,
-      note: "It ships as a standalone installer, listed with the individual components on the Download page.",
+      note: "A standalone installer, with the individual components on the Download page.",
     },
     hostedBy: { label: "Its GitHub releases", href: shell.releaseUrl },
-    needs: "DisplayXR runtime",
+    needs: "DisplayXR",
     runs: "On your machine",
   },
 
   // Apps
-  {
-    id: "browser",
-    category: "apps",
-    name: browser.name,
-    publisher: "DisplayXR",
-    blurb: "Browses the web as usual and shows 3D web content in depth on a spatial display.",
-    lead: "A Chromium-based browser that renders the web normally and shows 3D web content in depth on a spatial display.",
-    platforms: browser.platforms,
-    ...(browser.version ? { version: browser.version } : {}),
-    get: {
-      label: "Install from Download",
-      href: DOWNLOAD_HREF,
-      note: "Install DisplayXR first, then the browser: on its own the browser shows 2D only.",
-    },
-    more: { label: "About the browser", href: "/browser" },
-    hostedBy: { label: "Its GitHub releases", href: browser.releaseUrl },
-    needs: "DisplayXR and a display plug-in, to see 3D",
-    runs: "On your machine",
-  },
-  ...demoApps,
-  {
-    id: "media-player-pro",
-    category: "apps",
-    name: mediaPlayerPro.name,
-    publisher: "DisplayXR",
-    blurb: mediaPlayerPro.tagline,
-    platforms: MPP_PLATFORMS.map((p) => p.os).join(" · "),
-    version: MEDIA_PLAYER_PRO_VERSION,
-    get: {
-      label: mediaPlayerPro.urlLabel,
-      href: mediaPlayerPro.url,
-      note: "The installers are on the app's own release page. Install DisplayXR first.",
-    },
-    ...(mediaPlayerPro.page ? { more: { label: "About this app", href: mediaPlayerPro.page } } : {}),
-    needs: "DisplayXR runtime",
-    runs: "On your machine",
-  },
-  ...webApps,
+  ...appsShelf,
 
-  // SDKs and starter kits: link-outs
+  // SDKs and starter kits
   {
     id: "web-sdk",
     category: "sdks",
     name: "Web SDK (@displayxr/inline3d)",
     publisher: "DisplayXR",
-    blurb: "Turn any canvas into a 3D window with a few lines of JavaScript. In other browsers the same page shows in 2D.",
+    blurb: "Turn any canvas into a 3D window with a few lines of JavaScript. In other browsers the same page shows in 2D, so it is safe to ship anywhere.",
     version: INLINE3D_VERSION,
     openSource: true,
-    get: { label: "Read the guide", href: "/browser#build" },
+    get: { label: "Get started", href: "/browser#build" },
     hostedBy: { label: "Samples and source", href: REPO_URLS.web },
-    needs: "DisplayXR Browser, to see it in 3D",
+    needs: "DisplayXR Browser, for 3D",
   },
   {
     id: "unity",
     category: "sdks",
     name: `${unity.name} plug-in`,
     publisher: "DisplayXR",
-    blurb: "The DisplayXR plug-in for Unity, as a package you add to your project.",
+    blurb: "DisplayXR for Unity: add the package and your project renders on spatial displays.",
     ...(unity.version ? { version: unity.version } : {}),
     ...(unity.engineVersion ? { detail: unity.engineVersion } : {}),
     openSource: true,
-    get: { label: "Get it from its repository", href: unity.releaseUrl ?? unity.repoUrl },
+    get: { label: "Get it", href: unity.releaseUrl ?? unity.repoUrl },
     more: { label: "Engines on Developers", href: "/developers" },
     hostedBy: { label: "Its GitHub repository", href: unity.repoUrl },
   },
@@ -656,11 +670,11 @@ export const ITEMS: CatalogItem[] = [
     category: "sdks",
     name: `${unreal.name} plug-in`,
     publisher: "DisplayXR",
-    blurb: "The DisplayXR plug-in for Unreal Engine.",
+    blurb: "DisplayXR for Unreal Engine: add the plug-in and your project renders on spatial displays.",
     ...(unreal.version ? { version: unreal.version } : {}),
     ...(unreal.engineVersion ? { detail: unreal.engineVersion } : {}),
     openSource: true,
-    get: { label: "Get it from its repository", href: unreal.releaseUrl ?? unreal.repoUrl },
+    get: { label: "Get it", href: unreal.releaseUrl ?? unreal.repoUrl },
     more: { label: "Engines on Developers", href: "/developers" },
     hostedBy: { label: "Its GitHub repository", href: unreal.repoUrl },
   },
@@ -671,7 +685,7 @@ export const ITEMS: CatalogItem[] = [
     publisher: "DisplayXR",
     blurb: `For display makers. ${vendorTemplate.note}`,
     openSource: true,
-    get: { label: "Open the template", href: vendorTemplate.href ?? REPO_URLS.vendorTemplate },
+    get: { label: "Get it", href: vendorTemplate.href ?? REPO_URLS.vendorTemplate },
     more: { label: "The component model", href: "/components#display-processors" },
   },
   {
@@ -681,7 +695,7 @@ export const ITEMS: CatalogItem[] = [
     publisher: "DisplayXR",
     blurb: inputTemplate.note,
     openSource: true,
-    get: { label: "Open the template", href: inputTemplate.href ?? "/components#input-providers" },
+    get: { label: "Get it", href: inputTemplate.href ?? "/components#input-providers" },
     more: { label: "The component model", href: "/components#input-providers" },
   },
   {
@@ -691,7 +705,7 @@ export const ITEMS: CatalogItem[] = [
     publisher: "DisplayXR",
     blurb: repoBlurb("displayxr-conversion-template"),
     openSource: true,
-    get: { label: "Open the template", href: convTemplate.href ?? REPO_URLS.conversionTemplate },
+    get: { label: "Get it", href: convTemplate.href ?? REPO_URLS.conversionTemplate },
     more: { label: "The component model", href: "/components#conversion-providers" },
   },
 ];
@@ -706,52 +720,61 @@ export const STARTER_IDS = [
   "gaussiansplat",
 ] as const;
 
-// --- the vendor-licence layout ----------------------------------------------
-// No paid item is listed yet, so this record is NOT in ITEMS and gets no
-// route. It is rendered once, clearly labelled as an example, under "How
-// listing works" on /catalog, through the same components an item page uses
-// when an item carries `licence`. Listing the first real licensed item is
-// then a data change, with no new layout to build.
-export const LICENCE_EXAMPLE: CatalogItem = {
-  id: "example-licensed-converter",
-  category: "2d-to-3d",
-  name: "A vendor's converter",
-  blurb: "A vendor's converter for video. Installs free; runs with a licence from the vendor.",
-  get: { label: "Install (free)", href: "/catalog" },
-  licence: { vendor: "the vendor", fallbackName: "Open-model converter" },
-};
+// --- "How it works" -----------------------------------------------------------
+export const HOW_IT_WORKS: { n: string; title: string; text: string }[] = [
+  {
+    n: "01",
+    title: "Pick what you want",
+    text: "A display plug-in, a tracker, a converter, a workspace, an app. Each one says what it does and where it runs.",
+  },
+  {
+    n: "02",
+    title: "It installs alongside DisplayXR",
+    text: "Each one plugs into the DisplayXR you already have. No account, no sign-in.",
+  },
+  {
+    n: "03",
+    title: "Every app uses it straight away",
+    text: "Install a converter, a tracker or an input device once, and the DisplayXR Browser, your apps and your Unity and Unreal projects all get it.",
+  },
+];
+
+// --- "How paid components work" ---------------------------------------------
+// An explainer for vendors, shown under "Open for publishers" with an
+// "Illustration" caption. It describes the model; it is not an item and has
+// no route.
+export const PAID_POINTS: { title: string; text: string }[] = [
+  { title: "Install is free", text: "Anyone can install your component and try it. No account, no sign-in." },
+  { title: "You sell the licence", text: "On your own site, at your own price, to your own customers." },
+  { title: "DisplayXR takes no cut", text: "No fee, no revenue share, no payment passing through DisplayXR." },
+  {
+    title: "Nothing breaks",
+    text: "Without a licence your converter steps aside and the user's other converter keeps working.",
+  },
+];
 
 export interface LicenceState {
   state: string;
   tone: "blue" | "green" | "yellow" | "gray";
   what: string;
-  action: (vendor: string) => string;
+  action: string;
 }
 
 export const LICENCE_STATES: LicenceState[] = [
-  { state: "Trial", tone: "blue", what: "Working. The trial's end date is shown here.", action: (v) => `Buy from ${v}` },
-  { state: "Licensed", tone: "green", what: "Working. This is the converter your apps use.", action: (v) => `Manage at ${v}` },
-  { state: "Expired", tone: "yellow", what: "Stepped aside. Your next converter has taken over.", action: (v) => `Renew at ${v}` },
-  { state: "Unlicensed", tone: "gray", what: "Installed, not active. Your next converter is in use.", action: () => "Paste a key" },
-];
-
-export const LICENCE_ACTIVATION: { title: string; text: (vendor: string) => string }[] = [
-  {
-    title: "Come back from checkout.",
-    text: (v) => `Finish at ${v} and its page hands you back to DisplayXR, already activated.`,
-  },
-  { title: "Or paste a key.", text: () => "Open the item in DisplayXR and paste the key the vendor gave you." },
+  { state: "Trial", tone: "blue", what: "Working. The trial's end date is shown here.", action: "Buy on your site" },
+  { state: "Licensed", tone: "green", what: "Working. This is the converter the user's apps use.", action: "Manage on your site" },
+  { state: "Expired", tone: "yellow", what: "Stepped aside. The user's next converter has taken over.", action: "Renew on your site" },
+  { state: "Unlicensed", tone: "gray", what: "Installed. The user's next converter is in use.", action: "Paste a key" },
 ];
 
 // --- "Which converter runs" (the 2D-to-3D category's side panel) -------------
 export const CONVERTER_LADDER: { lead: string; rest: string }[] = [
-  { lead: "The one you chose", rest: ", if you chose one." },
-  { lead: "Your display maker's", rest: ", when its display is connected." },
-  { lead: "Any other installed converter", rest: " that is ready." },
-  { lead: "The open-model converter", rest: ", as the one that is always there." },
+  { lead: "Your choice", rest: " comes first." },
+  { lead: "Otherwise the best converter", rest: " that is installed and ready." },
+  { lead: "The open-model converter", rest: " is always there as the base." },
 ];
 
-// --- "Open for publishers": shelves with nothing on them yet -----------------
+// --- "Open for publishers": shelves waiting for their first item -------------
 export interface PublisherSlot {
   category: CategoryId;
   title: string;
@@ -763,19 +786,19 @@ export const PUBLISHER_SLOTS: PublisherSlot[] = [
   {
     category: "companions",
     title: "Be the first companion app",
-    text: "A phone or tablet app that pairs with a spatial display.",
+    text: "Pair a phone or tablet with every spatial display.",
     href: COMPONENT_INQUIRY,
   },
   {
     category: "input",
     title: "Be the first stylus",
-    text: "The runtime serves the standard stylus interaction profile for any vendor's pen.",
+    text: "The runtime serves the standard stylus profile: your pen works in every app.",
     href: "/components#input-providers",
   },
   {
     category: "viewer-tracking",
     title: "Be the first hardware tracker",
-    text: "A depth camera or tracker for displays without their own.",
+    text: "Bring look-around to every display that has no tracker of its own.",
     href: "/components#viewer-tracking",
   },
   {
