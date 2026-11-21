@@ -108,7 +108,7 @@ export function WovenEyePair({ left, right, children }: { left: string; right: s
         )}
       </div>
       <p className="text-sm text-text-secondary">
-        The same frame, both eyes at once: rendered twice by the stereo layer on Steam for Linux and woven
+        The same frame, both eyes at once: rendered twice by graphics-layer stereo on Steam for Linux and woven
         for your display.
       </p>
     </div>

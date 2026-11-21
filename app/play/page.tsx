@@ -9,6 +9,7 @@ import {
   FAQ_GROUPS,
   GAMES,
   PIPELINE,
+  ROUTES,
   PLAY_PORTING_GUIDE,
   PROFILE_SNIPPET,
   REPOS,
@@ -72,13 +73,13 @@ const Chip = ({ children, tone }: { children: ReactNode; tone: "green" | "yellow
 );
 
 function EyePair() {
-  // The two views the stereo layer rendered for one frame: the runtime's
+  // The two views graphics-layer stereo rendered for one frame: the runtime's
   // captured eye atlas split in two, 1440x900 per eye, nothing retouched.
   const Eye = ({ label, src }: { label: string; src: string }) => (
     <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-[#0c1222]">
       <Image
         src={src}
-        alt={`${label} view of the same game frame, rendered by the stereo layer`}
+        alt={`${label} view of the same game frame, rendered by graphics-layer stereo`}
         fill
         sizes="(min-width: 1024px) 30vw, 50vw"
         priority
@@ -96,7 +97,7 @@ function EyePair() {
         <Eye label="Right eye" src="/art/play/hero-right.webp" />
       </div>
       <p className="text-sm text-text-secondary">
-        One frame of a UE4 title, rendered twice by the stereo layer on Steam for Linux and woven by the
+        One frame of a UE4 title, rendered twice by graphics-layer stereo on Steam for Linux and woven by the
         runtime for your display.
       </p>
     </div>
@@ -217,11 +218,19 @@ export default function PlayPage() {
         <AnimateIn>
           <Eyebrow>How it works</Eyebrow>
           <H2>Two eyes from one game, then one hand-off.</H2>
-          <p className="mb-12 max-w-2xl text-lg leading-relaxed text-text-secondary">
-            Nothing in the middle depends on the operating system except the last step. The stereo
-            producer is a fork of the open Direct3D-to-Vulkan layers; games that never touch
-            Direct3D get an in-process mod; VR mods already speak OpenXR.
+          <p className="mb-8 max-w-2xl text-lg leading-relaxed text-text-secondary">
+            Nothing in the middle depends on the operating system except the last step. Play has
+            three routes to the two eyes, and the detector picks one per title.
           </p>
+          <div className="mb-12 grid gap-5 md:grid-cols-3">
+            {ROUTES.map((r) => (
+              <div key={r.slug} className="rounded-2xl border border-border bg-[#0f0f12] p-6">
+                <h3 className="mb-1 text-base font-semibold text-text-primary">{r.name}</h3>
+                <p className="mb-3 font-mono text-xs text-accent">route = {r.slug}</p>
+                <p className="text-sm text-text-secondary">{r.text}</p>
+              </div>
+            ))}
+          </div>
           <ol className="flex flex-wrap items-stretch gap-3">
             {PIPELINE.map((p, i) => (
               <li key={p.n} className="contents">
@@ -249,7 +258,7 @@ export default function PlayPage() {
       <Band id="display-makers" className="bg-[#0b0c10]">
         <AnimateIn>
           <Eyebrow>For display makers</Eyebrow>
-          <H2>Ship one plug-in. Get every game.</H2>
+          <H2>Ship one plug-in. Get the games that Play supports.</H2>
           <p className="mb-12 max-w-2xl text-lg leading-relaxed text-text-secondary">
             Play never weaves or tracks. Your display&apos;s plug-in does, once, through the
             DisplayXR runtime, and the same plug-in serves the Browser, the demos and every
@@ -382,7 +391,7 @@ export default function PlayPage() {
               <Eyebrow>You stay in control</Eyebrow>
               <H2>Three dials. Auto by default, yours on demand.</H2>
               <p className="mb-7 text-lg leading-relaxed text-text-secondary">
-                Every game gets the same three controls, in the same overlay, on every system. The
+                Each game gets the same three controls, in the same overlay, on every system. The
                 defaults come from the per-game profile; anything you change is saved back into it
                 and can be shared.
               </p>
@@ -442,8 +451,8 @@ export default function PlayPage() {
               <H2>Port a game, submit a profile, fix a pass.</H2>
               <p className="mb-6 text-lg leading-relaxed text-text-secondary">
                 The porting guide explains the method behind every rule, with the measurements.
-                Profiles are plain text keyed by store app id. The stereo layers are maintained
-                forks of open projects.
+                Profiles are plain text keyed by store app id. Graphics-layer stereo runs on
+                maintained forks of DXVK and vkd3d-proton.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Button href={PLAY_PORTING_GUIDE}>Read the porting guide</Button>
