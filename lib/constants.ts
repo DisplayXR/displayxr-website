@@ -2,6 +2,9 @@ export const GITHUB_ORG_URL = "https://github.com/DisplayXR";
 
 // The DisplayXR YouTube channel and the launch film (public 2026-11-19).
 export const YOUTUBE_URL = "https://www.youtube.com/@DisplayXR";
+
+// The DisplayXR Discord: a permanent invite (server opened 2026-11-21).
+export const DISCORD_URL = "https://discord.gg/AHW4sUT66z";
 export const LAUNCH_FILM = {
   id: "yqWqZ0uwLVk",
   url: "https://youtu.be/yqWqZ0uwLVk",
