@@ -213,7 +213,7 @@ export default async function ReviewPost({
             {failedCheck && <p className="text-sm text-red-400">A check failed, so this post can&apos;t be approved. Fix it in the planner.</p>}
             {canApprove && (
               <p className="text-xs text-text-secondary">
-                Approving schedules this one post in Buffer for every “via Buffer” channel, with the captions and time shown here. By-hand channels are posted by you.
+                Approving schedules this one post in Buffer for every “via Buffer” channel, with the captions and time shown here. By-hand channels are posted by you. YouTube Shorts needs a title (up to 100 characters) and goes out public.
               </p>
             )}
           </form>

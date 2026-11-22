@@ -83,6 +83,13 @@ export async function approveAndSchedule(form: FormData) {
   if (Date.parse(edited.publish_at) < Date.now() + 5 * 60_000)
     back(p.id, "err", "The publish time must be at least 5 minutes from now");
 
+  const yt = edited.channels.youtube_shorts;
+  if (yt?.mode === "buffer") {
+    const t = (yt.title ?? "").trim();
+    if (!t) back(p.id, "err", "YouTube Shorts needs a title before it can be scheduled");
+    if ([...t].length > 100) back(p.id, "err", "The YouTube Shorts title is over 100 characters");
+  }
+
   const bufferTargets = (Object.entries(edited.channels) as [Channel, NonNullable<Package["channels"][Channel]>][])
     .filter(([, c]) => c.mode === "buffer");
 
@@ -109,12 +116,15 @@ export async function approveAndSchedule(form: FormData) {
       if (post_ids[ch]) continue; // already scheduled on an earlier attempt
       const channelId = map[ch];
       if (!channelId) { errors[ch] = "No connected Buffer channel for this network"; continue; }
+      const m = c.media ? edited.media[c.media] : undefined;
       try {
         post_ids[ch] = await createScheduledPost({
           channelId,
           text: c.text,
           dueAt: edited.publish_at,
-          videoUrl: c.media ? edited.media[c.media]?.url : undefined,
+          videoUrl: m?.url,
+          thumbnailUrl: m?.poster_url,
+          youtube: ch === "youtube_shorts" ? { title: (c.title ?? "").trim() } : undefined,
         });
       } catch (e) {
         errors[ch] = (e as Error).message;
