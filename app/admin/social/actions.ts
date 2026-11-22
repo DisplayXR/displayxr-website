@@ -88,6 +88,10 @@ export async function approveAndSchedule(form: FormData) {
     const t = (yt.title ?? "").trim();
     if (!t) back(p.id, "err", "YouTube Shorts needs a title before it can be scheduled");
     if ([...t].length > 100) back(p.id, "err", "The YouTube Shorts title is over 100 characters");
+    const m = yt.media ? edited.media[yt.media] : undefined;
+    if (!m) back(p.id, "err", "YouTube Shorts needs a vertical video");
+    if (m.aspect !== "9:16")
+      back(p.id, "err", `YouTube Shorts takes only vertical (9:16) video; "${yt.media}" is ${m.aspect ?? "not marked with an aspect"}`);
   }
 
   const bufferTargets = (Object.entries(edited.channels) as [Channel, NonNullable<Package["channels"][Channel]>][])
@@ -125,6 +129,7 @@ export async function approveAndSchedule(form: FormData) {
           videoUrl: m?.url,
           thumbnailUrl: m?.poster_url,
           youtube: ch === "youtube_shorts" ? { title: (c.title ?? "").trim() } : undefined,
+          xReplies: ch === "x" ? c.reply_texts?.filter((t) => t.trim()) : undefined,
         });
       } catch (e) {
         errors[ch] = (e as Error).message;

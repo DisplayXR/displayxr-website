@@ -157,7 +157,7 @@ export default async function ReviewPost({
                   <CaptionField channel={ch} name={`text__${ch}`} defaultValue={c.text} kind="text" readOnly={!editable} rows={ch === "linkedin" || ch === "reddit" ? 8 : 4} />
                   {c.reply_texts && c.reply_texts.length > 0 && (
                     <p className="mt-2 text-xs text-text-secondary">
-                      + {c.reply_texts.length} reply post(s), posted by hand after the first goes out.
+                      + {c.reply_texts.length} reply post(s), sent with it as a thread.
                     </p>
                   )}
                   {p.buffer.post_ids[ch] && !done && <p className="mt-2 text-xs text-accent-hover">Scheduled in Buffer</p>}
@@ -213,7 +213,7 @@ export default async function ReviewPost({
             {failedCheck && <p className="text-sm text-red-400">A check failed, so this post can&apos;t be approved. Fix it in the planner.</p>}
             {canApprove && (
               <p className="text-xs text-text-secondary">
-                Approving schedules this one post in Buffer for every “via Buffer” channel, with the captions and time shown here. By-hand channels are posted by you. YouTube Shorts needs a title (up to 100 characters) and goes out public.
+                Approving schedules this one post in Buffer for every “via Buffer” channel, with the captions and time shown here. By-hand channels are posted by you. YouTube Shorts needs a title (up to 100 characters) and a vertical 9:16 video, and goes out public.
               </p>
             )}
           </form>

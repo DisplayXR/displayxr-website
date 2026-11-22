@@ -6,6 +6,8 @@ import { CHANNELS, MANUAL_ONLY, POST_STATUSES, type Channel, type Package } from
 const ID_RE = /^[a-z0-9][a-z0-9-]{2,80}$/;
 const FILE_RE = /^[A-Za-z0-9][A-Za-z0-9._-]{0,80}$/;
 
+const ASPECTS = ["9:16", "16:9", "1:1"];
+
 export function isBlobUrl(u: unknown): u is string {
   if (typeof u !== "string") return false;
   try {
@@ -42,6 +44,7 @@ export function validatePackage(p: unknown): string[] {
     if (typeof mm.file !== "string" || !FILE_RE.test(mm.file)) errs.push(`media.${key}.file: plain file name required`);
     if (!isBlobUrl(mm.url)) errs.push(`media.${key}.url: must be a public Vercel Blob URL`);
     if (mm.poster_url !== undefined && !isBlobUrl(mm.poster_url)) errs.push(`media.${key}.poster_url: must be a public Vercel Blob URL`);
+    if (mm.aspect !== undefined && !ASPECTS.includes(mm.aspect as string)) errs.push(`media.${key}.aspect: one of ${ASPECTS.join(", ")}`);
   }
 
   const channels = o.channels as Record<string, unknown> | undefined;
