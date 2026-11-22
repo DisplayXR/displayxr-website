@@ -28,6 +28,10 @@ const nextConfig: NextConfig = {
       { source: "/vendors", destination: "/components", permanent: true },
       { source: "/display-vendors/:path*", destination: "/components", permanent: true },
       { source: "/README.md", destination: "/", permanent: true },
+      // Short, ours-for-good address for the DisplayXR Discord. Temporary (307)
+      // on purpose: if the invite is ever replaced, only this line and
+      // DISCORD_URL in lib/constants.ts change, and no browser has cached the old one.
+      { source: "/discord", destination: "https://discord.gg/AHW4sUT66z", permanent: false },
     ];
   },
 };
