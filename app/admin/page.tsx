@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { auth, isAllowed, signOut } from "@/lib/auth";
 import { getOrgDashboard } from "@/lib/github";
@@ -116,7 +117,10 @@ export default async function AdminPage() {
             Admin
           </h1>
           <p className="text-sm text-text-secondary">
-            Site analytics &amp; DisplayXR org activity
+            Site analytics &amp; DisplayXR org activity ·{" "}
+            <Link href="/admin/social" className="text-accent hover:text-accent-hover">
+              Social queue
+            </Link>
           </p>
         </div>
         <div className="flex items-center gap-3">
