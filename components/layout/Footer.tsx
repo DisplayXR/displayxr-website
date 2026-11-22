@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { DISCUSSIONS_URL, DOCS_URL, GITHUB_ORG_URL, REPO_URLS, YOUTUBE_URL } from "@/lib/constants";
+import { DISCORD_URL, DISCUSSIONS_URL, DOCS_URL, GITHUB_ORG_URL, REPO_URLS, YOUTUBE_URL } from "@/lib/constants";
 
 // Mirrors the header hubs, plus the pages that live under each.
 const footerLinks = {
@@ -24,6 +24,7 @@ const footerLinks = {
     { label: "Privacy", href: "/privacy" },
     { label: "Terms", href: "/terms" },
     { label: "Discussions ↗", href: DISCUSSIONS_URL },
+    { label: "Discord ↗", href: DISCORD_URL },
     { label: "GitHub ↗", href: GITHUB_ORG_URL },
     { label: "YouTube ↗", href: YOUTUBE_URL },
   ],
