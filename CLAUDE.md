@@ -50,7 +50,7 @@ Since the 2026-10 overhaul the site is organized as **one-click hubs**, one per
 audience, each opening on that audience's recommended next step:
 
 - Nav is **`NAV` in `lib/constants.ts`**: leaves only, **About · Browser ·
-  Play · Developers · Contribute · Components**. The header
+  Play · Catalog · Developers · Contribute · Components**. The header
   (`components/layout/Navbar.tsx`) adds a small **Docs ↗** link to the
   runtime repo's docs (`DOCS_URL`) and a persistent **Download** button
   (`DOWNLOAD_HREF` = `/download`), which the mobile menu pins on top. The model
@@ -67,6 +67,25 @@ audience, each opening on that audience's recommended next step:
   prose is `lib/data/play.ts`. No PC game title is named before a public
   release carries it; no company or OEM names; no performance numbers (fps,
   GPU usage) on the page.
+- `/catalog` is the Catalog: one list of everything that plugs into
+  DisplayXR, and a marketing surface. Items and categories are
+  `lib/data/catalog.ts`, which reads versions and platforms from the
+  generated data (`news-candidates.json` gives the newest release of repos
+  the component dashboard does not track), `lib/data/demos.ts`,
+  `components.ts` and `apps.ts`: never type a version or platform into it,
+  with one exception: an item no generated record carries a platform for
+  (today `leia-conversion`, `tracking-open`, `sim-display`) has its platform
+  typed in `catalog.ts`; `/sync-website` re-checks those three on each pass.
+  It is truthful **by omission, never by disclaimer** (David, 2026-11-20):
+  say what a thing is and what the user gets; if something is not true yet,
+  leave it out, with no "coming", "not yet" or "example" labels. No trust
+  label ("Verified") until an item can carry one; chips are "By DisplayXR",
+  "By <publisher>", "Open source", "For developers". Nothing is rated,
+  counted or priced. A category gets a page with its first item.
+  `/catalog/games` is the Games shelf: it renders `SYSTEMS` and `GAMES` from
+  `lib/data/play.ts` (no second list), follows `/play`'s rules, and never
+  says "verified". "Get it" goes to the item's release or `/download`; there
+  is no CLI install line until that verb ships.
 - `/developers` opens on the web path (recommended) with the inline3d snippet
   (one snippet, the full guide is `/browser#build`), then the sim-display note,
   native (API per platform), engines, AI-agent control, links.
@@ -124,7 +143,9 @@ audience, each opening on that audience's recommended next step:
   "privileged path." **Leia** mentions are fine — and expected — on `/download`
   (you download the actual Leia SR installer), `/components` (the reference
   plug-in to fork), `/platform-support` (devices and display tech) and
-  `/architecture` (technical detail); keep them off the homepage.
+  `/architecture` (technical detail), and on `/catalog` as items and item
+  pages only, never in the landing page's starter picks (`STARTER_IDS`); keep
+  them off the homepage.
 - **The Shell source is private.** Shell source lives in `displayxr-shell-pvt`
   (private); only **binaries / the installer** ship in the public
   `displayxr-shell-releases`. Never imply the shell *source* is open or shared —

@@ -494,7 +494,7 @@ export default function ExtensionsPage() {
         )}
 
         <section>
-          <h2 className="mb-2 text-2xl font-semibold text-text-primary">Catalog</h2>
+          <h2 className="mb-2 text-2xl font-semibold text-text-primary">All extensions</h2>
           <p className="mb-6 text-sm leading-relaxed text-text-secondary">
             Generated from the headers. Since runtime v2.0.0 every extension
             uses the{" "}

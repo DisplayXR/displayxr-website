@@ -52,6 +52,10 @@ export const NAV: NavEntry[] = [
   // DisplayXR Play: the games program (Nov 2026). Its own tab next to the
   // Browser; drop it from NAV if the header gets crowded (David's call).
   { label: "Play", href: "/play" },
+  // The Catalog: one list of everything that plugs into DisplayXR (items in
+  // lib/data/catalog.ts). Its Games shelf, /catalog/games, sits beneath it and
+  // lights up Catalog, not Play.
+  { label: "Catalog", href: "/catalog" },
   {
     label: "Developers",
     href: "/developers",

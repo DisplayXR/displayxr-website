@@ -176,6 +176,13 @@ updates into the authored TSX, opening a PR for review (prose *does* warrant a
 human glance, unlike the mechanical facts). Mechanical commit = facts;
 skill PR = narrative. They never touch the same fields.
 
+**The Catalog is hand-listed.** `lib/data/catalog.ts` reads versions and most
+platforms from the generated data, but nothing adds an item to it: a new
+provider, demo or app appears on `/catalog` only when someone writes its entry.
+Each `/sync-website` pass therefore checks `catalog.ts` against the components,
+demos and apps data for anything missing, and re-checks the three hand-typed
+platforms named in `CLAUDE.md`.
+
 #### The "What's New" feed is the sharpest case of this split
 
 The homepage ticker and `/news` render `lib/data/news.ts` — **authored**. The
