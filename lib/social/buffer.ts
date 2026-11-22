@@ -84,8 +84,9 @@ export async function createScheduledPost(input: {
     ? [{ video: { url: input.videoUrl, ...(input.thumbnailUrl ? { thumbnailUrl: input.thumbnailUrl } : {}) } }]
     : [];
   // metadata.twitter.thread lists the WHOLE thread, first post included
-  // (checked on 2026-11-22: a plain post reads back thread []). The top-level
-  // text and assets stay as they are.
+  // (checked on 2026-11-22: a plain post reads back thread []). Buffer rebuilds
+  // the post from the thread, so thread[0] MUST carry the video: without it the
+  // top-level video is silently dropped. With it, one video is posted.
   const metadata = input.youtube
     ? {
         youtube: {
