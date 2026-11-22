@@ -133,7 +133,7 @@ export const NEWS: NewsItem[] = [
     tier: "banner",
     headline: "DisplayXR Play: existing games in real stereo",
     blurb:
-      "DisplayXR Play brings existing games to spatial displays, rendered from two eyes. The Android lane is available now; a public PC release, for Steam on Linux and SteamOS and for Windows, is due December 12, 2026.",
+      "DisplayXR Play brings existing games to spatial displays, rendered from two eyes. The Android lane is available now; the PC side, for Steam on Linux and SteamOS and for Windows, is in private preview; its public release will be dated here.",
     href: "/play",
   },
   {

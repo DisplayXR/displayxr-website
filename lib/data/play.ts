@@ -113,7 +113,7 @@ export const TIMELINE: Milestone[] = [
     status: "live",
   },
   {
-    when: "December 12, 2026",
+    when: "Next",
     what: "Public PC release: the Steam compatibility tool for Linux, the Windows installer, graphics-layer stereo for Direct3D 11 and 12, and profiles for the titles of the December run.",
     status: "next",
   },
@@ -344,7 +344,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: "What is the preview today, and is it free?",
-        a: "Nothing to download on PC yet: the public PC release is December 12, 2026. Until then, the preview is the Discussions thread where people running it on panels report results. Everything is free and open source; the Android lane is downloadable now.",
+        a: "Nothing to download on PC yet: the PC side is in private preview, and its public release will be dated on this page. Until then, the preview is the Discussions thread where people running it on panels report results. The Android lane is free and downloadable now.",
       },
     ],
   },
@@ -436,7 +436,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: "Why do some repositories say December?",
-        a: "The PC side runs on the maintainers' machines and goes public with the December 12, 2026 release, when its profiles and layers can be used without hand-holding. The Android lane is public today.",
+        a: "The PC side runs on the maintainers' machines and goes public with the first PC release, when its profiles and layers can be used without hand-holding. The Android lane is public today.",
       },
     ],
   },
