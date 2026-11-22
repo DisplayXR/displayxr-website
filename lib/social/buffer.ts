@@ -6,10 +6,11 @@ import type { Channel } from "./types";
 // environment only (David adds it in Vercel as a Sensitive variable); it is
 // never sent to the browser and never logged.
 //
-// Field names below follow the docs as read on 2026-11-22 (createPost with
-// mode: customScheduled + dueAt; post { status externalLink }). Check them in
-// the Explorer (developers.buffer.com/explorer.html) with the real key before
-// the first live approval.
+// Field names below were checked on 2026-11-22 by introspecting the live
+// schema with the real key: CreatePostInput needs needsApproval (non-null
+// Boolean), YouTube posts take metadata.youtube (YoutubePostMetadataInput),
+// VideoAssetInput takes thumbnailUrl, and PostStatus is one of draft, error,
+// needs_approval, scheduled, sending, sent.
 
 const ENDPOINT = "https://api.buffer.com";
 
@@ -66,13 +67,31 @@ export async function bufferChannels(): Promise<Partial<Record<Channel, string>>
   return out;
 }
 
+export interface YoutubeMeta {
+  title: string; // YouTube caps it at 100 characters
+}
+
 export async function createScheduledPost(input: {
   channelId: string;
   text: string;
   dueAt: string; // ISO UTC
   videoUrl?: string;
+  thumbnailUrl?: string;
+  youtube?: YoutubeMeta;
 }): Promise<string> {
-  const assets = input.videoUrl ? [{ video: { url: input.videoUrl } }] : [];
+  const assets = input.videoUrl
+    ? [{ video: { url: input.videoUrl, ...(input.thumbnailUrl ? { thumbnailUrl: input.thumbnailUrl } : {}) } }]
+    : [];
+  const metadata = input.youtube
+    ? {
+        youtube: {
+          title: input.youtube.title,
+          privacy: "public",
+          madeForKids: false,
+          categoryId: "28", // Science & Technology
+        },
+      }
+    : undefined;
   const d = await gql<{ createPost: { post?: { id: string }; message?: string } }>(
     `mutation($input: CreatePostInput!) {
       createPost(input: $input) {
@@ -87,7 +106,10 @@ export async function createScheduledPost(input: {
         schedulingType: "automatic",
         mode: "customScheduled",
         dueAt: input.dueAt,
+        // The board is the approval step; Buffer's own approval queue stays off.
+        needsApproval: false,
         assets,
+        ...(metadata ? { metadata } : {}),
       },
     },
   );

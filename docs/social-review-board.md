@@ -55,7 +55,9 @@ and the video as a public Blob URL. Channel ids are discovered from the account
 When a scheduled post's time has passed, opening the board syncs it; `sent` on
 every channel moves the package to `posted`.
 
-**Verify before the first live approval**: the field names follow the docs as read
-on 2026-11-22. Run the channel query and one test post in Buffer's Explorer with the
-real key. YouTube Shorts titles and X reply threads are not sent through Buffer yet:
-replies are posted by hand, and the title field is shown for review only.
+**Checked against the live schema (2026-11-22, real key):** `needsApproval` is a
+required Boolean and the board sends `false` (the board is the approval step). The
+video asset carries the poster as `thumbnailUrl`. YouTube Shorts go out with
+`metadata.youtube { title, privacy: public, madeForKids: false, categoryId: "28" }`;
+Approve refuses an empty title or one over 100 characters. X reply threads are still
+posted by hand (`metadata.twitter.thread` exists but is not wired yet).
