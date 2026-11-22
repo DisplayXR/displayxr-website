@@ -41,7 +41,7 @@ export default function CatalogGamesPage() {
         <div className="mx-auto flex max-w-[1200px] flex-wrap items-center gap-x-3.5 gap-y-2 py-2.5">
           <Chip tone="games-inside">Runs inside the game</Chip>
           <span className="text-text-secondary">
-            Play works inside the game itself, so this shelf has rules of its own.
+            Play works inside the game itself, so it supports single-player games only and stays off for anti-cheat.
           </span>
         </div>
       </div>
@@ -101,8 +101,9 @@ export default function CatalogGamesPage() {
               What plays today
             </h2>
             <Lead>
-              Every row is a game a person played in stereo on a spatial display. A title is named only once a
-              public release carries it. Until then a row describes the game.
+              Every game marked Plays or Partial was played in stereo by a person on a spatial display. A Refused
+              row is a game Play turns off on purpose. A title is named only once a public release carries it.
+              Until then a row describes the game.
             </Lead>
           </div>
           <Link href="/play#games" className={gamesButton}>
@@ -159,9 +160,9 @@ export default function CatalogGamesPage() {
             </h2>
             <p className="max-w-[68ch] leading-[1.7] text-text-secondary">
               Everything else in the Catalog plugs into the DisplayXR runtime. Play is different: it loads into the
-              game&rsquo;s own process to draw a second eye, so it changes how that game runs. That is why every row
-              here is a game a person played on a spatial display, why Play only supports single-player games, and
-              why it turns itself off for games with anti-cheat.
+              game&rsquo;s own process to draw a second eye, so it changes how that game runs. That is why every game
+              listed as playing here was played by a person on a spatial display, why Play only supports
+              single-player games, and why it turns itself off for games with anti-cheat.
             </p>
           </div>
         </div>
