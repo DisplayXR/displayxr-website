@@ -96,7 +96,7 @@ export const DISPLAY_MAKERS: MakerRole[] = [
   {
     who: "Play",
     title: "The games",
-    text: "Graphics-layer stereo, the detector, per-game profiles and installers, maintained in the open. A title verified on one display plays on every display with a plug-in.",
+    text: "Graphics-layer stereo, the detector, per-game profiles and installers, maintained in the open. A title that plays on one display plays on every display with a plug-in.",
   },
 ];
 
@@ -316,7 +316,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: "Does a game that is not in the table work?",
-        a: "Usually the detector can route it: Direct3D 11 and 12 titles get graphics-layer stereo with default settings (engine stereo for Unreal Engine 4 and 5 titles is planned, Windows first), and anything on another graphics API or with anti-cheat is turned off. Whether the result looks right is what the table records, so try it and report; a report with a captured eye pair becomes a community-verified row.",
+        a: "Usually the detector can route it: Direct3D 11 and 12 titles get graphics-layer stereo with default settings (engine stereo for Unreal Engine 4 and 5 titles is planned, Windows first), and anything on another graphics API or with anti-cheat is turned off. Whether the result looks right is what the table records, so try it and report; a report with a captured eye pair becomes a row in the table, marked as a community report.",
       },
       {
         q: "Does 3D break when the game updates?",
@@ -328,7 +328,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: "Do DLSS, FSR, frame generation, ray tracing and HDR work?",
-        a: "Each eye gets its own camera, which is what temporal upscalers need, but none of them has been verified in stereo yet. Ray tracing is off by default on the Direct3D 12 route, and HDR output is not part of the preview. Report what you see and it goes in the table for that title.",
+        a: "Each eye gets its own camera, which is what temporal upscalers need, but none of them has been tested in stereo yet. Ray tracing is off by default on the Direct3D 12 route, and HDR output is not part of the preview. Report what you see and it goes in the table for that title.",
       },
       {
         q: "Which stores?",
@@ -373,7 +373,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         q: "How do I make and share a profile?",
-        a: "Change the three controls in the game; they are saved into the game's profile, a plain-text file keyed by the store app id. Post it in Discussions today; once the profiles repository is public, open a pull request. A profile needs a captured eye pair or a person's report to be marked community-verified.",
+        a: "Change the three controls in the game; they are saved into the game's profile, a plain-text file keyed by the store app id. Post it in Discussions today; once the profiles repository is public, open a pull request. A profile needs a captured eye pair or a person's report to be listed as a community report.",
       },
     ],
   },
@@ -389,8 +389,8 @@ export const FAQ_GROUPS: FaqGroup[] = [
         a: "The DisplayXR project maintains them in the open, as it does the runtime. Everything is open source under permissive licenses, so a display maker can carry them on without asking anyone.",
       },
       {
-        q: "How is a title verified, and can we curate our own list?",
-        a: "A title is verified when a person has played it in stereo on a 3D display and the result is recorded with a captured eye pair; community reports are marked as such. A display maker can ship its own default profiles and its own list with a device; the project's table stays the shared one, and a title verified on one display plays on every display with a plug-in.",
+        q: "How is a title tested, and can we curate our own list?",
+        a: "A title is listed as playing when a person has played it in stereo on a spatial display and the result is recorded with a captured eye pair; community reports are marked as such. A display maker can ship its own default profiles and its own list with a device; the project's table stays the shared one, and a title that plays on one display plays on every display with a plug-in.",
       },
       {
         q: "What does it cost?",

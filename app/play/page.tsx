@@ -31,7 +31,7 @@ const gameAsset = (slug?: string) => (slug ? android.games.find((g) => g.slug ==
 export const metadata: Metadata = {
   title: "DisplayXR Play",
   description:
-    "Existing games rendered from two eyes on 3D displays. Steam on Linux, Windows and Android, through the DisplayXR runtime. Real stereo, single-player titles, you keep your game.",
+    "Existing games rendered from two eyes on spatial displays. Steam on Linux, Windows and Android, through the DisplayXR runtime. Real stereo, single-player titles, you keep your game.",
 };
 
 // A product page in the Browser page's mold: full-bleed bands, big type, one
@@ -120,7 +120,7 @@ export default function PlayPage() {
               Your games, in real 3D.
             </h1>
             <p className="mb-9 text-lg md:text-xl leading-relaxed text-white/85">
-              Existing games rendered from two eyes on glasses-free 3D displays. Steam on Linux,
+              Existing games rendered from two eyes on spatial displays. Steam on Linux,
               Windows and Android, through one runtime. Real stereo, never a depth trick.
               Single-player titles. You keep your game.
             </p>
@@ -318,7 +318,7 @@ export default function PlayPage() {
           <Eyebrow>What plays today</Eyebrow>
           <H2>What plays, and how.</H2>
           <p className="mb-9 max-w-2xl text-lg leading-relaxed text-text-secondary">
-            Every row is a game a person played in stereo on a 3D display. A title is named only once a release carries it. Games with anti-cheat
+            Every game marked Plays or Partial was played in stereo by a person on a spatial display. A Refused row is a game Play turns off on purpose. A title is named only once a release carries it. Games with anti-cheat
             or that need a headset are refused by the detector and listed as such.
           </p>
           <div className="mb-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] text-text-primary/90">
@@ -377,7 +377,7 @@ export default function PlayPage() {
             <Button variant="secondary" href="#profiles">Share a profile</Button>
             <p className="text-sm text-text-secondary">
               Ten more titles are in the December run. Player reports go into the same table, marked
-              as community-verified.
+              as community reports.
             </p>
           </div>
         </AnimateIn>
@@ -419,7 +419,7 @@ export default function PlayPage() {
               </div>
               <p className="text-sm text-text-secondary">
                 Power users edit the pass section; everyone else never sees it. A submitted profile
-                is reviewed and lands in the table above as community-verified.
+                is reviewed and lands in the table above as a community report.
               </p>
             </div>
           </div>
