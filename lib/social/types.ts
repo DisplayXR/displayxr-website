@@ -35,7 +35,7 @@ export const MANUAL_ONLY: readonly Channel[] = ["reddit", "hackernews", "discord
 export interface ChannelPost {
   text: string;
   title?: string; // reddit, hackernews, youtube_shorts
-  reply_texts?: string[]; // x: follow-up replies, posted by hand for now
+  reply_texts?: string[]; // x: follow-up replies, sent as a thread through Buffer
   media?: string; // key into Package.media
   mode: "buffer" | "manual";
 }
@@ -46,6 +46,7 @@ export interface MediaItem {
   duration_s?: number;
   poster?: string; // file name of the poster frame
   poster_url?: string;
+  aspect?: "9:16" | "16:9" | "1:1"; // YouTube Shorts accepts only 9:16
 }
 
 export interface Check {

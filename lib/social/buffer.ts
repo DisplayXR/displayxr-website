@@ -78,10 +78,14 @@ export async function createScheduledPost(input: {
   videoUrl?: string;
   thumbnailUrl?: string;
   youtube?: YoutubeMeta;
+  xReplies?: string[]; // X only: sent as a thread after the main post
 }): Promise<string> {
   const assets = input.videoUrl
     ? [{ video: { url: input.videoUrl, ...(input.thumbnailUrl ? { thumbnailUrl: input.thumbnailUrl } : {}) } }]
     : [];
+  // metadata.twitter.thread lists the WHOLE thread, first post included
+  // (checked on 2026-11-22: a plain post reads back thread []). The top-level
+  // text and assets stay as they are.
   const metadata = input.youtube
     ? {
         youtube: {
@@ -91,7 +95,16 @@ export async function createScheduledPost(input: {
           categoryId: "28", // Science & Technology
         },
       }
-    : undefined;
+    : input.xReplies && input.xReplies.length > 0
+      ? {
+          twitter: {
+            thread: [
+              { text: input.text, assets },
+              ...input.xReplies.map((text) => ({ text, assets: [] })),
+            ],
+          },
+        }
+      : undefined;
   const d = await gql<{ createPost: { post?: { id: string }; message?: string } }>(
     `mutation($input: CreatePostInput!) {
       createPost(input: $input) {

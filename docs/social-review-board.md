@@ -59,5 +59,6 @@ every channel moves the package to `posted`.
 required Boolean and the board sends `false` (the board is the approval step). The
 video asset carries the poster as `thumbnailUrl`. YouTube Shorts go out with
 `metadata.youtube { title, privacy: public, madeForKids: false, categoryId: "28" }`;
-Approve refuses an empty title or one over 100 characters. X reply threads are still
-posted by hand (`metadata.twitter.thread` exists but is not wired yet).
+Approve refuses an empty title, one over 100 characters, or media not marked
+`aspect: "9:16"` (Buffer rejects landscape video for Shorts). X `reply_texts` go out as
+`metadata.twitter.thread`, which lists the whole thread, first post included.
