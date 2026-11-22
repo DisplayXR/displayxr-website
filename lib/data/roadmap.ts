@@ -160,7 +160,7 @@ export const roadmapSections: RoadmapSection[] = [
       {
         title: "DisplayXR Play",
         description:
-          "Existing games on spatial displays, rendered from two eyes. The Android lane is available now; the public PC release, for Steam on Linux and SteamOS and for Windows, is due December 12, 2026",
+          "Existing games on spatial displays, rendered from two eyes. The Android lane is available now; the PC side, for Steam on Linux and SteamOS and for Windows, is in private preview; its public release will be dated here",
       },
       {
         title: "Expand demos and engine integrations",
