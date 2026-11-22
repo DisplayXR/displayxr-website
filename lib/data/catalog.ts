@@ -551,7 +551,7 @@ export const ITEMS: CatalogItem[] = [
     category: "2d-to-3d",
     name: leiaConv.name,
     publisher: "Leia",
-    blurb: "The display maker's own 2D-to-3D converter, hosted by the DisplayXR runtime and shared with every app.",
+    blurb: "On Leia displays: the display maker's own 2D-to-3D converter, shared with every DisplayXR app.",
     platforms: "Windows",
     get: {
       label: "Get it",
@@ -714,7 +714,7 @@ export const ITEMS: CatalogItem[] = [
 export const STARTER_IDS = [
   "conversion-open",
   "shell",
-  "tracking-open",
+  "gallery",
   "browser",
   "mediaplayer",
   "gaussiansplat",
@@ -739,32 +739,13 @@ export const HOW_IT_WORKS: { n: string; title: string; text: string }[] = [
   },
 ];
 
-// --- "How paid components work" ---------------------------------------------
-// An explainer for vendors, shown under "Open for publishers" with an
-// "Illustration" caption. It describes the model; it is not an item and has
-// no route.
+// --- "Selling a component" ----------------------------------------------------
+// Three lines for vendors, under "Open for publishers". It states the model
+// only: no license states, no activation steps (those are a vendor's own UI).
 export const PAID_POINTS: { title: string; text: string }[] = [
-  { title: "Install is free", text: "Anyone can install your component and try it. No account, no sign-in." },
-  { title: "You sell the licence", text: "On your own site, at your own price, to your own customers." },
+  { title: "Install is free", text: "Anyone can install your component. No account, no sign-in." },
+  { title: "You sell it", text: "On your own site, at your own price, to your own customers." },
   { title: "DisplayXR takes no cut", text: "No fee, no revenue share, no payment passing through DisplayXR." },
-  {
-    title: "Nothing breaks",
-    text: "Without a licence your converter steps aside and the user's other converter keeps working.",
-  },
-];
-
-export interface LicenceState {
-  state: string;
-  tone: "blue" | "green" | "yellow" | "gray";
-  what: string;
-  action: string;
-}
-
-export const LICENCE_STATES: LicenceState[] = [
-  { state: "Trial", tone: "blue", what: "Working. The trial's end date is shown here.", action: "Buy on your site" },
-  { state: "Licensed", tone: "green", what: "Working. This is the converter the user's apps use.", action: "Manage on your site" },
-  { state: "Expired", tone: "yellow", what: "Stepped aside. The user's next converter has taken over.", action: "Renew on your site" },
-  { state: "Unlicensed", tone: "gray", what: "Installed. The user's next converter is in use.", action: "Paste a key" },
 ];
 
 // --- "Which converter runs" (the 2D-to-3D category's side panel) -------------

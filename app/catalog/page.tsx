@@ -9,9 +9,7 @@ import {
   CatalogHero,
   CategoryGlyph,
   ItemCard,
-  LicenceStates,
   Slot,
-  StepsAside,
 } from "@/components/catalog/parts";
 import {
   CATALOG_PUBLISH_URL,
@@ -190,29 +188,23 @@ export default function CatalogPage() {
             </Button>
           </div>
 
-          {/* How paid components work: an explainer for vendors. */}
+          {/* Selling a component: the model in three lines, for vendors. */}
           <div id="paid" className="mt-16 scroll-mt-24 rounded-2xl border border-border bg-surface p-7 md:p-9">
             <h3 className="font-display text-3xl leading-[1.12] tracking-tight text-text-primary md:text-4xl">
-              How paid components work
+              Selling a component
             </h3>
             <p className="mt-3 max-w-2xl leading-relaxed text-text-secondary">
-              Sell your converter your way. People install it free, you sell the licence on your own site, and
-              DisplayXR stays out of the transaction.
+              Sell your component your way. People install it free, you sell it on your own site, and DisplayXR
+              stays out of the transaction.
             </p>
-            <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-12">
-              <ul className="grid content-start gap-5">
-                {PAID_POINTS.map((p) => (
-                  <li key={p.title}>
-                    <h4 className="text-base font-semibold text-text-primary">{p.title}</h4>
-                    <p className="mt-1 text-sm leading-relaxed text-text-secondary">{p.text}</p>
-                  </li>
-                ))}
-              </ul>
-              <div className="min-w-0 space-y-5">
-                <LicenceStates />
-                <StepsAside />
-              </div>
-            </div>
+            <ul className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
+              {PAID_POINTS.map((p) => (
+                <li key={p.title}>
+                  <h4 className="text-base font-semibold text-text-primary">{p.title}</h4>
+                  <p className="mt-1 text-sm leading-relaxed text-text-secondary">{p.text}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </AnimateIn>
       </Band>

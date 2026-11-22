@@ -72,7 +72,10 @@ audience, each opening on that audience's recommended next step:
   `lib/data/catalog.ts`, which reads versions and platforms from the
   generated data (`news-candidates.json` gives the newest release of repos
   the component dashboard does not track), `lib/data/demos.ts`,
-  `components.ts` and `apps.ts`: never type a version or platform into it.
+  `components.ts` and `apps.ts`: never type a version or platform into it,
+  with one exception: an item no generated record carries a platform for
+  (today `leia-conversion`, `tracking-open`, `sim-display`) has its platform
+  typed in `catalog.ts`; `/sync-website` re-checks those three on each pass.
   It is truthful **by omission, never by disclaimer** (David, 2026-11-20):
   say what a thing is and what the user gets; if something is not true yet,
   leave it out, with no "coming", "not yet" or "example" labels. No trust
@@ -140,7 +143,9 @@ audience, each opening on that audience's recommended next step:
   "privileged path." **Leia** mentions are fine — and expected — on `/download`
   (you download the actual Leia SR installer), `/components` (the reference
   plug-in to fork), `/platform-support` (devices and display tech) and
-  `/architecture` (technical detail); keep them off the homepage.
+  `/architecture` (technical detail), and on `/catalog` as items and item
+  pages only, never in the landing page's starter picks (`STARTER_IDS`); keep
+  them off the homepage.
 - **The Shell source is private.** Shell source lives in `displayxr-shell-pvt`
   (private); only **binaries / the installer** ship in the public
   `displayxr-shell-releases`. Never imply the shell *source* is open or shared —

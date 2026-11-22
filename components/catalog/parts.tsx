@@ -17,7 +17,6 @@ import {
   categoryById,
   FOR_DEVELOPERS_NOTE,
   itemHref,
-  LICENCE_STATES,
   type CatalogItem,
   type CategoryIcon,
 } from "@/lib/data/catalog";
@@ -258,61 +257,5 @@ export function Ticks({ items }: { items: ReactNode[] }) {
         </li>
       ))}
     </ul>
-  );
-}
-
-// --- "How paid components work" ---------------------------------------------
-// An explainer for vendors (see lib/data/catalog.ts), captioned "Illustration".
-
-const dotTone = { blue: "bg-accent", green: "bg-success", yellow: "bg-warning", gray: "bg-text-secondary" } as const;
-
-/** What a customer sees next to a licensed converter: one of four states. */
-export function LicenceStates() {
-  return (
-    <figure>
-      <div className="overflow-hidden rounded-[14px] border border-border bg-[#050507]">
-        <div className="flex items-center gap-2 border-b border-border bg-surface px-3.5 py-2.5 text-xs text-text-secondary">
-          <span aria-hidden className="h-[9px] w-[9px] rounded-full bg-border" />
-          <span aria-hidden className="h-[9px] w-[9px] rounded-full bg-border" />
-          <span aria-hidden className="h-[9px] w-[9px] rounded-full bg-border" />
-          <span className="ml-1.5">Your converter, as your customer sees it</span>
-        </div>
-        <ul>
-          {LICENCE_STATES.map((s) => (
-            <li
-              key={s.state}
-              className="grid grid-cols-1 gap-x-4 gap-y-1.5 border-b border-border px-[18px] py-4 last:border-b-0 sm:grid-cols-[120px_minmax(0,1fr)_auto] sm:items-center"
-            >
-              <span className="flex items-center gap-2.5 text-[15px] font-semibold text-text-primary">
-                <span aria-hidden className={`h-2 w-2 shrink-0 rounded-full ${dotTone[s.tone]}`} />
-                {s.state}
-              </span>
-              <span className="text-sm text-text-secondary">{s.what}</span>
-              <span className={`text-[13px] font-medium ${s.tone === "gray" ? "text-text-secondary" : "text-accent"}`}>
-                {s.action}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <figcaption className="mt-2.5 text-xs text-text-secondary">Illustration</figcaption>
-    </figure>
-  );
-}
-
-/** Without a licence a converter steps aside and the next one takes over. */
-export function StepsAside() {
-  return (
-    <div className="grid gap-2.5 sm:grid-cols-[1fr_auto_1fr] sm:items-stretch">
-      <div className="rounded-xl border border-dashed border-border bg-surface p-4 text-sm">
-        <b className="mb-0.5 block font-semibold text-text-primary">Your converter</b>
-        <span className="text-text-secondary">Waiting for a licence: steps aside</span>
-      </div>
-      <div className="grid place-items-center px-1 text-center text-[13px] text-text-secondary">then →</div>
-      <div className="rounded-xl border border-success/45 bg-surface p-4 text-sm">
-        <b className="mb-0.5 block font-semibold text-text-primary">Open-model converter</b>
-        <span className="text-text-secondary">Takes over. Apps keep converting.</span>
-      </div>
-    </div>
   );
 }
