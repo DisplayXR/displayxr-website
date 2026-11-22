@@ -1,5 +1,27 @@
 [
   {
+    "id": "displayxr-demo-mediaplayer@pro-v0.10.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.10.0",
+    "title": "Media Player Pro 0.10.0",
+    "date": "2026-11-22",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.10.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.23.1",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.23.1",
+    "title": "v2.23.1",
+    "date": "2026-11-22",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.23.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.69.3",
     "repo": "displayxr-runtime",
     "tag": "v2.69.3",
@@ -239,31 +261,6 @@
     "title": "Media Player Pro 0.9.10",
     "date": "2026-11-17",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.10",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.21.2",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.21.2",
-    "title": "v2.21.2",
-    "date": "2026-11-17",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.21.2",
-    "prerelease": false,
-    "featureLines": [
-      "**Transparent Vulkan apps on Windows-on-ARM.** On GPUs whose Vulkan driver cannot import D3D11 shared handles (Adreno / Snapdragon), the desktop behind a transparent Vulkan app now shows through its see-through areas. Before, the app was…",
-      "Linux: the plug-in's manifest (`050-leia-sr.json`) now declares what it needs inside a container (SR paths, `SR_RUNTIME_PATH`, host `libGLEW`), so container hosts such as Proton / Steam Linux Runtime no longer hard-code them (#535)."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@pro-v0.9.9",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.9.9",
-    "title": "Media Player Pro 0.9.9",
-    "date": "2026-11-16",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.9",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
