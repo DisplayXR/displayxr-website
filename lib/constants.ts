@@ -4,6 +4,7 @@ export const GITHUB_ORG_URL = "https://github.com/DisplayXR";
 export const YOUTUBE_URL = "https://www.youtube.com/@DisplayXR";
 
 // The DisplayXR Discord: a permanent invite (server opened 2026-11-21).
+// displayxr.org/discord redirects here (next.config.ts); keep the two in sync.
 export const DISCORD_URL = "https://discord.gg/AHW4sUT66z";
 export const LAUNCH_FILM = {
   id: "yqWqZ0uwLVk",
