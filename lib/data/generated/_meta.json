@@ -65,6 +65,7 @@
       "displayxr-runtime/docs/adr/ADR-062-window-visibility-drives-lens-weave-and-session-state.md",
       "displayxr-runtime/docs/adr/ADR-063-input-provider-device-abi-hardening.md",
       "displayxr-runtime/docs/adr/ADR-064-component-catalog-and-third-party-trust.md",
+      "displayxr-runtime/docs/adr/ADR-065-two-runtime-rendering-modes.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-001-direct-runtime-loading.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-002-zero-copy-atlas-handoff.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-003-ue-native-off-axis-projection.md"
@@ -111,7 +112,8 @@
       "displayxr-vendor-template",
       "displayxr-web",
       "displayxr-website",
-      "glTF-Sample-Assets"
+      "glTF-Sample-Assets",
+      "hello-dino"
     ]
   }
 }

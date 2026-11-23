@@ -351,5 +351,12 @@
     "url": "https://github.com/DisplayXR/glTF-Sample-Assets",
     "topics": [],
     "archived": false
+  },
+  {
+    "name": "hello-dino",
+    "description": "Hello, dinosaur: an inline-3D DisplayXR page (PlayCanvas + @displayxr/inline3d)",
+    "url": "https://github.com/DisplayXR/hello-dino",
+    "topics": [],
+    "archived": false
   }
 ]

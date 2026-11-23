@@ -18,6 +18,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-leia-plugin@v2.23.2",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.23.2",
+    "title": "v2.23.2",
+    "date": "2026-11-23",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.23.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.69.5",
     "repo": "displayxr-runtime",
     "tag": "v2.69.5",
@@ -36,12 +47,21 @@
     "id": "displayxr-runtime@v2.69.6",
     "repo": "displayxr-runtime",
     "tag": "v2.69.6",
-    "title": "v2.69.6",
+    "title": "DisplayXR Runtime v2.69.6",
     "date": "2026-11-23",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.69.6",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Platform remedy (ADR-045 Amendment 1).** A display plug-in can now report that its vendor platform has an update, and where to get it, through the existing `get_platform_state` call. `displayxr-cli` (`info` / `selftest` / `status`, plu…",
+      "**Dashboard redesign, phases 1–2.** Home now opens on a plain verdict (\"is my 3D display working?\") with one row per display and a \"Needs attention\" list; Settings and Troubleshooting reorganised; quieter Components page.",
+      "feat(plugin): platform remedy — \"update recommended / required\" notice in displayxr-cli, tray and Dashboard (ADR-045 Amendment 1, no ABI bump) (#2765)",
+      "feat(dashboard): Home verdict, Settings and Troubleshooting (redesign phase 2) (#2764)",
+      "feat(dashboard): plain wording and a quieter Components page (redesign phase 1) (#2763)",
+      "feat(cli): `workspace check-hotkey` and `workspace get`, with known-conflict advice",
+      "feat(catalog): list the Shell in schema 2 as a workspace controller the user picks",
+      "feat(installer): an already-installed component is ticked on the component page"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@pro-v0.10.0",
@@ -258,21 +278,6 @@
       "**Convert to 3D now works for pictures on desktop Linux**, over the runtime's lift service.",
       "Installer: fetch a missing or too-old runtime through an embedded, Leia-signed `dxr-get`. It plans first (one consent prompt), then runs `ensure-for browser`. Silent installs (`/S`) fetch directly. Falls back to the bundle download link …",
       "Desktop Linux: Convert to 3D for `<img>` over XR_DXR_lift's CPU transport (#354, #356)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.21.3",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.21.3",
-    "title": "v2.21.3",
-    "date": "2026-11-18",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.21.3",
-    "prerelease": false,
-    "featureLines": [
-      "Leia 2D mode now reports head tracking on every platform, so an app in 2D that still shows head-tracked look-around no longer says \"face lost\" (#546).",
-      "macOS gains MANUAL eye tracking, and MANAGED face loss now comes from the weaver's own tracking state instead of eye-pair freshness (#544).",
-      "macOS: MANUAL eye-tracking mode (when the SR runtime supports the tracking-loss mode) and MANAGED `is_tracking` from `srWeaverGetTrackingState` (#544)"
     ],
     "looksMechanical": false
   },
