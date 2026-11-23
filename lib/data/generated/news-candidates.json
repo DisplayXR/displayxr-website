@@ -40,6 +40,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.9.40",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.40",
+    "title": "DisplayXR v2.9.40",
+    "date": "2026-11-23",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.40",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.23.2",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.23.2",
@@ -245,17 +256,6 @@
       "Open menu with Open folder and a Recent list (#253)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.9.37",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.37",
-    "title": "DisplayXR v2.9.37",
-    "date": "2026-11-19",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.37",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.37.0",
