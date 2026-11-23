@@ -113,6 +113,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.70.1",
+    "repo": "displayxr-runtime",
+    "tag": "v2.70.1",
+    "title": "v2.70.1",
+    "date": "2026-11-23",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@pro-v0.10.0",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "pro-v0.10.0",
@@ -133,26 +144,6 @@
     "prerelease": false,
     "featureLines": [
       "Every `v*` release now attaches `displayxr-detect.json`, carrying the schema-2 item id `leia-sr` (#557, displayxr-runtime#2737)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.69.4",
-    "repo": "displayxr-runtime",
-    "tag": "v2.69.4",
-    "title": "DisplayXR Runtime v2.69.4",
-    "date": "2026-11-22",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.69.4",
-    "prerelease": false,
-    "featureLines": [
-      "Window apps on the IPC path of the Windows service now get window-drag phase snap and can request MANUAL eye-tracking mode, and the service exits for relaunch after a device loss even when nothing is rendering. The DisplayXR Catalog arri…",
-      "feat(cli): `displayxr-cli catalog`, a front end over dxr-get (ADR-064 step 4) (#2746)",
-      "feat(dashboard): Catalog tab: browse, install, update, uninstall, licence (ADR-064 step 8) (#2747)",
-      "feat(installer): list optional components from the DisplayXR Catalog and download the chosen ones",
-      "feat(installer): drive the component page from dxr-get's real reports",
-      "feat(installer): one `dxr-get list` call for the page, `--no-runtime` on every install",
-      "feat(dxr-get): read catalog schema 2, gate on runtime range and class ABI, receipts, uninstall, inventory (ADR-064 steps 2 and 3)",
-      "feat(dxr-get): one-call list for a setup page, `--assume-runtime`, `--no-runtime`, `install --default`"
     ],
     "looksMechanical": false
   },

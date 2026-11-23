@@ -2,30 +2,20 @@
   {
     "id": "runtime",
     "name": "DisplayXR Runtime",
-    "version": "v2.70.0",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.0",
+    "version": "v2.70.1",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.1",
     "releaseDate": "2026-11-23",
-    "platforms": "Windows · macOS · Linux · Android",
+    "platforms": "macOS · Android",
     "downloads": [
       {
-        "platform": "Windows",
-        "file": "DisplayXRSetup-2.70.0.exe",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.0/DisplayXRSetup-2.70.0.exe"
-      },
-      {
         "platform": "macOS",
-        "file": "DisplayXR-Installer-2.70.0.pkg",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.0/DisplayXR-Installer-2.70.0.pkg"
-      },
-      {
-        "platform": "Linux",
-        "file": "displayxr-runtime_2.70.0_amd64.deb",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.0/displayxr-runtime_2.70.0_amd64.deb"
+        "file": "DisplayXR-Installer-2.70.1.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.1/DisplayXR-Installer-2.70.1.pkg"
       },
       {
         "platform": "Android",
-        "file": "DisplayXR-Runtime-2.70.0-android-arm64.apk",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.0/DisplayXR-Runtime-2.70.0-android-arm64.apk"
+        "file": "DisplayXR-Runtime-Leia-2.70.1-android-arm64.apk",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.1/DisplayXR-Runtime-Leia-2.70.1-android-arm64.apk"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-runtime"
@@ -62,12 +52,17 @@
     "version": "v2.23.3",
     "releaseUrl": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.23.3",
     "releaseDate": "2026-11-23",
-    "platforms": "Windows · Android",
+    "platforms": "Windows · Linux · Android",
     "downloads": [
       {
         "platform": "Windows",
         "file": "DisplayXRLeiaSRSetup-2.23.3.exe",
         "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.23.3/DisplayXRLeiaSRSetup-2.23.3.exe"
+      },
+      {
+        "platform": "Linux",
+        "file": "displayxr-leia-sr_2.23.3_amd64.deb",
+        "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.23.3/displayxr-leia-sr_2.23.3_amd64.deb"
       },
       {
         "platform": "Android",
