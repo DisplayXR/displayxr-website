@@ -18,6 +18,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.69.5",
+    "repo": "displayxr-runtime",
+    "tag": "v2.69.5",
+    "title": "v2.69.5",
+    "date": "2026-11-23",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.69.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-mediaplayer@pro-v0.10.0",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "pro-v0.10.0",
@@ -210,19 +221,6 @@
       "The windowless path requires **LeiaSR ≥ 1.39.0**.",
       "D3D12 DP declares `PHASE_FROM_PRESENT_ORIGIN` for a windowless EXTERNAL per-screen weaver (runtime ADR-060, L4) (#548, #549)",
       "Vulkan + OpenGL DPs declare `PHASE_FROM_PRESENT_ORIGIN` for a windowless EXTERNAL per-screen weaver (runtime ADR-060, L4) (#550)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.69.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.69.1",
-    "title": "DisplayXR Runtime v2.69.1",
-    "date": "2026-11-19",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.69.1",
-    "prerelease": false,
-    "featureLines": [
-      "Android: the Leia APK now bundles leia-plugin v2.22.0 (v2.69.0's was built against v2.21.3). No runtime code changes since v2.69.0."
     ],
     "looksMechanical": false
   },
