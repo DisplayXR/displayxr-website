@@ -80,21 +80,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.69.5",
-    "repo": "displayxr-runtime",
-    "tag": "v2.69.5",
-    "title": "DisplayXR Runtime v2.69.5",
-    "date": "2026-11-23",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.69.5",
-    "prerelease": false,
-    "featureLines": [
-      "Conversion model store fixes for locally built, research-only models: `displayxr-cli conv run` now uses the model store, with a per-user research opt-in on Linux and macOS. Locally built models never queue a download. Each blob is hashed…",
-      "**conv: verify a blob once, on entry (#2762).** The model store hashes a blob when it enters the store (download, local build, or the first request for an unstamped blob). After that, every load in any process checks only the stamp, the …",
-      "**dashboard: one Components tab (#2760).** The Catalog tab from v2.69.4 is merged into Components. Installed components and catalog entries now share one list, with one row per item, grouped by class with Runtime and Apps groups. Filters…"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-runtime@v2.69.6",
     "repo": "displayxr-runtime",
     "tag": "v2.69.6",
@@ -147,6 +132,28 @@
       "feat(lift): GAUSSIANS camera block, prompt failures, oversize photos (XR_DXR_lift spec 6) (#2771)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.70.2",
+    "repo": "displayxr-runtime",
+    "tag": "v2.70.2",
+    "title": "v2.70.2",
+    "date": "2026-11-23",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unreal@v0.12.1",
+    "repo": "displayxr-unreal",
+    "tag": "v0.12.1",
+    "title": "DisplayXR v0.12.1",
+    "date": "2026-11-23",
+    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.12.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-mediaplayer@pro-v0.10.0",
@@ -745,7 +752,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — v2.9.39",
+    "title": "Android tablet bundle (latest) — v2.9.40",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
@@ -865,17 +872,6 @@
     "title": "DisplayXR v0.9.4",
     "date": "2026-09-19",
     "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.9.4",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-unreal@v0.9.3",
-    "repo": "displayxr-unreal",
-    "tag": "v0.9.3",
-    "title": "DisplayXR v0.9.3",
-    "date": "2026-09-17",
-    "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.9.3",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
