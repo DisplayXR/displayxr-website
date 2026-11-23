@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.10.6",
+    "repo": "displayxr-browser",
+    "tag": "v1.10.6",
+    "title": "DisplayXR Browser v1.10.6",
+    "date": "2026-11-23",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.6",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-conversion-open@v0.2.0",
     "repo": "displayxr-conversion-open",
     "tag": "v0.2.0",
@@ -116,12 +127,15 @@
     "id": "displayxr-runtime@v2.70.1",
     "repo": "displayxr-runtime",
     "tag": "v2.70.1",
-    "title": "v2.70.1",
+    "title": "DisplayXR Runtime v2.70.1",
     "date": "2026-11-23",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.1",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "`XR_DXR_lift` spec 6: the GAUSSIANS one-shot now returns the capture camera block and facts (`XrLiftBlobCameraDXR` chained on `XrLiftBlobDXR`, two-call JSON strings); a failed conversion is reported promptly as `XR_ERROR_LIFT_CONVERSION_…",
+      "feat(lift): GAUSSIANS camera block, prompt failures, oversize photos (XR_DXR_lift spec 6) (#2771)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-mediaplayer@pro-v0.10.0",
@@ -375,17 +389,6 @@
     "title": "v0.5.7",
     "date": "2026-11-10",
     "url": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.5.7",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@v1.10.2",
-    "repo": "displayxr-browser",
-    "tag": "v1.10.2",
-    "title": "DisplayXR Browser v1.10.2",
-    "date": "2026-11-09",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
