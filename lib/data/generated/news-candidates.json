@@ -137,12 +137,17 @@
     "id": "displayxr-runtime@v2.70.2",
     "repo": "displayxr-runtime",
     "tag": "v2.70.2",
-    "title": "v2.70.2",
+    "title": "DisplayXR Runtime v2.70.2",
     "date": "2026-11-23",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Fixes to switching between 2D and 3D: an app using the runtime's own window no longer freezes when it starts in 2D and you press V, and the 0 and 1 keys now behave exactly like V on every display driver. The status snapshot and `displayx…",
+      "The status snapshot now reports a globally chosen display driver (`dp_preference`) and a per-driver `enabled` flag (#2772).",
+      "`displayxr-cli <class> set <id> <KEY> --stdin` (e.g. `dp set`) sets a value (for example a secret) from standard input without showing it on the command line (#2772).",
+      "`options --json` now lists the allowed `values` for enum settings (#2772)."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unreal@v0.12.1",
