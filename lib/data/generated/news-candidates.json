@@ -51,6 +51,25 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-leia-conversion@v0.1.0",
+    "repo": "displayxr-leia-conversion",
+    "tag": "v0.1.0",
+    "title": "v0.1.0",
+    "date": "2026-11-23",
+    "url": "https://github.com/DisplayXR/displayxr-leia-conversion/releases/tag/v0.1.0",
+    "prerelease": false,
+    "featureLines": [
+      "First release of the Leia 2D-to-3D conversion provider for DisplayXR, as its own component. It installs the provider only; it no longer ships inside the Leia SR plug-in.",
+      "**Windows:** `DisplayXRLeiaConversionSetup-0.1.0.exe` (NSIS installer).",
+      "**Linux:** `displayxr-leia-conversion_0.1.0_amd64.deb`.",
+      "**Prerequisite, not included:** the vendor's conversion runtime is a separate install. Without it the provider loads and reports itself as unavailable.",
+      "**Linux:** install this package together with a Leia SR plug-in release that no longer carries the provider. That plug-in release is not out yet, so on a box with the current `displayxr-leia-sr` this `.deb` is refused on its own. See [do…",
+      "This release is **unsigned**. On Windows the installer allowlists the provider it installs, so it still loads.",
+      "**Full Changelog**: https://github.com/DisplayXR/displayxr-leia-conversion/commits/v0.1.0"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-leia-plugin@v2.23.2",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.23.2",
@@ -87,26 +106,9 @@
     "date": "2026-11-23",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.23.4",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-runtime@v2.69.6",
-    "repo": "displayxr-runtime",
-    "tag": "v2.69.6",
-    "title": "DisplayXR Runtime v2.69.6",
-    "date": "2026-11-23",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.69.6",
-    "prerelease": false,
     "featureLines": [
-      "**Platform remedy (ADR-045 Amendment 1).** A display plug-in can now report that its vendor platform has an update, and where to get it, through the existing `get_platform_state` call. `displayxr-cli` (`info` / `selftest` / `status`, plu…",
-      "**Dashboard redesign, phases 1–2.** Home now opens on a plain verdict (\"is my 3D display working?\") with one row per display and a \"Needs attention\" list; Settings and Troubleshooting reorganised; quieter Components page.",
-      "feat(plugin): platform remedy — \"update recommended / required\" notice in displayxr-cli, tray and Dashboard (ADR-045 Amendment 1, no ABI bump) (#2765)",
-      "feat(dashboard): Home verdict, Settings and Troubleshooting (redesign phase 2) (#2764)",
-      "feat(dashboard): plain wording and a quieter Components page (redesign phase 1) (#2763)",
-      "feat(cli): `workspace check-hotkey` and `workspace get`, with known-conflict advice",
-      "feat(catalog): list the Shell in schema 2 as a workspace controller the user picks",
-      "feat(installer): an already-installed component is ticked on the component page"
+      "The **Several viewers** setting now says **Not supported** (in the DisplayXR Dashboard and `displayxr-cli dp options`) when the installed LeiaSR runtime has no multi-viewer weaving, with a note explaining what to install. It needs a runt…",
+      "`MULTI_VIEWER` setting status: `APPLIES` when LeiaSR reports multi-viewer weaving, `NOT_SUPPORTED` (effective value `system`) on a LeiaSR build without it or a plug-in built against an SR SDK without it. No runtime re-pin; the installer'…"
     ],
     "looksMechanical": false
   },
@@ -159,6 +161,17 @@
       "`options --json` now lists the allowed `values` for enum settings (#2772)."
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.70.3",
+    "repo": "displayxr-runtime",
+    "tag": "v2.70.3",
+    "title": "v2.70.3",
+    "date": "2026-11-23",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.3",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-unreal@v0.12.1",
