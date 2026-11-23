@@ -21,9 +21,24 @@
     "id": "displayxr-runtime@v2.69.5",
     "repo": "displayxr-runtime",
     "tag": "v2.69.5",
-    "title": "v2.69.5",
+    "title": "DisplayXR Runtime v2.69.5",
     "date": "2026-11-23",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.69.5",
+    "prerelease": false,
+    "featureLines": [
+      "Conversion model store fixes for locally built, research-only models: `displayxr-cli conv run` now uses the model store, with a per-user research opt-in on Linux and macOS. Locally built models never queue a download. Each blob is hashed…",
+      "**conv: verify a blob once, on entry (#2762).** The model store hashes a blob when it enters the store (download, local build, or the first request for an unstamped blob). After that, every load in any process checks only the stamp, the …",
+      "**dashboard: one Components tab (#2760).** The Catalog tab from v2.69.4 is merged into Components. Installed components and catalog entries now share one list, with one row per item, grouped by class with Runtime and Apps groups. Filters…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.69.6",
+    "repo": "displayxr-runtime",
+    "tag": "v2.69.6",
+    "title": "v2.69.6",
+    "date": "2026-11-23",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.69.6",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -121,20 +136,6 @@
     "featureLines": [
       "Windowless Vulkan texture targets now stay in 3D while their window is being dragged. The Vulkan display processor fills the drag phase-snap slot, which DisplayXR/displayxr-runtime#2726 uses. Hosted Vulkan windows get the snap as well.",
       "Vulkan display processor: implement `snap_window_rect` (drag phase-snap) on Windows, matching D3D11, D3D12 and OpenGL (#554)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.69.2",
-    "repo": "displayxr-runtime",
-    "tag": "v2.69.2",
-    "title": "DisplayXR Runtime v2.69.2",
-    "date": "2026-11-20",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.69.2",
-    "prerelease": false,
-    "featureLines": [
-      "A windowless ADR-060 texture target now holds 3D while its reference window is dragged: user drags are phase-snapped through the display processor, on D3D11, D3D12, OpenGL and Vulkan (Vulkan needs a display processor that implements the …",
-      "`XR_DXR_cursor_depth` spec v9: opt-in depth range, front only (default, unchanged behaviour) or both sides of the glass, so a scene that lives behind the display plane can get a cursor that sits in front of its content (ADR-046 Amendment…"
     ],
     "looksMechanical": false
   },
