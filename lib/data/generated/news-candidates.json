@@ -29,6 +29,22 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-mediaplayer@v1.22.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.22.0",
+    "title": "v1.22.0",
+    "date": "2026-11-23",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.22.0",
+    "prerelease": false,
+    "featureLines": [
+      "**A smoother everyday player.** Closing no longer hangs on a file from a stalled network share, Cyrillic and Greek file names display correctly, and the player gains a full screen button, a projection picker, a shortcuts panel (F1 / ?) a…",
+      "**A Settings window.** Preferences now live in one per-user settings file, editable from a Settings window (gear button, Ctrl+, or the \"Settings...\" menu row).",
+      "**Pro stereo QC.** The rig check now measures left/right scale (zoom) mismatch and per-channel colour (gain/lift, with ASC CDL export and a colour-difference overlay), plus a live disparity readout, cursor probe and heatmap.",
+      "**Pro media browser.** An opt-in Open dialog on Windows with image-sequence tiles and thumbnails."
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-installer@v2.9.39",
     "repo": "displayxr-installer",
     "tag": "v2.9.39",
@@ -70,12 +86,12 @@
     "url": "https://github.com/DisplayXR/displayxr-leia-conversion/releases/tag/v0.1.0",
     "prerelease": false,
     "featureLines": [
-      "First release of the Leia 2D-to-3D conversion provider for DisplayXR, as its own component. It installs the provider only; it no longer ships inside the Leia SR plug-in.",
+      "First release of the Leia 2D-to-3D conversion provider for DisplayXR, as its own component. It installs the provider only. Current Leia SR plug-in releases still carry the same provider; a coming plug-in release drops it, and this packag…",
       "**Windows:** `DisplayXRLeiaConversionSetup-0.1.0.exe` (NSIS installer).",
       "**Linux:** `displayxr-leia-conversion_0.1.0_amd64.deb`.",
       "**Prerequisite, not included:** the vendor's conversion runtime is a separate install. Without it the provider loads and reports itself as unavailable.",
       "**Linux:** install this package together with a Leia SR plug-in release that no longer carries the provider. That plug-in release is not out yet, so on a box with the current `displayxr-leia-sr` this `.deb` is refused on its own. See [do…",
-      "This release is **unsigned**. On Windows the installer allowlists the provider it installs, so it still loads.",
+      "The Windows installer is code-signed. The Linux package is not signed.",
       "**Full Changelog**: https://github.com/DisplayXR/displayxr-leia-conversion/commits/v0.1.0"
     ],
     "looksMechanical": false
@@ -328,25 +344,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.20.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.20.0",
-    "title": "v1.20.0",
-    "date": "2026-11-16",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.20.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Android: a real 3D grid.** The browser's 3D-only grid now shows stereo 3D thumbnails, and photos that were converted from 2D to 3D (one-view LIFs) get a generated 3D pair too, kept on disk between launches.",
-      "**Android: a refreshed look.** The player chrome, browser layout, type scale and icons were reworked in a full design review.",
-      "**Desktop browser: sharper thumbnails** with the black bars removed and a 3D badge in the top-left corner.",
-      "Android: stereo 3D thumbnails in the browser's 3D-only grid (#224, #242)",
-      "Android: 3D grid pairs for 2D→3D converted one-view LIFs, cached on disk between launches (#243, #180)",
-      "Android: UI design review — player chrome, browser layout, type scale, one icon set (#225)",
-      "Desktop browser: sharper thumbnails, black bars off, 3D badge top left (#223); larger thumbnails for videos, photos keep their cached one (#226)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unreal@v0.12.0",
@@ -770,7 +767,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — v2.9.40",
+    "title": "Android tablet bundle (latest) — v2.9.41",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
