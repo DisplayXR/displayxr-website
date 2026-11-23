@@ -51,6 +51,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.9.41",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.41",
+    "title": "DisplayXR v2.9.41",
+    "date": "2026-11-23",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.41",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-conversion@v0.1.0",
     "repo": "displayxr-leia-conversion",
     "tag": "v0.1.0",
@@ -166,12 +177,15 @@
     "id": "displayxr-runtime@v2.70.3",
     "repo": "displayxr-runtime",
     "tag": "v2.70.3",
-    "title": "v2.70.3",
+    "title": "DisplayXR Runtime v2.70.3",
     "date": "2026-11-23",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.3",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "A display driver can now tell DisplayXR whether a stored setting actually takes effect on this machine, and the Dashboard shows \"Not supported here\" next to a setting that doesn't (first used by the Leia plug-in's \"Several viewers\" optio…",
+      "Settings: a display driver reports whether each stored setting applies here; `displayxr-cli dp options` prints a status line per setting (and a `status` field in `--json`), and the Dashboard shows \"Not supported here\" (#2773)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unreal@v0.12.1",
@@ -220,17 +234,6 @@
       "**Editor Game view: the on-screen calibration marker is drawn on every Windows editor path (#485).** The measurement of where the docked Game view image sits on screen (#459) drew its marker in the D3D12 native mirror blit only, so only …"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.9.38",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.38",
-    "title": "DisplayXR v2.9.38",
-    "date": "2026-11-20",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.38",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.38.0",
