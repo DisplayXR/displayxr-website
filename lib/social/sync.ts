@@ -1,6 +1,6 @@
 import "server-only";
 import { bufferConfigured, getPostStatus } from "./buffer";
-import { savePackage, seedMode } from "./store";
+import { getPackage, savePackage, seedMode } from "./store";
 import type { Channel, Package } from "./types";
 
 // Ask Buffer what happened to a scheduled post's channels and move the package
@@ -33,12 +33,23 @@ export async function syncFromBuffer(p: Package): Promise<Package> {
   }
   if (!changed) return p;
 
-  const allOut = (Object.keys(p.channels) as Channel[]).every((ch) => posted[ch]);
+  // Re-read the newest version and apply only Buffer's channels to it: the
+  // cron may have written a newer one (e.g. a Bluesky post) since `p` was read,
+  // and saving over it would lose that and could make the cron post twice.
+  const fresh = (await getPackage(p.id)) ?? p;
+  const bufferChannels = Object.keys(p.buffer.post_ids) as Channel[];
+  const mergedPosted = { ...fresh.posted };
+  const mergedErrors = { ...(fresh.buffer.errors ?? {}) };
+  for (const ch of bufferChannels) {
+    if (posted[ch]) mergedPosted[ch] = posted[ch];
+    if (errors[ch]) mergedErrors[ch] = errors[ch];
+  }
+  const allOut = (Object.keys(fresh.channels) as Channel[]).every((ch) => mergedPosted[ch]);
   const next: Package = {
-    ...p,
-    posted,
-    buffer: { ...p.buffer, errors },
-    status: allOut ? "posted" : p.status,
+    ...fresh,
+    posted: mergedPosted,
+    buffer: { ...fresh.buffer, errors: mergedErrors },
+    status: allOut ? "posted" : fresh.status,
   };
   return savePackage(next, {
     at: new Date().toISOString(),

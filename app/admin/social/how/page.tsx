@@ -7,7 +7,7 @@ export const metadata = { title: "How the social board works · Admin", robots: 
 const STEPS = [
   { n: "1", title: "The planner builds a post", text: "In the KB, the planner picks clips, renders the 16:9 and 9:16 versions, writes a caption per channel and runs the copy, rights and label checks. It uploads the package here. Leia posts never come here; they go to Leia marketing." },
   { n: "2", title: "You review it", text: "Each post shows its video, the clips it uses, the check results, a caption per channel with a character count, and the publish time in Pacific. Edit anything; every change is kept in the post's history." },
-  { n: "3", title: "Approve, one post at a time", text: "Approve and schedule sends that one post to Buffer for every channel marked “via Buffer”, at the time shown. There is no bulk approve and nothing is sent without a click here. A failed check blocks approval." },
+  { n: "3", title: "Approve, one post at a time", text: "Approve and schedule sends that one post to Buffer for every channel marked “via Buffer”, at the time shown. Bluesky is not in Buffer: the site posts it itself at that time (a job checks every 5 minutes). There is no bulk approve and nothing is sent without a click here. A failed check blocks approval." },
   { n: "4", title: "By-hand channels", text: "Reddit, Hacker News and Discord are posted by a person: copy the text, post it, then paste the link and Mark posted." },
   { n: "5", title: "It goes out", text: "When a scheduled post's time has passed, the board asks Buffer what happened and moves it to Posted, with links, once every channel is out." },
 ];

@@ -63,6 +63,17 @@ export interface HistoryEntry {
   diff?: { channel: string; field: "text" | "title" | "publish_at"; from: string; to: string }[];
 }
 
+export interface DirectState {
+  state: "pending" | "processing" | "posting" | "posted" | "error";
+  video_job?: string; // video service job id while the video transcodes
+  uri?: string; // at:// URI of the first post
+  error?: string;
+  at?: string;
+}
+
+// Channels Approve hands to the site's own poster instead of Buffer.
+export const DIRECT: readonly Channel[] = ["bluesky"];
+
 export interface Package {
   id: string;
   schema: 1;
@@ -78,6 +89,10 @@ export interface Package {
     post_ids: Partial<Record<Channel, string>>;
     errors?: Partial<Record<Channel, string>>;
   };
+  // Channels the site posts itself (Bluesky: not in Buffer). The cron posts
+  // them when publish_at comes. "posting" is written before the post is
+  // created, so a crash mid-post is never retried into a duplicate.
+  direct?: Partial<Record<Channel, DirectState>>;
   posted: Partial<Record<Channel, { at: string; url?: string; by: string }>>;
   history: HistoryEntry[];
 }
