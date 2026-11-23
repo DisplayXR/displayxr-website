@@ -1,5 +1,23 @@
 [
   {
+    "id": "displayxr-conversion-open@v0.2.0",
+    "repo": "displayxr-conversion-open",
+    "tag": "v0.2.0",
+    "title": "v0.2.0",
+    "date": "2026-11-23",
+    "url": "https://github.com/DisplayXR/displayxr-conversion-open/releases/tag/v0.2.0",
+    "prerelease": false,
+    "featureLines": [
+      "**OpenVINO back end** — runs on the GPU, then the CPU, then falls back to ONNX Runtime (#4).",
+      "**Photo → splats (`SPLATS_MONO`)** — a new job capability that turns one photo into a 3D Gaussian splat PLY (#4).",
+      "**SHARP model pack** — `packs/dxr-open-sharp.models.json` lists two builds, `sharp-int4-1536` and `sharp-full-1536` (#5, #6).",
+      "**`MODEL` setting** — `auto` picks the full build on a GPU machine with at least 16 GB of RAM and the int4 build otherwise; either can be forced (#6).",
+      "**Warm-up fix** — warming a model now waits for the model store's verify to finish instead of timing out after 5 s (#7).",
+      "Core ML execution provider on macOS with CPU fallback and cached compiles (source builds; no macOS package in this release) (#2)."
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-demo-mediaplayer@pro-v0.10.0",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "pro-v0.10.0",
