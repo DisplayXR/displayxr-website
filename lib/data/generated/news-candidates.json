@@ -25,8 +25,13 @@
     "date": "2026-11-23",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.23.2",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**\"Update recommended\" notice for old LeiaSR runtimes.** When a Leia panel is attached and the installed LeiaSR runtime is older than 1.39.0, the plug-in now reports an \"update recommended\" platform remedy (ADR-045). The DisplayXR CLI, t…",
+      "**Multi-viewer weaving is now a setting.** The device declares two rendering modes (2D / 3D) on every platform; the Windows-only \"LeiaSR multi-viewer\" mode becomes `displayxr-cli dp set leia-sr MULTI_VIEWER system|on|off` (default `syste…",
+      "feat(platform): \"update recommended\" below LeiaSR 1.39.0 (ADR-045 remedy) (#566)",
+      "feat: two rendering modes; multi-viewer weaving becomes the MULTI_VIEWER setting (#571)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.69.5",
@@ -62,6 +67,17 @@
       "feat(installer): an already-installed component is ticked on the component page"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.70.0",
+    "repo": "displayxr-runtime",
+    "tag": "v2.70.0",
+    "title": "v2.70.0",
+    "date": "2026-11-23",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-mediaplayer@pro-v0.10.0",
@@ -104,20 +120,6 @@
       "feat(installer): one `dxr-get list` call for the page, `--no-runtime` on every install",
       "feat(dxr-get): read catalog schema 2, gate on runtime range and class ABI, receipts, uninstall, inventory (ADR-064 steps 2 and 3)",
       "feat(dxr-get): one-call list for a setup page, `--assume-runtime`, `--no-runtime`, `install --default`"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.69.3",
-    "repo": "displayxr-runtime",
-    "tag": "v2.69.3",
-    "title": "DisplayXR Runtime v2.69.3",
-    "date": "2026-11-21",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.69.3",
-    "prerelease": false,
-    "featureLines": [
-      "Fixes a shifted point of view for OpenGL apps on Windows when the 3D panel is not the top-left monitor: GL window metrics now measure the window from the panel's origin, as D3D11, D3D12 and Vulkan already did (#2731). The `XR_DXR_weave` …",
-      "**cursor_depth:** the weave engines draw the web cursor on desktop Linux (Vulkan) and macOS (Vulkan and Metal backends), sharing the Windows D3D11 service's policy, and accept the TEXTURE sprite (IOSurface on macOS; dma-buf or same-drive…"
     ],
     "looksMechanical": false
   },
