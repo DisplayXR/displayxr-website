@@ -45,6 +45,19 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-leia-plugin@v2.23.3",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.23.3",
+    "title": "v2.23.3",
+    "date": "2026-11-23",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.23.3",
+    "prerelease": false,
+    "featureLines": [
+      "**Multi-viewer weaving now takes effect.** `displayxr-cli dp set leia-sr MULTI_VIEWER on|off` now applies on LeiaSR builds with multi-viewer weaving (the MWeave builds). The plug-in is built against SR SDK 1.39.0.3666 (multi-viewer rebas…"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-runtime@v2.69.5",
     "repo": "displayxr-runtime",
     "tag": "v2.69.5",
@@ -238,23 +251,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.22.0",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.22.0",
-    "title": "v2.22.0",
-    "date": "2026-11-19",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.22.0",
-    "prerelease": false,
-    "featureLines": [
-      "The plug-in's D3D12, Vulkan and OpenGL display processors now support **windowless texture-target sessions** (runtime `XR_DXR_win32_window_binding` v9, ADR-060): the weave phases from the target's present origin instead of an app window.",
-      "OpenGL is **opt-in** via `DXR_LEIA_GL_WINDOWLESS_PHASE=1` until the SR runtime ships its windowless OpenGL fix.",
-      "The windowless path requires **LeiaSR ≥ 1.39.0**.",
-      "D3D12 DP declares `PHASE_FROM_PRESENT_ORIGIN` for a windowless EXTERNAL per-screen weaver (runtime ADR-060, L4) (#548, #549)",
-      "Vulkan + OpenGL DPs declare `PHASE_FROM_PRESENT_ORIGIN` for a windowless EXTERNAL per-screen weaver (runtime ADR-060, L4) (#550)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.37.0",
@@ -755,7 +751,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — v2.9.38",
+    "title": "Android tablet bundle (latest) — v2.9.39",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
