@@ -1,5 +1,5 @@
 import "server-only";
-import { blueskyConfigured, blueskySession, createPost, postUrl, uploadVideo, type StrongRef } from "./bluesky";
+import { blueskyConfigured, blueskySession, createPost, deletePost, postUrl, uploadVideo, type StrongRef } from "./bluesky";
 import { savePackage } from "./store";
 import type { Channel, DirectState, Package } from "./types";
 
@@ -53,12 +53,14 @@ export async function postDueBluesky(p0: Package): Promise<Package> {
     p = await save(withState(p, ch, { state: "posting", video_job: st.video_job, at: new Date().toISOString() }), "posting to Bluesky");
     const first = await createPost(s, { text: c.text, video, aspect: m?.aspect });
     let parent: StrongRef = first;
+    const reply_uris: string[] = [];
     for (const t of (c.reply_texts ?? []).filter((x) => x.trim())) {
       parent = await createPost(s, { text: t, reply: { root: first, parent } });
+      reply_uris.push(parent.uri);
     }
     const url = postUrl(s.handle, first.uri);
     const posted = { ...p.posted, [ch]: { at: new Date().toISOString(), url, by: "bluesky" } };
-    const next: Package = withState({ ...p, posted }, ch, { state: "posted", uri: first.uri, at: new Date().toISOString() });
+    const next: Package = withState({ ...p, posted }, ch, { state: "posted", uri: first.uri, reply_uris, at: new Date().toISOString() });
     return save({ ...next, status: allOut(next) ? "posted" : next.status }, "posted on Bluesky", url);
   } catch (e) {
     const msg = (e as Error).message;
@@ -67,4 +69,25 @@ export async function postDueBluesky(p0: Package): Promise<Package> {
     const note = cur?.state === "posting" ? `${msg} (check Bluesky before retrying: a post may exist)` : msg;
     return save(withState(p, ch, { ...(cur ?? st), state: "error", error: note }, note), "Bluesky failed", note);
   }
+}
+
+// Take a direct post back down: replies first (newest first), then the post.
+// The package keeps its history; the channel reads "removed" and is no longer
+// counted as posted, and the cron never posts a removed channel again.
+export async function removeBluesky(p: Package, by: string): Promise<Package> {
+  const ch: Channel = "bluesky";
+  const st = p.direct?.[ch];
+  if (!st || st.state !== "posted" || !st.uri) throw new Error("nothing posted on Bluesky to remove");
+  const s = await blueskySession();
+  for (const uri of [...(st.reply_uris ?? [])].reverse()) await deletePost(s, uri);
+  await deletePost(s, st.uri);
+  const posted = { ...p.posted };
+  delete posted[ch];
+  const next: Package = {
+    ...p,
+    posted,
+    status: p.status === "posted" ? "dropped" : p.status,
+    direct: { ...(p.direct ?? {}), [ch]: { state: "removed", at: new Date().toISOString() } },
+  };
+  return savePackage(next, { at: new Date().toISOString(), by, action: "removed from Bluesky", note: st.uri });
 }

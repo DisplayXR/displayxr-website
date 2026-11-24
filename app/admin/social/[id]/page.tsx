@@ -6,7 +6,7 @@ import { getPackage, seedMode } from "@/lib/social/store";
 import { syncFromBuffer } from "@/lib/social/sync";
 import { formatPacific, isoToPacificLocal } from "@/lib/social/time";
 import { CHANNEL_LABEL, DIRECT, type Channel } from "@/lib/social/types";
-import { approveAndSchedule, dropPost, markPosted, requestChanges, saveEdits } from "../actions";
+import { approveAndSchedule, dropPost, markPosted, removeFromBluesky, requestChanges, saveEdits } from "../actions";
 import { Banner, CheckBadge, SocialNav, StatusPill } from "../ui";
 import { CaptionField, CopyButton } from "./client";
 
@@ -161,7 +161,7 @@ export default async function ReviewPost({
                     </p>
                   )}
                   {p.buffer.post_ids[ch] && !done && <p className="mt-2 text-xs text-accent-hover">Scheduled in Buffer</p>}
-                  {p.direct?.[ch] && !done && p.direct[ch]!.state !== "error" && (
+                  {p.direct?.[ch] && !done && p.direct[ch]!.state !== "error" && p.direct[ch]!.state !== "removed" && (
                     <p className="mt-2 text-xs text-accent-hover">
                       {p.direct[ch]!.state === "pending" ? "Scheduled: the site posts it at the time above" : p.direct[ch]!.state === "processing" ? "Uploading the video to Bluesky" : "Posting now"}
                     </p>
@@ -171,6 +171,9 @@ export default async function ReviewPost({
                       Posted {formatPacific(done.at)}
                       {done.url && <> · <a href={done.url} target="_blank" rel="noopener noreferrer" className="underline">open</a></>}
                     </p>
+                  )}
+                  {p.direct?.[ch]?.state === "removed" && (
+                    <p className="mt-2 text-xs text-text-secondary">Removed from Bluesky {formatPacific(p.direct[ch]!.at!)}</p>
                   )}
                   {err && <p className="mt-2 text-xs text-red-400">{err}</p>}
                   {c.mode === "manual" && !done && (
@@ -222,6 +225,15 @@ export default async function ReviewPost({
               </p>
             )}
           </form>
+
+          {/* Take a site-posted Bluesky post (and its thread) back down. */}
+          {p.direct?.bluesky?.state === "posted" && (
+            <form action={removeFromBluesky} className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-dashed border-red-500/40 p-4">
+              <input type="hidden" name="id" value={p.id} />
+              <p className="flex-1 text-sm text-text-secondary">Delete this post and its replies from Bluesky. Likes and reposts go with it.</p>
+              <button className={`${btn} text-red-300 hover:bg-red-500/10`}>Remove from Bluesky</button>
+            </form>
+          )}
 
           {/* "Mark posted" for by-hand channels, one small form each (forms can't nest). */}
           {chans

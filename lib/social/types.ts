@@ -64,9 +64,10 @@ export interface HistoryEntry {
 }
 
 export interface DirectState {
-  state: "pending" | "processing" | "posting" | "posted" | "error";
+  state: "pending" | "processing" | "posting" | "posted" | "removed" | "error";
   video_job?: string; // video service job id while the video transcodes
   uri?: string; // at:// URI of the first post
+  reply_uris?: string[]; // at:// URIs of the thread's replies, in order
   error?: string;
   at?: string;
 }
