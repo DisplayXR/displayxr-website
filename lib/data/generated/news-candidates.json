@@ -58,6 +58,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-leia-plugin@v2.24.0",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.24.0",
+    "title": "v2.24.0",
+    "date": "2026-11-24",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.24.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.70.4",
     "repo": "displayxr-runtime",
     "tag": "v2.70.4",
@@ -72,12 +83,15 @@
     "id": "displayxr-runtime@v2.70.5",
     "repo": "displayxr-runtime",
     "tag": "v2.70.5",
-    "title": "v2.70.5",
+    "title": "DisplayXR Runtime v2.70.5",
     "date": "2026-11-24",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.5",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "On Linux, an in-process Wayland window that spans or sits on a second screen is now woven per screen, each part by its own display driver with its own eye positions and projection. Converter rows in the Dashboard get plain names, a runni…",
+      "vk_native: in-process Wayland windows are woven per screen, the laptop part by its own display driver (#2791)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.38.2",
@@ -270,19 +284,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.23.1",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.23.1",
-    "title": "v2.23.1",
-    "date": "2026-11-22",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.23.1",
-    "prerelease": false,
-    "featureLines": [
-      "Every `v*` release now attaches `displayxr-detect.json`, carrying the schema-2 item id `leia-sr` (#557, displayxr-runtime#2737)"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.38.1",
