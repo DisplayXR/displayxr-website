@@ -64,6 +64,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.9.43",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.43",
+    "title": "DisplayXR v2.9.43",
+    "date": "2026-11-24",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.43",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-conversion@v0.1.1",
     "repo": "displayxr-leia-conversion",
     "tag": "v0.1.1",
@@ -118,12 +129,15 @@
     "id": "displayxr-runtime@v2.70.6",
     "repo": "displayxr-runtime",
     "tag": "v2.70.6",
-    "title": "v2.70.6",
+    "title": "DisplayXR Runtime v2.70.6",
     "date": "2026-11-24",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.6",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "On Android, an app no longer gets a black screen on its first launch after the runtime starts cold: the runtime now keeps handling the app's lifecycle events while session creation waits for the hosted surface, instead of deadlocking unt…",
+      "Scripts: `android-oem-soak.sh`, the keep-alive soak that goes with the Android OEM probe (R8): an hour-long inline 3D browser soak with screen and app-switch cycles, an idle test and an in-place reinstall test, each reporting PASS / FAIL…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-unity@v2.38.2",
@@ -180,17 +194,6 @@
       "**Pro media browser.** An opt-in Open dialog on Windows with image-sequence tiles and thumbnails."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.9.40",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.40",
-    "title": "DisplayXR v2.9.40",
-    "date": "2026-11-23",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.40",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.9.41",
