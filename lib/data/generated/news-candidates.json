@@ -36,6 +36,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-mediaplayer@v1.23.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.23.0",
+    "title": "v1.23.0",
+    "date": "2026-11-24",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.23.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.38.0",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.38.0",
@@ -399,17 +410,6 @@
       "Desktop Linux: Convert to 3D for `<img>` over XR_DXR_lift's CPU transport (#354, #356)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@pro-v0.9.10",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.9.10",
-    "title": "Media Player Pro 0.9.10",
-    "date": "2026-11-17",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.9.10",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unreal@v0.12.0",
