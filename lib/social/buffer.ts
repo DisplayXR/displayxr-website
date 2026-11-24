@@ -36,7 +36,6 @@ async function gql<T>(query: string, variables: Record<string, unknown> = {}): P
 // Board channel → Buffer `Service` value.
 const SERVICE: Partial<Record<Channel, string>> = {
   x: "twitter",
-  bluesky: "bluesky",
   linkedin: "linkedin",
   threads: "threads",
   instagram: "instagram",

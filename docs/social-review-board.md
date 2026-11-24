@@ -62,3 +62,24 @@ video asset carries the poster as `thumbnailUrl`. YouTube Shorts go out with
 Approve refuses an empty title, one over 100 characters, or media not marked
 `aspect: "9:16"` (Buffer rejects landscape video for Shorts). X `reply_texts` go out as
 `metadata.twitter.thread`, which lists the whole thread, first post included.
+
+## Bluesky: posted by the site (not Buffer)
+
+Bluesky is not in Buffer (the free plan holds three channels), so a `bluesky` channel
+with `mode: "buffer"` is posted by the site itself:
+
+- **Approve** checks that `BLUESKY_HANDLE` / `BLUESKY_APP_PASSWORD` are set and that
+  every Bluesky text (main post and replies) is at most 300 graphemes, then sets
+  `direct.bluesky = { state: "pending" }`.
+- **Cron** `/api/social/cron` (vercel.json, every 5 minutes, `Authorization: Bearer
+  $CRON_SECRET`) posts due items: createSession with the app password → video through
+  video.bsky.app (service-auth token, `uploadVideo`, `getJobStatus`; a slow transcode
+  carries over to the next run as `processing`) → `com.atproto.repo.createRecord`
+  with link facets and an `app.bsky.embed.video` embed → `reply_texts` as a thread
+  (`reply.root` / `reply.parent`). The bsky.app URL lands in `posted.bluesky` and the
+  history. The cron also syncs Buffer's status for scheduled posts.
+- **No double posts:** `state: "posting"` is saved before the first createRecord. A
+  failure after that becomes `error` with "check Bluesky before retrying" and is never
+  retried automatically. Errors show per channel (`buffer.errors.bluesky`).
+- The page-load Buffer sync re-reads the newest package before saving, so it can't
+  overwrite what the cron wrote.

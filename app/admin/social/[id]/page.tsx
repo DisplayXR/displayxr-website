@@ -5,7 +5,7 @@ import { bufferConfigured } from "@/lib/social/buffer";
 import { getPackage, seedMode } from "@/lib/social/store";
 import { syncFromBuffer } from "@/lib/social/sync";
 import { formatPacific, isoToPacificLocal } from "@/lib/social/time";
-import { CHANNEL_LABEL, type Channel } from "@/lib/social/types";
+import { CHANNEL_LABEL, DIRECT, type Channel } from "@/lib/social/types";
 import { approveAndSchedule, dropPost, markPosted, requestChanges, saveEdits } from "../actions";
 import { Banner, CheckBadge, SocialNav, StatusPill } from "../ui";
 import { CaptionField, CopyButton } from "./client";
@@ -145,7 +145,7 @@ export default async function ReviewPost({
                   <legend className="px-1 text-sm font-medium text-text-primary">
                     {CHANNEL_LABEL[ch]}
                     <span className="ml-2 text-xs font-normal text-text-secondary">
-                      {c.mode === "manual" ? "by hand" : "via Buffer"}
+                      {c.mode === "manual" ? "by hand" : DIRECT.includes(ch) ? "posted by the site" : "via Buffer"}
                       {c.media ? ` · ${c.media}` : ""}
                     </span>
                   </legend>
@@ -161,6 +161,11 @@ export default async function ReviewPost({
                     </p>
                   )}
                   {p.buffer.post_ids[ch] && !done && <p className="mt-2 text-xs text-accent-hover">Scheduled in Buffer</p>}
+                  {p.direct?.[ch] && !done && p.direct[ch]!.state !== "error" && (
+                    <p className="mt-2 text-xs text-accent-hover">
+                      {p.direct[ch]!.state === "pending" ? "Scheduled: the site posts it at the time above" : p.direct[ch]!.state === "processing" ? "Uploading the video to Bluesky" : "Posting now"}
+                    </p>
+                  )}
                   {done && (
                     <p className="mt-2 text-xs text-success">
                       Posted {formatPacific(done.at)}
@@ -213,7 +218,7 @@ export default async function ReviewPost({
             {failedCheck && <p className="text-sm text-red-400">A check failed, so this post can&apos;t be approved. Fix it in the planner.</p>}
             {canApprove && (
               <p className="text-xs text-text-secondary">
-                Approving schedules this one post in Buffer for every “via Buffer” channel, with the captions and time shown here. By-hand channels are posted by you. YouTube Shorts needs a title (up to 100 characters) and a vertical 9:16 video, and goes out public.
+                Approving schedules this one post in Buffer for every “via Buffer” channel, with the captions and time shown here; Bluesky is posted by the site itself at that time (checked every 5 minutes). By-hand channels are posted by you. YouTube Shorts needs a title (up to 100 characters) and a vertical 9:16 video, and goes out public.
               </p>
             )}
           </form>

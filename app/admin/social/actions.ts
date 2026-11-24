@@ -4,9 +4,10 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { auth, isAllowed } from "@/lib/auth";
 import { bufferChannels, bufferConfigured, createScheduledPost } from "@/lib/social/buffer";
+import { blueskyConfigured, graphemes } from "@/lib/social/bluesky";
 import { getPackage, savePackage, seedMode } from "@/lib/social/store";
 import { pacificLocalToIso } from "@/lib/social/time";
-import type { Channel, HistoryEntry, Package } from "@/lib/social/types";
+import { DIRECT, type Channel, type HistoryEntry, type Package } from "@/lib/social/types";
 
 // Every action re-checks the allowlist itself: middleware guards the pages, but
 // a server action is a POST that can be called directly.
@@ -94,8 +95,21 @@ export async function approveAndSchedule(form: FormData) {
       back(p.id, "err", `YouTube Shorts takes only vertical (9:16) video; "${yt.media}" is ${m.aspect ?? "not marked with an aspect"}`);
   }
 
-  const bufferTargets = (Object.entries(edited.channels) as [Channel, NonNullable<Package["channels"][Channel]>][])
+  // Scheduled channels split two ways: Bluesky is posted by the site's cron
+  // (it is not in Buffer); the rest go to Buffer now.
+  const scheduledChans = (Object.entries(edited.channels) as [Channel, NonNullable<Package["channels"][Channel]>][])
     .filter(([, c]) => c.mode === "buffer");
+  const bufferTargets = scheduledChans.filter(([ch]) => !DIRECT.includes(ch));
+  const directTargets = scheduledChans.filter(([ch]) => DIRECT.includes(ch));
+
+  const bsky = edited.channels.bluesky;
+  if (bsky?.mode === "buffer") {
+    if (!blueskyConfigured()) back(p.id, "err", "Bluesky is not connected (BLUESKY_HANDLE / BLUESKY_APP_PASSWORD)");
+    // Without the cron secret the cron gets a 401 and the post would wait forever.
+    if (!process.env.CRON_SECRET) back(p.id, "err", "The posting job is not set up (CRON_SECRET), so Bluesky can't be scheduled");
+    for (const t of [bsky.text, ...(bsky.reply_texts ?? [])])
+      if (graphemes(t) > 300) back(p.id, "err", "A Bluesky post is over 300 characters");
+  }
 
   const now = new Date().toISOString();
   if (seedMode()) {
@@ -136,19 +150,26 @@ export async function approveAndSchedule(form: FormData) {
       }
     }
   }
+  const direct = { ...(edited.direct ?? {}) };
+  for (const [ch] of directTargets) {
+    if (!direct[ch] || (direct[ch]!.state === "error" && !edited.posted[ch])) direct[ch] = { state: "pending" };
+  }
   const failed = Object.keys(errors).length;
   const next: Package = {
     ...edited,
     status: failed ? "approved" : "scheduled",
     buffer: { post_ids, errors },
+    direct,
   };
   await savePackage(next, {
     at: now,
     by: login,
-    action: failed ? `approved; Buffer failed for ${Object.keys(errors).join(", ")}` : "approved and scheduled in Buffer",
+    action: failed
+      ? `approved; Buffer failed for ${Object.keys(errors).join(", ")}`
+      : `approved and scheduled${bufferTargets.length ? " in Buffer" : ""}${directTargets.length ? `${bufferTargets.length ? "; " : " "}${directTargets.map(([c]) => c).join(", ")} posted by the site at that time` : ""}`,
     diff: diff.length ? diff : undefined,
   });
-  back(p.id, failed ? "err" : "msg", failed ? `Scheduled ${Object.keys(post_ids).length}, failed ${failed}: see the channels` : "Scheduled in Buffer");
+  back(p.id, failed ? "err" : "msg", failed ? `Scheduled ${Object.keys(post_ids).length}, failed ${failed}: see the channels` : "Scheduled");
 }
 
 export async function requestChanges(form: FormData) {
