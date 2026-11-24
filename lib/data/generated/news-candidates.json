@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-runtime@v2.70.4",
+    "repo": "displayxr-runtime",
+    "tag": "v2.70.4",
+    "title": "v2.70.4",
+    "date": "2026-11-24",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.10.6",
     "repo": "displayxr-browser",
     "tag": "v1.10.6",
@@ -136,26 +147,6 @@
     "featureLines": [
       "The **Several viewers** setting now says **Not supported** (in the DisplayXR Dashboard and `displayxr-cli dp options`) when the installed LeiaSR runtime has no multi-viewer weaving, with a note explaining what to install. It needs a runt…",
       "`MULTI_VIEWER` setting status: `APPLIES` when LeiaSR reports multi-viewer weaving, `NOT_SUPPORTED` (effective value `system`) on a LeiaSR build without it or a plug-in built against an SR SDK without it. No runtime re-pin; the installer'…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.70.0",
-    "repo": "displayxr-runtime",
-    "tag": "v2.70.0",
-    "title": "DisplayXR Runtime v2.70.0",
-    "date": "2026-11-23",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Two rendering modes per display driver (ADR-065).** A display driver now serves exactly two modes at run time: 2D (mode 0) and 3D (mode 1). Which kind of 3D it serves is a per-driver setting applied at start-up. A plug-in that still de…",
-      "**The simulated display starts in 2D.** Its 3D preview kind (red / cyan, side by side, squeezed, four views, interlaced, blend) is the `OUTPUT` setting; `START_3D` starts it in 3D, and V switches between 2D and 3D.",
-      "**One key map on every platform.** V toggles 2D and 3D, 0 selects 2D and 1 selects 3D. Keys 2-8 no longer select modes; on Windows and Linux, \"1\" now means 3D (it used to mean 2D).",
-      "**Dashboard: a display driver's options.** A display driver's Details on the Components page now lists its options (for the simulated display: 3D preview kind, start in 2D or 3D, always 2D), with plain wording and a \"Use the default\" res…",
-      "Also in the v2.69 line (first shipped in v2.69.6), recapped for this minor release:",
-      "**Dashboard:** plain wording and a quieter Components page; Home says whether 3D is working; Settings and Troubleshooting replace Performance, Windows and Developer.",
-      "**Installer:** the component page says \"components\", already-installed items are shown ticked, and its log is clean.",
-      "feat(runtime): two run-time rendering modes per display driver; the 3D kind applied at start-up (#2767)"
     ],
     "looksMechanical": false
   },
