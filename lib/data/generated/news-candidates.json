@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.10.7",
+    "repo": "displayxr-browser",
+    "tag": "v1.10.7",
+    "title": "DisplayXR Browser v1.10.7",
+    "date": "2026-11-24",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.7",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.29.6",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.29.6",
@@ -374,25 +385,6 @@
     "prerelease": false,
     "featureLines": [
       "**Controllers and styluses from any DisplayXR input provider reach Unreal apps.** The core module now creates an OpenXR action set, suggests bindings for `/interaction_profiles/khr/simple_controller` and, when the runtime advertises `XR_…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.10.3",
-    "repo": "displayxr-browser",
-    "tag": "v1.10.3",
-    "title": "DisplayXR Browser v1.10.3",
-    "date": "2026-11-15",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.3",
-    "prerelease": false,
-    "featureLines": [
-      "**Android: lower motion-to-photon latency for inline 3D.** While weaving inline 3D, the browser now detects a standing backlog in its present queue and drains it, so woven frames reach the display sooner after they are rendered.",
-      "**Android: measured present times for head-tracked prediction.** With a runtime that implements `XR_DXR_weave` v21, the browser reports each woven frame's actual present time back to the runtime, so head-tracked prediction uses a measure…",
-      "**Desktop Linux: Convert to 3D for video.** The Convert to 3D context-menu item is now offered for `<video>` elements on desktop Linux.",
-      "Android: drain a standing backlog out of the present queue while weaving inline 3D. Turn off with `--disable-inline-3d-android-present-drain`.",
-      "Android: `XR_DXR_weave` v21 present feedback, reporting actual present times to runtimes that support it (automatic fallback on older runtimes). Turn off with `--disable-inline-3d-android-present-feedback`.",
-      "Desktop Linux: offer Convert to 3D for `<video>` (#355). Images and canvas are unchanged.",
-      "Auto-3D scripts updated v0.7.2 → v0.7.3: three.js `WebGPURenderer` support is now gated on the hooks the converter uses rather than a revision ceiling, so pages on three.js r187 convert again (#352)."
     ],
     "looksMechanical": false
   },
@@ -786,7 +778,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — v2.9.41",
+    "title": "Android tablet bundle (latest) — v2.9.42",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
