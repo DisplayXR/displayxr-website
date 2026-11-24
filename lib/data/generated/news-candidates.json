@@ -7,8 +7,16 @@
     "date": "2026-11-24",
     "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.7",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Convert to 3D on pictures now works in place, just like video.** Right-click a picture and choose *Convert to 3D*: the picture turns 3D where it sits on the page, with the same chip a converted video gets (Explore / Exit). *Convert to …",
+      "**More accurate explorable 3D scenes from pictures (Windows and Linux).** When a picture is turned into an explorable scene, the browser now passes on the camera details the DisplayXR runtime measured, so the scene is framed correctly in…",
+      "Auto-published from displayxr-browser-pvt @ 2f6eac25e0a3c8235a04c3f3a48995b2efbb830b.",
+      "**Security updates follow Chrome stable.** Every Chrome stable point release is rebuilt and published automatically when the browser's own code is untouched upstream, and verified on a DisplayXR display first when it is not. Not affiliat…",
+      "Android APK: release-signed (CN=DisplayXR Browser). If you have any preview up to and including 0.1.24 installed, UNINSTALL it before installing this one - those were debug-key signed and Android refuses an install that changes the signi…",
+      "Linux (.deb, x64): sudo apt install ./displayxr-browser_1.10.7-1_amd64.deb - needs displayxr-runtime (>= 2.62.0) from DisplayXR/displayxr-runtime releases. A newer .deb upgrades in place; there is no apt repository.",
+      "macOS (.dmg, Apple silicon): open DisplayXR-Browser-1.10.7-mac-arm64.dmg and drag the browser to Applications. Developer ID signed and notarized. Glasses-free 3D needs the DisplayXR runtime 2.53.0 or newer (DisplayXR-Installer-*.pkg from…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.29.6",
@@ -56,6 +64,17 @@
     "title": "v2.70.4",
     "date": "2026-11-24",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-unity@v2.38.2",
+    "repo": "displayxr-unity",
+    "tag": "v2.38.2",
+    "title": "DisplayXR v2.38.2",
+    "date": "2026-11-24",
+    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.38.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -403,17 +422,6 @@
       "`Scripts/tests/pose_math_test.cpp` + a `pose-math-test` lint job: the OpenXR <-> UE pose conversion and the `XrPosef` helpers now live in a UE-free header (`Source/DisplayXRCore/Private/Native/dxr_pose_math.h`) and are checked with a bar…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-unity@v2.36.0",
-    "repo": "displayxr-unity",
-    "tag": "v2.36.0",
-    "title": "DisplayXR v2.36.0",
-    "date": "2026-11-11",
-    "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.36.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-mcp@v0.5.7",
