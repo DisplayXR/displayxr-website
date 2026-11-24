@@ -17,6 +17,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-installer@v2.9.42",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.42",
+    "title": "DisplayXR v2.9.42",
+    "date": "2026-11-24",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.42",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-conversion@v0.1.1",
     "repo": "displayxr-leia-conversion",
     "tag": "v0.1.1",
@@ -82,17 +93,6 @@
       "**Pro media browser.** An opt-in Open dialog on Windows with image-sequence tiles and thumbnails."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.9.39",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.39",
-    "title": "DisplayXR v2.9.39",
-    "date": "2026-11-23",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.39",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-installer@v2.9.40",
