@@ -1,5 +1,22 @@
 [
   {
+    "id": "displayxr-demo-gaussiansplat@v1.29.6",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.29.6",
+    "title": "v1.29.6",
+    "date": "2026-11-24",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.6",
+    "prerelease": false,
+    "featureLines": [
+      "**Gaussian splats now render on Windows-on-ARM (Snapdragon / Adreno).** The demo used to show an empty window and lose the GPU device there; the depth sort is now exact on Adreno and a bad sort can no longer hang the GPU.",
+      "**The Windows renderer is picked from the GPU at run time.** Qualcomm, Apple, ARM Mali and Imagination GPUs get the graphics renderer, everything else keeps compute, so the x64 build running under emulation on Snapdragon stays in step wi…",
+      "**Linux: keyboard and mouse input reach the demo under the workspace** (`XR_DXR_workspace_client_input`).",
+      "Choose the Windows splat renderer from the GPU vendor at run time (`GsAutoRenderer`, `DXR_GS_RENDERER` override; one `Splat renderer: ...` log line per session) (#158)",
+      "Linux: enable `XR_DXR_workspace_client_input` so input works under the workspace (#159)"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-leia-conversion@v0.1.1",
     "repo": "displayxr-leia-conversion",
     "tag": "v0.1.1",
@@ -845,17 +862,6 @@
     "title": "v0.11.1",
     "date": "2026-10-02",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.29.2",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.29.2",
-    "title": "v1.29.2",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
