@@ -36,6 +36,23 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-modelviewer@v0.38.0",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.38.0",
+    "title": "v0.38.0",
+    "date": "2026-11-24",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.38.0",
+    "prerelease": false,
+    "featureLines": [
+      "**Models are framed by what they actually look like, not by their bounding box.** On every platform (Windows, macOS, Linux, Android), a loaded model is now centred with an area-weighted robust estimate of its surface: the turntable pivot…",
+      "**Mouse and keyboard work under the DisplayXR workspace on Linux**, as they already did on Windows.",
+      "Robust centring is the default fit on every leg (#192, #193)",
+      "Linux: enable `XR_DXR_workspace_client_input`, so input reaches the app under the workspace; pin `displayxr-common` v2.36.0",
+      "Pin `displayxr-common` v2.35.0 and drop the vendored `robust_frame.h` (#194)"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-installer@v2.9.42",
     "repo": "displayxr-installer",
     "tag": "v2.9.42",
@@ -65,8 +82,12 @@
     "date": "2026-11-24",
     "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.24.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**2D-to-3D conversion is now its own component.** The Leia SR plug-in no longer includes 2D-to-3D conversion. It now ships separately as the **Leia conversion** component. The DisplayXR bundle installs it for you; to install it on its ow…",
+      "**The Windows installer now needs DisplayXR runtime 2.70.5 or later.** Update the runtime first if you have an older one.",
+      "2D-to-3D conversion removed from the plug-in and moved to the separate Leia conversion component; the Windows installer requires DisplayXR runtime 2.70.5 or later (#555)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.70.4",
@@ -92,6 +113,17 @@
       "vk_native: in-process Wayland windows are woven per screen, the laptop part by its own display driver (#2791)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-runtime@v2.70.6",
+    "repo": "displayxr-runtime",
+    "tag": "v2.70.6",
+    "title": "v2.70.6",
+    "date": "2026-11-24",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.6",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-unity@v2.38.2",
@@ -230,22 +262,6 @@
     "featureLines": [
       "The **Several viewers** setting now says **Not supported** (in the DisplayXR Dashboard and `displayxr-cli dp options`) when the installed LeiaSR runtime has no multi-viewer weaving, with a note explaining what to install. It needs a runt…",
       "`MULTI_VIEWER` setting status: `APPLIES` when LeiaSR reports multi-viewer weaving, `NOT_SUPPORTED` (effective value `system`) on a LeiaSR build without it or a plug-in built against an SR SDK without it. No runtime re-pin; the installer'…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.70.2",
-    "repo": "displayxr-runtime",
-    "tag": "v2.70.2",
-    "title": "DisplayXR Runtime v2.70.2",
-    "date": "2026-11-23",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.2",
-    "prerelease": false,
-    "featureLines": [
-      "Fixes to switching between 2D and 3D: an app using the runtime's own window no longer freezes when it starts in 2D and you press V, and the 0 and 1 keys now behave exactly like V on every display driver. The status snapshot and `displayx…",
-      "The status snapshot now reports a globally chosen display driver (`dp_preference`) and a per-driver `enabled` flag (#2772).",
-      "`displayxr-cli <class> set <id> <KEY> --stdin` (e.g. `dp set`) sets a value (for example a secret) from standard input without showing it on the command line (#2772).",
-      "`options --json` now lists the allowed `values` for enum settings (#2772)."
     ],
     "looksMechanical": false
   },
@@ -590,17 +606,6 @@
     "title": "v0.1.1",
     "date": "2026-10-16",
     "url": "https://github.com/DisplayXR/displayxr-conversion-open/releases/tag/v0.1.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.35.5",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.35.5",
-    "title": "v0.35.5",
-    "date": "2026-10-16",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.35.5",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
