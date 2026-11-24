@@ -69,6 +69,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.70.5",
+    "repo": "displayxr-runtime",
+    "tag": "v2.70.5",
+    "title": "v2.70.5",
+    "date": "2026-11-24",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.5",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-unity@v2.38.2",
     "repo": "displayxr-unity",
     "tag": "v2.38.2",
@@ -205,20 +216,6 @@
     "featureLines": [
       "The **Several viewers** setting now says **Not supported** (in the DisplayXR Dashboard and `displayxr-cli dp options`) when the installed LeiaSR runtime has no multi-viewer weaving, with a note explaining what to install. It needs a runt…",
       "`MULTI_VIEWER` setting status: `APPLIES` when LeiaSR reports multi-viewer weaving, `NOT_SUPPORTED` (effective value `system`) on a LeiaSR build without it or a plug-in built against an SR SDK without it. No runtime re-pin; the installer'…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.70.1",
-    "repo": "displayxr-runtime",
-    "tag": "v2.70.1",
-    "title": "DisplayXR Runtime v2.70.1",
-    "date": "2026-11-23",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.1",
-    "prerelease": false,
-    "featureLines": [
-      "`XR_DXR_lift` spec 6: the GAUSSIANS one-shot now returns the capture camera block and facts (`XrLiftBlobCameraDXR` chained on `XrLiftBlobDXR`, two-call JSON strings); a failed conversion is reported promptly as `XR_ERROR_LIFT_CONVERSION_…",
-      "feat(lift): GAUSSIANS camera block, prompt failures, oversize photos (XR_DXR_lift spec 6) (#2771)"
     ],
     "looksMechanical": false
   },
