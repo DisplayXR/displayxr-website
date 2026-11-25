@@ -15,6 +15,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.70.7",
+    "repo": "displayxr-runtime",
+    "tag": "v2.70.7",
+    "title": "v2.70.7",
+    "date": "2026-11-25",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.7",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.10.7",
     "repo": "displayxr-browser",
     "tag": "v1.10.7",
@@ -297,20 +308,6 @@
     "featureLines": [
       "The **Several viewers** setting now says **Not supported** (in the DisplayXR Dashboard and `displayxr-cli dp options`) when the installed LeiaSR runtime has no multi-viewer weaving, with a note explaining what to install. It needs a runt…",
       "`MULTI_VIEWER` setting status: `APPLIES` when LeiaSR reports multi-viewer weaving, `NOT_SUPPORTED` (effective value `system`) on a LeiaSR build without it or a plug-in built against an SR SDK without it. No runtime re-pin; the installer'…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.70.3",
-    "repo": "displayxr-runtime",
-    "tag": "v2.70.3",
-    "title": "DisplayXR Runtime v2.70.3",
-    "date": "2026-11-23",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.3",
-    "prerelease": false,
-    "featureLines": [
-      "A display driver can now tell DisplayXR whether a stored setting actually takes effect on this machine, and the Dashboard shows \"Not supported here\" next to a setting that doesn't (first used by the Leia plug-in's \"Several viewers\" optio…",
-      "Settings: a display driver reports whether each stored setting applies here; `displayxr-cli dp options` prints a status line per setting (and a `status` field in `--json`), and the Dashboard shows \"Not supported here\" (#2773)"
     ],
     "looksMechanical": false
   },
