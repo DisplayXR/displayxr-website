@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import { auth, isAllowed } from "@/lib/auth";
 import { bufferChannels, bufferConfigured, createScheduledPost } from "@/lib/social/buffer";
 import { blueskyConfigured, graphemes } from "@/lib/social/bluesky";
+import { removeBluesky } from "@/lib/social/direct";
 import { getPackage, savePackage, seedMode } from "@/lib/social/store";
 import { pacificLocalToIso } from "@/lib/social/time";
 import { DIRECT, type Channel, type HistoryEntry, type Package } from "@/lib/social/types";
@@ -205,4 +206,15 @@ export async function markPosted(form: FormData) {
     { at: new Date().toISOString(), by: login, action: `marked posted on ${ch}`, note: url || undefined },
   );
   back(p.id, "msg", `Marked posted on ${ch}`);
+}
+
+export async function removeFromBluesky(form: FormData) {
+  const { login, p } = await load(form);
+  if (p.direct?.bluesky?.state !== "posted") back(p.id, "err", "Nothing posted on Bluesky to remove");
+  try {
+    await removeBluesky(p, login);
+  } catch (e) {
+    back(p.id, "err", `Bluesky: ${(e as Error).message}`);
+  }
+  back(p.id, "msg", "Removed from Bluesky");
 }

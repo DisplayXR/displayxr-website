@@ -83,3 +83,7 @@ with `mode: "buffer"` is posted by the site itself:
   retried automatically. Errors show per channel (`buffer.errors.bluesky`).
 - The page-load Buffer sync re-reads the newest package before saving, so it can't
   overwrite what the cron wrote.
+- **Remove from Bluesky** (on a posted Bluesky channel) deletes the post and its
+  replies (`deleteRecord`, replies newest first; their URIs are kept in
+  `direct.bluesky.reply_uris`). The channel reads `removed`, leaves `posted`, and the
+  cron never posts it again; a package that was fully posted becomes `dropped`.
