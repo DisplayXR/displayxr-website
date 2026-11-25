@@ -1,5 +1,20 @@
 [
   {
+    "id": "displayxr-demo-avatar@v0.14.5",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.14.5",
+    "title": "v0.14.5",
+    "date": "2026-11-25",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.5",
+    "prerelease": false,
+    "featureLines": [
+      "On Linux, the avatar now takes mouse and keyboard input while it runs inside the DisplayXR Shell workspace (#133).",
+      "On Windows on ARM (Snapdragon / Adreno), the avatar no longer freezes as a flat 2D image when a D3D12 or OpenGL app runs beside it (#134).",
+      "Linux: enable `XR_DXR_workspace_client_input` when the runtime advertises it, so the shell routes mouse and keyboard input to the app (#133)"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-browser@v1.10.7",
     "repo": "displayxr-browser",
     "tag": "v1.10.7",
@@ -43,8 +58,14 @@
     "date": "2026-11-24",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.23.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**Convert to 3D from the \"…\" menu.** A 2D file now has a \"Convert to 3D\" item in the \"…\" menu. It does the same as the 2D/3D switch (key V) and is checked while converting. The converter list sits under its own \"Converter\" label.",
+      "**A paused video converts too.** Turning on 2D→3D conversion while a video is paused or has ended now converts the frame on screen, instead of waiting for playback to resume.",
+      "**Mouse and keyboard under the DisplayXR Shell on Linux.** Inside the Linux workspace the player now receives pointer and key input, on runtimes that offer `XR_DXR_workspace_client_input`.",
+      "Linux: enable `XR_DXR_workspace_client_input`, so input reaches the player under the workspace; displayxr-common pinned to v2.36.0 (#285)",
+      "\"Convert to 3D\" item in the \"…\" menu for 2D files (#289)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.38.0",
@@ -868,17 +889,6 @@
     "title": "v0.11.1",
     "date": "2026-10-02",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.14.1",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.14.1",
-    "title": "v0.14.1",
-    "date": "2026-09-29",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true

@@ -66,6 +66,7 @@
       "displayxr-runtime/docs/adr/ADR-063-input-provider-device-abi-hardening.md",
       "displayxr-runtime/docs/adr/ADR-064-component-catalog-and-third-party-trust.md",
       "displayxr-runtime/docs/adr/ADR-065-two-runtime-rendering-modes.md",
+      "displayxr-runtime/docs/adr/ADR-066-live-display-driver-settings-envelope-sizing.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-001-direct-runtime-loading.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-002-zero-copy-atlas-handoff.md",
       "displayxr-unreal/Docs/DisplayXR/adr/ADR-003-ue-native-off-axis-projection.md"
