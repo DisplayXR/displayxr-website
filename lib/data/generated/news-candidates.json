@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-browser@v1.10.8",
+    "repo": "displayxr-browser",
+    "tag": "v1.10.8",
+    "title": "DisplayXR Browser v1.10.8",
+    "date": "2026-11-25",
+    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.8",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-conversion-open@v0.2.1",
     "repo": "displayxr-conversion-open",
     "tag": "v0.2.1",
@@ -443,22 +454,6 @@
       "**Editor Game view: 1:1 diagnostic and main-view targeting (#459).** In the docked texture mode a `GameView 1:1:` log line reports whether Unity draws the woven texture texel for pixel on each axis, with one warning per kind when it does…",
       "**Editor Game view: the image position is measured on screen (#459).** Windows editor, docked texture mode, D3D12: once the layout has settled, a short position-coded marker is drawn through the mirror blit and read back from the screen,…",
       "**Editor texture mode: the runtime's texture target binding (`XR_DXR_win32_window_binding` spec 9, #471).** In the docked texture mode the provider tells the runtime where the woven texture is drawn (the binding at session create, the re…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.10.4",
-    "repo": "displayxr-browser",
-    "tag": "v1.10.4",
-    "title": "DisplayXR Browser v1.10.4",
-    "date": "2026-11-18",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.4",
-    "prerelease": false,
-    "featureLines": [
-      "**The Windows installer now sets up DisplayXR for you.** If the DisplayXR runtime is missing or too old, the installer installs it itself (plus the Leia SR plug-in on Leia displays), fetched and verified from the signed DisplayXR compone…",
-      "**Convert to 3D now works for pictures on desktop Linux**, over the runtime's lift service.",
-      "Installer: fetch a missing or too-old runtime through an embedded, Leia-signed `dxr-get`. It plans first (one consent prompt), then runs `ensure-for browser`. Silent installs (`/S`) fetch directly. Falls back to the bundle download link …",
-      "Desktop Linux: Convert to 3D for `<img>` over XR_DXR_lift's CPU transport (#354, #356)"
     ],
     "looksMechanical": false
   },

@@ -106,30 +106,25 @@
   {
     "id": "browser",
     "name": "DisplayXR Browser",
-    "version": "v1.10.7",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.7",
-    "releaseDate": "2026-11-24",
-    "platforms": "Windows · macOS · Linux · Android",
+    "version": "v1.10.8",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.8",
+    "releaseDate": "2026-11-25",
+    "platforms": "Windows · macOS · Android",
     "downloads": [
       {
         "platform": "Windows",
-        "file": "DisplayXR-Browser-Setup-1.10.7.exe",
-        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.10.7/DisplayXR-Browser-Setup-1.10.7.exe"
+        "file": "DisplayXR-Browser-Setup-1.10.8.exe",
+        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.10.8/DisplayXR-Browser-Setup-1.10.8.exe"
       },
       {
         "platform": "macOS",
-        "file": "DisplayXR-Browser-1.10.7-mac-arm64.dmg",
-        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.10.7/DisplayXR-Browser-1.10.7-mac-arm64.dmg"
-      },
-      {
-        "platform": "Linux",
-        "file": "displayxr-browser_1.10.7-1_amd64.deb",
-        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.10.7/displayxr-browser_1.10.7-1_amd64.deb"
+        "file": "DisplayXR-Browser-1.10.8-mac-arm64.dmg",
+        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.10.8/DisplayXR-Browser-1.10.8-mac-arm64.dmg"
       },
       {
         "platform": "Android",
-        "file": "DisplayXR-Browser-1.10.7-android-arm64.apk",
-        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.10.7/DisplayXR-Browser-1.10.7-android-arm64.apk"
+        "file": "DisplayXR-Browser-1.10.8-android-arm64.apk",
+        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.10.8/DisplayXR-Browser-1.10.8-android-arm64.apk"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-browser"
