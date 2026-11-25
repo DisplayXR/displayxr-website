@@ -46,6 +46,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-runtime@v2.70.8",
+    "repo": "displayxr-runtime",
+    "tag": "v2.70.8",
+    "title": "v2.70.8",
+    "date": "2026-11-25",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.8",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.10.7",
     "repo": "displayxr-browser",
     "tag": "v1.10.7",
@@ -162,17 +173,6 @@
       "2D-to-3D conversion removed from the plug-in and moved to the separate Leia conversion component; the Windows installer requires DisplayXR runtime 2.70.5 or later (#555)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.70.4",
-    "repo": "displayxr-runtime",
-    "tag": "v2.70.4",
-    "title": "v2.70.4",
-    "date": "2026-11-24",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.4",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-runtime@v2.70.5",
