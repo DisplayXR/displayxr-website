@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-conversion-open@v0.2.1",
+    "repo": "displayxr-conversion-open",
+    "tag": "v0.2.1",
+    "title": "v0.2.1",
+    "date": "2026-11-25",
+    "url": "https://github.com/DisplayXR/displayxr-conversion-open/releases/tag/v0.2.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-avatar@v0.14.5",
     "repo": "displayxr-demo-avatar",
     "tag": "v0.14.5",
@@ -49,12 +60,14 @@
     "id": "displayxr-runtime@v2.70.8",
     "repo": "displayxr-runtime",
     "tag": "v2.70.8",
-    "title": "v2.70.8",
+    "title": "DisplayXR Runtime v2.70.8",
     "date": "2026-11-25",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.8",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "On Windows, Convert to 3D in Gaussians mode no longer hands the splat provider a black picture (Explore produced a black scene). The fix is in the GAUSSIANS input readback (#2830). This release also fixes several multi-screen issues: 2D …"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.10.7",
