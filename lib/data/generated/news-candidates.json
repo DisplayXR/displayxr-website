@@ -53,6 +53,21 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-mediaplayer@pro-v0.12.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.12.0",
+    "title": "Media Player Pro 0.12.0",
+    "date": "2026-11-26",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.12.0",
+    "prerelease": false,
+    "featureLines": [
+      "The player follows a change to the display's 3D mode while it runs, and a 3D mode that shows the same picture as 2D still counts as the 3D mode (needs runtime v2.70.7 or later for the live part).",
+      "Clip-vs-clip compare: clip B now follows clip A's clock, and the two loop together, instead of B drifting and being re-seeked.",
+      "Follow a live rendering-mode table change; size the atlas from the runtime's worst case (#290)"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-demo-mediaplayer@v1.23.1",
     "repo": "displayxr-demo-mediaplayer",
     "tag": "v1.23.1",
@@ -73,8 +88,12 @@
     "date": "2026-11-26",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.24.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**The player follows a live change of the runtime's rendering-mode table.** When the display's set of rendering modes changes while the player is running, it re-reads the table, adopts the new active mode and names it in the mode toast. …",
+      "Follows a live rendering-mode table change (`XR_DXR_display_info` v27) and sizes the atlas from the v28 worst case, on desktop and Android (#290).",
+      "A one-view \"Same as 2D\" 3D slot is still treated as the 3D mode, so the 2D/3D toggle stays available when that look is chosen for 3D (#290)."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-modelviewer@v0.39.0",
@@ -256,23 +275,6 @@
       "Android APK: release-signed (CN=DisplayXR Browser). If you have any preview up to and including 0.1.24 installed, UNINSTALL it before installing this one - those were debug-key signed and Android refuses an install that changes the signi…",
       "Linux (.deb, x64): sudo apt install ./displayxr-browser_1.10.7-1_amd64.deb - needs displayxr-runtime (>= 2.62.0) from DisplayXR/displayxr-runtime releases. A newer .deb upgrades in place; there is no apt repository.",
       "macOS (.dmg, Apple silicon): open DisplayXR-Browser-1.10.7-mac-arm64.dmg and drag the browser to Applications. Developer ID signed and notarized. Glasses-free 3D needs the DisplayXR runtime 2.53.0 or newer (DisplayXR-Installer-*.pkg from…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.23.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.23.0",
-    "title": "v1.23.0",
-    "date": "2026-11-24",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.23.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Convert to 3D from the \"…\" menu.** A 2D file now has a \"Convert to 3D\" item in the \"…\" menu. It does the same as the 2D/3D switch (key V) and is checked while converting. The converter list sits under its own \"Converter\" label.",
-      "**A paused video converts too.** Turning on 2D→3D conversion while a video is paused or has ended now converts the frame on screen, instead of waiting for playback to resume.",
-      "**Mouse and keyboard under the DisplayXR Shell on Linux.** Inside the Linux workspace the player now receives pointer and key input, on runtimes that offer `XR_DXR_workspace_client_input`.",
-      "Linux: enable `XR_DXR_workspace_client_input`, so input reaches the player under the workspace; displayxr-common pinned to v2.36.0 (#285)",
-      "\"Convert to 3D\" item in the \"…\" menu for 2D files (#289)"
     ],
     "looksMechanical": false
   },
