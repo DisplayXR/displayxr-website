@@ -60,6 +60,19 @@
     "date": "2026-11-26",
     "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.23.1",
     "prerelease": false,
+    "featureLines": [
+      "**Untagged media now opens as 2D.** A file with no filename tag, no stereo metadata and no detector verdict opens flat instead of being assumed side-by-side from its aspect. The 2D/3D switch then converts it with **Convert to 3D**, rathe…"
+    ],
+    "looksMechanical": false
+  },
+  {
+    "id": "displayxr-installer@v2.9.44",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.44",
+    "title": "DisplayXR v2.9.44",
+    "date": "2026-11-26",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.44",
+    "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
   },
@@ -78,12 +91,14 @@
     "id": "displayxr-runtime@v2.70.9",
     "repo": "displayxr-runtime",
     "tag": "v2.70.9",
-    "title": "v2.70.9",
+    "title": "DisplayXR Runtime v2.70.9",
     "date": "2026-11-26",
     "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.9",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "The Leia Android runtime APK now ships with Leia plug-in v2.24.1. This release also fixes several things: `displayxr-cli status` now reports the 3D mode correctly, a Windows app no longer waits forever when it connects to the service, ca…"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.10.8",
@@ -356,17 +371,6 @@
       "**Pro media browser.** An opt-in Open dialog on Windows with image-sequence tiles and thumbnails."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.9.41",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.41",
-    "title": "DisplayXR v2.9.41",
-    "date": "2026-11-23",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.41",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-leia-conversion@v0.1.0",
