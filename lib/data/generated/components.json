@@ -109,7 +109,7 @@
     "version": "v1.10.8",
     "releaseUrl": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.8",
     "releaseDate": "2026-11-25",
-    "platforms": "Windows · macOS · Android",
+    "platforms": "Windows · macOS · Linux · Android",
     "downloads": [
       {
         "platform": "Windows",
@@ -120,6 +120,11 @@
         "platform": "macOS",
         "file": "DisplayXR-Browser-1.10.8-mac-arm64.dmg",
         "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.10.8/DisplayXR-Browser-1.10.8-mac-arm64.dmg"
+      },
+      {
+        "platform": "Linux",
+        "file": "displayxr-browser_1.10.8-1_amd64.deb",
+        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.10.8/displayxr-browser_1.10.8-1_amd64.deb"
       },
       {
         "platform": "Android",

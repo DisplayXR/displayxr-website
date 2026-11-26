@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-conversion-open@v0.2.2",
+    "repo": "displayxr-conversion-open",
+    "tag": "v0.2.2",
+    "title": "v0.2.2",
+    "date": "2026-11-26",
+    "url": "https://github.com/DisplayXR/displayxr-conversion-open/releases/tag/v0.2.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.10.8",
     "repo": "displayxr-browser",
     "tag": "v1.10.8",
@@ -46,6 +57,26 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-mediaplayer@pro-v0.11.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "pro-v0.11.0",
+    "title": "Media Player Pro 0.11.0",
+    "date": "2026-11-25",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.11.0",
+    "prerelease": false,
+    "featureLines": [
+      "The rig check measures more: a left/right zoom mismatch, colour per channel with a colour-difference overlay, and stills and top/bottom files as well as side-by-side video.",
+      "A live disparity readout, a cursor probe and a disparity heatmap.",
+      "A media browser you can turn on as the Open dialog on Windows.",
+      "Untagged files now open as 2D, and turning on conversion while a video is paused converts the frame on screen.",
+      "Rig check reads a left/right scale (zoom) mismatch (#277)",
+      "Rig check measures stills and top/bottom, and says why GPU frames are not measured (#274)",
+      "Rig check reads colour per channel, with a colour-difference overlay (#282)",
+      "Live disparity readout, cursor probe and heatmap (#279)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-runtime@v2.70.7",
@@ -418,26 +449,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-demo-mediaplayer@v1.21.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.21.0",
-    "title": "v1.21.0",
-    "date": "2026-11-19",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.21.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Browse your media without leaving the player (Windows).** A new in-app media browser shows Pictures, Videos, Downloads, your media folders and pinned places as a 2D grid; a 2D|3D switch on the transport bar replaces Convert-to-3D, and …",
-      "**Play a whole folder as a slideshow** straight from the browser: from a folder, the place you are looking at, or a single file (#262).",
-      "**Open menu** with Open folder and a Recent list (#253).",
-      "**Pro: DeckLink embedded audio.** Optional audio capture (off by default) with per-channel meters, a volume slider, an audio/video sync offset, and click-a-meter to solo a channel (#257, #258, #259, #260).",
-      "In-app media browser on Windows: 2D grid of Pictures / Videos / Downloads / Media folders / pinned places, 2D|3D transport switch replacing Convert-to-3D, single instance, ease-back recenter, and a 2D/3D switch on Android (#256)",
-      "Play a folder as a slideshow from the media browser (#262)",
-      "Media folders leave out software's own images: git checkouts, game libraries, asset folders and pictures sitting beside a program (#263)",
-      "Open menu with Open folder and a Recent list (#253)"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-unity@v2.37.0",
     "repo": "displayxr-unity",
     "tag": "v2.37.0",
@@ -682,22 +693,6 @@
       "**macOS: installed DisplayXR apps now appear in the shell launcher.** Apps installed from their `.pkg` into `/Applications` or `~/Applications` are discovered automatically and launched through the bundle's own executable, so the demos (…",
       "macOS launcher scans `/Applications` and `~/Applications` app bundles for `Contents/Resources/displayxr/*.displayxr.json` manifests and launches them via the bundle's `CFBundleExecutable` (falling back to `Contents/MacOS/<name>`); regist…",
       "Auto-published from displayxr-shell-pvt @ 2ee433e6ec661baa368818e930bc80ecbd2d41c9."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-conversion-open@v0.1.0",
-    "repo": "displayxr-conversion-open",
-    "tag": "v0.1.0",
-    "title": "v0.1.0",
-    "date": "2026-10-15",
-    "url": "https://github.com/DisplayXR/displayxr-conversion-open/releases/tag/v0.1.0",
-    "prerelease": false,
-    "featureLines": [
-      "First release of the DisplayXR open-model conversion provider (`open-conversion`, ProbeOrder 200): depth-from-video and mono depth on ONNX Runtime, so every box gets a conversion provider without a vendor module.",
-      "**Windows**: `DisplayXROpenConversionSetup-0.1.0.exe` (DirectML with CPU fallback). Installs under `Program Files\\DisplayXR\\Plugins\\OpenConversion` and registers `HKLM\\Software\\DisplayXR\\ConversionProviders\\open-conversion`. No model is …",
-      "**Linux**: `displayxr-open-conversion-0.1.0-linux-x86_64.tar.gz` (CPU). `install.sh` installs per user and writes the JSON manifest.",
-      "Both assets are unsigned."
     ],
     "looksMechanical": false
   },
