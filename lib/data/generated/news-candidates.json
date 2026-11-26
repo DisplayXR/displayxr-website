@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-gaussiansplat@v1.29.10",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.29.10",
+    "title": "v1.29.10",
+    "date": "2026-11-26",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.10",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.29.8",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.29.8",
@@ -29,8 +40,15 @@
     "date": "2026-11-26",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.9",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "On Windows, camera-rig scenes (a `.sog` carrying a `camera` block, such as a converted photo) now behave like the gallery's Spatial View:",
+      "The mouse wheel zooms about the focus, 1x to 2x, and eases back to rest once you stop scrolling.",
+      "A drag orbit relaxes back to the capture view when you release the button.",
+      "The window takes the photo's shape when the scene loads (same area, within the work area; plain windows only, never fullscreen, maximised or a launch-specified rect).",
+      "Camera-rig scenes zoom about the focus (1x-2x, relaxing to rest) and the window takes the photo's aspect on load (#167)",
+      "The camera rig's drag orbit relaxes to neutral on release (#167)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-browser@v1.10.8",
@@ -149,23 +167,6 @@
       "Android APK: release-signed (CN=DisplayXR Browser). If you have any preview up to and including 0.1.24 installed, UNINSTALL it before installing this one - those were debug-key signed and Android refuses an install that changes the signi…",
       "Linux (.deb, x64): sudo apt install ./displayxr-browser_1.10.7-1_amd64.deb - needs displayxr-runtime (>= 2.62.0) from DisplayXR/displayxr-runtime releases. A newer .deb upgrades in place; there is no apt repository.",
       "macOS (.dmg, Apple silicon): open DisplayXR-Browser-1.10.7-mac-arm64.dmg and drag the browser to Applications. Developer ID signed and notarized. Glasses-free 3D needs the DisplayXR runtime 2.53.0 or newer (DisplayXR-Installer-*.pkg from…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.29.6",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.29.6",
-    "title": "v1.29.6",
-    "date": "2026-11-24",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.6",
-    "prerelease": false,
-    "featureLines": [
-      "**Gaussian splats now render on Windows-on-ARM (Snapdragon / Adreno).** The demo used to show an empty window and lose the GPU device there; the depth sort is now exact on Adreno and a bad sort can no longer hang the GPU.",
-      "**The Windows renderer is picked from the GPU at run time.** Qualcomm, Apple, ARM Mali and Imagination GPUs get the graphics renderer, everything else keeps compute, so the x64 build running under emulation on Snapdragon stays in step wi…",
-      "**Linux: keyboard and mouse input reach the demo under the workspace** (`XR_DXR_workspace_client_input`).",
-      "Choose the Windows splat renderer from the GPU vendor at run time (`GsAutoRenderer`, `DXR_GS_RENDERER` override; one `Splat renderer: ...` log line per session) (#158)",
-      "Linux: enable `XR_DXR_workspace_client_input` so input works under the workspace (#159)"
     ],
     "looksMechanical": false
   },
