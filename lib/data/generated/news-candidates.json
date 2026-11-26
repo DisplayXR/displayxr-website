@@ -66,6 +66,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-mediaplayer@v1.24.0",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.24.0",
+    "title": "v1.24.0",
+    "date": "2026-11-26",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.24.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-modelviewer@v0.39.0",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.39.0",
@@ -73,8 +84,14 @@
     "date": "2026-11-26",
     "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.39.0",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "**The viewer follows a live 3D-mode change.** Change a screen's 3D mode in the DisplayXR Dashboard, or with `displayxr-cli dp mode set`, and the open model viewer switches to it without a restart, on Windows, Linux and macOS. This needs …",
+      "Handles the runtime's `XrEventDataRenderingModeTableChangedDXR` event (`XR_DXR_display_info` v27): re-reads the rendering-mode table, keeps the active mode by index, and re-tiles on the next frame. Windows gets this through displayxr-com…",
+      "Finds the 3D mode by its index in the table instead of assuming a fixed slot (#196)",
+      "Sizes the swapchain from the runtime's stated worst case (`XrDisplayRenderingWorstCaseDXR`, v28), so a live mode switch or a move to another screen always fits without reallocating; an older runtime that states no worst case falls back t…",
+      "Pins displayxr-common v2.37.0 (#196)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-installer@v2.9.44",
@@ -110,6 +127,17 @@
       "The Leia Android runtime APK now ships with Leia plug-in v2.24.1. This release also fixes several things: `displayxr-cli status` now reports the 3D mode correctly, a Windows app no longer waits forever when it connects to the service, ca…"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "dolphin@v0.1.0",
+    "repo": "dolphin",
+    "tag": "v0.1.0",
+    "title": "v0.1.0",
+    "date": "2026-11-26",
+    "url": "https://github.com/DisplayXR/dolphin/releases/tag/v0.1.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@v1.10.8",
@@ -364,22 +392,6 @@
       "**`MODEL` setting** — `auto` picks the full build on a GPU machine with at least 16 GB of RAM and the int4 build otherwise; either can be forced (#6).",
       "**Warm-up fix** — warming a model now waits for the model store's verify to finish instead of timing out after 5 s (#7).",
       "Core ML execution provider on macOS with CPU fallback and cached compiles (source builds; no macOS package in this release) (#2)."
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@v1.22.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "v1.22.0",
-    "title": "v1.22.0",
-    "date": "2026-11-23",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.22.0",
-    "prerelease": false,
-    "featureLines": [
-      "**A smoother everyday player.** Closing no longer hangs on a file from a stalled network share, Cyrillic and Greek file names display correctly, and the player gains a full screen button, a projection picker, a shortcuts panel (F1 / ?) a…",
-      "**A Settings window.** Preferences now live in one per-user settings file, editable from a Settings window (gear button, Ctrl+, or the \"Settings...\" menu row).",
-      "**Pro stereo QC.** The rig check now measures left/right scale (zoom) mismatch and per-channel colour (gain/lift, with ASC CDL export and a colour-difference overlay), plus a live disparity readout, cursor probe and heatmap.",
-      "**Pro media browser.** An opt-in Open dialog on Windows with image-sequence tiles and thumbnails."
     ],
     "looksMechanical": false
   },
