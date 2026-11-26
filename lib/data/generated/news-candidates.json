@@ -53,6 +53,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-mediaplayer@v1.23.1",
+    "repo": "displayxr-demo-mediaplayer",
+    "tag": "v1.23.1",
+    "title": "v1.23.1",
+    "date": "2026-11-26",
+    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.23.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-leia-plugin@v2.24.1",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.24.1",
@@ -410,17 +421,6 @@
     "title": "DisplayXR v0.12.1",
     "date": "2026-11-23",
     "url": "https://github.com/DisplayXR/displayxr-unreal/releases/tag/v0.12.1",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-mediaplayer@pro-v0.10.0",
-    "repo": "displayxr-demo-mediaplayer",
-    "tag": "pro-v0.10.0",
-    "title": "Media Player Pro 0.10.0",
-    "date": "2026-11-22",
-    "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/pro-v0.10.0",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
