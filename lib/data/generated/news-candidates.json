@@ -11,6 +11,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-demo-gaussiansplat@v1.29.8",
+    "repo": "displayxr-demo-gaussiansplat",
+    "tag": "v1.29.8",
+    "title": "v1.29.8",
+    "date": "2026-11-26",
+    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.8",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.10.8",
     "repo": "displayxr-browser",
     "tag": "v1.10.8",
@@ -732,22 +743,6 @@
     "prerelease": false,
     "featureLines": [
       "**Linux: the demo now appears in the DisplayXR Shell launcher (Ctrl+L).** The `.deb` installs a registered shell manifest at `/usr/share/displayxr/apps/`, so the demo shows up in the launcher right after install, with no manual registrat…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.29.4",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.29.4",
-    "title": "v1.29.4",
-    "date": "2026-10-12",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.4",
-    "prerelease": false,
-    "featureLines": [
-      "**Much cheaper rendering on Android, Apple Silicon and Linux.** The per-frame `vkCmdCopyImage` into the sRGB swapchain — where the Adreno driver allocated and zeroed GPU memory every frame, ~90% of the render thread's CPU — is replaced b…",
-      "**With runtime v2.38.0 or newer** (its hand-off scorer fix, displayxr-runtime#1964): NP02J tablet **29 → 46 fps**, Lume phone **49 → 55 fps**.",
-      "`GsAdrenoRenderer` present pass: a fullscreen-triangle draw replaces blit → scratch → copy. Swapchains on the Android, macOS and Linux legs are now requested with `XR_SWAPCHAIN_USAGE_MUTABLE_FORMAT_BIT`. Also cheaper on the GPU: the pres…",
-      "Kill switch `debug.dxr.gs.present_pass` / `DXR_GS_PRESENT_PASS` (default `1`; `0` = the old blit + copy path). One log line per session says which path is in use. (#144)"
     ],
     "looksMechanical": false
   },
