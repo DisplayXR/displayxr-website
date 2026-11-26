@@ -18,8 +18,10 @@
     "date": "2026-11-26",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.10",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "On macOS, a camera-rig scene now opens framed as the photograph wherever the window sits, including Retina and mixed-scale multi-monitor setups: the rest anchor is recomputed per frame instead of once at load."
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.29.8",
@@ -49,6 +51,17 @@
       "The camera rig's drag orbit relaxes to neutral on release (#167)"
     ],
     "looksMechanical": false
+  },
+  {
+    "id": "displayxr-leia-plugin@v2.24.1",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.24.1",
+    "title": "v2.24.1",
+    "date": "2026-11-26",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.24.1",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
   },
   {
     "id": "displayxr-browser@v1.10.8",
@@ -363,22 +376,6 @@
       "**Linux:** install this package together with a Leia SR plug-in release that no longer carries the provider. That plug-in release is not out yet, so on a box with the current `displayxr-leia-sr` this `.deb` is refused on its own. See [do…",
       "The Windows installer is code-signed. The Linux package is not signed.",
       "**Full Changelog**: https://github.com/DisplayXR/displayxr-leia-conversion/commits/v0.1.0"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.23.2",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.23.2",
-    "title": "v2.23.2",
-    "date": "2026-11-23",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.23.2",
-    "prerelease": false,
-    "featureLines": [
-      "**\"Update recommended\" notice for old LeiaSR runtimes.** When a Leia panel is attached and the installed LeiaSR runtime is older than 1.39.0, the plug-in now reports an \"update recommended\" platform remedy (ADR-045). The DisplayXR CLI, t…",
-      "**Multi-viewer weaving is now a setting.** The device declares two rendering modes (2D / 3D) on every platform; the Windows-only \"LeiaSR multi-viewer\" mode becomes `displayxr-cli dp set leia-sr MULTI_VIEWER system|on|off` (default `syste…",
-      "feat(platform): \"update recommended\" below LeiaSR 1.39.0 (ADR-045 remedy) (#566)",
-      "feat: two rendering modes; multi-viewer weaving becomes the MULTI_VIEWER setting (#571)"
     ],
     "looksMechanical": false
   },
