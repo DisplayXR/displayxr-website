@@ -30,15 +30,16 @@ export const PLAY_PORTING_GUIDE = `${PLAY_ANDROID_REPO}/blob/main/docs/android-g
 // display-makers band, not in /catalog (OEM-facing).
 export const DOLPHIN_REPO = "https://github.com/DisplayXR/dolphin";
 export const DOLPHIN_RELEASES = `${DOLPHIN_REPO}/releases`;
+export const DOLPHIN_RELEASE = `${DOLPHIN_RELEASES}/tag/v0.1.0`;
 export const DOLPHIN_GUIDE = `${DOLPHIN_REPO}/blob/displayxr/docs/DisplayXR-Android.md`;
 export const DOLPHIN_UPSTREAM = "https://github.com/dolphin-emu/dolphin";
 export const DOLPHIN_PAGE = "/play/dolphin";
-/** Release tag. TODO at release: the signed APK's tag. */
-export const DOLPHIN_VERSION = "TODO";
-/** Oldest DisplayXR runtime for Android it runs on. TODO: confirm (has run on v2.68.2). */
-export const DOLPHIN_MIN_RUNTIME = "TODO";
-/** Whether the app asks for camera access on first start. TODO: set at release after the device test. */
-export const DOLPHIN_ASKS_CAMERA = false;
+/** Release tag of the signed APK. */
+export const DOLPHIN_VERSION = "v0.1.0";
+/** Oldest DisplayXR runtime for Android it has run on. */
+export const DOLPHIN_MIN_RUNTIME = "2.68.2";
+/** Whether the app asks for camera access when 3D is turned on (v0.1.0 does; a device test may drop it). */
+export const DOLPHIN_ASKS_CAMERA = true;
 
 export const SYSTEMS: PlaySystem[] = [
   {

@@ -6,6 +6,7 @@ import {
   DOLPHIN_GUIDE,
   DOLPHIN_MIN_RUNTIME,
   DOLPHIN_ASKS_CAMERA,
+  DOLPHIN_RELEASE,
   DOLPHIN_RELEASES,
   DOLPHIN_REPO,
   DOLPHIN_UPSTREAM,
@@ -32,7 +33,7 @@ const STEPS: { title: string; text: string }[] = [
   {
     title: "Install DisplayXR for Android",
     text: `The DisplayXR runtime for Android, with your display's plug-in${
-      DOLPHIN_MIN_RUNTIME !== "TODO" ? `, ${DOLPHIN_MIN_RUNTIME} or later` : ""
+      `, ${DOLPHIN_MIN_RUNTIME} or later`
     }. It is a separate app; Dolphin 3D connects to it.`,
   },
   {
@@ -46,7 +47,7 @@ const STEPS: { title: string; text: string }[] = [
   {
     title: "Load your own software",
     text: DOLPHIN_ASKS_CAMERA
-      ? "Start a game. The first time, Android asks for camera access: the display uses the front camera to follow your eyes."
+      ? "Start a game. When 3D turns on, Android asks for camera access: the display uses the front camera to follow your eyes."
       : "Start a game.",
   },
 ];
@@ -63,7 +64,6 @@ const LIMITS = [
 const code = "rounded bg-white/10 px-1.5 py-0.5 font-mono text-[13px] text-text-primary";
 
 export default function DolphinPage() {
-  const released = DOLPHIN_VERSION !== "TODO";
   return (
     <div className="bg-[#050507]">
       {/* Hero */}
@@ -77,7 +77,7 @@ export default function DolphinPage() {
             <div className="mb-4 flex items-center gap-3">
               <Eyebrow>Play · Android</Eyebrow>
               <span className="mb-4 whitespace-nowrap rounded-full bg-warning/15 px-2.5 py-1 text-xs font-medium text-warning">
-                Preview{released ? ` · ${DOLPHIN_VERSION}` : ""}
+                Preview · {DOLPHIN_VERSION}
               </span>
             </div>
             <h1 className="mb-6 text-5xl md:text-6xl font-display tracking-tight text-white leading-[1.04]">
@@ -89,11 +89,15 @@ export default function DolphinPage() {
               own cameras.
             </p>
             <div className="mb-6 flex flex-wrap gap-4">
-              <Button href={DOLPHIN_RELEASES}>{released ? `Download ${DOLPHIN_VERSION}` : "Releases"}</Button>
+              <Button href={DOLPHIN_RELEASE}>Download {DOLPHIN_VERSION}</Button>
               <Button variant="secondary" href="#install" className="bg-black/45">
                 How to install
               </Button>
             </div>
+            <p className="mb-3 text-sm text-white/70">
+              Preview: OpenGL backend only, depth set per game, needs the DisplayXR runtime for Android{" "}
+              {DOLPHIN_MIN_RUNTIME} or later. Bring your own games: no games, BIOS or firmware are shipped or linked.
+            </p>
             <p className="text-sm text-white/70">
               Based on{" "}
               <a href={DOLPHIN_UPSTREAM} className="text-white underline underline-offset-2 hover:text-accent-hover">
@@ -193,6 +197,7 @@ StereoConvergence = 10`}
               <div className="flex flex-wrap gap-3">
                 <Button variant="secondary" href={DOLPHIN_REPO}>Source on GitHub</Button>
                 <Button variant="secondary" href={DOLPHIN_GUIDE}>User guide</Button>
+                <Button variant="secondary" href={DOLPHIN_RELEASES}>All releases</Button>
                 <Button variant="secondary" href="/play">All of Play</Button>
               </div>
             </div>
