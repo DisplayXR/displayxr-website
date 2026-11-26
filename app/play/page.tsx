@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { AnimateIn } from "@/components/ui/AnimateIn";
@@ -206,6 +207,14 @@ export default function PlayPage() {
                     )}
                   </div>
                   <p className="text-xs text-text-secondary">{s.note}</p>
+                  {s.more && (
+                    <p className="mt-1 text-xs text-text-secondary">
+                      {s.more.text}{" "}
+                      <Link href={s.more.href} className="text-accent hover:text-accent-hover">
+                        {s.more.label} →
+                      </Link>
+                    </p>
+                  )}
                 </article>
               );
             })}
@@ -220,14 +229,20 @@ export default function PlayPage() {
           <H2>Two eyes from one game, then one hand-off.</H2>
           <p className="mb-8 max-w-2xl text-lg leading-relaxed text-text-secondary">
             Nothing in the middle depends on the operating system except the last step. Play has
-            three routes to the two eyes, and the detector picks one per title.
+            three routes to the two eyes, and the detector picks one per title. A fourth needs no
+            route at all: an app that already renders both eyes.
           </p>
-          <div className="mb-12 grid gap-5 md:grid-cols-3">
+          <div className="mb-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {ROUTES.map((r) => (
               <div key={r.slug} className="rounded-2xl border border-border bg-[#0f0f12] p-6">
                 <h3 className="mb-1 text-base font-semibold text-text-primary">{r.name}</h3>
                 <p className="mb-3 font-mono text-xs text-accent">route = {r.slug}</p>
                 <p className="text-sm text-text-secondary">{r.text}</p>
+                {r.link && (
+                  <Link href={r.link.href} className="mt-3 inline-block text-sm text-accent hover:text-accent-hover">
+                    {r.link.label} →
+                  </Link>
+                )}
               </div>
             ))}
           </div>
@@ -468,7 +483,7 @@ export default function PlayPage() {
                       <span className="block text-[13px] text-text-secondary">{r.text}</span>
                     </span>
                     <Chip tone={r.status === "live" ? "green" : "yellow"}>
-                      {r.status === "live" && android.version ? android.version : r.label}
+                      {r.name === "displayxr-play-android" && android.version ? android.version : r.label}
                     </Chip>
                   </>
                 );
