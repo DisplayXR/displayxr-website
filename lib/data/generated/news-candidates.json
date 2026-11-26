@@ -66,6 +66,17 @@
     "looksMechanical": false
   },
   {
+    "id": "displayxr-demo-modelviewer@v0.39.0",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.39.0",
+    "title": "v0.39.0",
+    "date": "2026-11-26",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.39.0",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-installer@v2.9.44",
     "repo": "displayxr-installer",
     "tag": "v2.9.44",
@@ -660,23 +671,6 @@
       "**Claude Code and other MCP clients can now connect to the DisplayXR MCP adapter over stdio.** The adapter now speaks newline-delimited JSON, which is MCP's stdio transport; previously Claude Code timed out while connecting. Clients that…",
       "**Tool errors reach the agent as tool errors.** When a tool handler returns an object with a top-level `\"isError\": true`, `tools/call` now also sets `result.isError = true`, so the client sees a real MCP tool error rather than a successf…",
       "`tools/call`: a handler result flagged `\"isError\": true` is answered as `result.isError` (#27)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.36.0",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.36.0",
-    "title": "v0.36.0",
-    "date": "2026-10-17",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.36.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Hands in the model viewer.** With a hand-tracking provider active, your hands show up as translucent \"ghost\" hands (glass body, hairline outline, depth-primed so they occlude correctly) in every view of the display.",
-      "**Pinch gestures.** Pinch with one hand to rotate the model; pinch with both hands to zoom and roll it.",
-      "**Orbit is now a turntable.** Orbiting turns the model in place while the camera/display rig stays fixed, and the environment around it (sky, image-based lighting, the Sky/Studio/Room lights) stays put. In Scene-lighting mode the asset's…",
-      "`XR_EXT_hand_tracking` consumer: translucent hand mesh drawn in every view, pinch-gesture math with a runtime-free self-check, one- and two-hand pinch gestures driving rotate / zoom / roll, and orbit reworked into a model turntable with …",
-      "Ghost Hand look (depth prime, glass body, hairline outline) plus a hand-separation guard (#177)"
     ],
     "looksMechanical": false
   },
