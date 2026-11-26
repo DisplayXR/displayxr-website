@@ -135,6 +135,28 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-leia-plugin@v2.24.2",
+    "repo": "displayxr-leia-plugin",
+    "tag": "v2.24.2",
+    "title": "v2.24.2",
+    "date": "2026-11-26",
+    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.24.2",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.70.10",
+    "repo": "displayxr-runtime",
+    "tag": "v2.70.10",
+    "title": "v2.70.10",
+    "date": "2026-11-26",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.10",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-runtime@v2.70.9",
     "repo": "displayxr-runtime",
     "tag": "v2.70.9",
@@ -344,20 +366,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.70.6",
-    "repo": "displayxr-runtime",
-    "tag": "v2.70.6",
-    "title": "DisplayXR Runtime v2.70.6",
-    "date": "2026-11-24",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.6",
-    "prerelease": false,
-    "featureLines": [
-      "On Android, an app no longer gets a black screen on its first launch after the runtime starts cold: the runtime now keeps handling the app's lifecycle events while session creation waits for the hosted surface, instead of deadlocking unt…",
-      "Scripts: `android-oem-soak.sh`, the keep-alive soak that goes with the Android OEM probe (R8): an hour-long inline 3D browser soak with screen and app-switch cycles, an idle test and an in-place reinstall test, each reporting PASS / FAIL…"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-unity@v2.38.2",
     "repo": "displayxr-unity",
     "tag": "v2.38.2",
@@ -413,19 +421,6 @@
       "**Linux:** install this package together with a Leia SR plug-in release that no longer carries the provider. That plug-in release is not out yet, so on a box with the current `displayxr-leia-sr` this `.deb` is refused on its own. See [do…",
       "The Windows installer is code-signed. The Linux package is not signed.",
       "**Full Changelog**: https://github.com/DisplayXR/displayxr-leia-conversion/commits/v0.1.0"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-leia-plugin@v2.23.3",
-    "repo": "displayxr-leia-plugin",
-    "tag": "v2.23.3",
-    "title": "v2.23.3",
-    "date": "2026-11-23",
-    "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.23.3",
-    "prerelease": false,
-    "featureLines": [
-      "**Multi-viewer weaving now takes effect.** `displayxr-cli dp set leia-sr MULTI_VIEWER on|off` now applies on LeiaSR builds with multi-viewer weaving (the MWeave builds). The plug-in is built against SR SDK 1.39.0.3666 (multi-viewer rebas…"
     ],
     "looksMechanical": false
   },
