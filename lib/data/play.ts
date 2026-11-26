@@ -37,6 +37,8 @@ export const DOLPHIN_PAGE = "/play/dolphin";
 export const DOLPHIN_VERSION = "TODO";
 /** Oldest DisplayXR runtime for Android it runs on. TODO: confirm (has run on v2.68.2). */
 export const DOLPHIN_MIN_RUNTIME = "TODO";
+/** Whether the app asks for camera access on first start. TODO: set at release after the device test. */
+export const DOLPHIN_ASKS_CAMERA = false;
 
 export const SYSTEMS: PlaySystem[] = [
   {

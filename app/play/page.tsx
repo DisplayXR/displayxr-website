@@ -229,8 +229,8 @@ export default function PlayPage() {
           <H2>Two eyes from one game, then one hand-off.</H2>
           <p className="mb-8 max-w-2xl text-lg leading-relaxed text-text-secondary">
             Nothing in the middle depends on the operating system except the last step. Play has
-            three routes to the two eyes, and the detector picks one per title. A fourth needs no
-            route at all: an app that already renders both eyes.
+            three routes to the two eyes, and the detector picks one per title. A fourth route is an
+            app that already renders both eyes, such as Dolphin 3D.
           </p>
           <div className="mb-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {ROUTES.map((r) => (

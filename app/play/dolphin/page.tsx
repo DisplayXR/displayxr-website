@@ -5,6 +5,7 @@ import { Band, Eyebrow, FeatureGrid, H2, Lead, socialMeta } from "@/components/a
 import {
   DOLPHIN_GUIDE,
   DOLPHIN_MIN_RUNTIME,
+  DOLPHIN_ASKS_CAMERA,
   DOLPHIN_RELEASES,
   DOLPHIN_REPO,
   DOLPHIN_UPSTREAM,
@@ -44,7 +45,9 @@ const STEPS: { title: string; text: string }[] = [
   },
   {
     title: "Load your own software",
-    text: "Start a game. The first time, Android asks for camera access: the display uses the front camera to follow your eyes.",
+    text: DOLPHIN_ASKS_CAMERA
+      ? "Start a game. The first time, Android asks for camera access: the display uses the front camera to follow your eyes."
+      : "Start a game.",
   },
 ];
 
@@ -83,7 +86,7 @@ export default function DolphinPage() {
             <p className="mb-6 text-lg md:text-xl leading-relaxed text-white/85">
               Dolphin 3D renders every frame twice, once for each eye, and hands the pair to the
               DisplayXR runtime, which prepares it for the spatial display. Real stereo from the game&apos;s
-              own cameras; nothing shifts the finished picture.
+              own cameras.
             </p>
             <div className="mb-6 flex flex-wrap gap-4">
               <Button href={DOLPHIN_RELEASES}>{released ? `Download ${DOLPHIN_VERSION}` : "Releases"}</Button>
