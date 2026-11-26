@@ -64,6 +64,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.70.9",
+    "repo": "displayxr-runtime",
+    "tag": "v2.70.9",
+    "title": "v2.70.9",
+    "date": "2026-11-26",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.9",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-browser@v1.10.8",
     "repo": "displayxr-browser",
     "tag": "v1.10.8",
@@ -262,20 +273,6 @@
       "**2D-to-3D conversion is now its own component.** The Leia SR plug-in no longer includes 2D-to-3D conversion. It now ships separately as the **Leia conversion** component. The DisplayXR bundle installs it for you; to install it on its ow…",
       "**The Windows installer now needs DisplayXR runtime 2.70.5 or later.** Update the runtime first if you have an older one.",
       "2D-to-3D conversion removed from the plug-in and moved to the separate Leia conversion component; the Windows installer requires DisplayXR runtime 2.70.5 or later (#555)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.70.5",
-    "repo": "displayxr-runtime",
-    "tag": "v2.70.5",
-    "title": "DisplayXR Runtime v2.70.5",
-    "date": "2026-11-24",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.5",
-    "prerelease": false,
-    "featureLines": [
-      "On Linux, an in-process Wayland window that spans or sits on a second screen is now woven per screen, each part by its own display driver with its own eye positions and projection. Converter rows in the Dashboard get plain names, a runni…",
-      "vk_native: in-process Wayland windows are woven per screen, the laptop part by its own display driver (#2791)"
     ],
     "looksMechanical": false
   },

@@ -346,6 +346,13 @@
     "archived": false
   },
   {
+    "name": "dolphin",
+    "description": "Based on Dolphin (dolphin-emu/dolphin): adds a DisplayXR 3D output on Android, so GameCube and Wii software renders in 3D on spatial displays. Branch: displayxr.",
+    "url": "https://github.com/DisplayXR/dolphin",
+    "topics": [],
+    "archived": false
+  },
+  {
     "name": "glTF-Sample-Assets",
     "description": "An assortment of assets that demonstrate features and capabilities of the glTF format",
     "url": "https://github.com/DisplayXR/glTF-Sample-Assets",
