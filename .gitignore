@@ -22,6 +22,8 @@
 
 # misc
 .DS_Store
+# scripts/sync-org.mjs asset staging (removed at the end of every run)
+/.sync-stage/
 *.pem
 
 # debug

@@ -33,9 +33,13 @@ jobs:
         with:
           node-version: 20
 
+      # Exits non-zero (and writes nothing) when any GitHub request other than
+      # a 404 fails, so a transient outage can't be committed as "demos gone".
+      # SYNC_ALLOW_SHRINK lifts the dropped-demos floor on a manual run only.
       - name: Generate org data
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SYNC_ALLOW_SHRINK: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
         run: node scripts/sync-org.mjs
 
       # Direct-commit to main — same "released = tested, no review theatre"
@@ -46,7 +50,9 @@ jobs:
       # pass — those prose fields are never auto-written.
       - name: Commit refreshed org data to main
         run: |
-          if git diff --quiet && git diff --cached --quiet; then
+          # status --porcelain also sees untracked files (a new icon or a new
+          # generated file), which `git diff --quiet` does not.
+          if [ -z "$(git status --porcelain)" ]; then
             echo "No changes — org data already current."
             exit 0
           fi
