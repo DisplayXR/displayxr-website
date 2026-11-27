@@ -107,6 +107,16 @@ export const NEWS_KIND_LABELS: Record<NewsKind, string> = {
  */
 export const NEWS: NewsItem[] = [
   {
+    id: "play-dolphin-3d",
+    date: "2026-12-09",
+    kind: "product",
+    tier: "list",
+    headline: "Dolphin 3D for Android: an emulator with a DisplayXR output",
+    blurb:
+      "Dolphin 3D, based on the Dolphin emulator, renders every frame twice, once for each eye, and hands the pair to the DisplayXR runtime, which prepares it for the spatial display. Preview v0.1.0, a signed APK for Android released November 25, needs the DisplayXR runtime for Android 2.68.2 or later. Bring your own software: no games, BIOS or firmware are shipped or linked. Not made or endorsed by the Dolphin team.",
+    href: "/play/dolphin",
+  },
+  {
     id: "inline3d-ai-assistants",
     date: "2026-11-19",
     kind: "product",

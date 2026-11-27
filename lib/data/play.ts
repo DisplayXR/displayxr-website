@@ -14,11 +14,32 @@ export interface PlaySystem {
   primary: { label: string; href: string };
   secondary?: { label: string; href: string };
   note: string;
+  /** An extra line under the note, with a link (Android: Dolphin 3D). */
+  more?: { text: string; label: string; href: string };
 }
 
 export const PLAY_ANDROID_REPO = "https://github.com/DisplayXR/displayxr-play-android";
 export const PLAY_ANDROID_RELEASES = `${PLAY_ANDROID_REPO}/releases`;
 export const PLAY_PORTING_GUIDE = `${PLAY_ANDROID_REPO}/blob/main/docs/android-game-porting.md`;
+
+// Dolphin 3D (DisplayXR): a GPL-2.0+ fork of dolphin-emu/dolphin with a
+// DisplayXR stereo output, on Android. Its own page is /play/dolphin.
+// Rules: "based on Dolphin", never implying the Dolphin team endorses it; no
+// console-maker marks; no games, BIOS or firmware shipped or linked; no
+// performance numbers. Not in GAMES (it is not a game), not in the
+// display-makers band, not in /catalog (OEM-facing).
+export const DOLPHIN_REPO = "https://github.com/DisplayXR/dolphin";
+export const DOLPHIN_RELEASES = `${DOLPHIN_REPO}/releases`;
+export const DOLPHIN_RELEASE = `${DOLPHIN_RELEASES}/tag/v0.1.0`;
+export const DOLPHIN_GUIDE = `${DOLPHIN_REPO}/blob/displayxr/docs/DisplayXR-Android.md`;
+export const DOLPHIN_UPSTREAM = "https://github.com/dolphin-emu/dolphin";
+export const DOLPHIN_PAGE = "/play/dolphin";
+/** Release tag of the signed APK. */
+export const DOLPHIN_VERSION = "v0.1.0";
+/** Oldest DisplayXR runtime for Android it has run on. */
+export const DOLPHIN_MIN_RUNTIME = "2.68.2";
+/** Whether the app asks for camera access when 3D is turned on (v0.1.0 does; a device test may drop it). */
+export const DOLPHIN_ASKS_CAMERA = true;
 
 export const SYSTEMS: PlaySystem[] = [
   {
@@ -65,6 +86,7 @@ export const SYSTEMS: PlaySystem[] = [
     primary: { label: "Get the companion app", href: PLAY_ANDROID_RELEASES },
     secondary: { label: "Install guide", href: PLAY_ANDROID_REPO },
     note: "First game: Minecraft Bedrock.",
+    more: { text: "Also on Android: Dolphin 3D, based on the Dolphin emulator.", label: "Dolphin 3D", href: DOLPHIN_PAGE },
   },
 ];
 
@@ -129,8 +151,9 @@ export const TIMELINE: Milestone[] = [
 // engine name, never "conversion" (that is the 2D-to-3D component class).
 export interface PlayRoute {
   name: string;
-  slug: "layer" | "engine" | "native";
+  slug: "layer" | "engine" | "native" | "app";
   text: string;
+  link?: { label: string; href: string };
 }
 
 export const ROUTES: PlayRoute[] = [
@@ -148,6 +171,12 @@ export const ROUTES: PlayRoute[] = [
     name: "Native mod",
     slug: "native",
     text: "On Android, a hook library loaded by a community mod launcher renders the second eye inside the game. One title today.",
+  },
+  {
+    name: "App's own stereo",
+    slug: "app",
+    text: "Some apps already render a real second eye. Their DisplayXR output hands the pair to the DisplayXR runtime, which prepares it for the spatial display. First app: Dolphin 3D on Android, based on the Dolphin emulator.",
+    link: { label: "Dolphin 3D", href: DOLPHIN_PAGE },
   },
 ];
 
@@ -268,6 +297,7 @@ export interface PlayRepo {
 
 export const REPOS: PlayRepo[] = [
   { name: "displayxr-play-android", text: "Native mod core, the first game’s mod, the companion app", href: PLAY_ANDROID_REPO, status: "live", label: "v0.6.4" },
+  { name: "dolphin", text: "Dolphin 3D for Android: a GPL-2.0+ fork of Dolphin with a DisplayXR output", href: DOLPHIN_PAGE, status: "live", label: DOLPHIN_VERSION },
   { name: "displayxr-play", text: "Compatibility tool, detector, bridge, profiles, Windows installer", status: "december", label: "December" },
   { name: "displayxr-dxvk · displayxr-vkd3d-proton", text: "Graphics-layer stereo for Direct3D 11 and 12", status: "december", label: "December" },
 ];

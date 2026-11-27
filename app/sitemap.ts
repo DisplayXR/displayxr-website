@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/developers",
     "/browser",
     "/play",
+    "/play/dolphin",
     "/apps",
     "/apps/chat",
     "/apps/gallery",
