@@ -8,17 +8,28 @@
 //
 // Design rules:
 //  - Deterministic output (no timestamps) so "nothing changed" => empty git diff.
-//  - Each adapter is best-effort: a failing source warns and is skipped, never
-//    aborts the run or blanks an existing file's worth of content.
+//  - "Absent" and "unreachable" are different answers. A 404 (no release, no
+//    manifest, no icon) is a fact about the org and is written out. Any other
+//    failure (5xx, rate limit, network) means GitHub did not answer: it is
+//    recorded as a failure, and a run with any failure writes NOTHING and exits
+//    non-zero, so the previous generated files and assets stay live (#57).
+//  - Assets are staged and swapped into public/ only after a clean run.
+//  - A run that drops more than MAX_DEMO_DROP demos is refused unless
+//    SYNC_ALLOW_SHRINK=1 (the workflow sets it on a manual dispatch).
 
 import { execSync } from "node:child_process";
-import { mkdirSync, writeFileSync, rmSync } from "node:fs";
+import { mkdirSync, writeFileSync, rmSync, renameSync, existsSync, readFileSync } from "node:fs";
 import { dirname, basename, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const GEN = join(ROOT, "lib/data/generated");
 const PUB = join(ROOT, "public");
+// Assets land here during the run and replace public/{demos,engines} only once
+// every adapter has answered.
+const STAGE = join(ROOT, ".sync-stage");
+const ASSET_DIRS = ["demos", "engines"];
+const MAX_DEMO_DROP = 1;
 const ORG = "DisplayXR";
 
 // ── auth ────────────────────────────────────────────────────────────────────
@@ -43,6 +54,27 @@ const warn = (m) => {
   warnings.push(m);
   console.warn("  ! " + m);
 };
+// Non-404 errors: GitHub did not answer, so we cannot tell what the org looks
+// like. Any entry here aborts the run before anything is written.
+const failures = [];
+const fail = (m) => {
+  failures.push(m);
+  console.error("  ✗ " + m);
+};
+
+class HttpError extends Error {
+  constructor(what, status) {
+    super(`${what} -> ${status}`);
+    this.status = status;
+  }
+}
+// Only an HTTP 404 means "it isn't there". A thrown fetch (network), a 403
+// rate limit, a 5xx or any other status is a failure to find out.
+const isNotFound = (e) => e instanceof HttpError && e.status === 404;
+// warn() for a real answer about the org (absent, or a malformed manifest that
+// a source repo has to fix), fail() for "GitHub did not answer".
+const report = (m, e) =>
+  (isNotFound(e) || e instanceof SyntaxError ? warn : fail)(`${m} — ${e.message}`);
 
 async function api(path) {
   const res = await fetch("https://api.github.com" + path, {
@@ -52,7 +84,7 @@ async function api(path) {
       "User-Agent": "displayxr-website-sync",
     },
   });
-  if (!res.ok) throw new Error(`GET ${path} -> ${res.status}`);
+  if (!res.ok) throw new HttpError(`GET ${path}`, res.status);
   return res.json();
 }
 
@@ -72,7 +104,7 @@ async function raw(repo, path, ref = "main") {
   const res = await fetch(
     `https://raw.githubusercontent.com/${ORG}/${repo}/${ref}/${path}`,
   );
-  if (!res.ok) throw new Error(`raw ${repo}/${path} -> ${res.status}`);
+  if (!res.ok) throw new HttpError(`raw ${repo}/${path}`, res.status);
   return res.text();
 }
 
@@ -95,8 +127,9 @@ async function latestRelease(repo) {
       assets: (r.assets || []).map((a) => a.name),
       assetFiles: (r.assets || []).map((a) => ({ name: a.name, url: a.browser_download_url })),
     };
-  } catch {
-    return null; // no release yet (e.g. displayxr-unreal-test)
+  } catch (e) {
+    if (isNotFound(e)) return null; // no release yet (e.g. displayxr-unreal-test)
+    throw e;
   }
 }
 
@@ -116,19 +149,21 @@ async function releaseByTag(repo, tag) {
       assets: (r.assets || []).map((a) => a.name),
       assetFiles: (r.assets || []).map((a) => ({ name: a.name, url: a.browser_download_url })),
     };
-  } catch {
-    return null; // tag not published (yet) — caller falls back
+  } catch (e) {
+    if (isNotFound(e)) return null; // tag not published (yet) — caller falls back
+    throw e;
   }
 }
 
-// Download a binary asset into public/ and return the web path it lives at.
+// Download a binary asset into the stage dir and return the web path it will
+// live at once the stage is swapped into public/.
 async function fetchAsset(repo, repoPath, destDir) {
   const url = `https://raw.githubusercontent.com/${ORG}/${repo}/main/${repoPath}`;
   const res = await fetch(url);
-  if (!res.ok) throw new Error(`asset ${repo}/${repoPath} -> ${res.status}`);
+  if (!res.ok) throw new HttpError(`asset ${repo}/${repoPath}`, res.status);
   const buf = Buffer.from(await res.arrayBuffer());
   const file = basename(repoPath);
-  const absDir = join(PUB, destDir);
+  const absDir = join(STAGE, destDir);
   mkdirSync(absDir, { recursive: true });
   writeFileSync(join(absDir, file), buf);
   return `/${destDir}/${file}`; // public path
@@ -228,28 +263,38 @@ function downloadsOf(files = []) {
 async function buildComponents(versions) {
   const out = [];
   for (const c of COMPONENTS) {
-    // Where a pin exists it is the answer, so resolve THAT release for the url
-    // and date too — otherwise a card can show the pinned version next to some
-    // other release's date. Fall back to /releases/latest when the pinned tag
-    // is not published (or the component has no pin at all).
-    const pinned = (c.vkey && versions[c.vkey]) || null;
-    const rel = (pinned && (await releaseByTag(c.repo, pinned))) || (await latestRelease(c.repo));
-    const version = pinned || rel?.tag || null;
-    if (!version) warn(`no version for component ${c.id}`);
-    const downloads = downloadsOf(rel?.assetFiles);
-    if (rel && downloads.length === 0) warn(`${c.repo}: no installable assets — platforms fall back to config`);
-    out.push({
-      id: c.id,
-      name: c.name,
-      version,
-      releaseUrl: rel?.releaseUrl || `https://github.com/${ORG}/${c.repo}/releases/latest`,
-      releaseDate: rel?.releaseDate || null,
-      platforms: downloads.length ? downloads.map((d) => d.platform).join(" · ") : c.platforms,
-      downloads,
-      repoUrl: `https://github.com/${ORG}/${c.repo}`,
-    });
+    try {
+      out.push(await buildComponent(c, versions));
+    } catch (e) {
+      // A failed lookup would publish `downloads: []` and the /download page
+      // would lose its direct installer links.
+      fail(`${c.repo}: component release lookup — ${e.message}`);
+    }
   }
   return out;
+}
+
+async function buildComponent(c, versions) {
+  // Where a pin exists it is the answer, so resolve THAT release for the url
+  // and date too — otherwise a card can show the pinned version next to some
+  // other release's date. Fall back to /releases/latest when the pinned tag
+  // is not published (or the component has no pin at all).
+  const pinned = (c.vkey && versions[c.vkey]) || null;
+  const rel = (pinned && (await releaseByTag(c.repo, pinned))) || (await latestRelease(c.repo));
+  const version = pinned || rel?.tag || null;
+  if (!version) warn(`no version for component ${c.id}`);
+  const downloads = downloadsOf(rel?.assetFiles);
+  if (rel && downloads.length === 0) warn(`${c.repo}: no installable assets — platforms fall back to config`);
+  return {
+    id: c.id,
+    name: c.name,
+    version,
+    releaseUrl: rel?.releaseUrl || `https://github.com/${ORG}/${c.repo}/releases/latest`,
+    releaseDate: rel?.releaseDate || null,
+    platforms: downloads.length ? downloads.map((d) => d.platform).join(" · ") : c.platforms,
+    downloads,
+    repoUrl: `https://github.com/${ORG}/${c.repo}`,
+  };
 }
 
 // DisplayXR Play, Android lane: assets are per GAME, not per platform. The
@@ -264,7 +309,7 @@ async function buildPlay() {
     const list = await api(`/repos/${ORG}/${PLAY_ANDROID_REPO}/releases?per_page=10`);
     rel = (list || []).find((r) => !r.draft) || null;
   } catch (e) {
-    warn(`${PLAY_ANDROID_REPO}: releases — ${e.message}`);
+    report(`${PLAY_ANDROID_REPO}: releases`, e);
   }
   const files = (rel?.assets || []).map((a) => ({ name: a.name, url: a.browser_download_url }));
   const games = [];
@@ -310,7 +355,7 @@ async function buildDemos(demoRepos) {
         try {
           icon = await fetchAsset(repo, `${dir}/${m.icon}`, destDir);
         } catch (e) {
-          warn(`${repo}: icon ${m.icon} — ${e.message}`);
+          report(`${repo}: icon ${m.icon}`, e);
         }
       }
       const rel = await latestRelease(repo);
@@ -327,7 +372,9 @@ async function buildDemos(demoRepos) {
         tag: rel?.tag || null,
       });
     } catch (e) {
-      warn(`${repo}: demo adapter failed — ${e.message}`);
+      // A 404 is the tree or manifest really being gone; anything else would
+      // silently drop a live demo from the site.
+      report(`${repo}: demo adapter failed`, e);
     }
   }
   return out.sort(sortByName);
@@ -357,7 +404,7 @@ async function buildEngines() {
         try {
           logo = await fetchAsset(e.logo2d.repo, e.logo2d.path, destDir);
         } catch (err) {
-          warn(`${e.id}: logo2d — ${err.message}`);
+          report(`${e.id}: logo2d`, err);
         }
       }
       out.push({
@@ -375,7 +422,9 @@ async function buildEngines() {
         logo,
       });
     } catch (err) {
-      warn(`${e.id}: engine adapter failed — ${err.message}`);
+      // Engines are a fixed list, so even a 404 (moved manifest, renamed repo)
+      // is a config bug to fix, not "this engine is gone": never drop one.
+      fail(`${e.id}: engine adapter failed — ${err.message}`);
     }
   }
   return out;
@@ -415,6 +464,8 @@ async function buildExtensions() {
     }
     warn("displayxr-extensions/extensions.json empty — falling back to header scan");
   } catch (e) {
+    // Only a missing file justifies the guessed-group fallback.
+    if (!isNotFound(e)) throw e;
     warn(`displayxr-extensions/extensions.json — ${e.message} (falling back to header scan)`);
   }
 
@@ -458,7 +509,7 @@ async function buildSignals(allRepos) {
         }
       }
     } catch (e) {
-      warn(`adr scan ${s.repo} — ${e.message}`);
+      report(`adr scan ${s.repo}`, e);
     }
   }
   return {
@@ -532,7 +583,7 @@ async function buildNewsCandidates(allRepos) {
         `/repos/${ORG}/${repo}/releases?per_page=${NEWS_RELEASES_PER_REPO}`,
       );
     } catch (e) {
-      warn(`news scan ${repo} — ${e.message}`);
+      report(`news scan ${repo}`, e);
       continue;
     }
 
@@ -565,14 +616,13 @@ async function buildNewsCandidates(allRepos) {
 async function main() {
   console.log("Syncing from DisplayXR org…");
 
-  // Clean regenerated asset trees so removed icons don't linger.
-  rmSync(join(PUB, "demos"), { recursive: true, force: true });
-  rmSync(join(PUB, "engines"), { recursive: true, force: true });
+  // Fresh stage; public/ is not touched until every adapter has answered.
+  rmSync(STAGE, { recursive: true, force: true });
 
-  const versions = await rawJson("displayxr-runtime", "versions.json").catch((e) => {
-    warn(`versions.json — ${e.message}`);
-    return {};
-  });
+  // Without versions.json every component would show its newest release
+  // instead of the pinned, tested-together set, so there is no `{}` fallback:
+  // an unreadable file aborts the run (main().catch).
+  const versions = await rawJson("displayxr-runtime", "versions.json");
   const allRepos = await apiAllPages(`/orgs/${ORG}/repos?type=public`);
   const demoRepos = allRepos
     .filter((r) => /^displayxr-demo-/.test(r.name) && !r.archived)
@@ -592,6 +642,38 @@ async function main() {
       buildPlay(),
     ]);
 
+  if (failures.length) {
+    rmSync(STAGE, { recursive: true, force: true });
+    console.error(
+      `\n${failures.length} source(s) did not answer — nothing written; the previous generated data stays live.`,
+    );
+    process.exit(1);
+  }
+
+  // Sanity floor: demo repos normally disappear one at a time (a rename or an
+  // archive). Losing several in one run is more likely a bad run than news.
+  const prevDemos = readPrevious("demos.json");
+  if (Array.isArray(prevDemos) && process.env.SYNC_ALLOW_SHRINK !== "1") {
+    const now = new Set(demos.map((d) => d.repo));
+    const dropped = prevDemos.map((d) => d.repo).filter((r) => !now.has(r));
+    if (dropped.length > MAX_DEMO_DROP) {
+      rmSync(STAGE, { recursive: true, force: true });
+      console.error(
+        `\nRefusing to drop ${dropped.length} demos in one run (${dropped.join(", ")}). ` +
+          "Run the workflow manually (it sets SYNC_ALLOW_SHRINK=1) if this is intended.",
+      );
+      process.exit(1);
+    }
+  }
+
+  // Swap the staged assets in. The old trees are replaced wholesale, so
+  // removed icons still don't linger.
+  for (const d of ASSET_DIRS) {
+    rmSync(join(PUB, d), { recursive: true, force: true });
+    if (existsSync(join(STAGE, d))) renameSync(join(STAGE, d), join(PUB, d));
+  }
+  rmSync(STAGE, { recursive: true, force: true });
+
   writeGen("components.json", components);
   writeGen("demos.json", demos);
   writeGen("engines.json", engines);
@@ -608,7 +690,16 @@ async function main() {
   if (warnings.length) console.log(`${warnings.length} warning(s) — see above.`);
 }
 
+function readPrevious(name) {
+  try {
+    return JSON.parse(readFileSync(join(GEN, name), "utf8"));
+  } catch {
+    return null; // first run, or unreadable: no floor to enforce
+  }
+}
+
 main().catch((e) => {
+  rmSync(STAGE, { recursive: true, force: true });
   console.error("FATAL:", e);
   process.exit(1);
 });
