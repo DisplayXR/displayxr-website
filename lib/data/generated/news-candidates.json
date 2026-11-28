@@ -46,15 +46,32 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-runtime@v2.70.12",
-    "repo": "displayxr-runtime",
-    "tag": "v2.70.12",
-    "title": "v2.70.12",
+    "id": "displayxr-installer@v2.9.46",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.46",
+    "title": "DisplayXR v2.9.46",
     "date": "2026-11-28",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.12",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.46",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.70.12",
+    "repo": "displayxr-runtime",
+    "tag": "v2.70.12",
+    "title": "DisplayXR Runtime v2.70.12",
+    "date": "2026-11-28",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.12",
+    "prerelease": false,
+    "featureLines": [
+      "**macOS:** the DisplayXR Dashboard now ships in the macOS package as `/Applications/DisplayXR Dashboard.app` (#2883). **Windows:** the installer no longer hangs on a stalled download — every install step has a 10-minute no-output limit a…",
+      "macOS: ship the DisplayXR Dashboard as `/Applications/DisplayXR Dashboard.app` in the .pkg (#2883)",
+      "Dashboard / catalog: the research-preview model row, and the `model_builder` catalog class (#2873)",
+      "Conversion: locally built models — the store runs the signed builder (#2872)",
+      "Rendering modes: the runtime owns an app's start mode, for every driver (ADR-065 Amendment 1) (#2857)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-mcp@v0.5.8",
@@ -369,17 +386,6 @@
       "Pin `displayxr-common` v2.35.0 and drop the vendored `robust_frame.h` (#194)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.9.43",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.43",
-    "title": "DisplayXR v2.9.43",
-    "date": "2026-11-24",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.43",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-leia-conversion@v0.1.1",
