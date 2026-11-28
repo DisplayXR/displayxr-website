@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-avatar@v0.14.6",
+    "repo": "displayxr-demo-avatar",
+    "tag": "v0.14.6",
+    "title": "v0.14.6",
+    "date": "2026-11-28",
+    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.6",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-earthview@v0.11.4",
     "repo": "displayxr-demo-earthview",
     "tag": "v0.11.4",
@@ -872,17 +883,6 @@
     "title": "DisplayXR Unity Samples v2.3.0",
     "date": "2026-10-03",
     "url": "https://github.com/DisplayXR/displayxr-unity-samples/releases/tag/v2.3.0",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-avatar@v0.14.2",
-    "repo": "displayxr-demo-avatar",
-    "tag": "v0.14.2",
-    "title": "v0.14.2",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.2",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
