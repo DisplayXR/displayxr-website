@@ -52,14 +52,12 @@ export const NAV: NavEntry[] = [
   // DisplayXR Play: the games program (Nov 2026). Its own tab next to the
   // Browser; drop it from NAV if the header gets crowded (David's call).
   { label: "Play", href: "/play" },
-  // The Catalog: one list of everything that plugs into DisplayXR (items in
-  // lib/data/catalog.ts). Its Games shelf, /catalog/games, sits beneath it and
-  // lights up Catalog, not Play.
-  { label: "Catalog", href: "/catalog" },
   {
     label: "Developers",
     href: "/developers",
-    // /developers/native sits beneath href, so it matches without a listing.
+    // /developers/native and /developers/components (the component model,
+    // folded out of the header in 2026-11) sit beneath href, so they match
+    // without a listing.
     match: ["/extensions", "/demos", "/platform-support"],
   },
   {
@@ -67,7 +65,6 @@ export const NAV: NavEntry[] = [
     href: "/contribute",
     match: ["/architecture", "/roadmap", "/governance"],
   },
-  { label: "Components", href: "/components" },
 ];
 
 // Deep docs live in the runtime repo; the site summarizes and routes.

@@ -686,7 +686,7 @@ export const ITEMS: CatalogItem[] = [
     blurb: `For display makers. ${vendorTemplate.note}`,
     openSource: true,
     get: { label: "Get it", href: vendorTemplate.href ?? REPO_URLS.vendorTemplate },
-    more: { label: "The component model", href: "/components#display-processors" },
+    more: { label: "The component model", href: "/developers/components#display-processors" },
   },
   {
     id: "input-template",
@@ -695,8 +695,8 @@ export const ITEMS: CatalogItem[] = [
     publisher: "DisplayXR",
     blurb: inputTemplate.note,
     openSource: true,
-    get: { label: "Get it", href: inputTemplate.href ?? "/components#input-providers" },
-    more: { label: "The component model", href: "/components#input-providers" },
+    get: { label: "Get it", href: inputTemplate.href ?? "/developers/components#input-providers" },
+    more: { label: "The component model", href: "/developers/components#input-providers" },
   },
   {
     id: "conversion-template",
@@ -706,7 +706,7 @@ export const ITEMS: CatalogItem[] = [
     blurb: repoBlurb("displayxr-conversion-template"),
     openSource: true,
     get: { label: "Get it", href: convTemplate.href ?? REPO_URLS.conversionTemplate },
-    more: { label: "The component model", href: "/components#conversion-providers" },
+    more: { label: "The component model", href: "/developers/components#conversion-providers" },
   },
 ];
 
@@ -774,13 +774,13 @@ export const PUBLISHER_SLOTS: PublisherSlot[] = [
     category: "input",
     title: "Be the first stylus",
     text: "The runtime serves the standard stylus profile: your pen works in every app.",
-    href: "/components#input-providers",
+    href: "/developers/components#input-providers",
   },
   {
     category: "viewer-tracking",
     title: "Be the first hardware tracker",
     text: "Bring look-around to every display that has no tracker of its own.",
-    href: "/components#viewer-tracking",
+    href: "/developers/components#viewer-tracking",
   },
   {
     category: "workspaces",

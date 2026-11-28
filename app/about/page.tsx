@@ -140,7 +140,7 @@ export default function AboutPage() {
               and the calibration are what each display maker does best. So
               DisplayXR draws one line. Apps talk only to OpenXR and the
               extensions. Underneath, the runtime discovers{" "}
-              <a href="/components" className="text-accent underline underline-offset-2 hover:text-accent-hover">
+              <a href="/developers/components" className="text-accent underline underline-offset-2 hover:text-accent-hover">
                 components
               </a>
               : a <span className="text-text-primary">display processor</span>{" "}

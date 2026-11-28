@@ -217,7 +217,7 @@ export function Navbar() {
               href={DOWNLOAD_HREF}
               className="hidden sm:inline-flex items-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-accent-hover hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] active:scale-[0.98]"
             >
-              Download
+              Get DisplayXR
             </Link>
             <a
               href={GITHUB_ORG_URL}
@@ -246,7 +246,7 @@ export function Navbar() {
               onClick={() => setMobileOpen(false)}
               className="block rounded-md bg-accent px-3 py-2 text-center text-sm font-medium text-white"
             >
-              Download
+              Get DisplayXR
             </Link>
             {NAV.map((entry) => {
               if (!isMenu(entry)) {

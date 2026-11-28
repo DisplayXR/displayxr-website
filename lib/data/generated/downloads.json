@@ -1,0 +1,352 @@
+{
+  "installer": {
+    "version": "2.9.45",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.45",
+    "files": {
+      "Windows": {
+        "file": "DisplayXRBundle-2.9.45.exe",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.45/DisplayXRBundle-2.9.45.exe",
+        "size": 162604256
+      },
+      "macOS": {
+        "file": "DisplayXRBundle-2.9.45.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.45/DisplayXRBundle-2.9.45.pkg",
+        "size": 60973598
+      },
+      "Linux": {
+        "file": "DisplayXRBundle-2.9.45-linux-amd64.tar.gz",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.45/DisplayXRBundle-2.9.45-linux-amd64.tar.gz",
+        "size": 86562144
+      },
+      "Android": {
+        "file": "DisplayXRBundle-2.9.45-android-arm64.zip",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.45/DisplayXRBundle-2.9.45-android-arm64.zip",
+        "size": 243878097
+      }
+    },
+    "androidApp": {
+      "file": "DisplayXR-Installer-0.4.2.apk",
+      "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.45/DisplayXR-Installer-0.4.2.apk",
+      "size": 6369755
+    },
+    "checksumsUrl": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.45/SHA256SUMS"
+  },
+  "runtimeVersion": "2.70.11",
+  "browser": {
+    "version": "1.10.8",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.8",
+    "files": {
+      "Windows": {
+        "file": "DisplayXR-Browser-Setup-1.10.8.exe",
+        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.10.8/DisplayXR-Browser-Setup-1.10.8.exe",
+        "size": 222037464
+      },
+      "macOS": {
+        "file": "DisplayXR-Browser-1.10.8-mac-arm64.dmg",
+        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.10.8/DisplayXR-Browser-1.10.8-mac-arm64.dmg",
+        "size": 220987621
+      },
+      "Linux": {
+        "file": "displayxr-browser_1.10.8-1_amd64.deb",
+        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.10.8/displayxr-browser_1.10.8-1_amd64.deb",
+        "size": 137423772
+      },
+      "Android": {
+        "file": "DisplayXR-Browser-1.10.8-android-arm64.apk",
+        "url": "https://github.com/DisplayXR/displayxr-browser/releases/download/v1.10.8/DisplayXR-Browser-1.10.8-android-arm64.apk",
+        "size": 353150733
+      }
+    }
+  },
+  "windowsSigner": "Leia, Inc.",
+  "parts": [
+    {
+      "id": "runtime",
+      "repo": "displayxr-runtime",
+      "version": "2.70.11",
+      "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.11",
+      "files": {
+        "Windows": {
+          "file": "DisplayXRSetup-2.70.11.exe",
+          "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.11/DisplayXRSetup-2.70.11.exe",
+          "size": 50604824
+        },
+        "macOS": {
+          "file": "DisplayXR-Installer-2.70.11.pkg",
+          "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.11/DisplayXR-Installer-2.70.11.pkg",
+          "size": 10483652
+        },
+        "Linux": {
+          "file": "displayxr-runtime_2.70.11_amd64.deb",
+          "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.11/displayxr-runtime_2.70.11_amd64.deb",
+          "size": 43481128
+        },
+        "Android": {
+          "file": "DisplayXR-Runtime-Leia-2.70.11-android-arm64.apk",
+          "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.11/DisplayXR-Runtime-Leia-2.70.11-android-arm64.apk",
+          "size": 44029512
+        }
+      }
+    },
+    {
+      "id": "leia_plugin",
+      "repo": "displayxr-leia-plugin",
+      "version": "2.24.2",
+      "releaseUrl": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/tag/v2.24.2",
+      "files": {
+        "Windows": {
+          "file": "DisplayXRLeiaSRSetup-2.24.2.exe",
+          "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.24.2/DisplayXRLeiaSRSetup-2.24.2.exe",
+          "size": 873328
+        },
+        "Linux": {
+          "file": "displayxr-leia-sr_2.24.2_amd64.deb",
+          "url": "https://github.com/DisplayXR/displayxr-leia-plugin/releases/download/v2.24.2/displayxr-leia-sr_2.24.2_amd64.deb",
+          "size": 194578
+        }
+      }
+    },
+    {
+      "id": "conversion_open",
+      "repo": "displayxr-conversion-open",
+      "version": "0.2.2",
+      "releaseUrl": "https://github.com/DisplayXR/displayxr-conversion-open/releases/tag/v0.2.2",
+      "files": {
+        "Windows": {
+          "file": "DisplayXROpenConversionSetup-0.2.2.exe",
+          "url": "https://github.com/DisplayXR/displayxr-conversion-open/releases/download/v0.2.2/DisplayXROpenConversionSetup-0.2.2.exe",
+          "size": 50946664
+        },
+        "Linux": {
+          "file": "displayxr-open-conversion-0.2.2-linux-x86_64.tar.gz",
+          "url": "https://github.com/DisplayXR/displayxr-conversion-open/releases/download/v0.2.2/displayxr-open-conversion-0.2.2-linux-x86_64.tar.gz",
+          "size": 50400464
+        }
+      }
+    },
+    {
+      "id": "leia_conversion",
+      "repo": "displayxr-leia-conversion",
+      "version": "0.1.1",
+      "releaseUrl": "https://github.com/DisplayXR/displayxr-leia-conversion/releases/tag/v0.1.1",
+      "files": {
+        "Windows": {
+          "file": "DisplayXRLeiaConversionSetup-0.1.1.exe",
+          "url": "https://github.com/DisplayXR/displayxr-leia-conversion/releases/download/v0.1.1/DisplayXRLeiaConversionSetup-0.1.1.exe",
+          "size": 539592
+        },
+        "Linux": {
+          "file": "displayxr-leia-conversion_0.1.1_amd64.deb",
+          "url": "https://github.com/DisplayXR/displayxr-leia-conversion/releases/download/v0.1.1/displayxr-leia-conversion_0.1.1_amd64.deb",
+          "size": 69070
+        }
+      }
+    },
+    {
+      "id": "mcp_tools",
+      "repo": "displayxr-mcp",
+      "version": "0.5.8",
+      "releaseUrl": "https://github.com/DisplayXR/displayxr-mcp/releases/tag/v0.5.8",
+      "files": {
+        "Windows": {
+          "file": "DisplayXRMCPSetup-0.5.8.exe",
+          "url": "https://github.com/DisplayXR/displayxr-mcp/releases/download/v0.5.8/DisplayXRMCPSetup-0.5.8.exe",
+          "size": 403384
+        },
+        "macOS": {
+          "file": "DisplayXRMCP-0.5.8.pkg",
+          "url": "https://github.com/DisplayXR/displayxr-mcp/releases/download/v0.5.8/DisplayXRMCP-0.5.8.pkg",
+          "size": 33732
+        }
+      }
+    },
+    {
+      "id": "gauss_demo",
+      "repo": "displayxr-demo-gaussiansplat",
+      "version": "1.29.11",
+      "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.11",
+      "files": {
+        "Windows": {
+          "file": "DisplayXRGaussianSplatSetup-1.29.11.exe",
+          "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/download/v1.29.11/DisplayXRGaussianSplatSetup-1.29.11.exe",
+          "size": 6465992
+        },
+        "macOS": {
+          "file": "DisplayXRGaussianSplat-1.29.11.pkg",
+          "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/download/v1.29.11/DisplayXRGaussianSplat-1.29.11.pkg",
+          "size": 8161132
+        },
+        "Linux": {
+          "file": "displayxr-gaussiansplat_1.29.11_amd64.deb",
+          "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/download/v1.29.11/displayxr-gaussiansplat_1.29.11_amd64.deb",
+          "size": 5651528
+        },
+        "Android": {
+          "file": "DisplayXRGaussianSplat-1.29.11.apk",
+          "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/download/v1.29.11/DisplayXRGaussianSplat-1.29.11.apk",
+          "size": 7783781
+        }
+      }
+    },
+    {
+      "id": "modelviewer_demo",
+      "repo": "displayxr-demo-modelviewer",
+      "version": "0.39.1",
+      "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.39.1",
+      "files": {
+        "Windows": {
+          "file": "DisplayXRModelViewerSetup-0.39.1.exe",
+          "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/download/v0.39.1/DisplayXRModelViewerSetup-0.39.1.exe",
+          "size": 10946488
+        },
+        "macOS": {
+          "file": "DisplayXRModelViewer-0.39.1.pkg",
+          "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/download/v0.39.1/DisplayXRModelViewer-0.39.1.pkg",
+          "size": 12215982
+        },
+        "Linux": {
+          "file": "displayxr-modelviewer_0.39.1_amd64.deb",
+          "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/download/v0.39.1/displayxr-modelviewer_0.39.1_amd64.deb",
+          "size": 10212838
+        },
+        "Android": {
+          "file": "DisplayXRModelViewer-0.39.1.apk",
+          "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/download/v0.39.1/DisplayXRModelViewer-0.39.1.apk",
+          "size": 7129296
+        }
+      }
+    },
+    {
+      "id": "mediaplayer_demo",
+      "repo": "displayxr-demo-mediaplayer",
+      "version": "1.24.0",
+      "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/tag/v1.24.0",
+      "files": {
+        "Windows": {
+          "file": "DisplayXRMediaPlayerSetup-1.24.0.exe",
+          "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/download/v1.24.0/DisplayXRMediaPlayerSetup-1.24.0.exe",
+          "size": 9511288
+        },
+        "macOS": {
+          "file": "DisplayXRMediaPlayer-1.24.0.pkg",
+          "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/download/v1.24.0/DisplayXRMediaPlayer-1.24.0.pkg",
+          "size": 11530543
+        },
+        "Linux": {
+          "file": "displayxr-mediaplayer_1.24.0_amd64.deb",
+          "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/download/v1.24.0/displayxr-mediaplayer_1.24.0_amd64.deb",
+          "size": 9773262
+        },
+        "Android": {
+          "file": "DisplayXRMediaPlayer-1.24.0.apk",
+          "url": "https://github.com/DisplayXR/displayxr-demo-mediaplayer/releases/download/v1.24.0/DisplayXRMediaPlayer-1.24.0.apk",
+          "size": 6231638
+        }
+      }
+    },
+    {
+      "id": "avatar_demo",
+      "repo": "displayxr-demo-avatar",
+      "version": "0.14.6",
+      "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/tag/v0.14.6",
+      "files": {
+        "Windows": {
+          "file": "DisplayXRAvatarSetup-0.14.6.exe",
+          "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/download/v0.14.6/DisplayXRAvatarSetup-0.14.6.exe",
+          "size": 8132952
+        },
+        "macOS": {
+          "file": "DisplayXRAvatar-0.14.6.pkg",
+          "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/download/v0.14.6/DisplayXRAvatar-0.14.6.pkg",
+          "size": 11287121
+        },
+        "Linux": {
+          "file": "displayxr-avatar_0.14.6_amd64.deb",
+          "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/download/v0.14.6/displayxr-avatar_0.14.6_amd64.deb",
+          "size": 7914670
+        },
+        "Android": {
+          "file": "DisplayXRAvatar-0.14.6.apk",
+          "url": "https://github.com/DisplayXR/displayxr-demo-avatar/releases/download/v0.14.6/DisplayXRAvatar-0.14.6.apk",
+          "size": 6691890
+        }
+      }
+    },
+    {
+      "id": "earthview_demo",
+      "repo": "displayxr-demo-earthview",
+      "version": "0.11.4",
+      "releaseUrl": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.4",
+      "files": {
+        "Windows": {
+          "file": "DisplayXREarthViewSetup-0.11.4.exe",
+          "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/download/v0.11.4/DisplayXREarthViewSetup-0.11.4.exe",
+          "size": 5933672
+        },
+        "macOS": {
+          "file": "DisplayXREarthView-0.11.4.pkg",
+          "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/download/v0.11.4/DisplayXREarthView-0.11.4.pkg",
+          "size": 11234150
+        },
+        "Linux": {
+          "file": "displayxr-earthview_0.11.4_amd64.deb",
+          "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/download/v0.11.4/displayxr-earthview_0.11.4_amd64.deb",
+          "size": 9333444
+        },
+        "Android": {
+          "file": "DisplayXREarthView-0.11.4-android.apk",
+          "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/download/v0.11.4/DisplayXREarthView-0.11.4-android.apk",
+          "size": 12241211
+        }
+      }
+    }
+  ],
+  "addons": [
+    {
+      "id": "shell",
+      "repo": "displayxr-shell-releases",
+      "repoUrl": "https://github.com/DisplayXR/displayxr-shell-releases",
+      "version": "2.4.2",
+      "releaseUrl": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.4.2",
+      "files": {
+        "Windows": {
+          "file": "DisplayXRShellSetup-2.4.2.exe",
+          "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/download/v2.4.2/DisplayXRShellSetup-2.4.2.exe",
+          "size": 19014360
+        },
+        "macOS": {
+          "file": "DisplayXRShell-2.4.2.pkg",
+          "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/download/v2.4.2/DisplayXRShell-2.4.2.pkg",
+          "size": 351230
+        },
+        "Linux": {
+          "file": "displayxr-shell_2.4.2_amd64.deb",
+          "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/download/v2.4.2/displayxr-shell_2.4.2_amd64.deb",
+          "size": 433422
+        }
+      }
+    },
+    {
+      "id": "tracking_open",
+      "repo": "displayxr-tracking-open",
+      "repoUrl": "https://github.com/DisplayXR/displayxr-tracking-open",
+      "version": "0.1.1",
+      "releaseUrl": "https://github.com/DisplayXR/displayxr-tracking-open/releases/tag/v0.1.1",
+      "files": {
+        "macOS": {
+          "file": "DisplayXR-OpenTracking-0.1.1.pkg",
+          "url": "https://github.com/DisplayXR/displayxr-tracking-open/releases/download/v0.1.1/DisplayXR-OpenTracking-0.1.1.pkg",
+          "size": 15606906
+        }
+      }
+    },
+    {
+      "id": "ultraleap",
+      "repo": "displayxr-ultraleap",
+      "repoUrl": "https://github.com/DisplayXR/displayxr-ultraleap",
+      "version": null,
+      "releaseUrl": null,
+      "files": {}
+    }
+  ]
+}

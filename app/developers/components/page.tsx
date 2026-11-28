@@ -9,6 +9,7 @@ import {
   type ComponentClass,
 } from "@/lib/data/components";
 import { Mail, Rocket, Scale } from "lucide-react";
+import { Publish } from "@/components/developers/Publish";
 
 export const metadata: Metadata = {
   title: "Components",
@@ -238,6 +239,8 @@ export default function ComponentsPage() {
               own tracker wins.
             </p>
           </section>
+
+          <Publish />
 
           {/* Licensing */}
           <section>

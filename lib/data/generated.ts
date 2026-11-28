@@ -7,6 +7,7 @@ import demosJson from "./generated/demos.json";
 import enginesJson from "./generated/engines.json";
 import extensionsJson from "./generated/extensions.json";
 import playJson from "./generated/play.json";
+import downloadsJson from "./generated/downloads.json";
 
 export type Platform = "Windows" | "macOS" | "Linux" | "Android";
 
@@ -108,3 +109,29 @@ export const demos = demosJson as DemoEntry[];
 export const engines = enginesJson as EngineEntry[];
 export const extensionsGenerated = extensionsJson as ExtensionEntry[];
 export const play = playJson as PlayGenerated;
+
+// ── /download ("Get DisplayXR") ──────────────────────────────────────────────
+/** One release file. `size` is in bytes. */
+export interface ReleaseFile {
+  file: string;
+  url: string;
+  size: number;
+}
+export type FilesByOs = Partial<Record<Platform, ReleaseFile>>;
+
+export interface DownloadsData {
+  installer: {
+    version: string;
+    releaseUrl: string;
+    files: FilesByOs;
+    androidApp: ReleaseFile | null;
+    checksumsUrl: string | null;
+  } | null;
+  runtimeVersion: string | null;
+  browser: { version: string; releaseUrl: string; files: FilesByOs } | null;
+  windowsSigner: string | null;
+  parts: { id: string; repo: string; version: string; releaseUrl: string; files: FilesByOs }[];
+  addons: { id: string; repo: string; repoUrl: string; version: string | null; releaseUrl: string | null; files: FilesByOs }[];
+}
+
+export const downloads = downloadsJson as DownloadsData;
