@@ -46,6 +46,17 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-runtime@v2.70.12",
+    "repo": "displayxr-runtime",
+    "tag": "v2.70.12",
+    "title": "v2.70.12",
+    "date": "2026-11-28",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.12",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-mcp@v0.5.8",
     "repo": "displayxr-mcp",
     "tag": "v0.5.8",
@@ -320,19 +331,6 @@
       "Rig check measures stills and top/bottom, and says why GPU frames are not measured (#274)",
       "Rig check reads colour per channel, with a colour-difference overlay (#282)",
       "Live disparity readout, cursor probe and heatmap (#279)"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-runtime@v2.70.8",
-    "repo": "displayxr-runtime",
-    "tag": "v2.70.8",
-    "title": "DisplayXR Runtime v2.70.8",
-    "date": "2026-11-25",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.8",
-    "prerelease": false,
-    "featureLines": [
-      "On Windows, Convert to 3D in Gaussians mode no longer hands the splat provider a black picture (Explore produced a black scene). The fix is in the GAUSSIANS input readback (#2830). This release also fixes several multi-screen issues: 2D …"
     ],
     "looksMechanical": false
   },
