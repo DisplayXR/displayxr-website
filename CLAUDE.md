@@ -50,42 +50,31 @@ Since the 2026-10 overhaul the site is organized as **one-click hubs**, one per
 audience, each opening on that audience's recommended next step:
 
 - Nav is **`NAV` in `lib/constants.ts`**: leaves only, **About · Browser ·
-  Play · Catalog · Developers · Contribute · Components**. The header
+  Play · Developers · Contribute**. The header
   (`components/layout/Navbar.tsx`) adds a small **Docs ↗** link to the
-  runtime repo's docs (`DOCS_URL`) and a persistent **Download** button
+  runtime repo's docs (`DOCS_URL`) and a persistent **Get DisplayXR** button
   (`DOWNLOAD_HREF` = `/download`), which the mobile menu pins on top. The model
   still supports menus, but the header deliberately uses none.
 - Each leaf's `match` lists the other routes that belong to its hub
   (`/extensions`, `/demos`, `/platform-support` → Developers; routes beneath
   a hub's own href, like `/developers/native`, match without a listing; `/architecture`, `/roadmap`, `/governance` → Contribute). Exactly
   one entry highlights as active (first match).
-- `/components` is the component-model page (display processors, input,
-  conversion and viewer-tracking providers). `/vendors` and
-  `/display-vendors/*` 308-redirect there.
+- `/developers/components` is the component-model page (display processors,
+  input, conversion and viewer-tracking providers), plus the publisher half
+  of the former Catalog (`#publish`: how listing works, open shelves, selling
+  a component). `/components`, `/vendors` and `/display-vendors/*`
+  308-redirect there.
 - `/play` is DisplayXR Play, the games program. Its release facts read
   `lib/data/generated/play.json` (synced from `displayxr-play-android`); the
   prose is `lib/data/play.ts`. No PC game title is named before a public
   release carries it; no company or OEM names; no performance numbers (fps,
   GPU usage) on the page.
-- `/catalog` is the Catalog: one list of everything that plugs into
-  DisplayXR, and a marketing surface. Items and categories are
-  `lib/data/catalog.ts`, which reads versions and platforms from the
-  generated data (`news-candidates.json` gives the newest release of repos
-  the component dashboard does not track), `lib/data/demos.ts`,
-  `components.ts` and `apps.ts`: never type a version or platform into it,
-  with one exception: an item no generated record carries a platform for
-  (today `leia-conversion`, `tracking-open`, `sim-display`) has its platform
-  typed in `catalog.ts`; `/sync-website` re-checks those three on each pass.
-  It is truthful **by omission, never by disclaimer** (David, 2026-11-20):
-  say what a thing is and what the user gets; if something is not true yet,
-  leave it out, with no "coming", "not yet" or "example" labels. No trust
-  label ("Verified") until an item can carry one; chips are "By DisplayXR",
-  "By <publisher>", "Open source", "For developers". Nothing is rated,
-  counted or priced. A category gets a page with its first item.
-  `/catalog/games` is the Games shelf: it renders `SYSTEMS` and `GAMES` from
-  `lib/data/play.ts` (no second list), follows `/play`'s rules, and never
-  says "verified". "Get it" goes to the item's release or `/download`; there
-  is no CLI install line until that verb ships.
+- **The Catalog page is gone (2026-11).** `/catalog`, its shelves, items and
+  `/catalog/games` 308-redirect (`next.config.ts`) to `/download`'s add-on
+  cards, `/download`, `/demos`, `/play` or `/developers`. `lib/data/catalog.ts`
+  stays for the publisher section; its 2026-11-20 rule (truthful **by
+  omission, never by disclaimer**: no "coming", "not yet" labels) now lives
+  as the `SHOW_UPCOMING` switch in `lib/data/get.ts`.
 - `/developers` opens on the web path (recommended) with the inline3d snippet
   (one snippet, the full guide is `/browser#build`), then the sim-display note,
   native (API per platform), engines, AI-agent control, links.
@@ -101,13 +90,19 @@ audience, each opening on that audience's recommended next step:
   `app/extensions/page.tsx` (`vanillaGap` / `adds` / `needIf` / `tier`),
   keyed by the generated name; the build warns when overlay and
   `generated/extensions.json` drift apart.
-- `/download` is OS-detected client-side over a server render of every
-  platform, and shows **two ordered installs**: DisplayXR (the bundle), then the
-  DisplayXR Browser. Order matters: the browser chains the runtime but not a
-  display plug-in, so the browser alone shows 2D only.
+- `/download` is **Get DisplayXR**: an OS picker (server renders Windows, the
+  client switches to the detected OS) over one bundle button, "What it
+  installs", an already-have panel, the Browser as a separate download (in
+  the bundle on Android), steps, add-on cards (`#addon-<id>`), a collapsed
+  part × OS table, kits. Files, sizes, versions and the Windows signer come
+  from `generated/downloads.json` (sync-org `buildDownloads`, which also reads
+  the signed catalog feed); the authored part is `lib/data/get.ts`. Its
+  `INCLUDED` lists are checked against the released bundle files, not
+  derivable: re-check them when displayxr-installer changes what a bundle
+  chains.
 - Retired routes 308-redirect in `next.config.ts` (`/webxr`, `/web`, `/docs`,
   `/getting-started`, `/vendors`, `/display-vendors/*`, `/status`,
-  `/compatibility`). Redirect source matching is case-insensitive.
+  `/compatibility`, `/components`, `/catalog/*`). Redirect source matching is case-insensitive.
 - `/platform-support` is the **merged** status + compatibility page (generated
   version dashboard on top, authored support matrix below). `/status` and
   `/compatibility` 308-redirect there. Don't re-split them.
@@ -141,11 +136,9 @@ audience, each opening on that audience's recommended next step:
 - **Vendor-neutral on the home page.** DisplayXR is vendor-agnostic; the home
   page must not single out a hardware vendor as "the first integration" or a
   "privileged path." **Leia** mentions are fine — and expected — on `/download`
-  (you download the actual Leia SR installer), `/components` (the reference
+  (you download the actual Leia SR installer), `/developers/components` (the reference
   plug-in to fork), `/platform-support` (devices and display tech) and
-  `/architecture` (technical detail), and on `/catalog` as items and item
-  pages only, never in the landing page's starter picks (`STARTER_IDS`); keep
-  them off the homepage.
+  `/architecture` (technical detail); keep them off the homepage.
 - **The Shell source is private.** Shell source lives in `displayxr-shell-pvt`
   (private); only **binaries / the installer** ship in the public
   `displayxr-shell-releases`. Never imply the shell *source* is open or shared —
