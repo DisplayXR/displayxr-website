@@ -142,7 +142,6 @@ export async function approveAndSchedule(form: FormData) {
           text: c.text,
           dueAt: edited.publish_at,
           videoUrl: m?.url,
-          thumbnailUrl: m?.poster_url,
           youtube: ch === "youtube_shorts" ? { title: (c.title ?? "").trim() } : undefined,
           xReplies: ch === "x" ? c.reply_texts?.filter((t) => t.trim()) : undefined,
         });
