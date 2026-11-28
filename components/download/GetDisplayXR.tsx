@@ -97,10 +97,18 @@ export function GetDisplayXR({ data }: { data: DownloadsData }) {
   const [os, setOs] = useState<Platform>("Windows");
   const [picked, setPicked] = useState(false);
   useEffect(() => {
-    if (!picked && detected && detected !== "iOS") setOs(detected);
+    if (picked) return;
+    // ?os=android (any case) picks a system for a shared link; else the detected one.
+    const q = new URLSearchParams(window.location.search).get("os")?.toLowerCase();
+    const fromLink = OSES.find((o) => o.id.toLowerCase() === q)?.id;
+    if (fromLink) setOs(fromLink);
+    else if (detected && detected !== "iOS") setOs(detected);
   }, [detected, picked]);
 
-  const bundle = data.installer?.files[os];
+  // Android's primary is the on-device installer app (David, 2026-11-28); the
+  // USB bundle zip is the secondary link for developers and testers.
+  const zip = os === "Android" ? data.installer?.files.Android : undefined;
+  const bundle = os === "Android" ? data.installer?.androidApp ?? undefined : data.installer?.files[os];
   const browser = data.browser?.files[os];
   const included = INCLUDED.filter((i) => i.on.includes(os));
   const addons = ADDONS.filter((a) => {
@@ -151,13 +159,19 @@ export function GetDisplayXR({ data }: { data: DownloadsData }) {
                 <span className="font-mono">{bundle.file}</span> · {formatSize(bundle.size)} · installer {data.installer.version}
                 {data.runtimeVersion ? `, with DisplayXR ${data.runtimeVersion}` : ""}
               </p>
-              {os === "Android" && data.installer.androidApp && (
-                <p className="text-xs text-text-secondary">
-                  For developers and testers: install over USB from a computer. Or put the{" "}
-                  <a href={data.installer.androidApp.url} className={link} data-umami-event="download" data-umami-event-file={data.installer.androidApp.file}>
-                    DisplayXR installer app
-                  </a>{" "}
-                  ({formatSize(data.installer.androidApp.size)}) on the tablet. No store listing: Android asks you to allow the install.
+              {os === "Android" && (
+                <p className="text-xs leading-relaxed text-text-secondary">
+                  Open this page on the tablet: the app installs everything over Wi-Fi, no computer needed. No store listing,
+                  so Android asks you to allow the install.
+                  {zip && (
+                    <>
+                      {" "}For developers and testers:{" "}
+                      <a href={zip.url} className={link} data-umami-event="download" data-umami-event-file={zip.file}>
+                        the USB bundle
+                      </a>{" "}
+                      ({formatSize(zip.size)}), installed from a computer over adb.
+                    </>
+                  )}
                 </p>
               )}
             </div>
@@ -194,7 +208,12 @@ export function GetDisplayXR({ data }: { data: DownloadsData }) {
         <div className="flex flex-[1_1_320px] flex-col gap-5">
           <section aria-labelledby="have-h" className="flex flex-col gap-3 rounded-2xl border border-border bg-surface p-6">
             <h2 id="have-h" className="text-xs font-semibold uppercase tracking-wider text-text-secondary">Already have DisplayXR?</h2>
-            {os === "Windows" ? (
+            {os === "Android" ? (
+              <p className="text-sm leading-relaxed text-text-primary">
+                Open <strong>DisplayXR Installer</strong> on the tablet and tap <strong>Install / Update</strong>. It updates what
+                you have and keeps your settings.
+              </p>
+            ) : os === "Windows" ? (
               <>
                 <p className="text-sm leading-relaxed text-text-primary">
                   Open the <strong>DisplayXR Dashboard</strong> from the Start menu. Its <strong>Components</strong> page shows what you have and installs,

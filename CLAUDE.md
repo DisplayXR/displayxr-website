@@ -69,12 +69,14 @@ audience, each opening on that audience's recommended next step:
   prose is `lib/data/play.ts`. No PC game title is named before a public
   release carries it; no company or OEM names; no performance numbers (fps,
   GPU usage) on the page.
-- **The Catalog page is gone (2026-11).** `/catalog`, its shelves, items and
-  `/catalog/games` 308-redirect (`next.config.ts`) to `/download`'s add-on
-  cards, `/download`, `/demos`, `/play` or `/developers`. `lib/data/catalog.ts`
-  stays for the publisher section; its 2026-11-20 rule (truthful **by
-  omission, never by disclaimer**: no "coming", "not yet" labels) now lives
-  as the `SHOW_UPCOMING` switch in `lib/data/get.ts`.
+- **The Catalog page was erased (David, 2026-11-28).** `/catalog`, its
+  shelves, items and `/catalog/games` 308-redirect (`next.config.ts`) to
+  `/download`'s add-on cards, `/download`, `/demos`, `/play` or `/developers`;
+  keep those redirects. Its publisher content lives in `lib/data/publish.ts`
+  (`/developers/components#publish`). Don't rebuild a catalog page. The
+  "Coming soon" add-on cards on `/download` are an explicit exception David
+  made (2026-11-28) to his 11-20 "truthful by omission" rule;
+  `SHOW_UPCOMING` in `lib/data/get.ts` switches them off.
 - `/developers` opens on the web path (recommended) with the inline3d snippet
   (one snippet, the full guide is `/browser#build`), then the sim-display note,
   native (API per platform), engines, AI-agent control, links.

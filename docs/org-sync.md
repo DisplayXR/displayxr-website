@@ -176,12 +176,12 @@ updates into the authored TSX, opening a PR for review (prose *does* warrant a
 human glance, unlike the mechanical facts). Mechanical commit = facts;
 skill PR = narrative. They never touch the same fields.
 
-**The Catalog is hand-listed.** `lib/data/catalog.ts` reads versions and most
-platforms from the generated data, but nothing adds an item to it: a new
-provider, demo or app appears on `/catalog` only when someone writes its entry.
-Each `/sync-website` pass therefore checks `catalog.ts` against the components,
-demos and apps data for anything missing, and re-checks the three hand-typed
-platforms named in `CLAUDE.md`.
+**`/download` is part generated, part authored.** `buildDownloads` writes
+`generated/downloads.json`: every file, size and pin, the add-ons outside the
+bundle, and the Windows sizes and signer from the signed catalog feed. What each
+OS's bundle *installs* (`INCLUDED` in `lib/data/get.ts`) is authored, because
+asset names don't say what a bundle chains: each `/sync-website` pass re-checks
+it against displayxr-installer's bundle scripts when they changed.
 
 #### The "What's New" feed is the sharpest case of this split
 

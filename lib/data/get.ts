@@ -20,7 +20,7 @@ export const OSES: { id: Platform; label: string }[] = [
   { id: "Windows", label: "Windows" },
   { id: "macOS", label: "macOS" },
   { id: "Linux", label: "Linux (Ubuntu)" },
-  { id: "Android", label: "Android tablet" },
+  { id: "Android", label: "Android" },
 ];
 
 /**
@@ -37,13 +37,13 @@ export type Included = { name: string; gloss: string; on: Platform[] };
 /** What the bundle installs, plain-language gloss first. */
 export const INCLUDED: Included[] = [
   { name: "DisplayXR", gloss: "the core that shows 3D apps on your spatial display", on: ["Windows", "macOS", "Linux", "Android"] },
-  { name: "Your display's own services", gloss: "the tablet's display and head-tracking services", on: ["Android"] },
+  { name: "Display services update", gloss: "brings the tablet's own display and head-tracking services up to date", on: ["Android"] },
   { name: "Dashboard", gloss: "see your display, change settings, add and update parts", on: ["Windows", "Linux"] },
   { name: "2D-to-3D conversion", gloss: "turns ordinary photos, video and windows into 3D", on: ["Windows"] },
   { name: "Leia SR plug-in and Leia conversion", gloss: "for Leia SR displays: 3D output and Leia's own 2D-to-3D conversion", on: ["Linux"] },
   { name: "Five demo apps", gloss: "splats, 3D models, 3D photos and video, an avatar, Earth", on: ["Windows", "macOS", "Linux", "Android"] },
   { name: "AI assistant tools", gloss: "optional; lets AI assistants drive 3D apps", on: ["Windows"] },
-  { name: "DisplayXR Browser", gloss: "a web browser that shows 3D web pages in 3D", on: ["Android"] },
+  { name: "DisplayXR Browser", gloss: "optional: tick it in the installer; a web browser that shows 3D web pages in 3D", on: ["Android"] },
 ];
 
 /** Under "What it installs". The Windows and macOS installers let you untick
@@ -54,7 +54,7 @@ export const RERUN_NOTE: Record<Platform, string> = {
   Windows: "You can untick anything but DisplayXR itself during install. Running the installer again later updates what you have and keeps your settings.",
   macOS: "Choose Customize during install to leave out any demo. Running the installer again later updates what you have and keeps your settings.",
   Linux: "Running ./install.sh again later updates what you have and keeps your settings.",
-  Android: "Running the install again later updates what you have and keeps your settings.",
+  Android: "Open DisplayXR Installer again later and tap Install / Update: it updates what you have and keeps your settings.",
 };
 
 export type Step = { title: string; body: string };
@@ -75,10 +75,11 @@ export const STEPS: Record<Platform, Step[]> = {
     { title: "Open a demo", body: "Start Media Player or Model Viewer from your apps." },
     { title: "Open the Dashboard", body: "Check your display is found and in 3D, and add the extras below if you want them." },
   ],
+  // From displayxr-installer android-installer/README.md (installer app 0.4.2).
   Android: [
-    { title: "Unzip on your computer", body: "Connect the tablet over USB with USB debugging on, then run the install script in the folder." },
-    { title: "Open a demo", body: "Start any DisplayXR demo from the tablet's app list." },
-    { title: "Open the Browser", body: "The DisplayXR Browser is installed too: open a 3D web page." },
+    { title: "Install the installer app", body: "Download it on the tablet and open it. Android asks to allow installs from this source: allow it, then tap Install." },
+    { title: "Install DisplayXR", body: "Open DisplayXR Installer, allow it to install apps, tick the Browser if you want it, then tap Install / Update and confirm each package." },
+    { title: "Restart the tablet", body: "When the installer says so. It is not optional: without it the screen can stay in 2D. Then open a demo from the app list." },
   ],
 };
 

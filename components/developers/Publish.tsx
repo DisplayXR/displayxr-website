@@ -1,10 +1,25 @@
 import { Button } from "@/components/ui/Button";
-import { Slot } from "@/components/catalog/parts";
-import { CATALOG_PUBLISH_URL, categoryById, HOW_IT_WORKS, PAID_POINTS, PUBLISHER_SLOTS } from "@/lib/data/catalog";
+import { HOW_IT_WORKS, PAID_POINTS, PUBLISH_URL, PUBLISHER_SLOTS } from "@/lib/data/publish";
 
-// The publisher half of the former /catalog page (folded 2026-11 into
-// /download and this page). Kept here, not deleted: how listing works, the
-// open shelves and how a vendor sells a component.
+/** A dashed, hatched card: a shelf a publisher could fill. */
+function Slot({ kind, title, text, href }: { kind: string; title: string; text: string; href: string }) {
+  const external = href.startsWith("http");
+  return (
+    <a
+      href={href}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      className="publish-slot flex min-h-[170px] flex-col gap-2 rounded-xl border border-dashed border-accent/40 p-6 transition-colors hover:border-accent"
+    >
+      <span className="font-mono text-xs text-text-secondary">{kind}</span>
+      <span className="font-display text-2xl leading-[1.15] text-text-primary">{title}</span>
+      <span className="text-sm leading-relaxed text-text-secondary">{text}</span>
+      <span className="mt-auto pt-1 text-sm font-medium text-accent">List yours {external ? "↗" : "→"}</span>
+    </a>
+  );
+}
+
+// Publisher content (how listing works, open shelves, selling a component),
+// kept when the Catalog page was erased on 2026-11-28.
 export function Publish() {
   return (
     <div id="publish" className="scroll-mt-28 space-y-12">
@@ -35,11 +50,11 @@ export function Publish() {
         </p>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {PUBLISHER_SLOTS.map((s) => (
-            <Slot key={s.title} slot={categoryById(s.category)?.label ?? ""} title={s.title} text={s.text} cta="List yours" href={s.href} />
+            <Slot key={s.title} kind={s.kind} title={s.title} text={s.text} href={s.href} />
           ))}
         </div>
         <div className="mt-6">
-          <Button href={CATALOG_PUBLISH_URL}>Build and list a component</Button>
+          <Button href={PUBLISH_URL}>Build and list a component</Button>
         </div>
       </section>
 
