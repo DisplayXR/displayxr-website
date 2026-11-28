@@ -39,6 +39,9 @@ export const INCLUDED: Included[] = [
   { name: "DisplayXR", gloss: "the core that shows 3D apps on your spatial display", on: ["Windows", "macOS", "Linux", "Android"] },
   { name: "Display services update", gloss: "brings the tablet's own display and head-tracking services up to date", on: ["Android"] },
   { name: "Dashboard", gloss: "see your display, change settings, add and update parts", on: ["Windows", "Linux"] },
+  // macOS Dashboard (runtime 2.70.12, bundle 2.9.46) cannot install parts yet:
+  // its Components page sends you to this page. No MCP on macOS until installer #110.
+  { name: "Dashboard", gloss: "see your display and change settings", on: ["macOS"] },
   { name: "2D-to-3D conversion", gloss: "turns ordinary photos, video and windows into 3D", on: ["Windows"] },
   { name: "Leia SR plug-in and Leia conversion", gloss: "for Leia SR displays: 3D output and Leia's own 2D-to-3D conversion", on: ["Linux"] },
   { name: "Five demo apps", gloss: "splats, 3D models, 3D photos and video, an avatar, Earth", on: ["Windows", "macOS", "Linux", "Android"] },
@@ -68,7 +71,7 @@ export const STEPS: Record<Platform, Step[]> = {
   macOS: [
     { title: "Run the installer", body: "Open the package and keep the default choices." },
     { title: "Open a demo", body: "Start Media Player or Model Viewer from Applications." },
-    { title: "Add extras", body: "The DisplayXR Browser and camera head tracking are on this page." },
+    { title: "Open the Dashboard", body: "Check your display is found and in 3D. Extras such as the DisplayXR Browser and camera head tracking are on this page." },
   ],
   Linux: [
     { title: "Unpack and install", body: "Unpack the archive and run ./install.sh. It installs the packages and checks itself." },

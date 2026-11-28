@@ -1,37 +1,37 @@
 {
   "installer": {
-    "version": "2.9.45",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.45",
+    "version": "2.9.46",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.46",
     "files": {
       "Windows": {
-        "file": "DisplayXRBundle-2.9.45.exe",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.45/DisplayXRBundle-2.9.45.exe",
-        "size": 162604256
+        "file": "DisplayXRBundle-2.9.46.exe",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.46/DisplayXRBundle-2.9.46.exe",
+        "size": 162713624
       },
       "macOS": {
-        "file": "DisplayXRBundle-2.9.45.pkg",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.45/DisplayXRBundle-2.9.45.pkg",
-        "size": 60973598
+        "file": "DisplayXRBundle-2.9.46.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.46/DisplayXRBundle-2.9.46.pkg",
+        "size": 99135889
       },
       "Linux": {
-        "file": "DisplayXRBundle-2.9.45-linux-amd64.tar.gz",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.45/DisplayXRBundle-2.9.45-linux-amd64.tar.gz",
-        "size": 86562144
+        "file": "DisplayXRBundle-2.9.46-linux-amd64.tar.gz",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.46/DisplayXRBundle-2.9.46-linux-amd64.tar.gz",
+        "size": 86698317
       },
       "Android": {
-        "file": "DisplayXRBundle-2.9.45-android-arm64.zip",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.45/DisplayXRBundle-2.9.45-android-arm64.zip",
-        "size": 243878097
+        "file": "DisplayXRBundle-2.9.46-android-arm64.zip",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.46/DisplayXRBundle-2.9.46-android-arm64.zip",
+        "size": 243916272
       }
     },
     "androidApp": {
       "file": "DisplayXR-Installer-0.4.2.apk",
-      "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.45/DisplayXR-Installer-0.4.2.apk",
+      "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.46/DisplayXR-Installer-0.4.2.apk",
       "size": 6369755
     },
-    "checksumsUrl": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.45/SHA256SUMS"
+    "checksumsUrl": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.46/SHA256SUMS"
   },
-  "runtimeVersion": "2.70.11",
+  "runtimeVersion": "2.70.12",
   "browser": {
     "version": "1.10.8",
     "releaseUrl": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.8",
@@ -63,28 +63,28 @@
     {
       "id": "runtime",
       "repo": "displayxr-runtime",
-      "version": "2.70.11",
-      "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.11",
+      "version": "2.70.12",
+      "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.12",
       "files": {
         "Windows": {
-          "file": "DisplayXRSetup-2.70.11.exe",
-          "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.11/DisplayXRSetup-2.70.11.exe",
-          "size": 50604824
+          "file": "DisplayXRSetup-2.70.12.exe",
+          "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.12/DisplayXRSetup-2.70.12.exe",
+          "size": 50674584
         },
         "macOS": {
-          "file": "DisplayXR-Installer-2.70.11.pkg",
-          "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.11/DisplayXR-Installer-2.70.11.pkg",
-          "size": 10483652
+          "file": "DisplayXR-Installer-2.70.12.pkg",
+          "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.12/DisplayXR-Installer-2.70.12.pkg",
+          "size": 48811742
         },
         "Linux": {
-          "file": "displayxr-runtime_2.70.11_amd64.deb",
-          "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.11/displayxr-runtime_2.70.11_amd64.deb",
-          "size": 43481128
+          "file": "displayxr-runtime_2.70.12_amd64.deb",
+          "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.12/displayxr-runtime_2.70.12_amd64.deb",
+          "size": 43584092
         },
         "Android": {
-          "file": "DisplayXR-Runtime-Leia-2.70.11-android-arm64.apk",
-          "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.11/DisplayXR-Runtime-Leia-2.70.11-android-arm64.apk",
-          "size": 44029512
+          "file": "DisplayXR-Runtime-Leia-2.70.12-android-arm64.apk",
+          "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.12/DisplayXR-Runtime-Leia-2.70.12-android-arm64.apk",
+          "size": 44038860
         }
       }
     },

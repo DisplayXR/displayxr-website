@@ -46,6 +46,34 @@
     "looksMechanical": true
   },
   {
+    "id": "displayxr-installer@v2.9.46",
+    "repo": "displayxr-installer",
+    "tag": "v2.9.46",
+    "title": "DisplayXR v2.9.46",
+    "date": "2026-11-28",
+    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.46",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-runtime@v2.70.12",
+    "repo": "displayxr-runtime",
+    "tag": "v2.70.12",
+    "title": "DisplayXR Runtime v2.70.12",
+    "date": "2026-11-28",
+    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.12",
+    "prerelease": false,
+    "featureLines": [
+      "**macOS:** the DisplayXR Dashboard now ships in the macOS package as `/Applications/DisplayXR Dashboard.app` (#2883). **Windows:** the installer no longer hangs on a stalled download — every install step has a 10-minute no-output limit a…",
+      "macOS: ship the DisplayXR Dashboard as `/Applications/DisplayXR Dashboard.app` in the .pkg (#2883)",
+      "Dashboard / catalog: the research-preview model row, and the `model_builder` catalog class (#2873)",
+      "Conversion: locally built models — the store runs the signed builder (#2872)",
+      "Rendering modes: the runtime owns an app's start mode, for every driver (ADR-065 Amendment 1) (#2857)"
+    ],
+    "looksMechanical": false
+  },
+  {
     "id": "displayxr-mcp@v0.5.8",
     "repo": "displayxr-mcp",
     "tag": "v0.5.8",
@@ -79,17 +107,6 @@
       "On macOS, a camera-rig scene now opens framed as the photograph wherever the window sits, including Retina and mixed-scale multi-monitor setups: the rest anchor is recomputed per frame instead of once at load."
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-demo-gaussiansplat@v1.29.8",
-    "repo": "displayxr-demo-gaussiansplat",
-    "tag": "v1.29.8",
-    "title": "v1.29.8",
-    "date": "2026-11-26",
-    "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.8",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.29.9",
@@ -170,28 +187,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-installer@v2.9.44",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.44",
-    "title": "DisplayXR v2.9.44",
-    "date": "2026-11-26",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.44",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-installer@v2.9.45",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.45",
-    "title": "DisplayXR v2.9.45",
-    "date": "2026-11-26",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.45",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-leia-plugin@v2.24.1",
     "repo": "displayxr-leia-plugin",
     "tag": "v2.24.1",
@@ -267,17 +262,6 @@
     "looksMechanical": true
   },
   {
-    "id": "displayxr-browser@v1.10.8",
-    "repo": "displayxr-browser",
-    "tag": "v1.10.8",
-    "title": "DisplayXR Browser v1.10.8",
-    "date": "2026-11-25",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.8",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
     "id": "displayxr-conversion-open@v0.2.1",
     "repo": "displayxr-conversion-open",
     "tag": "v0.2.1",
@@ -324,38 +308,6 @@
     "looksMechanical": false
   },
   {
-    "id": "displayxr-runtime@v2.70.8",
-    "repo": "displayxr-runtime",
-    "tag": "v2.70.8",
-    "title": "DisplayXR Runtime v2.70.8",
-    "date": "2026-11-25",
-    "url": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.8",
-    "prerelease": false,
-    "featureLines": [
-      "On Windows, Convert to 3D in Gaussians mode no longer hands the splat provider a black picture (Explore produced a black scene). The fix is in the GAUSSIANS input readback (#2830). This release also fixes several multi-screen issues: 2D …"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.10.7",
-    "repo": "displayxr-browser",
-    "tag": "v1.10.7",
-    "title": "DisplayXR Browser v1.10.7",
-    "date": "2026-11-24",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.7",
-    "prerelease": false,
-    "featureLines": [
-      "**Convert to 3D on pictures now works in place, just like video.** Right-click a picture and choose *Convert to 3D*: the picture turns 3D where it sits on the page, with the same chip a converted video gets (Explore / Exit). *Convert to …",
-      "**More accurate explorable 3D scenes from pictures (Windows and Linux).** When a picture is turned into an explorable scene, the browser now passes on the camera details the DisplayXR runtime measured, so the scene is framed correctly in…",
-      "Auto-published from displayxr-browser-pvt @ 2f6eac25e0a3c8235a04c3f3a48995b2efbb830b.",
-      "**Security updates follow Chrome stable.** Every Chrome stable point release is rebuilt and published automatically when the browser's own code is untouched upstream, and verified on a DisplayXR display first when it is not. Not affiliat…",
-      "Android APK: release-signed (CN=DisplayXR Browser). If you have any preview up to and including 0.1.24 installed, UNINSTALL it before installing this one - those were debug-key signed and Android refuses an install that changes the signi…",
-      "Linux (.deb, x64): sudo apt install ./displayxr-browser_1.10.7-1_amd64.deb - needs displayxr-runtime (>= 2.62.0) from DisplayXR/displayxr-runtime releases. A newer .deb upgrades in place; there is no apt repository.",
-      "macOS (.dmg, Apple silicon): open DisplayXR-Browser-1.10.7-mac-arm64.dmg and drag the browser to Applications. Developer ID signed and notarized. Glasses-free 3D needs the DisplayXR runtime 2.53.0 or newer (DisplayXR-Installer-*.pkg from…"
-    ],
-    "looksMechanical": false
-  },
-  {
     "id": "displayxr-demo-modelviewer@v0.38.0",
     "repo": "displayxr-demo-modelviewer",
     "tag": "v0.38.0",
@@ -371,17 +323,6 @@
       "Pin `displayxr-common` v2.35.0 and drop the vendored `robust_frame.h` (#194)"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-installer@v2.9.43",
-    "repo": "displayxr-installer",
-    "tag": "v2.9.43",
-    "title": "DisplayXR v2.9.43",
-    "date": "2026-11-24",
-    "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.43",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-leia-conversion@v0.1.1",
@@ -416,17 +357,6 @@
     "title": "DisplayXR v2.38.2",
     "date": "2026-11-24",
     "url": "https://github.com/DisplayXR/displayxr-unity/releases/tag/v2.38.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
-  },
-  {
-    "id": "displayxr-browser@v1.10.6",
-    "repo": "displayxr-browser",
-    "tag": "v1.10.6",
-    "title": "DisplayXR Browser v1.10.6",
-    "date": "2026-11-23",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.6",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -517,19 +447,6 @@
     "featureLines": [
       "**Native log diagnostics for the editor Game-view mirror (#459, #480, #483).** The native log now says which mirror blit is used for the active graphics API and why one is not offered, why the blit did not draw on a given frame, which co…",
       "**Editor Game view: a D3D11 native mirror blit (#483).** The docked Game view on URP + D3D11 now shows the woven image through a native blit on D3D11, as it already did on D3D12. It draws no calibration marker, so the image position on D…"
-    ],
-    "looksMechanical": false
-  },
-  {
-    "id": "displayxr-browser@v1.10.5",
-    "repo": "displayxr-browser",
-    "tag": "v1.10.5",
-    "title": "DisplayXR Browser v1.10.5",
-    "date": "2026-11-19",
-    "url": "https://github.com/DisplayXR/displayxr-browser/releases/tag/v1.10.5",
-    "prerelease": false,
-    "featureLines": [
-      "Auto-3D scripts updated to v0.7.6: support for PlayCanvas 2.24's CameraFrame and older PlayCanvas engines, with per-eye fog and scene depth (#365)"
     ],
     "looksMechanical": false
   },
@@ -845,7 +762,7 @@
     "id": "displayxr-installer@android-bundle-latest",
     "repo": "displayxr-installer",
     "tag": "android-bundle-latest",
-    "title": "Android tablet bundle (latest) — v2.9.45",
+    "title": "Android tablet bundle (latest) — v2.9.46",
     "date": "2026-10-07",
     "url": "https://github.com/DisplayXR/displayxr-installer/releases/tag/android-bundle-latest",
     "prerelease": true,
@@ -864,17 +781,6 @@
       "The first public set of reference scenes for 3D displays, built on open standards: OpenUSD, MaterialX / OpenPBR and glTF. Load any of them in the [DisplayXR model viewer](https://github.com/DisplayXR/displayxr-demo-modelviewer) **v0.35.0…"
     ],
     "looksMechanical": false
-  },
-  {
-    "id": "displayxr-shell-releases@v2.3.2",
-    "repo": "displayxr-shell-releases",
-    "tag": "v2.3.2",
-    "title": "DisplayXR Shell v2.3.2",
-    "date": "2026-10-03",
-    "url": "https://github.com/DisplayXR/displayxr-shell-releases/releases/tag/v2.3.2",
-    "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
   },
   {
     "id": "displayxr-unity-samples@v2.3.0",

@@ -2,30 +2,30 @@
   {
     "id": "runtime",
     "name": "DisplayXR Runtime",
-    "version": "v2.70.11",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.11",
-    "releaseDate": "2026-11-26",
+    "version": "v2.70.12",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-runtime/releases/tag/v2.70.12",
+    "releaseDate": "2026-11-28",
     "platforms": "Windows · macOS · Linux · Android",
     "downloads": [
       {
         "platform": "Windows",
-        "file": "DisplayXRSetup-2.70.11.exe",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.11/DisplayXRSetup-2.70.11.exe"
+        "file": "DisplayXRSetup-2.70.12.exe",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.12/DisplayXRSetup-2.70.12.exe"
       },
       {
         "platform": "macOS",
-        "file": "DisplayXR-Installer-2.70.11.pkg",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.11/DisplayXR-Installer-2.70.11.pkg"
+        "file": "DisplayXR-Installer-2.70.12.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.12/DisplayXR-Installer-2.70.12.pkg"
       },
       {
         "platform": "Linux",
-        "file": "displayxr-runtime_2.70.11_amd64.deb",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.11/displayxr-runtime_2.70.11_amd64.deb"
+        "file": "displayxr-runtime_2.70.12_amd64.deb",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.12/displayxr-runtime_2.70.12_amd64.deb"
       },
       {
         "platform": "Android",
-        "file": "DisplayXR-Runtime-2.70.11-android-arm64.apk",
-        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.11/DisplayXR-Runtime-2.70.11-android-arm64.apk"
+        "file": "DisplayXR-Runtime-2.70.12-android-arm64.apk",
+        "url": "https://github.com/DisplayXR/displayxr-runtime/releases/download/v2.70.12/DisplayXR-Runtime-2.70.12-android-arm64.apk"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-runtime"
@@ -137,30 +137,30 @@
   {
     "id": "installer",
     "name": "All-in-one Installer",
-    "version": "v2.9.45",
-    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.45",
-    "releaseDate": "2026-11-26",
+    "version": "v2.9.46",
+    "releaseUrl": "https://github.com/DisplayXR/displayxr-installer/releases/tag/v2.9.46",
+    "releaseDate": "2026-11-28",
     "platforms": "Windows · macOS · Linux · Android",
     "downloads": [
       {
         "platform": "Windows",
-        "file": "DisplayXRBundle-2.9.45.exe",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.45/DisplayXRBundle-2.9.45.exe"
+        "file": "DisplayXRBundle-2.9.46.exe",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.46/DisplayXRBundle-2.9.46.exe"
       },
       {
         "platform": "macOS",
-        "file": "DisplayXRBundle-2.9.45.pkg",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.45/DisplayXRBundle-2.9.45.pkg"
+        "file": "DisplayXRBundle-2.9.46.pkg",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.46/DisplayXRBundle-2.9.46.pkg"
       },
       {
         "platform": "Linux",
-        "file": "DisplayXRBundle-2.9.45-linux-amd64.tar.gz",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.45/DisplayXRBundle-2.9.45-linux-amd64.tar.gz"
+        "file": "DisplayXRBundle-2.9.46-linux-amd64.tar.gz",
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.46/DisplayXRBundle-2.9.46-linux-amd64.tar.gz"
       },
       {
         "platform": "Android",
         "file": "DisplayXR-Installer-0.4.2.apk",
-        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.45/DisplayXR-Installer-0.4.2.apk"
+        "url": "https://github.com/DisplayXR/displayxr-installer/releases/download/v2.9.46/DisplayXR-Installer-0.4.2.apk"
       }
     ],
     "repoUrl": "https://github.com/DisplayXR/displayxr-installer"
