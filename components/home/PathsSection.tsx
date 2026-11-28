@@ -19,7 +19,7 @@ const paths = [
   {
     title: "Plug in a component",
     body: "Ship a display processor, an input provider or a 2D-to-3D conversion provider from your own repo. Every DisplayXR app runs on it, unchanged.",
-    href: "/components",
+    href: "/developers/components",
     icon: <MonitorSpeaker size={20} />,
   },
   {

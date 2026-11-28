@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next";
-import { ITEMS, itemHref, LISTED_CATEGORIES } from "@/lib/data/catalog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://displayxr.org";
@@ -17,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/developers/native",
     "/architecture",
     "/extensions",
-    "/components",
+    "/developers/components",
     "/demos",
     "/download",
     "/platform-support",
@@ -29,12 +28,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/privacy",
     "/terms",
     "/news",
-    // The Catalog: its landing, the Games shelf, then one route per listed
-    // category and per item, from the same data the pages render.
-    "/catalog",
-    "/catalog/games",
-    ...LISTED_CATEGORIES.map((c) => `/catalog/${c.id}`),
-    ...ITEMS.map(itemHref),
   ];
 
   return routes.map((route) => ({

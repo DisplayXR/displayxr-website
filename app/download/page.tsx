@@ -1,192 +1,140 @@
 import { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { Card } from "@/components/ui/Card";
-import { REPO_URLS, WEB_SAMPLES_URL } from "@/lib/constants";
-import { OsDownloads } from "@/components/download/OsDownloads";
-import { components } from "@/lib/data/generated";
-import { Package, LayoutGrid, Bot, Download, Glasses, Globe } from "lucide-react";
-import type { ReactNode } from "react";
+import { GetDisplayXR } from "@/components/download/GetDisplayXR";
+import { downloads, engines, type Platform } from "@/lib/data/generated";
+import { OSES, PART_NAMES, TROUBLESHOOTING_URL, formatSize } from "@/lib/data/get";
+import { REPO_URLS } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Download DisplayXR",
+  title: "Get DisplayXR",
   description:
-    "Download DisplayXR and the DisplayXR Browser for Windows, macOS, Linux and Android: two installs, in order, or each component individually.",
+    "Download DisplayXR for Windows, macOS, Linux and Android tablets: one installer with everything most people need, add-ons, and every part on its own.",
 };
 
-type Requirement = "Required" | "Optional";
-
-type Installer = {
-  /** Generated component id: platforms and direct downloads come from its release assets. */
-  id: string;
-  name: string;
-  pitch: string;
-  requirement: Requirement;
-  releasesUrl: string;
-  icon: ReactNode;
-  links?: { label: string; href: string }[];
-};
-
-const installers: Installer[] = [
-  {
-    id: "runtime",
-    name: "DisplayXR Runtime",
-    pitch:
-      "OpenXR runtime + service. Install this first; everything else depends on it.",
-    requirement: "Required",
-    releasesUrl: `${REPO_URLS.runtime}/releases/latest`,
-    icon: <Package size={20} />,
-  },
-  {
-    id: "leia_plugin",
-    name: "Leia SR Plug-in",
-    pitch:
-      "Display-processor plug-in for Leia hardware, the first vendor display processor. The runtime discovers it at startup.",
-    requirement: "Optional",
-    releasesUrl: `${REPO_URLS.leiaPlugin}/releases/latest`,
-    icon: <Glasses size={20} />,
-  },
-  {
-    id: "mcp_tools",
-    name: "DisplayXR MCP Tools",
-    pitch:
-      "AI-agent + voice control. Writes the Capabilities\\MCP registry flag the runtime and shell read at startup.",
-    requirement: "Optional",
-    releasesUrl: `${REPO_URLS.mcp}/releases/latest`,
-    icon: <Bot size={20} />,
-  },
-  {
-    id: "browser",
-    name: "DisplayXR Browser",
-    pitch:
-      "A Chromium-based browser that renders the web normally and shows 3D web content in depth on a spatial display. Security updates follow Chrome stable on Windows, Android and Linux, with macOS to follow. Not affiliated with Google; no Google account sign-in or sync.",
-    requirement: "Optional",
-    releasesUrl: `${REPO_URLS.browser}/releases/latest`,
-    icon: <Globe size={20} />,
-    links: [
-      { label: "See it live", href: WEB_SAMPLES_URL },
-      { label: "Build inline-3D apps (SDK)", href: REPO_URLS.web },
-    ],
-  },
-  {
-    id: "shell",
-    name: "DisplayXR Shell (reference workspace, preview)",
-    pitch:
-      "A reference implementation of the workspace layer: several apps in 3D windows, 2D and 3D together. A preview to try the workspace contract, not a product.",
-    requirement: "Optional",
-    releasesUrl: `${REPO_URLS.shell}/releases/latest`,
-    icon: <LayoutGrid size={20} />,
-  },
-];
-
-const requirementChipClass: Record<Requirement, string> = {
-  Required: "bg-success/15 text-success border-success/30",
-  Optional:
-    "bg-text-secondary/15 text-text-secondary border-text-secondary/30",
-};
-
-const byId = (id: string) => components.find((c) => c.id === id);
+const link = "text-accent-hover underline underline-offset-2 hover:text-text-primary";
+const EXT = (f: string) => (f.match(/\.(tar\.gz|[a-z]+)$/i)?.[0] ?? "").toLowerCase();
 
 export default function DownloadPage() {
+  const unity = engines.find((e) => e.id === "unity");
+  const unreal = engines.find((e) => e.id === "unreal");
+  const devkits = [
+    { name: "Unity plug-in", desc: unity?.version ? `Version ${unity.version.replace(/^v/, "")}` : "UPM package", href: `${REPO_URLS.unity}/releases` },
+    { name: "Unreal plug-in", desc: unreal?.version ? `Version ${unreal.version.replace(/^v/, "")}` : "Unreal Engine plug-in", href: `${REPO_URLS.unreal}/releases` },
+    { name: "Unity samples", desc: "Built sample apps", href: `${REPO_URLS.unitySamples}/releases` },
+    { name: "Input plug-in kit", desc: "Build support for a stylus or controller", href: REPO_URLS.inputTemplate },
+  ];
+
   return (
     <PageLayout
-      title="Download"
-      description="Two installs, in this order: DisplayXR, then the DisplayXR Browser. The browser on its own installs the runtime but not a display plug-in, so it shows 2D only until step 1 is in place."
+      title="Get DisplayXR"
+      description="Free software that runs 3D apps on spatial displays. One installer sets up everything most people need. No spatial display yet? It still runs, in a simulated mode."
     >
-      <div className="space-y-12">
-        <OsDownloads bundle={byId("installer")} browser={byId("browser")} />
+      <GetDisplayXR data={downloads} />
 
-        <p className="text-sm text-text-secondary leading-relaxed">
-          <strong className="text-text-primary">No spatial display yet?</strong>{" "}
-          Install step 1 anyway: the runtime includes a simulated display in an
-          ordinary window, so you can build and test without hardware. New to
-          DisplayXR? Start at{" "}
-          <a href="/developers" className="text-accent hover:text-accent-hover underline underline-offset-2">
-            Developers
-          </a>
-          .
-        </p>
-
-        {/* Everything else, for people who manage components one by one. */}
-        <details className="group rounded-xl border border-border">
-          <summary className="cursor-pointer list-none p-6 text-lg font-semibold text-text-primary">
-            Individual components
-            <span className="ml-2 text-sm font-normal text-text-secondary group-open:hidden">
-              (show)
-            </span>
+      {/* Individual installers */}
+      <section id="individual" className="mt-16 scroll-mt-28">
+        <details className="group rounded-xl border border-border bg-surface px-6">
+          <summary className="flex min-h-[64px] cursor-pointer items-center text-xl font-semibold text-text-primary">
+            Individual installers (advanced, offline, IT)
           </summary>
-          <div className="space-y-8 px-6 pb-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {installers.map((installer) => {
-                const gen = byId(installer.id);
-                return (
-                  <Card key={installer.name} title={installer.name} icon={installer.icon}>
-                    <p className="text-sm text-text-secondary leading-relaxed mb-4">{installer.pitch}</p>
-                    <div className="flex items-center gap-2 flex-wrap mb-4">
-                      <span
-                        className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border ${requirementChipClass[installer.requirement]}`}
-                      >
-                        {installer.requirement}
-                      </span>
-                      {gen?.version && (
-                        <span className="text-xs font-mono text-text-secondary">{gen.version}</span>
-                      )}
-                    </div>
-                    <ul className="mb-4 space-y-1.5">
-                      {(gen?.downloads ?? []).map((d) => (
-                        <li key={d.url}>
-                          <a
-                            href={d.url}
-                            data-umami-event="download"
-                            data-umami-event-file={d.file}
-                            className="inline-flex items-center gap-1.5 text-sm text-accent hover:text-accent-hover underline underline-offset-2"
-                          >
-                            <Download size={13} /> {d.platform}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                    <a
-                      href={installer.releasesUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-text-secondary hover:text-accent underline underline-offset-2"
-                    >
-                      All release files ↗
-                    </a>
-                    {installer.links && installer.links.length > 0 && (
-                      <div className="mt-3 flex flex-col gap-1.5">
-                        {installer.links.map((lnk) => (
-                          <a
-                            key={lnk.href}
-                            href={lnk.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm text-text-secondary hover:text-accent underline underline-offset-2"
-                          >
-                            {lnk.label} ↗
-                          </a>
-                        ))}
-                      </div>
-                    )}
-                  </Card>
-                );
-              })}
+          <div className="flex flex-col gap-3 pb-6">
+            <p className="text-sm text-text-secondary">
+              The parts the installer already includes, one by one, for every system. You don&apos;t need these if you used the installer above.
+            </p>
+            <div className="overflow-x-auto rounded-lg border border-border">
+              <table className="w-full min-w-[760px] border-collapse text-sm">
+                <thead>
+                  <tr className="bg-background text-left text-text-secondary">
+                    <th scope="col" className="px-4 py-2.5 font-medium">Part</th>
+                    <th scope="col" className="px-4 py-2.5 font-medium">Version</th>
+                    {OSES.map((o) => (
+                      <th key={o.id} scope="col" className="px-4 py-2.5 font-medium">{o.id}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {downloads.parts.map((p) => (
+                    <tr key={p.id} className="border-t border-border">
+                      <th scope="row" className="px-4 py-2.5 text-left font-semibold text-text-primary">
+                        <a href={p.releaseUrl} className="hover:text-accent-hover">{PART_NAMES[p.id] ?? p.id}</a>
+                      </th>
+                      <td className="px-4 py-2.5 font-mono text-text-secondary">{p.version}</td>
+                      {OSES.map(({ id }) => {
+                        const f = p.files[id as Platform];
+                        return (
+                          <td key={id} className="px-4 py-2.5">
+                            {f ? (
+                              <>
+                                <a href={f.url} aria-label={`${PART_NAMES[p.id] ?? p.id} for ${id}, ${formatSize(f.size)}`} className={link} data-umami-event="download" data-umami-event-file={f.file}>
+                                  {EXT(f.file)}
+                                </a>{" "}
+                                <span className="text-xs text-text-secondary">{formatSize(f.size)}</span>
+                              </>
+                            ) : (
+                              <span className="text-text-secondary" aria-label="none">—</span>
+                            )}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-            <p className="text-sm text-text-secondary leading-relaxed">
-              <strong className="text-text-primary">Bundle releases:</strong> the{" "}
-              <a href={`${REPO_URLS.installer}/releases/latest`} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent-hover underline underline-offset-2">
-                DisplayXR installer
-              </a>{" "}
-              pins compatible versions of every component. The official Windows
-              installers are code-signed and the macOS packages are signed and
-              notarized, except the macOS all-in-one bundle package, which may
-              show a warning. For that one, installing from Terminal with{" "}
-              <code className="text-xs bg-background px-1.5 py-0.5 rounded border border-border font-mono">sudo installer</code>{" "}
-              avoids the Gatekeeper warning.
+            <p className="text-sm text-text-secondary">
+              Linux packages are for Ubuntu 22.04, 24.04 and 26.04:{" "}
+              <code className="rounded border border-border bg-background px-1.5 py-0.5 font-mono text-xs">sudo apt install ./&lt;file&gt;.deb</code>
             </p>
           </div>
         </details>
-      </div>
+      </section>
+
+      {/* Building apps? */}
+      <section id="developers" aria-labelledby="dev-h" className="mt-10 rounded-2xl border border-border bg-surface p-6 md:p-8">
+        <h2 id="dev-h" className="mb-1 text-2xl font-semibold text-text-primary">Building apps?</h2>
+        <p className="mb-5 text-sm text-text-secondary">
+          Engine plug-ins and kits. Install DisplayXR above first; the{" "}
+          <a href="/developers" className={link}>developer page</a> has the guides.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {devkits.map((d) => (
+            <a key={d.name} href={d.href} className="flex min-h-[44px] flex-col gap-1 rounded-xl border border-border p-4 transition-colors hover:border-accent">
+              <strong className="text-text-primary">{d.name}</strong>
+              <span className="text-xs text-text-secondary">{d.desc}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer facts */}
+      <section className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="rounded-xl border border-border bg-surface p-6">
+          <h3 className="mb-2 font-semibold text-text-primary">Check a download</h3>
+          <p className="text-sm leading-relaxed text-text-secondary">
+            Each release lists SHA-256 checksums
+            {downloads.installer?.checksumsUrl ? (
+              <>
+                {" "}(<a href={downloads.installer.checksumsUrl} className={link}>installer checksums</a>)
+              </>
+            ) : null}
+            .{downloads.windowsSigner ? ` Windows installers are signed by ${downloads.windowsSigner}, the company behind DisplayXR.` : ""}
+          </p>
+        </div>
+        <div className="rounded-xl border border-border bg-surface p-6">
+          <h3 className="mb-2 font-semibold text-text-primary">Older versions and release notes</h3>
+          <p className="text-sm leading-relaxed text-text-secondary">
+            <a href={`${REPO_URLS.installer}/releases`} className={link}>Installer releases</a> ·{" "}
+            <a href={`${REPO_URLS.runtime}/releases`} className={link}>DisplayXR releases</a>
+          </p>
+        </div>
+        <div className="rounded-xl border border-border bg-surface p-6">
+          <h3 className="mb-2 font-semibold text-text-primary">Something not working?</h3>
+          <p className="text-sm leading-relaxed text-text-secondary">
+            On Windows, the Dashboard&apos;s Troubleshooting page checks your setup.{" "}
+            <a href={TROUBLESHOOTING_URL} className={link}>Troubleshooting guide</a>
+          </p>
+        </div>
+      </section>
     </PageLayout>
   );
 }

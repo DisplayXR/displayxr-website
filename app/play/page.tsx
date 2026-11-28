@@ -305,7 +305,7 @@ export default function PlayPage() {
               <div className="flex flex-wrap gap-3">
                 <Button href={DISCUSSIONS_URL}>Display makers: talk to us</Button>
                 <Button variant="secondary" href={VENDOR_GUIDE}>Vendor onboarding guide</Button>
-                <Button variant="secondary" href="/components">Components</Button>
+                <Button variant="secondary" href="/developers/components">Components</Button>
               </div>
             </div>
           </div>

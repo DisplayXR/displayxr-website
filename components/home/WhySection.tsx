@@ -31,7 +31,7 @@ export function WhySection() {
             extensions OpenXR needs for spatial displays. Displays, trackers
             and 2D-to-3D models plug in underneath as{" "}
             <a
-              href="/components"
+              href="/developers/components"
               className="text-accent underline underline-offset-2 hover:text-accent-hover"
             >
               components

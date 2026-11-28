@@ -93,7 +93,7 @@ const extendLinks = [
   {
     title: "Write an input provider",
     desc: "Tracked hands, controllers or navigation devices as a plug-in, outside the runtime.",
-    href: "/components#input-providers",
+    href: "/developers/components#input-providers",
   },
   {
     title: "Build & CI",
@@ -270,7 +270,7 @@ export default function ContributePage() {
             The deep guides live in the runtime repo; these are the entry
             points. (Writing a display processor or another component instead? See{" "}
             <a
-              href="/components"
+              href="/developers/components"
               className="text-accent hover:text-accent-hover underline underline-offset-2"
             >
               Components

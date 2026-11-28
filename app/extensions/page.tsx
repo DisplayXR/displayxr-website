@@ -549,7 +549,7 @@ export default function ExtensionsPage() {
                 The contributor guide walks through the runtime wiring end to end.
               </p>
             </a>
-            <a href="/components" className="card-interactive block rounded-lg border border-border bg-surface p-6">
+            <a href="/developers/components" className="card-interactive block rounded-lg border border-border bg-surface p-6">
               <h3 className="mb-2 text-lg font-semibold text-text-primary">Plug in a component</h3>
               <p className="text-sm leading-relaxed text-text-secondary">
                 Display makers ship a display processor; apps keep using these extensions unchanged.

@@ -224,6 +224,127 @@ function downloadsOf(files = []) {
   return PLATFORM_ORDER.filter((p) => byPlatform.has(p)).map((p) => byPlatform.get(p));
 }
 
+
+// ── /download ("Get DisplayXR") ───────────────────────────────────────────────
+// Everything the download page shows that can be derived: the bundle's file per
+// OS, the browser's, every part the bundle chains (at its versions.json pin) and
+// the add-ons that are NOT in the bundle. Sizes come from the release assets;
+// Windows sizes and the signer are cross-read from the signed catalog feed, so
+// the page never shows a version neither source carries. What each bundle
+// INSTALLS is authored (lib/data/get.ts): it is checked against the bundle
+// build scripts and the released files, not derivable from asset names.
+const CATALOG_FEED = "https://updates.displayxr.org/catalog/v2/stable.json";
+
+async function releaseFull(repo, tag) {
+  try {
+    const r = await api(`/repos/${ORG}/${repo}/releases/${tag ? `tags/${tag}` : "latest"}`);
+    return {
+      tag: r.tag_name,
+      version: r.tag_name.replace(/^v/, ""),
+      releaseUrl: r.html_url,
+      files: (r.assets || []).map((a) => ({ name: a.name, url: a.browser_download_url, size: a.size })),
+    };
+  } catch {
+    return null;
+  }
+}
+
+// One installer per OS. `prefer` breaks ties (the runtime's Android release
+// carries a generic and a display-vendor APK; only the vendor one shows 3D on
+// the supported tablets). Libraries (.aar), checksums and sources are skipped.
+function pickPerOs(files = [], prefer = {}) {
+  const tests = {
+    Windows: (n) => /\.(exe|msi)$/.test(n),
+    macOS: (n) => /\.(pkg|dmg)$/.test(n),
+    Linux: (n) => /\.deb$/.test(n) || (/linux/.test(n) && /\.(tar\.gz|tgz)$/.test(n)),
+    Android: (n) => /\.apk$/.test(n) || (/android/.test(n) && /\.zip$/.test(n)),
+  };
+  const out = {};
+  for (const os of PLATFORM_ORDER) {
+    const cands = files.filter((f) => tests[os](f.name.toLowerCase()));
+    if (!cands.length) continue;
+    const p = prefer[os];
+    const best = (p && cands.find((f) => p.test(f.name))) || (os === "Linux" && cands.find((f) => /\.deb$/.test(f.name))) || cands[0];
+    out[os] = { file: best.name, url: best.url, size: best.size };
+  }
+  return out;
+}
+
+const PARTS = [
+  { id: "runtime", vkey: "runtime", repo: "displayxr-runtime", prefer: { Android: /-Leia-/ } },
+  { id: "leia_plugin", vkey: "leia_plugin", repo: "displayxr-leia-plugin" },
+  { id: "conversion_open", vkey: "conversion_open", repo: "displayxr-conversion-open" },
+  { id: "leia_conversion", vkey: "leia_conversion", repo: "displayxr-leia-conversion" },
+  { id: "mcp_tools", vkey: "mcp_tools", repo: "displayxr-mcp" },
+  { id: "gauss_demo", vkey: "gauss_demo", repo: "displayxr-demo-gaussiansplat" },
+  { id: "modelviewer_demo", vkey: "modelviewer_demo", repo: "displayxr-demo-modelviewer" },
+  { id: "mediaplayer_demo", vkey: "mediaplayer_demo", repo: "displayxr-demo-mediaplayer" },
+  { id: "avatar_demo", vkey: "avatar_demo", repo: "displayxr-demo-avatar" },
+  { id: "earthview_demo", vkey: "earthview_demo", repo: "displayxr-demo-earthview" },
+];
+// Not in the bundle. A repo with no release yet is written with version null.
+const ADDONS = [
+  { id: "shell", vkey: "shell", repo: "displayxr-shell-releases" },
+  { id: "tracking_open", vkey: null, repo: "displayxr-tracking-open" },
+  { id: "ultraleap", vkey: "ultraleap", repo: "displayxr-ultraleap" },
+];
+
+async function buildDownloads(versions) {
+  let feed = null;
+  try {
+    const res = await fetch(CATALOG_FEED);
+    if (!res.ok) throw new Error(String(res.status));
+    feed = await res.json();
+  } catch (e) {
+    warn(`catalog feed — ${e.message}`);
+  }
+  const feedByFile = new Map();
+  for (const it of feed?.items || []) {
+    const a = it.assets?.["windows-x64"];
+    if (a?.file) feedByFile.set(a.file, { size: a.size, signer: a.signature?.signer || null });
+  }
+  const signer = feed?.publishers?.displayxr?.signers?.["windows-x64"]?.[0]?.subject_cn || null;
+  // A Windows file the feed carries takes the feed's size (same bytes, signed list).
+  const withFeed = (per) => {
+    if (per.Windows && feedByFile.has(per.Windows.file)) per.Windows.size = feedByFile.get(per.Windows.file).size;
+    return per;
+  };
+  const resolve = async (repo, pin) => (pin && (await releaseFull(repo, pin))) || (await releaseFull(repo, null));
+
+  const inst = await releaseFull("displayxr-installer", null);
+  if (!inst) warn("displayxr-installer: no release");
+  const bundle = inst ? pickPerOs(inst.files, { Android: /\.zip$/ }) : {};
+  for (const os of PLATFORM_ORDER) if (inst && !bundle[os]) warn(`installer ${inst.tag}: no ${os} bundle asset`);
+  const androidApp = inst?.files.find((f) => /^DisplayXR-Installer-.*\.apk$/.test(f.name)) || null;
+  const sums = inst?.files.find((f) => f.name === "SHA256SUMS") || null;
+
+  const br = await resolve("displayxr-browser", versions.browser);
+  const parts = [];
+  for (const p of PARTS) {
+    const rel = await resolve(p.repo, versions[p.vkey]);
+    if (!rel) { warn(`${p.repo}: no release`); continue; }
+    parts.push({ id: p.id, repo: p.repo, version: rel.version, releaseUrl: rel.releaseUrl, files: withFeed(pickPerOs(rel.files, p.prefer)) });
+  }
+  const addons = [];
+  for (const a of ADDONS) {
+    const rel = await resolve(a.repo, a.vkey ? versions[a.vkey] : null);
+    addons.push({
+      id: a.id, repo: a.repo,
+      repoUrl: `https://github.com/${ORG}/${a.repo}`,
+      version: rel?.version || null, releaseUrl: rel?.releaseUrl || null,
+      files: rel ? withFeed(pickPerOs(rel.files)) : {},
+    });
+  }
+  return {
+    installer: inst ? { version: inst.version, releaseUrl: inst.releaseUrl, files: withFeed(bundle), androidApp: androidApp && { file: androidApp.name, url: androidApp.url, size: androidApp.size }, checksumsUrl: sums?.url || null } : null,
+    runtimeVersion: (versions.runtime || "").replace(/^v/, "") || null,
+    browser: br ? { version: br.version, releaseUrl: br.releaseUrl, files: withFeed(pickPerOs(br.files)) } : null,
+    windowsSigner: signer,
+    parts,
+    addons,
+  };
+}
+
 // ── adapters ──────────────────────────────────────────────────────────────────
 async function buildComponents(versions) {
   const out = [];
@@ -580,7 +701,7 @@ async function main() {
     .sort();
   console.log(`  discovered ${demoRepos.length} demo repos: ${demoRepos.join(", ")}`);
 
-  const [components, demos, engines, extensions, repos, signals, newsCandidates, play] =
+  const [components, demos, engines, extensions, repos, signals, newsCandidates, play, downloads] =
     await Promise.all([
       buildComponents(versions),
       buildDemos(demoRepos),
@@ -590,6 +711,7 @@ async function main() {
       buildSignals(allRepos),
       buildNewsCandidates(allRepos),
       buildPlay(),
+      buildDownloads(versions),
     ]);
 
   writeGen("components.json", components);
@@ -599,6 +721,7 @@ async function main() {
   writeGen("repos.json", repos);
   writeGen("news-candidates.json", newsCandidates);
   writeGen("play.json", play);
+  writeGen("downloads.json", downloads);
   writeGen("_meta.json", { signals });
 
   const unreviewed = newsCandidates.filter((c) => !c.looksMechanical).length;

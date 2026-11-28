@@ -346,7 +346,7 @@ export default function PlatformSupportPage() {
             The component that makes each panel show 3D. Input and conversion
             providers are listed on{" "}
             <a
-              href="/components"
+              href="/developers/components"
               className="text-accent hover:text-accent-hover underline underline-offset-2"
             >
               Components

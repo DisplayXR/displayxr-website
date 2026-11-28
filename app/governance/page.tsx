@@ -266,7 +266,7 @@ export default function GovernancePage() {
               project intends to move toward shared governance. Display vendors
               start with{" "}
               <a
-                href="/components"
+                href="/developers/components"
                 className="text-accent hover:text-accent-hover underline underline-offset-2"
               >
                 Components

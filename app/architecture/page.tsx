@@ -382,7 +382,7 @@ export default function ArchitecturePage() {
                 </a>{" "}
                 is the first vendor one. See{" "}
                 <a
-                  href="/components"
+                  href="/developers/components"
                   className="text-accent hover:text-accent-hover underline underline-offset-2"
                 >
                   Components
@@ -707,7 +707,7 @@ export default function ArchitecturePage() {
             a component that plugs in over a versioned C ABI, with a reference
             implementation shipped for each class. The full picture is on{" "}
             <a
-              href="/components"
+              href="/developers/components"
               className="text-accent hover:text-accent-hover underline underline-offset-2"
             >
               Components
@@ -787,7 +787,7 @@ export default function ArchitecturePage() {
                 documented and external contributors PR directly.
               </p>
             </Card>
-            <Card href="/components" title="Plug in a component">
+            <Card href="/developers/components" title="Plug in a component">
               <p className="text-sm text-text-secondary leading-relaxed">
                 Ship a display processor, an input provider or a conversion
                 provider. No app changes required.
