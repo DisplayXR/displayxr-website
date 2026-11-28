@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Check, Download } from "lucide-react";
 import { useVisitorOS } from "@/lib/visitor-os";
 import type { DownloadsData, Platform, ReleaseFile } from "@/lib/data/generated";
-import { ADDONS, INCLUDED, OSES, SHOW_UPCOMING, STEPS, formatSize, type Addon } from "@/lib/data/get";
+import { ADDONS, INCLUDED, OSES, RERUN_NOTE, SHOW_UPCOMING, STEPS, formatSize, type Addon } from "@/lib/data/get";
 
 // White on #2563eb is 5.2:1 (the site's #3b82f6 accent is 3.7:1, too low for a 15px label).
 const primaryBtn =
@@ -38,7 +38,7 @@ function AddonCard({ a, os, data }: { a: Addon; os: Platform; data: DownloadsDat
       <span className={`self-start rounded-full border px-2.5 py-1 text-xs font-medium ${toneClass[a.badge.tone]}`}>{a.badge.label}</span>
       <div>
         <h3 className="mb-2 text-xl font-semibold text-text-primary">{a.name}</h3>
-        <p className="text-sm leading-relaxed text-text-secondary">{a.desc}</p>
+        <p className="text-sm leading-relaxed text-text-secondary">{a.descOn?.[os] ?? a.desc}</p>
       </div>
       <dl className="grid grid-cols-[84px_minmax(0,1fr)] gap-x-3 gap-y-1.5 text-sm">
         {a.facts.map((f) => (
@@ -74,8 +74,12 @@ function AddonCard({ a, os, data }: { a: Addon; os: Platform; data: DownloadsDat
         )}
         {!any && (
           <p className="text-sm text-text-secondary">
-            {elsewhere ? `Not available on ${os} yet. ` : ""}
-            {a.later}
+            {a.unavailable ?? (
+              <>
+                {elsewhere ? `Not available on ${os} yet. ` : ""}
+                {a.later}
+              </>
+            )}
           </p>
         )}
         {!any && a.follow && (
@@ -133,7 +137,7 @@ export function GetDisplayXR({ data }: { data: DownloadsData }) {
         ))}
       </div>
 
-      <div className="flex flex-wrap items-stretch gap-5">
+      <div className="flex flex-wrap items-start gap-5">
         {/* The installer */}
         <section aria-labelledby="bundle-h" className="flex min-w-0 flex-[999_1_560px] flex-col gap-5 rounded-2xl border border-accent/40 bg-surface p-6 md:p-8">
           <div>
@@ -182,9 +186,7 @@ export function GetDisplayXR({ data }: { data: DownloadsData }) {
               </p>
             )}
             <p className="text-xs leading-relaxed text-text-secondary">
-              {os === "Android"
-                ? "Running the install again later updates what you have and keeps your settings."
-                : "You can untick any of these during install. Running the installer again later updates what you have and keeps your settings."}
+              {RERUN_NOTE[os]}
             </p>
           </div>
         </section>

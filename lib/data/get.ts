@@ -46,6 +46,17 @@ export const INCLUDED: Included[] = [
   { name: "DisplayXR Browser", gloss: "a web browser that shows 3D web pages in 3D", on: ["Android"] },
 ];
 
+/** Under "What it installs". The Windows and macOS installers let you untick
+ * everything but DisplayXR itself (NSIS sections; the .pkg's Customize step,
+ * six visible choices, the runtime's disabled); Linux's install.sh takes no
+ * selection; the Android script installs the whole set. */
+export const RERUN_NOTE: Record<Platform, string> = {
+  Windows: "You can untick anything but DisplayXR itself during install. Running the installer again later updates what you have and keeps your settings.",
+  macOS: "Choose Customize during install to leave out any demo. Running the installer again later updates what you have and keeps your settings.",
+  Linux: "Running ./install.sh again later updates what you have and keeps your settings.",
+  Android: "Running the install again later updates what you have and keeps your settings.",
+};
+
 export type Step = { title: string; body: string };
 
 export const STEPS: Record<Platform, Step[]> = {
@@ -86,10 +97,14 @@ export type Addon = {
   name: string;
   badge: { label: string; tone: "who" | "research" | "soon" };
   desc: string;
+  /** Replaces `desc` on one OS, where a clause is only true there. */
+  descOn?: Partial<Record<Platform, string>>;
   facts: { k: string; v: string; placeholder?: boolean }[];
   ways: Partial<Record<Platform, AddonWay>>;
   /** Shown under "Not available on <OS> yet." */
   later?: string;
+  /** Replaces the whole "Not available on <OS> yet. <later>" line. */
+  unavailable?: string;
   /** GitHub repo to follow when there is nothing for this OS. */
   follow?: string;
   /** Upcoming card: nothing on any OS yet. */
@@ -128,7 +143,11 @@ export const ADDONS: Addon[] = [
     id: "sharp",
     name: "SHARP photo-to-3D",
     badge: { label: "Research preview · non-commercial", tone: "research" },
-    desc: "A research model that turns a single photo into a 3D scene, for the 2D-to-3D conversion you already have. Your computer downloads the original model from its publisher and prepares it locally. We don't host it.",
+    desc: "A research model that turns a single photo into a 3D scene. Your computer downloads the original model from its publisher and prepares it locally. We don't host it.",
+    descOn: {
+      Windows:
+        "A research model that turns a single photo into a 3D scene, for the 2D-to-3D conversion you already have. Your computer downloads the original model from its publisher and prepares it locally. We don't host it.",
+    },
     facts: [
       { k: "Licence", v: "The publisher's research-only licence: no commercial use. You read and accept it before anything downloads." },
       { k: "Needs", v: "[GPU, disk and download size: to come from the builder]", placeholder: true },
@@ -139,7 +158,7 @@ export const ADDONS: Addon[] = [
         cli: "[command line: to come from the builder]",
       },
     },
-    later: "Coming to Linux.",
+    unavailable: "Available on Windows.",
   },
   {
     id: "ultraleap",
