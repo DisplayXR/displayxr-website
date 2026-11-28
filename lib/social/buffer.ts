@@ -9,7 +9,7 @@ import type { Channel } from "./types";
 // Field names below were checked on 2026-11-22 by introspecting the live
 // schema with the real key: CreatePostInput needs needsApproval (non-null
 // Boolean), YouTube posts take metadata.youtube (YoutubePostMetadataInput),
-// VideoAssetInput takes thumbnailUrl, and PostStatus is one of draft, error,
+// VideoAssetInput lists thumbnailUrl but Buffer rejects it for video, and PostStatus is one of draft, error,
 // needs_approval, scheduled, sending, sent.
 
 const ENDPOINT = "https://api.buffer.com";
@@ -75,12 +75,11 @@ export async function createScheduledPost(input: {
   text: string;
   dueAt: string; // ISO UTC
   videoUrl?: string;
-  thumbnailUrl?: string;
   youtube?: YoutubeMeta;
   xReplies?: string[]; // X only: sent as a thread after the main post
 }): Promise<string> {
   const assets = input.videoUrl
-    ? [{ video: { url: input.videoUrl, ...(input.thumbnailUrl ? { thumbnailUrl: input.thumbnailUrl } : {}) } }]
+    ? [{ video: { url: input.videoUrl } }] // Buffer rejects thumbnailUrl on video ("social networks do not accept custom video thumbnail images"); poster_url is for the board only
     : [];
   // metadata.twitter.thread lists the WHOLE thread, first post included
   // (checked on 2026-11-22: a plain post reads back thread []). Buffer rebuilds
