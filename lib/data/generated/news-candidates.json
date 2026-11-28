@@ -1,5 +1,16 @@
 [
   {
+    "id": "displayxr-demo-earthview@v0.11.4",
+    "repo": "displayxr-demo-earthview",
+    "tag": "v0.11.4",
+    "title": "v0.11.4",
+    "date": "2026-11-28",
+    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.4",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
     "id": "displayxr-demo-gaussiansplat@v1.29.11",
     "repo": "displayxr-demo-gaussiansplat",
     "tag": "v1.29.11",
@@ -875,22 +886,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-earthview@v0.11.0",
-    "repo": "displayxr-demo-earthview",
-    "tag": "v0.11.0",
-    "title": "v0.11.0",
-    "date": "2026-10-02",
-    "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.0",
-    "prerelease": false,
-    "featureLines": [
-      "**Linux: Google Map Tiles API-key dialog.** The first launch without a key, or **Ctrl+K** at any time, opens a dialog (zenity, with kdialog as a fallback) with the same flow as Windows and macOS: **Save & Start**, **Get a Key…** and **Re…",
-      "Linux API-key dialog for first run and Ctrl+K (#77)",
-      "The key is stored per user in `$XDG_CONFIG_HOME/displayxr/earthview.ini` (mode 0600). `GOOGLE_MAPS_API_KEY` still overrides it.",
-      "The `.deb` now Recommends `zenity`, and the package build refuses to bundle a key."
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-earthview@v0.11.1",
