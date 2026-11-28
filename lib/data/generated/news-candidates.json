@@ -7,8 +7,10 @@
     "date": "2026-11-28",
     "url": "https://github.com/DisplayXR/displayxr-demo-earthview/releases/tag/v0.11.4",
     "prerelease": false,
-    "featureLines": [],
-    "looksMechanical": true
+    "featureLines": [
+      "Linux: enable `XR_DXR_workspace_client_input`, so EarthView receives mouse and keyboard input while running under a workspace controller (#92)"
+    ],
+    "looksMechanical": false
   },
   {
     "id": "displayxr-demo-gaussiansplat@v1.29.11",
@@ -17,6 +19,17 @@
     "title": "v1.29.11",
     "date": "2026-11-28",
     "url": "https://github.com/DisplayXR/displayxr-demo-gaussiansplat/releases/tag/v1.29.11",
+    "prerelease": false,
+    "featureLines": [],
+    "looksMechanical": true
+  },
+  {
+    "id": "displayxr-demo-modelviewer@v0.39.1",
+    "repo": "displayxr-demo-modelviewer",
+    "tag": "v0.39.1",
+    "title": "v0.39.1",
+    "date": "2026-11-28",
+    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.39.1",
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
@@ -674,19 +687,6 @@
     "prerelease": false,
     "featureLines": [],
     "looksMechanical": true
-  },
-  {
-    "id": "displayxr-demo-modelviewer@v0.36.1",
-    "repo": "displayxr-demo-modelviewer",
-    "tag": "v0.36.1",
-    "title": "v0.36.1",
-    "date": "2026-10-22",
-    "url": "https://github.com/DisplayXR/displayxr-demo-modelviewer/releases/tag/v0.36.1",
-    "prerelease": false,
-    "featureLines": [
-      "Tracked and simulated hands are now drawn in the right place around the model. On runtimes that advertise `XR_DXR_view_rig` spec 4 or later, the viewer asks the runtime for hand joints in the view rig's own frame and renders them directl…"
-    ],
-    "looksMechanical": false
   },
   {
     "id": "displayxr-mcp@v0.5.6",
